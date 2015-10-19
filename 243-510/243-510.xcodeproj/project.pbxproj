@@ -6,10 +6,17 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		0FB7FE391BD52B3200405005 /* Documentation Microchip */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Documentation Microchip"; path = "../Documentation Microchip"; sourceTree = "<group>"; };
+		0FB7FE3A1BD52B3900405005 /* MiWi Mesh example - clean */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "MiWi Mesh example - clean"; path = "../MiWi Mesh example - clean"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		0FB7FE321BD52AF000405005 = {
 			isa = PBXGroup;
 			children = (
+				0FB7FE3A1BD52B3900405005 /* MiWi Mesh example - clean */,
+				0FB7FE391BD52B3200405005 /* Documentation Microchip */,
 			);
 			sourceTree = "<group>";
 		};
