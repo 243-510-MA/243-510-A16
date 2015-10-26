@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 2014 Microchip Technology Inc. -->
+
+<!-- XML Format Policy -->
+<!-- In VERSION tag, use MAJOR/MINOR/DOT OR STRING, not both at the same time -->
+
+<DISTRIBUTION>
+
+  <INFO>
+    <NAME>Microchip Libraries for Applications</NAME>
+    <SHORT_NAME>MLA</SHORT_NAME>
+    <VERSION>
+      <STRING>2015-08-10</STRING>
+    </VERSION>
+  </INFO>
+
+  <LIBRARIES>
+
+    <LIBRARY>
+      <NAME>Graphics Library</NAME>
+      <SHORT_NAME>GFX</SHORT_NAME>
+      <VERSION>
+        <MAJOR>4</MAJOR>
+        <MINOR>60</MINOR>
+        <DOT>00</DOT>
+      </VERSION>
+      <GDD_COMPATIBILITY>3</GDD_COMPATIBILITY>
+    </LIBRARY>
+
+    <LIBRARY>
+      <NAME>USB Library</NAME>
+      <SHORT_NAME>USB</SHORT_NAME>
+      <VERSION>
+        <MAJOR>2</MAJOR>
+        <MINOR>13</MINOR>
+        <DOT>00</DOT>
+      </VERSION>
+    </LIBRARY>
+
+    <LIBRARY>
+      <NAME>FILE IO Library</NAME>
+      <SHORT_NAME>FILEIO</SHORT_NAME>
+      <VERSION>
+        <MAJOR>1</MAJOR>
+        <MINOR>02</MINOR>
+        <DOT>00</DOT>
+      </VERSION>
+    </LIBRARY>
+
+    <LIBRARY>
+      <NAME>Crypto SW Library</NAME>
+      <SHORT_NAME>CRYPTO_SW</SHORT_NAME>
+      <VERSION>
+        <MAJOR>2</MAJOR>
+        <MINOR>00</MINOR>
+        <DOT>01</DOT>
+      </VERSION>
+    </LIBRARY>
+
+    <LIBRARY>
+      <NAME>16bit Microcontroller Crypto Module v1 Library</NAME>
+      <SHORT_NAME>CRYPTO_16BV1</SHORT_NAME>
+      <VERSION>
+        <MAJOR>0</MAJOR>
+        <MINOR>01</MINOR>
+        <DOT>01</DOT>
+      </VERSION>
+    </LIBRARY>
+
+    <LIBRARY>
+      <NAME>Crypto Hash Library</NAME>
+      <SHORT_NAME>CRYPTO_HASH</SHORT_NAME>
+      <VERSION>
+        <MAJOR>1</MAJOR>
+        <MINOR>00</MINOR>
+        <DOT>00</DOT>
+      </VERSION>
+    </LIBRARY>
+    
+    <LIBRARY>
+      <NAME>MiWi Library</NAME>
+      <SHORT_NAME>MIWI</SHORT_NAME>
+      <VERSION>
+        <MAJOR>5</MAJOR>
+        <MINOR>15</MINOR>
+        <DOT>00</DOT>
+      </VERSION>
+    </LIBRARY>
+
+    <LIBRARY>
+      <NAME>TCPIP Library</NAME>
+      <SHORT_NAME>TCPIP</SHORT_NAME>
+      <VERSION>
+        <MAJOR>5</MAJOR>
+        <MINOR>45</MINOR>
+        <DOT>00</DOT>
+      </VERSION>
+    </LIBRARY>
+
+    <LIBRARY>
+      <NAME>Smart Card Library</NAME>
+      <SHORT_NAME>SMARTCARD</SHORT_NAME>
+      <VERSION>
+        <MAJOR>2</MAJOR>
+        <MINOR>02</MINOR>
+        <DOT>00</DOT>
+      </VERSION>
+    </LIBRARY>
+
+    <LIBRARY>
+      <NAME>Smartphone</NAME>
+      <SHORT_NAME>SMARTPHONE</SHORT_NAME>
+      <VERSION>
+        <MAJOR>1</MAJOR>
+        <MINOR>04</MINOR>
+        <DOT>01</DOT>
+      </VERSION>
+    </LIBRARY>
+  </LIBRARIES>
+
+</DISTRIBUTION>

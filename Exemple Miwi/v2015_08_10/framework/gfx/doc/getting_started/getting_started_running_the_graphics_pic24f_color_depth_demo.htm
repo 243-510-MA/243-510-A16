@@ -1,0 +1,1207 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns:mv="http://macVmlSchemaUri" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name=Title
+content="Getting Started: Running the “Graphics PIC24F_DA” demo">
+<meta name=Keywords content="">
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List
+href="getting_started_running_the_graphics_pic24f_color_depth_demo_files/filelist.xml">
+<title>Getting Started: Running the “Graphics PIC24F_DA” demo</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>MCHP</o:Author>
+  <o:LastAuthor>MCHP</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>10</o:TotalTime>
+  <o:Created>2015-06-01T16:17:00Z</o:Created>
+  <o:LastSaved>2015-06-01T16:17:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>936</o:Words>
+  <o:Characters>5341</o:Characters>
+  <o:Company>Microchip Technology Inc.</o:Company>
+  <o:Lines>44</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>6265</o:CharactersWithSpaces>
+  <o:Version>14.0</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData
+href="getting_started_running_the_graphics_pic24f_color_depth_demo_files/themedata.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>150</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:SplitPgBreakAndParaMark/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="276">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Arial;
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073711037 9 0 511 0;}
+@font-face
+	{font-family:"Courier New";
+	panose-1:2 7 3 9 2 2 5 2 4 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073711037 9 0 511 0;}
+@font-face
+	{font-family:"MS Mincho";
+	mso-font-charset:78;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1791491579 18 0 131231 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-1593833729 1073750107 16 0 415 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-1593833729 1073750107 16 0 415 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073743103 0 0 415 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-520082689 -1073717157 41 0 66047 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-134238209 -371195905 63 0 4129279 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;
+	font-style:italic;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:24.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-priority:35;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Document Map Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-priority:99;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	color:#365F91;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	font-weight:bold;
+	font-style:italic;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 3";
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	font-weight:bold;}
+span.DocumentMapChar
+	{mso-style-name:"Document Map Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Document Map";
+	font-family:Tahoma;
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Plain Text";
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	font-family:Tahoma;
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+p.msolistparagraph0, li.msolistparagraph0, div.msolistparagraph0
+	{mso-style-name:msolistparagraph;
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.msolistparagraphCxSpFirst, li.msolistparagraphCxSpFirst, div.msolistparagraphCxSpFirst
+	{mso-style-name:msolistparagraphCxSpFirst;
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.msolistparagraphCxSpMiddle, li.msolistparagraphCxSpMiddle, div.msolistparagraphCxSpMiddle
+	{mso-style-name:msolistparagraphCxSpMiddle;
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.msolistparagraphCxSpLast, li.msolistparagraphCxSpLast, div.msolistparagraphCxSpLast
+	{mso-style-name:msolistparagraphCxSpLast;
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.element10, li.element10, div.element10
+	{mso-style-name:element10;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	mso-fareast-theme-font:minor-fareast;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoPlainText align=center style='text-align:center'><a
+name="_Toc194573682"><b><u><span style='font-size:16.0pt;font-family:Arial'>Getting
+Started: Running the “Color Depth Demo”</span></u></b></a></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<h2><span style='mso-fareast-font-family:"Times New Roman"'><a
+href="#required_hardware">Required Hardware</a><a name="_Toc276094095"></a><o:p></o:p></span></h2>
+
+<h2><span style='mso-fareast-font-family:"Times New Roman"'><a
+href="#configuring_the_software">Configuring the Software</a><o:p></o:p></span></h2>
+
+<h2><span style='mso-fareast-font-family:"Times New Roman"'><a
+href="#required_hardware">Configuring the Hardware</a><a name="_Toc276094096"></a><o:p></o:p></span></h2>
+
+<h2><span style='mso-fareast-font-family:"Times New Roman"'><a
+href="getting_started_calibrating_the_touch_screen.htm">Calibrating the Touch
+Screen</a><a name="_Toc276094005"></a><o:p></o:p></span></h2>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><a name="_Toc276094098"></a><a name="running_the_demo"></a><span
+class=Heading2Char><span style='font-size:14.0pt'>Running the Demo</span></span><span
+style='font-family:Arial'>:</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>PIC24FJ256DA210’s built in graphics controller features a
+color palette or look up table (CLUT). When using the CLUT the PIC24FJ256DA210
+can be used as a single chip solution for embedded graphics applications that
+will use 8BPP color depth and run on QVGA displays or smaller. The demo
+configures the PIC24FJ256DA210 for 1BPP, 4BPP and 8BPP color depths. The demo
+runs with two screens. Except for the 1BPP color depth mode, each screen will
+use a different color palette. Pressing on the icon will switch from one screen
+to another. Each screen uses a different palette. </span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span class=GramE><span
+style='font-size:10.0pt;font-family:Arial'>The color depth can be changed by
+setting the macro</span></span><span style='font-size:10.0pt;font-family:Arial'>
+</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>#<span class=GramE>define</span> COLOR_DEPTH X </span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>Where: X can be set to 1, 4 or 8.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;&nbsp;</span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-family:Arial'>Under
+the “Resources” folder there are sub-folders. Each sub-folder contains the
+resources used for each color depth. </span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-family:Arial'>The
+xml file(s) in each sub-folder were used to generate the resources for the
+demo. </span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-family:Arial'>In
+each color depth mode, there are two xml projects, the compressed images and
+uncompressed images. The compressed images will use the IPU module of the
+PIC24FJ256DA210 while the uncompressed images will render the images directly
+without IPU. Open the xml projects in &quot;Graphics Resource Converter&quot;
+utility to see which files are loaded for each color depth modes.</span></p>
+
+<p class=MsoListParagraph style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-size:10.0pt;font-family:Symbol'>·</span><span style='font-size:
+7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-size:10.0pt;font-family:Arial'>internal_resource_color_depth_Xbpp_mode.xml
+&#8211; resources loaded to internal flash memory with images NOT compressed.</span></p>
+
+<p class=MsoListParagraph style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-size:10.0pt;font-family:Symbol'>·</span><span style='font-size:
+7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-size:10.0pt;font-family:Arial'>internal_resource_color_depth_Xbpp_mode_ipu.xml
+&#8211; resources loaded to internal flash memory with images compressed<o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-size:10.0pt;font-family:Arial'>Where X is the color depth of the
+demo (1, 4 or 8)</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>When using the IPU, the compressed and decompressed buffers
+are enabled. These buffers can be placed anywhere in EDS memory. For the demo,
+the configuration used places the buffers in External RAM. The reason they are
+placed in external RAM is because there may not be enough memory for the
+buffers to fit in the internal 96K RAM. For 1 <span class=SpellE>bpp</span> and
+4 <span class=SpellE>bpp</span>, it may fit in the internal memory. For
+simplicity of the code the compressed and decompressed buffers are <span
+class=GramE>placed &nbsp;in</span> External RAM.&nbsp;</span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2><a name="configuring_the_software"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Configuring the Software <o:p></o:p></span></h2>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-family:Arial'>The
+demo can be run using the QVGA display when using the <a
+href="http://www.microchipdirect.com/productsearch.aspx?Keywords=DM240312">PIC24FJ256DA210
+Development Board</a> (DM240312). This is set in the project <span
+class=SpellE>system_config.h</span> file located in <span class=SpellE>src</span>/<span
+class=SpellE>system_config</span>/ directory. The <span class=SpellE>src</span>/<span
+class=SpellE>system_config</span>/ directory contains different directories
+that correspond to the different build configuration of the demo. Selecting the
+build configuration in MPLAB X will select the <span class=SpellE>system_config.h</span>
+to use.</span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·</span><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE><span style='font-family:Arial'>For</span></span><span
+style='font-family:Arial'> 1bpp color depth, uncompressed images with QVGA
+display use:’</span></p>
+
+<p class=MsoPlainText style='margin-left:.75in'><span class=GramE><span
+style='font-family:Arial'>pic24fj256da210</span></span><span style='font-family:
+Arial'>_dev_board_qvgav1_1bpp</span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·</span><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE><span style='font-family:Arial'>For</span></span><span
+style='font-family:Arial'> 1bpp color depth, IPU compressed images with QVGA
+display use:</span></p>
+
+<p class=MsoPlainText style='margin-left:.75in'><span class=GramE><span
+style='font-family:Arial'>pic24fj256da210</span></span><span style='font-family:
+Arial'>_dev_board_qvgav1_1bpp_ipu</span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·</span><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE><span style='font-family:Arial'>For</span></span><span
+style='font-family:Arial'> 4bpp color depth, uncompressed images with QVGA
+display use:’</span></p>
+
+<p class=MsoPlainText style='margin-left:.75in'><span class=GramE><span
+style='font-family:Arial'>pic24fj256da210</span></span><span style='font-family:
+Arial'>_dev_board_qvgav1_4bpp</span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·</span><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE><span style='font-family:Arial'>For</span></span><span
+style='font-family:Arial'> 4bpp color depth, IPU compressed images with QVGA
+display use:</span></p>
+
+<p class=MsoPlainText style='margin-left:.75in'><span class=GramE><span
+style='font-family:Arial'>pic24fj256da210</span></span><span style='font-family:
+Arial'>_dev_board_qvgav1_4bpp_ipu</span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·</span><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE><span style='font-family:Arial'>For</span></span><span
+style='font-family:Arial'> 8bpp color depth, uncompressed images with QVGA
+display use:’</span></p>
+
+<p class=MsoPlainText style='margin-left:.75in'><span class=GramE><span
+style='font-family:Arial'>pic24fj256da210</span></span><span style='font-family:
+Arial'>_dev_board_qvgav1_8bpp</span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·</span><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE><span style='font-family:Arial'>For</span></span><span
+style='font-family:Arial'> 8bpp color depth, IPU compressed images with QVGA
+display use:</span></p>
+
+<p class=MsoPlainText style='margin-left:.75in'><span class=GramE><span
+style='font-family:Arial'>pic24fj256da210</span></span><span style='font-family:
+Arial'>_dev_board_qvgav1_8bpp_ipu<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol'>·</span><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=GramE><span style='font-family:Arial'>For</span></span><span
+style='font-family:Arial'> 4bpp color depth, uncompressed images with WQVGA
+display use:’</span></p>
+
+<p class=MsoPlainText style='margin-left:.75in'><span class=GramE><span
+style='font-family:Arial'>pic24fj256da210</span></span><span style='font-family:
+Arial'>_dev_board_wqvgav1_4bpp</span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>For the configuration used for compressed images there are
+lines that declare the location of the buffers:</span></p>
+
+<p class=MsoListParagraph style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-size:10.0pt;font-family:Symbol'>·</span><span style='font-size:
+7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-size:10.0pt;font-family:Arial'>#define
+GFX_DECOMPRESSED_DATA_RAM_ADDRESS&nbsp; (GFX_EPMP_CS1_BASE_ADDRESS)</span></p>
+
+<p class=MsoListParagraph style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-size:10.0pt;font-family:Symbol'>·</span><span style='font-size:
+7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-size:10.0pt;font-family:Arial'>#define
+GFX_COMPRESSED_DATA_RAM_ADDRESS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(GFX_DECOMPRESSED_DATA_RAM_ADDRESS + GFX_DECOMPRESSED_BUFFER_SIZE)</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-family:Arial'>The
+table below shows the hardware set up for the selected Development Boards
+attached to different Display Boards:</span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><a name="required_hardware"></a><span class=Heading2Char><span
+style='font-size:14.0pt'>Required Hardware/Configuring the Hardware</span></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=602
+ style='width:601.55pt;border-collapse:collapse;mso-yfti-tbllook:1184;
+ mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=193 style='width:192.9pt;border:solid black 1.0pt;border-right:
+  solid windowtext 1.0pt;background:#365F91;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana;color:white'>Selected Development
+  Boards</span></b></p>
+  </td>
+  <td width=176 style='width:175.7pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid black 1.0pt;
+  background:#365F91;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana;color:white'>Graphics <span
+  class=SpellE>PICtail</span> Board</span></b></p>
+  </td>
+  <td width=117 style='width:117.0pt;border-top:solid black 1.0pt;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#365F91;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana;color:white'>3.2&#8243; QVGA Truly
+  TFT Display Board (<a href="http://www.microchip.com/AC164127-4">AC164127-4</a>)</span></b></p>
+  </td>
+  <td width=116 style='width:115.95pt;border-top:solid black 1.0pt;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#365F91;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana;color:white'>4.3&#8243; WQVGA <span
+  class=SpellE>Powertip</span> TFT Display Board (<a
+  href="http://www.microchip.com/AC164127-6">AC164127-6</a>)</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=193 style='width:192.9pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><span style='font-size:8.0pt;font-family:Verdana'>&nbsp;</span></p>
+  <p class=MsoPlainText><span style='font-size:8.0pt;font-family:Verdana'><a
+  href="http://www.microchip.com/DM240312">PIC24FJ256DA210 Development Board</a>
+  (DM240312)</span></p>
+  </td>
+  <td width=176 style='width:175.7pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='text-align:center'><span class=GramE><span
+  style='font-size:8.0pt;font-family:Verdana'>none</span></span></p>
+  </td>
+  <td width=117 style='width:117.0pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:"Arial Unicode MS"'>&#10003;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:8.0pt;font-family:Verdana'>(<span class=GramE>see</span>
+  note 1)</span></p>
+  </td>
+  <td width=116 style='width:115.95pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:"Arial Unicode MS"'>&#9745;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:8.0pt;font-family:Verdana'><span
+  style="mso-spacerun:yes"> </span>(see notes 1 &amp; 2)</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=602 colspan=4 valign=top style='width:601.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Note: </span></p>
+  <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-size:
+  8.0pt;font-family:Verdana'>1.</span><span style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><span style='font-size:8.0pt;font-family:Verdana'>When using
+  PIC24FJ256DA210 Development Board set the jumpers to:</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP8 &#8211; open (color depth is 16BPP, byte
+  access is not performed)</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP9 &#8211; set to 1-2 (use Y- signal)</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP10 &#8211; set to 1-2 (use X+ signal)</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP11 &#8211; don’t care</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP12 &#8211; set to 2-4 to use RX when UART is
+  enabled or set to 2-1 when not using UART and the backlight control is
+  enabled.</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP23 &#8211; set to 2-3 (use SPI Flash)</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP13 &#8211; don’t care (or set to default RG8-S1)</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP14 &#8211; don’t care (or set to default RE9-S2)</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP15 &#8211; don’t care (or set to default RB5-<span
+  class=GramE>POT(</span>RB5))</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP16 &#8211; don’t care (or set to default
+  USART_TX-TX)</span></p>
+  <p class=MsoListParagraph style='margin-left:1.25in;text-indent:-.25in'><span
+  style='font-size:8.0pt;font-family:Verdana'>-</span><span style='font-size:
+  7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+  8.0pt;font-family:Verdana'>JP17 &#8211; don’t care (or set to default
+  USART_RX-RX)</span></p>
+  <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-size:
+  8.0pt;font-family:Verdana'>2.</span><span style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><span style='font-size:8.0pt;font-family:Verdana'>To use WQVGA with
+  8BPP, the internal memory of the PIC24FJ256DA210 cannot be used for display
+  buffer. <span class=GramE>modify</span> the <span class=SpellE>system_config.h</span>
+  file to use external memory. This will require changes to GFX_DISPLAY_BUFFER_START_ADDRESS
+  and GFX_DISPLAY_BUFFER_LENGTH macro definition.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=365
+ style='width:364.5pt;margin-left:-.4pt;border-collapse:collapse;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:12.75pt'>
+  <td width=365 nowrap colspan=4 valign=bottom style='width:364.5pt;border:
+  solid windowtext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal><span style='font-family:Arial'>Legend:</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:12.75pt'>
+  <td width=32 nowrap valign=bottom style='width:31.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:"Arial Unicode MS"'>&#10003;</span></p>
+  </td>
+  <td width=135 nowrap style='width:135.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Supported
+  out of the box</span></p>
+  </td>
+  <td width=32 valign=bottom style='width:31.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:12.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:"Arial Unicode MS"'>&#9746;</span></p>
+  </td>
+  <td width=167 style='width:166.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:12.75pt'>
+  <p class=MsoNormal style='margin-left:.1in'><span style='font-size:10.0pt;
+  font-family:Arial'>Hardware compatible, will need firmware modification</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes;height:12.75pt'>
+  <td width=32 nowrap valign=bottom style='width:31.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:"Arial Unicode MS"'>&#9745;</span></p>
+  </td>
+  <td width=135 nowrap style='width:135.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Supported,
+  see limitations</span></p>
+  </td>
+  <td width=32 valign=bottom style='width:31.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:12.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:"Arial Unicode MS"'>&#10007;</span></p>
+  </td>
+  <td width=167 style='width:166.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 0in 0in 0in;height:12.75pt'>
+  <p class=MsoNormal style='margin-left:.1in'><span style='font-size:10.0pt;
+  font-family:Arial'>Not supported, hardware not compatible</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b>Trademarks:</b></p>
+
+<p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:10.0pt;
+font-family:Arial;color:black'>The Microchip name and logo, the Microchip logo,
+MPLAB, and PIC are registered trademarks of Microchip Technology Incorporated
+in the U.S.A. and other countries.</span></i></p>
+
+<p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:10.0pt;
+font-family:Arial;color:black'>PICDEM and <span class=SpellE>PICTail</span> are
+trademarks of Microchip Technology Incorporated in the U.S.A. and other
+countries.</span></i></p>
+
+<p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:10.0pt;
+font-family:Arial;color:black'>SD is a trademark of the SD Association in the
+U.S.A and other countries</span></i></p>
+
+<p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:10.0pt;
+font-family:Arial;color:black'>Microsoft, Windows, Excel, and Windows Vista are
+either registered trademarks or trademarks of Microsoft Corporation in the United
+States and/or other countries.</span></i></p>
+
+</div>
+
+</body>
+
+</html>
