@@ -1,0 +1,1344 @@
+<html xmlns:ns0="http://macVmlSchemaUri">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>Release Notes for Microchip Libraries for Applications</title>
+<style>
+<!--
+<<<<<<< .mine
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+=======
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+>>>>>>> .r30046
+p.msolistparagraphCxSpFirst, li.msolistparagraphCxSpFirst, div.msolistparagraphCxSpFirst
+	{mso-style-name:msolistparagraphCxSpFirst;
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+p.MSONORMALCXSPMIDDLE
+	{<<<<<<< .mine
+	font-family:"Times New Roman","serif";}
+li.MSONORMALCXSPMIDDLE
+	{<<<<<<< .mine
+	font-family:"Times New Roman","serif";}
+div.MSONORMALCXSPMIDDLE
+	{<<<<<<< .mine
+	font-family:"Times New Roman","serif";}
+=======
+	font-family:"Times New Roman","serif";
+>>>>>>> .r30046
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Arial","sans-serif";}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	font-style:italic;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:24.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:48.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:84.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:96.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	color:#365F91;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria","serif";
+	color:#365F91;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria","serif";
+	color:#4F81BD;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+p.msolistparagraphCxSpMiddle, li.msolistparagraphCxSpMiddle, div.msolistparagraphCxSpMiddle
+	{mso-style-name:msolistparagraphCxSpMiddle;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msolistparagraphCxSpLast, li.msolistparagraphCxSpLast, div.msolistparagraphCxSpLast
+	{mso-style-name:msolistparagraphCxSpLast;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msolistparagraph0, li.msolistparagraph0, div.msolistparagraph0
+	{mso-style-name:msolistparagraph;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.msonormalcxspmiddle, li.msonormalcxspmiddle, div.msonormalcxspmiddle
+	{mso-style-name:msonormalcxspmiddle;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.element10, li.element10, div.element10
+	{mso-style-name:element10;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+.MsoChpDefault
+	{font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+<meta name=Title
+content="Release Notes for Microchip Libraries for Applications">
+<meta name=Keywords content="">
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b><span style='font-family:"Arial","sans-serif"'>Release
+Notes for Microchip Libraries for Applications v2015-08-10</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Microchip
+Technology Inc. 2015</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>August, 2015</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Arial","sans-serif"'>Table of
+Contents</span></b></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='font-size:12.0pt'><a
+href="release_notes_mla.htm#_Toc394933044">1.&nbsp; What is Microchip Libraries
+for Applications?<span style='display:none'>. 1</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='font-size:12.0pt'><a
+href="release_notes_mla.htm#_Toc394933045">2.&nbsp; Installing/Uninstalling<span
+style='display:none'>. 1</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='font-size:12.0pt'><a
+href="release_notes_mla.htm#_Toc394933046">3.&nbsp; What’s New, Changed, and
+Migration<span style='display:none'>. 2</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='font-size:12.0pt'><a
+href="release_notes_mla.htm#_Toc394933047">4.&nbsp; Current MLA vs. Legacy MLA<span
+style='display:none'>. 4</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span style='font-size:12.0pt'><a
+href="release_notes_mla.htm#_Toc394933048">5.&nbsp; Customer Support<span
+style='display:none'> 7</span></a></span></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1 style='margin-right:.9pt'><a name="_Toc394933044"></a><a
+name="_Toc378830512"></a><a name="_Toc329261084"></a><a name="_Toc315952982"></a><a
+name="_Toc310425461"></a><a name="_Toc294259778"></a><a name="_Toc295985460"></a>1.<span
+style='font-size:7.0pt;font-family:"Times New Roman","serif"'>&nbsp; </span>What
+is Microchip Libraries for Applications?</h1>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:5.0pt;
+margin-left:0in;text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Microchip
+Libraries for Applications (MLA) is a collection of Microchip firmware
+libraries and demo projects. Not all firmware libraries and demo projects from
+Microchip are distributed in this package; rather, this package includes a few
+specific libraries that tend to be used together.</span> <span
+style='font-family:"Arial","sans-serif"'>By distributing libraries that are
+used often together, Microchip can provide example projects that integrate the
+use of multiple libraries.</span> <span style='font-family:"Arial","sans-serif"'>MLA
+is currently being distributed mainly in the source code form to provide the
+maximum flexibility for end designers to customize firmware to fit his/her
+applications.</span></p>
+
+<h1><a name="_Toc394933045"></a><a name="_Toc378830513"></a><a
+name="_Toc329261085"></a><a name="_Toc315952983"></a><a name="_Toc310425462"></a><a
+name="_Toc294259779"></a><a name="_Toc295985461"></a>2.<span style='font-size:
+7.0pt;font-family:"Times New Roman","serif"'>&nbsp; </span>Installing/Uninstalling</h1>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>To
+obtain the latest version of the MLA, you can download it from the Microchip
+web site at <a href="http://www.microchip.com/MLA"><span style='font-family:
+"Times New Roman","serif"'>www.microchip.com/MLA</span></a>.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-autospace:none'><span
+style='font-family:"Arial","sans-serif"'>If installing over an existing MLA
+folder location, files that will be overwritten are back-up to the folder named
+‘rollbackBackupDirectory’. A preferred method is to install different MLA
+versions in separate directories.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>One
+or more third party libraries maybe required to run PC programs, this includes
+but not be limited to Java Runtime Environment (JRE), Qt framework, and/or .NET
+framework.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>For
+Java programs (.jar extension), the jar files must be associated with the JRE
+in order to run.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>MLA
+can be uninstalled by either running the uninstaller or simply delete the root
+installation folder. Either way, users should make sure to back-up any modified
+files.</span></p>
+
+<h1><a name="_Toc394933046"></a><a name="_Toc378830514"></a><a
+name="_Toc329261086"></a><a name="_Toc315952984"></a><a name="_Toc310425463"></a><a
+name="_Toc294259780"></a><a name="_Toc295985462"></a><a name="_3.__What’s"></a>3.<span
+style='font-size:7.0pt;font-family:"Times New Roman","serif"'>&nbsp; </span>What’s
+New, Changed, and Migration</h1>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Please
+read important information about the MLA transition in section </span><span
+class=MsoHyperlink><a href="release_notes_mla.htm#_Toc394933047">Current MLA
+vs. Legacy MLA</a></span><span style='font-family:"Arial","sans-serif";
+display:none'>&nbsp; 4</span><span style='font-family:"Arial","sans-serif"'>.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>For
+a full list of changes in this release, read each individual library’s release
+notes after installation.&nbsp; This section provides only a summary of key
+changes in this release:</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+"Arial","sans-serif"'>Key Summary:</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse'>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border:solid #4F81BD 1.0pt;
+  border-bottom:none;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><b><span style='font-family:"Arial","sans-serif";
+  color:black'>Library</span></b></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:solid #4F81BD 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid #4F81BD 1.0pt;
+  background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><b><span style='font-family:"Arial","sans-serif";
+  color:black'>Current Version</span></b></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border:solid #4F81BD 1.0pt;
+  border-left:none;background:#F2F2F2;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><b><span
+  style='font-family:"Arial","sans-serif";color:black'>PIC16F</span></b></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:solid #4F81BD 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid #4F81BD 1.0pt;
+  background:#F2F2F2;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><b><span
+  style='font-family:"Arial","sans-serif";color:black'>PIC18F</span></b></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:solid #4F81BD 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid #4F81BD 1.0pt;
+  background:#F2F2F2;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><b><span
+  style='font-family:"Arial","sans-serif";color:black'>PIC24 &amp; dsPIC33</span></b></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:solid #4F81BD 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid #4F81BD 1.0pt;
+  background:#F2F2F2;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><b><span
+  style='font-family:"Arial","sans-serif";color:black'>PIC32</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>USB</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border:solid #4F81BD 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>2.13</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border:solid #4F81BD 1.0pt;
+  border-left:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border:solid #4F81BD 1.0pt;
+  border-left:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border:solid #4F81BD 1.0pt;
+  border-left:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border:solid #4F81BD 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>Graphics</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>4.60</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border-top:none;border-left:
+  solid #4F81BD 1.0pt;border-bottom:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>File
+  I/O</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>1.02</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>Crypto
+  SW (software implementation)</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border:solid #4F81BD 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>2.00.01b</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border:solid #4F81BD 1.0pt;
+  border-left:none;padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border:solid #4F81BD 1.0pt;
+  border-left:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border:solid #4F81BD 1.0pt;
+  border-left:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border:solid #4F81BD 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>Crypto
+  16bv1 (Hardware implementation)</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>0.01.01b</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border:solid #4F81BD 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>Crypto
+  Hash</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>1.00</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border:solid #4F81BD 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>Smart
+  Card</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>2.02</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border:solid #4F81BD 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>MiWi</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>5.15</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border:solid #4F81BD 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>TCPIP</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>5.45</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border-top:none;border-left:
+  solid #4F81BD 1.0pt;border-bottom:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>Smartphone</span></p>
+  </td>
+  <td width=158 valign=top style='width:94.5pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>1.04.01</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0in;
+  margin-bottom:5.0pt;margin-left:0in;text-align:center'><span
+  style='font-family:"Arial","sans-serif"'>x</span></p>
+  </td>
+  <td width=165 valign=top style='width:99.0pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+ </tr>
+ <tr>
+  <td width=343 valign=top style='width:205.8pt;border:solid #4F81BD 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'></td>
+  <td width=158 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'></td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+  <td width=165 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 0in 0in 0in'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<h2><a name="_3.1_MCHPFSUSB_Framework"></a>3.1 USB Library</h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Added
+     support for PIC24FJ256GB410 PIM</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Now
+     licensed under Apache v2.0 license. Available upon request under MLA
+     license</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Added
+     EVENT_ALT_INTERFACE and EVENT_HOLD_BEFORE_CONFIGURATION to host mode
+     operation for increased user/driver flexibility</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>HID
+     host API updated to allow for simultaneous IN and OUT transfers</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>USBHostHIDDeviceDetect()
+     updated to allow for detection of new devices without having to scan all
+     possible addresses</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Minor
+     optimization for speed and size</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Fixed
+     issue with being able to scan multiple configurations on an attached
+     device</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Allow
+     a driver to not have a data event handler by placing NULL in the TPL table</span></li>
+</ul>
+
+<p class=MsoListParagraph style='margin-left:1.5in'><span style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>For more
+information about the specific changes in this revision, please refer to the
+Revision History section of the USB Library Help file.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<h2><a name="_3.2_Graphics_Library"></a>3.2 Graphics Library</h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Added
+     support for PIC24FJ256GB410 PIM</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Fixed
+     issue on progress bar when initializing the range, the position should not
+     reset to zero.</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Fixed
+     build error on list box when focus is enabled.</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Fixed
+     build error on radio button when focus is enabled with touch screen
+     enabled.</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Fixed
+     bug on list box when selection is changed and the list is empty.</span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Removed
+     build warning on drv_gfx_tft003 driver when transparent color feature is
+     disabled.</span></li>
+</ul>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>For more information
+about the specific changes in this revision, please refer to the detailed
+release notes in the Graphics Library Help file.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<h2 style='margin-left:20.25pt;text-indent:-20.25pt'><a name="_3.3_MDD_Library"></a>3.3
+File I/O Library</h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Updated
+     to fix issue with support of soft detect for connectors without a card
+     detect pin.</span></li>
+</ul>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>For
+more information about the specific changes in this revision, please refer to
+the detailed release notes in the File I/O Library Help file.</span></p>
+
+<h2><a name="_3.4_TCP/IP_Stack"></a>3.4 Crypto SW Library</h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>No
+     changes.</span></li>
+</ul>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>For more information
+about the specific changes in this revision, please refer to the detailed
+release notes in the Crypto SW Library Help file.</span></p>
+
+<h2>3.5 Crypto 16BV1 Library</h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Fixed
+     issue in multiple concurrent encryption/decryption requests</span></li>
+</ul>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>For more
+information about the specific changes in this revision, please refer to the
+detailed release notes in the Crypto 16BV1 Library Help file.</span></p>
+
+<h2><a name="_3.5_mTouchCap_Library"></a>3.6 Crypto Hash Library</h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-autospace:none'><a name="_3.6_Smart_Card"></a><span
+     style='font-family:"Arial","sans-serif"'>No Changes</span></li>
+</ul>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>For more
+information about the specific changes in this revision, please refer to the
+detailed release notes in the Crypto Hash Library Help file.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<h2>3.7 Smart Card Library</h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Added
+     support for PIC24FJ256GB410 PIM</span></li>
+</ul>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>For more
+information about the specific changes in this revision, please refer to the
+detailed release notes in the Smart Card Library Help file.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>3.8 MiWi Library</h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Updated
+     to support the latest versions of XC8 (1.35) and XC16 (1.25) compiler
+     distribution packages</span></li>
+</ul>
+
+<p class=MsoNormal style='margin-left:.5in;text-autospace:none'><span
+style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>For more
+information about the specific changes in this revision, please refer to the
+detailed release notes in the MiWi Library Help file.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>3.9 TCPIP Library</h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Minor
+     changes to fit latest version of XC8, XC16 and XC32 compilers. </span></li>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>If
+     using XC32 v1.40 or later, a separate legacy peripheral libraries installation
+     is required for PIC32 TCPIP MPLAB X projects</span></li>
+</ul>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>For more
+information about the specific changes in this revision, please refer to the detailed
+release notes in the TCPIP Library Help file.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>&nbsp;3.10 Smartphone Library</h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Updating
+     demo to use new HID host API.</span></li>
+</ul>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>For
+more information about the specific changes in this revision, please refer to
+the detailed release notes in the Smartphone Library Help file.</span></p>
+
+<h1><a name="_Toc394933047">4.</a><span style='font-size:7.0pt;font-family:
+"Times New Roman","serif"'>&nbsp; </span>Current MLA vs. Legacy MLA</h1>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>All
+prior MLA distributions from v2013-06-15 and older are now referred to as
+‘Legacy MLA’. And MLA from distribution v2013-12-20 and newer are now referred
+to simply as ‘MLA’ or ‘Current MLA’. Both MLA and Legacy MLA will continue to
+be available from <a href="http://www.microchip.com/MLA"><span
+style='font-family:"Times New Roman","serif"'>www.microchip.com/MLA</span></a>
+during the transition. All older versions are always available from the archive
+download section.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>Here
+is the list of common changes across all libraries compared to legacy MLA:</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:12.0pt;text-indent:-.25in;
+text-autospace:none'><span style='font-family:"Arial","sans-serif"'>a)</span><span
+style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp; </span><span style='font-family:
+"Arial","sans-serif"'>New folder and file naming convention and organization:<br>
+<b><br>
+</b>The reason for this change is to avoid having spaces and mixed upper and
+lower case letters in the source file names and paths. Spaces and special
+characters are recommended to be avoided when using with MPLAB X, due to the
+low compatibility with the make tool chain. Letter case is now always
+lowercase, except for assembly files requiring C preprocessing, which would use
+uppercase S extension. This guidance helps reduce mistakes in letter case
+mismatch between #include file_name and the actual file name itself, and also
+when setting project paths. Windows OS is case insensitive, but Linux is case
+sensitive. In general, below is the closest match between the Legacy MLA
+structure and the Current MLA structure.</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse'>
+ <tr>
+  <td width=315 valign=top style='width:189.0pt;border:solid #4F81BD 1.0pt;
+  border-bottom:none;background:#4F81BD;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><b><span style='font-family:"Arial","sans-serif";
+  color:white'>Legacy MLA</span></b></p>
+  </td>
+  <td width=328 valign=top style='width:196.8pt;border-top:solid #4F81BD 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid #4F81BD 1.0pt;
+  background:#4F81BD;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><b><span style='font-family:"Arial","sans-serif";
+  color:white'>Current MLA</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=315 valign=top style='width:189.0pt;border:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>&lt;mla_install&gt;/Microchip</span></p>
+  </td>
+  <td width=328 valign=top style='width:196.8pt;border:solid #4F81BD 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>&lt;mla_install&gt;/framework</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=315 valign=top style='width:189.0pt;border:solid #4F81BD 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>&lt;mla_install&gt;/Microchip/Include</span></p>
+  </td>
+  <td width=328 valign=top style='width:196.8pt;border-top:none;border-left:
+  none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>&lt;mla_install&gt;/framework</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=315 valign=top style='width:189.0pt;border-top:none;border-left:
+  solid #4F81BD 1.0pt;border-bottom:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>&lt;mla_install&gt;/Microchip/Help</span></p>
+  </td>
+  <td width=328 valign=top style='width:196.8pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>&lt;mla_install&gt;/doc</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=315 valign=top style='width:189.0pt;border:solid #4F81BD 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>&lt;mla_install&gt;/[demos]</span></p>
+  </td>
+  <td width=328 valign=top style='width:196.8pt;border:solid #4F81BD 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:
+  5.0pt;margin-left:0in'><span style='font-family:"Arial","sans-serif"'>&lt;mla_install&gt;/apps/[demos]</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph style='text-autospace:none'><span style='font-family:
+"Arial","sans-serif"'><br>
+This new folder structure is not just for MLA. It is a structure that is being
+used more and more in other software distributions from Microchip. An example
+is the Explorer16 demo, downloadable from <a
+href="http://www.microchip.com/Explorer16"><span style='font-family:"Times New Roman","serif"'>www.microchip.com/Explorer16</span></a>.
+Additional explanation of the file and folder organization can be found in
+&lt;mla_install&gt;/doc/help_mla_getting_started.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:12.0pt;text-indent:-.25in;
+text-autospace:none'><span style='font-family:"Arial","sans-serif"'>b)</span><span
+style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp; </span><span style='font-family:
+"Arial","sans-serif"'>MPLAB X and XC Compilers:<br>
+<br>
+Out of the box support for MPLAB 8 IDE, C18, C30, and C32 compilers are no
+longer distributed or tested. A few exceptions still exist for some C18
+projects, but going forward, MLA is providing out of the box support only for
+MPLAB X and XC compilers. A key reason for this change is MPLAB 8, C18, C30 and
+C32 are no longer updated for new products.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:12.0pt;text-indent:-.25in;
+text-autospace:none'><span style='font-family:"Arial","sans-serif"'>c)</span><span
+style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-family:
+"Arial","sans-serif"'>GenericTypeDefs.h usage is superseded by the use of C99
+fixed width data types:<br>
+<br>
+Usage of type definitions in GenericTypeDefs.h, such as BYTE, WORD, DWORD, is
+now superseded by C99 fixed width data types such as uint8_t, uint16_t,
+uint32_t, etc. Include &lt;stdint.h&gt; to use the C99 fixed width data types.
+The reason for this change is simply a shift to use an existing standard
+definition, which helps avoid type conflict when combining MLA firmware with
+other non-MLA firmware.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:12.0pt;text-indent:-.25in;
+text-autospace:none'><span style='font-family:"Arial","sans-serif"'>d)</span><span
+style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp; </span><span style='font-family:
+"Arial","sans-serif"'>Compiler.h is no longer distributed:<br>
+<br>
+Compiler.h used to serve as a common file to normalize compiler differences.
+This is now changed to be handled by each application specific build
+abstraction files.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:12.0pt;text-indent:-.25in;
+text-autospace:none'><span style='font-family:"Arial","sans-serif"'>e)</span><span
+style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp; </span><span style='font-family:
+"Arial","sans-serif"'>HardwareProfile.h is superseded by system.c, system.h and
+system_config.h:<br>
+<br>
+The reason for this change is, not all hardware abstraction was possible with
+just a header file. So a C file is introduced to increase the abstraction
+flexibility. This in turn helps reduce the number of #if #else seen in the
+Legacy MLA examples. MPLAB X project organization and the utilization of the
+MPLAB X build configuration and file exclusion features also contributes to the
+reduction in the #if #else usages.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:12.0pt;text-indent:-.25in;
+text-autospace:none'><span style='font-family:"Arial","sans-serif"'>f)</span><span
+style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-family:"Arial","sans-serif"'>Peripheral Driver Abstraction<br>
+<br>
+In Legacy MLA, often times, different libraries have their own implementation
+of the commonly used peripheral drivers, making it difficult to use different
+libraries together when there are hardware driver conflicts. In the Current
+MLA, common peripheral driver abstraction, implementation and usages have
+improved. Not all drivers are fully abstracted yet, but the commonly used ones
+such as UART and SPI are available. More will be ported and implemented over
+time.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:12.0pt;text-indent:-.25in;
+text-autospace:none'><span style='font-family:"Arial","sans-serif"'>g)</span><span
+style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp; </span><span style='font-family:
+"Arial","sans-serif"'>Help File Format<br>
+<br>
+In Legacy MLA, help files were available in CHM and PDF format. The CHM format
+is a Windows OS centric format. With the motivation to support cross-platform,
+the CHM file format has been dropped in exchange for the Java Help. In the
+Current MLA, help files are available in JAR and PDF format. The JAR help file
+should look and feel like the CHM help file, and can be opened on many
+platforms that support Java. There are a few known issues with the current JAR
+help file output, a key one being that clicking on web links does not launch an
+external browser. A recommended work around for now is to highlight the URL and
+copy (keyboard shortcut) then paste into the browser. Or use the PDF help file.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:12.0pt;text-indent:-.25in;
+text-autospace:none'><span style='font-family:"Arial","sans-serif"'>h)</span><span
+style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp; </span><span style='font-family:
+"Arial","sans-serif"'>USB, Graphics, and File System Support for PIC32<br>
+<br>
+USB, Graphics, and File System support for PIC32MX/MZ is now migrated to MPLAB
+Harmony, downloadable from <a href="http://www.microchip.com/Harmony"><span
+style='font-family:"Times New Roman","serif"'>www.microchip.com/Harmony</span></a>.
+API compatibility between MLA and Harmony will converge for some libraries in the
+long run. For example, Graphics Library v4.00 in both MLA and Harmony are
+already highly compatible with each other.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:12.0pt;text-indent:-.25in;
+text-autospace:none'><span style='font-family:"Arial","sans-serif"'>i)</span><span
+style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-family:"Arial","sans-serif"'>API changes<br>
+<br>
+There a number of reasons that lead to API changes. One is a shift to adopt a
+common naming convention to avoid long term naming collision. The naming
+convention is to go from module to sub-module, and to features/actions. As an
+example, a common macro in Legacy MLA GetPeripheralClock() is now
+SYS_CLK_FrequencyPeripheralGet(). Another reason is, when enhancing library
+capability and features, certain API changes are unavoidable.</span></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;text-autospace:none'><span
+style='font-family:"Arial","sans-serif"'>j)</span><span style='font-size:7.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-family:"Arial","sans-serif"'>Not everything has been
+ported<br>
+<br>
+Given the amount of changes, not everything has been ported. Again, during the
+transition period, both Current MLA and Legacy MLA are available. And overtime,
+more of what was in Legacy MLA will continued to be ported to the Current MLA;
+including libraries, demos, and hardware support. New additions will also be
+introduced. For example, in this release, Crypto and Crypto Hash libraries are
+new. </span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'>&nbsp;</p>
+
+<h1 style='margin-left:.5in;text-indent:-.5in'><a name="_Toc394933048"></a><a
+name="_Toc378830515"></a><a name="_Toc329261087"></a><a name="_Toc315952985"></a><a
+name="_Toc310425465"></a><a name="_Toc295985464"></a><a name="_Toc234048529"></a><a
+name="_Toc294259782"></a>5.<span style='font-size:7.0pt;font-family:"Times New Roman","serif"'>&nbsp;
+</span>Customer Support</h1>
+
+<h2><a name="_Toc175736817">The Microchip Web Site</a></h2>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Microchip
+provides online support via our web site at <a href="http://www.microchip.com/"><span
+style='font-family:"Times New Roman","serif"'>http://www.microchip.com</span></a>.
+This web site is used as a means to make files and information easily available
+to customers. Accessible by using your favorite Internet browser, the web site
+contains the following information:</span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Product
+     Support - Data sheets and errata, application notes and sample programs,
+     design resources, user's guides and hardware support documents, latest software
+     releases and archived software</span></li>
+ <li class=MsoNormal><span style='font-family:"Arial","sans-serif"'>General
+     Technical Support - Frequently Asked Questions (FAQs), technical support
+     requests (<a href="http://support.microchip.com/"><span style='font-family:
+     "Times New Roman","serif"'>http://support.microchip.com</span></a>),
+     online discussion groups/forums (<a href="http://forum.microchip.com/"><span
+     style='font-family:"Times New Roman","serif"'>http://forum.microchip.com</span></a>),
+     Microchip consultant program member listing</span></li>
+ <li class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Business of
+     Microchip - Product selector and ordering guides, latest Microchip press
+     releases, listing of seminars and events, listings of Microchip sales offices,
+     distributors and factory representatives</span></li>
+</ul>
+
+<h2><a name="_Toc175736818">Development Systems Customer Change Notification
+Service</a></h2>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Microchip's
+customer notification service helps keep customers current on Microchip
+products. Subscribers will receive e-mail notification whenever there are
+changes, updates, revisions or errata related to a specified product family or
+development tool of interest.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>To register,
+access the Microchip web site at www.microchip.com, click on Customer Change
+Notification and follow the registration instructions.</span></p>
+
+<h2><a name="_Toc175736819">Additional Support</a></h2>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Users of
+Microchip products can receive assistance through several channels:</span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Distributor
+     or Representative</span></li>
+ <li class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Local Sales
+     Office</span></li>
+ <li class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Field
+     Application Engineer (FAE)</span></li>
+ <li class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Technical
+     Support</span></li>
+</ul>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Customers
+should contact their distributor, representative or field application engineer
+(FAE) for support. Local sales offices are also available to help customers. A
+listing of sales offices and locations is available on our website.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Technical
+support is available through the web site at: <a
+href="http://support.microchip.com/"><span style='font-family:"Times New Roman","serif"'>http://support.microchip.com</span></a></span><a
+name="_Toc163987715"></a><a name="License_Agreements"></a></p>
+
+<h2><a name="_Toc175736820">Training</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Regional
+     Training Centers: <a href="http://www.microchip.com/rtc"><span
+     style='font-family:"Times New Roman","serif"'>http://www.microchip.com/rtc</span></a></span></li>
+ <li class=MsoNormal><span style='font-family:"Arial","sans-serif"'>MASTERs
+     Conference: <a href="http://www.microchip.com/masters"><span
+     style='font-family:"Times New Roman","serif"'>http://www.microchip.com/masters</span></a></span></li>
+ <li class=MsoNormal><span style='font-family:"Arial","sans-serif"'>Webseminars:
+     <a href="http://techtrain.microchip.com/webseminars/QuickList.aspx"><span
+     style='font-family:"Times New Roman","serif"'>http://techtrain.microchip.com/webseminars/QuickList.aspx</span></a></span></li>
+</ul>
+
+<p class=MsoNormal><b>&nbsp;</b></p>
+
+<p class=MsoNormal><b>&nbsp;</b></p>
+
+<p class=MsoNormal><a name="_Toc378830516"></a><a name="_Toc310425466"></a><a
+name="_Toc329261088"></a><a name="_Toc315952986"></a><b>Trademarks:</b></p>
+
+<p class=MsoNormal><i><span style='font-size:8.0pt;color:black'>The Microchip name
+and logo, the Microchip logo, MPLAB, and PIC are registered trademarks of
+Microchip Technology Incorporated in the U.S.A. and other countries.</span></i></p>
+
+<p class=MsoNormal><i><span style='font-size:8.0pt;color:black'>Android is a
+trademark of Google Inc&nbsp;</span></i></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
