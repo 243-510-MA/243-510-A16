@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 2013 Microchip Technology Inc. -->
+<!-- XML Format Policy -->
+<!--  Each board that is used for development of software should be part of this XML. This XML allows Microchip software to have 
+      same name of the board across different software packages\libraries released. This allows microchip to maintain a same set 
+      consistent names and collateral. 
+        
+      If the board that you are referring to is not listed in this list, please make sure that you add the board to this list. 
+
+      board_list : List of all  boards (with or without removable parts or pims), Plug-in modules. 
+      configuration_list : Configuration list allows library or driver configurations.
+            
+      description: Description of the part 
+      part_number: Part number as on Microchip Direct Site. 
+      If the board is used for software development either short_name or long_name should be present. macro_name is optional. 
+      long_name: Long Name when present should be used for code. The guidance is to use long_name first. If the long_name(s) start 
+        to get close to 75 characters, use short names. 
+      short_name : Short Name when present should be used for files\folders\build configurations. 
+      macro: The guidance is to use long_name or short_name for macros, but can use this to increase readability. 
+-->
+
+<name_reference_list>
+    <board_list>
+
+
+        <item>
+            <short_name>microstick2</short_name>
+            <!-- No long_name -->
+            <!-- No macro -->
+            <part_number>DM330013-2</part_number>
+            <description>Microstick II</description>
+        </item>
+
+        <item>
+            <short_name>microstick33f24h</short_name>
+            <!-- No long_name -->
+            <!-- No macro -->
+            <part_number>DM330013</part_number>
+            <description>Microstick for dsPIC33F and PIC24H</description>
+        </item>
+
+        <item>
+            <short_name>microstick3vk</short_name>
+            <!-- No long_name -->
+            <!-- No macro -->
+            <part_number>DM240013-1</part_number>
+            <description>Microstick for 3V PIC24F K-series</description>
+        </item>
+
+        <item>
+            <short_name>microstick5vk</short_name>
+            <!-- No long_name -->
+            <!-- No macro -->
+            <part_number>DM240013-2</part_number>
+            <description>Microstick for 5V PIC24F K-series</description>
+        </item>
+
+        <item>
+            <short_name>exp16</short_name>
+            <long_name>explorer16</long_name>
+            <macro>EXPLORER16</macro>
+            <description>Explorer 16 Development Board</description>          
+            <part_number>DM240001</part_number>
+        </item>
+
+        <item>
+            <!-- No short_name -->
+            <long_name>pic24fj256da210_dev_board</long_name>
+            <macro>PIC24FJ256DA210_DEV_BOARD</macro>
+            <description>PIC24FJ256DA210 Development Board</description>          
+            <part_number>DM240312</part_number>
+        </item>
+
+        <item>
+            <short_name>gfxv3</short_name>
+            <!-- No long_name -->
+            <macro>GFX_PICTAIL_V3</macro>
+            <description>Graphics LCD Controller PICtail(TM) Plus SSD1926 Board</description>          
+            <part_number>AC164127-5</part_number>
+        </item>
+
+        <item>
+            <!-- No short_name -->
+            <!-- No long_name -->
+            <!-- No macro -->
+            <description>Graphics Display Prototye Board</description>          
+            <part_number>AC164139</part_number>
+        </item>
+
+        <item>
+            <short_name>qvgav1</short_name>
+            <!-- No long_name -->
+            <macro>DISPLAY_PANEL_TFT_G240320LTSW_118W_E</macro>
+            <description>Graphics Display Truly 3.2" 240x320 Board</description>          
+            <part_number>AC164127-4</part_number>
+        </item>
+        
+        <item>
+            <short_name>wqvgav1</short_name>
+            <!-- No long_name -->
+            <macro>DISPLAY_PANEL_PH480272T_005_I11Q</macro>
+            <description>Graphics Display Powertip 4.3" 480x272 Board</description>          
+            <part_number>AC164127-6</part_number>
+        </item>
+
+        <item>
+            <short_name>vgav1</short_name>
+            <!-- No long_name -->
+            <macro>DISPLAY_PANEL_TFT_640480_8_E</macro>
+            <description>Graphics Display Truly 5.7" 640x480 Board</description>          
+            <part_number>AC164127-8</part_number>
+        </item>
+
+        <item>
+            <short_name>wvgav1</short_name>
+            <!-- No long_name -->
+            <macro>DISPLAY_PANEL_TFT_800480_33_E</macro>
+            <description>Graphics Display Truly 7.0" 800x480 Board</description>          
+            <part_number>AC164127-9</part_number>
+        </item>
+
+        <item>
+            <short_name>rcb</short_name>
+            <long_name>remote_control_board</long_name>
+            <macro>REMOTE_CONTROL_BOARD</macro>
+            <description>Remote Control Demo board</description>          
+            <part_number>DM240315-2</part_number>
+        </item>
+
+        <item>
+            <!-- No short_name -->
+            <long_name>pic24f_starter_kit</long_name>
+            <macro>PIC24F_STARTER_KIT</macro>
+            <description>PIC24F Starter Kit</description>          
+            <part_number>DM240011</part_number>
+        </item>
+
+        <item>
+            <!-- No short_name -->
+            <long_name>pic24h_starter_kit</long_name>
+            <macro>PIC24H_STARTER_KIT</macro>
+            <description>PIC24H Starter Kit</description>          
+            <part_number>DM240021</part_number>
+        </item>
+
+        <item>
+            <short_name>mikroe_pic24fj256gb110</short_name>
+            <!-- No long_name -->
+            <macro>MIKROE_PIC24</macro>
+            <description>Mikromedia Board for PIC24</description>
+            <part_number>TMIK010</part_number>
+        </item>        
+
+        <!-- Start of Plug In Modules -->
+
+        <item>
+            <short_name>pic24fj128ga010</short_name>
+            <long_name>pic24fj128ga010_pim</long_name>
+            <macro></macro>
+            <description>PIC24FJ128GA010 General Purpose Plug-In Module (PIM)</description>          
+            <part_number>MA240011</part_number>
+        </item>
+
+        <item>
+            <short_name>pic24fj256ga110</short_name>
+            <long_name>pic24fj256ga110_pim</long_name>
+            <macro></macro>
+            <description>PIC24FJ256GA110 General Purpose Plug-In Module (PIM)</description>          
+            <part_number>MA240015</part_number>
+        </item>
+
+        <item>
+            <short_name>pic24fj256gb110</short_name>
+            <long_name>pic24fj256gb110_pim</long_name>
+            <macro></macro>
+            <description>PIC24FJ256GB110 Plug-In Module (PIM)</description>          
+            <part_number>MA240014</part_number>
+        </item>
+
+        <item>
+            <short_name>pic24fj256gb210</short_name>
+            <long_name>pic24fj256gb210_pim</long_name>
+            <macro></macro>
+            <description>PIC24FJ256GB210 Plug-In Module (PIM)</description>          
+            <part_number>MA240021</part_number>
+        </item>
+
+        <item>
+            <short_name>pic24fj128gp504</short_name>
+            <long_name>pic24fj128gp504_pim</long_name>
+            <macro></macro>
+            <description>PIC24HJ128GP504 Plug-In Module (PIM)</description>          
+            <part_number>MA240016-2</part_number>
+        </item>
+
+        <item>
+            <short_name>dspic33fj128gp804</short_name>
+            <long_name>dspic33fj128gp804_pim</long_name>
+            <macro></macro>
+            <description>dsPIC33FJ128GP804 Plug-In Module (PIM)</description>          
+            <part_number>MA330019-2</part_number>
+        </item>
+
+        <item>
+            <short_name>dspic33ep512mu810</short_name>
+            <long_name>dspic33ep512mu810_pim</long_name>
+            <macro></macro>
+            <description>dsPIC33EP512MU810 Plug-In Module (PIM)</description>          
+            <part_number>MA330025-1</part_number>
+        </item>
+        
+        
+        <!--  End of Plug In Modules  -->
+
+        
+    </board_list>
+
+    <configuration_list>
+
+        <item>
+            <short_name>pmp16</short_name>
+            <macro>USE_16BIT_PMP</macro>
+            <description>Use 16 bits Parallel Master Port (PMP/EPMP) Interface Data Width.</description>          
+        </item>    
+
+        <item>
+            <short_name>pmp8</short_name>
+            <macro>USE_8BIT_PMP</macro>
+            <description>Use 8 bits Parallel Master Port (PMP/EPMP) Interface Data Width.</description>          
+        </item>    
+
+        <item>
+            <short_name>nvmspi</short_name>
+            <long_name>nvm_spi_flash</long_name>
+            <macro>GFX_APP_USE_NVM_SPI_FLASH</macro>
+            <description>Use SPI Flash memory for storage of Graphics Library resources.</description>          
+        </item>    
+
+        <item>
+            <short_name>nvmpar</short_name>
+            <long_name>nvm_parallel_flash</long_name>
+            <macro>GFX_APP_USE_NVM_PARALLEL_FLASH</macro>
+            <description>Use Parallel Flash memory for storage of Graphics Library resources.</description>          
+        </item>    
+
+        <item>
+            <short_name>pgmusb</short_name>
+            <long_name>program_nvm_with_usb</long_name>
+            <macro>GFX_APP_USE_USB_TO_PROGRAM_NVM_FLASH</macro>
+            <description>Use USB to program Non-Volatile memory.</description>          
+        </item>    
+
+        <item>
+            <short_name>pgmuart</short_name>
+            <long_name>program_nvm_with_uart</long_name>
+            <macro>GFX_APP_USE_UART_TO_PROGRAM_NVM_FLASH</macro>
+            <description>Use UART to program Non-Volatile memory.</description>          
+        </item>    
+        
+        
+    </configuration_list>
+
+   
+</name_reference_list>
+
+
+<!--
+               $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+               $$$ Logic of coming to 75 character long name path limit $$$
+               $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Example of 70 chars root install path:
+c:\my_document\filler_filler_filler_filler_filler___\mla_v2013_06_15\
+
+Example of config path:
+c:\my_document\filler_filler_filler_filler_filler___\mla_v2013_06_15\apps\gfx\object_layer_palette\firmware\app_config\pic24fj256gb210_explorer16_gfx_v3_16pmp_wqvga_v1\ (< 169 chars)
+c:\my_document\filler_filler_filler_filler_filler___\mla_v2013_06_15\bsp\pic24fj256gb210_explorer16_gfx_v3_16pmp_wqvga_v1\
+
+Example of MPLAB X:
+c:\my_document\filler_filler_filler_filler_filler___\mla_v2013_06_15\apps\gfx\object_layer_palette\firmware\object_layer_palette.X\dist\pic24fj256gb210_explorer16_gfx_v3_16pmp_wqvga_v1\production\object_layer_palette.X.production.hex (<234 chars)
+c:\my_document\filler_filler_filler_filler_filler___\mla_v2013_06_15\apps\gfx\object_layer_palette\firmware\object_layer_palette.X\build\pic24fj256gb210_explorer16_gfx_v3_16pmp_wqvga_v1\production\_ext\2020629477\source_file_name.o.d (<234 chars)
+
+Given the example above, we are reaching 234 chars, getting really close to the 255 chars limit. In this example, the demo name consumes 20 chars (object_layer_palette), and the config name consumes 48 chars (pic24fj256gb210_explorer16_gfx_v3_16pmp_wqvga_v1).
+
+To really be more accurate, the demo path only contributes another 8 chars (apps\gfx), given that we have no limit to how many nested folder can be, this could get longer as well.
+
+-->
