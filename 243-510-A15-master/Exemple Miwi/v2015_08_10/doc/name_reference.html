@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table
+{
+border-collapse:collapse;
+}
+table, td, th
+{
+border:1px solid black;
+}
+</style>
+</head>
+<body>
+
+<h2>Name Reference</h2>
+<p>Microchip Technology Inc.</p>
+
+<script>
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","name_reference.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+
+document.write("<h3>Board List</h3>");
+document.write("<table border='1'>");
+document.write("<tr><td><b>Description</b></td><td><b>Part Number</b></td><td><b>Short Name</b></td><td><b>Long Name</b></td><td><b>Macro</b></td></tr>");
+
+var x=xmlDoc.getElementsByTagName("board_list")[0].getElementsByTagName("item");
+for (i=0;i<x.length;i++)
+  { 
+  document.write("<tr><td>");
+  document.write(x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write("<a href=http://www.microchipdirect.com/ProductSearch.aspx?keywords=");
+  document.write(x[i].getElementsByTagName("part_number")[0].childNodes[0].nodeValue);
+  document.write(">");
+  document.write(x[i].getElementsByTagName("part_number")[0].childNodes[0].nodeValue);
+  document.write("</a></td><td>");
+  if((x[i].getElementsByTagName("short_name").length > 0)&&(x[i].getElementsByTagName("short_name")[0].childNodes.length > 0))
+  {
+      document.write(x[i].getElementsByTagName("short_name")[0].childNodes[0].nodeValue);
+  }
+  else
+  {
+      document.write("-");
+  }
+  document.write("</td><td>");
+  if((x[i].getElementsByTagName("long_name").length > 0)&&(x[i].getElementsByTagName("long_name")[0].childNodes.length > 0))
+  {
+      document.write(x[i].getElementsByTagName("long_name")[0].childNodes[0].nodeValue);
+  }
+  else
+  {
+      document.write("-");
+  }
+  document.write("</td><td>");
+  if((x[i].getElementsByTagName("macro").length > 0)&&(x[i].getElementsByTagName("macro")[0].childNodes.length > 0))
+  {
+      document.write(x[i].getElementsByTagName("macro")[0].childNodes[0].nodeValue);
+  }
+  else
+  {
+      document.write("-");
+  }
+  document.write("</td></tr>");
+  }
+document.write("</table>");
+
+
+
+document.write("<h3>Configuration List</h3>");
+document.write("<table border='1'>");
+document.write("<tr><td><b>Description</b></td><td><b>Short Name</b></td><td><b>Long Name</b></td><td><b>Macro</b></td></tr>");
+
+var x=xmlDoc.getElementsByTagName("configuration_list")[0].getElementsByTagName("item");
+for (i=0;i<x.length;i++)
+  { 
+  document.write("<tr><td>");
+  document.write(x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  if((x[i].getElementsByTagName("short_name").length > 0)&&(x[i].getElementsByTagName("short_name")[0].childNodes.length > 0))
+  {
+      document.write(x[i].getElementsByTagName("short_name")[0].childNodes[0].nodeValue);
+  }
+  else
+  {
+      document.write("-");
+  }
+  document.write("</td><td>");
+  if((x[i].getElementsByTagName("long_name").length > 0)&&(x[i].getElementsByTagName("long_name")[0].childNodes.length > 0))
+  {
+      document.write(x[i].getElementsByTagName("long_name")[0].childNodes[0].nodeValue);
+  }
+  else
+  {
+      document.write("-");
+  }
+  document.write("</td><td>");
+  if((x[i].getElementsByTagName("macro").length > 0)&&(x[i].getElementsByTagName("macro")[0].childNodes.length > 0))
+  {
+      document.write(x[i].getElementsByTagName("macro")[0].childNodes[0].nodeValue);
+  }
+  else
+  {
+      document.write("-");
+  }
+  document.write("</td></tr>");
+  }
+document.write("</table>");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+.DS_Store
+*.swp
+*~.nib
+
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.mode1v3
+*.mode2v3
+
+243-510.xcodeproj/*
+243-510.xcodeproj/xcuserdata/*
+243-510.xcodeproj/project.xcworkspace/xcuserdata/*
