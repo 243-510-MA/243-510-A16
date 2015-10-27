@@ -1,0 +1,175 @@
+Graphics Resource Converter (GRC) 
+Release Notes
+
+Version 4.02.00
+
+Bug Fixes
+
+* Corrected the bitmap header offset for externally stored resources.
+
+Changes
+
+* Added space attribute to declarations that use space __prog__ to comply with XC16 warning message since XC16 v1.22.
+* Changed GFX_LIB_CFG_* definitions to GFX_CONFIG_* to match Graphics Library.
+
+
+Version 4.01.00
+
+New Features:
+
+*  When the reference source file is generated, there is a graphics library version check. This has been changed to check for a graphics library resource format check. This aligns the JAVA application to the resource format version of the graphics library firmware.
+
+Version 4.00.39
+
+Bug Fixes
+
+* Updated Bitmap file support
+
+New Features:
+
+* Added support for unified output for internal storage.
+  * Source file out contains the header information
+  * Assembly file contains the resource information.
+
+Version 3.29.06
+
+Bug Fixes
+
+* Corrected a bug with storing external palettes.
+
+Version 3.28.15
+
+Bug Fixes
+
+* Support for command line palette resources has been added.
+  * Palettes must be gpl files
+* Corrected the color depth, bpp, of the header structure when used the auto-palette and compression.
+* Various typos.
+
+
+New Features
+
+* Swapped the bit orientation for the 1bpp bitmap images. The previous versions of the GRC placed the left most pixel at the MSB. This has been changed to place the left most pixel at the LSB. The change was made to accommodate controllers that have windowing. This also makes the pixel orientation consistent with the pixel orientation of 4bpp images.
+* Allow for padding and non-padding bitmap images. Bitmap images are padded which means that each horizontal line will start on a byte boundary. The option has been added to allow for conversion of bitmap resources to be non-padded which allows the least resource space and controllers with windowing that auto increments to use them.
+  * NOTE: The non-padded feature is not supported by all of the controllers. Please verify that the controller supports non-padded bitmap images before using.
+* Added support for the XC32 aand XC16 compilers.
+  * NOTE: Support for C30 and C32 is still present.
+* C30/XC16 font resource data placement.
+  * Placed internal font data in program memory. If the font data or a combination of font data resources exceed the 32k limit, a define, USE_GFX_FONT_IN_PROGRAM_SECTION, should be defined in graphics configuration header. This will place the font resource data in program memory space.
+* Added the extended glyph support to installed fonts.
+
+
+Version 3.17.47
+
+Bug Fixes
+
+* Support for command line binary resource conversion to C array has been fixed.
+* For C30 compilers version greater than 3.25, the "page" attribute was added to generated resources using the C array conversion.
+* Able to loading TTF fonts from a GRP (obsolete) project file.
+* Can detect is an IPU compression will be greater than the original compression size.
+
+
+New Features
+
+* Added a compile time check for the IPU compressed and decompressed defined sizes. The the defined values for the compressed and decompressed buffer sizes in HardwareProfile header files are less than the compressed and decompressed buffer sizes of the generated resources, there will be a compile time warning. This warning should be address to make sure that proper decoding of IPU images can occur.
+* Font filter phrases that are exact duplicates will be discarded and if the label names are the same, but the phrase character offsets are not, a warning will be given.
+* Font support of extended glyph table entry. For TTF fonts that have non-unicode characters, support for rendering these characters. These characters are usually located in the extended ASCII range (128-255). The TTF font file dialog will allow the user to select extended glyph. It is the user's responsibility to understand if the TTF font contains characters in the upper ASCII range that need this feature.
+* Font support of anti-alaising. For installed and TTF fonts, anti-alaising support has been added.
+* Current limitation when using fonts stored in EDS space, they can not be anti-aliased.
+* Batch files have been created to launch the GRC jar file. Some computers made have the "jar" extension associated with another type of program.
+* Added a command line argument to return the version of the GRC.
+* Added a command line argument to selected the chip select used by the EDS memory space.
+* Placed the CRC and marker at the end (last address) of the HEX file.
+* Able to detect and warning the user if the label name conflicts with standard C syntax.
+* Added a progress window when loading large projects.
+* Added a block compression ability. The user can select the resources to compress, right mouse click and select the type of compression through the drop-down menu.
+* The user can add a comment block to TTF and installed fonts. This allows the suer to insert any licensing that might be needed.
+
+
+Version 3.08.21
+
+Bug Fixes
+
+* Added support for font filter files that have multiple line lists.
+* Took out the backslash ("\") file separator to make it compatible across OS platforms.
+* Correct numerous spelling errors.
+* When setting RLE for a bitmap image and that image can not be used for RLE, the image would not be a part of the resources to convert after exiting the settings dialog box.
+* When changing the settings, the resources would change in position.
+* If a font was after a bitmap image in the resource table, the font compression would match the bitmap compression, even though fonts are not able to be compressed.
+* The uncompressed size accounted from padding bytes.
+* Skip over the BOM marker of the font filter, was producing a "?" character for the first string phrase label.
+* In the Setting dialog box, when selecting the graphics module, the graphics bits per pixel could still be set.
+  * When the graphics module is selected, the graphics bits per pixel is grayed out and set to 16bpp.
+* In the HEX address dialog box, the user is able to use upper and lower case letter for the starting address.
+  * For example: ff or FF
+* Corrected the offset calculations for the external memory conversion when using compression.
+* When entering the font point size in the font options dialog box, the font preview will be updated by either pressing <enter> or <tab>.
+
+New Features
+
+* Added command line support to parse a project file (xml)
+* Added a check sum (CRC) to the external HEX files. A CRC is generated and placed in the first 8 bytes of the external HEX file. The first four bytes are used to verify that the CRC data is present. These four bytes will always read 'M', 'C', 'H', 'P'. The next four bytes are a 32-bit generated CRC. The header file produced will have the 32-bit CRC value that can be matched to the one in external memory to verify that it is valid.
+* When loading a project, check to make sure that all of the files exist. If file(s) do not exist, ask the user if they would like to search to resolve the missing file.
+  * If the user does not want to resolve the file, then do not load the project.
+  * If the user resolves the file(s), ask them if they would like to save the project using the newly resolved files.
+    * Gives the option to re-name the project as well.
+* Check font filter files for a delimiter, "//". If there is not a delimiter present notify the user.
+
+
+Documentation
+
+* Added the command line interface documentation to the help file.
+
+Version 3.03.01
+
+Bug Fixes
+
+* Drop-down combo box to choose the starting and ending character range in the font option dialog
+  * The character display has been fixed to show the correct character representation.
+* When loading projects that reference files that do not exist.
+  * The user will be given the option to delete the resource of the non-existent file and keep all valid resources or remove all resources.
+  * The project file will not be modified until the user selects to save the project.
+
+Version 3.03
+
+New Features
+
+* Multiple bits per pixel (bpp) output support. Based on the graphics controller, the GRC can output the conversion in 16 or 24 bpp. This feature does not limit input sources. For example, if the output conversion is set to 16bpp and a 24bpp btimap image is being converted, the image will be converted to a 16bpp image.
+* Conversion of bitmap images that are in 16bpp format. The GRC will convert bitmap images saved in x555 or 565 color format. The GRC will also up convert those images to 24bpp if converted as 24bpp Graphics Module.
+* The reference header file generated after converting resources will now contain a #define of the images width and height in pixels.
+* Generation of a palette from multiple bitmap images.
+  * Added reading of comments from the GIMP file.
+  * Allow the user to load a GIMP file to set comments
+  * Created a header file with the symbol names of the palette colors
+* Added Run Length Encoding (RLE) support for bitmaps that are 4bpp and 8bpp.
+* Added support for Font Filter files that are saved in a UTF-8 format.
+* The converter is able to converter raw binary data into a C array, hex file or binary file.
+  * Drag and drop support is available.
+* Added drag and drop support for project files.
+* Added command line support.
+  * Allows a user to run the converter tool from the command line interface without invoking the GUI.
+* Changed the function buttons, like project load and save, to tool bar buttons.
+* Use internal Inflate JAVA library
+  * Support multiple operating systems.
+
+Version 3.00
+
+
+* When importing images (BMP and JPEG), the user can select multiple files in the file dialog box to import.
+* Drag-and-drop is supported to import images.
+* The application supports selective resources to convert.
+* New installed font chooser.
+* Projects are saved in xml format.
+* Projects will save installed font information.
+* Source file output (C Array) for fonts, has the font character glyph in the comments.
+* Source file output has a table of contents for easier object searching.
+* Font filtering will check to make sure that the selected character range is supported by the selected font.
+* Multiple operating system platform support
+* New GUI interface.
+* Support for IPU unit.
+  * This is only supported by PIC microcontroller with graphics modules.
+  * Only supported on Microsoft Windows operating systems.
+* The font underline style has not been added to this version.
+  * The work around for this is to create the font without any underline style and after drawing the characters at runtime, use the primitive line function to add the underline.
+
+  

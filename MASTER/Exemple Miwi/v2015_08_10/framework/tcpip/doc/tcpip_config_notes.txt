@@ -1,0 +1,32 @@
+Items that cannot be enabled in tcpip_config.h:
+
+For Demo App:
+None
+  Following items cannot be enabled when using PIC 18:
+  STACK_USE_SSL_SERVER
+  STACK_USE_SSL_CLIENT
+  STACK_USE_TCP_PERFORMANCE_TEST
+  STACK_USE_ZEROCONF_LINK_LOCAL
+  STACK_USE_ZEROCONF_MDNS_SD
+  STACK_USE_GENERIC_TCP_CLIENT_EXAMPLE behaves incorrectly
+  STACK_USE_TELNET_SERVER and STACK_USE_SNTP_CLIENT cannot be enable simultaneously. Either one of them can be enabled.
+
+WiFi Console:
+STACK_USE_HTTP2_SERVER
+STACK_USE_SSL_SERVER can be enabled with cert file: custom_ssl_cert.c
+STACK_USE_SSL_CLIENT can be enabled with cert file: custom_ssl_cert.c
+STACK_USE_AUTOUPDATE_UART (only can not be enabled in MRF24WB)
+STACK_USE_SNTP_CLIENT will make the console slow in some configurations
+
+Easy Config:
+STACK_USE_SSL_SERVER can be enabled with cert file: custom_ssl_cert.c
+STACK_USE_SSL_CLIENT can be enabled with cert file: custom_ssl_cert.c
+
+WiFi G Demo:
+STACK_USE_UART
+STACK_USE_UART2TCP_BRIDGE
+STACK_USE_SSL_SERVER can be enabled with cert file: custom_ssl_cert.c
+STACK_USE_SSL_CLIENT can be enabled with cert file: custom_ssl_cert.c
+STACK_USE_FTP_SERVER (lack of EEPROM which is used by some functions)
+STACK_USE_TELNET_SERVER (lack of LEDs or Buttons)
+STACK_USE_UDP_PERFORMANCE_TEST (lack of LEDs or Buttons)
