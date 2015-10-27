@@ -1,0 +1,10 @@
+
+Solenoide pour la porte d'entrée
+
+    Adafruit:
+
+    https://www.adafruit.com/products/412
+
+        Video:
+
+        https://www.youtube.com/watch?v=-efm9_7ujnQ
