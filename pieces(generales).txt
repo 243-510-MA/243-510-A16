@@ -1,0 +1,37 @@
+Pièces à implémenter(périphériques)
+
+
+
+1er board("user")
+
+
+version 1 (5 unités)
+
+- écran sur module "user"
+- vibreur(action effectué)
+- [MÀJ] 2 boutons (up, select)
+- 1 bouton RESET
+- 1-2 LED(indication visuelle)
+- EEPROM + Flash(pour les surplus de données)
+- On/Off switch
+- Batteries(lithium 3.7V)
+- Régulateur/chargeur BUCK (3.7V à 3.3V)
+- 3.3V(faible courant)
+
+
+
+2e board("sensor")
+
+
+version 1 (5 unités) À PRODUIRE RAPIDEMENT
+
+- On/Off switch
+- Batteries(2 x AAA)
+- Régulateur BOOST (~3.0V à 3.3V)
+- EEPROM + Flash(pour les surplus de données)
+- Connecteur pour toutes les pins GPIO
+- 1 bouton pour les « tests » (Pin B1)
+- 1 bouton RESET
+- 3.3V(faible courant)
+- Alimentation externe pour les actuateurs avec des tensions différentes(plus de courant ou non)
+- 2 LED(indication visuelle)(à déterminer si les LED vont êtres connectées sur le connecteur, ou directement sur la plaque)(Pin A6-A7)
