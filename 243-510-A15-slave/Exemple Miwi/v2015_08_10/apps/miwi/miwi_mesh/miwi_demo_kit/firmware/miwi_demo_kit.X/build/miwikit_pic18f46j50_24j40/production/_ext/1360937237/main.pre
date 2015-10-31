@@ -10253,7 +10253,7 @@ uint8_t myChannel = 20;
 # 56
 uint8_t ConnectionEntry = 0;
 
-bool NetFreezerEnable = 0;
+
 
 extern uint8_t myLongAddress[];
 
@@ -10267,97 +10267,43 @@ uint8_t i, j;
 bool result = 1;
 uint8_t switch_val;
 
-NetFreezerEnable = 0;
-
 
 
 
 SYSTEM_Initialize();
 
-
+LCD_Display((char *)"Welcome, Mathieu", 0, 1);
 LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
 
 Read_MAC_Address();
 
-
-
-
-if( !NetFreezerEnable )
-{
-
-# 143
+# 136
 MiApp_ProtocolInit(0);
 
-# 165
+
+
+
 CreateorJoin:
 
-# 240
-if( MiApp_SetChannel(myChannel) == 0 )
-{
-LCD_Display((char *)"ERROR: Unable toSet Channel..", 0, 1);
-return;
-}
-
-# 254
+# 151
 MiApp_ConnectionMode(0x00);
 
-# 262
+# 157
 while(result == 1)
 {
-switch_val = 1;
 
 
 
-
-if(switch_val == 1)
-{
-
-
-MiApp_ProtocolInit(0);
-MiApp_StartConnection(0x00, 0, 0);
-
-
-
-LCD_Erase();
-sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
-sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
-LCD_Update();
-
-
-
-
-while(!ConnectionTable[0].status.bits.isValid)
-{
-if(MiApp_MessageAvailable())
-MiApp_DiscardMessage();
-}
-result = 0;
-
-}
-
-
-
-
-if(switch_val == 2)
-{
 volatile uint8_t scanresult;
 
-LCD_Display((char *)"  Scanning for    Networks....", 0, 1);
-LCD_Display((char *)"Please Select   Network to Join ", 0, 1);
-
 MiApp_ProtocolInit(0);
 
-# 311
-if(myChannel < 8)
-scanresult = MiApp_SearchConnection(10, (0x00000001 << myChannel));
-else if(myChannel < 16)
-scanresult = MiApp_SearchConnection(10, (0x00000100 << (myChannel-8)));
-else if(myChannel < 24)
+# 170
 scanresult = MiApp_SearchConnection(10, (0x00010000 << (myChannel-16)));
-else
-scanresult = MiApp_SearchConnection(10, (0x01000000 << (myChannel-24)));
 
-# 325
+
+
+
 if(scanresult > 0)
 {
 uint8_t k;
@@ -10386,27 +10332,10 @@ continue;
 }
 }
 
-
-LCD_Erase();
-
-
-
-sprintf((char *)LCDText, (char*)"SW1:<PANID:%02x%02x>",ActiveScanResults[j].PANID.v[1], ActiveScanResults[j].PANID.v[0]);
-
-
-sprintf((char *)&(LCDText[16]), (char*)"SW2: Additional");
-
-LCD_Update();
-
 while(1)
 {
-switch_val = BUTTON_Pressed();
 
-
-
-
-if(switch_val == 1)
-{
+# 210
 uint8_t Status;
 uint8_t CoordCount = 0;
 {TxData = 11;};
@@ -10434,42 +10363,8 @@ if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
 (ActiveScanResults[j].PANID.v[0] == ActiveScanResults[k].PANID.v[0]))
 {
 count++;
-LCD_Erase();
-
-
-
-sprintf((char *)LCDText, (char*)"SW1:<Addr:%02x%02x>",ActiveScanResults[k].Address[1], ActiveScanResults[k].Address[0]);
-
-
-sprintf((char *)&(LCDText[16]), (char*)"SW2: Additional");
-
-LCD_Update();
 nodeIndex = k;
-
-while(1)
-{
-switch_val = BUTTON_Pressed();
-if(switch_val == 1)
-{
-
-j = nodeIndex;
-k = scanresult-1;
-break;
 }
-else if(switch_val == 2)
-{
-
-if((k == (scanresult - 1)) || (count == CoordCount))
-{
-k = -1;
-count = 0;
-}
-break;
-}
-}
-}
-
-
 }
 }
 
@@ -10478,12 +10373,12 @@ break;
 Status = MiApp_EstablishConnection(j, 0x00);
 if(Status == 0xFF)
 {
-LCD_Display((char *)"Join Failed!!!", 0, 1);
+
 goto CreateorJoin;
 }
 else
 {
-LCD_Display((char *)"Joined  Network Successfully..", 0, 1);
+
 result = 0;
 }
 {TxData = 11;};
@@ -10497,18 +10392,6 @@ break;
 
 
 
-
-else if(switch_val == 2)
-{
-if((scanresult-j-1) == 0)
-j = -1;
-
-break;
-}
-}
-
-
-
 if(result == 0)
 break;
 }
@@ -10517,9 +10400,7 @@ result = 0;
 }
 else
 {
-LCD_Display((char *)"No Network FoundSW2: Re-Scan", 0, 0);
-}
-}
+LCD_Display((char *)"Wainting for PANRescanning......", 0, 0);
 }
 }
 
@@ -10679,7 +10560,7 @@ sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID
 
 sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
 
-# 648
+# 436
 LCD_Update();
 pktCMD = 0;
 }
