@@ -277,7 +277,7 @@ CreateorJoin:
         /*******************************************************************/
         // Ask User which Demo to Run
         /*******************************************************************/
-        LCD_Display((char *)"SW1: Range Demo SW2: Other Apps  ", 0, false);
+        LCD_Display((char *)"SW1: Unlock DoorSW2: Other Apps  ", 0, false);
 	   	
         /*******************************************************************/
         // Wait for User to Select Demo to Run 
@@ -391,7 +391,7 @@ CreateorJoin:
                 if(menu_choice == 3) menu_choice = 0;
                 if(menu_choice == 0)
                 {
-                    LCD_Display((char *)"SW1: Range Demo SW2: Other Apps  ", 0, false);
+                    LCD_Display((char *)"SW1: Unlock DoorSW2: Other Apps  ", 0, false);
                 }
                 else if(menu_choice == 1)
                 {

@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F46J50 ]
 [d frameptr 4065 ]
-"90 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
+"90 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
 [v _PHYSetLongRAMAddr PHYSetLongRAMAddr `(v  1 e 0 0 ]
 "124
 [v _PHYSetShortRAMAddr PHYSetShortRAMAddr `(v  1 e 0 0 ]
@@ -32,7 +32,7 @@
 [v _MiMAC_Init MiMAC_Init `(uc  1 e 1 0 ]
 "1852
 [v _high_isr high_isr `II(v  1 e 0 0 ]
-"213 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+"213 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
 [v _MacroNop MacroNop `(v  1 e 0 0 ]
 "238
 [v _BroadcastJitter BroadcastJitter `(v  1 e 0 0 ]
@@ -82,29 +82,25 @@
 [v _UnicastShortAddress UnicastShortAddress `(uc  1 e 1 0 ]
 "4526
 [v _MiApp_UnicastAddress MiApp_UnicastAddress `(uc  1 e 1 0 ]
-"4813
-[v _MiApp_StartConnection MiApp_StartConnection `(uc  1 e 1 0 ]
 "4940
 [v _MiApp_NoiseDetection MiApp_NoiseDetection `(uc  1 e 1 0 ]
 "5146
 [v _StartChannelHopping StartChannelHopping `(v  1 e 0 0 ]
-"106 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/main.c
+"106 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/main.c
 [v _main main `(v  1 e 0 0 ]
-"88 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/range_demo.c
+"88 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/range_demo.c
 [v _RangeDemo RangeDemo `(v  1 e 0 0 ]
-"37 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/self_test.c
-[v _SelfTest SelfTest `(v  1 e 0 0 ]
-"42 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/button.c
+"42 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/button.c
 [v _BUTTON_Pressed BUTTON_Pressed `(uc  1 e 1 0 ]
-"47 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/delay.c
+"47 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/delay.c
 [v _DELAY_10us DELAY_10us `(v  1 e 0 0 ]
 "108
 [v _DELAY_ms DELAY_ms `(v  1 e 0 0 ]
-"57 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/eeprom.c
+"57 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/eeprom.c
 [v _EEPROMRead EEPROMRead `(v  1 e 0 0 ]
 "88
 [v _Read_MAC_Address Read_MAC_Address `(v  1 e 0 0 ]
-"31 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
+"31 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
 [v _LCD_WriteCmd LCD_WriteCmd `(v  1 e 0 0 ]
 "42
 [v _LCD_WriteData LCD_WriteData `(v  1 e 0 0 ]
@@ -122,9 +118,9 @@
 [v _LCD_Display LCD_Display `(v  1 e 0 0 ]
 "186
 [v _UserInterruptHandler UserInterruptHandler `(v  1 e 0 0 ]
-"128 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/serial_flash.c
+"128 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/serial_flash.c
 [v _SSTGetID SSTGetID `(v  1 e 0 0 ]
-"45 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
+"45 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
 [v _SPIPut SPIPut `(v  1 e 0 0 ]
 [v i2_SPIPut SPIPut `(v  1 e 0 0 ]
 "102
@@ -134,20 +130,20 @@
 [v _SPIPut2 SPIPut2 `(v  1 e 0 0 ]
 "206
 [v _SPIGet2 SPIGet2 `(uc  1 e 1 0 ]
-"59 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
+"59 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
 [v _InitSymbolTimer InitSymbolTimer `(v  1 e 0 0 ]
-"71 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40\symbol.h
+"71 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40\symbol.h
 "74
 [s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
-"104 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
-"82 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40\symbol.h
+"104 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
+"82 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40\symbol.h
 [s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
-"104 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
+"104 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
 [u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
 [v _MiWi_TickGet MiWi_TickGet `(S29  1 e 4 0 ]
-"47 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/system.c
+"47 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
-"69 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/temp_demo.c
+"69 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/temp_demo.c
 [v _TempDemo TempDemo `(v  1 e 0 0 ]
 "297
 [v _ReadTempSensor ReadTempSensor `(uc  1 e 1 0 ]
@@ -208,7 +204,7 @@
 `uc 1 NetworkFreezer 1 0 :1:2 
 `uc 1 PAddrLength 1 0 :4:3 
 ]
-"32 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
+"32 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
 [u S39 . 1 `uc 1 Val 1 0 `S34 1 bits 1 0 ]
 [s S42 . 3 `S39 1 actionFlags 1 0 `*.39uc 1 PAddress 2 1 ]
 [v _MACInitParams MACInitParams `S42  1 e 3 0 ]
@@ -239,7 +235,7 @@
 "66
 [u S59 . 1 `uc 1 Val 1 0 `S51 1 bits 1 0 ]
 [v _MRF24J40Status MRF24J40Status `VES59  1 e 1 0 ]
-"53 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+"53 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
 [v _ScanTime ScanTime `C[15]ul  1 e 60 0 ]
 "60
 [v _myLongAddress myLongAddress `[8]uc  1 e 8 0 ]
@@ -383,15 +379,13 @@
 "167
 [s S1027 _BROADCAST_RECORD 8 `S48 1 AltSourceAddr 2 0 `uc 1 MiWiSeq 1 2 `uc 1 RxCounter 1 3 `S29 1 StartTick 4 4 ]
 [v _BroadcastRecords BroadcastRecords `[4]S1027  1 e 32 0 ]
-"44 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/main.c
+"44 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/main.c
 [v _myChannel myChannel `uc  1 e 1 0 ]
 "56
 [v _ConnectionEntry ConnectionEntry `uc  1 e 1 0 ]
-"58
-[v _NetFreezerEnable NetFreezerEnable `uc  1 e 1 0 ]
 "73
 [v _AdditionalNodeID AdditionalNodeID `[1]uc  1 e 1 0 ]
-"31 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/self_test.c
+"31 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/self_test.c
 [v _switch_val switch_val `uc  1 e 1 0 ]
 "32
 [v _EEPROM_Val EEPROM_Val `[3]uc  1 e 3 0 ]
@@ -399,22 +393,22 @@
 [v _SST_Val SST_Val `uc  1 e 1 0 ]
 "34
 [v _init_case init_case `uc  1 e 1 0 ]
-"28 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
+"28 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
 [v _LCDText LCDText `[33]uc  1 e 33 0 ]
-"32 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
+"32 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
 [v _timerExtension1 timerExtension1 `VEuc  1 e 1 0 ]
 [v _timerExtension2 timerExtension2 `VEuc  1 e 1 0 ]
-"32 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40\button.h
+"32 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40\button.h
 [v _switch0PressTime switch0PressTime `S29  1 e 4 0 ]
 "33
 [v _switch1PressTime switch1PressTime `S29  1 e 4 0 ]
-"37 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/temp_demo.c
+"37 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/temp_demo.c
 [v _tempAverage tempAverage `us  1 e 2 0 ]
 "38
 [v _CurrentNodeIndex CurrentNodeIndex `uc  1 e 1 0 ]
-[s S3871 TempPacket 3 `[2]uc 1 NodeAddress 2 0 `uc 1 TempValue 1 2 ]
+[s S3815 TempPacket 3 `[2]uc 1 NodeAddress 2 0 `uc 1 TempValue 1 2 ]
 "49
-[v _NodeTemp NodeTemp `[10]S3871  1 e 30 0 ]
+[v _NodeTemp NodeTemp `[10]S3815  1 e 30 0 ]
 "145 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
 [v _RPOR19 RPOR19 `VEuc  1 e 1 @3801 ]
 "157
@@ -432,7 +426,7 @@
 [v _ANCON0 ANCON0 `VEuc  1 e 1 @3912 ]
 "2631
 [v _ANCON1 ANCON1 `VEuc  1 e 1 @3913 ]
-[s S4070 . 1 `uc 1 PCFG8 1 0 :1:0 
+[s S4014 . 1 `uc 1 PCFG8 1 0 :1:0 
 `uc 1 PCFG9 1 0 :1:1 
 `uc 1 PCFG10 1 0 :1:2 
 `uc 1 PCFG11 1 0 :1:3 
@@ -442,14 +436,14 @@
 `uc 1 VBGEN 1 0 :1:7 
 ]
 "2656
-[s S4079 . 1 `uc 1 . 1 0 :6:0 
+[s S4023 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PCFG14 1 0 :1:6 
 ]
-[s S4082 . 1 `uc 1 . 1 0 :7:0 
+[s S4026 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 PCFG15 1 0 :1:7 
 ]
-[u S4085 . 1 `S4070 1 . 1 0 `S4079 1 . 1 0 `S4082 1 . 1 0 ]
-[v _ANCON1bits ANCON1bits `VES4085  1 e 1 @3913 ]
+[u S4029 . 1 `S4014 1 . 1 0 `S4023 1 . 1 0 `S4026 1 . 1 0 ]
+[v _ANCON1bits ANCON1bits `VES4029  1 e 1 @3913 ]
 "4383
 [v _SSP2CON1 SSP2CON1 `VEuc  1 e 1 @3954 ]
 [s S3040 . 1 `uc 1 SSPM 1 0 :4:0 
@@ -836,16 +830,16 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "12411
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S3987 . 1 `uc 1 . 1 0 :1:0 
+[s S3931 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "12462
-[s S3990 . 1 `uc 1 ADON 1 0 :1:0 
+[s S3934 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 VCFG 1 0 :2:6 
 ]
-[s S3995 . 1 `uc 1 . 1 0 :1:0 
+[s S3939 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -854,26 +848,26 @@
 `uc 1 VCFG0 1 0 :1:6 
 `uc 1 VCFG1 1 0 :1:7 
 ]
-[s S4004 . 1 `uc 1 . 1 0 :1:0 
+[s S3948 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S4007 . 1 `uc 1 . 1 0 :1:0 
+[s S3951 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S4010 . 1 `uc 1 . 1 0 :1:0 
+[s S3954 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S4013 . 1 `uc 1 . 1 0 :1:0 
+[s S3957 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S4016 . 1 `uc 1 . 1 0 :7:0 
+[s S3960 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ADCAL 1 0 :1:7 
 ]
-[s S4019 . 1 `uc 1 . 1 0 :1:0 
+[s S3963 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S4022 . 1 `S3987 1 . 1 0 `S3990 1 . 1 0 `S3995 1 . 1 0 `S4004 1 . 1 0 `S4007 1 . 1 0 `S4010 1 . 1 0 `S4013 1 . 1 0 `S4016 1 . 1 0 `S4019 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES4022  1 e 1 @4034 ]
+[u S3966 . 1 `S3931 1 . 1 0 `S3934 1 . 1 0 `S3939 1 . 1 0 `S3948 1 . 1 0 `S3951 1 . 1 0 `S3954 1 . 1 0 `S3957 1 . 1 0 `S3960 1 . 1 0 `S3963 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES3966  1 e 1 @4034 ]
 "12556
 [v _ADRES ADRES `VEus  1 e 2 @4035 ]
 "13019
@@ -987,54 +981,42 @@
 [v _hexpowers hexpowers `C[4]ui  1 s 8 hexpowers ]
 "369
 [v _octpowers octpowers `C[6]ui  1 s 12 octpowers ]
-"106 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/main.c
+"106 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/main.c
 [v _main main `(v  1 e 0 0 ]
 {
-"389
-[v main@count count `uc  1 a 1 13 ]
-"388
-[v main@nodeIndex nodeIndex `uc  1 a 1 10 ]
-"375
-[v main@CoordCount CoordCount `uc  1 a 1 15 ]
-"374
+"215
+[v main@count count `uc  1 a 1 7 ]
+"214
+[v main@nodeIndex nodeIndex `uc  1 a 1 6 ]
+"201
+[v main@CoordCount CoordCount `uc  1 a 1 9 ]
+"200
 [v main@Status Status `uc  1 a 1 8 ]
-"331
-[v main@skip_print skip_print `uc  1 a 1 12 ]
-"564
-[v main@ConnectionsCount ConnectionsCount `uc  1 a 1 14 ]
-"562
-[v main@result_3552 result `uc  1 a 1 11 ]
-"327
-[v main@k k `uc  1 a 1 23 ]
-"551
-[v main@NumberOfConnections NumberOfConnections `uc  1 a 1 16 ]
-"300
-[v main@scanresult scanresult `VEuc  1 a 1 26 ]
-"189
-[v main@select_channel select_channel `uc  1 a 1 17 ]
-"190
-[v main@update_channel update_channel `uc  1 a 1 9 ]
-[s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
-"147
-[s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
-[u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
-[v main@tick2 tick2 `S29  1 a 4 4 ]
-[v main@tick1 tick1 `S29  1 a 4 0 ]
-"493
-[v main@menu_choice menu_choice `uc  1 a 1 21 ]
-"492
-[v main@pktCMD pktCMD `uc  1 a 1 20 ]
-[v main@switch_val_3548 switch_val `uc  1 a 1 19 ]
+"342
+[v main@ConnectionsCount ConnectionsCount `uc  1 a 1 12 ]
+"340
+[v main@result_3494 result `uc  1 a 1 10 ]
+"171
+[v main@skip_print skip_print `uc  1 a 1 11 ]
+"329
+[v main@NumberOfConnections NumberOfConnections `uc  1 a 1 13 ]
+"167
+[v main@k k `uc  1 a 1 18 ]
+"271
+[v main@menu_choice menu_choice `uc  1 a 1 17 ]
+"270
+[v main@pktCMD pktCMD `uc  1 a 1 16 ]
+[v main@switch_val_3489 switch_val `uc  1 a 1 15 ]
+"152
+[v main@scanresult scanresult `VEuc  1 a 1 21 ]
 "108
-[v main@i i `uc  1 a 1 25 ]
-[v main@j j `uc  1 a 1 24 ]
-"110
-[v main@switch_val switch_val `uc  1 a 1 22 ]
+[v main@i i `uc  1 a 1 20 ]
+[v main@j j `uc  1 a 1 19 ]
 "109
-[v main@result result `uc  1 a 1 18 ]
-"660
+[v main@result result `uc  1 a 1 14 ]
+"438
 } 0
-"69 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/temp_demo.c
+"69 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/temp_demo.c
 [v _TempDemo TempDemo `(v  1 e 0 0 ]
 {
 "241
@@ -1168,7 +1150,7 @@
 [v ___ftpack@sign sign `uc  1 p 1 4 ]
 "86
 } 0
-"47 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/delay.c
+"47 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/delay.c
 [v _DELAY_10us DELAY_10us `(v  1 e 0 0 ]
 {
 "49
@@ -1177,7 +1159,7 @@
 [v DELAY_10us@tenMicroSecondCounter tenMicroSecondCounter `ul  1 p 4 12 ]
 "87
 } 0
-"421 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/temp_demo.c
+"421 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/temp_demo.c
 [v _PrintTempLCD PrintTempLCD `(v  1 e 0 0 ]
 {
 "423
@@ -1186,7 +1168,20 @@
 [v PrintTempLCD@tempF tempF `uc  1 a 1 49 ]
 "458
 } 0
-"4243 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"8
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"42
+} 0
+"4243 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
 [v _MiApp_BroadcastPacket MiApp_BroadcastPacket `(uc  1 e 1 0 ]
 {
 [v MiApp_BroadcastPacket@SecEn SecEn `uc  1 a 1 wreg ]
@@ -1198,38 +1193,17 @@
 [v MiApp_BroadcastPacket@SecEn SecEn `uc  1 a 1 61 ]
 "4302
 } 0
-"37 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/self_test.c
-[v _SelfTest SelfTest `(v  1 e 0 0 ]
-{
-[v SelfTest@myChannel myChannel `uc  1 a 1 wreg ]
-"82
-[v SelfTest@Tx_Success Tx_Success `uc  1 a 1 7 ]
-"83
-[v SelfTest@scanresult scanresult `uc  1 a 1 6 ]
-[v SelfTest@Tx_Trials Tx_Trials `uc  1 a 1 5 ]
-"37
-[v SelfTest@myChannel myChannel `uc  1 a 1 wreg ]
-"40
-[v SelfTest@myChannel myChannel `uc  1 a 1 8 ]
-"140
-} 0
-"128 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/serial_flash.c
-[v _SSTGetID SSTGetID `(v  1 e 0 0 ]
-{
-[v SSTGetID@dest dest `*.39uc  1 p 2 2 ]
-"137
-} 0
-"47 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/system.c
+"47 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
 {
 "177
 } 0
-"53 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
+"53 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
 [v _LCD_Initialize LCD_Initialize `(v  1 e 0 0 ]
 {
 "74
 } 0
-"88 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/eeprom.c
+"88 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/eeprom.c
 [v _Read_MAC_Address Read_MAC_Address `(v  1 e 0 0 ]
 {
 "90
@@ -1244,12 +1218,12 @@
 [v EEPROMRead@count count `uc  1 p 1 5 ]
 "68
 } 0
-"206 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
+"206 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
 [v _SPIGet2 SPIGet2 `(uc  1 e 1 0 ]
 {
 "229
 } 0
-"88 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/range_demo.c
+"88 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/range_demo.c
 [v _RangeDemo RangeDemo `(v  1 e 0 0 ]
 {
 [s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
@@ -1272,7 +1246,7 @@
 [v RangeDemo@pktCmd pktCmd `uc  1 a 1 0 ]
 "335
 } 0
-"4342 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+"4342 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
 [v _MiApp_UnicastConnection MiApp_UnicastConnection `(uc  1 e 1 0 ]
 {
 [v MiApp_UnicastConnection@ConnectionIndex ConnectionIndex `uc  1 a 1 wreg ]
@@ -1292,7 +1266,7 @@
 [v MiApp_UnicastConnection@ConnectionIndex ConnectionIndex `uc  1 a 1 140 ]
 "4466
 } 0
-"168 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
+"168 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
 [v _LCD_Display LCD_Display `(v  1 e 0 0 ]
 {
 "177
@@ -1370,7 +1344,7 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "31
 } 0
-"113 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
+"113 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
 [v _LCD_Update LCD_Update `(v  1 e 0 0 ]
 {
 "115
@@ -1402,7 +1376,7 @@
 [v memset@n n `ui  1 p 2 4 ]
 "22
 } 0
-"31 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
+"31 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
 [v _LCD_WriteCmd LCD_WriteCmd `(v  1 e 0 0 ]
 {
 [v LCD_WriteCmd@data data `uc  1 a 1 wreg ]
@@ -1411,7 +1385,7 @@
 [v LCD_WriteCmd@data data `uc  1 a 1 2 ]
 "39
 } 0
-"144 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
+"144 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
 [v _SPIPut2 SPIPut2 `(v  1 e 0 0 ]
 {
 [v SPIPut2@v v `uc  1 a 1 wreg ]
@@ -1423,7 +1397,7 @@
 [v SPIPut2@v v `uc  1 a 1 1 ]
 "189
 } 0
-"108 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/delay.c
+"108 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/delay.c
 [v _DELAY_ms DELAY_ms `(v  1 e 0 0 ]
 {
 "112
@@ -1442,7 +1416,7 @@
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
 } 0
-"102 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
+"102 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
 [v _LCD_BacklightON LCD_BacklightON `(v  1 e 0 0 ]
 {
 "105
@@ -1452,7 +1426,7 @@
 {
 "110
 } 0
-"42 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/button.c
+"42 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/button.c
 [v _BUTTON_Pressed BUTTON_Pressed `(uc  1 e 1 0 ]
 {
 [s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
@@ -1465,73 +1439,7 @@
 [v BUTTON_Pressed@result result `uc  1 a 1 22 ]
 "85
 } 0
-"4813 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
-[v _MiApp_StartConnection MiApp_StartConnection `(uc  1 e 1 0 ]
-{
-[v MiApp_StartConnection@Mode Mode `uc  1 a 1 wreg ]
-"4848
-[v MiApp_StartConnection@RSSIValue RSSIValue `uc  1 a 1 59 ]
-"4847
-[v MiApp_StartConnection@channel channel `uc  1 a 1 58 ]
-"4813
-[v MiApp_StartConnection@Mode Mode `uc  1 a 1 wreg ]
-[v MiApp_StartConnection@ScanDuration ScanDuration `uc  1 p 1 51 ]
-[v MiApp_StartConnection@ChannelMap ChannelMap `ul  1 p 4 52 ]
-[v MiApp_StartConnection@Mode Mode `uc  1 a 1 57 ]
-"4891
-} 0
-"4940
-[v _MiApp_NoiseDetection MiApp_NoiseDetection `(uc  1 e 1 0 ]
-{
-"4960
-[v MiApp_NoiseDetection@maxRSSI maxRSSI `uc  1 a 1 50 ]
-"4959
-[v MiApp_NoiseDetection@RSSIcheck RSSIcheck `uc  1 a 1 47 ]
-"4961
-[v MiApp_NoiseDetection@k k `uc  1 a 1 46 ]
-[v MiApp_NoiseDetection@j j `uc  1 a 1 45 ]
-[s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
-"4946
-[s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
-[u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
-[v MiApp_NoiseDetection@t2 t2 `S29  1 a 4 40 ]
-[v MiApp_NoiseDetection@t1 t1 `S29  1 a 4 36 ]
-"4945
-[v MiApp_NoiseDetection@channelMask channelMask `ul  1 a 4 32 ]
-"4942
-[v MiApp_NoiseDetection@i i `uc  1 a 1 49 ]
-"4944
-[v MiApp_NoiseDetection@minRSSI minRSSI `uc  1 a 1 48 ]
-"4943
-[v MiApp_NoiseDetection@OptimalChannel OptimalChannel `uc  1 a 1 44 ]
-"4940
-[v MiApp_NoiseDetection@ChannelMap ChannelMap `ul  1 p 4 11 ]
-[v MiApp_NoiseDetection@ScanDuration ScanDuration `uc  1 p 1 15 ]
-[v MiApp_NoiseDetection@DetectionMode DetectionMode `uc  1 p 1 16 ]
-[v MiApp_NoiseDetection@RSSIValue RSSIValue `*.39uc  1 p 2 17 ]
-"5011
-} 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"11
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
-"12
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
-"8
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-"42
-} 0
-"1057 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
-[v _MiMAC_ChannelAssessment MiMAC_ChannelAssessment `(uc  1 e 1 0 ]
-{
-"1059
-[v MiMAC_ChannelAssessment@RSSIcheck RSSIcheck `uc  1 a 1 8 ]
-"1101
-} 0
-"3527 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+"3527 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
 [v _MiApp_ProtocolInit MiApp_ProtocolInit `(uc  1 e 1 0 ]
 {
 [v MiApp_ProtocolInit@bNetworkFreezer bNetworkFreezer `uc  1 a 1 wreg ]
@@ -1552,7 +1460,7 @@
 [v MiApp_ProtocolInit@bNetworkFreezer bNetworkFreezer `uc  1 a 1 35 ]
 "3710
 } 0
-"1465 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
+"1465 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
 [v _MiMAC_Init MiMAC_Init `(uc  1 e 1 0 ]
 {
 "1467
@@ -1568,12 +1476,12 @@
 [v MiMAC_Init@initValue initValue `S42  1 p 3 30 ]
 "1502
 } 0
-"59 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
+"59 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
 [v _InitSymbolTimer InitSymbolTimer `(v  1 e 0 0 ]
 {
 "77
 } 0
-"4055 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+"4055 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
 [v _MiApp_EstablishConnection MiApp_EstablishConnection `(uc  1 e 1 0 ]
 {
 [v MiApp_EstablishConnection@ActiveScanIndex ActiveScanIndex `uc  1 a 1 wreg ]
@@ -1581,24 +1489,24 @@
 "4059
 [s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
 [u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
-[v MiApp_EstablishConnection@t2 t2 `S29  1 a 4 15 ]
-[v MiApp_EstablishConnection@t1 t1 `S29  1 a 4 11 ]
+[v MiApp_EstablishConnection@t2 t2 `S29  1 a 4 23 ]
+[v MiApp_EstablishConnection@t1 t1 `S29  1 a 4 19 ]
 "4058
-[v MiApp_EstablishConnection@i i `uc  1 a 1 20 ]
+[v MiApp_EstablishConnection@i i `uc  1 a 1 28 ]
 "4057
-[v MiApp_EstablishConnection@retry retry `uc  1 a 1 19 ]
+[v MiApp_EstablishConnection@retry retry `uc  1 a 1 27 ]
 "4055
 [v MiApp_EstablishConnection@ActiveScanIndex ActiveScanIndex `uc  1 a 1 wreg ]
-[v MiApp_EstablishConnection@Mode Mode `uc  1 p 1 2 ]
+[v MiApp_EstablishConnection@Mode Mode `uc  1 p 1 139 ]
 "4057
-[v MiApp_EstablishConnection@ActiveScanIndex ActiveScanIndex `uc  1 a 1 21 ]
+[v MiApp_EstablishConnection@ActiveScanIndex ActiveScanIndex `uc  1 a 1 29 ]
 "4194
 } 0
 "2923
 [v _OpenSocket OpenSocket `(v  1 e 0 0 ]
 {
 "2925
-[v OpenSocket@i i `uc  1 a 1 153 ]
+[v OpenSocket@i i `uc  1 a 1 136 ]
 "3057
 } 0
 "4526
@@ -1608,20 +1516,20 @@
 "4621
 [s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
 [u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
-[v MiApp_UnicastAddress@t2 t2 `S29  1 a 4 138 ]
-[v MiApp_UnicastAddress@t1 t1 `S29  1 a 4 134 ]
+[v MiApp_UnicastAddress@t2 t2 `S29  1 a 4 4 ]
+[v MiApp_UnicastAddress@t1 t1 `S29  1 a 4 0 ]
 [s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
 "4728
 [s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
 [u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
-[v MiApp_UnicastAddress@t2_1762 t2 `S29  1 a 4 146 ]
-[v MiApp_UnicastAddress@t1_1751 t1 `S29  1 a 4 142 ]
+[v MiApp_UnicastAddress@t2_1762 t2 `S29  1 a 4 12 ]
+[v MiApp_UnicastAddress@t1_1751 t1 `S29  1 a 4 8 ]
 "4528
-[v MiApp_UnicastAddress@handle handle `uc  1 a 1 152 ]
+[v MiApp_UnicastAddress@handle handle `uc  1 a 1 18 ]
 "4529
-[v MiApp_UnicastAddress@i i `uc  1 a 1 151 ]
+[v MiApp_UnicastAddress@i i `uc  1 a 1 17 ]
 "4530
-[v MiApp_UnicastAddress@MiWiFrameControl MiWiFrameControl `uc  1 a 1 150 ]
+[v MiApp_UnicastAddress@MiWiFrameControl MiWiFrameControl `uc  1 a 1 16 ]
 "4526
 [v MiApp_UnicastAddress@DestAddress DestAddress `*.39uc  1 p 2 122 ]
 [v MiApp_UnicastAddress@PermanentAddr PermanentAddr `uc  1 p 1 124 ]
@@ -1636,19 +1544,19 @@
 "3944
 [s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
 [u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
-[v MiApp_SearchConnection@t2 t2 `S29  1 a 4 147 ]
-[v MiApp_SearchConnection@t1 t1 `S29  1 a 4 143 ]
+[v MiApp_SearchConnection@t2 t2 `S29  1 a 4 8 ]
+[v MiApp_SearchConnection@t1 t1 `S29  1 a 4 4 ]
 "3942
-[v MiApp_SearchConnection@channelMask channelMask `ul  1 a 4 139 ]
+[v MiApp_SearchConnection@channelMask channelMask `ul  1 a 4 0 ]
 "3941
-[v MiApp_SearchConnection@i i `uc  1 a 1 153 ]
+[v MiApp_SearchConnection@i i `uc  1 a 1 14 ]
 "3943
-[v MiApp_SearchConnection@backupChannel backupChannel `uc  1 a 1 152 ]
+[v MiApp_SearchConnection@backupChannel backupChannel `uc  1 a 1 13 ]
 "3939
 [v MiApp_SearchConnection@ScanDuration ScanDuration `uc  1 a 1 wreg ]
 [v MiApp_SearchConnection@ChannelMap ChannelMap `ul  1 p 4 122 ]
 "3942
-[v MiApp_SearchConnection@ScanDuration ScanDuration `uc  1 a 1 151 ]
+[v MiApp_SearchConnection@ScanDuration ScanDuration `uc  1 a 1 12 ]
 "3996
 } 0
 "4196
@@ -1800,7 +1708,7 @@
 [v SendMACPacket@ModeMask ModeMask `uc  1 p 1 66 ]
 "2252
 } 0
-"736 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
+"736 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
 [v _MiMAC_SendPacket MiMAC_SendPacket `(uc  1 e 1 0 ]
 {
 [s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
@@ -1885,12 +1793,12 @@
 [v PHYGetLongRAMAddr@address address `ui  1 p 2 2 ]
 "199
 } 0
-"102 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
+"102 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
 [v _SPIGet SPIGet `(uc  1 e 1 0 ]
 {
 "126
 } 0
-"366 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
+"366 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
 [v _MiMAC_ReceivedPacket MiMAC_ReceivedPacket `(uc  1 e 1 0 ]
 {
 "406
@@ -1901,7 +1809,7 @@
 [v MiMAC_ReceivedPacket@i i `uc  1 a 1 7 ]
 "656
 } 0
-"3827 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+"3827 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
 [v _MiApp_SetChannel MiApp_SetChannel `(uc  1 e 1 0 ]
 {
 [v MiApp_SetChannel@channel channel `uc  1 a 1 wreg ]
@@ -1910,7 +1818,7 @@
 [v MiApp_SetChannel@channel channel `uc  1 a 1 10 ]
 "3838
 } 0
-"1302 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
+"1302 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
 [v _MiMAC_SetChannel MiMAC_SetChannel `(uc  1 e 1 0 ]
 {
 [v MiMAC_SetChannel@channel channel `uc  1 a 1 wreg ]
@@ -1943,7 +1851,7 @@
 [v PHYSetLongRAMAddr@value value `uc  1 p 1 4 ]
 "101
 } 0
-"45 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
+"45 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
 [v _SPIPut SPIPut `(v  1 e 0 0 ]
 {
 [v SPIPut@v v `uc  1 a 1 wreg ]
@@ -1955,7 +1863,7 @@
 [v SPIPut@v v `uc  1 a 1 1 ]
 "84
 } 0
-"238 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+"238 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
 [v _BroadcastJitter BroadcastJitter `(v  1 e 0 0 ]
 {
 [v BroadcastJitter@range range `uc  1 a 1 wreg ]
@@ -1988,13 +1896,13 @@
 [v ___lbmod@dividend dividend `uc  1 a 1 1 ]
 "18
 } 0
-"71 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40\symbol.h
+"71 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40\symbol.h
 "74
 [s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
-"104 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
-"82 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40\symbol.h
+"104 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
+"82 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40\symbol.h
 [s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
-"104 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
+"104 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/symbol.c
 [u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
 [v _MiWi_TickGet MiWi_TickGet `(S29  1 e 4 0 ]
 {
@@ -2004,7 +1912,7 @@
 [v MiWi_TickGet@failureCounter failureCounter `uc  1 a 1 5 ]
 "151
 } 0
-"3336 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+"3336 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
 [v _AddNodeToNetworkTable AddNodeToNetworkTable `(uc  1 e 1 0 ]
 {
 "3367
@@ -2040,12 +1948,12 @@
 {
 "4207
 } 0
-"693 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
+"693 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
 [v _MiMAC_DiscardPacket MiMAC_DiscardPacket `(v  1 e 0 0 ]
 {
 "701
 } 0
-"3881 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+"3881 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
 [v _MiApp_ConnectionMode MiApp_ConnectionMode `(v  1 e 0 0 ]
 {
 [v MiApp_ConnectionMode@Mode Mode `uc  1 a 1 wreg ]
@@ -2054,7 +1962,7 @@
 [v MiApp_ConnectionMode@Mode Mode `uc  1 a 1 1 ]
 "3893
 } 0
-"1852 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
+"1852 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
 [v _high_isr high_isr `II(v  1 e 0 0 ]
 {
 [s S505 . 1 `uc 1 b0 1 0 :1:0 
@@ -2114,7 +2022,7 @@
 [v i2PHYGetLongRAMAddr@address address `ui  1 p 2 2 ]
 "199
 } 0
-"102 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
+"102 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/spi.c
 [v i2_SPIGet SPIGet `(uc  1 e 1 0 ]
 {
 "126
@@ -2129,7 +2037,7 @@
 [v i2SPIPut@v v `uc  1 a 1 1 ]
 "84
 } 0
-"186 C:\Users\e1028711\Desktop\243-510-A15-master\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
+"186 C:\Users\Owner\Documents\GitHub\243-510-A15\SLAVE\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
 [v _UserInterruptHandler UserInterruptHandler `(v  1 e 0 0 ]
 {
 "193
