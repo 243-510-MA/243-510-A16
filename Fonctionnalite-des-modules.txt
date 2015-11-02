@@ -1,17 +1,30 @@
 PAN COORD.
+Coordonne les communications
 
 
 Module projecteur, gyrophare et détecteur de mouvements(COORD 1)
 
-    Projecteur
-        --power on/off
+Projecteur
+--power on/off
 
-    Gyrophare
-        --LED haute puissance/vrai gyrophare??
-        --Buzzer?
+Gyrophare
+--LED haute puissance/vrai gyrophare??
+--Buzzer?
 
-    Détecteur de mouvements
-        --IC qui envoie directement s'il y a un mouvement(1/0)
-fdefr
+Détecteur de mouvements
+--IC qui envoie directement s'il y a un mouvement(1/0)
 
-Module toile '
+
+Module toile(COORD 2)
+Moteur/tube
+--Monter/descendre
+
+
+Module door lock(COORD 3)
+Électro./solenoïd
+--locl/unlock
+
+
+Module petite piece("COORD 4")
+Détecteur de mouvements
+--IC qui envoie directement s'il y a un mouvement(1/0)
