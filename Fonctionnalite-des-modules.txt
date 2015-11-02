@@ -1,0 +1,17 @@
+PAN COORD.
+
+
+Module projecteur, gyrophare et détecteur de mouvements(COORD 1)
+
+    Projecteur
+        --power on/off
+
+    Gyrophare
+        --LED haute puissance/vrai gyrophare??
+        --Buzzer?
+
+    Détecteur de mouvements
+        --IC qui envoie directement s'il y a un mouvement(1/0)
+
+
+Module toile '
