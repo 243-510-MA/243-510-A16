@@ -1,0 +1,13 @@
+﻿Description des Pins disponnibles sur le connecteur I/O des Boards Capteur
+
+Pin 19 (J1.1) = Digital I/O. Analog Input 0.
+Pin 20 (J1.2) = Digital I/O. Analog Input 1. 
+Pin 21 (J1.3) = Digital I/O. Analog Input 2.
+Pin 22 (J1.4) = Digital I/O. Analog Input 3.
+Pin 10 (J1.5) = Digital I/O. Analog Input 8.
+Pin 11 (J1.6) = Digital I/O. Analog Input 9.
+Pin 05 (J1.7) = Digital I/O
+Pin 41 (J1.8) = Digital I/O.
+Pin 25 (J1.9) = Digital I/O. Analog Input 5.
+Pin 26 (J1.10) = Digital I/O. Analog Input 6. 
+
