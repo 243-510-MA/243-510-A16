@@ -1,21 +1,22 @@
 MATÉRIEL
-#Conception de la plaquette capteur/actionneur
+#Conception de la plaquette "étudiante"
 	-Validation par les paires avant d'envoyer la plaquette à Agathe
-#Conception de la plaquette étudiante
-	-Baisser les couts au maximum
-	-Calculer la consommation énergétique et choisir la pile (capacité) en conséquence
+	-Commande de la pile
+	
+#Révision du matériel manquant. Mis à part les piles, est-ce qu'il nous manque du matériel?
+
 
 LOGICIEL
-#Épurer le code
+#Un projet pour tous VS plusieurs projets : décision de groupe - intro par Jonathan-Laurent
+
 #Initiation à la programmation de modules MiWi (initier vos collègues)
+
 #Validation des schémas de connexions (voir figure 3 de AN1371)
-
-
-GÉNÉRAL
-#S'entendre sur la nature des capteurs/actionneurs
+	-Comprendre le fonctionnement des RFD
+	-Qui reçoit les broadcasts?
 
 
 
-Cours restants:
-Novembre: 2, 3, 9, 10, 16?, 17?, 23, 24, 30
+Cours restants (7 à 10):
+Novembre: 9, 10, 16?, 17?, 23, 24, 30
 Décembre: 1?, 7, 8
