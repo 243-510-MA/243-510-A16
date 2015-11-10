@@ -29,6 +29,12 @@
 #ifndef __CONFIG_APP_H_
 #define __CONFIG_APP_H_
 
+
+
+//*************************************************************************
+// Choose the functioning mode of the device
+//
+
 /*********************************************************************/
 // following codes defines the platforms as well as the hardware 
 // configuration
@@ -106,8 +112,11 @@
         // coordinator. This definition cannot be defined with 
         // NWK_ROLE_END_DEVICE.
         /*********************************************************************/
-        #define NWK_ROLE_COORDINATOR
-
+        #if(DEVICEMODE <= 2)
+            #define NWK_ROLE_COORDINATOR
+        #else
+            #define NWK_ROLE_END_DEVICE
+        #endif
 
 
 

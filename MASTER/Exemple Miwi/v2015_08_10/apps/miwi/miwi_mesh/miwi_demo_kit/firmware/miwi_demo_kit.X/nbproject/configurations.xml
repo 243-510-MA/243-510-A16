@@ -60,9 +60,9 @@
           <itemPath>../src/system_config/miwikit_pic18f46j50_89xa/console.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../src/range_demo.h</itemPath>
       <itemPath>../src/self_test.h</itemPath>
       <itemPath>../src/temp_demo.h</itemPath>
+      <itemPath>../src/door_unlock.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -115,9 +115,9 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
-      <itemPath>../src/range_demo.c</itemPath>
       <itemPath>../src/self_test.c</itemPath>
       <itemPath>../src/temp_demo.c</itemPath>
+      <itemPath>../src/door_unlock.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

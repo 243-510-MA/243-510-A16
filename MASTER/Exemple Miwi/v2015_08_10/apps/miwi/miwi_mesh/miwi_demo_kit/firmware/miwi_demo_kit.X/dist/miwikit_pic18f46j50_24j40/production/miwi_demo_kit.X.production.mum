@@ -1,7 +1,12 @@
 
 Memory Summary:
+<<<<<<< HEAD
+    Program space        used  9708h ( 38664) of  FFF8h bytes   ( 59.0%)
+    Data space           used   3FDh (  1021) of   EC0h bytes   ( 27.0%)
+=======
     Program space        used  83BEh ( 33726) of  FFF8h bytes   ( 51.5%)
     Data space           used   3E7h (   999) of   EC0h bytes   ( 26.5%)
+>>>>>>> origin/master
     Configuration bits   used     4h (     4) of     4h words   (100.0%)
     Data stack space     used     0h (     0) of   A3Ah bytes   (  0.0%)
 

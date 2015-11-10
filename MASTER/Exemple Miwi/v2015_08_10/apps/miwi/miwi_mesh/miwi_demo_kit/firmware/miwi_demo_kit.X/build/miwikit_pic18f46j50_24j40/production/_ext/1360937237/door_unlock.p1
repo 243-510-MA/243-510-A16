@@ -8,9 +8,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1083 `ul 1 `S1084 1 `uc -> 4 `i `S1085 1 ]
 [n S1083 _MIWI_TICK Val byte v word ]
-[p mainexit ]
-"119 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"50 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCD_Display `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
+"90 ../src/system_config/miwikit_pic18f46j50_24j40\symbol.h
+[v _MiWi_TickGet `(S1083 ~T0 @X0 0 ef ]
+"207 ../../../../../../framework\miwi/miwi_mesh.h
+[v _TxData `uc ~T0 @X0 0 e ]
+"206
+[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
+"591 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_UnicastConnection `(uc ~T0 @X0 0 ef2`uc`uc ]
+"71 ../src/door_unlock.c
+[v _ConnectionEntry `uc ~T0 @X0 0 e ]
+"194 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCDText `uc ~T0 @X0 -> 0 `x e ]
 "7747 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
 [s S527 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S527 . LATC0 LATC1 LATC2 . LATC4 LATC5 LATC6 LATC7 ]
@@ -75,104 +88,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S506 . . . . . . . . . . ]
 "7530
 [v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
-"50 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Display `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
-"28 ../src/system_config/miwikit_pic18f46j50_24j40\eeprom.h
-[v _Read_MAC_Address `(v ~T0 @X0 0 ef ]
-"136 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_ProtocolInit `(uc ~T0 @X0 0 ef1`uc ]
-"178
-[v _MiApp_SetChannel `(uc ~T0 @X0 0 ef1`uc ]
-"457
-[v _MiApp_ConnectionMode `(v ~T0 @X0 0 ef1`uc ]
-"236
-[v _MiApp_StartConnection `(uc ~T0 @X0 0 ef3`uc`uc`ul ]
-"47 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Erase `(v ~T0 @X0 0 ef ]
-"194 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCDText `uc ~T0 @X0 -> 0 `x e ]
-"61 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
-[u S1087 `uc -> 2 `i `ui 1 ]
-[n S1087 . v Val ]
-"208 ../../../../../../framework\miwi/miwi_mesh.h
-[v _myPANID `S1087 ~T0 @X0 0 e ]
-"209
-[v _myShortAddress `S1087 ~T0 @X0 0 e ]
-"46 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Update `(v ~T0 @X0 0 ef ]
-"710 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
-"752
-[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
-"54
-[s S1112 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1112 _CONNECTION_STAUTS_bits RXOnWhenIdle directConnection longAddressValid shortAddressValid FinishJoin isFamily filler isValid ]
-"51
-[u S1111 `uc 1 `S1112 1 ]
-[n S1111 __CONNECTION_STATUS Val bits ]
-"78
-[s S1113 `S1087 1 `S1087 1 `uc -> 8 `i `S1111 1 `uc -> -> 1 `i `ux ]
-[n S1113 __CONNECTION_ENTRY PANID AltAddress Address status PeerInfo ]
-"93
-[v _ConnectionTable `S1113 ~T0 @X0 -> 0 `x e ]
-<<<<<<< HEAD
-"320
-[v _MiApp_SearchConnection `(uc ~T0 @X0 0 ef2`uc`ul ]
-"257
-[s S1116 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1116 . Role Sleep SecurityEn RepeatEn AllowJoin Direct altSrcAddr ]
-"254
-[u S1115 `uc 1 `S1116 1 ]
-[n S1115 . Val bits ]
-"247
-[s S1114 `uc 1 `uc -> 8 `i `S1087 1 `uc 1 `uc 1 `S1115 1 `uc -> -> 1 `i `ux ]
-[n S1114 . Channel Address PANID RSSIValue LQIValue Capability PeerInfo ]
-"273
-[v _ActiveScanResults `S1114 ~T0 @X0 -> 0 `x e ]
-"207 ../../../../../../framework\miwi/miwi_mesh.h
-[v _TxData `uc ~T0 @X0 0 e ]
-"206
-[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
-"552 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
-"374
-[v _MiApp_EstablishConnection `(uc ~T0 @X0 0 ef2`uc`uc ]
-=======
-"50 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Display `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
->>>>>>> origin/master
 "35 ../src/system_config/miwikit_pic18f46j50_24j40\button.h
 [v _BUTTON_Pressed `(uc ~T0 @X0 0 ef ]
-"649 ../../../../../../framework\miwi/miwi_api.h
+"48 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCD_BacklightON `(v ~T0 @X0 0 ef ]
+"49
+[v _LCD_BacklightOFF `(v ~T0 @X0 0 ef ]
+"710 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
+"649
 [s S1119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1119 . broadcast ackReq secEn repeat command srcPrsnt altSrcAddr ]
 "646
 [u S1118 `uc 1 `S1119 1 ]
 [n S1118 . Val bits ]
-"644
+"61 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[u S1087 `uc -> 2 `i `ui 1 ]
+[n S1087 . v Val ]
+"644 ../../../../../../framework\miwi/miwi_api.h
 [s S1117 `S1118 1 `S1087 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1117 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
 "950
 [v _rxMessage `S1117 ~T0 @X0 0 e ]
-"207 ../../../../../../framework\miwi/miwi_mesh.h
-[v _TxData `uc ~T0 @X0 0 e ]
-"206
-[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
-"591 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_UnicastConnection `(uc ~T0 @X0 0 ef2`uc`uc ]
-<<<<<<< HEAD
-"27 ../src/door_unlock.h
-[v _DoorUnlock `(v ~T0 @X0 0 ef ]
-=======
-"27 ../src/range_demo.h
-[v _RangeDemo `(v ~T0 @X0 0 ef ]
-"552 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
->>>>>>> origin/master
-"28 ../src/temp_demo.h
-[v _TempDemo `(v ~T0 @X0 0 ef ]
+"752
+[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
+"46 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCD_Update `(v ~T0 @X0 0 ef ]
+[; ;door_unlock.h: 27: void DoorUnlock(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7993,1614 +7935,504 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_api.h: 899: bool MiApp_InitChannelHopping( uint32_t ChannelMap);
 [; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 [; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
-[; ;self_test.h: 27: void SelfTest(uint8_t);
-[; ;door_unlock.h: 27: void DoorUnlock(void);
-[; ;temp_demo.h: 28: void TempDemo(void);
-[; ;temp_demo.h: 29: uint16_t Read_VBGVoltage(void);
-[; ;temp_demo.h: 30: uint8_t ReadTempSensor(uint16_t VBGResult);
-[; ;temp_demo.h: 31: void PrintTempLCD(void);
-<<<<<<< HEAD
-"35 ../src/main.c
-=======
-"43 ../src/main.c
->>>>>>> origin/master
-[v _myChannel `uc ~T0 @X0 1 e ]
-[i _myChannel
--> -> 20 `i `uc
-]
-<<<<<<< HEAD
-[; ;main.c: 35: uint8_t myChannel = 20;
-"47
-=======
-[; ;main.c: 43: uint8_t myChannel = 20;
-"55
->>>>>>> origin/master
-[v _ConnectionEntry `uc ~T0 @X0 1 e ]
-[i _ConnectionEntry
--> -> 0 `i `uc
-]
-<<<<<<< HEAD
-[; ;main.c: 47: uint8_t ConnectionEntry = 0;
-[; ;main.c: 49: extern uint8_t myLongAddress[];
-"63
-=======
-[; ;main.c: 55: uint8_t ConnectionEntry = 0;
-[; ;main.c: 57: extern uint8_t myLongAddress[];
-"70
->>>>>>> origin/master
-[v _AdditionalNodeID `uc ~T0 @X0 -> -> 1 `i `ux e ]
-[i _AdditionalNodeID
-:U ..
--> -> 0 `i `uc
-..
-]
-<<<<<<< HEAD
-[; ;main.c: 63: uint8_t AdditionalNodeID[1] = {0x00};
-"67
-[v _main `(v ~T0 @X0 1 ef ]
-"68
+[; ;door_unlock.c: 71: extern uint8_t ConnectionEntry;
+"88 ../src/door_unlock.c
+[v _DoorUnlock `(v ~T0 @X0 1 ef ]
+"89
 {
-[; ;main.c: 67: void main(void)
-[; ;main.c: 68: {
-[e :U _main ]
+[; ;door_unlock.c: 88: void DoorUnlock(void)
+[; ;door_unlock.c: 89: {
+[e :U _DoorUnlock ]
 [f ]
-"69
-[v _i `uc ~T0 @X0 1 a ]
-[v _j `uc ~T0 @X0 1 a ]
-"70
-[v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 69: uint8_t i, j;
-[; ;main.c: 70: bool result = 1;
-[e = _result -> -> 1 `i `uc ]
-"71
-[v _switch_val `uc ~T0 @X0 1 a ]
-[; ;main.c: 71: uint8_t switch_val;
-[; ;main.c: 77: SYSTEM_Initialize();
-"77
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 79: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
-"79
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 81: if(0 == 1)
-"81
-[e $ ! == -> 0 `i -> 1 `i 1121  ]
-[; ;main.c: 82: {
-"82
-{
-[; ;main.c: 83: LCD_Display((char *)"Welcome, Mathieu", 0, 1);
-"83
-[e ( _LCD_Display (3 , , -> :s 1C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-"84
-}
-[e :U 1121 ]
-[; ;main.c: 84: }
-[; ;main.c: 86: Read_MAC_Address();
-"86
-[e ( _Read_MAC_Address ..  ]
-[; ;main.c: 88: MiApp_ProtocolInit(0);
-"88
-[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;main.c: 94: CreateorJoin:
+"90
+[v _Run_Demo `uc ~T0 @X0 1 a ]
+[; ;door_unlock.c: 90: bool Run_Demo = 1;
+[e = _Run_Demo -> -> 1 `i `uc ]
+"91
+[v _Tx_Packet `uc ~T0 @X0 1 a ]
+[; ;door_unlock.c: 91: bool Tx_Packet = 1;
+[e = _Tx_Packet -> -> 1 `i `uc ]
+"92
+[v _rssi `uc ~T0 @X0 1 a ]
+[; ;door_unlock.c: 92: uint8_t rssi = 0;
+[e = _rssi -> -> 0 `i `uc ]
+"93
+[v _Pkt_Loss_Cnt `uc ~T0 @X0 1 a ]
+[; ;door_unlock.c: 93: uint8_t Pkt_Loss_Cnt = 0;
+[e = _Pkt_Loss_Cnt -> -> 0 `i `uc ]
 "94
-[e :U 1122 ]
-[; ;main.c: 100: if( MiApp_SetChannel(myChannel) == 0 )
-"100
-[e $ ! == -> ( _MiApp_SetChannel (1 _myChannel `i -> 0 `i 1123  ]
-[; ;main.c: 101: return;
+[v _tick1 `S1083 ~T0 @X0 1 a ]
+[v _tick2 `S1083 ~T0 @X0 1 a ]
+"95
+[v _switch_val `uc ~T0 @X0 1 a ]
+"96
+[v _pktCmd `uc ~T0 @X0 1 a ]
+[; ;door_unlock.c: 94: MIWI_TICK tick1, tick2;
+[; ;door_unlock.c: 95: uint8_t switch_val;
+[; ;door_unlock.c: 96: uint8_t pktCmd = 0;
+[e = _pktCmd -> -> 0 `i `uc ]
+[; ;door_unlock.c: 101: LCD_Display((char *)"   Microchip       Door Unlock  ", 0, 1);
 "101
-[e $UE 1120  ]
-[e :U 1123 ]
-[; ;main.c: 112: MiApp_ConnectionMode(0x00);
-"112
-[e ( _MiApp_ConnectionMode (1 -> -> 0 `i `uc ]
-[; ;main.c: 114: if(0 == 0)
-"114
-[e $ ! == -> 0 `i -> 0 `i 1124  ]
-[; ;main.c: 115: {
-"115
+[e ( _LCD_Display (3 , , -> :s 1C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;door_unlock.c: 106: tick1 = MiWi_TickGet();
+"106
+[e = _tick1 ( _MiWi_TickGet ..  ]
+[; ;door_unlock.c: 108: while(Run_Demo)
+"108
+[e $U 1121  ]
+[e :U 1122 ]
+[; ;door_unlock.c: 109: {
+"109
 {
-[; ;main.c: 116: while(result == 1)
-"116
-[e $U 1125  ]
-[e :U 1126 ]
-[; ;main.c: 117: {
+[; ;door_unlock.c: 113: tick2 = MiWi_TickGet();
+"113
+[e = _tick2 ( _MiWi_TickGet ..  ]
+[; ;door_unlock.c: 117: if(((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32000) * 1000)))
 "117
+[e $ ! > - . _tick2 0 . _tick1 0 * / -> -> 16000000 `l `ul -> -> -> 32000 `i `l `ul -> -> -> 1000 `i `l `ul 1124  ]
+[; ;door_unlock.c: 118: {
+"118
 {
-[; ;main.c: 123: MiApp_ProtocolInit(0);
-"123
-[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;main.c: 124: MiApp_StartConnection(0x00, 0, 0);
-"124
-[e ( _MiApp_StartConnection (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> -> 0 `i `l `ul ]
-[; ;main.c: 126: LCD_Erase();
-"126
-[e ( _LCD_Erase ..  ]
-[; ;main.c: 127: sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
+[; ;door_unlock.c: 121: if(Tx_Packet)
+"121
+[e $ ! != -> _Tx_Packet `i -> -> -> 0 `i `uc `i 1125  ]
+[; ;door_unlock.c: 122: {
+"122
+{
+[; ;door_unlock.c: 125: {TxData = 11;};
+"125
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;door_unlock.c: 127: TxBuffer[TxData++] = 2;
 "127
-[e ( _sprintf (1 , , , (. , &U _LCDText -> -> :s 2C `*uc `*Cuc -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> _myChannel `i ]
-[; ;main.c: 128: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
+[; ;door_unlock.c: 128: TxBuffer[TxData++] = 0x4D;
 "128
-[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 3C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
-[; ;main.c: 129: LCD_Update();
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 77 `i `uc ]
+[; ;door_unlock.c: 129: TxBuffer[TxData++] = 0x69;
 "129
-[e ( _LCD_Update ..  ]
-[; ;main.c: 134: while(!ConnectionTable[0].status.bits.isValid)
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 105 `i `uc ]
+[; ;door_unlock.c: 130: TxBuffer[TxData++] = 0x57;
+"130
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 87 `i `uc ]
+[; ;door_unlock.c: 131: TxBuffer[TxData++] = 0x69;
+"131
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 105 `i `uc ]
+[; ;door_unlock.c: 132: TxBuffer[TxData++] = 0x20;
+"132
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 32 `i `uc ]
+[; ;door_unlock.c: 133: TxBuffer[TxData++] = 0x52;
+"133
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 82 `i `uc ]
+[; ;door_unlock.c: 134: TxBuffer[TxData++] = 0x6F;
 "134
-[e $U 1128  ]
-[e :U 1129 ]
-[; ;main.c: 135: {
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 111 `i `uc ]
+[; ;door_unlock.c: 135: TxBuffer[TxData++] = 0x63;
 "135
-{
-[; ;main.c: 136: if(MiApp_MessageAvailable())
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 99 `i `uc ]
+[; ;door_unlock.c: 136: TxBuffer[TxData++] = 0x6B;
 "136
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1131  ]
-[; ;main.c: 137: MiApp_DiscardMessage();
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 107 `i `uc ]
+[; ;door_unlock.c: 137: TxBuffer[TxData++] = 0x73;
 "137
-[e ( _MiApp_DiscardMessage ..  ]
-[e :U 1131 ]
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 115 `i `uc ]
+[; ;door_unlock.c: 138: TxBuffer[TxData++] = 0x21;
 "138
-}
-[e :U 1128 ]
-"134
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> -> -> 0 `i `ui `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1129  ]
-[e :U 1130 ]
-[; ;main.c: 138: }
-[; ;main.c: 139: result = 0;
-"139
-[e = _result -> -> 0 `i `uc ]
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 33 `i `uc ]
+[; ;door_unlock.c: 140: if( MiApp_UnicastConnection(ConnectionEntry, 0) == 0 )
+"140
+[e $ ! == -> ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc `i -> 0 `i 1126  ]
+[; ;door_unlock.c: 141: Pkt_Loss_Cnt++;
 "141
-}
-[e :U 1125 ]
-"116
-[e $ == -> _result `i -> 1 `i 1126  ]
-[e :U 1127 ]
+[e ++ _Pkt_Loss_Cnt -> -> 1 `i `uc ]
+[e $U 1127  ]
 "142
-}
-[e :U 1124 ]
-[; ;main.c: 141: }
-[; ;main.c: 142: }
-[; ;main.c: 145: if(0 != 0)
+[e :U 1126 ]
+[; ;door_unlock.c: 142: else
+[; ;door_unlock.c: 143: Pkt_Loss_Cnt = 0;
+"143
+[e = _Pkt_Loss_Cnt -> -> 0 `i `uc ]
+[e :U 1127 ]
+[; ;door_unlock.c: 145: Tx_Packet = 0;
 "145
-[e $ ! != -> 0 `i -> 0 `i 1132  ]
-[; ;main.c: 146: {
+[e = _Tx_Packet -> -> 0 `i `uc ]
 "146
+}
+[; ;door_unlock.c: 146: }
+[e $U 1128  ]
+"147
+[e :U 1125 ]
+[; ;door_unlock.c: 147: else
+[; ;door_unlock.c: 148: {
+"148
 {
-[; ;main.c: 151: while(result == 1)
+[; ;door_unlock.c: 149: if(Pkt_Loss_Cnt < 1)
+"149
+[e $ ! < -> _Pkt_Loss_Cnt `i -> 1 `i 1129  ]
+[; ;door_unlock.c: 150: {
+"150
+{
+[; ;door_unlock.c: 151: if(rssi > 200)
 "151
-[e $U 1133  ]
-[e :U 1134 ]
-[; ;main.c: 152: {
+[e $ ! > -> _rssi `i -> 200 `i 1130  ]
+[; ;door_unlock.c: 152: {
 "152
 {
+[; ;door_unlock.c: 153: sprintf((char *)&LCDText, (char*)" Unlock Door ?  SW1:YES   SW2:NO");
 "153
-[v _scanresult `Vuc ~T0 @X0 1 a ]
-[; ;main.c: 153: volatile uint8_t scanresult;
-[; ;main.c: 155: MiApp_ProtocolInit(0);
+[e ( _sprintf (1 , &U _LCDText -> -> :s 2C `*uc `*Cuc ]
+[; ;door_unlock.c: 154: LATCbits.LATC2 = 1;
+"154
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 155: LATAbits.LATA6 = 0;
 "155
-[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;main.c: 161: scanresult = MiApp_SearchConnection(10, (0x00010000 << (myChannel-16)));
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 156: LATAbits.LATA7 = 0;
+"156
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 157: switch_val = BUTTON_Pressed();
+"157
+[e = _switch_val ( _BUTTON_Pressed ..  ]
+[; ;door_unlock.c: 158: if(switch_val == 1)
+"158
+[e $ ! == -> _switch_val `i -> 1 `i 1131  ]
+[; ;door_unlock.c: 159: {
+"159
+{
+[; ;door_unlock.c: 160: LATCbits.LATC2 = 1;
+"160
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 161: LATAbits.LATA6 = 1;
 "161
-[e = _scanresult ( _MiApp_SearchConnection (2 , -> -> 10 `i `uc -> << -> 65536 `l - -> _myChannel `i -> 16 `i `ul ]
-[; ;main.c: 167: if(scanresult > 0)
-"167
-[e $ ! > -> _scanresult `i -> 0 `i 1136  ]
-[; ;main.c: 168: {
-"168
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 162: LATAbits.LATA7 = 1;
+"162
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+"163
+}
+[; ;door_unlock.c: 163: }
+[e $U 1132  ]
+"165
+[e :U 1131 ]
+[; ;door_unlock.c: 165: else if(switch_val == 2)
+[e $ ! == -> _switch_val `i -> 2 `i 1133  ]
+[; ;door_unlock.c: 166: {
+"166
 {
-"169
-[v _k `uc ~T0 @X0 1 a ]
-[; ;main.c: 169: uint8_t k;
-[; ;main.c: 171: for(j = 0; j < scanresult; j++)
+[; ;door_unlock.c: 170: {TxData = 11;};
+"170
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;door_unlock.c: 171: TxBuffer[TxData++] = 1;
 "171
-{
-[e = _j -> -> 0 `i `uc ]
-[e $U 1140  ]
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
+[; ;door_unlock.c: 172: MiApp_UnicastConnection(ConnectionEntry, 0);
 "172
-[e :U 1137 ]
-[; ;main.c: 172: {
-{
-"173
-[v _skip_print `uc ~T0 @X0 1 a ]
-[; ;main.c: 173: uint8_t skip_print = 0;
-[e = _skip_print -> -> 0 `i `uc ]
-[; ;main.c: 174: if(j > 0)
+[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
+[; ;door_unlock.c: 174: LCD_BacklightON();
 "174
-[e $ ! > -> _j `i -> 0 `i 1141  ]
-[; ;main.c: 175: {
+[e ( _LCD_BacklightON ..  ]
+[; ;door_unlock.c: 175: LCD_Display((char *)"   Exiting....     Door Unlock  ", 0, 1);
 "175
-{
-[; ;main.c: 177: skip_print = 0;
-"177
-[e = _skip_print -> -> 0 `i `uc ]
-[; ;main.c: 178: for(k = 0; k < j; k++)
+[e ( _LCD_Display (3 , , -> :s 3C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;door_unlock.c: 176: LCD_BacklightOFF();
+"176
+[e ( _LCD_BacklightOFF ..  ]
+[; ;door_unlock.c: 178: tick1 = MiWi_TickGet();
 "178
-{
-[e = _k -> -> 0 `i `uc ]
-[e $U 1145  ]
-"179
-[e :U 1142 ]
-[; ;main.c: 179: {
-{
-[; ;main.c: 180: if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
-[; ;main.c: 181: (ActiveScanResults[j].PANID.v[0] == ActiveScanResults[k].PANID.v[0]))
+[e = _tick1 ( _MiWi_TickGet ..  ]
+[; ;door_unlock.c: 180: while(Run_Demo)
+"180
+[e $U 1134  ]
+[e :U 1135 ]
+[; ;door_unlock.c: 181: {
 "181
-[e $ ! & == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i 1146  ]
-[; ;main.c: 182: {
+{
+[; ;door_unlock.c: 182: if(MiApp_MessageAvailable())
 "182
-{
-[; ;main.c: 183: skip_print = 1;
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1137  ]
+[; ;door_unlock.c: 183: {
 "183
-[e = _skip_print -> -> 1 `i `uc ]
-[; ;main.c: 184: break;
-"184
-[e $U 1143  ]
-"185
-}
-[e :U 1146 ]
-"187
-}
-"178
-[e ++ _k -> -> 1 `i `uc ]
-[e :U 1145 ]
-[e $ < -> _k `i -> _j `i 1142  ]
-[e :U 1143 ]
-"187
-}
-[; ;main.c: 185: }
-[; ;main.c: 187: }
-[; ;main.c: 188: if(skip_print == 1)
-"188
-[e $ ! == -> _skip_print `i -> 1 `i 1147  ]
-[; ;main.c: 189: {
-"189
 {
-[; ;main.c: 190: if(j == (scanresult-1)) j = -1;
-"190
-[e $ ! == -> _j `i - -> _scanresult `i -> 1 `i 1148  ]
-[e = _j -> -U -> 1 `i `uc ]
-[e :U 1148 ]
-[; ;main.c: 191: continue;
-"191
-[e $U 1139  ]
-"192
+[; ;door_unlock.c: 184: if(rxMessage.Payload[0] == 4)
+"184
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 4 `i 1138  ]
+[; ;door_unlock.c: 185: Run_Demo = 0;
+"185
+[e = _Run_Demo -> -> 0 `i `uc ]
+[e :U 1138 ]
+[; ;door_unlock.c: 187: MiApp_DiscardMessage();
+"187
+[e ( _MiApp_DiscardMessage ..  ]
+"188
 }
-[e :U 1147 ]
+[e :U 1137 ]
+[; ;door_unlock.c: 188: }
+[; ;door_unlock.c: 189: if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
+"189
+[e $ ! > - . _tick2 0 . _tick1 0 * / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 6 `i `l `ul 1139  ]
+[; ;door_unlock.c: 190: Run_Demo = 0;
+"190
+[e = _Run_Demo -> -> 0 `i `uc ]
+[e :U 1139 ]
+[; ;door_unlock.c: 192: tick2 = MiWi_TickGet();
+"192
+[e = _tick2 ( _MiWi_TickGet ..  ]
 "193
 }
-[e :U 1141 ]
-[; ;main.c: 192: }
-[; ;main.c: 193: }
-[; ;main.c: 195: while(1)
-"195
-[e :U 1150 ]
-[; ;main.c: 196: {
-"196
-{
-"202
-[v _Status `uc ~T0 @X0 1 a ]
-"203
-[v _CoordCount `uc ~T0 @X0 1 a ]
-[; ;main.c: 202: uint8_t Status;
-[; ;main.c: 203: uint8_t CoordCount = 0;
-[e = _CoordCount -> -> 0 `i `uc ]
-[; ;main.c: 204: {TxData = 11;};
-"204
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;main.c: 206: for(k = 0 ; k < scanresult ; k++)
-"206
-{
-[e = _k -> -> 0 `i `uc ]
-[e $U 1155  ]
-"207
-[e :U 1152 ]
-[; ;main.c: 207: {
-{
-[; ;main.c: 208: if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
-[; ;main.c: 209: (ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]))
-"209
-[e $ ! & == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i 1156  ]
-[; ;main.c: 210: {
-"210
-{
-[; ;main.c: 211: CoordCount++;
-"211
-[e ++ _CoordCount -> -> 1 `i `uc ]
-"212
-}
-[e :U 1156 ]
-"213
-}
-"206
-[e ++ _k -> -> 1 `i `uc ]
-[e :U 1155 ]
-[e $ < -> _k `i -> _scanresult `i 1152  ]
-[e :U 1153 ]
-"213
-}
-[; ;main.c: 212: }
-[; ;main.c: 213: }
-[; ;main.c: 214: if(CoordCount > 1)
-"214
-[e $ ! > -> _CoordCount `i -> 1 `i 1157  ]
-[; ;main.c: 215: {
-"215
-{
-"216
-[v _nodeIndex `uc ~T0 @X0 1 a ]
-[; ;main.c: 216: uint8_t nodeIndex = 0;
-[e = _nodeIndex -> -> 0 `i `uc ]
-"217
-[v _count `uc ~T0 @X0 1 a ]
-[; ;main.c: 217: uint8_t count = 0;
-[e = _count -> -> 0 `i `uc ]
-[; ;main.c: 218: {TxData = 11;};
-"218
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;main.c: 219: TxBuffer[TxData++] = 4;
-"219
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 4 `i `uc ]
-[; ;main.c: 220: TxBuffer[TxData++] = ActiveScanResults[j].PANID.v[1];
-"220
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux ]
-[; ;main.c: 221: TxBuffer[TxData++] = ActiveScanResults[j].PANID.v[0];
-"221
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux ]
-[; ;main.c: 222: MiApp_BroadcastPacket(0);
-"222
-[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;main.c: 223: for(k = 0 ; k < scanresult ; k++)
-"223
-{
-[e = _k -> -> 0 `i `uc ]
-[e $U 1161  ]
-"224
-[e :U 1158 ]
-[; ;main.c: 224: {
-{
-[; ;main.c: 225: if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
-[; ;main.c: 226: (ActiveScanResults[j].PANID.v[0] == ActiveScanResults[k].PANID.v[0]))
-"226
-[e $ ! & == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i 1162  ]
-[; ;main.c: 227: {
-"227
-{
-[; ;main.c: 228: count++;
-"228
-[e ++ _count -> -> 1 `i `uc ]
-[; ;main.c: 229: nodeIndex = k;
-"229
-[e = _nodeIndex _k ]
-"230
-}
-[e :U 1162 ]
-"231
-}
-"223
-[e ++ _k -> -> 1 `i `uc ]
-[e :U 1161 ]
-[e $ < -> _k `i -> _scanresult `i 1158  ]
-[e :U 1159 ]
-"231
-}
-"232
-}
-[e :U 1157 ]
-[; ;main.c: 230: }
-[; ;main.c: 231: }
-[; ;main.c: 232: }
-[; ;main.c: 238: Status = MiApp_EstablishConnection(j, 0x00);
-"238
-[e = _Status ( _MiApp_EstablishConnection (2 , _j -> -> 0 `i `uc ]
-[; ;main.c: 239: if(Status == 0xFF)
-"239
-[e $ ! == -> _Status `i -> 255 `i 1163  ]
-[; ;main.c: 240: {
-"240
-{
-[; ;main.c: 242: goto CreateorJoin;
-"242
-[e $U 1122  ]
-"243
-}
-[; ;main.c: 243: }
-[e $U 1164  ]
-"244
-[e :U 1163 ]
-[; ;main.c: 244: else
-[; ;main.c: 245: {
-"245
-{
-[; ;main.c: 247: result = 0;
-"247
-[e = _result -> -> 0 `i `uc ]
-"248
-}
-[e :U 1164 ]
-[; ;main.c: 248: }
-[; ;main.c: 249: {TxData = 11;};
-"249
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;main.c: 250: TxBuffer[TxData++] = 5;
-"250
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 5 `i `uc ]
-[; ;main.c: 251: TxBuffer[TxData++] = myPANID.v[1];
-"251
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux ]
-[; ;main.c: 252: TxBuffer[TxData++] = myPANID.v[0];
-"252
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux ]
-[; ;main.c: 253: MiApp_BroadcastPacket(0);
-"253
-[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;main.c: 254: break;
-"254
-[e $U 1151  ]
-"256
-}
-[e :U 1149 ]
-"195
-[e $U 1150  ]
-[e :U 1151 ]
-[; ;main.c: 256: }
-[; ;main.c: 262: if(result == 0)
-"262
-[e $ ! == -> _result `i -> 0 `i 1165  ]
-[; ;main.c: 263: break;
-"263
-[e $U 1138  ]
-[e :U 1165 ]
-"264
-}
-"171
-[e :U 1139 ]
-[e ++ _j -> -> 1 `i `uc ]
-[e :U 1140 ]
-[e $ < -> _j `i -> _scanresult `i 1137  ]
-[e :U 1138 ]
-"264
-}
-[; ;main.c: 264: }
-[; ;main.c: 266: result = 0;
-"266
-[e = _result -> -> 0 `i `uc ]
-"267
-}
-[; ;main.c: 267: }
-[e $U 1166  ]
-"268
+[e :U 1134 ]
+"180
+[e $ != -> _Run_Demo `i -> -> -> 0 `i `uc `i 1135  ]
 [e :U 1136 ]
-[; ;main.c: 268: else
-[; ;main.c: 269: {
-"269
-{
-[; ;main.c: 270: LCD_Display((char *)"Waiting for PAN Rescanning......", 0, 0);
-"270
-[e ( _LCD_Display (3 , , -> :s 4C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"271
-}
-[e :U 1166 ]
-"272
+"194
 }
 [e :U 1133 ]
-"151
-[e $ == -> _result `i -> 1 `i 1134  ]
-[e :U 1135 ]
-"273
-}
-[e :U 1132 ]
-[; ;main.c: 271: }
-[; ;main.c: 272: }
-[; ;main.c: 273: }
-[; ;main.c: 287: while(1)
-"287
-[e :U 1168 ]
-[; ;main.c: 288: {
-"288
-{
-"289
-[v _pktCMD `uc ~T0 @X0 1 a ]
-[; ;main.c: 289: uint8_t pktCMD = 0;
-[e = _pktCMD -> -> 0 `i `uc ]
-[v _switch_val `uc ~T0 @X0 1 a ]
-"290
-[v _menu_choice `uc ~T0 @X0 1 a ]
-[; ;main.c: 290: uint8_t switch_val, menu_choice = 0;
-[e = _menu_choice -> -> 0 `i `uc ]
-[; ;main.c: 291: result = 0;
-"291
-[e = _result -> -> 0 `i `uc ]
-[; ;main.c: 294: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
-"294
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 300: LCD_Display((char *)"SW1: Door Unlock SW2: Other Apps  ", 0, 0);
-"300
-[e ( _LCD_Display (3 , , -> :s 5C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 306: while(result == 0)
-"306
-[e $U 1170  ]
-[e :U 1171 ]
-[; ;main.c: 307: {
-"307
-{
-[; ;main.c: 309: switch_val = BUTTON_Pressed();
-"309
-[e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;main.c: 312: if(MiApp_MessageAvailable())
-"312
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1173  ]
-[; ;main.c: 313: {
-"313
-{
-[; ;main.c: 314: pktCMD = rxMessage.Payload[0];
-"314
-[e = _pktCMD *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;main.c: 315: if(pktCMD == 4)
-"315
-[e $ ! == -> _pktCMD `i -> 4 `i 1174  ]
-[; ;main.c: 316: {
-"316
-{
-[; ;main.c: 317: if((rxMessage.Payload[1] != myPANID.v[1]) || (rxMessage.Payload[2] != myPANID.v[0]))
-"317
-[e $ ! || != -> *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i != -> *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i 1175  ]
-[; ;main.c: 318: pktCMD = 0;
-"318
-[e = _pktCMD -> -> 0 `i `uc ]
-[e :U 1175 ]
-"320
-}
-[e :U 1174 ]
-[; ;main.c: 320: }
-[; ;main.c: 321: if(pktCMD == 2)
-"321
-[e $ ! == -> _pktCMD `i -> 2 `i 1176  ]
-[; ;main.c: 322: {
-"322
-{
-[; ;main.c: 323: for(i = 0 ; i< 10 ; i++)
-"323
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1177  ]
-[e $U 1178  ]
-"324
-[e :U 1177 ]
-[; ;main.c: 324: {
-{
-[; ;main.c: 325: if(ConnectionTable[i].status.bits.isValid)
-"325
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1180  ]
-[; ;main.c: 326: {
-"326
-{
-[; ;main.c: 327: if((ConnectionTable[i].AltAddress.v[1] == rxMessage.SourceAddress[1]) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.SourceAddress[0]))
-"327
-[e $ ! && == -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + . _rxMessage 2 * -> -> 1 `i `x -> -> # *U . _rxMessage 2 `i `x `i == -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + . _rxMessage 2 * -> -> 0 `i `x -> -> # *U . _rxMessage 2 `i `x `i 1181  ]
-[; ;main.c: 328: {
-"328
-{
-[; ;main.c: 329: ConnectionEntry = i;
-"329
-[e = _ConnectionEntry _i ]
-[; ;main.c: 331: break;
-"331
-[e $U 1178  ]
-"332
-}
-[e :U 1181 ]
-"333
-}
-[e :U 1180 ]
-"334
-}
-"323
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1177  ]
-[e :U 1178 ]
-"334
-}
-"335
-}
-[e :U 1176 ]
-[; ;main.c: 332: }
-[; ;main.c: 333: }
-[; ;main.c: 334: }
-[; ;main.c: 335: }
-[; ;main.c: 336: MiApp_DiscardMessage();
-"336
-[e ( _MiApp_DiscardMessage ..  ]
-"337
-}
-[e :U 1173 ]
-[; ;main.c: 337: }
-[; ;main.c: 338: if(pktCMD == 2)
-"338
-[e $ ! == -> _pktCMD `i -> 2 `i 1182  ]
-[; ;main.c: 339: {
-"339
-{
-[; ;main.c: 340: {TxData = 11;};
-"340
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;main.c: 341: TxBuffer[TxData++] = 2;
-"341
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
-[; ;main.c: 342: MiApp_UnicastConnection(ConnectionEntry, 0);
-"342
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;main.c: 344: DoorUnlock();
-"344
-[e ( _DoorUnlock ..  ]
-[; ;main.c: 345: result = 1;
-"345
-[e = _result -> -> 1 `i `uc ]
-"346
-}
-[e :U 1182 ]
-[; ;main.c: 346: }
-[; ;main.c: 348: if((switch_val == 1) && (menu_choice == 0))
-"348
-[e $ ! && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 0 `i 1183  ]
-[; ;main.c: 349: {
-"349
-{
-"350
-[v _NumberOfConnections `uc ~T0 @X0 1 a ]
-[; ;main.c: 350: uint8_t NumberOfConnections = 0;
-[e = _NumberOfConnections -> -> 0 `i `uc ]
-[; ;main.c: 353: ConnectionEntry = 0;
-"353
-[e = _ConnectionEntry -> -> 0 `i `uc ]
-[; ;main.c: 355: for(i = 0; i < 10; i++)
-"355
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1184  ]
-[e $U 1185  ]
-"356
-[e :U 1184 ]
-[; ;main.c: 356: {
-{
-[; ;main.c: 357: if((ConnectionTable[i].status.bits.isValid) && (ConnectionTable[i].status.bits.isFamily))
-"357
-[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i 1187  ]
-[; ;main.c: 358: NumberOfConnections++;
-"358
-[e ++ _NumberOfConnections -> -> 1 `i `uc ]
-[e :U 1187 ]
-"359
-}
-"355
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1184  ]
-[e :U 1185 ]
-"359
-}
-[; ;main.c: 359: }
-[; ;main.c: 360: if(NumberOfConnections > 1)
-"360
-[e $ ! > -> _NumberOfConnections `i -> 1 `i 1188  ]
-[; ;main.c: 361: {
-"361
-{
-[v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 362: bool result = 0;
-"362
-[e = _result -> -> 0 `i `uc ]
-"363
-[v _ConnectionsCount `uc ~T0 @X0 1 a ]
-[; ;main.c: 363: uint8_t ConnectionsCount = 0;
-[e = _ConnectionsCount -> -> 0 `i `uc ]
-[; ;main.c: 366: LCD_Display((char *)"Select Peer Node for Unlock Door", 0, 0);
-"366
-[e ( _LCD_Display (3 , , -> :s 6C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 368: for(i = 0; i < 10; i++)
-"368
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1189  ]
-[e $U 1190  ]
-"369
-[e :U 1189 ]
-[; ;main.c: 369: {
-{
-[; ;main.c: 370: if(ConnectionTable[i].status.bits.isValid)
-"370
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1192  ]
-[; ;main.c: 371: {
-"371
-{
-[; ;main.c: 373: LCD_Erase();
-"373
-[e ( _LCD_Erase ..  ]
-[; ;main.c: 374: sprintf((char *)LCDText, (char*)"SW1:<Addr:%02x%02x>",ConnectionTable[i].AltAddress.v[1], ConnectionTable[i].AltAddress.v[0]);
-"374
-[e ( _sprintf (1 , , (. , &U _LCDText -> -> :s 7C `*uc `*Cuc -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i ]
-[; ;main.c: 375: sprintf((char *)&(LCDText[16]), (char*)"SW2: Additional");
-"375
-[e ( _sprintf (1 , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 8C `*uc `*Cuc ]
-[; ;main.c: 376: LCD_Update();
-"376
-[e ( _LCD_Update ..  ]
-[; ;main.c: 377: ConnectionsCount++;
-"377
-[e ++ _ConnectionsCount -> -> 1 `i `uc ]
-[; ;main.c: 378: while(1)
-"378
-[e :U 1194 ]
-[; ;main.c: 379: {
-"379
-{
-[; ;main.c: 380: switch_val = BUTTON_Pressed();
-"380
-[e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;main.c: 381: if(switch_val == 1)
-"381
-[e $ ! == -> _switch_val `i -> 1 `i 1196  ]
-[; ;main.c: 382: {
-"382
-{
-[; ;main.c: 383: ConnectionEntry = i;
-"383
-[e = _ConnectionEntry _i ]
-[; ;main.c: 384: result = 1;
-"384
-[e = _result -> -> 1 `i `uc ]
-[; ;main.c: 385: break;
-"385
-[e $U 1195  ]
-"386
-}
-[; ;main.c: 386: }
-[e $U 1197  ]
-"387
-[e :U 1196 ]
-[; ;main.c: 387: else if(switch_val == 2)
-[e $ ! == -> _switch_val `i -> 2 `i 1198  ]
-[; ;main.c: 388: {
-"388
-{
-[; ;main.c: 389: if(ConnectionsCount == NumberOfConnections)
-"389
-[e $ ! == -> _ConnectionsCount `i -> _NumberOfConnections `i 1199  ]
-[; ;main.c: 390: {
-"390
-{
-[; ;main.c: 391: i = -1;
-"391
-[e = _i -> -U -> 1 `i `uc ]
-[; ;main.c: 392: ConnectionsCount = 0;
-"392
-[e = _ConnectionsCount -> -> 0 `i `uc ]
-"393
-}
-[e :U 1199 ]
-[; ;main.c: 393: }
-[; ;main.c: 394: break;
-"394
-[e $U 1195  ]
-"395
-}
-[e :U 1198 ]
-"396
-[e :U 1197 ]
-}
-[e :U 1193 ]
-"378
-[e $U 1194  ]
-[e :U 1195 ]
-"397
-}
-[e :U 1192 ]
-[; ;main.c: 395: }
-[; ;main.c: 396: }
-[; ;main.c: 397: }
-[; ;main.c: 398: if(result == 1) break;
-"398
-[e $ ! == -> _result `i -> 1 `i 1200  ]
-[e $U 1190  ]
-[e :U 1200 ]
-"399
-}
-"368
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1189  ]
-[e :U 1190 ]
-"399
-}
-"400
-}
-[e :U 1188 ]
-[; ;main.c: 399: }
-[; ;main.c: 400: }
-[; ;main.c: 401: {TxData = 11;};
-"401
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;main.c: 402: TxBuffer[TxData++] = 2;
-"402
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
-[; ;main.c: 403: MiApp_UnicastConnection(ConnectionEntry, 0);
-"403
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;main.c: 406: DoorUnlock();
-"406
-[e ( _DoorUnlock ..  ]
-[; ;main.c: 407: result = 1;
-"407
-[e = _result -> -> 1 `i `uc ]
-"408
-}
-[e :U 1183 ]
-[; ;main.c: 408: }
-[; ;main.c: 409: if((switch_val == 2))
-"409
-[e $ ! == -> _switch_val `i -> 2 `i 1201  ]
-[; ;main.c: 410: {
-"410
-{
-[; ;main.c: 411: menu_choice++;
-"411
-[e ++ _menu_choice -> -> 1 `i `uc ]
-[; ;main.c: 412: if(menu_choice == 3) menu_choice = 0;
-"412
-[e $ ! == -> _menu_choice `i -> 3 `i 1202  ]
-[e = _menu_choice -> -> 0 `i `uc ]
-[e :U 1202 ]
-[; ;main.c: 413: if(menu_choice == 0)
-"413
-[e $ ! == -> _menu_choice `i -> 0 `i 1203  ]
-[; ;main.c: 414: {
-"414
-{
-[; ;main.c: 415: LCD_Display((char *)"SW1: Door Unlock SW2: Other Apps  ", 0, 0);
-"415
-[e ( _LCD_Display (3 , , -> :s 9C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"416
-}
-[; ;main.c: 416: }
-[e $U 1204  ]
-"417
-[e :U 1203 ]
-[; ;main.c: 417: else if(menu_choice == 1)
-[e $ ! == -> _menu_choice `i -> 1 `i 1205  ]
-[; ;main.c: 418: {
-"418
-{
-[; ;main.c: 419: LCD_Display((char *)"SW1: Temp Demo  SW2: Other Apps  ", 0, 0);
-"419
-[e ( _LCD_Display (3 , , -> :s 10C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"420
-}
-[; ;main.c: 420: }
-[e $U 1206  ]
-"421
-[e :U 1205 ]
-[; ;main.c: 421: else if(menu_choice == 2)
-[e $ ! == -> _menu_choice `i -> 2 `i 1207  ]
-[; ;main.c: 422: {
-"422
-{
-[; ;main.c: 423: LCD_Display((char *)"SW1: Node Info  SW2: Other Apps  ", 0, 0);
-"423
-[e ( _LCD_Display (3 , , -> :s 11C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"424
-}
-[e :U 1207 ]
-"426
-[e :U 1206 ]
-[e :U 1204 ]
-}
-[e :U 1201 ]
-[; ;main.c: 424: }
-[; ;main.c: 426: }
-[; ;main.c: 427: if((pktCMD == 3) || ((switch_val == 1) && (menu_choice == 1)))
-"427
-[e $ ! || == -> _pktCMD `i -> 3 `i && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 1 `i 1208  ]
-[; ;main.c: 428: {
-"428
-{
-[; ;main.c: 429: {TxData = 11;};
-"429
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;main.c: 430: TxBuffer[TxData++] = 3;
-"430
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 3 `i `uc ]
-[; ;main.c: 431: MiApp_BroadcastPacket(0);
-"431
-[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;main.c: 434: TempDemo();
-"434
-[e ( _TempDemo ..  ]
-[; ;main.c: 435: result = 1;
-"435
-[e = _result -> -> 1 `i `uc ]
-"436
-}
-[e :U 1208 ]
-[; ;main.c: 436: }
-[; ;main.c: 437: if((pktCMD == 4) || ((switch_val == 1) && (menu_choice == 2)))
-"437
-[e $ ! || == -> _pktCMD `i -> 4 `i && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 2 `i 1209  ]
-[; ;main.c: 438: {
-"438
-{
-[; ;main.c: 440: LCD_Erase();
-"440
-[e ( _LCD_Erase ..  ]
-[; ;main.c: 441: sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
-"441
-[e ( _sprintf (1 , , , (. , &U _LCDText -> -> :s 12C `*uc `*Cuc -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> _myChannel `i ]
-[; ;main.c: 443: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
-"443
-[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 13C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
-[; ;main.c: 447: LCD_Update();
-"447
-[e ( _LCD_Update ..  ]
-[; ;main.c: 448: pktCMD = 0;
-"448
-[e = _pktCMD -> -> 0 `i `uc ]
-"449
-}
-[e :U 1209 ]
-[; ;main.c: 449: }
-[; ;main.c: 451: if(pktCMD == 5)
-"451
-[e $ ! == -> _pktCMD `i -> 5 `i 1210  ]
-[; ;main.c: 452: {
-"452
-{
-[; ;main.c: 454: result = 1;
-"454
-[e = _result -> -> 1 `i `uc ]
-"456
-}
-[e :U 1210 ]
-"457
-}
-[e :U 1170 ]
-"306
-[e $ == -> _result `i -> 0 `i 1171  ]
-[e :U 1172 ]
-"458
-}
-[e :U 1167 ]
-"287
-[e $U 1168  ]
-[e :U 1169 ]
-[; ;main.c: 456: }
-[; ;main.c: 457: }
-[; ;main.c: 458: }
-[; ;main.c: 459: }
-"459
-[e :UE 1120 ]
-}
-[p f _sprintf 16484269 ]
-[a 3C 65 100 100 114 101 115 115 58 32 37 48 50 120 37 48 50 120 0 ]
-[a 13C 65 100 100 114 101 115 115 58 32 37 48 50 120 37 48 50 120 0 ]
-[a 1C 87 101 108 99 111 109 101 44 32 77 97 116 104 105 101 117 0 ]
-[a 6C 83 101 108 101 99 116 32 80 101 101 114 32 78 111 100 101 32 102 111 114 32 85 110 108 111 99 107 32 68 111 111 114 0 ]
-[a 8C 83 87 50 58 32 65 100 100 105 116 105 111 110 97 108 0 ]
-[a 2C 80 65 78 73 68 58 37 48 50 120 37 48 50 120 32 67 104 58 37 48 50 100 0 ]
-[a 12C 80 65 78 73 68 58 37 48 50 120 37 48 50 120 32 67 104 58 37 48 50 100 0 ]
-[a 7C 83 87 49 58 60 65 100 100 114 58 37 48 50 120 37 48 50 120 62 0 ]
-[a 4C 87 97 105 116 105 110 103 32 102 111 114 32 80 65 78 32 82 101 115 99 97 110 110 105 110 103 46 46 46 46 46 46 0 ]
-[a 5C 83 87 49 58 32 68 111 111 114 32 85 110 108 111 99 107 32 83 87 50 58 32 79 116 104 101 114 32 65 112 112 115 32 32 0 ]
-[a 9C 83 87 49 58 32 68 111 111 114 32 85 110 108 111 99 107 32 83 87 50 58 32 79 116 104 101 114 32 65 112 112 115 32 32 0 ]
-[a 10C 83 87 49 58 32 84 101 109 112 32 68 101 109 111 32 32 83 87 50 58 32 79 116 104 101 114 32 65 112 112 115 32 32 0 ]
-[a 11C 83 87 49 58 32 78 111 100 101 32 73 110 102 111 32 32 83 87 50 58 32 79 116 104 101 114 32 65 112 112 115 32 32 0 ]
-=======
-[; ;main.c: 70: uint8_t AdditionalNodeID[1] = {0x00};
-"103
-[v _main `(v ~T0 @X0 1 ef ]
-"104
-{
-[; ;main.c: 103: void main(void)
-[; ;main.c: 104: {
-[e :U _main ]
-[f ]
-"105
-[v _i `uc ~T0 @X0 1 a ]
-[v _j `uc ~T0 @X0 1 a ]
-"106
-[v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 105: uint8_t i, j;
-[; ;main.c: 106: bool result = 1;
-[e = _result -> -> 1 `i `uc ]
-"107
-[v _switch_val `uc ~T0 @X0 1 a ]
-[; ;main.c: 107: uint8_t switch_val;
-[; ;main.c: 112: SYSTEM_Initialize();
-"112
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 115: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
-"115
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 117: Read_MAC_Address();
-"117
-[e ( _Read_MAC_Address ..  ]
-[; ;main.c: 119: MiApp_ProtocolInit(0);
-"119
-[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;main.c: 124: CreateorJoin:
-"124
-[e :U 1121 ]
-[; ;main.c: 130: if( MiApp_SetChannel(myChannel) == 0 )
-"130
-[e $ ! == -> ( _MiApp_SetChannel (1 _myChannel `i -> 0 `i 1122  ]
-[; ;main.c: 131: return;
-"131
-[e $UE 1120  ]
-[e :U 1122 ]
-[; ;main.c: 142: MiApp_ConnectionMode(0x00);
-"142
-[e ( _MiApp_ConnectionMode (1 -> -> 0 `i `uc ]
-[; ;main.c: 144: while(result == 1)
-"144
-[e $U 1123  ]
-[e :U 1124 ]
-[; ;main.c: 145: {
-"145
-{
-[; ;main.c: 151: MiApp_ProtocolInit(0);
-"151
-[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;main.c: 152: MiApp_StartConnection(0x00, 0, 0);
-"152
-[e ( _MiApp_StartConnection (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> -> 0 `i `l `ul ]
-[; ;main.c: 154: LCD_Erase();
-"154
-[e ( _LCD_Erase ..  ]
-[; ;main.c: 155: sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
-"155
-[e ( _sprintf (1 , , , (. , &U _LCDText -> -> :s 1C `*uc `*Cuc -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> _myChannel `i ]
-[; ;main.c: 156: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
-"156
-[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 2C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
-[; ;main.c: 157: LCD_Update();
-"157
-[e ( _LCD_Update ..  ]
-[; ;main.c: 162: while(!ConnectionTable[0].status.bits.isValid)
-"162
-[e $U 1126  ]
-[e :U 1127 ]
-[; ;main.c: 163: {
-"163
-{
-[; ;main.c: 164: if(MiApp_MessageAvailable())
-"164
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1129  ]
-[; ;main.c: 165: MiApp_DiscardMessage();
-"165
-[e ( _MiApp_DiscardMessage ..  ]
-[e :U 1129 ]
-"166
-}
-[e :U 1126 ]
-"162
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> -> -> 0 `i `ui `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1127  ]
-[e :U 1128 ]
-[; ;main.c: 166: }
-[; ;main.c: 167: result = 0;
-"167
-[e = _result -> -> 0 `i `uc ]
-"169
-}
-[e :U 1123 ]
-"144
-[e $ == -> _result `i -> 1 `i 1124  ]
-[e :U 1125 ]
-[; ;main.c: 169: }
-[; ;main.c: 171: while(1)
-"171
-[e :U 1131 ]
-[; ;main.c: 172: {
-"172
-{
-"173
-[v _pktCMD `uc ~T0 @X0 1 a ]
-[; ;main.c: 173: uint8_t pktCMD = 0;
-[e = _pktCMD -> -> 0 `i `uc ]
-[v _switch_val `uc ~T0 @X0 1 a ]
-"174
-[v _menu_choice `uc ~T0 @X0 1 a ]
-[; ;main.c: 174: uint8_t switch_val, menu_choice = 0;
-[e = _menu_choice -> -> 0 `i `uc ]
-[; ;main.c: 175: result = 0;
-"175
-[e = _result -> -> 0 `i `uc ]
-[; ;main.c: 178: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
-"178
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 183: LCD_Display((char *)"SW1: Range Demo SW2: Other Apps  ", 0, 0);
-"183
-[e ( _LCD_Display (3 , , -> :s 3C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 188: while(result == 0)
-"188
-[e $U 1133  ]
-[e :U 1134 ]
-[; ;main.c: 189: {
-"189
-{
-[; ;main.c: 191: switch_val = BUTTON_Pressed();
-"191
-[e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;main.c: 194: if(MiApp_MessageAvailable())
-"194
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1136  ]
-[; ;main.c: 195: {
 "195
-{
-[; ;main.c: 196: pktCMD = rxMessage.Payload[0];
-"196
-[e = _pktCMD *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;main.c: 197: if(pktCMD == 4)
-"197
-[e $ ! == -> _pktCMD `i -> 4 `i 1137  ]
-[; ;main.c: 198: {
-"198
-{
-[; ;main.c: 199: if((rxMessage.Payload[1] != myPANID.v[1]) || (rxMessage.Payload[2] != myPANID.v[0]))
-"199
-[e $ ! || != -> *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i != -> *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i 1138  ]
-[; ;main.c: 200: pktCMD = 0;
-"200
-[e = _pktCMD -> -> 0 `i `uc ]
-[e :U 1138 ]
-"202
+[e :U 1132 ]
 }
-[e :U 1137 ]
-[; ;main.c: 202: }
-[; ;main.c: 203: if(pktCMD == 2)
+[; ;door_unlock.c: 193: }
+[; ;door_unlock.c: 194: }
+[; ;door_unlock.c: 195: }
+[e $U 1140  ]
+"196
+[e :U 1130 ]
+[; ;door_unlock.c: 196: else if(rssi < 201)
+[e $ ! < -> _rssi `i -> 201 `i 1141  ]
+[; ;door_unlock.c: 197: {
+"197
+{
+[; ;door_unlock.c: 198: sprintf((char *)&LCDText, (char*)" Get Closer to      the Door    ");
+"198
+[e ( _sprintf (1 , &U _LCDText -> -> :s 4C `*uc `*Cuc ]
+[; ;door_unlock.c: 199: LATCbits.LATC2 = 0;
+"199
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 200: LATAbits.LATA6 = 1;
+"200
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 201: LATAbits.LATA7 = 0;
+"201
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 202: switch_val = BUTTON_Pressed();
+"202
+[e = _switch_val ( _BUTTON_Pressed ..  ]
+[; ;door_unlock.c: 203: if((switch_val == 1) || (switch_val == 2))
 "203
-[e $ ! == -> _pktCMD `i -> 2 `i 1139  ]
-[; ;main.c: 204: {
+[e $ ! || == -> _switch_val `i -> 1 `i == -> _switch_val `i -> 2 `i 1142  ]
+[; ;door_unlock.c: 204: {
 "204
 {
-[; ;main.c: 205: for(i = 0 ; i< 10 ; i++)
-"205
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1140  ]
-[e $U 1141  ]
-"206
-[e :U 1140 ]
-[; ;main.c: 206: {
-{
-[; ;main.c: 207: if(ConnectionTable[i].status.bits.isValid)
-"207
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1143  ]
-[; ;main.c: 208: {
+[; ;door_unlock.c: 208: {TxData = 11;};
 "208
 {
-[; ;main.c: 209: if((ConnectionTable[i].AltAddress.v[1] == rxMessage.SourceAddress[1]) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.SourceAddress[0]))
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;door_unlock.c: 209: TxBuffer[TxData++] = 1;
 "209
-[e $ ! && == -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + . _rxMessage 2 * -> -> 1 `i `x -> -> # *U . _rxMessage 2 `i `x `i == -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + . _rxMessage 2 * -> -> 0 `i `x -> -> # *U . _rxMessage 2 `i `x `i 1144  ]
-[; ;main.c: 210: {
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
+[; ;door_unlock.c: 210: MiApp_UnicastConnection(ConnectionEntry, 0);
 "210
-{
-[; ;main.c: 211: ConnectionEntry = i;
-"211
-[e = _ConnectionEntry _i ]
-[; ;main.c: 213: break;
+[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
+[; ;door_unlock.c: 212: LCD_BacklightON();
+"212
+[e ( _LCD_BacklightON ..  ]
+[; ;door_unlock.c: 213: LCD_Display((char *)"   Exiting....     Door Unlock  ", 0, 1);
 "213
-[e $U 1141  ]
+[e ( _LCD_Display (3 , , -> :s 5C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;door_unlock.c: 214: LCD_BacklightOFF();
 "214
-}
-[e :U 1144 ]
-"215
-}
-[e :U 1143 ]
+[e ( _LCD_BacklightOFF ..  ]
+[; ;door_unlock.c: 216: tick1 = MiWi_TickGet();
 "216
-}
-"205
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1140  ]
-[e :U 1141 ]
-"216
-}
-"217
-}
-[e :U 1139 ]
-[; ;main.c: 214: }
-[; ;main.c: 215: }
-[; ;main.c: 216: }
-[; ;main.c: 217: }
-[; ;main.c: 218: MiApp_DiscardMessage();
+[e = _tick1 ( _MiWi_TickGet ..  ]
+[; ;door_unlock.c: 218: while(Run_Demo)
 "218
-[e ( _MiApp_DiscardMessage ..  ]
+[e $U 1143  ]
+[e :U 1144 ]
+[; ;door_unlock.c: 219: {
 "219
-}
-[e :U 1136 ]
-[; ;main.c: 219: }
-[; ;main.c: 220: if(pktCMD == 2)
+{
+[; ;door_unlock.c: 220: if(MiApp_MessageAvailable())
 "220
-[e $ ! == -> _pktCMD `i -> 2 `i 1145  ]
-[; ;main.c: 221: {
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1146  ]
+[; ;door_unlock.c: 221: {
 "221
 {
-[; ;main.c: 222: {TxData = 11;};
+[; ;door_unlock.c: 222: if(rxMessage.Payload[0] == 4)
 "222
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;main.c: 223: TxBuffer[TxData++] = 2;
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 4 `i 1147  ]
+[; ;door_unlock.c: 223: Run_Demo = 0;
 "223
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
-[; ;main.c: 224: MiApp_UnicastConnection(ConnectionEntry, 0);
-"224
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;main.c: 226: RangeDemo();
-"226
-[e ( _RangeDemo ..  ]
-[; ;main.c: 227: result = 1;
-"227
-[e = _result -> -> 1 `i `uc ]
-"228
-}
-[e :U 1145 ]
-[; ;main.c: 228: }
-[; ;main.c: 230: if((switch_val == 1) && (menu_choice == 0))
-"230
-[e $ ! && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 0 `i 1146  ]
-[; ;main.c: 231: {
-"231
-{
-"232
-[v _NumberOfConnections `uc ~T0 @X0 1 a ]
-[; ;main.c: 232: uint8_t NumberOfConnections = 0;
-[e = _NumberOfConnections -> -> 0 `i `uc ]
-[; ;main.c: 235: ConnectionEntry = 0;
-"235
-[e = _ConnectionEntry -> -> 0 `i `uc ]
-[; ;main.c: 237: for(i = 0; i < 10; i++)
-"237
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1147  ]
-[e $U 1148  ]
-"238
+[e = _Run_Demo -> -> 0 `i `uc ]
 [e :U 1147 ]
-[; ;main.c: 238: {
-{
-[; ;main.c: 239: if((ConnectionTable[i].status.bits.isValid) && (ConnectionTable[i].status.bits.isFamily))
-"239
-[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i 1150  ]
-[; ;main.c: 240: NumberOfConnections++;
-"240
-[e ++ _NumberOfConnections -> -> 1 `i `uc ]
-[e :U 1150 ]
-"241
-}
-"237
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1147  ]
-[e :U 1148 ]
-"241
-}
-[; ;main.c: 241: }
-[; ;main.c: 242: if(NumberOfConnections > 1)
-"242
-[e $ ! > -> _NumberOfConnections `i -> 1 `i 1151  ]
-[; ;main.c: 243: {
-"243
-{
-[v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 244: bool result = 0;
-"244
-[e = _result -> -> 0 `i `uc ]
-"245
-[v _ConnectionsCount `uc ~T0 @X0 1 a ]
-[; ;main.c: 245: uint8_t ConnectionsCount = 0;
-[e = _ConnectionsCount -> -> 0 `i `uc ]
-[; ;main.c: 248: LCD_Display((char *)"Select Peer Node for Range Test", 0, 0);
-"248
-[e ( _LCD_Display (3 , , -> :s 4C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 250: for(i = 0; i < 10; i++)
-"250
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1152  ]
-[e $U 1153  ]
-"251
-[e :U 1152 ]
-[; ;main.c: 251: {
-{
-[; ;main.c: 252: if(ConnectionTable[i].status.bits.isValid)
-"252
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1155  ]
-[; ;main.c: 253: {
-"253
-{
-[; ;main.c: 255: LCD_Erase();
-"255
-[e ( _LCD_Erase ..  ]
-[; ;main.c: 256: sprintf((char *)LCDText, (char*)"SW1:<Addr:%02x%02x>",ConnectionTable[i].AltAddress.v[1], ConnectionTable[i].AltAddress.v[0]);
-"256
-[e ( _sprintf (1 , , (. , &U _LCDText -> -> :s 5C `*uc `*Cuc -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i ]
-[; ;main.c: 257: sprintf((char *)&(LCDText[16]), (char*)"SW2: Additional");
-"257
-[e ( _sprintf (1 , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 6C `*uc `*Cuc ]
-[; ;main.c: 258: LCD_Update();
-"258
-[e ( _LCD_Update ..  ]
-[; ;main.c: 259: ConnectionsCount++;
-"259
-[e ++ _ConnectionsCount -> -> 1 `i `uc ]
-[; ;main.c: 260: while(1)
-"260
-[e :U 1157 ]
-[; ;main.c: 261: {
-"261
-{
-[; ;main.c: 262: switch_val = BUTTON_Pressed();
-"262
-[e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;main.c: 263: if(switch_val == 1)
-"263
-[e $ ! == -> _switch_val `i -> 1 `i 1159  ]
-[; ;main.c: 264: {
-"264
-{
-[; ;main.c: 265: ConnectionEntry = i;
-"265
-[e = _ConnectionEntry _i ]
-[; ;main.c: 266: result = 1;
-"266
-[e = _result -> -> 1 `i `uc ]
-[; ;main.c: 267: break;
-"267
-[e $U 1158  ]
-"268
-}
-[; ;main.c: 268: }
-[e $U 1160  ]
-"269
-[e :U 1159 ]
-[; ;main.c: 269: else if(switch_val == 2)
-[e $ ! == -> _switch_val `i -> 2 `i 1161  ]
-[; ;main.c: 270: {
-"270
-{
-[; ;main.c: 271: if(ConnectionsCount == NumberOfConnections)
-"271
-[e $ ! == -> _ConnectionsCount `i -> _NumberOfConnections `i 1162  ]
-[; ;main.c: 272: {
-"272
-{
-[; ;main.c: 273: i = -1;
-"273
-[e = _i -> -U -> 1 `i `uc ]
-[; ;main.c: 274: ConnectionsCount = 0;
-"274
-[e = _ConnectionsCount -> -> 0 `i `uc ]
-"275
-}
-[e :U 1162 ]
-[; ;main.c: 275: }
-[; ;main.c: 276: break;
-"276
-[e $U 1158  ]
-"277
-}
-[e :U 1161 ]
-"278
-[e :U 1160 ]
-}
-[e :U 1156 ]
-"260
-[e $U 1157  ]
-[e :U 1158 ]
-"279
-}
-[e :U 1155 ]
-[; ;main.c: 277: }
-[; ;main.c: 278: }
-[; ;main.c: 279: }
-[; ;main.c: 280: if(result == 1) break;
-"280
-[e $ ! == -> _result `i -> 1 `i 1163  ]
-[e $U 1153  ]
-[e :U 1163 ]
-"281
-}
-"250
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1152  ]
-[e :U 1153 ]
-"281
-}
-"282
-}
-[e :U 1151 ]
-[; ;main.c: 281: }
-[; ;main.c: 282: }
-[; ;main.c: 283: {TxData = 11;};
-"283
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;main.c: 284: TxBuffer[TxData++] = 2;
-"284
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
-[; ;main.c: 285: MiApp_UnicastConnection(ConnectionEntry, 0);
-"285
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;main.c: 288: RangeDemo();
-"288
-[e ( _RangeDemo ..  ]
-[; ;main.c: 289: result = 1;
-"289
-[e = _result -> -> 1 `i `uc ]
-"290
+[; ;door_unlock.c: 225: MiApp_DiscardMessage();
+"225
+[e ( _MiApp_DiscardMessage ..  ]
+"226
 }
 [e :U 1146 ]
-[; ;main.c: 290: }
-[; ;main.c: 291: if((switch_val == 2))
-"291
-[e $ ! == -> _switch_val `i -> 2 `i 1164  ]
-[; ;main.c: 292: {
-"292
-{
-[; ;main.c: 293: menu_choice++;
-"293
-[e ++ _menu_choice -> -> 1 `i `uc ]
-[; ;main.c: 294: if(menu_choice == 3) menu_choice = 0;
-"294
-[e $ ! == -> _menu_choice `i -> 3 `i 1165  ]
-[e = _menu_choice -> -> 0 `i `uc ]
-[e :U 1165 ]
-[; ;main.c: 295: if(menu_choice == 0)
-"295
-[e $ ! == -> _menu_choice `i -> 0 `i 1166  ]
-[; ;main.c: 296: {
-"296
-{
-[; ;main.c: 297: LCD_Display((char *)"SW1: Range Demo SW2: Other Apps  ", 0, 0);
-"297
-[e ( _LCD_Display (3 , , -> :s 7C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"298
+[; ;door_unlock.c: 226: }
+[; ;door_unlock.c: 227: if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
+"227
+[e $ ! > - . _tick2 0 . _tick1 0 * / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 6 `i `l `ul 1148  ]
+[; ;door_unlock.c: 228: Run_Demo = 0;
+"228
+[e = _Run_Demo -> -> 0 `i `uc ]
+[e :U 1148 ]
+[; ;door_unlock.c: 230: tick2 = MiWi_TickGet();
+"230
+[e = _tick2 ( _MiWi_TickGet ..  ]
+"231
 }
-[; ;main.c: 298: }
-[e $U 1167  ]
-"299
-[e :U 1166 ]
-[; ;main.c: 299: else if(menu_choice == 1)
-[e $ ! == -> _menu_choice `i -> 1 `i 1168  ]
-[; ;main.c: 300: {
-"300
-{
-[; ;main.c: 301: LCD_Display((char *)"SW1: Temp Demo  SW2: Other Apps  ", 0, 0);
-"301
-[e ( _LCD_Display (3 , , -> :s 8C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"302
+[e :U 1143 ]
+"218
+[e $ != -> _Run_Demo `i -> -> -> 0 `i `uc `i 1144  ]
+[e :U 1145 ]
+"232
 }
-[; ;main.c: 302: }
-[e $U 1169  ]
-"303
-[e :U 1168 ]
-[; ;main.c: 303: else if(menu_choice == 2)
-[e $ ! == -> _menu_choice `i -> 2 `i 1170  ]
-[; ;main.c: 304: {
-"304
-{
-[; ;main.c: 305: LCD_Display((char *)"SW1: Node Info  SW2: Other Apps  ", 0, 0);
-"305
-[e ( _LCD_Display (3 , , -> :s 9C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"306
+[e :U 1142 ]
+"233
 }
-[e :U 1170 ]
-"308
-[e :U 1169 ]
-[e :U 1167 ]
+[e :U 1141 ]
+"238
+[e :U 1140 ]
 }
-[e :U 1164 ]
-[; ;main.c: 306: }
-[; ;main.c: 308: }
-[; ;main.c: 309: if((pktCMD == 3) || ((switch_val == 1) && (menu_choice == 1)))
-"309
-[e $ ! || == -> _pktCMD `i -> 3 `i && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 1 `i 1171  ]
-[; ;main.c: 310: {
-"310
+[; ;door_unlock.c: 231: }
+[; ;door_unlock.c: 232: }
+[; ;door_unlock.c: 233: }
+[; ;door_unlock.c: 238: }
+[e $U 1149  ]
+"240
+[e :U 1129 ]
+[; ;door_unlock.c: 240: else
+[; ;door_unlock.c: 241: {
+"241
 {
-[; ;main.c: 311: {TxData = 11;};
-"311
+[; ;door_unlock.c: 242: LCD_Display((char *)"No Device Found or Out of Range ", 0, 1);
+"242
+[e ( _LCD_Display (3 , , -> :s 6C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;door_unlock.c: 243: LATCbits.LATC2 = 0;
+"243
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 244: LATAbits.LATA6 = 0;
+"244
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 245: LATAbits.LATA7 = 1;
+"245
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+"246
+}
+[e :U 1149 ]
+[; ;door_unlock.c: 246: }
+[; ;door_unlock.c: 248: LCD_Update();
+"248
+[e ( _LCD_Update ..  ]
+[; ;door_unlock.c: 249: Tx_Packet = 1;
+"249
+[e = _Tx_Packet -> -> 1 `i `uc ]
+"251
+}
+[e :U 1128 ]
+[; ;door_unlock.c: 251: }
+[; ;door_unlock.c: 255: tick1 = MiWi_TickGet();
+"255
+[e = _tick1 ( _MiWi_TickGet ..  ]
+"257
+}
+[e :U 1124 ]
+[; ;door_unlock.c: 257: }
+[; ;door_unlock.c: 260: if(MiApp_MessageAvailable())
+"260
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1150  ]
+[; ;door_unlock.c: 261: {
+"261
+{
+[; ;door_unlock.c: 262: pktCmd = rxMessage.Payload[0];
+"262
+[e = _pktCmd *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x ]
+[; ;door_unlock.c: 263: if(pktCmd == 1)
+"263
+[e $ ! == -> _pktCmd `i -> 1 `i 1151  ]
+[; ;door_unlock.c: 264: {
+"264
+{
+[; ;door_unlock.c: 265: MiApp_DiscardMessage();
+"265
+[e ( _MiApp_DiscardMessage ..  ]
+[; ;door_unlock.c: 266: {TxData = 11;};
+"266
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;main.c: 312: TxBuffer[TxData++] = 3;
-"312
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 3 `i `uc ]
-[; ;main.c: 313: MiApp_BroadcastPacket(0);
-"313
-[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;main.c: 316: TempDemo();
-"316
-[e ( _TempDemo ..  ]
-[; ;main.c: 317: result = 1;
-"317
-[e = _result -> -> 1 `i `uc ]
-"318
+[; ;door_unlock.c: 267: TxBuffer[TxData++] = 4;
+"267
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 4 `i `uc ]
+[; ;door_unlock.c: 268: MiApp_UnicastConnection(ConnectionEntry, 0);
+"268
+[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
+[; ;door_unlock.c: 269: Run_Demo = 0;
+"269
+[e = _Run_Demo -> -> 0 `i `uc ]
+[; ;door_unlock.c: 270: LCD_BacklightON();
+"270
+[e ( _LCD_BacklightON ..  ]
+[; ;door_unlock.c: 271: LCD_Display((char *)"   Exiting....     Door Unlock  ", 0, 1);
+"271
+[e ( _LCD_Display (3 , , -> :s 7C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;door_unlock.c: 272: LCD_BacklightOFF();
+"272
+[e ( _LCD_BacklightOFF ..  ]
+"275
 }
-[e :U 1171 ]
-[; ;main.c: 318: }
-[; ;main.c: 319: if((pktCMD == 4) || ((switch_val == 1) && (menu_choice == 2)))
-"319
-[e $ ! || == -> _pktCMD `i -> 4 `i && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 2 `i 1172  ]
-[; ;main.c: 320: {
-"320
+[; ;door_unlock.c: 275: }
+[e $U 1152  ]
+"276
+[e :U 1151 ]
+[; ;door_unlock.c: 276: else if(rxMessage.Payload[0] == 2)
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 2 `i 1153  ]
+[; ;door_unlock.c: 277: {
+"277
 {
-[; ;main.c: 322: LCD_Erase();
-"322
-[e ( _LCD_Erase ..  ]
-[; ;main.c: 323: sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
-"323
-[e ( _sprintf (1 , , , (. , &U _LCDText -> -> :s 10C `*uc `*Cuc -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> _myChannel `i ]
-[; ;main.c: 325: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+[; ;door_unlock.c: 279: rssi = rxMessage.PacketRSSI;
+"279
+[e = _rssi . _rxMessage 5 ]
+[; ;door_unlock.c: 284: MiApp_DiscardMessage();
+"284
+[e ( _MiApp_DiscardMessage ..  ]
+"285
+}
+[; ;door_unlock.c: 285: }
+[e $U 1154  ]
+"286
+[e :U 1153 ]
+[; ;door_unlock.c: 286: else
+[; ;door_unlock.c: 287: MiApp_DiscardMessage();
+"287
+[e ( _MiApp_DiscardMessage ..  ]
+[e :U 1154 ]
+[e :U 1152 ]
+"288
+}
+[e :U 1150 ]
+"324
+}
+[e :U 1121 ]
+"108
+[e $ != -> _Run_Demo `i -> -> -> 0 `i `uc `i 1122  ]
+[e :U 1123 ]
+[; ;door_unlock.c: 288: }
+[; ;door_unlock.c: 324: }
+[; ;door_unlock.c: 325: }
 "325
-[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 11C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
-[; ;main.c: 329: LCD_Update();
-"329
-[e ( _LCD_Update ..  ]
-[; ;main.c: 330: pktCMD = 0;
-"330
-[e = _pktCMD -> -> 0 `i `uc ]
-"331
-}
-[e :U 1172 ]
-[; ;main.c: 331: }
-[; ;main.c: 333: if(pktCMD == 5)
-"333
-[e $ ! == -> _pktCMD `i -> 5 `i 1173  ]
-[; ;main.c: 334: {
-"334
-{
-[; ;main.c: 336: result = 1;
-"336
-[e = _result -> -> 1 `i `uc ]
-"338
-}
-[e :U 1173 ]
-"339
-}
-[e :U 1133 ]
-"188
-[e $ == -> _result `i -> 0 `i 1134  ]
-[e :U 1135 ]
-"340
-}
-[e :U 1130 ]
-"171
-[e $U 1131  ]
-[e :U 1132 ]
-[; ;main.c: 338: }
-[; ;main.c: 339: }
-[; ;main.c: 340: }
-[; ;main.c: 341: }
-"341
 [e :UE 1120 ]
 }
-[p f _sprintf 16484269 ]
-[a 2C 65 100 100 114 101 115 115 58 32 37 48 50 120 37 48 50 120 0 ]
-[a 11C 65 100 100 114 101 115 115 58 32 37 48 50 120 37 48 50 120 0 ]
-[a 4C 83 101 108 101 99 116 32 80 101 101 114 32 78 111 100 101 32 102 111 114 32 82 97 110 103 101 32 84 101 115 116 0 ]
-[a 6C 83 87 50 58 32 65 100 100 105 116 105 111 110 97 108 0 ]
-[a 1C 80 65 78 73 68 58 37 48 50 120 37 48 50 120 32 67 104 58 37 48 50 100 0 ]
-[a 10C 80 65 78 73 68 58 37 48 50 120 37 48 50 120 32 67 104 58 37 48 50 100 0 ]
-[a 5C 83 87 49 58 60 65 100 100 114 58 37 48 50 120 37 48 50 120 62 0 ]
-[a 3C 83 87 49 58 32 82 97 110 103 101 32 68 101 109 111 32 83 87 50 58 32 79 116 104 101 114 32 65 112 112 115 32 32 0 ]
-[a 7C 83 87 49 58 32 82 97 110 103 101 32 68 101 109 111 32 83 87 50 58 32 79 116 104 101 114 32 65 112 112 115 32 32 0 ]
-[a 8C 83 87 49 58 32 84 101 109 112 32 68 101 109 111 32 32 83 87 50 58 32 79 116 104 101 114 32 65 112 112 115 32 32 0 ]
-[a 9C 83 87 49 58 32 78 111 100 101 32 73 110 102 111 32 32 83 87 50 58 32 79 116 104 101 114 32 65 112 112 115 32 32 0 ]
->>>>>>> origin/master
+[p f _sprintf 9437696 ]
+[a 2C 32 85 110 108 111 99 107 32 68 111 111 114 32 63 32 32 83 87 49 58 89 69 83 32 32 32 83 87 50 58 78 79 0 ]
+[a 6C 78 111 32 68 101 118 105 99 101 32 70 111 117 110 100 32 111 114 32 79 117 116 32 111 102 32 82 97 110 103 101 32 0 ]
+[a 3C 32 32 32 69 120 105 116 105 110 103 46 46 46 46 32 32 32 32 32 68 111 111 114 32 85 110 108 111 99 107 32 32 0 ]
+[a 5C 32 32 32 69 120 105 116 105 110 103 46 46 46 46 32 32 32 32 32 68 111 111 114 32 85 110 108 111 99 107 32 32 0 ]
+[a 7C 32 32 32 69 120 105 116 105 110 103 46 46 46 46 32 32 32 32 32 68 111 111 114 32 85 110 108 111 99 107 32 32 0 ]
+[a 1C 32 32 32 77 105 99 114 111 99 104 105 112 32 32 32 32 32 32 32 68 111 111 114 32 85 110 108 111 99 107 32 32 0 ]
+[a 4C 32 71 101 116 32 67 108 111 115 101 114 32 116 111 32 32 32 32 32 32 116 104 101 32 68 111 111 114 32 32 32 32 0 ]
