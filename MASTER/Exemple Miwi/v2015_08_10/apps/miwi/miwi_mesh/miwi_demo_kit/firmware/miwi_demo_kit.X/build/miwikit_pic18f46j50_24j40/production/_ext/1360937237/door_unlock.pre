@@ -10238,10 +10238,10 @@ bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 # 950
 extern RECEIVED_MESSAGE rxMessage;
 
-# 71 "../src/door_unlock.c"
+# 15 "../src/door_unlock.c"
 extern uint8_t ConnectionEntry;
 
-# 88
+
 void DoorUnlock(void)
 {
 bool Run_Demo = 1;
@@ -10301,107 +10301,54 @@ Pkt_Loss_Cnt = 0;
 
 Tx_Packet = 0;
 }
+
 else
 {
 if(Pkt_Loss_Cnt < 1)
 {
-if(rssi > 200)
+if(rssi > 50)
 {
-sprintf((char *)&LCDText, (char*)" Unlock Door ?  SW1:YES   SW2:NO");
+
 LATCbits.LATC2 = 1;
 LATAbits.LATA6 = 0;
 LATAbits.LATA7 = 0;
-switch_val = BUTTON_Pressed();
-if(switch_val == 1)
-{
-LATCbits.LATC2 = 1;
-LATAbits.LATA6 = 1;
-LATAbits.LATA7 = 1;
-}
 
-else if(switch_val == 2)
-{
-
-
-
-{TxData = 11;};
-TxBuffer[TxData++] = 1;
-MiApp_UnicastConnection(ConnectionEntry, 0);
-
-LCD_BacklightON();
-LCD_Display((char *)"   Exiting....     Door Unlock  ", 0, 1);
-LCD_BacklightOFF();
-
-tick1 = MiWi_TickGet();
-
-while(Run_Demo)
-{
-if(MiApp_MessageAvailable())
-{
-if(rxMessage.Payload[0] == 4)
-Run_Demo = 0;
-
-MiApp_DiscardMessage();
-}
-if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
-Run_Demo = 0;
-
-tick2 = MiWi_TickGet();
-}
-}
-}
-else if(rssi < 201)
-{
-sprintf((char *)&LCDText, (char*)" Get Closer to      the Door    ");
-LATCbits.LATC2 = 0;
-LATAbits.LATA6 = 1;
-LATAbits.LATA7 = 0;
-switch_val = BUTTON_Pressed();
-if((switch_val == 1) || (switch_val == 2))
-{
-
-
-
-{TxData = 11;};
-TxBuffer[TxData++] = 1;
-MiApp_UnicastConnection(ConnectionEntry, 0);
-
-LCD_BacklightON();
-LCD_Display((char *)"   Exiting....     Door Unlock  ", 0, 1);
-LCD_BacklightOFF();
-
-tick1 = MiWi_TickGet();
-
-while(Run_Demo)
-{
-if(MiApp_MessageAvailable())
-{
-if(rxMessage.Payload[0] == 4)
-Run_Demo = 0;
-
-MiApp_DiscardMessage();
-}
-if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
-Run_Demo = 0;
-
-tick2 = MiWi_TickGet();
-}
-}
-}
-
-
-
-
+# 97
 }
 
 else
 {
-LCD_Display((char *)"No Device Found or Out of Range ", 0, 1);
+
+
+
 LATCbits.LATC2 = 0;
 LATAbits.LATA6 = 0;
 LATAbits.LATA7 = 1;
+{TxData = 11;};
+TxBuffer[TxData++] = 1;
+MiApp_UnicastConnection(ConnectionEntry, 0);
+
+
+tick1 = MiWi_TickGet();
+
+while(Run_Demo)
+{
+if(MiApp_MessageAvailable())
+{
+if(rxMessage.Payload[0] == 4)
+Run_Demo = 0;
+
+MiApp_DiscardMessage();
+}
+if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
+Run_Demo = 0;
+
+tick2 = MiWi_TickGet();
+}
+}
 }
 
+# 180
 LCD_Update();
 Tx_Packet = 1;
 
@@ -10435,14 +10382,14 @@ else if(rxMessage.Payload[0] == 2)
 
 rssi = rxMessage.PacketRSSI;
 
-# 284
+# 216
 MiApp_DiscardMessage();
 }
 else
 MiApp_DiscardMessage();
 }
 
-# 324
+# 256
 }
 }
 

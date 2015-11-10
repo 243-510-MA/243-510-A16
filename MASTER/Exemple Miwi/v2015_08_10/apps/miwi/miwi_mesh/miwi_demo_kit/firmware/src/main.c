@@ -1,14 +1,14 @@
 //MASTER
 
-#define PAN_PROJECTOR 0
-#define DOOR_LOCK 1
-#define PROJECTOR_SCREEN 2
-#define STUDENT 3
-#define TEACHER 4
+#define PAN 0                       //Controls the projector, red light, buzzer and motion sensor (such many thing, wow)
+#define DOOR_UNLOCK 1               //Unlock the door (duh)
+#define PROJECTOR_SCREEN 2          //DROP DA PROJECTOR
+#define TEACHER 3                   //Mista ze teacha
+#define STUDENT 4                   //You little shit
 
 //*************************************************************************
 
-#define DEVICEMODE PAN_COORDINATOR // Choisir ici 
+#define DEVICEMODE PAN // Choisir ici 
 
 
 #include "system.h"
@@ -77,7 +77,7 @@ void main(void)
  	
     LED0 = LED1 = LED2 = 1;
     
-    if(DEVICEMODE == 1)
+    if(DEVICEMODE == STUDENT)
     {
         LCD_Display((char *)"Welcome, Mathieu", 0, true); //Do not remove, useful to hide delay in program
     }
@@ -110,7 +110,7 @@ CreateorJoin:
 
     MiApp_ConnectionMode(ENABLE_ALL_CONN);
 
-    if(DEVICEMODE == 0)
+    if(DEVICEMODE == PAN)
     {
         while(result == true)
         {
@@ -140,8 +140,7 @@ CreateorJoin:
         }   
     }
     
-    
-    if(DEVICEMODE != 0)
+    else
     {
         /*******************************************************************/
         // Join a Network
@@ -273,182 +272,216 @@ CreateorJoin:
     
     
     
-    
-    
-    
-    
-    
-	while(1)
-	{
-    	uint8_t pktCMD = 0;
-    	uint8_t switch_val, menu_choice = 0;
-    	result = false;
-    	
-    	LED0 = LED1 = LED2 = 0;
-    	
-        //*******************************************************************
-        // Ask User which Demo to Run
-        //*******************************************************************
-        
-        LCD_Display((char *)"SW1: Door UnlockSW2: Other Apps  ", 0, false);
-	   	
-        //*******************************************************************
-        // Wait for User to Select Demo to Run 
-        //*******************************************************************
-        
-        while(result == false)
-        {  	
-            // Read Switches
-            switch_val = BUTTON_Pressed();
+    if(DEVICEMODE == PAN)
+    {
+        while(true)
+        {
             
-        	// Check if MiMAC has any pkt's to processes
-        	if(MiApp_MessageAvailable())
-        	{
-            	pktCMD = rxMessage.Payload[0];
-                if(pktCMD == IDENTIFY_MODE)
-                    {
-                        if((rxMessage.Payload[1] != myPANID.v[1]) || (rxMessage.Payload[2] != myPANID.v[0]))
-                            pktCMD = 0;
-                            
-                    }
-                if(pktCMD == DOOR_UNLOCK)
-                    {
-                        for(i = 0 ; i< CONNECTION_SIZE ; i++)
+        }        
+    }   
+    
+    
+    if(DEVICEMODE == DOOR_UNLOCK)
+    {
+        while(true)
+        {
+            
+        } 
+    }
+    
+    
+    if(DEVICEMODE == PROJECTOR_SCREEN)
+    {
+        while(true)
+        {
+            
+        } 
+    }
+
+    
+    if(DEVICEMODE == TEACHER)
+    {
+        while(true)
+        {
+            
+        } 
+    }
+    
+    
+    if(DEVICEMODE == STUDENT)
+    {
+        while(true)
+        {
+            uint8_t pktCMD = 0;
+            uint8_t switch_val, menu_choice = 0;
+            result = false;
+
+            LED0 = LED1 = LED2 = 0;
+
+            //*******************************************************************
+            // Ask User which Demo to Run
+            //*******************************************************************
+
+            LCD_Display((char *)"SW1: Door UnlockSW2: Other Apps  ", 0, false);
+
+            //*******************************************************************
+            // Wait for User to Select Demo to Run 
+            //*******************************************************************
+
+            while(result == false)
+            {  	
+                // Read Switches
+                switch_val = BUTTON_Pressed();
+
+                // Check if MiMAC has any pkt's to processes
+                if(MiApp_MessageAvailable())
+                {
+                    pktCMD = rxMessage.Payload[0];
+                    if(pktCMD == IDENTIFY_MODE)
                         {
-                            if(ConnectionTable[i].status.bits.isValid)
+                            if((rxMessage.Payload[1] != myPANID.v[1]) || (rxMessage.Payload[2] != myPANID.v[0]))
+                                pktCMD = 0;
+
+                        }
+                    if(pktCMD == DOOR_UNLOCK)
+                        {
+                            for(i = 0 ; i< CONNECTION_SIZE ; i++)
                             {
-                                if((ConnectionTable[i].AltAddress.v[1] == rxMessage.SourceAddress[1]) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.SourceAddress[0]))
+                                if(ConnectionTable[i].status.bits.isValid)
                                 {
-                                    ConnectionEntry = i;
-                                    
-                                    break;                           
+                                    if((ConnectionTable[i].AltAddress.v[1] == rxMessage.SourceAddress[1]) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.SourceAddress[0]))
+                                    {
+                                        ConnectionEntry = i;
+
+                                        break;                           
+                                    }
                                 }
                             }
                         }
-                    }
-            	MiApp_DiscardMessage();
-            }
-            if(pktCMD == DOOR_UNLOCK)
-            {
-                MiApp_FlushTx();
-    	        MiApp_WriteData(DOOR_UNLOCK);
-    	        MiApp_UnicastConnection(ConnectionEntry, false);
-    	        // Run Unlock Door Demo
-                DoorUnlock();
-                result = true;
-            }
-        	
-        	if((switch_val == SW1) && (menu_choice == 0))
-    		{	
-                uint8_t NumberOfConnections = 0;
-                
-                //Reset ConnectionEntry
-                ConnectionEntry = 0;
-                
-                for(i = 0; i < CONNECTION_SIZE; i++)
-                {
-                    if((ConnectionTable[i].status.bits.isValid) && (ConnectionTable[i].status.bits.isFamily))
-                        NumberOfConnections++;
+                    MiApp_DiscardMessage();
                 }
-                if(NumberOfConnections > 1)
+                if(pktCMD == DOOR_UNLOCK)
                 {
-                    bool result = false;
-                    uint8_t ConnectionsCount = 0;
-                    //Select Peer for Door Unlock
+                    MiApp_FlushTx();
+                    MiApp_WriteData(DOOR_UNLOCK);
+                    MiApp_UnicastConnection(ConnectionEntry, false);
+                    // Run Unlock Door Demo
+                    DoorUnlock();
+                    result = true;
+                }
 
-                    LCD_Display((char *)"Select Peer Node for Unlock Door", 0, false);
+                if((switch_val == SW1) && (menu_choice == 0))
+                {	
+                    uint8_t NumberOfConnections = 0;
+
+                    //Reset ConnectionEntry
+                    ConnectionEntry = 0;
 
                     for(i = 0; i < CONNECTION_SIZE; i++)
-    			    {
-    				    if(ConnectionTable[i].status.bits.isValid)
-                        {
-                            // Display Peer information
-                            LCD_Erase();
-                            sprintf((char *)LCDText, (char*)"SW1:<Addr:%02x%02x>",ConnectionTable[i].AltAddress.v[1], ConnectionTable[i].AltAddress.v[0]);				
-                            sprintf((char *)&(LCDText[16]), (char*)"SW2: Additional");
-                            LCD_Update();
-                            ConnectionsCount++;
-                            while(1)
-                            {
-                                switch_val = BUTTON_Pressed();
-                                if(switch_val == SW1)
-                                    {
-                                        ConnectionEntry = i;
-                                        result = true;
-                                        break;
-                                    }
-                                else if(switch_val == SW2)
-                                    {
-                                        if(ConnectionsCount == NumberOfConnections) 
-                                        {
-                                            i = -1;
-                                            ConnectionsCount = 0;
-                                        }
-                                        break;
-                                    }
-                            }
-                        }
-                        if(result == true) break;
-                    }  
-                }       
-                MiApp_FlushTx();
-    	        MiApp_WriteData(DOOR_UNLOCK);
-    	        MiApp_UnicastConnection(ConnectionEntry, false);
-    	        
-                // Run Unlock Door Demo
-                DoorUnlock();
-                result = true;
-    		}
-            if((switch_val == SW2))
-            {
-                menu_choice++;
-                if(menu_choice == 3) menu_choice = 0;
-                if(menu_choice == 0)
-                {
-                    LCD_Display((char *)"SW1: Door Unlock SW2: Other Apps  ", 0, false);
-                }
-                else if(menu_choice == 1)
-                {
-                    LCD_Display((char *)"SW1: Temp Demo  SW2: Other Apps  ", 0, false);
-                }    
-                else if(menu_choice == 2)
-                {
-                    LCD_Display((char *)"SW1: Node Info  SW2: Other Apps  ", 0, false);
-                }
-                
-            }
-            if((pktCMD == TEMP_DEMO) || ((switch_val == SW1) && (menu_choice == 1)))
-            {
-                MiApp_FlushTx();
-                MiApp_WriteData(TEMP_DEMO);
-                MiApp_BroadcastPacket(false);
+                    {
+                        if((ConnectionTable[i].status.bits.isValid) && (ConnectionTable[i].status.bits.isFamily))
+                            NumberOfConnections++;
+                    }
+                    if(NumberOfConnections > 1)
+                    {
+                        bool result = false;
+                        uint8_t ConnectionsCount = 0;
+                        //Select Peer for Door Unlock
 
-                    // Run Temp Sensor Demo
-                TempDemo();
-                result = true;
+                        LCD_Display((char *)"Select Peer Node for Unlock Door", 0, false);
+
+                        for(i = 0; i < CONNECTION_SIZE; i++)
+                        {
+                            if(ConnectionTable[i].status.bits.isValid)
+                            {
+                                // Display Peer information
+                                LCD_Erase();
+                                sprintf((char *)LCDText, (char*)"SW1:<Addr:%02x%02x>",ConnectionTable[i].AltAddress.v[1], ConnectionTable[i].AltAddress.v[0]);				
+                                sprintf((char *)&(LCDText[16]), (char*)"SW2: Additional");
+                                LCD_Update();
+                                ConnectionsCount++;
+                                while(1)
+                                {
+                                    switch_val = BUTTON_Pressed();
+                                    if(switch_val == SW1)
+                                        {
+                                            ConnectionEntry = i;
+                                            result = true;
+                                            break;
+                                        }
+                                    else if(switch_val == SW2)
+                                        {
+                                            if(ConnectionsCount == NumberOfConnections) 
+                                            {
+                                                i = -1;
+                                                ConnectionsCount = 0;
+                                            }
+                                            break;
+                                        }
+                                }
+                            }
+                            if(result == true) break;
+                        }  
+                    }       
+                    MiApp_FlushTx();
+                    MiApp_WriteData(DOOR_UNLOCK);
+                    MiApp_UnicastConnection(ConnectionEntry, false);
+
+                    // Run Unlock Door Demo
+                    DoorUnlock();
+                    result = true;
+                }
+                if((switch_val == SW2))
+                {
+                    menu_choice++;
+                    if(menu_choice == 3) menu_choice = 0;
+                    if(menu_choice == 0)
+                    {
+                        LCD_Display((char *)"SW1: Door Unlock SW2: Other Apps  ", 0, false);
+                    }
+                    else if(menu_choice == 1)
+                    {
+                        LCD_Display((char *)"SW1: Temp Demo  SW2: Other Apps  ", 0, false);
+                    }    
+                    else if(menu_choice == 2)
+                    {
+                        LCD_Display((char *)"SW1: Node Info  SW2: Other Apps  ", 0, false);
+                    }
+
+                }
+                if((pktCMD == TEMP_DEMO) || ((switch_val == SW1) && (menu_choice == 1)))
+                {
+                    MiApp_FlushTx();
+                    MiApp_WriteData(TEMP_DEMO);
+                    MiApp_BroadcastPacket(false);
+
+                        // Run Temp Sensor Demo
+                    TempDemo();
+                    result = true;
+                }
+                if((pktCMD == IDENTIFY_MODE) || ((switch_val == SW1) && (menu_choice == 2)))
+                {
+
+                    LCD_Erase();
+                    sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
+                    #if defined(IEEE_802_15_4)
+                        sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+                    #else
+                        sprintf((char *)&(LCDText[16]), (char*)"Addr:%02x%02x/%02x%02x", myShortAddress.v[1], myShortAddress.v[0], myLongAddress[1],myLongAddress[0]);
+                    #endif
+                    LCD_Update();
+                    pktCMD = 0;
+                }
+
+                if(pktCMD == EXIT_IDENTIFY_MODE)
+                {
+
+                    result = true;
+
+                }
             }
-            if((pktCMD == IDENTIFY_MODE) || ((switch_val == SW1) && (menu_choice == 2)))
-            {
-                
-                LCD_Erase();
-                sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
-                #if defined(IEEE_802_15_4)
-                    sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
-                #else
-                    sprintf((char *)&(LCDText[16]), (char*)"Addr:%02x%02x/%02x%02x", myShortAddress.v[1], myShortAddress.v[0], myLongAddress[1],myLongAddress[0]);
-                #endif
-                LCD_Update();
-                pktCMD = 0;
-            }
-            
-            if(pktCMD == EXIT_IDENTIFY_MODE)
-            {
-               
-                result = true;
-               
-            }
-    	}
-	}
+        }
+    }
 }
 
 

@@ -10247,76 +10247,47 @@ uint16_t Read_VBGVoltage(void);
 uint8_t ReadTempSensor(uint16_t VBGResult);
 void PrintTempLCD(void);
 
-<<<<<<< HEAD
-# 35 "../src/main.c"
+# 34 "../src/main.c"
 uint8_t myChannel = 20;
 
-# 47
-=======
-# 43 "../src/main.c"
-uint8_t myChannel = 20;
-
-# 55
->>>>>>> origin/master
+# 46
 uint8_t ConnectionEntry = 0;
 
 extern uint8_t myLongAddress[];
 
-<<<<<<< HEAD
-# 63
+# 62
 uint8_t AdditionalNodeID[1] = {0x00};
 
 
 
-=======
-# 70
-uint8_t AdditionalNodeID[1] = {0x00};
-
-# 103
->>>>>>> origin/master
 void main(void)
 {
 uint8_t i, j;
 bool result = 1;
 uint8_t switch_val;
 
-<<<<<<< HEAD
-# 77
-=======
-
-
-
->>>>>>> origin/master
+# 76
 SYSTEM_Initialize();
 
 LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
 
-<<<<<<< HEAD
-if(0 == 1)
+if(0 == 4)
 {
 LCD_Display((char *)"Welcome, Mathieu", 0, 1);
 }
 
 Read_MAC_Address();
-=======
-Read_MAC_Address();
 
 MiApp_ProtocolInit(0);
 
-
->>>>>>> origin/master
-
-MiApp_ProtocolInit(0);
-
-# 94
+# 93
 CreateorJoin:
 
-<<<<<<< HEAD
-# 100
+# 99
 if( MiApp_SetChannel(myChannel) == 0 )
 return;
 
-# 112
+# 111
 MiApp_ConnectionMode(0x00);
 
 if(0 == 0)
@@ -10324,20 +10295,7 @@ if(0 == 0)
 while(result == 1)
 {
 
-# 123
-=======
-# 130
-if( MiApp_SetChannel(myChannel) == 0 )
-return;
-
-# 142
-MiApp_ConnectionMode(0x00);
-
-while(result == 1)
-{
-
-# 151
->>>>>>> origin/master
+# 122
 MiApp_ProtocolInit(0);
 MiApp_StartConnection(0x00, 0, 0);
 
@@ -10359,9 +10317,7 @@ result = 0;
 }
 }
 
-<<<<<<< HEAD
-
-if(0 != 0)
+else
 {
 
 
@@ -10373,10 +10329,10 @@ volatile uint8_t scanresult;
 
 MiApp_ProtocolInit(0);
 
-# 161
+# 159
 scanresult = MiApp_SearchConnection(10, (0x00010000 << (myChannel-16)));
 
-# 167
+# 165
 if(scanresult > 0)
 {
 uint8_t k;
@@ -10408,7 +10364,7 @@ continue;
 while(1)
 {
 
-# 202
+# 200
 uint8_t Status;
 uint8_t CoordCount = 0;
 {TxData = 11;};
@@ -10441,7 +10397,7 @@ nodeIndex = k;
 }
 }
 
-# 238
+# 236
 Status = MiApp_EstablishConnection(j, 0x00);
 if(Status == 0xFF)
 {
@@ -10462,7 +10418,7 @@ break;
 
 }
 
-# 262
+# 260
 if(result == 0)
 break;
 }
@@ -10476,22 +10432,83 @@ LCD_Display((char *)"Waiting for PAN Rescanning......", 0, 0);
 }
 }
 
-# 287
-=======
->>>>>>> origin/master
+
+
+if(0 == 0)
+{
+while(1)
+{
+
+}
+}
+
+
+if(0 == 2)
+{
+while(1)
+{
+for(i = 0 ; i< 10 ; i++)
+{
+if(ConnectionTable[i].status.bits.isValid)
+{
+if((ConnectionTable[i].AltAddress.v[1] == rxMessage.SourceAddress[1]) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.SourceAddress[0]))
+{
+ConnectionEntry = i;
+
+break;
+}
+}
+}
+{TxData = 11;};
+TxBuffer[TxData++] = 2;
+MiApp_UnicastConnection(ConnectionEntry, 0);
+
+DoorUnlock();
+result = 1;
+}
+}
+
+
+if(0 == 2)
+{
+while(1)
+{
+
+}
+}
+
+
+if(0 == 3)
+{
+while(1)
+{
+
+}
+}
+
+
+if(0 == 4)
+{
+while(1)
+{
+
+}
+}
+
+
+
 while(1)
 {
 uint8_t pktCMD = 0;
 uint8_t switch_val, menu_choice = 0;
 result = 0;
 
-
 LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
 
-# 300
-LCD_Display((char *)"SW1: Door Unlock SW2: Other Apps  ", 0, 0);
+# 350
+LCD_Display((char *)"SW1: Door UnlockSW2: Other Apps  ", 0, 0);
 
-# 306
+# 356
 while(result == 0)
 {
 
@@ -10631,11 +10648,7 @@ sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID
 
 sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
 
-<<<<<<< HEAD
-# 447
-=======
-# 329
->>>>>>> origin/master
+# 497
 LCD_Update();
 pktCMD = 0;
 }
