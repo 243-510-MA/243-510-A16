@@ -1,101 +1,8 @@
 
-# 1 "../src/temp_demo.c"
+# 1 "../src/pan.c"
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 28 "../src/temp_demo.h"
-void TempDemo(void);
-uint16_t Read_VBGVoltage(void);
-uint8_t ReadTempSensor(uint16_t VBGResult);
-void PrintTempLCD(void);
+# 27 "../src/pan.h"
+void Pan(void);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9747,6 +9654,96 @@ extern int printf(const char *, ...);
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdbool.h"
 typedef unsigned char bool;
 
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
 # 43 "../src/system_config/miwikit_pic18f46j50_24j40\lcd.h"
 extern uint8_t LCDText[16*2+1];
 
@@ -10241,304 +10238,11 @@ bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 # 950
 extern RECEIVED_MESSAGE rxMessage;
 
-# 37 "../src/temp_demo.c"
-unsigned short tempAverage = 0;
-uint8_t CurrentNodeIndex = 0;
-
-
-extern bool NetFreezerEnable;
-extern uint8_t role;
-
-struct TempPacket
+# 8 "../src/pan.c"
+void Pan(void)
 {
-uint8_t NodeAddress[2];
-uint8_t TempValue;
-};
-struct TempPacket NodeTemp[10];
-
-# 69
-void TempDemo(void)
+while(1)
 {
-bool Run_Demo = 1;
-uint16_t VBGResult;
-double temp;
-MIWI_TICK tick1, tick2, tick3;
-uint8_t switch_val;
-
-# 81
-LCD_BacklightON();
-LCD_Display((char *)"   Microchip       Temp Demo  ", 0, 1);
-LCD_BacklightOFF();
-
-# 89
-VBGResult = Read_VBGVoltage();
-
-# 95
-NodeTemp[0].NodeAddress[0] = myShortAddress.v[0];
-NodeTemp[0].NodeAddress[1] = myShortAddress.v[1];
-
-
-
-
-tick1 = MiWi_TickGet();
-tick3 = tick1;
-
-while(Run_Demo)
-{
-
-
-
-tick2 = MiWi_TickGet();
-
-
-
-
-switch_val = BUTTON_Pressed();
-if((switch_val == 1) || (switch_val == 2))
-{
-
-
-
-{TxData = 11;};
-TxBuffer[TxData++] = 1;
-MiApp_BroadcastPacket(0);
-LCD_BacklightON();
-LCD_Display((char *)"   Exiting....     Temp Demo  ", 0, 1);
-LCD_BacklightOFF();
-
-
-
-
-tick1 = MiWi_TickGet();
-while(Run_Demo)
-{
-if(MiApp_MessageAvailable())
-{
-if(rxMessage.Payload[0] == 4)
-Run_Demo = 0;
-
-MiApp_DiscardMessage();
-}
-if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
-Run_Demo = 0;
-
-tick2 = MiWi_TickGet();
 }
 }
 
-
-
-
-if (((tick2.Val - tick3.Val) > (((uint32_t)(16000000)/32) * 4)))
-{
-if((ConnectionTable[CurrentNodeIndex].status.bits.isValid))
-{
-CurrentNodeIndex++;
-}
-else
-{
-CurrentNodeIndex = 0;
-}
-
-PrintTempLCD();
-
-tick3 = MiWi_TickGet();
-}
-
-
-
-
-if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 5)))
-{
-
-# 186
-temp = ReadTempSensor(VBGResult);
-
-# 196
-tempAverage = 0;
-tempAverage = (uint8_t)temp;
-
-
-
-
-{TxData = 11;};
-
-
-
-
-TxBuffer[TxData++] = 3;
-TxBuffer[TxData++] = (uint8_t) tempAverage;
-TxBuffer[TxData++] = myShortAddress.v[0];
-TxBuffer[TxData++] = myShortAddress.v[1];
-
-
-
-NodeTemp[0].TempValue = (uint8_t)tempAverage;
-
-# 223
-MiApp_BroadcastPacket(0);
-
-
-
-
-tick1 = MiWi_TickGet();
-}
-
-# 239
-if(MiApp_MessageAvailable())
-{
-uint8_t i;
-
-
-
-
-if(rxMessage.Payload[0] == 1)
-{
-MiApp_DiscardMessage();
-{TxData = 11;};
-TxBuffer[TxData++] = 4;
-MiApp_UnicastConnection(0, 0);
-Run_Demo = 0;
-LCD_BacklightON();
-LCD_Display((char *)"   Exiting....     Temp Demo  ", 0, 1);
-LCD_BacklightOFF();
-}
-
-
-
-
-for(i = 0; i < 10; i++)
-{
-if((ConnectionTable[i].status.bits.isValid) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.Payload[2]) && (ConnectionTable[i].AltAddress.v[1] == rxMessage.Payload[3]))
-{
-if(rxMessage.Payload[0] == 3)
-{
-
-NodeTemp[i+1].TempValue = rxMessage.Payload[1];
-NodeTemp[i+1].NodeAddress[0] = rxMessage.Payload[2];
-NodeTemp[i+1].NodeAddress[1] = rxMessage.Payload[3];
-}
-}
-}
-
-MiApp_DiscardMessage();
-}
-}
-}
-
-# 297
-uint8_t ReadTempSensor(uint16_t VBGResult)
-{
-uint16_t tempValue;
-double temp;
-uint8_t tempHere;
-uint8_t i = 0;
-float tempAverage = 0;
-uint8_t tempArray[4];
-
-
-
-ADCON0 = 0x04;
-ADCON1 = 0xBD;
-
-PIR1bits.ADIF = 0;
-PIE1bits.ADIE = 0;
-
-# 330
-do
-{
-ADCON0bits.ADON = 1;
-DELAY_10us(10);
-
-ADCON0bits.GO = 1;
-while(ADCON0bits.DONE);
-
-temp = (1200.0/VBGResult);
-tempValue = ADRES;
-temp = (temp * tempValue);
-temp = (temp - 500.0)/10.0;
-
-tempArray[i] = (uint8_t) temp;
-
-ADCON0bits.ADON = 0;
-DELAY_10us(1);
-i++;
-} while(i < 4);
-
-
-for(i = 0; i<4; i++)
-{
-tempAverage = (tempAverage + tempArray[i]);
-}
-tempAverage = (tempAverage/4);
-tempHere = (uint8_t) tempAverage;
-tempAverage = (tempAverage - tempHere) * 10;
-
-if(tempAverage >= 5)
-tempHere = tempHere + 1;
-
-return (uint8_t)tempHere;
-
-
-}
-
-# 384
-uint16_t Read_VBGVoltage(void)
-{
-ADCON0 = 0x3D;
-ADCON1 = 0xBD;
-ANCON1bits.VBGEN = 1;
-
-DELAY_10us(1000);
-
-PIR1bits.ADIF = 0;
-PIE1bits.ADIE = 0;
-
-ADCON0bits.GO = 1;
-while(ADCON0bits.DONE);
-
-ADCON0bits.ADON = 0;
-ANCON1bits.VBGEN = 0;
-
-return ADRES;
-}
-
-# 421
-void PrintTempLCD(void)
-{
-int temp;
-uint8_t tempF;
-
-LCD_Erase();
-
-if(CurrentNodeIndex == 0)
-{
-sprintf((char *)LCDText, (char*)"   Local Temp   ");
-}
-else
-{
-sprintf((char *)LCDText, (char*)"  Remote Temp  ");
-}
-
-sprintf((char *)&LCDText[16], (char*)"%02x%02x:",NodeTemp[CurrentNodeIndex].NodeAddress[1],NodeTemp[CurrentNodeIndex].NodeAddress[0]);
-
-if(NodeTemp[CurrentNodeIndex].TempValue == 255)
-{
-sprintf((char*)&LCDText[23], (char*) " - ");
-}
-else
-{
-sprintf((char *)&LCDText[21], (char*)" %d", NodeTemp[CurrentNodeIndex].TempValue);
-sprintf((char *)&LCDText[24], (char*)"C");
-
-temp = NodeTemp[CurrentNodeIndex].TempValue;
-temp = temp * 9;
-temp = temp / 5;
-temp = temp + 32;
-tempF = (uint8_t) temp;
-sprintf((char *)&LCDText[25], (char*)"/ %d", tempF);
-sprintf((char *)&LCDText[29], (char*)"F");
-}
-
-LCD_Update();
-}

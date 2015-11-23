@@ -1,5 +1,8 @@
 
-# 1 "../src/self_test.c"
+# 1 "../src/projector_screen.c"
+
+# 27 "../src/projector_screen.h"
+void ProjectorScreen(void);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9828,9 +9831,6 @@ uint16_t Val;
 # 119
 void SYSTEM_Initialize(void);
 
-# 27 "../src/self_test.h"
-void SelfTest(uint8_t);
-
 # 31 "../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h"
 typedef union
 {
@@ -10238,114 +10238,11 @@ bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 # 950
 extern RECEIVED_MESSAGE rxMessage;
 
-# 31 "../src/self_test.c"
-uint8_t switch_val;
-uint8_t EEPROM_Val[3];
-uint8_t SST_Val;
-uint8_t init_case = 0x00;
-
-
-void SelfTest(uint8_t myChannel)
-{
-
-LCD_Display((char *)"   MiWi  Demo    Self Test Mode ", 0, 1);
-LCD_Display((char *)"SW1: Start Test SW2: Exit Test", 0, 1);
-init_case = 0;
-while(1)
-{
-switch_val = BUTTON_Pressed();
-if(switch_val == 1)
-{
-
-
-while(1)
-{
-LCD_Display((char *)"Testing ...", 0, 1);
-LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
-switch(init_case)
-{
-case 0:
-
-EEPROMRead(&(EEPROM_Val[0]), 0xFA, 3);
-if((EEPROM_Val[0] == 0x00) && (EEPROM_Val[1] == 0x00) && (EEPROM_Val[2] == 0x00))
-init_case = 255;
-else if((EEPROM_Val[0] == 0xFF) && (EEPROM_Val[1] == 0xFF) && (EEPROM_Val[2] == 0xFF))
-init_case = 255;
-else init_case++;
-break;
-case 1:
-
-SSTGetID(&SST_Val);
-if(SST_Val == 0xBF)
-init_case++;
-else init_case = 255;
-break;
-case 2:
-
-if (MiApp_SetChannel(myChannel) == 0)
-{
-init_case = 254;
-break;
-}
-
-{
-
-bool Tx_Success = 0;
-uint8_t Tx_Trials = 0, scanresult = 0;
-
-while(!Tx_Success)
-{
-if(myChannel < 8)
-scanresult = MiApp_SearchConnection(10, (0x00000001 << myChannel));
-else if(myChannel < 16)
-scanresult = MiApp_SearchConnection(10, (0x00000100 << (myChannel-8)));
-else if(myChannel < 24)
-scanresult = MiApp_SearchConnection(10, (0x00010000 << (myChannel-16)));
-else
-scanresult = MiApp_SearchConnection(10, (0x01000000 << (myChannel-24)));
-if(scanresult == 0)
-{
-Tx_Trials++;
-if(Tx_Trials > 2) break;
-
-}
-else Tx_Success = 1;
-
-}
-if(Tx_Success) init_case = 254;
-else init_case = 255;
-}
-break;
-
-case 254: LCD_Display((char *)"Self Test Mode  Test Pass", 0, 1);
-LATCbits.LATC2 = LATAbits.LATA6= LATAbits.LATA7 = 1;
-init_case = 0xF0;
-break;
-case 255: LCD_Display((char *)"Self Test Mode  Test Fail", 0, 1);
-LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
-init_case = 0xF0;
-break;
-default: break;
-
-}
-
-if(init_case == 0xF0)
+# 8 "../src/projector_screen.c"
+void ProjectorScreen(void)
 {
 while(1)
 {
-switch_val = BUTTON_Pressed();
-if((switch_val == 1) || (switch_val == 2))
-break;
-}
-break;
 }
 }
-break;
 
-}
-else if(switch_val == 2)
-{
-break;
-}
-}
-}

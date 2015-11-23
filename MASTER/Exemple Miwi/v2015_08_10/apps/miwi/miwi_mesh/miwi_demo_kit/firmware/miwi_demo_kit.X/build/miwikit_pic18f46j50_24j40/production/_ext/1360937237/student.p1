@@ -8,43 +8,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1083 `ul 1 `S1084 1 `uc -> 4 `i `S1085 1 ]
 [n S1083 _MIWI_TICK Val byte v word ]
-"50 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Display `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
 "35 ../src/system_config/miwikit_pic18f46j50_24j40\button.h
 [v _BUTTON_Pressed `(uc ~T0 @X0 0 ef ]
-"7747 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
-[s S527 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S527 . LATC0 LATC1 LATC2 . LATC4 LATC5 LATC6 LATC7 ]
-"7757
-[s S528 :1 `uc 1 ]
-[n S528 . LC0 ]
-"7760
-[s S529 :1 `uc 1 :1 `uc 1 ]
-[n S529 . . LC1 ]
-"7764
-[s S530 :2 `uc 1 :1 `uc 1 ]
-[n S530 . . LC2 ]
-"7768
-[s S531 :3 `uc 1 :1 `uc 1 ]
-[n S531 . . LC3 ]
-"7772
-[s S532 :4 `uc 1 :1 `uc 1 ]
-[n S532 . . LC4 ]
-"7776
-[s S533 :5 `uc 1 :1 `uc 1 ]
-[n S533 . . LC5 ]
-"7780
-[s S534 :6 `uc 1 :1 `uc 1 ]
-[n S534 . . LC6 ]
-"7784
-[s S535 :7 `uc 1 :1 `uc 1 ]
-[n S535 . . LC7 ]
-"7746
-[u S526 `S527 1 `S528 1 `S529 1 `S530 1 `S531 1 `S532 1 `S533 1 `S534 1 `S535 1 ]
-[n S526 . . . . . . . . . . ]
-"7789
-[v _LATCbits `VS526 ~T0 @X0 0 e@3979 ]
-"7488
+"7488 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
 [s S507 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S507 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
 "7498
@@ -76,14 +42,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S506 . . . . . . . . . . ]
 "7530
 [v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
-"27 ../src/system_config/miwikit_pic18f46j50_24j40\eeprom.h
-[v _EEPROMRead `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
-"29 ../src/system_config/miwikit_pic18f46j50_24j40\serial_flash.h
-[v _SSTGetID `(v ~T0 @X0 0 ef1`*uc ]
-"178 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_SetChannel `(uc ~T0 @X0 0 ef1`uc ]
-"320
-[v _MiApp_SearchConnection `(uc ~T0 @X0 0 ef2`uc`ul ]
+"206 ../../../../../../framework\miwi/miwi_mesh.h
+[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
+"207
+[v _TxData `uc ~T0 @X0 0 e ]
+[; ;student.h: 27: void Student(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7627,7 +7590,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwikit_pic18f46j50_24j40\system.h: 64: uint16_t Val;
 [; ;miwikit_pic18f46j50_24j40\system.h: 66: }API_UINT16_UNION;
 [; ;miwikit_pic18f46j50_24j40\system.h: 119: void SYSTEM_Initialize(void);
-[; ;self_test.h: 27: void SelfTest(uint8_t);
 [; ;drv_mrf_miwi_24j40.h: 31: typedef union
 [; ;drv_mrf_miwi_24j40.h: 32: {
 [; ;drv_mrf_miwi_24j40.h: 33: uint8_t Val;
@@ -7905,364 +7867,77 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_api.h: 899: bool MiApp_InitChannelHopping( uint32_t ChannelMap);
 [; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 [; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
-"31 ../src/self_test.c
-[v _switch_val `uc ~T0 @X0 1 e ]
-[; ;self_test.c: 31: uint8_t switch_val;
-"32
-[v _EEPROM_Val `uc ~T0 @X0 -> 3 `i e ]
-[; ;self_test.c: 32: uint8_t EEPROM_Val[3];
-"33
-[v _SST_Val `uc ~T0 @X0 1 e ]
-[; ;self_test.c: 33: uint8_t SST_Val;
-"34
-[v _init_case `uc ~T0 @X0 1 e ]
-[i _init_case
--> -> 0 `i `uc
-]
-[; ;self_test.c: 34: uint8_t init_case = 0x00;
-"37
-[v _SelfTest `(v ~T0 @X0 1 ef1`uc ]
-"38
+"10 ../src/student.c
+[v _Student `(v ~T0 @X0 1 ef ]
+"11
 {
-[; ;self_test.c: 37: void SelfTest(uint8_t myChannel)
-[; ;self_test.c: 38: {
-[e :U _SelfTest ]
-"37
-[v _myChannel `uc ~T0 @X0 1 r1 ]
-"38
+[; ;student.c: 10: void Student(void)
+[; ;student.c: 11: {
+[e :U _Student ]
 [f ]
-[; ;self_test.c: 40: LCD_Display((char *)"   MiWi  Demo    Self Test Mode ", 0, 1);
-"40
-[e ( _LCD_Display (3 , , -> :s 1C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;self_test.c: 41: LCD_Display((char *)"SW1: Start Test SW2: Exit Test", 0, 1);
-"41
-[e ( _LCD_Display (3 , , -> :s 2C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;self_test.c: 42: init_case = 0;
-"42
-[e = _init_case -> -> 0 `i `uc ]
-[; ;self_test.c: 43: while(1)
-"43
+"12
+[v _switch_val `uc ~T0 @X0 1 a ]
+[; ;student.c: 12: uint8_t switch_val;
+[; ;student.c: 14: while(1)
+"14
 [e :U 1122 ]
-[; ;self_test.c: 44: {
-"44
+[; ;student.c: 15: {
+"15
 {
-[; ;self_test.c: 45: switch_val = BUTTON_Pressed();
-"45
+[; ;student.c: 16: switch_val = BUTTON_Pressed();
+"16
 [e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;self_test.c: 46: if(switch_val == 1)
-"46
+[; ;student.c: 17: if(switch_val == 1)
+"17
 [e $ ! == -> _switch_val `i -> 1 `i 1124  ]
-[; ;self_test.c: 47: {
-"47
+[; ;student.c: 18: {
+"18
 {
-[; ;self_test.c: 50: while(1)
-"50
+[; ;student.c: 19: LATAbits.LATA6 = 1;
+"19
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;student.c: 20: TxBuffer[TxData++] = 1;
+"20
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
+[; ;student.c: 21: { unsigned long _dcnt; unsigned long _ms; _ms = 1000; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"21
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 1000 `i `l `ul ]
+[e $U 1125  ]
 [e :U 1126 ]
-[; ;self_test.c: 51: {
-"51
 {
-[; ;self_test.c: 52: LCD_Display((char *)"Testing ...", 0, 1);
-"52
-[e ( _LCD_Display (3 , , -> :s 3C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;self_test.c: 53: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
-"53
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;self_test.c: 54: switch(init_case)
-"54
-[e $U 1129  ]
-[; ;self_test.c: 55: {
-"55
-{
-[; ;self_test.c: 56: case 0:
-"56
-[e :U 1130 ]
-[; ;self_test.c: 58: EEPROMRead(&(EEPROM_Val[0]), 0xFA, 3);
-"58
-[e ( _EEPROMRead (3 , , &U *U + &U _EEPROM_Val * -> -> -> 0 `i `ui `ux -> -> # *U &U _EEPROM_Val `ui `ux -> -> 250 `i `uc -> -> 3 `i `uc ]
-[; ;self_test.c: 59: if((EEPROM_Val[0] == 0x00) && (EEPROM_Val[1] == 0x00) && (EEPROM_Val[2] == 0x00))
-"59
-[e $ ! && && == -> *U + &U _EEPROM_Val * -> -> -> 0 `i `ui `ux -> -> # *U &U _EEPROM_Val `ui `ux `i -> 0 `i == -> *U + &U _EEPROM_Val * -> -> -> 1 `i `ui `ux -> -> # *U &U _EEPROM_Val `ui `ux `i -> 0 `i == -> *U + &U _EEPROM_Val * -> -> -> 2 `i `ui `ux -> -> # *U &U _EEPROM_Val `ui `ux `i -> 0 `i 1131  ]
-[; ;self_test.c: 60: init_case = 255;
-"60
-[e = _init_case -> -> 255 `i `uc ]
-[e $U 1132  ]
-"61
-[e :U 1131 ]
-[; ;self_test.c: 61: else if((EEPROM_Val[0] == 0xFF) && (EEPROM_Val[1] == 0xFF) && (EEPROM_Val[2] == 0xFF))
-[e $ ! && && == -> *U + &U _EEPROM_Val * -> -> -> 0 `i `ui `ux -> -> # *U &U _EEPROM_Val `ui `ux `i -> 255 `i == -> *U + &U _EEPROM_Val * -> -> -> 1 `i `ui `ux -> -> # *U &U _EEPROM_Val `ui `ux `i -> 255 `i == -> *U + &U _EEPROM_Val * -> -> -> 2 `i `ui `ux -> -> # *U &U _EEPROM_Val `ui `ux `i -> 255 `i 1133  ]
-[; ;self_test.c: 62: init_case = 255;
-"62
-[e = _init_case -> -> 255 `i `uc ]
-[e $U 1134  ]
-"63
-[e :U 1133 ]
-[; ;self_test.c: 63: else init_case++;
-[e ++ _init_case -> -> 1 `i `uc ]
-[e :U 1134 ]
-[e :U 1132 ]
-[; ;self_test.c: 64: break;
-"64
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
 [e $U 1128  ]
-[; ;self_test.c: 65: case 1:
-"65
-[e :U 1135 ]
-[; ;self_test.c: 67: SSTGetID(&SST_Val);
-"67
-[e ( _SSTGetID (1 &U _SST_Val ]
-[; ;self_test.c: 68: if(SST_Val == 0xBF)
-"68
-[e $ ! == -> _SST_Val `i -> 191 `i 1136  ]
-[; ;self_test.c: 69: init_case++;
-"69
-[e ++ _init_case -> -> 1 `i `uc ]
-[e $U 1137  ]
-"70
-[e :U 1136 ]
-[; ;self_test.c: 70: else init_case = 255;
-[e = _init_case -> -> 255 `i `uc ]
-[e :U 1137 ]
-[; ;self_test.c: 71: break;
-"71
-[e $U 1128  ]
-[; ;self_test.c: 72: case 2:
-"72
-[e :U 1138 ]
-[; ;self_test.c: 74: if (MiApp_SetChannel(myChannel) == 0)
-"74
-[e $ ! == -> ( _MiApp_SetChannel (1 _myChannel `i -> 0 `i 1139  ]
-[; ;self_test.c: 75: {
-"75
-{
-[; ;self_test.c: 76: init_case = 254;
-"76
-[e = _init_case -> -> 254 `i `uc ]
-[; ;self_test.c: 77: break;
-"77
-[e $U 1128  ]
-"78
-}
-[e :U 1139 ]
-[; ;self_test.c: 78: }
-[; ;self_test.c: 80: {
-"80
-{
-"82
-[v _Tx_Success `uc ~T0 @X0 1 a ]
-[; ;self_test.c: 82: bool Tx_Success = 0;
-[e = _Tx_Success -> -> 0 `i `uc ]
-"83
-[v _Tx_Trials `uc ~T0 @X0 1 a ]
-[; ;self_test.c: 83: uint8_t Tx_Trials = 0, scanresult = 0;
-[e = _Tx_Trials -> -> 0 `i `uc ]
-[v _scanresult `uc ~T0 @X0 1 a ]
-[e = _scanresult -> -> 0 `i `uc ]
-[; ;self_test.c: 85: while(!Tx_Success)
-"85
-[e $U 1140  ]
-[e :U 1141 ]
-[; ;self_test.c: 86: {
-"86
-{
-[; ;self_test.c: 87: if(myChannel < 8)
-"87
-[e $ ! < -> _myChannel `i -> 8 `i 1143  ]
-[; ;self_test.c: 88: scanresult = MiApp_SearchConnection(10, (0x00000001 << myChannel));
-"88
-[e = _scanresult ( _MiApp_SearchConnection (2 , -> -> 10 `i `uc -> -> << -> 1 `i _myChannel `l `ul ]
-[e $U 1144  ]
-"89
-[e :U 1143 ]
-[; ;self_test.c: 89: else if(myChannel < 16)
-[e $ ! < -> _myChannel `i -> 16 `i 1145  ]
-[; ;self_test.c: 90: scanresult = MiApp_SearchConnection(10, (0x00000100 << (myChannel-8)));
-"90
-[e = _scanresult ( _MiApp_SearchConnection (2 , -> -> 10 `i `uc -> -> << -> 256 `i - -> _myChannel `i -> 8 `i `l `ul ]
-[e $U 1146  ]
-"91
-[e :U 1145 ]
-[; ;self_test.c: 91: else if(myChannel < 24)
-[e $ ! < -> _myChannel `i -> 24 `i 1147  ]
-[; ;self_test.c: 92: scanresult = MiApp_SearchConnection(10, (0x00010000 << (myChannel-16)));
-"92
-[e = _scanresult ( _MiApp_SearchConnection (2 , -> -> 10 `i `uc -> << -> 65536 `l - -> _myChannel `i -> 16 `i `ul ]
-[e $U 1148  ]
-"93
-[e :U 1147 ]
-[; ;self_test.c: 93: else
-[; ;self_test.c: 94: scanresult = MiApp_SearchConnection(10, (0x01000000 << (myChannel-24)));
-"94
-[e = _scanresult ( _MiApp_SearchConnection (2 , -> -> 10 `i `uc -> << -> 16777216 `l - -> _myChannel `i -> 24 `i `ul ]
-[e :U 1148 ]
-[e :U 1146 ]
-[e :U 1144 ]
-[; ;self_test.c: 95: if(scanresult == 0)
-"95
-[e $ ! == -> _scanresult `i -> 0 `i 1149  ]
-[; ;self_test.c: 96: {
-"96
-{
-[; ;self_test.c: 97: Tx_Trials++;
-"97
-[e ++ _Tx_Trials -> -> 1 `i `uc ]
-[; ;self_test.c: 98: if(Tx_Trials > 2) break;
-"98
-[e $ ! > -> _Tx_Trials `i -> 2 `i 1150  ]
-[e $U 1142  ]
-[e :U 1150 ]
-"100
-}
-[; ;self_test.c: 100: }
-[e $U 1151  ]
-"101
-[e :U 1149 ]
-[; ;self_test.c: 101: else Tx_Success = 1;
-[e = _Tx_Success -> -> 1 `i `uc ]
-[e :U 1151 ]
-"103
-}
-[e :U 1140 ]
-"85
-[e $ ! != -> _Tx_Success `i -> -> -> 0 `i `uc `i 1141  ]
-[e :U 1142 ]
-[; ;self_test.c: 103: }
-[; ;self_test.c: 104: if(Tx_Success) init_case = 254;
-"104
-[e $ ! != -> _Tx_Success `i -> -> -> 0 `i `uc `i 1152  ]
-[e = _init_case -> -> 254 `i `uc ]
-[e $U 1153  ]
-"105
-[e :U 1152 ]
-[; ;self_test.c: 105: else init_case = 255;
-[e = _init_case -> -> 255 `i `uc ]
-[e :U 1153 ]
-"106
-}
-[; ;self_test.c: 106: }
-[; ;self_test.c: 107: break;
-"107
-[e $U 1128  ]
-[; ;self_test.c: 109: case 254: LCD_Display((char *)"Self Test Mode  Test Pass", 0, 1);
-"109
-[e :U 1154 ]
-[e ( _LCD_Display (3 , , -> :s 4C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;self_test.c: 110: LATCbits.LATC2 = LATAbits.LATA6= LATAbits.LATA7 = 1;
-"110
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-[; ;self_test.c: 111: init_case = 0xF0;
-"111
-[e = _init_case -> -> 240 `i `uc ]
-[; ;self_test.c: 112: break;
-"112
-[e $U 1128  ]
-[; ;self_test.c: 113: case 255: LCD_Display((char *)"Self Test Mode  Test Fail", 0, 1);
-"113
-[e :U 1155 ]
-[e ( _LCD_Display (3 , , -> :s 5C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;self_test.c: 114: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
-"114
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-[; ;self_test.c: 115: init_case = 0xF0;
-"115
-[e = _init_case -> -> 240 `i `uc ]
-[; ;self_test.c: 116: break;
-"116
-[e $U 1128  ]
-[; ;self_test.c: 117: default: break;
-"117
-[e :U 1156 ]
-[e $U 1128  ]
-"119
-}
-[; ;self_test.c: 119: }
-[e $U 1128  ]
-"54
 [e :U 1129 ]
-[e [\ _init_case , $ -> -> 0 `i `uc 1130
- , $ -> -> 1 `i `uc 1135
- , $ -> -> 2 `i `uc 1138
- , $ -> -> 254 `i `uc 1154
- , $ -> -> 255 `i `uc 1155
- 1156 ]
-"119
 [e :U 1128 ]
-[; ;self_test.c: 121: if(init_case == 0xF0)
-"121
-[e $ ! == -> _init_case `i -> 240 `i 1157  ]
-[; ;self_test.c: 122: {
-"122
-{
-[; ;self_test.c: 123: while(1)
-"123
-[e :U 1159 ]
-[; ;self_test.c: 124: {
-"124
-{
-[; ;self_test.c: 125: switch_val = BUTTON_Pressed();
-"125
-[e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;self_test.c: 126: if((switch_val == 1) || (switch_val == 2))
-"126
-[e $ ! || == -> _switch_val `i -> 1 `i == -> _switch_val `i -> 2 `i 1161  ]
-[; ;self_test.c: 127: break;
-"127
-[e $U 1160  ]
-[e :U 1161 ]
-"128
-}
-[e :U 1158 ]
-"123
-[e $U 1159  ]
-[e :U 1160 ]
-[; ;self_test.c: 128: }
-[; ;self_test.c: 129: break;
-"129
-[e $U 1127  ]
-"130
-}
-[e :U 1157 ]
-"131
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1129  ]
+[e :U 1130 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
 }
 [e :U 1125 ]
-"50
-[e $U 1126  ]
+[e $ != __ms -> -> 0 `i `ul 1126  ]
 [e :U 1127 ]
-[; ;self_test.c: 130: }
-[; ;self_test.c: 131: }
-[; ;self_test.c: 132: break;
-"132
-[e $U 1123  ]
-"134
 }
-[; ;self_test.c: 134: }
-[e $U 1162  ]
-"135
+[; ;student.c: 22: LATAbits.LATA6 = 0;
+"22
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[; ;student.c: 23: switch_val = 0;
+"23
+[e = _switch_val -> -> 0 `i `uc ]
+"24
+}
 [e :U 1124 ]
-[; ;self_test.c: 135: else if(switch_val == 2)
-[e $ ! == -> _switch_val `i -> 2 `i 1163  ]
-[; ;self_test.c: 136: {
-"136
-{
-[; ;self_test.c: 137: break;
-"137
-[e $U 1123  ]
-"138
-}
-[e :U 1163 ]
-"139
-[e :U 1162 ]
+"25
 }
 [e :U 1121 ]
-"43
+"14
 [e $U 1122  ]
 [e :U 1123 ]
-[; ;self_test.c: 138: }
-[; ;self_test.c: 139: }
-[; ;self_test.c: 140: }
-"140
+[; ;student.c: 24: }
+[; ;student.c: 25: }
+[; ;student.c: 26: }
+"26
 [e :UE 1120 ]
 }
-[a 2C 83 87 49 58 32 83 116 97 114 116 32 84 101 115 116 32 83 87 50 58 32 69 120 105 116 32 84 101 115 116 0 ]
-[a 4C 83 101 108 102 32 84 101 115 116 32 77 111 100 101 32 32 84 101 115 116 32 80 97 115 115 0 ]
-[a 5C 83 101 108 102 32 84 101 115 116 32 77 111 100 101 32 32 84 101 115 116 32 70 97 105 108 0 ]
-[a 3C 84 101 115 116 105 110 103 32 46 46 46 0 ]
-[a 1C 32 32 32 77 105 87 105 32 32 68 101 109 111 32 32 32 32 83 101 108 102 32 84 101 115 116 32 77 111 100 101 32 0 ]

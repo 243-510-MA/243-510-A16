@@ -90,6 +90,9 @@
 #define SW2_PORT            PORTBbits.RB2
 #define SW2_TRIS            TRISBbits.TRISB2
 
+#define DOOR                LATDbits.LATD7
+#define DOOR_TRIS           TRISDbits.TRISD7          
+
 #define LED0                LATCbits.LATC2
 #define LED0_TRIS           TRISCbits.TRISC2
 #define LED1                LATAbits.LATA6

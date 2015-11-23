@@ -10238,158 +10238,24 @@ bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 # 950
 extern RECEIVED_MESSAGE rxMessage;
 
-# 15 "../src/door_unlock.c"
+# 12 "../src/door_unlock.c"
 extern uint8_t ConnectionEntry;
-
 
 void DoorUnlock(void)
 {
-bool Run_Demo = 1;
-bool Tx_Packet = 1;
-uint8_t rssi = 0;
-uint8_t Pkt_Loss_Cnt = 0;
-MIWI_TICK tick1, tick2;
-uint8_t switch_val;
-uint8_t pktCmd = 0;
-
-
-
-
-LCD_Display((char *)"   Microchip       Door Unlock  ", 0, 1);
-
-
-
-
-tick1 = MiWi_TickGet();
-
-while(Run_Demo)
-{
-
-
-
-tick2 = MiWi_TickGet();
-
-
-
-if(((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32000) * 1000)))
-{
-
-
-if(Tx_Packet)
-{
-
-
-{TxData = 11;};
-
-TxBuffer[TxData++] = 2;
-TxBuffer[TxData++] = 0x4D;
-TxBuffer[TxData++] = 0x69;
-TxBuffer[TxData++] = 0x57;
-TxBuffer[TxData++] = 0x69;
-TxBuffer[TxData++] = 0x20;
-TxBuffer[TxData++] = 0x52;
-TxBuffer[TxData++] = 0x6F;
-TxBuffer[TxData++] = 0x63;
-TxBuffer[TxData++] = 0x6B;
-TxBuffer[TxData++] = 0x73;
-TxBuffer[TxData++] = 0x21;
-
-if( MiApp_UnicastConnection(ConnectionEntry, 0) == 0 )
-Pkt_Loss_Cnt++;
-else
-Pkt_Loss_Cnt = 0;
-
-Tx_Packet = 0;
-}
-
-else
-{
-if(Pkt_Loss_Cnt < 1)
-{
-if(rssi > 50)
-{
-
-LATCbits.LATC2 = 1;
-LATAbits.LATA6 = 0;
-LATAbits.LATA7 = 0;
-
-# 97
-}
-
-else
-{
-
-
-
-LATCbits.LATC2 = 0;
-LATAbits.LATA6 = 0;
-LATAbits.LATA7 = 1;
-{TxData = 11;};
-TxBuffer[TxData++] = 1;
-MiApp_UnicastConnection(ConnectionEntry, 0);
-
-
-tick1 = MiWi_TickGet();
-
-while(Run_Demo)
+LATDbits.LATD7 = 0;
+while(1)
 {
 if(MiApp_MessageAvailable())
 {
-if(rxMessage.Payload[0] == 4)
-Run_Demo = 0;
-
-MiApp_DiscardMessage();
-}
-if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
-Run_Demo = 0;
-
-tick2 = MiWi_TickGet();
-}
-}
-}
-
-# 180
-LCD_Update();
-Tx_Packet = 1;
-
-}
-
-
-
-tick1 = MiWi_TickGet();
-
-}
-
-
-if(MiApp_MessageAvailable())
+if(rxMessage.Payload[0] == 1)
 {
-pktCmd = rxMessage.Payload[0];
-if(pktCmd == 1)
-{
-MiApp_DiscardMessage();
-{TxData = 11;};
-TxBuffer[TxData++] = 4;
-MiApp_UnicastConnection(ConnectionEntry, 0);
-Run_Demo = 0;
-LCD_BacklightON();
-LCD_Display((char *)"   Exiting....     Door Unlock  ", 0, 1);
-LCD_BacklightOFF();
-
-
-}
-else if(rxMessage.Payload[0] == 2)
-{
-
-rssi = rxMessage.PacketRSSI;
-
-# 216
-MiApp_DiscardMessage();
-}
-else
-MiApp_DiscardMessage();
-}
-
-# 256
+LATDbits.LATD7 = 1;
+LATAbits.LATA6 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 10000; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+LATDbits.LATD7 = 0;
 }
 }
-
+}
+}

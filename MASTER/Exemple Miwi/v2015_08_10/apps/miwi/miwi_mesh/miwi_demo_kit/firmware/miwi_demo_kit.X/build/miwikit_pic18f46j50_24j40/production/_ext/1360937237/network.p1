@@ -8,26 +8,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1083 `ul 1 `S1084 1 `uc -> 4 `i `S1085 1 ]
 [n S1083 _MIWI_TICK Val byte v word ]
-"48 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_BacklightON `(v ~T0 @X0 0 ef ]
-"50
-[v _LCD_Display `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
-"49
-[v _LCD_BacklightOFF `(v ~T0 @X0 0 ef ]
-"90 ../src/system_config/miwikit_pic18f46j50_24j40\symbol.h
-[v _MiWi_TickGet `(S1083 ~T0 @X0 0 ef ]
-"207 ../../../../../../framework\miwi/miwi_mesh.h
-[v _TxData `uc ~T0 @X0 0 e ]
-"206
-[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
-"591 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_UnicastConnection `(uc ~T0 @X0 0 ef2`uc`uc ]
-"71 ../src/range_demo.c
-[v _ConnectionEntry `uc ~T0 @X0 0 e ]
-"194 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCDText `uc ~T0 @X0 -> 0 `x e ]
+"119 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "7747 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
 [s S527 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S527 . LATC0 LATC1 LATC2 . LATC4 LATC5 LATC6 LATC7 ]
@@ -92,29 +74,70 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S506 . . . . . . . . . . ]
 "7530
 [v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
-"35 ../src/system_config/miwikit_pic18f46j50_24j40\button.h
-[v _BUTTON_Pressed `(uc ~T0 @X0 0 ef ]
-"710 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
-"649
-[s S1119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1119 . broadcast ackReq secEn repeat command srcPrsnt altSrcAddr ]
-"646
-[u S1118 `uc 1 `S1119 1 ]
-[n S1118 . Val bits ]
+"50 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCD_Display `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
+"28 ../src/system_config/miwikit_pic18f46j50_24j40\eeprom.h
+[v _Read_MAC_Address `(v ~T0 @X0 0 ef ]
+"136 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_ProtocolInit `(uc ~T0 @X0 0 ef1`uc ]
+"178
+[v _MiApp_SetChannel `(uc ~T0 @X0 0 ef1`uc ]
+"457
+[v _MiApp_ConnectionMode `(v ~T0 @X0 0 ef1`uc ]
+"236
+[v _MiApp_StartConnection `(uc ~T0 @X0 0 ef3`uc`uc`ul ]
+"47 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCD_Erase `(v ~T0 @X0 0 ef ]
+"194 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCDText `uc ~T0 @X0 -> 0 `x e ]
 "61 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
 [u S1087 `uc -> 2 `i `ui 1 ]
 [n S1087 . v Val ]
-"644 ../../../../../../framework\miwi/miwi_api.h
-[s S1117 `S1118 1 `S1087 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1117 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
-"950
-[v _rxMessage `S1117 ~T0 @X0 0 e ]
-"752
-[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
+"208 ../../../../../../framework\miwi/miwi_mesh.h
+[v _myPANID `S1087 ~T0 @X0 0 e ]
+"209
+[v _myShortAddress `S1087 ~T0 @X0 0 e ]
 "46 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
 [v _LCD_Update `(v ~T0 @X0 0 ef ]
-[; ;range_demo.h: 27: void RangeDemo(void);
+"710 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
+"752
+[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
+"54
+[s S1112 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1112 _CONNECTION_STAUTS_bits RXOnWhenIdle directConnection longAddressValid shortAddressValid FinishJoin isFamily filler isValid ]
+"51
+[u S1111 `uc 1 `S1112 1 ]
+[n S1111 __CONNECTION_STATUS Val bits ]
+"78
+[s S1113 `S1087 1 `S1087 1 `uc -> 8 `i `S1111 1 `uc -> -> 1 `i `ux ]
+[n S1113 __CONNECTION_ENTRY PANID AltAddress Address status PeerInfo ]
+"93
+[v _ConnectionTable `S1113 ~T0 @X0 -> 0 `x e ]
+"320
+[v _MiApp_SearchConnection `(uc ~T0 @X0 0 ef2`uc`ul ]
+"257
+[s S1116 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1116 . Role Sleep SecurityEn RepeatEn AllowJoin Direct altSrcAddr ]
+"254
+[u S1115 `uc 1 `S1116 1 ]
+[n S1115 . Val bits ]
+"247
+[s S1114 `uc 1 `uc -> 8 `i `S1087 1 `uc 1 `uc 1 `S1115 1 `uc -> -> 1 `i `ux ]
+[n S1114 . Channel Address PANID RSSIValue LQIValue Capability PeerInfo ]
+"273
+[v _ActiveScanResults `S1114 ~T0 @X0 -> 0 `x e ]
+"207 ../../../../../../framework\miwi/miwi_mesh.h
+[v _TxData `uc ~T0 @X0 0 e ]
+"206
+[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
+"552 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
+"374
+[v _MiApp_EstablishConnection `(uc ~T0 @X0 0 ef2`uc`uc ]
+[; ;network.h: 27: void Network(int DEVICEMODE);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7935,510 +7958,497 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_api.h: 899: bool MiApp_InitChannelHopping( uint32_t ChannelMap);
 [; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 [; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
-[; ;range_demo.c: 71: extern uint8_t ConnectionEntry;
-"88 ../src/range_demo.c
-[v _RangeDemo `(v ~T0 @X0 1 ef ]
-"89
+"16 ../src/network.c
+[v _myChannel `uc ~T0 @X0 1 e ]
+[i _myChannel
+-> -> 20 `i `uc
+]
+[; ;network.c: 16: uint8_t myChannel = 20;
+"25
+[v _ConnectionEntry `uc ~T0 @X0 1 e ]
+[i _ConnectionEntry
+-> -> 0 `i `uc
+]
+[; ;network.c: 25: uint8_t ConnectionEntry = 0;
+[; ;network.c: 27: extern uint8_t myLongAddress[];
+"41
+[v _AdditionalNodeID `uc ~T0 @X0 -> -> 1 `i `ux e ]
+[i _AdditionalNodeID
+:U ..
+-> -> 0 `i `uc
+..
+]
+[; ;network.c: 41: uint8_t AdditionalNodeID[1] = {0x00};
+"45
+[v _Network `(v ~T0 @X0 1 ef1`i ]
+"46
 {
-[; ;range_demo.c: 88: void RangeDemo(void)
-[; ;range_demo.c: 89: {
-[e :U _RangeDemo ]
+[; ;network.c: 45: void Network(int DEVICEMODE)
+[; ;network.c: 46: {
+[e :U _Network ]
+"45
+[v _DEVICEMODE `i ~T0 @X0 1 r1 ]
+"46
 [f ]
-"90
-[v _Run_Demo `uc ~T0 @X0 1 a ]
-[; ;range_demo.c: 90: bool Run_Demo = 1;
-[e = _Run_Demo -> -> 1 `i `uc ]
-"91
-[v _Tx_Packet `uc ~T0 @X0 1 a ]
-[; ;range_demo.c: 91: bool Tx_Packet = 1;
-[e = _Tx_Packet -> -> 1 `i `uc ]
-"92
-[v _rssi `uc ~T0 @X0 1 a ]
-[; ;range_demo.c: 92: uint8_t rssi = 0;
-[e = _rssi -> -> 0 `i `uc ]
-"93
-[v _Pkt_Loss_Cnt `uc ~T0 @X0 1 a ]
-[; ;range_demo.c: 93: uint8_t Pkt_Loss_Cnt = 0;
-[e = _Pkt_Loss_Cnt -> -> 0 `i `uc ]
-"94
-[v _tick1 `S1083 ~T0 @X0 1 a ]
-[v _tick2 `S1083 ~T0 @X0 1 a ]
-"95
+"47
+[v _i `uc ~T0 @X0 1 a ]
+[v _j `uc ~T0 @X0 1 a ]
+"48
+[v _result `uc ~T0 @X0 1 a ]
+[; ;network.c: 47: uint8_t i, j;
+[; ;network.c: 48: bool result = 1;
+[e = _result -> -> 1 `i `uc ]
+"49
 [v _switch_val `uc ~T0 @X0 1 a ]
-"96
-[v _pktCmd `uc ~T0 @X0 1 a ]
-[; ;range_demo.c: 94: MIWI_TICK tick1, tick2;
-[; ;range_demo.c: 95: uint8_t switch_val;
-[; ;range_demo.c: 96: uint8_t pktCmd = 0;
-[e = _pktCmd -> -> 0 `i `uc ]
-[; ;range_demo.c: 101: LCD_BacklightON();
-"101
-[e ( _LCD_BacklightON ..  ]
-[; ;range_demo.c: 102: LCD_Display((char *)"   Microchip       Door Unlock  ", 0, 1);
-"102
+[; ;network.c: 49: uint8_t switch_val;
+[; ;network.c: 55: SYSTEM_Initialize();
+"55
+[e ( _SYSTEM_Initialize ..  ]
+[; ;network.c: 57: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
+"57
+[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+[; ;network.c: 59: if(DEVICEMODE == 4)
+"59
+[e $ ! == _DEVICEMODE -> 4 `i 1121  ]
+[; ;network.c: 60: {
+"60
+{
+[; ;network.c: 61: LCD_Display((char *)"Welcome, Mathieu", 0, 1);
+"61
 [e ( _LCD_Display (3 , , -> :s 1C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;range_demo.c: 103: LCD_BacklightOFF();
-"103
-[e ( _LCD_BacklightOFF ..  ]
-[; ;range_demo.c: 108: tick1 = MiWi_TickGet();
-"108
-[e = _tick1 ( _MiWi_TickGet ..  ]
-[; ;range_demo.c: 110: while(Run_Demo)
-"110
-[e $U 1121  ]
-[e :U 1122 ]
-[; ;range_demo.c: 111: {
-"111
-{
-[; ;range_demo.c: 115: tick2 = MiWi_TickGet();
-"115
-[e = _tick2 ( _MiWi_TickGet ..  ]
-[; ;range_demo.c: 119: if(((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32000) * 1000)))
-"119
-[e $ ! > - . _tick2 0 . _tick1 0 * / -> -> 16000000 `l `ul -> -> -> 32000 `i `l `ul -> -> -> 1000 `i `l `ul 1124  ]
-[; ;range_demo.c: 120: {
-"120
-{
-[; ;range_demo.c: 123: if(Tx_Packet)
-"123
-[e $ ! != -> _Tx_Packet `i -> -> -> 0 `i `uc `i 1125  ]
-[; ;range_demo.c: 124: {
-"124
-{
-[; ;range_demo.c: 127: {TxData = 11;};
-"127
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;range_demo.c: 129: TxBuffer[TxData++] = 2;
-"129
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
-[; ;range_demo.c: 130: TxBuffer[TxData++] = 0x4D;
-"130
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 77 `i `uc ]
-[; ;range_demo.c: 131: TxBuffer[TxData++] = 0x69;
-"131
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 105 `i `uc ]
-[; ;range_demo.c: 132: TxBuffer[TxData++] = 0x57;
-"132
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 87 `i `uc ]
-[; ;range_demo.c: 133: TxBuffer[TxData++] = 0x69;
-"133
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 105 `i `uc ]
-[; ;range_demo.c: 134: TxBuffer[TxData++] = 0x20;
-"134
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 32 `i `uc ]
-[; ;range_demo.c: 135: TxBuffer[TxData++] = 0x52;
-"135
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 82 `i `uc ]
-[; ;range_demo.c: 136: TxBuffer[TxData++] = 0x6F;
-"136
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 111 `i `uc ]
-[; ;range_demo.c: 137: TxBuffer[TxData++] = 0x63;
-"137
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 99 `i `uc ]
-[; ;range_demo.c: 138: TxBuffer[TxData++] = 0x6B;
-"138
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 107 `i `uc ]
-[; ;range_demo.c: 139: TxBuffer[TxData++] = 0x73;
-"139
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 115 `i `uc ]
-[; ;range_demo.c: 140: TxBuffer[TxData++] = 0x21;
-"140
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 33 `i `uc ]
-[; ;range_demo.c: 142: if( MiApp_UnicastConnection(ConnectionEntry, 0) == 0 )
-"142
-[e $ ! == -> ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc `i -> 0 `i 1126  ]
-[; ;range_demo.c: 143: Pkt_Loss_Cnt++;
-"143
-[e ++ _Pkt_Loss_Cnt -> -> 1 `i `uc ]
-[e $U 1127  ]
-"144
-[e :U 1126 ]
-[; ;range_demo.c: 144: else
-[; ;range_demo.c: 145: Pkt_Loss_Cnt = 0;
-"145
-[e = _Pkt_Loss_Cnt -> -> 0 `i `uc ]
-[e :U 1127 ]
-[; ;range_demo.c: 147: Tx_Packet = 0;
-"147
-[e = _Tx_Packet -> -> 0 `i `uc ]
-"148
-}
-[; ;range_demo.c: 148: }
-[e $U 1128  ]
-"149
-[e :U 1125 ]
-[; ;range_demo.c: 149: else
-[; ;range_demo.c: 150: {
-"150
-{
-[; ;range_demo.c: 151: if(Pkt_Loss_Cnt < 1)
-"151
-[e $ ! < -> _Pkt_Loss_Cnt `i -> 1 `i 1129  ]
-[; ;range_demo.c: 152: {
-"152
-{
-[; ;range_demo.c: 154: if(rssi > 200)
-"154
-[e $ ! > -> _rssi `i -> 200 `i 1130  ]
-[; ;range_demo.c: 158: {
-"158
-{
-[; ;range_demo.c: 159: sprintf((char *)&LCDText, (char*)" Unlock Door ?  SW1: YES  SW2:NO");
-"159
-[e ( _sprintf (1 , &U _LCDText -> -> :s 2C `*uc `*Cuc ]
-[; ;range_demo.c: 160: LATCbits.LATC2 = 1;
-"160
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-[; ;range_demo.c: 161: LATAbits.LATA6 = 0;
-"161
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;range_demo.c: 162: LATAbits.LATA7 = 0;
-"162
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;range_demo.c: 163: switch_val = BUTTON_Pressed();
-"163
-[e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;range_demo.c: 164: if(switch_val == 1)
-"164
-[e $ ! == -> _switch_val `i -> 1 `i 1131  ]
-[; ;range_demo.c: 165: {
-"165
-{
-[; ;range_demo.c: 166: LATCbits.LATC2 = 1;
-"166
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-[; ;range_demo.c: 167: LATAbits.LATA6 = 1;
-"167
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;range_demo.c: 168: LATAbits.LATA7 = 1;
-"168
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-"169
-}
-[; ;range_demo.c: 169: }
-[e $U 1132  ]
-"171
-[e :U 1131 ]
-[; ;range_demo.c: 171: else if(switch_val == 2)
-[e $ ! == -> _switch_val `i -> 2 `i 1133  ]
-[; ;range_demo.c: 172: {
-"172
-{
-[; ;range_demo.c: 176: {TxData = 11;};
-"176
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;range_demo.c: 177: TxBuffer[TxData++] = 1;
-"177
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
-[; ;range_demo.c: 178: MiApp_UnicastConnection(ConnectionEntry, 0);
-"178
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;range_demo.c: 180: LCD_BacklightON();
-"180
-[e ( _LCD_BacklightON ..  ]
-[; ;range_demo.c: 181: LCD_Display((char *)"   Exiting....     Range Demo  ", 0, 1);
-"181
-[e ( _LCD_Display (3 , , -> :s 3C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;range_demo.c: 182: LCD_BacklightOFF();
-"182
-[e ( _LCD_BacklightOFF ..  ]
-[; ;range_demo.c: 184: tick1 = MiWi_TickGet();
-"184
-[e = _tick1 ( _MiWi_TickGet ..  ]
-[; ;range_demo.c: 186: while(Run_Demo)
-"186
-[e $U 1134  ]
-[e :U 1135 ]
-[; ;range_demo.c: 187: {
-"187
-{
-[; ;range_demo.c: 188: if(MiApp_MessageAvailable())
-"188
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1137  ]
-[; ;range_demo.c: 189: {
-"189
-{
-[; ;range_demo.c: 190: if(rxMessage.Payload[0] == 4)
-"190
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 4 `i 1138  ]
-[; ;range_demo.c: 191: Run_Demo = 0;
-"191
-[e = _Run_Demo -> -> 0 `i `uc ]
-[e :U 1138 ]
-[; ;range_demo.c: 193: MiApp_DiscardMessage();
-"193
-[e ( _MiApp_DiscardMessage ..  ]
-"194
-}
-[e :U 1137 ]
-[; ;range_demo.c: 194: }
-[; ;range_demo.c: 195: if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
-"195
-[e $ ! > - . _tick2 0 . _tick1 0 * / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 6 `i `l `ul 1139  ]
-[; ;range_demo.c: 196: Run_Demo = 0;
-"196
-[e = _Run_Demo -> -> 0 `i `uc ]
-[e :U 1139 ]
-[; ;range_demo.c: 198: tick2 = MiWi_TickGet();
-"198
-[e = _tick2 ( _MiWi_TickGet ..  ]
-"199
-}
-[e :U 1134 ]
-"186
-[e $ != -> _Run_Demo `i -> -> -> 0 `i `uc `i 1135  ]
-[e :U 1136 ]
-"200
-}
-[e :U 1133 ]
-"201
-[e :U 1132 ]
-}
-[; ;range_demo.c: 199: }
-[; ;range_demo.c: 200: }
-[; ;range_demo.c: 201: }
-[e $U 1140  ]
-"203
-[e :U 1130 ]
-[; ;range_demo.c: 203: else if(rssi < 201)
-[e $ ! < -> _rssi `i -> 201 `i 1141  ]
-[; ;range_demo.c: 207: {
-"207
-{
-[; ;range_demo.c: 208: sprintf((char *)&LCDText, (char*)" Get Closer to      the Door    ");
-"208
-[e ( _sprintf (1 , &U _LCDText -> -> :s 4C `*uc `*Cuc ]
-[; ;range_demo.c: 209: LATCbits.LATC2 = 0;
-"209
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-[; ;range_demo.c: 210: LATAbits.LATA6 = 1;
-"210
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;range_demo.c: 211: LATAbits.LATA7 = 0;
-"211
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;range_demo.c: 212: switch_val = BUTTON_Pressed();
-"212
-[e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;range_demo.c: 213: if((switch_val == 1) || (switch_val == 2))
-"213
-[e $ ! || == -> _switch_val `i -> 1 `i == -> _switch_val `i -> 2 `i 1142  ]
-[; ;range_demo.c: 214: {
-"214
-{
-[; ;range_demo.c: 218: {TxData = 11;};
-"218
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;range_demo.c: 219: TxBuffer[TxData++] = 1;
-"219
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
-[; ;range_demo.c: 220: MiApp_UnicastConnection(ConnectionEntry, 0);
-"220
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;range_demo.c: 222: LCD_BacklightON();
-"222
-[e ( _LCD_BacklightON ..  ]
-[; ;range_demo.c: 223: LCD_Display((char *)"   Exiting....     Range Demo  ", 0, 1);
-"223
-[e ( _LCD_Display (3 , , -> :s 5C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;range_demo.c: 224: LCD_BacklightOFF();
-"224
-[e ( _LCD_BacklightOFF ..  ]
-[; ;range_demo.c: 226: tick1 = MiWi_TickGet();
-"226
-[e = _tick1 ( _MiWi_TickGet ..  ]
-[; ;range_demo.c: 228: while(Run_Demo)
-"228
-[e $U 1143  ]
-[e :U 1144 ]
-[; ;range_demo.c: 229: {
-"229
-{
-[; ;range_demo.c: 230: if(MiApp_MessageAvailable())
-"230
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1146  ]
-[; ;range_demo.c: 231: {
-"231
-{
-[; ;range_demo.c: 232: if(rxMessage.Payload[0] == 4)
-"232
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 4 `i 1147  ]
-[; ;range_demo.c: 233: Run_Demo = 0;
-"233
-[e = _Run_Demo -> -> 0 `i `uc ]
-[e :U 1147 ]
-[; ;range_demo.c: 235: MiApp_DiscardMessage();
-"235
-[e ( _MiApp_DiscardMessage ..  ]
-"236
-}
-[e :U 1146 ]
-[; ;range_demo.c: 236: }
-[; ;range_demo.c: 237: if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
-"237
-[e $ ! > - . _tick2 0 . _tick1 0 * / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 6 `i `l `ul 1148  ]
-[; ;range_demo.c: 238: Run_Demo = 0;
-"238
-[e = _Run_Demo -> -> 0 `i `uc ]
-[e :U 1148 ]
-[; ;range_demo.c: 240: tick2 = MiWi_TickGet();
-"240
-[e = _tick2 ( _MiWi_TickGet ..  ]
-"241
-}
-[e :U 1143 ]
-"228
-[e $ != -> _Run_Demo `i -> -> -> 0 `i `uc `i 1144  ]
-[e :U 1145 ]
-"242
-}
-[e :U 1142 ]
-"243
-}
-[e :U 1141 ]
-"248
-[e :U 1140 ]
-}
-[; ;range_demo.c: 241: }
-[; ;range_demo.c: 242: }
-[; ;range_demo.c: 243: }
-[; ;range_demo.c: 248: }
-[e $U 1149  ]
-"250
-[e :U 1129 ]
-[; ;range_demo.c: 250: else
-[; ;range_demo.c: 251: {
-"251
-{
-[; ;range_demo.c: 252: LCD_Display((char *)"No Device Found or Out of Range ", 0, 1);
-"252
-[e ( _LCD_Display (3 , , -> :s 6C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;range_demo.c: 253: LATCbits.LATC2 = 0;
-"253
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-[; ;range_demo.c: 254: LATAbits.LATA6 = 0;
-"254
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;range_demo.c: 255: LATAbits.LATA7 = 1;
-"255
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-"256
-}
-[e :U 1149 ]
-[; ;range_demo.c: 256: }
-[; ;range_demo.c: 258: LCD_Update();
-"258
-[e ( _LCD_Update ..  ]
-[; ;range_demo.c: 259: Tx_Packet = 1;
-"259
-[e = _Tx_Packet -> -> 1 `i `uc ]
-"261
-}
-[e :U 1128 ]
-[; ;range_demo.c: 261: }
-[; ;range_demo.c: 265: tick1 = MiWi_TickGet();
-"265
-[e = _tick1 ( _MiWi_TickGet ..  ]
-"267
-}
-[e :U 1124 ]
-[; ;range_demo.c: 267: }
-[; ;range_demo.c: 270: if(MiApp_MessageAvailable())
-"270
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1150  ]
-[; ;range_demo.c: 271: {
-"271
-{
-[; ;range_demo.c: 272: pktCmd = rxMessage.Payload[0];
-"272
-[e = _pktCmd *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;range_demo.c: 273: if(pktCmd == 1)
-"273
-[e $ ! == -> _pktCmd `i -> 1 `i 1151  ]
-[; ;range_demo.c: 274: {
-"274
-{
-[; ;range_demo.c: 275: MiApp_DiscardMessage();
-"275
-[e ( _MiApp_DiscardMessage ..  ]
-[; ;range_demo.c: 276: {TxData = 11;};
-"276
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;range_demo.c: 277: TxBuffer[TxData++] = 4;
-"277
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 4 `i `uc ]
-[; ;range_demo.c: 278: MiApp_UnicastConnection(ConnectionEntry, 0);
-"278
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;range_demo.c: 279: Run_Demo = 0;
-"279
-[e = _Run_Demo -> -> 0 `i `uc ]
-[; ;range_demo.c: 280: LCD_BacklightON();
-"280
-[e ( _LCD_BacklightON ..  ]
-[; ;range_demo.c: 281: LCD_Display((char *)"   Exiting....     Range Demo  ", 0, 1);
-"281
-[e ( _LCD_Display (3 , , -> :s 7C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;range_demo.c: 282: LCD_BacklightOFF();
-"282
-[e ( _LCD_BacklightOFF ..  ]
-"285
-}
-[; ;range_demo.c: 285: }
-[e $U 1152  ]
-"286
-[e :U 1151 ]
-[; ;range_demo.c: 286: else if(rxMessage.Payload[0] == 2)
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 2 `i 1153  ]
-[; ;range_demo.c: 287: {
-"287
-{
-[; ;range_demo.c: 289: rssi = rxMessage.PacketRSSI;
-"289
-[e = _rssi . _rxMessage 5 ]
-[; ;range_demo.c: 294: MiApp_DiscardMessage();
-"294
-[e ( _MiApp_DiscardMessage ..  ]
-"295
-}
-[; ;range_demo.c: 295: }
-[e $U 1154  ]
-"296
-[e :U 1153 ]
-[; ;range_demo.c: 296: else
-[; ;range_demo.c: 297: MiApp_DiscardMessage();
-"297
-[e ( _MiApp_DiscardMessage ..  ]
-[e :U 1154 ]
-[e :U 1152 ]
-"298
-}
-[e :U 1150 ]
-"334
+"62
 }
 [e :U 1121 ]
-"110
-[e $ != -> _Run_Demo `i -> -> -> 0 `i `uc `i 1122  ]
+[; ;network.c: 62: }
+[; ;network.c: 64: Read_MAC_Address();
+"64
+[e ( _Read_MAC_Address ..  ]
+[; ;network.c: 66: MiApp_ProtocolInit(0);
+"66
+[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
+[; ;network.c: 72: CreateorJoin:
+"72
+[e :U 1122 ]
+[; ;network.c: 78: if( MiApp_SetChannel(myChannel) == 0 )
+"78
+[e $ ! == -> ( _MiApp_SetChannel (1 _myChannel `i -> 0 `i 1123  ]
+[; ;network.c: 79: return;
+"79
+[e $UE 1120  ]
 [e :U 1123 ]
-[; ;range_demo.c: 298: }
-[; ;range_demo.c: 334: }
-[; ;range_demo.c: 335: }
-"335
+[; ;network.c: 90: MiApp_ConnectionMode(0x00);
+"90
+[e ( _MiApp_ConnectionMode (1 -> -> 0 `i `uc ]
+[; ;network.c: 95: if(DEVICEMODE == 0)
+"95
+[e $ ! == _DEVICEMODE -> 0 `i 1124  ]
+[; ;network.c: 96: {
+"96
+{
+[; ;network.c: 97: while(result == 1)
+"97
+[e $U 1125  ]
+[e :U 1126 ]
+[; ;network.c: 98: {
+"98
+{
+[; ;network.c: 104: MiApp_ProtocolInit(0);
+"104
+[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
+[; ;network.c: 105: MiApp_StartConnection(0x00, 0, 0);
+"105
+[e ( _MiApp_StartConnection (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> -> 0 `i `l `ul ]
+[; ;network.c: 107: LCD_Erase();
+"107
+[e ( _LCD_Erase ..  ]
+[; ;network.c: 108: sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
+"108
+[e ( _sprintf (1 , , , (. , &U _LCDText -> -> :s 2C `*uc `*Cuc -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> _myChannel `i ]
+[; ;network.c: 109: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+"109
+[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 3C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
+[; ;network.c: 110: LCD_Update();
+"110
+[e ( _LCD_Update ..  ]
+[; ;network.c: 115: while(!ConnectionTable[0].status.bits.isValid)
+"115
+[e $U 1128  ]
+[e :U 1129 ]
+[; ;network.c: 116: {
+"116
+{
+[; ;network.c: 117: if(MiApp_MessageAvailable())
+"117
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1131  ]
+[; ;network.c: 118: MiApp_DiscardMessage();
+"118
+[e ( _MiApp_DiscardMessage ..  ]
+[e :U 1131 ]
+"119
+}
+[e :U 1128 ]
+"115
+[e $ ! != -> . . . *U + &U _ConnectionTable * -> -> -> 0 `i `ui `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1129  ]
+[e :U 1130 ]
+[; ;network.c: 119: }
+[; ;network.c: 120: result = 0;
+"120
+[e = _result -> -> 0 `i `uc ]
+"122
+}
+[e :U 1125 ]
+"97
+[e $ == -> _result `i -> 1 `i 1126  ]
+[e :U 1127 ]
+"123
+}
+[; ;network.c: 122: }
+[; ;network.c: 123: }
+[e $U 1132  ]
+"128
+[e :U 1124 ]
+[; ;network.c: 128: else
+[; ;network.c: 129: {
+"129
+{
+[; ;network.c: 134: while(result == 1)
+"134
+[e $U 1133  ]
+[e :U 1134 ]
+[; ;network.c: 135: {
+"135
+{
+"136
+[v _scanresult `Vuc ~T0 @X0 1 a ]
+[; ;network.c: 136: volatile uint8_t scanresult;
+[; ;network.c: 138: MiApp_ProtocolInit(0);
+"138
+[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
+[; ;network.c: 144: scanresult = MiApp_SearchConnection(10, (0x00010000 << (myChannel-16)));
+"144
+[e = _scanresult ( _MiApp_SearchConnection (2 , -> -> 10 `i `uc -> << -> 65536 `l - -> _myChannel `i -> 16 `i `ul ]
+[; ;network.c: 150: if(scanresult > 0)
+"150
+[e $ ! > -> _scanresult `i -> 0 `i 1136  ]
+[; ;network.c: 151: {
+"151
+{
+"152
+[v _k `uc ~T0 @X0 1 a ]
+[; ;network.c: 152: uint8_t k;
+[; ;network.c: 154: for(j = 0; j < scanresult; j++)
+"154
+{
+[e = _j -> -> 0 `i `uc ]
+[e $U 1140  ]
+"155
+[e :U 1137 ]
+[; ;network.c: 155: {
+{
+"156
+[v _skip_print `uc ~T0 @X0 1 a ]
+[; ;network.c: 156: uint8_t skip_print = 0;
+[e = _skip_print -> -> 0 `i `uc ]
+[; ;network.c: 157: if(j > 0)
+"157
+[e $ ! > -> _j `i -> 0 `i 1141  ]
+[; ;network.c: 158: {
+"158
+{
+[; ;network.c: 160: skip_print = 0;
+"160
+[e = _skip_print -> -> 0 `i `uc ]
+[; ;network.c: 161: for(k = 0; k < j; k++)
+"161
+{
+[e = _k -> -> 0 `i `uc ]
+[e $U 1145  ]
+"162
+[e :U 1142 ]
+[; ;network.c: 162: {
+{
+[; ;network.c: 163: if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
+[; ;network.c: 164: (ActiveScanResults[j].PANID.v[0] == ActiveScanResults[k].PANID.v[0]))
+"164
+[e $ ! & == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i 1146  ]
+[; ;network.c: 165: {
+"165
+{
+[; ;network.c: 166: skip_print = 1;
+"166
+[e = _skip_print -> -> 1 `i `uc ]
+[; ;network.c: 167: break;
+"167
+[e $U 1143  ]
+"168
+}
+[e :U 1146 ]
+"170
+}
+"161
+[e ++ _k -> -> 1 `i `uc ]
+[e :U 1145 ]
+[e $ < -> _k `i -> _j `i 1142  ]
+[e :U 1143 ]
+"170
+}
+[; ;network.c: 168: }
+[; ;network.c: 170: }
+[; ;network.c: 171: if(skip_print == 1)
+"171
+[e $ ! == -> _skip_print `i -> 1 `i 1147  ]
+[; ;network.c: 172: {
+"172
+{
+[; ;network.c: 173: if(j == (scanresult-1)) j = -1;
+"173
+[e $ ! == -> _j `i - -> _scanresult `i -> 1 `i 1148  ]
+[e = _j -> -U -> 1 `i `uc ]
+[e :U 1148 ]
+[; ;network.c: 174: continue;
+"174
+[e $U 1139  ]
+"175
+}
+[e :U 1147 ]
+"176
+}
+[e :U 1141 ]
+[; ;network.c: 175: }
+[; ;network.c: 176: }
+[; ;network.c: 178: while(1)
+"178
+[e :U 1150 ]
+[; ;network.c: 179: {
+"179
+{
+"185
+[v _Status `uc ~T0 @X0 1 a ]
+"186
+[v _CoordCount `uc ~T0 @X0 1 a ]
+[; ;network.c: 185: uint8_t Status;
+[; ;network.c: 186: uint8_t CoordCount = 0;
+[e = _CoordCount -> -> 0 `i `uc ]
+[; ;network.c: 187: {TxData = 11;};
+"187
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;network.c: 189: for(k = 0 ; k < scanresult ; k++)
+"189
+{
+[e = _k -> -> 0 `i `uc ]
+[e $U 1155  ]
+"190
+[e :U 1152 ]
+[; ;network.c: 190: {
+{
+[; ;network.c: 191: if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
+[; ;network.c: 192: (ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]))
+"192
+[e $ ! & == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i 1156  ]
+[; ;network.c: 193: {
+"193
+{
+[; ;network.c: 194: CoordCount++;
+"194
+[e ++ _CoordCount -> -> 1 `i `uc ]
+"195
+}
+[e :U 1156 ]
+"196
+}
+"189
+[e ++ _k -> -> 1 `i `uc ]
+[e :U 1155 ]
+[e $ < -> _k `i -> _scanresult `i 1152  ]
+[e :U 1153 ]
+"196
+}
+[; ;network.c: 195: }
+[; ;network.c: 196: }
+[; ;network.c: 197: if(CoordCount > 1)
+"197
+[e $ ! > -> _CoordCount `i -> 1 `i 1157  ]
+[; ;network.c: 198: {
+"198
+{
+"199
+[v _nodeIndex `uc ~T0 @X0 1 a ]
+[; ;network.c: 199: uint8_t nodeIndex = 0;
+[e = _nodeIndex -> -> 0 `i `uc ]
+"200
+[v _count `uc ~T0 @X0 1 a ]
+[; ;network.c: 200: uint8_t count = 0;
+[e = _count -> -> 0 `i `uc ]
+[; ;network.c: 201: {TxData = 11;};
+"201
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;network.c: 202: TxBuffer[TxData++] = 4;
+"202
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 4 `i `uc ]
+[; ;network.c: 203: TxBuffer[TxData++] = ActiveScanResults[j].PANID.v[1];
+"203
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux ]
+[; ;network.c: 204: TxBuffer[TxData++] = ActiveScanResults[j].PANID.v[0];
+"204
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux ]
+[; ;network.c: 205: MiApp_BroadcastPacket(0);
+"205
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;network.c: 206: for(k = 0 ; k < scanresult ; k++)
+"206
+{
+[e = _k -> -> 0 `i `uc ]
+[e $U 1161  ]
+"207
+[e :U 1158 ]
+[; ;network.c: 207: {
+{
+[; ;network.c: 208: if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
+[; ;network.c: 209: (ActiveScanResults[j].PANID.v[0] == ActiveScanResults[k].PANID.v[0]))
+"209
+[e $ ! & == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i 1162  ]
+[; ;network.c: 210: {
+"210
+{
+[; ;network.c: 211: count++;
+"211
+[e ++ _count -> -> 1 `i `uc ]
+[; ;network.c: 212: nodeIndex = k;
+"212
+[e = _nodeIndex _k ]
+"213
+}
+[e :U 1162 ]
+"214
+}
+"206
+[e ++ _k -> -> 1 `i `uc ]
+[e :U 1161 ]
+[e $ < -> _k `i -> _scanresult `i 1158  ]
+[e :U 1159 ]
+"214
+}
+"215
+}
+[e :U 1157 ]
+[; ;network.c: 213: }
+[; ;network.c: 214: }
+[; ;network.c: 215: }
+[; ;network.c: 221: Status = MiApp_EstablishConnection(j, 0x00);
+"221
+[e = _Status ( _MiApp_EstablishConnection (2 , _j -> -> 0 `i `uc ]
+[; ;network.c: 222: if(Status == 0xFF)
+"222
+[e $ ! == -> _Status `i -> 255 `i 1163  ]
+[; ;network.c: 223: {
+"223
+{
+[; ;network.c: 225: goto CreateorJoin;
+"225
+[e $U 1122  ]
+"226
+}
+[; ;network.c: 226: }
+[e $U 1164  ]
+"227
+[e :U 1163 ]
+[; ;network.c: 227: else
+[; ;network.c: 228: {
+"228
+{
+[; ;network.c: 230: result = 0;
+"230
+[e = _result -> -> 0 `i `uc ]
+"231
+}
+[e :U 1164 ]
+[; ;network.c: 231: }
+[; ;network.c: 232: {TxData = 11;};
+"232
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;network.c: 233: TxBuffer[TxData++] = 5;
+"233
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 5 `i `uc ]
+[; ;network.c: 234: TxBuffer[TxData++] = myPANID.v[1];
+"234
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux ]
+[; ;network.c: 235: TxBuffer[TxData++] = myPANID.v[0];
+"235
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux ]
+[; ;network.c: 236: MiApp_BroadcastPacket(0);
+"236
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;network.c: 237: break;
+"237
+[e $U 1151  ]
+"239
+}
+[e :U 1149 ]
+"178
+[e $U 1150  ]
+[e :U 1151 ]
+[; ;network.c: 239: }
+[; ;network.c: 245: if(result == 0)
+"245
+[e $ ! == -> _result `i -> 0 `i 1165  ]
+[; ;network.c: 246: break;
+"246
+[e $U 1138  ]
+[e :U 1165 ]
+"247
+}
+"154
+[e :U 1139 ]
+[e ++ _j -> -> 1 `i `uc ]
+[e :U 1140 ]
+[e $ < -> _j `i -> _scanresult `i 1137  ]
+[e :U 1138 ]
+"247
+}
+[; ;network.c: 247: }
+[; ;network.c: 249: result = 0;
+"249
+[e = _result -> -> 0 `i `uc ]
+"250
+}
+[; ;network.c: 250: }
+[e $U 1166  ]
+"251
+[e :U 1136 ]
+[; ;network.c: 251: else
+[; ;network.c: 252: {
+"252
+{
+[; ;network.c: 253: LCD_Display((char *)"Waiting for PAN Rescanning......", 0, 0);
+"253
+[e ( _LCD_Display (3 , , -> :s 4C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"254
+}
+[e :U 1166 ]
+"255
+}
+[e :U 1133 ]
+"134
+[e $ == -> _result `i -> 1 `i 1134  ]
+[e :U 1135 ]
+"256
+}
+[e :U 1132 ]
+[; ;network.c: 254: }
+[; ;network.c: 255: }
+[; ;network.c: 256: }
+[; ;network.c: 257: }
+"257
 [e :UE 1120 ]
 }
-[p f _sprintf 9437696 ]
-[a 2C 32 85 110 108 111 99 107 32 68 111 111 114 32 63 32 32 83 87 49 58 32 89 69 83 32 32 83 87 50 58 78 79 0 ]
-[a 6C 78 111 32 68 101 118 105 99 101 32 70 111 117 110 100 32 111 114 32 79 117 116 32 111 102 32 82 97 110 103 101 32 0 ]
-[a 3C 32 32 32 69 120 105 116 105 110 103 46 46 46 46 32 32 32 32 32 82 97 110 103 101 32 68 101 109 111 32 32 0 ]
-[a 5C 32 32 32 69 120 105 116 105 110 103 46 46 46 46 32 32 32 32 32 82 97 110 103 101 32 68 101 109 111 32 32 0 ]
-[a 7C 32 32 32 69 120 105 116 105 110 103 46 46 46 46 32 32 32 32 32 82 97 110 103 101 32 68 101 109 111 32 32 0 ]
-[a 1C 32 32 32 77 105 99 114 111 99 104 105 112 32 32 32 32 32 32 32 68 111 111 114 32 85 110 108 111 99 107 32 32 0 ]
-[a 4C 32 71 101 116 32 67 108 111 115 101 114 32 116 111 32 32 32 32 32 32 116 104 101 32 68 111 111 114 32 32 32 32 0 ]
+[p f _sprintf 16484269 ]
+[a 3C 65 100 100 114 101 115 115 58 32 37 48 50 120 37 48 50 120 0 ]
+[a 1C 87 101 108 99 111 109 101 44 32 77 97 116 104 105 101 117 0 ]
+[a 2C 80 65 78 73 68 58 37 48 50 120 37 48 50 120 32 67 104 58 37 48 50 100 0 ]
+[a 4C 87 97 105 116 105 110 103 32 102 111 114 32 80 65 78 32 82 101 115 99 97 110 110 105 110 103 46 46 46 46 46 46 0 ]
