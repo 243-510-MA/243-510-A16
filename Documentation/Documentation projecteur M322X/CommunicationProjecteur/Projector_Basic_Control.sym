@@ -1,0 +1,64 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     i
+005     MAIN.@SCRATCH1
+006     @delay_ms1.P1
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0004  @delay_ms1
+004A  @PUTCHARI_BIU_1
+002A  cligne
+00B2  Power_off
+0052  Power_on
+0112  MAIN
+0112  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    U:\5eSession\510-COMMUNICATIONS NUMÉRIQUES SANS FIL\CommunicationProjecteur\
+
+Project Files:
+    Projector_Basic_Control.c                               [10-nov.-15 11:35  CRC=D76CA292]
+    18F2580.h                                               [29-avr.-11 15:32  CRC=FEFA3EFF]
+
+Source signature=D5612090
+
+Units:
+    U:\5eSession\510-COMMUNICATIONS NUMÉRIQUES SANS FIL\CommunicationProjecteur\Projector_Basic_Control (main)
+
+Compiler Settings:
+    Processor:      PIC18F2580
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      Projector_Basic_Control.err
+    Ext Symbols: Projector_Basic_Control.esym
+    INHX32:      Projector_Basic_Control.hex
+    Symbols:     Projector_Basic_Control.sym
+    List:        Projector_Basic_Control.lst
+    Debug/COFF:  Projector_Basic_Control.cof
+    Project:     Projector_Basic_Control.PJT
+    Call Tree:   Projector_Basic_Control.tre
+    Statistics:  Projector_Basic_Control.STA
