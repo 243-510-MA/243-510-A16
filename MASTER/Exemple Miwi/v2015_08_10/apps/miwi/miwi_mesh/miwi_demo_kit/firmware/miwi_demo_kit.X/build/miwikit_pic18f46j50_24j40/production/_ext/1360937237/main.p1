@@ -138,7 +138,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
 "374
 [v _MiApp_EstablishConnection `(uc ~T0 @X0 0 ef2`uc`uc ]
-"649
+"35 ../src/system_config/miwikit_pic18f46j50_24j40\button.h
+[v _BUTTON_Pressed `(uc ~T0 @X0 0 ef ]
+"649 ../../../../../../framework\miwi/miwi_api.h
 [s S1119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1119 . broadcast ackReq secEn repeat command srcPrsnt altSrcAddr ]
 "646
@@ -153,8 +155,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _MiApp_UnicastConnection `(uc ~T0 @X0 0 ef2`uc`uc ]
 "27 ../src/door_unlock.h
 [v _DoorUnlock `(v ~T0 @X0 0 ef ]
-"35 ../src/system_config/miwikit_pic18f46j50_24j40\button.h
-[v _BUTTON_Pressed `(uc ~T0 @X0 0 ef ]
 "28 ../src/temp_demo.h
 [v _TempDemo `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -8500,635 +8500,560 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 287: {
 "287
 {
-[; ;main.c: 288: for(i = 0 ; i< 10 ; i++)
-"288
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1175  ]
-[e $U 1176  ]
 "289
-[e :U 1175 ]
-[; ;main.c: 289: {
-{
-[; ;main.c: 290: if(ConnectionTable[i].status.bits.isValid)
-"290
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1178  ]
-[; ;main.c: 291: {
-"291
-{
-[; ;main.c: 292: if((ConnectionTable[i].AltAddress.v[1] == rxMessage.SourceAddress[1]) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.SourceAddress[0]))
-"292
-[e $ ! && == -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + . _rxMessage 2 * -> -> 1 `i `x -> -> # *U . _rxMessage 2 `i `x `i == -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + . _rxMessage 2 * -> -> 0 `i `x -> -> # *U . _rxMessage 2 `i `x `i 1179  ]
-[; ;main.c: 293: {
-"293
-{
-[; ;main.c: 294: ConnectionEntry = i;
-"294
-[e = _ConnectionEntry _i ]
-[; ;main.c: 296: break;
-"296
-[e $U 1176  ]
-"297
-}
-[e :U 1179 ]
-"298
-}
-[e :U 1178 ]
-"299
-}
-"288
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1175  ]
-[e :U 1176 ]
-"299
-}
-[; ;main.c: 297: }
-[; ;main.c: 298: }
-[; ;main.c: 299: }
-[; ;main.c: 300: {TxData = 11;};
-"300
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;main.c: 301: TxBuffer[TxData++] = 2;
-"301
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
-[; ;main.c: 302: MiApp_UnicastConnection(ConnectionEntry, 0);
-"302
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;main.c: 304: DoorUnlock();
-"304
-[e ( _DoorUnlock ..  ]
-[; ;main.c: 305: result = 1;
-"305
-[e = _result -> -> 1 `i `uc ]
-"306
 }
 [e :U 1172 ]
 "286
 [e $U 1173  ]
 [e :U 1174 ]
-"307
+"290
 }
 [e :U 1171 ]
-[; ;main.c: 306: }
-[; ;main.c: 307: }
-[; ;main.c: 310: if(0 == 2)
-"310
-[e $ ! == -> 0 `i -> 2 `i 1180  ]
-[; ;main.c: 311: {
-"311
+[; ;main.c: 289: }
+[; ;main.c: 290: }
+[; ;main.c: 293: if(0 == 2)
+"293
+[e $ ! == -> 0 `i -> 2 `i 1175  ]
+[; ;main.c: 294: {
+"294
 {
-[; ;main.c: 312: while(1)
-"312
-[e :U 1182 ]
-[; ;main.c: 313: {
-"313
+[; ;main.c: 295: while(1)
+"295
+[e :U 1177 ]
+[; ;main.c: 296: {
+"296
 {
-"315
+"298
 }
+[e :U 1176 ]
+"295
+[e $U 1177  ]
+[e :U 1178 ]
+"299
+}
+[e :U 1175 ]
+[; ;main.c: 298: }
+[; ;main.c: 299: }
+[; ;main.c: 302: if(0 == 3)
+"302
+[e $ ! == -> 0 `i -> 3 `i 1179  ]
+[; ;main.c: 303: {
+"303
+{
+[; ;main.c: 304: while(1)
+"304
 [e :U 1181 ]
-"312
-[e $U 1182  ]
-[e :U 1183 ]
-"316
+[; ;main.c: 305: {
+"305
+{
+"307
 }
 [e :U 1180 ]
-[; ;main.c: 315: }
-[; ;main.c: 316: }
-[; ;main.c: 319: if(0 == 3)
-"319
-[e $ ! == -> 0 `i -> 3 `i 1184  ]
-[; ;main.c: 320: {
-"320
-{
-[; ;main.c: 321: while(1)
-"321
-[e :U 1186 ]
-[; ;main.c: 322: {
-"322
-{
-"324
+"304
+[e $U 1181  ]
+[e :U 1182 ]
+"308
 }
+[e :U 1179 ]
+[; ;main.c: 307: }
+[; ;main.c: 308: }
+[; ;main.c: 311: if(0 == 4)
+"311
+[e $ ! == -> 0 `i -> 4 `i 1183  ]
+[; ;main.c: 312: {
+"312
+{
+[; ;main.c: 313: while(1)
+"313
 [e :U 1185 ]
-"321
-[e $U 1186  ]
-[e :U 1187 ]
-"325
-}
-[e :U 1184 ]
-[; ;main.c: 324: }
-[; ;main.c: 325: }
-[; ;main.c: 328: if(0 == 4)
-"328
-[e $ ! == -> 0 `i -> 4 `i 1188  ]
-[; ;main.c: 329: {
-"329
+[; ;main.c: 314: {
+"314
 {
-[; ;main.c: 330: while(1)
-"330
-[e :U 1190 ]
-[; ;main.c: 331: {
-"331
-{
-"333
-}
-[e :U 1189 ]
-"330
-[e $U 1190  ]
-[e :U 1191 ]
-"334
-}
-[e :U 1188 ]
-[; ;main.c: 333: }
-[; ;main.c: 334: }
-[; ;main.c: 338: while(1)
-"338
-[e :U 1193 ]
-[; ;main.c: 339: {
-"339
-{
-"340
+"315
 [v _pktCMD `uc ~T0 @X0 1 a ]
-[; ;main.c: 340: uint8_t pktCMD = 0;
+[; ;main.c: 315: uint8_t pktCMD = 0;
 [e = _pktCMD -> -> 0 `i `uc ]
 [v _switch_val `uc ~T0 @X0 1 a ]
-"341
+"316
 [v _menu_choice `uc ~T0 @X0 1 a ]
-[; ;main.c: 341: uint8_t switch_val, menu_choice = 0;
+[; ;main.c: 316: uint8_t switch_val, menu_choice = 0;
 [e = _menu_choice -> -> 0 `i `uc ]
-[; ;main.c: 342: result = 0;
-"342
+[; ;main.c: 317: result = 0;
+"317
 [e = _result -> -> 0 `i `uc ]
-[; ;main.c: 344: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
-"344
+[; ;main.c: 319: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
+"319
 [e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 350: LCD_Display((char *)"SW1: Door UnlockSW2: Other Apps  ", 0, 0);
-"350
+[; ;main.c: 325: LCD_Display((char *)"SW1: Door UnlockSW2: Other Apps  ", 0, 0);
+"325
 [e ( _LCD_Display (3 , , -> :s 5C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 356: while(result == 0)
+[; ;main.c: 331: while(result == 0)
+"331
+[e $U 1187  ]
+[e :U 1188 ]
+[; ;main.c: 332: {
+"332
+{
+[; ;main.c: 334: switch_val = BUTTON_Pressed();
+"334
+[e = _switch_val ( _BUTTON_Pressed ..  ]
+[; ;main.c: 337: if(MiApp_MessageAvailable())
+"337
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1190  ]
+[; ;main.c: 338: {
+"338
+{
+[; ;main.c: 339: pktCMD = rxMessage.Payload[0];
+"339
+[e = _pktCMD *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x ]
+[; ;main.c: 340: if(pktCMD == 4)
+"340
+[e $ ! == -> _pktCMD `i -> 4 `i 1191  ]
+[; ;main.c: 341: {
+"341
+{
+[; ;main.c: 342: if((rxMessage.Payload[1] != myPANID.v[1]) || (rxMessage.Payload[2] != myPANID.v[0]))
+"342
+[e $ ! || != -> *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i != -> *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i 1192  ]
+[; ;main.c: 343: pktCMD = 0;
+"343
+[e = _pktCMD -> -> 0 `i `uc ]
+[e :U 1192 ]
+"345
+}
+[e :U 1191 ]
+[; ;main.c: 345: }
+[; ;main.c: 346: if(pktCMD == 2)
+"346
+[e $ ! == -> _pktCMD `i -> 2 `i 1193  ]
+[; ;main.c: 347: {
+"347
+{
+[; ;main.c: 348: for(i = 0 ; i< 10 ; i++)
+"348
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 10 `i 1194  ]
+[e $U 1195  ]
+"349
+[e :U 1194 ]
+[; ;main.c: 349: {
+{
+[; ;main.c: 350: if(ConnectionTable[i].status.bits.isValid)
+"350
+[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1197  ]
+[; ;main.c: 351: {
+"351
+{
+[; ;main.c: 352: if((ConnectionTable[i].AltAddress.v[1] == rxMessage.SourceAddress[1]) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.SourceAddress[0]))
+"352
+[e $ ! && == -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + . _rxMessage 2 * -> -> 1 `i `x -> -> # *U . _rxMessage 2 `i `x `i == -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + . _rxMessage 2 * -> -> 0 `i `x -> -> # *U . _rxMessage 2 `i `x `i 1198  ]
+[; ;main.c: 353: {
+"353
+{
+[; ;main.c: 354: ConnectionEntry = i;
+"354
+[e = _ConnectionEntry _i ]
+[; ;main.c: 356: break;
 "356
 [e $U 1195  ]
-[e :U 1196 ]
-[; ;main.c: 357: {
 "357
-{
-[; ;main.c: 359: switch_val = BUTTON_Pressed();
-"359
-[e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;main.c: 362: if(MiApp_MessageAvailable())
-"362
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1198  ]
-[; ;main.c: 363: {
-"363
-{
-[; ;main.c: 364: pktCMD = rxMessage.Payload[0];
-"364
-[e = _pktCMD *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;main.c: 365: if(pktCMD == 4)
-"365
-[e $ ! == -> _pktCMD `i -> 4 `i 1199  ]
-[; ;main.c: 366: {
-"366
-{
-[; ;main.c: 367: if((rxMessage.Payload[1] != myPANID.v[1]) || (rxMessage.Payload[2] != myPANID.v[0]))
-"367
-[e $ ! || != -> *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i != -> *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i 1200  ]
-[; ;main.c: 368: pktCMD = 0;
-"368
-[e = _pktCMD -> -> 0 `i `uc ]
-[e :U 1200 ]
-"370
-}
-[e :U 1199 ]
-[; ;main.c: 370: }
-[; ;main.c: 371: if(pktCMD == 2)
-"371
-[e $ ! == -> _pktCMD `i -> 2 `i 1201  ]
-[; ;main.c: 372: {
-"372
-{
-[; ;main.c: 373: for(i = 0 ; i< 10 ; i++)
-"373
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1202  ]
-[e $U 1203  ]
-"374
-[e :U 1202 ]
-[; ;main.c: 374: {
-{
-[; ;main.c: 375: if(ConnectionTable[i].status.bits.isValid)
-"375
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1205  ]
-[; ;main.c: 376: {
-"376
-{
-[; ;main.c: 377: if((ConnectionTable[i].AltAddress.v[1] == rxMessage.SourceAddress[1]) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.SourceAddress[0]))
-"377
-[e $ ! && == -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + . _rxMessage 2 * -> -> 1 `i `x -> -> # *U . _rxMessage 2 `i `x `i == -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + . _rxMessage 2 * -> -> 0 `i `x -> -> # *U . _rxMessage 2 `i `x `i 1206  ]
-[; ;main.c: 378: {
-"378
-{
-[; ;main.c: 379: ConnectionEntry = i;
-"379
-[e = _ConnectionEntry _i ]
-[; ;main.c: 381: break;
-"381
-[e $U 1203  ]
-"382
-}
-[e :U 1206 ]
-"383
-}
-[e :U 1205 ]
-"384
-}
-"373
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1202  ]
-[e :U 1203 ]
-"384
-}
-"385
-}
-[e :U 1201 ]
-[; ;main.c: 382: }
-[; ;main.c: 383: }
-[; ;main.c: 384: }
-[; ;main.c: 385: }
-[; ;main.c: 386: MiApp_DiscardMessage();
-"386
-[e ( _MiApp_DiscardMessage ..  ]
-"387
 }
 [e :U 1198 ]
-[; ;main.c: 387: }
-[; ;main.c: 388: if(pktCMD == 2)
-"388
-[e $ ! == -> _pktCMD `i -> 2 `i 1207  ]
-[; ;main.c: 389: {
-"389
+"358
+}
+[e :U 1197 ]
+"359
+}
+"348
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 10 `i 1194  ]
+[e :U 1195 ]
+"359
+}
+"360
+}
+[e :U 1193 ]
+[; ;main.c: 357: }
+[; ;main.c: 358: }
+[; ;main.c: 359: }
+[; ;main.c: 360: }
+[; ;main.c: 361: MiApp_DiscardMessage();
+"361
+[e ( _MiApp_DiscardMessage ..  ]
+"362
+}
+[e :U 1190 ]
+[; ;main.c: 362: }
+[; ;main.c: 363: if(pktCMD == 2)
+"363
+[e $ ! == -> _pktCMD `i -> 2 `i 1199  ]
+[; ;main.c: 364: {
+"364
 {
-[; ;main.c: 390: {TxData = 11;};
-"390
+[; ;main.c: 365: {TxData = 11;};
+"365
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;main.c: 391: TxBuffer[TxData++] = 2;
-"391
+[; ;main.c: 366: TxBuffer[TxData++] = 2;
+"366
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
-[; ;main.c: 392: MiApp_UnicastConnection(ConnectionEntry, 0);
-"392
+[; ;main.c: 367: MiApp_UnicastConnection(ConnectionEntry, 0);
+"367
 [e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;main.c: 394: DoorUnlock();
-"394
+[; ;main.c: 369: DoorUnlock();
+"369
 [e ( _DoorUnlock ..  ]
-[; ;main.c: 395: result = 1;
-"395
+[; ;main.c: 370: result = 1;
+"370
 [e = _result -> -> 1 `i `uc ]
-"396
+"371
 }
-[e :U 1207 ]
-[; ;main.c: 396: }
-[; ;main.c: 398: if((switch_val == 1) && (menu_choice == 0))
-"398
-[e $ ! && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 0 `i 1208  ]
-[; ;main.c: 399: {
-"399
+[e :U 1199 ]
+[; ;main.c: 371: }
+[; ;main.c: 373: if((switch_val == 1) && (menu_choice == 0))
+"373
+[e $ ! && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 0 `i 1200  ]
+[; ;main.c: 374: {
+"374
 {
-"400
+"375
 [v _NumberOfConnections `uc ~T0 @X0 1 a ]
-[; ;main.c: 400: uint8_t NumberOfConnections = 0;
+[; ;main.c: 375: uint8_t NumberOfConnections = 0;
 [e = _NumberOfConnections -> -> 0 `i `uc ]
-[; ;main.c: 403: ConnectionEntry = 0;
-"403
+[; ;main.c: 378: ConnectionEntry = 0;
+"378
 [e = _ConnectionEntry -> -> 0 `i `uc ]
-[; ;main.c: 405: for(i = 0; i < 10; i++)
-"405
+[; ;main.c: 380: for(i = 0; i < 10; i++)
+"380
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1209  ]
-[e $U 1210  ]
-"406
-[e :U 1209 ]
-[; ;main.c: 406: {
+[e $ < -> _i `i -> 10 `i 1201  ]
+[e $U 1202  ]
+"381
+[e :U 1201 ]
+[; ;main.c: 381: {
 {
-[; ;main.c: 407: if((ConnectionTable[i].status.bits.isValid) && (ConnectionTable[i].status.bits.isFamily))
-"407
-[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i 1212  ]
-[; ;main.c: 408: NumberOfConnections++;
-"408
+[; ;main.c: 382: if((ConnectionTable[i].status.bits.isValid) && (ConnectionTable[i].status.bits.isFamily))
+"382
+[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i 1204  ]
+[; ;main.c: 383: NumberOfConnections++;
+"383
 [e ++ _NumberOfConnections -> -> 1 `i `uc ]
-[e :U 1212 ]
-"409
+[e :U 1204 ]
+"384
 }
-"405
+"380
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1209  ]
-[e :U 1210 ]
-"409
+[e $ < -> _i `i -> 10 `i 1201  ]
+[e :U 1202 ]
+"384
 }
-[; ;main.c: 409: }
-[; ;main.c: 410: if(NumberOfConnections > 1)
-"410
-[e $ ! > -> _NumberOfConnections `i -> 1 `i 1213  ]
-[; ;main.c: 411: {
-"411
+[; ;main.c: 384: }
+[; ;main.c: 385: if(NumberOfConnections > 1)
+"385
+[e $ ! > -> _NumberOfConnections `i -> 1 `i 1205  ]
+[; ;main.c: 386: {
+"386
 {
 [v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 412: bool result = 0;
-"412
+[; ;main.c: 387: bool result = 0;
+"387
 [e = _result -> -> 0 `i `uc ]
-"413
+"388
 [v _ConnectionsCount `uc ~T0 @X0 1 a ]
-[; ;main.c: 413: uint8_t ConnectionsCount = 0;
+[; ;main.c: 388: uint8_t ConnectionsCount = 0;
 [e = _ConnectionsCount -> -> 0 `i `uc ]
-[; ;main.c: 416: LCD_Display((char *)"Select Peer Node for Unlock Door", 0, 0);
-"416
+[; ;main.c: 391: LCD_Display((char *)"Select Peer Node for Unlock Door", 0, 0);
+"391
 [e ( _LCD_Display (3 , , -> :s 6C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 418: for(i = 0; i < 10; i++)
-"418
+[; ;main.c: 393: for(i = 0; i < 10; i++)
+"393
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1214  ]
-[e $U 1215  ]
-"419
-[e :U 1214 ]
-[; ;main.c: 419: {
+[e $ < -> _i `i -> 10 `i 1206  ]
+[e $U 1207  ]
+"394
+[e :U 1206 ]
+[; ;main.c: 394: {
 {
-[; ;main.c: 420: if(ConnectionTable[i].status.bits.isValid)
-"420
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1217  ]
-[; ;main.c: 421: {
-"421
+[; ;main.c: 395: if(ConnectionTable[i].status.bits.isValid)
+"395
+[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1209  ]
+[; ;main.c: 396: {
+"396
 {
-[; ;main.c: 423: LCD_Erase();
-"423
+[; ;main.c: 398: LCD_Erase();
+"398
 [e ( _LCD_Erase ..  ]
-[; ;main.c: 424: sprintf((char *)LCDText, (char*)"SW1:<Addr:%02x%02x>",ConnectionTable[i].AltAddress.v[1], ConnectionTable[i].AltAddress.v[0]);
-"424
+[; ;main.c: 399: sprintf((char *)LCDText, (char*)"SW1:<Addr:%02x%02x>",ConnectionTable[i].AltAddress.v[1], ConnectionTable[i].AltAddress.v[0]);
+"399
 [e ( _sprintf (1 , , (. , &U _LCDText -> -> :s 7C `*uc `*Cuc -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> *U + &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i ]
-[; ;main.c: 425: sprintf((char *)&(LCDText[16]), (char*)"SW2: Additional");
-"425
+[; ;main.c: 400: sprintf((char *)&(LCDText[16]), (char*)"SW2: Additional");
+"400
 [e ( _sprintf (1 , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 8C `*uc `*Cuc ]
-[; ;main.c: 426: LCD_Update();
-"426
+[; ;main.c: 401: LCD_Update();
+"401
 [e ( _LCD_Update ..  ]
-[; ;main.c: 427: ConnectionsCount++;
-"427
+[; ;main.c: 402: ConnectionsCount++;
+"402
 [e ++ _ConnectionsCount -> -> 1 `i `uc ]
-[; ;main.c: 428: while(1)
-"428
-[e :U 1219 ]
-[; ;main.c: 429: {
-"429
+[; ;main.c: 403: while(1)
+"403
+[e :U 1211 ]
+[; ;main.c: 404: {
+"404
 {
-[; ;main.c: 430: switch_val = BUTTON_Pressed();
-"430
+[; ;main.c: 405: switch_val = BUTTON_Pressed();
+"405
 [e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;main.c: 431: if(switch_val == 1)
-"431
-[e $ ! == -> _switch_val `i -> 1 `i 1221  ]
-[; ;main.c: 432: {
-"432
+[; ;main.c: 406: if(switch_val == 1)
+"406
+[e $ ! == -> _switch_val `i -> 1 `i 1213  ]
+[; ;main.c: 407: {
+"407
 {
-[; ;main.c: 433: ConnectionEntry = i;
-"433
+[; ;main.c: 408: ConnectionEntry = i;
+"408
 [e = _ConnectionEntry _i ]
-[; ;main.c: 434: result = 1;
-"434
+[; ;main.c: 409: result = 1;
+"409
 [e = _result -> -> 1 `i `uc ]
-[; ;main.c: 435: break;
-"435
-[e $U 1220  ]
-"436
+[; ;main.c: 410: break;
+"410
+[e $U 1212  ]
+"411
 }
-[; ;main.c: 436: }
-[e $U 1222  ]
-"437
-[e :U 1221 ]
-[; ;main.c: 437: else if(switch_val == 2)
-[e $ ! == -> _switch_val `i -> 2 `i 1223  ]
-[; ;main.c: 438: {
-"438
-{
-[; ;main.c: 439: if(ConnectionsCount == NumberOfConnections)
-"439
-[e $ ! == -> _ConnectionsCount `i -> _NumberOfConnections `i 1224  ]
-[; ;main.c: 440: {
-"440
-{
-[; ;main.c: 441: i = -1;
-"441
-[e = _i -> -U -> 1 `i `uc ]
-[; ;main.c: 442: ConnectionsCount = 0;
-"442
-[e = _ConnectionsCount -> -> 0 `i `uc ]
-"443
-}
-[e :U 1224 ]
-[; ;main.c: 443: }
-[; ;main.c: 444: break;
-"444
-[e $U 1220  ]
-"445
-}
-[e :U 1223 ]
-"446
-[e :U 1222 ]
-}
-[e :U 1218 ]
-"428
-[e $U 1219  ]
-[e :U 1220 ]
-"447
-}
-[e :U 1217 ]
-[; ;main.c: 445: }
-[; ;main.c: 446: }
-[; ;main.c: 447: }
-[; ;main.c: 448: if(result == 1) break;
-"448
-[e $ ! == -> _result `i -> 1 `i 1225  ]
-[e $U 1215  ]
-[e :U 1225 ]
-"449
-}
-"418
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1214  ]
-[e :U 1215 ]
-"449
-}
-"450
-}
+[; ;main.c: 411: }
+[e $U 1214  ]
+"412
 [e :U 1213 ]
-[; ;main.c: 449: }
-[; ;main.c: 450: }
-[; ;main.c: 451: {TxData = 11;};
-"451
+[; ;main.c: 412: else if(switch_val == 2)
+[e $ ! == -> _switch_val `i -> 2 `i 1215  ]
+[; ;main.c: 413: {
+"413
+{
+[; ;main.c: 414: if(ConnectionsCount == NumberOfConnections)
+"414
+[e $ ! == -> _ConnectionsCount `i -> _NumberOfConnections `i 1216  ]
+[; ;main.c: 415: {
+"415
+{
+[; ;main.c: 416: i = -1;
+"416
+[e = _i -> -U -> 1 `i `uc ]
+[; ;main.c: 417: ConnectionsCount = 0;
+"417
+[e = _ConnectionsCount -> -> 0 `i `uc ]
+"418
+}
+[e :U 1216 ]
+[; ;main.c: 418: }
+[; ;main.c: 419: break;
+"419
+[e $U 1212  ]
+"420
+}
+[e :U 1215 ]
+"421
+[e :U 1214 ]
+}
+[e :U 1210 ]
+"403
+[e $U 1211  ]
+[e :U 1212 ]
+"422
+}
+[e :U 1209 ]
+[; ;main.c: 420: }
+[; ;main.c: 421: }
+[; ;main.c: 422: }
+[; ;main.c: 423: if(result == 1) break;
+"423
+[e $ ! == -> _result `i -> 1 `i 1217  ]
+[e $U 1207  ]
+[e :U 1217 ]
+"424
+}
+"393
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 10 `i 1206  ]
+[e :U 1207 ]
+"424
+}
+"425
+}
+[e :U 1205 ]
+[; ;main.c: 424: }
+[; ;main.c: 425: }
+[; ;main.c: 426: {TxData = 11;};
+"426
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;main.c: 452: TxBuffer[TxData++] = 2;
-"452
+[; ;main.c: 427: TxBuffer[TxData++] = 2;
+"427
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
-[; ;main.c: 453: MiApp_UnicastConnection(ConnectionEntry, 0);
-"453
+[; ;main.c: 428: MiApp_UnicastConnection(ConnectionEntry, 0);
+"428
 [e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;main.c: 456: DoorUnlock();
-"456
+[; ;main.c: 431: DoorUnlock();
+"431
 [e ( _DoorUnlock ..  ]
-[; ;main.c: 457: result = 1;
-"457
+[; ;main.c: 432: result = 1;
+"432
 [e = _result -> -> 1 `i `uc ]
-"458
+"433
 }
-[e :U 1208 ]
-[; ;main.c: 458: }
-[; ;main.c: 459: if((switch_val == 2))
-"459
-[e $ ! == -> _switch_val `i -> 2 `i 1226  ]
-[; ;main.c: 460: {
-"460
+[e :U 1200 ]
+[; ;main.c: 433: }
+[; ;main.c: 434: if((switch_val == 2))
+"434
+[e $ ! == -> _switch_val `i -> 2 `i 1218  ]
+[; ;main.c: 435: {
+"435
 {
-[; ;main.c: 461: menu_choice++;
-"461
+[; ;main.c: 436: menu_choice++;
+"436
 [e ++ _menu_choice -> -> 1 `i `uc ]
-[; ;main.c: 462: if(menu_choice == 3) menu_choice = 0;
-"462
-[e $ ! == -> _menu_choice `i -> 3 `i 1227  ]
+[; ;main.c: 437: if(menu_choice == 3) menu_choice = 0;
+"437
+[e $ ! == -> _menu_choice `i -> 3 `i 1219  ]
 [e = _menu_choice -> -> 0 `i `uc ]
-[e :U 1227 ]
-[; ;main.c: 463: if(menu_choice == 0)
-"463
-[e $ ! == -> _menu_choice `i -> 0 `i 1228  ]
-[; ;main.c: 464: {
-"464
+[e :U 1219 ]
+[; ;main.c: 438: if(menu_choice == 0)
+"438
+[e $ ! == -> _menu_choice `i -> 0 `i 1220  ]
+[; ;main.c: 439: {
+"439
 {
-[; ;main.c: 465: LCD_Display((char *)"SW1: Door Unlock SW2: Other Apps  ", 0, 0);
-"465
+[; ;main.c: 440: LCD_Display((char *)"SW1: Door Unlock SW2: Other Apps  ", 0, 0);
+"440
 [e ( _LCD_Display (3 , , -> :s 9C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"466
+"441
 }
-[; ;main.c: 466: }
-[e $U 1229  ]
-"467
-[e :U 1228 ]
-[; ;main.c: 467: else if(menu_choice == 1)
-[e $ ! == -> _menu_choice `i -> 1 `i 1230  ]
-[; ;main.c: 468: {
-"468
+[; ;main.c: 441: }
+[e $U 1221  ]
+"442
+[e :U 1220 ]
+[; ;main.c: 442: else if(menu_choice == 1)
+[e $ ! == -> _menu_choice `i -> 1 `i 1222  ]
+[; ;main.c: 443: {
+"443
 {
-[; ;main.c: 469: LCD_Display((char *)"SW1: Temp Demo  SW2: Other Apps  ", 0, 0);
-"469
+[; ;main.c: 444: LCD_Display((char *)"SW1: Temp Demo  SW2: Other Apps  ", 0, 0);
+"444
 [e ( _LCD_Display (3 , , -> :s 10C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"470
+"445
 }
-[; ;main.c: 470: }
-[e $U 1231  ]
-"471
-[e :U 1230 ]
-[; ;main.c: 471: else if(menu_choice == 2)
-[e $ ! == -> _menu_choice `i -> 2 `i 1232  ]
-[; ;main.c: 472: {
-"472
+[; ;main.c: 445: }
+[e $U 1223  ]
+"446
+[e :U 1222 ]
+[; ;main.c: 446: else if(menu_choice == 2)
+[e $ ! == -> _menu_choice `i -> 2 `i 1224  ]
+[; ;main.c: 447: {
+"447
 {
-[; ;main.c: 473: LCD_Display((char *)"SW1: Node Info  SW2: Other Apps  ", 0, 0);
-"473
+[; ;main.c: 448: LCD_Display((char *)"SW1: Node Info  SW2: Other Apps  ", 0, 0);
+"448
 [e ( _LCD_Display (3 , , -> :s 11C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"474
+"449
 }
-[e :U 1232 ]
-"476
-[e :U 1231 ]
-[e :U 1229 ]
+[e :U 1224 ]
+"451
+[e :U 1223 ]
+[e :U 1221 ]
+}
+[e :U 1218 ]
+[; ;main.c: 449: }
+[; ;main.c: 451: }
+[; ;main.c: 452: if((pktCMD == 3) || ((switch_val == 1) && (menu_choice == 1)))
+"452
+[e $ ! || == -> _pktCMD `i -> 3 `i && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 1 `i 1225  ]
+[; ;main.c: 453: {
+"453
+{
+[; ;main.c: 454: {TxData = 11;};
+"454
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;main.c: 455: TxBuffer[TxData++] = 3;
+"455
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 3 `i `uc ]
+[; ;main.c: 456: MiApp_BroadcastPacket(0);
+"456
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;main.c: 459: TempDemo();
+"459
+[e ( _TempDemo ..  ]
+[; ;main.c: 460: result = 1;
+"460
+[e = _result -> -> 1 `i `uc ]
+"461
+}
+[e :U 1225 ]
+[; ;main.c: 461: }
+[; ;main.c: 462: if((pktCMD == 4) || ((switch_val == 1) && (menu_choice == 2)))
+"462
+[e $ ! || == -> _pktCMD `i -> 4 `i && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 2 `i 1226  ]
+[; ;main.c: 463: {
+"463
+{
+[; ;main.c: 465: LCD_Erase();
+"465
+[e ( _LCD_Erase ..  ]
+[; ;main.c: 466: sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
+"466
+[e ( _sprintf (1 , , , (. , &U _LCDText -> -> :s 12C `*uc `*Cuc -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> _myChannel `i ]
+[; ;main.c: 468: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+"468
+[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 13C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
+[; ;main.c: 472: LCD_Update();
+"472
+[e ( _LCD_Update ..  ]
+[; ;main.c: 473: pktCMD = 0;
+"473
+[e = _pktCMD -> -> 0 `i `uc ]
+"474
 }
 [e :U 1226 ]
 [; ;main.c: 474: }
-[; ;main.c: 476: }
-[; ;main.c: 477: if((pktCMD == 3) || ((switch_val == 1) && (menu_choice == 1)))
+[; ;main.c: 476: if(pktCMD == 5)
+"476
+[e $ ! == -> _pktCMD `i -> 5 `i 1227  ]
+[; ;main.c: 477: {
 "477
-[e $ ! || == -> _pktCMD `i -> 3 `i && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 1 `i 1233  ]
-[; ;main.c: 478: {
-"478
 {
-[; ;main.c: 479: {TxData = 11;};
+[; ;main.c: 479: result = 1;
 "479
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;main.c: 480: TxBuffer[TxData++] = 3;
-"480
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 3 `i `uc ]
-[; ;main.c: 481: MiApp_BroadcastPacket(0);
+[e = _result -> -> 1 `i `uc ]
 "481
-[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;main.c: 484: TempDemo();
+}
+[e :U 1227 ]
+"482
+}
+[e :U 1187 ]
+"331
+[e $ == -> _result `i -> 0 `i 1188  ]
+[e :U 1189 ]
+"483
+}
+[e :U 1184 ]
+"313
+[e $U 1185  ]
+[e :U 1186 ]
 "484
-[e ( _TempDemo ..  ]
-[; ;main.c: 485: result = 1;
+}
+[e :U 1183 ]
+[; ;main.c: 481: }
+[; ;main.c: 482: }
+[; ;main.c: 483: }
+[; ;main.c: 484: }
+[; ;main.c: 485: }
 "485
-[e = _result -> -> 1 `i `uc ]
-"486
-}
-[e :U 1233 ]
-[; ;main.c: 486: }
-[; ;main.c: 487: if((pktCMD == 4) || ((switch_val == 1) && (menu_choice == 2)))
-"487
-[e $ ! || == -> _pktCMD `i -> 4 `i && == -> _switch_val `i -> 1 `i == -> _menu_choice `i -> 2 `i 1234  ]
-[; ;main.c: 488: {
-"488
-{
-[; ;main.c: 490: LCD_Erase();
-"490
-[e ( _LCD_Erase ..  ]
-[; ;main.c: 491: sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
-"491
-[e ( _sprintf (1 , , , (. , &U _LCDText -> -> :s 12C `*uc `*Cuc -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> _myChannel `i ]
-[; ;main.c: 493: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
-"493
-[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 13C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
-[; ;main.c: 497: LCD_Update();
-"497
-[e ( _LCD_Update ..  ]
-[; ;main.c: 498: pktCMD = 0;
-"498
-[e = _pktCMD -> -> 0 `i `uc ]
-"499
-}
-[e :U 1234 ]
-[; ;main.c: 499: }
-[; ;main.c: 501: if(pktCMD == 5)
-"501
-[e $ ! == -> _pktCMD `i -> 5 `i 1235  ]
-[; ;main.c: 502: {
-"502
-{
-[; ;main.c: 504: result = 1;
-"504
-[e = _result -> -> 1 `i `uc ]
-"506
-}
-[e :U 1235 ]
-"507
-}
-[e :U 1195 ]
-"356
-[e $ == -> _result `i -> 0 `i 1196  ]
-[e :U 1197 ]
-"508
-}
-[e :U 1192 ]
-"338
-[e $U 1193  ]
-[e :U 1194 ]
-[; ;main.c: 506: }
-[; ;main.c: 507: }
-[; ;main.c: 508: }
-[; ;main.c: 509: }
-"509
 [e :UE 1120 ]
 }
 [p f _sprintf 16484269 ]

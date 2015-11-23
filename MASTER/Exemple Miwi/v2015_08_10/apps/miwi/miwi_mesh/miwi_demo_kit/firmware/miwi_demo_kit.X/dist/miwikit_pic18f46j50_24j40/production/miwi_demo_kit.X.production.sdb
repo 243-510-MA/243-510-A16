@@ -994,29 +994,29 @@
 [v main@CoordCount CoordCount `uc  1 a 1 9 ]
 "200
 [v main@Status Status `uc  1 a 1 8 ]
+"388
+[v main@ConnectionsCount ConnectionsCount `uc  1 a 1 12 ]
+"386
+[v main@result_3499 result `uc  1 a 1 10 ]
 "171
 [v main@skip_print skip_print `uc  1 a 1 11 ]
-"413
-[v main@ConnectionsCount ConnectionsCount `uc  1 a 1 12 ]
-"411
-[v main@result_3499 result `uc  1 a 1 10 ]
-"400
+"375
 [v main@NumberOfConnections NumberOfConnections `uc  1 a 1 13 ]
 "167
 [v main@k k `uc  1 a 1 18 ]
-"151
-[v main@scanresult scanresult `VEuc  1 a 1 21 ]
-"341
+"316
 [v main@menu_choice menu_choice `uc  1 a 1 17 ]
-"340
+"315
 [v main@pktCMD pktCMD `uc  1 a 1 16 ]
 [v main@switch_val_3494 switch_val `uc  1 a 1 14 ]
+"151
+[v main@scanresult scanresult `VEuc  1 a 1 21 ]
 "68
 [v main@i i `uc  1 a 1 20 ]
 [v main@j j `uc  1 a 1 19 ]
 "69
 [v main@result result `uc  1 a 1 15 ]
-"509
+"485
 } 0
 "69 C:\Users\Owner\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/temp_demo.c
 [v _TempDemo TempDemo `(v  1 e 0 0 ]

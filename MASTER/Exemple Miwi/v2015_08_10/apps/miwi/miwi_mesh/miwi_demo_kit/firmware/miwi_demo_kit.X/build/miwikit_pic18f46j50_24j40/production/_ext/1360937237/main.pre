@@ -10447,24 +10447,7 @@ if(0 == 2)
 {
 while(1)
 {
-for(i = 0 ; i< 10 ; i++)
-{
-if(ConnectionTable[i].status.bits.isValid)
-{
-if((ConnectionTable[i].AltAddress.v[1] == rxMessage.SourceAddress[1]) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.SourceAddress[0]))
-{
-ConnectionEntry = i;
 
-break;
-}
-}
-}
-{TxData = 11;};
-TxBuffer[TxData++] = 2;
-MiApp_UnicastConnection(ConnectionEntry, 0);
-
-DoorUnlock();
-result = 1;
 }
 }
 
@@ -10491,24 +10474,16 @@ if(0 == 4)
 {
 while(1)
 {
-
-}
-}
-
-
-
-while(1)
-{
 uint8_t pktCMD = 0;
 uint8_t switch_val, menu_choice = 0;
 result = 0;
 
 LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
 
-# 350
+# 325
 LCD_Display((char *)"SW1: Door UnlockSW2: Other Apps  ", 0, 0);
 
-# 356
+# 331
 while(result == 0)
 {
 
@@ -10648,7 +10623,7 @@ sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID
 
 sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
 
-# 497
+# 472
 LCD_Update();
 pktCMD = 0;
 }
@@ -10658,6 +10633,7 @@ if(pktCMD == 5)
 
 result = 1;
 
+}
 }
 }
 }
