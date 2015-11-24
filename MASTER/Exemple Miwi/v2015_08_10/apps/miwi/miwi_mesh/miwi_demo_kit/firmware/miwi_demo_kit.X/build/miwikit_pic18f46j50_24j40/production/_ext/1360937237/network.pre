@@ -10262,26 +10262,19 @@ SYSTEM_Initialize();
 
 LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
 
-if(DEVICEMODE == 4)
-{
-LCD_Display((char *)"Welcome, Mathieu", 0, 1);
-}
-
 Read_MAC_Address();
 
 MiApp_ProtocolInit(0);
 
-# 72
+# 67
 CreateorJoin:
 
-# 78
+# 73
 if( MiApp_SetChannel(myChannel) == 0 )
 return;
 
-# 90
+# 85
 MiApp_ConnectionMode(0x00);
-
-
 
 
 if(DEVICEMODE == 0)
@@ -10289,7 +10282,7 @@ if(DEVICEMODE == 0)
 while(result == 1)
 {
 
-# 104
+# 97
 MiApp_ProtocolInit(0);
 MiApp_StartConnection(0x00, 0, 0);
 
@@ -10326,10 +10319,10 @@ volatile uint8_t scanresult;
 
 MiApp_ProtocolInit(0);
 
-# 144
+# 137
 scanresult = MiApp_SearchConnection(10, (0x00010000 << (myChannel-16)));
 
-# 150
+# 143
 if(scanresult > 0)
 {
 uint8_t k;
@@ -10361,7 +10354,7 @@ continue;
 while(1)
 {
 
-# 185
+# 178
 uint8_t Status;
 uint8_t CoordCount = 0;
 {TxData = 11;};
@@ -10394,7 +10387,7 @@ nodeIndex = k;
 }
 }
 
-# 221
+# 214
 Status = MiApp_EstablishConnection(j, 0x00);
 if(Status == 0xFF)
 {
@@ -10415,7 +10408,7 @@ break;
 
 }
 
-# 245
+# 238
 if(result == 0)
 break;
 }

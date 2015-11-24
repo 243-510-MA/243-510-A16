@@ -11,6 +11,70 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "27 ../src/network.h
 [v _Network `(v ~T0 @X0 0 ef1`i ]
+"7747 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
+[s S527 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S527 . LATC0 LATC1 LATC2 . LATC4 LATC5 LATC6 LATC7 ]
+"7757
+[s S528 :1 `uc 1 ]
+[n S528 . LC0 ]
+"7760
+[s S529 :1 `uc 1 :1 `uc 1 ]
+[n S529 . . LC1 ]
+"7764
+[s S530 :2 `uc 1 :1 `uc 1 ]
+[n S530 . . LC2 ]
+"7768
+[s S531 :3 `uc 1 :1 `uc 1 ]
+[n S531 . . LC3 ]
+"7772
+[s S532 :4 `uc 1 :1 `uc 1 ]
+[n S532 . . LC4 ]
+"7776
+[s S533 :5 `uc 1 :1 `uc 1 ]
+[n S533 . . LC5 ]
+"7780
+[s S534 :6 `uc 1 :1 `uc 1 ]
+[n S534 . . LC6 ]
+"7784
+[s S535 :7 `uc 1 :1 `uc 1 ]
+[n S535 . . LC7 ]
+"7746
+[u S526 `S527 1 `S528 1 `S529 1 `S530 1 `S531 1 `S532 1 `S533 1 `S534 1 `S535 1 ]
+[n S526 . . . . . . . . . . ]
+"7789
+[v _LATCbits `VS526 ~T0 @X0 0 e@3979 ]
+"7488
+[s S507 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S507 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
+"7498
+[s S508 :1 `uc 1 ]
+[n S508 . LA0 ]
+"7501
+[s S509 :1 `uc 1 :1 `uc 1 ]
+[n S509 . . LA1 ]
+"7505
+[s S510 :2 `uc 1 :1 `uc 1 ]
+[n S510 . . LA2 ]
+"7509
+[s S511 :3 `uc 1 :1 `uc 1 ]
+[n S511 . . LA3 ]
+"7513
+[s S512 :4 `uc 1 :1 `uc 1 ]
+[n S512 . . LA4 ]
+"7517
+[s S513 :5 `uc 1 :1 `uc 1 ]
+[n S513 . . LA5 ]
+"7521
+[s S514 :6 `uc 1 :1 `uc 1 ]
+[n S514 . . LA6 ]
+"7525
+[s S515 :7 `uc 1 :1 `uc 1 ]
+[n S515 . . LA7 ]
+"7487
+[u S506 `S507 1 `S508 1 `S509 1 `S510 1 `S511 1 `S512 1 `S513 1 `S514 1 `S515 1 ]
+[n S506 . . . . . . . . . . ]
+"7530
+[v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
 "27 ../src/pan.h
 [v _Pan `(v ~T0 @X0 0 ef ]
 "27 ../src/door_unlock.h
@@ -7847,83 +7911,86 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;teacher.h: 27: void Teacher(void);
 [; ;door_unlock.h: 27: void DoorUnlock(void);
 [; ;projector_screen.h: 27: void ProjectorScreen(void);
-"27 ../src/main.c
+"26 ../src/main.c
 [v _main `(v ~T0 @X0 1 ef ]
-"28
+"27
 {
-[; ;main.c: 27: void main(void)
-[; ;main.c: 28: {
+[; ;main.c: 26: void main(void)
+[; ;main.c: 27: {
 [e :U _main ]
 [f ]
-[; ;main.c: 29: Network(1);
+[; ;main.c: 28: Network(4);
+"28
+[e ( _Network (1 -> 4 `i ]
+[; ;main.c: 29: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
 "29
-[e ( _Network (1 -> 1 `i ]
-[; ;main.c: 31: if(1 == 0)
+[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[; ;main.c: 30: if(4 == 0)
+"30
+[e $ ! == -> 4 `i -> 0 `i 1121  ]
+[; ;main.c: 31: {
 "31
-[e $ ! == -> 1 `i -> 0 `i 1121  ]
-[; ;main.c: 32: {
-"32
 {
-[; ;main.c: 33: Pan();
-"33
+[; ;main.c: 32: Pan();
+"32
 [e ( _Pan ..  ]
-"34
+"33
 }
 [e :U 1121 ]
-[; ;main.c: 34: }
-[; ;main.c: 37: if(1 == 1)
+[; ;main.c: 33: }
+[; ;main.c: 36: if(4 == 1)
+"36
+[e $ ! == -> 4 `i -> 1 `i 1122  ]
+[; ;main.c: 37: {
 "37
-[e $ ! == -> 1 `i -> 1 `i 1122  ]
-[; ;main.c: 38: {
-"38
 {
-[; ;main.c: 39: DoorUnlock();
-"39
+[; ;main.c: 38: DoorUnlock();
+"38
 [e ( _DoorUnlock ..  ]
-"40
+"39
 }
 [e :U 1122 ]
-[; ;main.c: 40: }
-[; ;main.c: 43: if(1 == 2)
+[; ;main.c: 39: }
+[; ;main.c: 42: if(4 == 2)
+"42
+[e $ ! == -> 4 `i -> 2 `i 1123  ]
+[; ;main.c: 43: {
 "43
-[e $ ! == -> 1 `i -> 2 `i 1123  ]
-[; ;main.c: 44: {
-"44
 {
-[; ;main.c: 45: ProjectorScreen();
-"45
+[; ;main.c: 44: ProjectorScreen();
+"44
 [e ( _ProjectorScreen ..  ]
-"46
+"45
 }
 [e :U 1123 ]
-[; ;main.c: 46: }
-[; ;main.c: 49: if(1 == 3)
+[; ;main.c: 45: }
+[; ;main.c: 48: if(4 == 3)
+"48
+[e $ ! == -> 4 `i -> 3 `i 1124  ]
+[; ;main.c: 49: {
 "49
-[e $ ! == -> 1 `i -> 3 `i 1124  ]
-[; ;main.c: 50: {
-"50
 {
-[; ;main.c: 51: Teacher();
-"51
+[; ;main.c: 50: Teacher();
+"50
 [e ( _Teacher ..  ]
-"52
+"51
 }
 [e :U 1124 ]
-[; ;main.c: 52: }
-[; ;main.c: 55: if(1 == 4)
+[; ;main.c: 51: }
+[; ;main.c: 54: if(4 == 4)
+"54
+[e $ ! == -> 4 `i -> 4 `i 1125  ]
+[; ;main.c: 55: {
 "55
-[e $ ! == -> 1 `i -> 4 `i 1125  ]
-[; ;main.c: 56: {
-"56
 {
-[; ;main.c: 57: Student();
-"57
+[; ;main.c: 56: Student();
+"56
 [e ( _Student ..  ]
-"58
+"57
 }
 [e :U 1125 ]
+[; ;main.c: 57: }
 [; ;main.c: 58: }
-[; ;main.c: 59: }
-"59
+"58
 [e :UE 1120 ]
 }

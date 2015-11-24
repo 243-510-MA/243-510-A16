@@ -10238,11 +10238,29 @@ bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 # 950
 extern RECEIVED_MESSAGE rxMessage;
 
-# 8 "../src/pan.c"
+# 25 "../src/pan.c"
+extern uint8_t ConnectionEntry;
+
 void Pan(void)
 {
+LATDbits.LATD7 = 0;
+LCD_Erase();
+sprintf((char *)&(LCDText), (char*)"   PAN   ");
 while(1)
 {
-}
-}
+if(MiApp_MessageAvailable())
+{
+if(rxMessage.Payload[0] == 1)
+{
+sprintf((char *)&(LCDText), (char*)"RECU");
 
+LATDbits.LATD7 = 1;
+LATAbits.LATA6 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+LATDbits.LATD7 = 0;
+}
+MiApp_DiscardMessage();
+}
+}
+}

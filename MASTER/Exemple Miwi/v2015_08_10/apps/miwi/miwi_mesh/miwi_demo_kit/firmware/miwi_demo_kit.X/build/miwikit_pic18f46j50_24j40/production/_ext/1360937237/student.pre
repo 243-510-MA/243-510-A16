@@ -10242,17 +10242,24 @@ extern RECEIVED_MESSAGE rxMessage;
 void Student(void)
 {
 uint8_t switch_val;
+LCD_Erase();
+sprintf((char *)&(LCDText), (char*)" STUDENT DEVICE ");
 
 while(1)
 {
+sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+LCD_Update();
 switch_val = BUTTON_Pressed();
 if(switch_val == 1)
 {
 LATAbits.LATA6 = 1;
+{TxData = 11;};
 TxBuffer[TxData++] = 1;
-{ unsigned long _dcnt; unsigned long _ms; _ms = 1000; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+{ unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
 LATAbits.LATA6 = 0;
-switch_val = 0;
 }
 }
 }

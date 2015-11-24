@@ -8,6 +8,94 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1083 `ul 1 `S1084 1 `uc -> 4 `i `S1085 1 ]
 [n S1083 _MIWI_TICK Val byte v word ]
+"7874 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
+[s S537 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S537 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"7884
+[s S538 :1 `uc 1 ]
+[n S538 . LD0 ]
+"7887
+[s S539 :1 `uc 1 :1 `uc 1 ]
+[n S539 . . LD1 ]
+"7891
+[s S540 :2 `uc 1 :1 `uc 1 ]
+[n S540 . . LD2 ]
+"7895
+[s S541 :3 `uc 1 :1 `uc 1 ]
+[n S541 . . LD3 ]
+"7899
+[s S542 :4 `uc 1 :1 `uc 1 ]
+[n S542 . . LD4 ]
+"7903
+[s S543 :5 `uc 1 :1 `uc 1 ]
+[n S543 . . LD5 ]
+"7907
+[s S544 :6 `uc 1 :1 `uc 1 ]
+[n S544 . . LD6 ]
+"7911
+[s S545 :7 `uc 1 :1 `uc 1 ]
+[n S545 . . LD7 ]
+"7873
+[u S536 `S537 1 `S538 1 `S539 1 `S540 1 `S541 1 `S542 1 `S543 1 `S544 1 `S545 1 ]
+[n S536 . . . . . . . . . . ]
+"7916
+[v _LATDbits `VS536 ~T0 @X0 0 e@3980 ]
+"47 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCD_Erase `(v ~T0 @X0 0 ef ]
+"194 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCDText `uc ~T0 @X0 -> 0 `x e ]
+"710 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
+"649
+[s S1119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1119 . broadcast ackReq secEn repeat command srcPrsnt altSrcAddr ]
+"646
+[u S1118 `uc 1 `S1119 1 ]
+[n S1118 . Val bits ]
+"61 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[u S1087 `uc -> 2 `i `ui 1 ]
+[n S1087 . v Val ]
+"644 ../../../../../../framework\miwi/miwi_api.h
+[s S1117 `S1118 1 `S1087 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1117 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
+"950
+[v _rxMessage `S1117 ~T0 @X0 0 e ]
+"7488 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
+[s S507 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S507 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
+"7498
+[s S508 :1 `uc 1 ]
+[n S508 . LA0 ]
+"7501
+[s S509 :1 `uc 1 :1 `uc 1 ]
+[n S509 . . LA1 ]
+"7505
+[s S510 :2 `uc 1 :1 `uc 1 ]
+[n S510 . . LA2 ]
+"7509
+[s S511 :3 `uc 1 :1 `uc 1 ]
+[n S511 . . LA3 ]
+"7513
+[s S512 :4 `uc 1 :1 `uc 1 ]
+[n S512 . . LA4 ]
+"7517
+[s S513 :5 `uc 1 :1 `uc 1 ]
+[n S513 . . LA5 ]
+"7521
+[s S514 :6 `uc 1 :1 `uc 1 ]
+[n S514 . . LA6 ]
+"7525
+[s S515 :7 `uc 1 :1 `uc 1 ]
+[n S515 . . LA7 ]
+"7487
+[u S506 `S507 1 `S508 1 `S509 1 `S510 1 `S511 1 `S512 1 `S513 1 `S514 1 `S515 1 ]
+[n S506 . . . . . . . . . . ]
+"7530
+[v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
+"752 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
 [; ;pan.h: 27: void Pan(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -7829,28 +7917,100 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_api.h: 899: bool MiApp_InitChannelHopping( uint32_t ChannelMap);
 [; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 [; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
-"8 ../src/pan.c
+[; ;pan.c: 25: extern uint8_t ConnectionEntry;
+"27 ../src/pan.c
 [v _Pan `(v ~T0 @X0 1 ef ]
-"9
+"28
 {
-[; ;pan.c: 8: void Pan(void)
-[; ;pan.c: 9: {
+[; ;pan.c: 27: void Pan(void)
+[; ;pan.c: 28: {
 [e :U _Pan ]
 [f ]
-[; ;pan.c: 10: while(1)
-"10
+[; ;pan.c: 29: LATDbits.LATD7 = 0;
+"29
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+[; ;pan.c: 30: LCD_Erase();
+"30
+[e ( _LCD_Erase ..  ]
+[; ;pan.c: 31: sprintf((char *)&(LCDText), (char*)"   PAN   ");
+"31
+[e ( _sprintf (1 , &U _LCDText -> -> :s 1C `*uc `*Cuc ]
+[; ;pan.c: 32: while(1)
+"32
 [e :U 1122 ]
-[; ;pan.c: 11: {
-"11
+[; ;pan.c: 33: {
+"33
 {
-"12
+[; ;pan.c: 34: if(MiApp_MessageAvailable())
+"34
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1124  ]
+[; ;pan.c: 35: {
+"35
+{
+[; ;pan.c: 36: if(rxMessage.Payload[0] == 1)
+"36
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 1 `i 1125  ]
+[; ;pan.c: 37: {
+"37
+{
+[; ;pan.c: 38: sprintf((char *)&(LCDText), (char*)"RECU");
+"38
+[e ( _sprintf (1 , &U _LCDText -> -> :s 2C `*uc `*Cuc ]
+[; ;pan.c: 40: LATDbits.LATD7 = 1;
+"40
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+[; ;pan.c: 41: LATAbits.LATA6 = 1;
+"41
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;pan.c: 42: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"42
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1126  ]
+[e :U 1127 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1129  ]
+[e :U 1130 ]
+[e :U 1129 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1130  ]
+[e :U 1131 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1126 ]
+[e $ != __ms -> -> 0 `i `ul 1127  ]
+[e :U 1128 ]
+}
+[; ;pan.c: 43: LATAbits.LATA6 = 0;
+"43
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[; ;pan.c: 44: LATDbits.LATD7 = 0;
+"44
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+"45
+}
+[e :U 1125 ]
+[; ;pan.c: 45: }
+[; ;pan.c: 46: MiApp_DiscardMessage();
+"46
+[e ( _MiApp_DiscardMessage ..  ]
+"47
+}
+[e :U 1124 ]
+"48
 }
 [e :U 1121 ]
-"10
+"32
 [e $U 1122  ]
 [e :U 1123 ]
-[; ;pan.c: 12: }
-[; ;pan.c: 13: }
-"13
+[; ;pan.c: 47: }
+[; ;pan.c: 48: }
+[; ;pan.c: 49: }
+"49
 [e :UE 1120 ]
 }
+[p f _sprintf 9437696 ]
+[a 2C 82 69 67 85 0 ]
+[a 1C 32 32 32 80 65 78 32 32 32 0 ]
