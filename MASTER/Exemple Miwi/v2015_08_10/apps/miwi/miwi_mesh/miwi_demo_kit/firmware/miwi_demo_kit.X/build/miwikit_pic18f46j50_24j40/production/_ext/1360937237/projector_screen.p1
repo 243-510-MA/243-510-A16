@@ -8,7 +8,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1083 `ul 1 `S1084 1 `uc -> 4 `i `S1085 1 ]
 [n S1083 _MIWI_TICK Val byte v word ]
-[; ;projector_screen.h: 27: void ProjectorScreen(void);
+[; ;projector_screen.h: 25: void ProjectorScreen(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7540,18 +7540,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwikit_pic18f46j50_24j40\spi.h: 30: uint8_t SPIGet(void);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 32: void SPIPut2(uint8_t v);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 33: uint8_t SPIGet2(void);
-[; ;miwikit_pic18f46j50_24j40\system.h: 51: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 52: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 54: uint8_t v[4];
-[; ;miwikit_pic18f46j50_24j40\system.h: 55: uint16_t w[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 56: uint32_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 58: }API_UINT32_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 60: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 61: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 63: uint8_t v[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 64: uint16_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 66: }API_UINT16_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 119: void SYSTEM_Initialize(void);
+[; ;miwikit_pic18f46j50_24j40\system.h: 54: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 55: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 57: uint8_t v[4];
+[; ;miwikit_pic18f46j50_24j40\system.h: 58: uint16_t w[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 59: uint32_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 61: }API_UINT32_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 63: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 64: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
 [; ;drv_mrf_miwi_24j40.h: 31: typedef union
 [; ;drv_mrf_miwi_24j40.h: 32: {
 [; ;drv_mrf_miwi_24j40.h: 33: uint8_t Val;
@@ -7829,28 +7829,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_api.h: 899: bool MiApp_InitChannelHopping( uint32_t ChannelMap);
 [; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 [; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
-"8 ../src/projector_screen.c
+"9 ../src/projector_screen.c
 [v _ProjectorScreen `(v ~T0 @X0 1 ef ]
-"9
+"10
 {
-[; ;projector_screen.c: 8: void ProjectorScreen(void)
-[; ;projector_screen.c: 9: {
+[; ;projector_screen.c: 9: void ProjectorScreen(void)
+[; ;projector_screen.c: 10: {
 [e :U _ProjectorScreen ]
 [f ]
-[; ;projector_screen.c: 10: while(1)
-"10
-[e :U 1122 ]
-[; ;projector_screen.c: 11: {
+[; ;projector_screen.c: 11: while(1)
 "11
-{
+[e :U 1122 ]
+[; ;projector_screen.c: 12: {
 "12
+{
+"14
 }
 [e :U 1121 ]
-"10
+"11
 [e $U 1122  ]
 [e :U 1123 ]
-[; ;projector_screen.c: 12: }
-[; ;projector_screen.c: 13: }
-"13
+[; ;projector_screen.c: 14: }
+[; ;projector_screen.c: 15: }
+"15
 [e :UE 1120 ]
 }

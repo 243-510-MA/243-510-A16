@@ -91,7 +91,10 @@
 #define SW2_TRIS            TRISBbits.TRISB2
 
 #define DOOR                LATDbits.LATD7
-#define DOOR_TRIS           TRISDbits.TRISD7          
+#define DOOR_TRIS           TRISDbits.TRISD7         
+
+#define PROJECTOR           LATAbits.LATA3
+#define PROJECTOR_TRIS      TRISAbits.TRISA3
 
 #define LED0                LATCbits.LATC2
 #define LED0_TRIS           TRISCbits.TRISC2
@@ -118,5 +121,4 @@
 #define LCD_RESET           LATEbits.LATE0
 #define LCD_BKLT_TRIS       TRISEbits.TRISE1
 #define LCD_BKLT            LATEbits.LATE1
-	
 #endif

@@ -46,7 +46,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
 [v _LCDText `uc ~T0 @X0 -> 0 `x e ]
-"61 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
 [u S1087 `uc -> 2 `i `ui 1 ]
 [n S1087 . v Val ]
 "209 ../../../../../../framework\miwi/miwi_mesh.h
@@ -7632,18 +7632,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwikit_pic18f46j50_24j40\spi.h: 30: uint8_t SPIGet(void);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 32: void SPIPut2(uint8_t v);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 33: uint8_t SPIGet2(void);
-[; ;miwikit_pic18f46j50_24j40\system.h: 51: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 52: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 54: uint8_t v[4];
-[; ;miwikit_pic18f46j50_24j40\system.h: 55: uint16_t w[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 56: uint32_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 58: }API_UINT32_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 60: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 61: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 63: uint8_t v[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 64: uint16_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 66: }API_UINT16_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 119: void SYSTEM_Initialize(void);
+[; ;miwikit_pic18f46j50_24j40\system.h: 54: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 55: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 57: uint8_t v[4];
+[; ;miwikit_pic18f46j50_24j40\system.h: 58: uint16_t w[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 59: uint32_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 61: }API_UINT32_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 63: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 64: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
 [; ;drv_mrf_miwi_24j40.h: 31: typedef union
 [; ;drv_mrf_miwi_24j40.h: 32: {
 [; ;drv_mrf_miwi_24j40.h: 33: uint8_t Val;
@@ -7921,59 +7921,59 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_api.h: 899: bool MiApp_InitChannelHopping( uint32_t ChannelMap);
 [; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 [; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
-[; ;door_unlock.c: 8: extern uint8_t ConnectionEntry;
-"10 ../src/door_unlock.c
+[; ;door_unlock.c: 9: extern uint8_t ConnectionEntry;
+"11 ../src/door_unlock.c
 [v _DoorUnlock `(v ~T0 @X0 1 ef ]
-"11
+"12
 {
-[; ;door_unlock.c: 10: void DoorUnlock(void)
-[; ;door_unlock.c: 11: {
+[; ;door_unlock.c: 11: void DoorUnlock(void)
+[; ;door_unlock.c: 12: {
 [e :U _DoorUnlock ]
 [f ]
-[; ;door_unlock.c: 12: LATDbits.LATD7 = 0;
-"12
-[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
-[; ;door_unlock.c: 13: LCD_Erase();
+[; ;door_unlock.c: 13: LATDbits.LATD7 = 0;
 "13
-[e ( _LCD_Erase ..  ]
-[; ;door_unlock.c: 14: sprintf((char *)&(LCDText), (char*)"   DOORUNLOCK   ");
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 14: LCD_Erase();
 "14
-[e ( _sprintf (1 , &U _LCDText -> -> :s 1C `*uc `*Cuc ]
-[; ;door_unlock.c: 15: while(1)
+[e ( _LCD_Erase ..  ]
+[; ;door_unlock.c: 15: sprintf((char *)&(LCDText), (char*)"   DOORUNLOCK   ");
 "15
-[e :U 1122 ]
-[; ;door_unlock.c: 16: {
+[e ( _sprintf (1 , &U _LCDText -> -> :s 1C `*uc `*Cuc ]
+[; ;door_unlock.c: 16: while(1)
 "16
-{
-[; ;door_unlock.c: 17: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+[e :U 1122 ]
+[; ;door_unlock.c: 17: {
 "17
-[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 2C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
-[; ;door_unlock.c: 18: LCD_Update();
+{
+[; ;door_unlock.c: 18: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
 "18
-[e ( _LCD_Update ..  ]
-[; ;door_unlock.c: 19: if(MiApp_MessageAvailable())
+[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 2C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
+[; ;door_unlock.c: 19: LCD_Update();
 "19
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1124  ]
-[; ;door_unlock.c: 20: {
+[e ( _LCD_Update ..  ]
+[; ;door_unlock.c: 20: if(MiApp_MessageAvailable())
 "20
-{
-[; ;door_unlock.c: 21: if(rxMessage.Payload[0] == 1)
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1124  ]
+[; ;door_unlock.c: 21: {
 "21
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 1 `i 1125  ]
-[; ;door_unlock.c: 22: {
-"22
 {
-[; ;door_unlock.c: 23: sprintf((char *)&(LCDText), (char*)"RECU");
+[; ;door_unlock.c: 22: if(rxMessage.Payload[0] == 0x01)
+"22
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 1 `i 1125  ]
+[; ;door_unlock.c: 23: {
 "23
+{
+[; ;door_unlock.c: 24: sprintf((char *)&(LCDText), (char*)"RECU");
+"24
 [e ( _sprintf (1 , &U _LCDText -> -> :s 3C `*uc `*Cuc ]
-[; ;door_unlock.c: 25: LATDbits.LATD7 = 1;
-"25
-[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
-[; ;door_unlock.c: 26: LATAbits.LATA6 = 1;
+[; ;door_unlock.c: 26: LATDbits.LATD7 = 1;
 "26
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;door_unlock.c: 27: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 27: LATAbits.LATA6 = 1;
 "27
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 28: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"28
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
@@ -7993,32 +7993,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != __ms -> -> 0 `i `ul 1127  ]
 [e :U 1128 ]
 }
-[; ;door_unlock.c: 28: LATAbits.LATA6 = 0;
-"28
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;door_unlock.c: 29: LATDbits.LATD7 = 0;
+[; ;door_unlock.c: 29: LATAbits.LATA6 = 0;
 "29
-[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 30: LATDbits.LATD7 = 0;
 "30
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+"31
 }
 [e :U 1125 ]
-[; ;door_unlock.c: 30: }
-[; ;door_unlock.c: 31: MiApp_DiscardMessage();
-"31
-[e ( _MiApp_DiscardMessage ..  ]
+[; ;door_unlock.c: 31: }
+[; ;door_unlock.c: 32: MiApp_DiscardMessage();
 "32
-}
-[e :U 1124 ]
+[e ( _MiApp_DiscardMessage ..  ]
 "33
 }
+[e :U 1124 ]
+"34
+}
 [e :U 1121 ]
-"15
+"16
 [e $U 1122  ]
 [e :U 1123 ]
-[; ;door_unlock.c: 32: }
 [; ;door_unlock.c: 33: }
 [; ;door_unlock.c: 34: }
-"34
+[; ;door_unlock.c: 35: }
+"35
 [e :UE 1120 ]
 }
 [p f _sprintf 16484269 ]

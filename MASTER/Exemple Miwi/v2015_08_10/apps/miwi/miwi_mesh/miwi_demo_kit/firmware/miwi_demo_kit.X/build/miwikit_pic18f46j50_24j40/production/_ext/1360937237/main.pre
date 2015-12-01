@@ -9807,7 +9807,7 @@ uint8_t SPIGet(void);
 void SPIPut2(uint8_t v);
 uint8_t SPIGet2(void);
 
-# 51 "../src/system_config/miwikit_pic18f46j50_24j40\system.h"
+# 54 "../src/system_config/miwikit_pic18f46j50_24j40\system.h"
 typedef union
 {
 
@@ -9825,7 +9825,7 @@ uint16_t Val;
 
 }API_UINT16_UNION;
 
-# 119
+# 122
 void SYSTEM_Initialize(void);
 
 # 31 "../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h"
@@ -10238,7 +10238,13 @@ extern RECEIVED_MESSAGE rxMessage;
 # 27 "../src/network.h"
 void Network(int DEVICEMODE);
 
-# 27 "../src/pan.h"
+# 25 "../src/pan.h"
+void startBit(void);
+void stopBit(void);
+void putcv(int data);
+void Power_off();
+void Power_on();
+
 void Pan(void);
 
 # 27 "../src/student.h"
@@ -10250,13 +10256,14 @@ void Teacher(void);
 # 27 "../src/door_unlock.h"
 void DoorUnlock(void);
 
-# 27 "../src/projector_screen.h"
+# 25 "../src/projector_screen.h"
 void ProjectorScreen(void);
 
-# 26 "../src/main.c"
+# 27 "../src/main.c"
 void main(void)
 {
 Network(4);
+
 LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
 if(4 == 0)
 {

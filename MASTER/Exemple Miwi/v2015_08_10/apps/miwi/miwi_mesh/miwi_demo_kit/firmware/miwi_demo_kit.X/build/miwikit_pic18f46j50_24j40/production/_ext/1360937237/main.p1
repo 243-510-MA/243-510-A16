@@ -75,11 +75,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S506 . . . . . . . . . . ]
 "7530
 [v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
-"27 ../src/pan.h
+"31 ../src/pan.h
 [v _Pan `(v ~T0 @X0 0 ef ]
 "27 ../src/door_unlock.h
 [v _DoorUnlock `(v ~T0 @X0 0 ef ]
-"27 ../src/projector_screen.h
+"25 ../src/projector_screen.h
 [v _ProjectorScreen `(v ~T0 @X0 0 ef ]
 "27 ../src/teacher.h
 [v _Teacher `(v ~T0 @X0 0 ef ]
@@ -7616,18 +7616,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwikit_pic18f46j50_24j40\spi.h: 30: uint8_t SPIGet(void);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 32: void SPIPut2(uint8_t v);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 33: uint8_t SPIGet2(void);
-[; ;miwikit_pic18f46j50_24j40\system.h: 51: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 52: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 54: uint8_t v[4];
-[; ;miwikit_pic18f46j50_24j40\system.h: 55: uint16_t w[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 56: uint32_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 58: }API_UINT32_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 60: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 61: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 63: uint8_t v[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 64: uint16_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 66: }API_UINT16_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 119: void SYSTEM_Initialize(void);
+[; ;miwikit_pic18f46j50_24j40\system.h: 54: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 55: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 57: uint8_t v[4];
+[; ;miwikit_pic18f46j50_24j40\system.h: 58: uint16_t w[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 59: uint32_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 61: }API_UINT32_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 63: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 64: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
 [; ;drv_mrf_miwi_24j40.h: 31: typedef union
 [; ;drv_mrf_miwi_24j40.h: 32: {
 [; ;drv_mrf_miwi_24j40.h: 33: uint8_t Val;
@@ -7906,91 +7906,96 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 [; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
 [; ;network.h: 27: void Network(int DEVICEMODE);
-[; ;pan.h: 27: void Pan(void);
+[; ;pan.h: 25: void startBit(void);
+[; ;pan.h: 26: void stopBit(void);
+[; ;pan.h: 27: void putcv(int data);
+[; ;pan.h: 28: void Power_off();
+[; ;pan.h: 29: void Power_on();
+[; ;pan.h: 31: void Pan(void);
 [; ;student.h: 27: void Student(void);
 [; ;teacher.h: 27: void Teacher(void);
 [; ;door_unlock.h: 27: void DoorUnlock(void);
-[; ;projector_screen.h: 27: void ProjectorScreen(void);
-"26 ../src/main.c
+[; ;projector_screen.h: 25: void ProjectorScreen(void);
+"27 ../src/main.c
 [v _main `(v ~T0 @X0 1 ef ]
-"27
+"28
 {
-[; ;main.c: 26: void main(void)
-[; ;main.c: 27: {
+[; ;main.c: 27: void main(void)
+[; ;main.c: 28: {
 [e :U _main ]
 [f ]
-[; ;main.c: 28: Network(4);
-"28
-[e ( _Network (1 -> 4 `i ]
-[; ;main.c: 29: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
+[; ;main.c: 29: Network(4);
 "29
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 30: if(4 == 0)
-"30
-[e $ ! == -> 4 `i -> 0 `i 1121  ]
-[; ;main.c: 31: {
+[e ( _Network (1 -> 4 `i ]
+[; ;main.c: 31: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
 "31
-{
-[; ;main.c: 32: Pan();
+[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[; ;main.c: 32: if(4 == 0)
 "32
-[e ( _Pan ..  ]
+[e $ ! == -> 4 `i -> 0 `i 1121  ]
+[; ;main.c: 33: {
 "33
+{
+[; ;main.c: 34: Pan();
+"34
+[e ( _Pan ..  ]
+"35
 }
 [e :U 1121 ]
-[; ;main.c: 33: }
-[; ;main.c: 36: if(4 == 1)
-"36
-[e $ ! == -> 4 `i -> 1 `i 1122  ]
-[; ;main.c: 37: {
-"37
-{
-[; ;main.c: 38: DoorUnlock();
+[; ;main.c: 35: }
+[; ;main.c: 38: if(4 == 1)
 "38
-[e ( _DoorUnlock ..  ]
+[e $ ! == -> 4 `i -> 1 `i 1122  ]
+[; ;main.c: 39: {
 "39
+{
+[; ;main.c: 40: DoorUnlock();
+"40
+[e ( _DoorUnlock ..  ]
+"41
 }
 [e :U 1122 ]
-[; ;main.c: 39: }
-[; ;main.c: 42: if(4 == 2)
-"42
-[e $ ! == -> 4 `i -> 2 `i 1123  ]
-[; ;main.c: 43: {
-"43
-{
-[; ;main.c: 44: ProjectorScreen();
+[; ;main.c: 41: }
+[; ;main.c: 44: if(4 == 2)
 "44
-[e ( _ProjectorScreen ..  ]
+[e $ ! == -> 4 `i -> 2 `i 1123  ]
+[; ;main.c: 45: {
 "45
+{
+[; ;main.c: 46: ProjectorScreen();
+"46
+[e ( _ProjectorScreen ..  ]
+"47
 }
 [e :U 1123 ]
-[; ;main.c: 45: }
-[; ;main.c: 48: if(4 == 3)
-"48
-[e $ ! == -> 4 `i -> 3 `i 1124  ]
-[; ;main.c: 49: {
-"49
-{
-[; ;main.c: 50: Teacher();
+[; ;main.c: 47: }
+[; ;main.c: 50: if(4 == 3)
 "50
-[e ( _Teacher ..  ]
+[e $ ! == -> 4 `i -> 3 `i 1124  ]
+[; ;main.c: 51: {
 "51
+{
+[; ;main.c: 52: Teacher();
+"52
+[e ( _Teacher ..  ]
+"53
 }
 [e :U 1124 ]
-[; ;main.c: 51: }
-[; ;main.c: 54: if(4 == 4)
-"54
-[e $ ! == -> 4 `i -> 4 `i 1125  ]
-[; ;main.c: 55: {
-"55
-{
-[; ;main.c: 56: Student();
+[; ;main.c: 53: }
+[; ;main.c: 56: if(4 == 4)
 "56
-[e ( _Student ..  ]
+[e $ ! == -> 4 `i -> 4 `i 1125  ]
+[; ;main.c: 57: {
 "57
+{
+[; ;main.c: 58: Student();
+"58
+[e ( _Student ..  ]
+"59
 }
 [e :U 1125 ]
-[; ;main.c: 57: }
-[; ;main.c: 58: }
-"58
+[; ;main.c: 59: }
+[; ;main.c: 60: }
+"60
 [e :UE 1120 ]
 }

@@ -21,8 +21,6 @@
  *******************************************************************/
 #ifndef _PROJECTOR_SCREEN_H
     #define _PROJECTOR_SCREEN_H
-   
-
 
 void ProjectorScreen(void);
 

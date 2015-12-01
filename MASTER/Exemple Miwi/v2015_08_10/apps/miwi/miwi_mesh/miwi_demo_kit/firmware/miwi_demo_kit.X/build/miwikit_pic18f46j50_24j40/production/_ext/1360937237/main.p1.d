@@ -5,6 +5,7 @@
 ../src/system_config/miwikit_pic18f46j50_24j40/button.h  \
 ../src/network.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/system_config.h  \
+../src/codes\ library.h  \
 ../src/teacher.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/delay.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/config_24j40.h  \

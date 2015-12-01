@@ -20,7 +20,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "646
 [u S1118 `uc 1 `S1119 1 ]
 [n S1118 . Val bits ]
-"61 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
 [u S1087 `uc -> 2 `i `ui 1 ]
 [n S1087 . v Val ]
 "644 ../../../../../../framework\miwi/miwi_api.h
@@ -7704,18 +7704,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwikit_pic18f46j50_24j40\spi.h: 30: uint8_t SPIGet(void);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 32: void SPIPut2(uint8_t v);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 33: uint8_t SPIGet2(void);
-[; ;miwikit_pic18f46j50_24j40\system.h: 51: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 52: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 54: uint8_t v[4];
-[; ;miwikit_pic18f46j50_24j40\system.h: 55: uint16_t w[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 56: uint32_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 58: }API_UINT32_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 60: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 61: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 63: uint8_t v[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 64: uint16_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 66: }API_UINT16_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 119: void SYSTEM_Initialize(void);
+[; ;miwikit_pic18f46j50_24j40\system.h: 54: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 55: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 57: uint8_t v[4];
+[; ;miwikit_pic18f46j50_24j40\system.h: 58: uint16_t w[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 59: uint32_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 61: }API_UINT32_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 63: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 64: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
 [; ;miwi_mesh.h: 44: void MiWiTasks(void);
 [; ;miwi_mesh.h: 45: uint8_t findNextNetworkEntry(void);
 [; ;miwi_mesh.h: 46: void ClearNetworkTable(void);

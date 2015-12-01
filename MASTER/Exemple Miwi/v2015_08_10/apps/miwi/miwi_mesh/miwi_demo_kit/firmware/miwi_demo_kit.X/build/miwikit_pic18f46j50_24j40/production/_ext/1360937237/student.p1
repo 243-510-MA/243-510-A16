@@ -14,7 +14,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
 [v _LCDText `uc ~T0 @X0 -> 0 `x e ]
-"61 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
 [u S1087 `uc -> 2 `i `ui 1 ]
 [n S1087 . v Val ]
 "209 ../../../../../../framework\miwi/miwi_mesh.h
@@ -7593,18 +7593,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwikit_pic18f46j50_24j40\spi.h: 30: uint8_t SPIGet(void);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 32: void SPIPut2(uint8_t v);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 33: uint8_t SPIGet2(void);
-[; ;miwikit_pic18f46j50_24j40\system.h: 51: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 52: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 54: uint8_t v[4];
-[; ;miwikit_pic18f46j50_24j40\system.h: 55: uint16_t w[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 56: uint32_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 58: }API_UINT32_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 60: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 61: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 63: uint8_t v[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 64: uint16_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 66: }API_UINT16_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 119: void SYSTEM_Initialize(void);
+[; ;miwikit_pic18f46j50_24j40\system.h: 54: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 55: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 57: uint8_t v[4];
+[; ;miwikit_pic18f46j50_24j40\system.h: 58: uint16_t w[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 59: uint32_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 61: }API_UINT32_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 63: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 64: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
 [; ;drv_mrf_miwi_24j40.h: 31: typedef union
 [; ;drv_mrf_miwi_24j40.h: 32: {
 [; ;drv_mrf_miwi_24j40.h: 33: uint8_t Val;
@@ -7882,66 +7882,66 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_api.h: 899: bool MiApp_InitChannelHopping( uint32_t ChannelMap);
 [; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 [; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
-"10 ../src/student.c
+"9 ../src/student.c
 [v _Student `(v ~T0 @X0 1 ef ]
-"11
+"10
 {
-[; ;student.c: 10: void Student(void)
-[; ;student.c: 11: {
+[; ;student.c: 9: void Student(void)
+[; ;student.c: 10: {
 [e :U _Student ]
 [f ]
-"12
+"11
 [v _switch_val `uc ~T0 @X0 1 a ]
-[; ;student.c: 12: uint8_t switch_val;
-[; ;student.c: 13: LCD_Erase();
-"13
+[; ;student.c: 11: uint8_t switch_val;
+[; ;student.c: 12: LCD_Erase();
+"12
 [e ( _LCD_Erase ..  ]
-[; ;student.c: 14: sprintf((char *)&(LCDText), (char*)" STUDENT DEVICE ");
-"14
+[; ;student.c: 13: sprintf((char *)&(LCDText), (char*)" STUDENT DEVICE ");
+"13
 [e ( _sprintf (1 , &U _LCDText -> -> :s 1C `*uc `*Cuc ]
-[; ;student.c: 16: while(1)
-"16
+[; ;student.c: 15: while(1)
+"15
 [e :U 1122 ]
-[; ;student.c: 17: {
+[; ;student.c: 16: {
+"16
+{
+[; ;student.c: 17: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
 "17
-{
-[; ;student.c: 18: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
-"18
 [e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 2C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
-[; ;student.c: 19: LCD_Update();
-"19
+[; ;student.c: 18: LCD_Update();
+"18
 [e ( _LCD_Update ..  ]
-[; ;student.c: 20: switch_val = BUTTON_Pressed();
-"20
+[; ;student.c: 19: switch_val = BUTTON_Pressed();
+"19
 [e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;student.c: 21: if(switch_val == 1)
-"21
+[; ;student.c: 20: if(switch_val == 1)
+"20
 [e $ ! == -> _switch_val `i -> 1 `i 1124  ]
-[; ;student.c: 22: {
-"22
+[; ;student.c: 21: {
+"21
 {
-[; ;student.c: 23: LATAbits.LATA6 = 1;
-"23
+[; ;student.c: 22: LATAbits.LATA6 = 1;
+"22
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;student.c: 24: {TxData = 11;};
-"24
+[; ;student.c: 23: {TxData = 11;};
+"23
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;student.c: 25: TxBuffer[TxData++] = 1;
+[; ;student.c: 24: TxBuffer[TxData++] = 0x55;
+"24
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 85 `i `uc ]
+[; ;student.c: 25: TxBuffer[TxData++] = myShortAddress.v[0];
 "25
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
-[; ;student.c: 26: TxBuffer[TxData++] = myShortAddress.v[0];
-"26
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-[; ;student.c: 27: TxBuffer[TxData++] = myShortAddress.v[1];
-"27
+[; ;student.c: 26: TxBuffer[TxData++] = myShortAddress.v[1];
+"26
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-[; ;student.c: 28: MiApp_BroadcastPacket(0);
-"28
+[; ;student.c: 27: MiApp_BroadcastPacket(0);
+"27
 [e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;student.c: 29: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
-"29
+[; ;student.c: 28: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"28
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
@@ -7961,22 +7961,76 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != __ms -> -> 0 `i `ul 1126  ]
 [e :U 1127 ]
 }
-[; ;student.c: 30: LATAbits.LATA6 = 0;
-"30
+[; ;student.c: 29: LATAbits.LATA6 = 0;
+"29
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-"31
+"30
 }
 [e :U 1124 ]
+[; ;student.c: 30: }
+[; ;student.c: 31: if(switch_val == 2)
+"31
+[e $ ! == -> _switch_val `i -> 2 `i 1131  ]
+[; ;student.c: 32: {
 "32
+{
+[; ;student.c: 33: LATAbits.LATA6 = 1;
+"33
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;student.c: 34: {TxData = 11;};
+"34
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;student.c: 35: TxBuffer[TxData++] = 0x66;
+"35
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 102 `i `uc ]
+[; ;student.c: 36: TxBuffer[TxData++] = myShortAddress.v[0];
+"36
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;student.c: 37: TxBuffer[TxData++] = myShortAddress.v[1];
+"37
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;student.c: 38: MiApp_BroadcastPacket(0);
+"38
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;student.c: 39: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"39
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1132  ]
+[e :U 1133 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1135  ]
+[e :U 1136 ]
+[e :U 1135 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1136  ]
+[e :U 1137 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1132 ]
+[e $ != __ms -> -> 0 `i `ul 1133  ]
+[e :U 1134 ]
+}
+[; ;student.c: 40: LATAbits.LATA6 = 0;
+"40
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"41
+}
+[e :U 1131 ]
+"42
 }
 [e :U 1121 ]
-"16
+"15
 [e $U 1122  ]
 [e :U 1123 ]
-[; ;student.c: 31: }
-[; ;student.c: 32: }
-[; ;student.c: 33: }
-"33
+[; ;student.c: 41: }
+[; ;student.c: 42: }
+[; ;student.c: 43: }
+"43
 [e :UE 1120 ]
 }
 [p f _sprintf 16484269 ]

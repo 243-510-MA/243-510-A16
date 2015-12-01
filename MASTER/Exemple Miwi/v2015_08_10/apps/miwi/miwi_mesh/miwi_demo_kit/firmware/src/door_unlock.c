@@ -1,9 +1,10 @@
+//DOOR UNLOCK
+
 #include "door_unlock.h"
+#include "codes library.h"
 #include "system.h"
 #include "system_config.h"
 #include "miwi/miwi_api.h"
-
-#define UNLOCK_PKT      1
 
 extern uint8_t ConnectionEntry;
 

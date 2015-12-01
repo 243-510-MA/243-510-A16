@@ -88,17 +88,27 @@
 [v _MiApp_NoiseDetection MiApp_NoiseDetection `(uc  1 e 1 0 ]
 "5146
 [v _StartChannelHopping StartChannelHopping `(v  1 e 0 0 ]
-"10 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/door_unlock.c
+"11 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/door_unlock.c
 [v _DoorUnlock DoorUnlock `(v  1 e 0 0 ]
-"26 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/main.c
+"27 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/main.c
 [v _main main `(v  1 e 0 0 ]
 "45 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/network.c
 [v _Network Network `(v  1 e 0 0 ]
-"27 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/pan.c
+"9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/pan.c
 [v _Pan Pan `(v  1 e 0 0 ]
-"8 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/projector_screen.c
+"29
+[v _startBit startBit `(v  1 e 0 0 ]
+"35
+[v _stopBit stopBit `(v  1 e 0 0 ]
+"41
+[v _putcv putcv `(v  1 e 0 0 ]
+"55
+[v _Power_off Power_off `(v  1 e 0 0 ]
+"62
+[v _Power_on Power_on `(v  1 e 0 0 ]
+"9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/projector_screen.c
 [v _ProjectorScreen ProjectorScreen `(v  1 e 0 0 ]
-"10 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/student.c
+"9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/student.c
 [v _Student Student `(v  1 e 0 0 ]
 "42 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/button.c
 [v _BUTTON_Pressed BUTTON_Pressed `(uc  1 e 1 0 ]
@@ -145,7 +155,7 @@
 [v _MiWi_TickGet MiWi_TickGet `(S29  1 e 4 0 ]
 "47 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
-"8 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/teacher.c
+"9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/teacher.c
 [v _Teacher Teacher `(v  1 e 0 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -888,25 +898,28 @@
 [v _hexpowers hexpowers `C[4]ui  1 s 8 hexpowers ]
 "369
 [v _octpowers octpowers `C[6]ui  1 s 12 octpowers ]
-"26 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/main.c
+"27 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/main.c
 [v _main main `(v  1 e 0 0 ]
 {
-"58
+"60
 } 0
-"8 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/teacher.c
+"9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/teacher.c
 [v _Teacher Teacher `(v  1 e 0 0 ]
 {
-"13
+"14
 } 0
-"10 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/student.c
+"9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/student.c
 [v _Student Student `(v  1 e 0 0 ]
 {
-"29
-[v Student@_ms _ms `ul  1 a 4 67 ]
+"39
+[v Student@_ms_3722 _ms `ul  1 a 4 75 ]
+[v Student@_dcnt_3721 _dcnt `ul  1 a 4 67 ]
+"28
+[v Student@_ms _ms `ul  1 a 4 71 ]
 [v Student@_dcnt _dcnt `ul  1 a 4 63 ]
-"12
-[v Student@switch_val switch_val `uc  1 a 1 71 ]
-"33
+"11
+[v Student@switch_val switch_val `uc  1 a 1 79 ]
+"43
 } 0
 "42 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/button.c
 [v _BUTTON_Pressed BUTTON_Pressed `(uc  1 e 1 0 ]
@@ -921,18 +934,46 @@
 [v BUTTON_Pressed@result result `uc  1 a 1 22 ]
 "85
 } 0
-"8 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/projector_screen.c
+"9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/projector_screen.c
 [v _ProjectorScreen ProjectorScreen `(v  1 e 0 0 ]
 {
-"13
+"15
 } 0
-"27 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/pan.c
+"9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/pan.c
 [v _Pan Pan `(v  1 e 0 0 ]
 {
-"42
-[v Pan@_ms _ms `ul  1 a 4 127 ]
-[v Pan@_dcnt _dcnt `ul  1 a 4 123 ]
-"49
+"27
+} 0
+"62
+[v _Power_on Power_on `(v  1 e 0 0 ]
+{
+"67
+} 0
+"55
+[v _Power_off Power_off `(v  1 e 0 0 ]
+{
+"60
+} 0
+"41
+[v _putcv putcv `(v  1 e 0 0 ]
+{
+"45
+[v putcv@data2 data2 `i  1 a 2 6 ]
+"43
+[v putcv@i i `i  1 a 2 4 ]
+"41
+[v putcv@data data `i  1 p 2 0 ]
+"53
+} 0
+"35
+[v _stopBit stopBit `(v  1 e 0 0 ]
+{
+"39
+} 0
+"29
+[v _startBit startBit `(v  1 e 0 0 ]
+{
+"33
 } 0
 "45 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/network.c
 [v _Network Network `(v  1 e 0 0 ]
@@ -1207,13 +1248,13 @@
 [v LCD_Display@delay delay `uc  1 p 1 50 ]
 "183
 } 0
-"10 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/door_unlock.c
+"11 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/door_unlock.c
 [v _DoorUnlock DoorUnlock `(v  1 e 0 0 ]
 {
-"27
+"28
 [v DoorUnlock@_ms _ms `ul  1 a 4 127 ]
 [v DoorUnlock@_dcnt _dcnt `ul  1 a 4 123 ]
-"34
+"35
 } 0
 "492 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]

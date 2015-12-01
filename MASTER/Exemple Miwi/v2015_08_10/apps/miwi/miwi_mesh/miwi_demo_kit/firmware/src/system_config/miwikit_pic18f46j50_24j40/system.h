@@ -19,6 +19,9 @@
  IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL OR
  CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
  *******************************************************************/
+
+#define _XTAL_FREQ 16000000
+
 #ifndef __SYSTEM_H_
 	#define __SYSTEM_H_
 

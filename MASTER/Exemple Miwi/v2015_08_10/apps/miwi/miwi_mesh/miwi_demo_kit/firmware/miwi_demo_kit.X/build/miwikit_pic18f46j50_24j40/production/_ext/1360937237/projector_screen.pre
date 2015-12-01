@@ -1,7 +1,7 @@
 
 # 1 "../src/projector_screen.c"
 
-# 27 "../src/projector_screen.h"
+# 25 "../src/projector_screen.h"
 void ProjectorScreen(void);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
@@ -9810,7 +9810,7 @@ uint8_t SPIGet(void);
 void SPIPut2(uint8_t v);
 uint8_t SPIGet2(void);
 
-# 51 "../src/system_config/miwikit_pic18f46j50_24j40\system.h"
+# 54 "../src/system_config/miwikit_pic18f46j50_24j40\system.h"
 typedef union
 {
 
@@ -9828,7 +9828,7 @@ uint16_t Val;
 
 }API_UINT16_UNION;
 
-# 119
+# 122
 void SYSTEM_Initialize(void);
 
 # 31 "../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h"
@@ -10238,11 +10238,11 @@ bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 # 950
 extern RECEIVED_MESSAGE rxMessage;
 
-# 8 "../src/projector_screen.c"
+# 9 "../src/projector_screen.c"
 void ProjectorScreen(void)
 {
 while(1)
 {
-}
-}
 
+}
+}

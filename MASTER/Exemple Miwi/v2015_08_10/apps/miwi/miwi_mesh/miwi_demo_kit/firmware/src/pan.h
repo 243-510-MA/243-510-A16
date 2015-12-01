@@ -22,7 +22,11 @@
 #ifndef _PAN_H
     #define _PAN_H
    
-
+void startBit(void);
+void stopBit(void);
+void putcv(int data);
+void Power_off();
+void Power_on();
 
 void Pan(void);
 

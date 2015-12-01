@@ -124,6 +124,7 @@
       <itemPath>../src/projector_screen.c</itemPath>
       <itemPath>../src/network.c</itemPath>
       <itemPath>../src/network.h</itemPath>
+      <itemPath>../src/codes library.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -2,10 +2,9 @@
 
 #include "student.h"
 #include "system.h"
+#include "codes library.h"
 #include "system_config.h"
 #include "miwi/miwi_api.h"
-
-#define UNLOCK_PKT      1
 
 void Student(void)
 {
@@ -22,7 +21,18 @@ void Student(void)
         {
             LED1 = 1;
             MiApp_FlushTx();
-            MiApp_WriteData(UNLOCK_PKT);
+            MiApp_WriteData(PROJECTOR_ON);
+            MiApp_WriteData(myShortAddress.v[0]);
+            MiApp_WriteData(myShortAddress.v[1]);
+            MiApp_BroadcastPacket(false);
+            delay_ms(500);
+            LED1 = 0;
+        }
+        if(switch_val == SW2)
+        {
+            LED1 = 1;
+            MiApp_FlushTx();
+            MiApp_WriteData(PROJECTOR_OFF);
             MiApp_WriteData(myShortAddress.v[0]);
             MiApp_WriteData(myShortAddress.v[1]);
             MiApp_BroadcastPacket(false);

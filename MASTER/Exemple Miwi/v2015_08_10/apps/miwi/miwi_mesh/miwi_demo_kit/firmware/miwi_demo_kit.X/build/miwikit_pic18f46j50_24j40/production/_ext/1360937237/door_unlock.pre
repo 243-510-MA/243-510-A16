@@ -9810,7 +9810,7 @@ uint8_t SPIGet(void);
 void SPIPut2(uint8_t v);
 uint8_t SPIGet2(void);
 
-# 51 "../src/system_config/miwikit_pic18f46j50_24j40\system.h"
+# 54 "../src/system_config/miwikit_pic18f46j50_24j40\system.h"
 typedef union
 {
 
@@ -9828,7 +9828,7 @@ uint16_t Val;
 
 }API_UINT16_UNION;
 
-# 119
+# 122
 void SYSTEM_Initialize(void);
 
 # 31 "../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h"
@@ -10238,7 +10238,7 @@ bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 # 950
 extern RECEIVED_MESSAGE rxMessage;
 
-# 8 "../src/door_unlock.c"
+# 9 "../src/door_unlock.c"
 extern uint8_t ConnectionEntry;
 
 void DoorUnlock(void)
@@ -10252,7 +10252,7 @@ sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1],
 LCD_Update();
 if(MiApp_MessageAvailable())
 {
-if(rxMessage.Payload[0] == 1)
+if(rxMessage.Payload[0] == 0x01)
 {
 sprintf((char *)&(LCDText), (char*)"RECU");
 

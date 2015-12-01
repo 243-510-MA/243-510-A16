@@ -1,6 +1,7 @@
 //MAIN
 
 #include "system.h"
+#include "codes library.h"
 #include "system_config.h"
 #include "miwi/miwi_api.h"
 #include "network.h"
@@ -19,13 +20,14 @@
 
 //*************************************************************************
 
-#define DEVICEMODE STUDENT // Choisir ici 
+#define DEVICEMODE STUDENT // Choisir ici
 
 //*************************************************************************
 
 void main(void)
 {
     Network(DEVICEMODE);
+    
     LED0 = LED1 = LED2 = 0;
     if(DEVICEMODE == PAN)
     {

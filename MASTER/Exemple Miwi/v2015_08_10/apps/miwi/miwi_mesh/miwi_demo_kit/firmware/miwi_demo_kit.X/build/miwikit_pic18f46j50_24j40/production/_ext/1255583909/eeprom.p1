@@ -7577,18 +7577,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.h: 30: uint8_t SPIGet(void);
 [; ;spi.h: 32: void SPIPut2(uint8_t v);
 [; ;spi.h: 33: uint8_t SPIGet2(void);
-[; ;system.h: 51: typedef union
-[; ;system.h: 52: {
-[; ;system.h: 54: uint8_t v[4];
-[; ;system.h: 55: uint16_t w[2];
-[; ;system.h: 56: uint32_t Val;
-[; ;system.h: 58: }API_UINT32_UNION;
-[; ;system.h: 60: typedef union
-[; ;system.h: 61: {
-[; ;system.h: 63: uint8_t v[2];
-[; ;system.h: 64: uint16_t Val;
-[; ;system.h: 66: }API_UINT16_UNION;
-[; ;system.h: 119: void SYSTEM_Initialize(void);
+[; ;system.h: 54: typedef union
+[; ;system.h: 55: {
+[; ;system.h: 57: uint8_t v[4];
+[; ;system.h: 58: uint16_t w[2];
+[; ;system.h: 59: uint32_t Val;
+[; ;system.h: 61: }API_UINT32_UNION;
+[; ;system.h: 63: typedef union
+[; ;system.h: 64: {
+[; ;system.h: 66: uint8_t v[2];
+[; ;system.h: 67: uint16_t Val;
+[; ;system.h: 69: }API_UINT16_UNION;
+[; ;system.h: 122: void SYSTEM_Initialize(void);
 [; ;eeprom.c: 35: extern uint8_t myLongAddress[];
 "57 ../src/system_config/miwikit_pic18f46j50_24j40/eeprom.c
 [v _EEPROMRead `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
