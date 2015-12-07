@@ -112,6 +112,11 @@
 #define LED2                LATAbits.LATA7
 #define LED2_TRIS           TRISAbits.TRISA7
 
+//Buzzer
+#define Buzzer                LATBbits.LATB2
+#define Buzzer_TRIS           TRISBbits.TRISB2
+//Buzzer
+
 // External EEPROM Pin Definitions
 //#define EE_nCS_TRIS         TRISDbits.TRISD5
 #define MAC_nCS             LATDbits.LATD5
