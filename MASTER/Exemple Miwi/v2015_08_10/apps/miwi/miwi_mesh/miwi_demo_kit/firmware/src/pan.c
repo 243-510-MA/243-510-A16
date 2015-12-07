@@ -65,3 +65,9 @@ void Power_on() //POWER ON PROJECTEUR
 	putcv(0x02);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x02);
 	LCD_BKLT = 1;
 }
+
+void alarm(status) //Alarm is activated/desactivated     status=1=on    status=0=off
+{
+    GYRO = status;//Activate/desactive le Gyrophare
+    PIE3bits.TMR4IE = status;//Activate/desactive le Buzzer(Interrupt in drv_mrf_miwi_24j40.c)
+}
