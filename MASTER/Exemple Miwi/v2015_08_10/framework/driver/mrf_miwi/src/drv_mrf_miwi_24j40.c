@@ -1863,6 +1863,17 @@ void __attribute((interrupt(ipl4), vector(_EXTERNAL_1_VECTOR), nomips16))  _RxIn
 void _ISRFAST _INT1Interrupt(void)
 #endif
 {
+    
+    
+    //Interruption pour le Buzzer.
+    if (PIR3bits.TMR4IF) {
+        Buzzer=BuzzerStatus;
+        BuzzerStatus = !BuzzerStatus;
+        PIR3bits.TMR4IF = 0;
+    }
+    
+    
+    
 
     if (RFIE && RFIF)
     {
