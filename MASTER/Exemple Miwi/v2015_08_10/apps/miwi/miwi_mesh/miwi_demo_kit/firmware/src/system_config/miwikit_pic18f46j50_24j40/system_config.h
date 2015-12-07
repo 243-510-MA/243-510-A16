@@ -90,6 +90,15 @@
 #define SW2_PORT            PORTBbits.RB2
 #define SW2_TRIS            TRISBbits.TRISB2
 
+//pin assignables
+//B2
+//B3
+//A0
+//A1
+//A2
+//E0
+//E1
+
 #define DOOR                LATDbits.LATD7
 #define DOOR_TRIS           TRISDbits.TRISD7         
 
