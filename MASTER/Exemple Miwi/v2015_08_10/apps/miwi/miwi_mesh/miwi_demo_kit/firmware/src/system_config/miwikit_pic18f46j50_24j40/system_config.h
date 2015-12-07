@@ -91,8 +91,8 @@
 #define SW2_TRIS            TRISBbits.TRISB2
 
 //pin assignables
-//B2
-//B3
+//B2 Buzzer
+//B3 GYRO
 //A0
 //A1
 //A2
@@ -116,6 +116,11 @@
 #define Buzzer                LATBbits.LATB2
 #define Buzzer_TRIS           TRISBbits.TRISB2
 //Buzzer
+
+//GYRO
+#define GYRO                LATBbits.LATB3
+#define GYRO_TRIS           TRISBbits.TRISB3
+//GYRO
 
 // External EEPROM Pin Definitions
 //#define EE_nCS_TRIS         TRISDbits.TRISD5
