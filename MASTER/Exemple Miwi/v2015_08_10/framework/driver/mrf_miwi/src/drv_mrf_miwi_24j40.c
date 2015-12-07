@@ -56,6 +56,10 @@ struct
 
 uint8_t BankIndex = 0xFF;
 
+
+uint8_t BuzzerStatus = 0;
+
+
 uint8_t IEEESeqNum;
 volatile uint16_t failureCounter = 0;
 uint8_t MACCurrentChannel;
