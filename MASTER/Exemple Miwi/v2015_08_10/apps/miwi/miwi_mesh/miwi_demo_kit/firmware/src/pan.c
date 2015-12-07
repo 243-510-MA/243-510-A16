@@ -8,6 +8,15 @@
 
 void Pan(void)
 {
+    
+        RCONbits.IPEN = 1;
+    T4CON = 0b00111111;
+    PR4 = 156;
+    IPR3bits.TMR4IP = 1;
+    INTCONbits.GIEH = 1;
+    PIR3bits.TMR4IF = 0;
+    
+    
     LCD_BKLT = 1;
     while(true)
     {
