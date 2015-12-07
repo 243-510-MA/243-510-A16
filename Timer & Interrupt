@@ -1,0 +1,19 @@
+Dans : main()
+        RCONbits.IPEN = 1;
+        T4CON = 0b00111111;
+        PR4 = 156;
+        IPR3bits.TMR4IP = 1;
+        INTCONbits.GIEH = 1;
+        PIR3bits.TMR4IF = 0;
+        PIE3bits.TMR4IE = 1;
+
+
+
+Dans : drv_mrf_miwi_24j40.c
+    if (PIR3bits.TMR4IF) {
+        LED0=LedStatus;
+        LED1=LedStatus;
+        LED2=!LedStatus;
+        LedStatus = !LedStatus;
+        PIR3bits.TMR4IF = 0;
+    }
