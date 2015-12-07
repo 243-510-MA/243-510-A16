@@ -8,6 +8,7 @@
 
 void Pan(void)
 {
+    LCD_BKLT = 1;
     while(true)
     {
         if(MiApp_MessageAvailable())
@@ -29,13 +30,13 @@ void Pan(void)
 void startBit(void)
 {
 	LCD_BKLT = 0;
-	__delay_us(104);
+	__delay_us(102);
 }
 
 void stopBit(void)
 {
 	LCD_BKLT = 1;
-	__delay_us(104);
+	__delay_us(102);
 }
 
 void putcv(int data)	//UART VIRTUEL
@@ -47,7 +48,7 @@ void putcv(int data)	//UART VIRTUEL
     {
 		LCD_BKLT = data2;
 		data2 = data2>>1;
-		__delay_us(104);	
+		__delay_us(102);	
 	}
 	stopBit();
 }
