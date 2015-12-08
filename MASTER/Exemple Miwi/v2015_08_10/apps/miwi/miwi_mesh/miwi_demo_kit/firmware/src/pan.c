@@ -8,8 +8,9 @@
 
 void Pan(void)
 {
+    uint8_t rssi = 0;
     
-        RCONbits.IPEN = 1;
+    RCONbits.IPEN = 1;
     T4CON = 0b00111111;
     PR4 = 156;
     IPR3bits.TMR4IP = 1;
@@ -22,6 +23,21 @@ void Pan(void)
     {
         if(MiApp_MessageAvailable())
         {
+            // Check if Message Available
+            if(rxMessage.Payload[0] == RANGE_PKT)
+            {
+                // Get RSSI value from Recieved Packet
+                rssi = rxMessage.PacketRSSI;
+                #if defined(MRF89XA)
+                    rssi = rssi<<1;
+                #endif
+                // Disguard the Packet so can recieve next
+                MiApp_DiscardMessage();
+            }
+            else
+                MiApp_DiscardMessage(); 
+            
+            
             if(rxMessage.Payload[0] == PROJECTOR_ON)
             {
                 Power_on();

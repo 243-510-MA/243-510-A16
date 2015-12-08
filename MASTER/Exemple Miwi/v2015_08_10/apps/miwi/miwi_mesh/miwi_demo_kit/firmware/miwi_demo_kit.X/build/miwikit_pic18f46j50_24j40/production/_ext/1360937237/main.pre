@@ -10263,37 +10263,37 @@ void ProjectorScreen(void);
 # 27 "../src/main.c"
 void main(void)
 {
-Network(4);
+Network(3);
 
 LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
 
 
 
-if(4 == 0)
+if(3 == 0)
 {
 Pan();
 }
 
 
-if(4 == 1)
+if(3 == 1)
 {
 DoorUnlock();
 }
 
 
-if(4 == 2)
+if(3 == 2)
 {
 ProjectorScreen();
 }
 
 
-if(4 == 3)
+if(3 == 3)
 {
 Teacher();
 }
 
 
-if(4 == 4)
+if(3 == 4)
 {
 Student();
 }

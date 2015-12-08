@@ -96,15 +96,15 @@
 [v _Network Network `(v  1 e 0 0 ]
 "9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/pan.c
 [v _Pan Pan `(v  1 e 0 0 ]
-"39
+"55
 [v _startBit startBit `(v  1 e 0 0 ]
-"45
+"61
 [v _stopBit stopBit `(v  1 e 0 0 ]
-"51
+"67
 [v _putcv putcv `(v  1 e 0 0 ]
-"65
+"81
 [v _Power_off Power_off `(v  1 e 0 0 ]
-"72
+"88
 [v _Power_on Power_on `(v  1 e 0 0 ]
 "9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/projector_screen.c
 [v _ProjectorScreen ProjectorScreen `(v  1 e 0 0 ]
@@ -379,6 +379,8 @@
 [v _BroadcastRecords BroadcastRecords `[4]S1154  1 e 32 0 ]
 "16 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/network.c
 [v _myChannel myChannel `uc  1 e 1 0 ]
+"25
+[v _ConnectionEntry ConnectionEntry `uc  1 e 1 0 ]
 "41
 [v _AdditionalNodeID AdditionalNodeID `[1]uc  1 e 1 0 ]
 "28 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
@@ -1001,23 +1003,68 @@
 "9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/teacher.c
 [v _Teacher Teacher `(v  1 e 0 0 ]
 {
+"183
+[v Teacher@_ms_4118 _ms `ul  1 a 4 36 ]
+[v Teacher@_dcnt_4117 _dcnt `ul  1 a 4 16 ]
+"170
+[v Teacher@_ms_4116 _ms `ul  1 a 4 32 ]
+[v Teacher@_dcnt_4115 _dcnt `ul  1 a 4 12 ]
+"143
+[v Teacher@_ms_4113 _ms `ul  1 a 4 28 ]
+[v Teacher@_dcnt_4112 _dcnt `ul  1 a 4 8 ]
+"118
+[v Teacher@_ms_4110 _ms `ul  1 a 4 24 ]
+[v Teacher@_dcnt_4109 _dcnt `ul  1 a 4 4 ]
+"105
+[v Teacher@_ms _ms `ul  1 a 4 20 ]
+[v Teacher@_dcnt _dcnt `ul  1 a 4 0 ]
+"11
+[v Teacher@switch_val switch_val `uc  1 a 1 44 ]
+"15
+[v Teacher@memoire memoire `uc  1 a 1 43 ]
 "14
+[v Teacher@rssi rssi `uc  1 a 1 42 ]
+"16
+[v Teacher@Pkt_Loss_Cnt Pkt_Loss_Cnt `uc  1 a 1 41 ]
+"13
+[v Teacher@Tx_Packet Tx_Packet `uc  1 a 1 40 ]
+"194
+} 0
+"4342 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
+[v _MiApp_UnicastConnection MiApp_UnicastConnection `(uc  1 e 1 0 ]
+{
+[v MiApp_UnicastConnection@ConnectionIndex ConnectionIndex `uc  1 a 1 wreg ]
+[s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
+"4385
+[s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
+[u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
+[v MiApp_UnicastConnection@t2 t2 `S29  1 a 4 135 ]
+[v MiApp_UnicastConnection@t1 t1 `S29  1 a 4 131 ]
+"4345
+[v MiApp_UnicastConnection@MiWiFrameControl MiWiFrameControl `uc  1 a 1 139 ]
+"4342
+[v MiApp_UnicastConnection@ConnectionIndex ConnectionIndex `uc  1 a 1 wreg ]
+"4343
+[v MiApp_UnicastConnection@SecEn SecEn `uc  1 p 1 122 ]
+"4347
+[v MiApp_UnicastConnection@ConnectionIndex ConnectionIndex `uc  1 a 1 140 ]
+"4466
 } 0
 "9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/student.c
 [v _Student Student `(v  1 e 0 0 ]
 {
-"84
-[v Student@_ms_4023 _ms `ul  1 a 4 83 ]
-[v Student@_dcnt_4022 _dcnt `ul  1 a 4 71 ]
-"59
-[v Student@_ms_4020 _ms `ul  1 a 4 79 ]
-[v Student@_dcnt_4019 _dcnt `ul  1 a 4 67 ]
-"46
+"83
+[v Student@_ms_4024 _ms `ul  1 a 4 83 ]
+[v Student@_dcnt_4023 _dcnt `ul  1 a 4 71 ]
+"58
+[v Student@_ms_4021 _ms `ul  1 a 4 79 ]
+[v Student@_dcnt_4020 _dcnt `ul  1 a 4 67 ]
+"45
 [v Student@_ms _ms `ul  1 a 4 75 ]
 [v Student@_dcnt _dcnt `ul  1 a 4 63 ]
 "11
 [v Student@switch_val switch_val `uc  1 a 1 87 ]
-"95
+"94
 } 0
 "42 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/button.c
 [v _BUTTON_Pressed BUTTON_Pressed `(uc  1 e 1 0 ]
@@ -1040,62 +1087,64 @@
 "9 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/pan.c
 [v _Pan Pan `(v  1 e 0 0 ]
 {
-"37
+"11
+[v Pan@rssi rssi `uc  1 a 1 123 ]
+"53
 } 0
-"72
+"88
 [v _Power_on Power_on `(v  1 e 0 0 ]
 {
-"77
+"93
 } 0
-"65
+"81
 [v _Power_off Power_off `(v  1 e 0 0 ]
 {
-"70
+"86
 } 0
-"51
+"67
 [v _putcv putcv `(v  1 e 0 0 ]
 {
-"55
+"71
 [v putcv@data2 data2 `i  1 a 2 6 ]
-"53
+"69
 [v putcv@i i `i  1 a 2 4 ]
-"51
+"67
 [v putcv@data data `i  1 p 2 0 ]
-"63
+"79
 } 0
-"45
+"61
 [v _stopBit stopBit `(v  1 e 0 0 ]
 {
-"49
+"65
 } 0
-"39
+"55
 [v _startBit startBit `(v  1 e 0 0 ]
 {
-"43
+"59
 } 0
 "45 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/network.c
 [v _Network Network `(v  1 e 0 0 ]
 {
 "193
-[v Network@count count `uc  1 a 1 20 ]
+[v Network@count count `uc  1 a 1 29 ]
 "192
-[v Network@nodeIndex nodeIndex `uc  1 a 1 19 ]
+[v Network@nodeIndex nodeIndex `uc  1 a 1 28 ]
 "179
-[v Network@CoordCount CoordCount `uc  1 a 1 22 ]
+[v Network@CoordCount CoordCount `uc  1 a 1 31 ]
 "178
-[v Network@Status Status `uc  1 a 1 21 ]
+[v Network@Status Status `uc  1 a 1 30 ]
 "149
-[v Network@skip_print skip_print `uc  1 a 1 23 ]
+[v Network@skip_print skip_print `uc  1 a 1 32 ]
 "145
-[v Network@k k `uc  1 a 1 25 ]
+[v Network@k k `uc  1 a 1 34 ]
 "129
-[v Network@scanresult scanresult `VEuc  1 a 1 27 ]
+[v Network@scanresult scanresult `VEuc  1 a 1 36 ]
 "47
-[v Network@j j `uc  1 a 1 26 ]
+[v Network@j j `uc  1 a 1 35 ]
 "48
-[v Network@result result `uc  1 a 1 24 ]
+[v Network@result result `uc  1 a 1 33 ]
 "45
-[v Network@DEVICEMODE DEVICEMODE `i  1 p 2 11 ]
+[v Network@DEVICEMODE DEVICEMODE `i  1 p 2 20 ]
 "250
 } 0
 "47 C:\Users\e1028711\Documents\GitHub\243-510-A15\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/system.c
@@ -1244,24 +1293,24 @@
 "4059
 [s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
 [u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
-[v MiApp_EstablishConnection@t2 t2 `S29  1 a 4 4 ]
-[v MiApp_EstablishConnection@t1 t1 `S29  1 a 4 0 ]
+[v MiApp_EstablishConnection@t2 t2 `S29  1 a 4 13 ]
+[v MiApp_EstablishConnection@t1 t1 `S29  1 a 4 9 ]
 "4058
-[v MiApp_EstablishConnection@i i `uc  1 a 1 9 ]
+[v MiApp_EstablishConnection@i i `uc  1 a 1 18 ]
 "4057
-[v MiApp_EstablishConnection@retry retry `uc  1 a 1 8 ]
+[v MiApp_EstablishConnection@retry retry `uc  1 a 1 17 ]
 "4055
 [v MiApp_EstablishConnection@ActiveScanIndex ActiveScanIndex `uc  1 a 1 wreg ]
-[v MiApp_EstablishConnection@Mode Mode `uc  1 p 1 2 ]
+[v MiApp_EstablishConnection@Mode Mode `uc  1 p 1 0 ]
 "4057
-[v MiApp_EstablishConnection@ActiveScanIndex ActiveScanIndex `uc  1 a 1 10 ]
+[v MiApp_EstablishConnection@ActiveScanIndex ActiveScanIndex `uc  1 a 1 19 ]
 "4194
 } 0
 "2923
 [v _OpenSocket OpenSocket `(v  1 e 0 0 ]
 {
 "2925
-[v OpenSocket@i i `uc  1 a 1 153 ]
+[v OpenSocket@i i `uc  1 a 1 155 ]
 "3057
 } 0
 "4526

@@ -11,7 +11,6 @@ void Student(void)
     uint8_t switch_val = 0;
     LCD_Erase();
     LCD_Display((char *)" STUDENT DEVICE ", 0, true);
-    //sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
    
     while(true)
     {

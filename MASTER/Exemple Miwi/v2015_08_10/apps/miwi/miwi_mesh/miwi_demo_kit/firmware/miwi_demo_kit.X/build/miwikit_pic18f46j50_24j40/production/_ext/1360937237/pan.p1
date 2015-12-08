@@ -137,12 +137,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1117 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
 "950
 [v _rxMessage `S1117 ~T0 @X0 0 e ]
+"752
+[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
 "29 ../src/pan.h
 [v _Power_on `(v ~T0 @X0 0 ef ]
 "28
 [v _Power_off `(v ~T0 @X0 0 ef ]
-"752 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
 [v F7940 `(v ~T0 @X0 1 tf1`ul ]
 "152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF7940 ~T0 @X0 0 e ]
@@ -7981,227 +7981,254 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pan.c: 10: {
 [e :U _Pan ]
 [f ]
-[; ;pan.c: 12: RCONbits.IPEN = 1;
-"12
-[e = . . _RCONbits 6 7 -> -> 1 `i `uc ]
-[; ;pan.c: 13: T4CON = 0b00111111;
+"11
+[v _rssi `uc ~T0 @X0 1 a ]
+[; ;pan.c: 11: uint8_t rssi = 0;
+[e = _rssi -> -> 0 `i `uc ]
+[; ;pan.c: 13: RCONbits.IPEN = 1;
 "13
-[e = _T4CON -> -> 63 `i `uc ]
-[; ;pan.c: 14: PR4 = 156;
+[e = . . _RCONbits 6 7 -> -> 1 `i `uc ]
+[; ;pan.c: 14: T4CON = 0b00111111;
 "14
-[e = _PR4 -> -> 156 `i `uc ]
-[; ;pan.c: 15: IPR3bits.TMR4IP = 1;
+[e = _T4CON -> -> 63 `i `uc ]
+[; ;pan.c: 15: PR4 = 156;
 "15
-[e = . . _IPR3bits 0 3 -> -> 1 `i `uc ]
-[; ;pan.c: 16: INTCONbits.GIEH = 1;
+[e = _PR4 -> -> 156 `i `uc ]
+[; ;pan.c: 16: IPR3bits.TMR4IP = 1;
 "16
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
-[; ;pan.c: 17: PIR3bits.TMR4IF = 0;
+[e = . . _IPR3bits 0 3 -> -> 1 `i `uc ]
+[; ;pan.c: 17: INTCONbits.GIEH = 1;
 "17
+[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+[; ;pan.c: 18: PIR3bits.TMR4IF = 0;
+"18
 [e = . . _PIR3bits 0 3 -> -> 0 `i `uc ]
-[; ;pan.c: 20: LATEbits.LATE1 = 1;
-"20
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;pan.c: 21: while(1)
+[; ;pan.c: 21: LATEbits.LATE1 = 1;
 "21
-[e :U 1122 ]
-[; ;pan.c: 22: {
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;pan.c: 22: while(1)
 "22
-{
-[; ;pan.c: 23: if(MiApp_MessageAvailable())
+[e :U 1122 ]
+[; ;pan.c: 23: {
 "23
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1124  ]
-[; ;pan.c: 24: {
+{
+[; ;pan.c: 24: if(MiApp_MessageAvailable())
 "24
-{
-[; ;pan.c: 25: if(rxMessage.Payload[0] == 0x55)
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1124  ]
+[; ;pan.c: 25: {
 "25
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 85 `i 1125  ]
-[; ;pan.c: 26: {
-"26
 {
-[; ;pan.c: 27: Power_on();
+[; ;pan.c: 27: if(rxMessage.Payload[0] == 0x44)
 "27
-[e ( _Power_on ..  ]
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 68 `i 1125  ]
+[; ;pan.c: 28: {
 "28
-}
-[; ;pan.c: 28: }
-[e $U 1126  ]
-"30
-[e :U 1125 ]
-[; ;pan.c: 30: else if(rxMessage.Payload[0] == 0x66)
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 102 `i 1127  ]
-[; ;pan.c: 31: {
-"31
 {
-[; ;pan.c: 32: Power_off();
-"32
-[e ( _Power_off ..  ]
-"33
-}
-[e :U 1127 ]
-"34
-[e :U 1126 ]
-}
-[e :U 1124 ]
-[; ;pan.c: 33: }
-[; ;pan.c: 34: }
+[; ;pan.c: 30: rssi = rxMessage.PacketRSSI;
+"30
+[e = _rssi . _rxMessage 5 ]
 [; ;pan.c: 35: MiApp_DiscardMessage();
 "35
 [e ( _MiApp_DiscardMessage ..  ]
 "36
 }
+[; ;pan.c: 36: }
+[e $U 1126  ]
+"37
+[e :U 1125 ]
+[; ;pan.c: 37: else
+[; ;pan.c: 38: MiApp_DiscardMessage();
+"38
+[e ( _MiApp_DiscardMessage ..  ]
+[e :U 1126 ]
+[; ;pan.c: 41: if(rxMessage.Payload[0] == 0x55)
+"41
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 85 `i 1127  ]
+[; ;pan.c: 42: {
+"42
+{
+[; ;pan.c: 43: Power_on();
+"43
+[e ( _Power_on ..  ]
+"44
+}
+[; ;pan.c: 44: }
+[e $U 1128  ]
+"46
+[e :U 1127 ]
+[; ;pan.c: 46: else if(rxMessage.Payload[0] == 0x66)
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 102 `i 1129  ]
+[; ;pan.c: 47: {
+"47
+{
+[; ;pan.c: 48: Power_off();
+"48
+[e ( _Power_off ..  ]
+"49
+}
+[e :U 1129 ]
+"50
+[e :U 1128 ]
+}
+[e :U 1124 ]
+[; ;pan.c: 49: }
+[; ;pan.c: 50: }
+[; ;pan.c: 51: MiApp_DiscardMessage();
+"51
+[e ( _MiApp_DiscardMessage ..  ]
+"52
+}
 [e :U 1121 ]
-"21
+"22
 [e $U 1122  ]
 [e :U 1123 ]
-[; ;pan.c: 36: }
-[; ;pan.c: 37: }
-"37
+[; ;pan.c: 52: }
+[; ;pan.c: 53: }
+"53
 [e :UE 1120 ]
 }
-"39
+"55
 [v _startBit `(v ~T0 @X0 1 ef ]
-"40
+"56
 {
-[; ;pan.c: 39: void startBit(void)
-[; ;pan.c: 40: {
+[; ;pan.c: 55: void startBit(void)
+[; ;pan.c: 56: {
 [e :U _startBit ]
 [f ]
-[; ;pan.c: 41: LATEbits.LATE1 = 0;
-"41
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;pan.c: 42: _delay((unsigned long)((102)*(16000000/4000000.0)));
-"42
-[e ( __delay (1 -> * -> -> 102 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
-[; ;pan.c: 43: }
-"43
-[e :UE 1128 ]
-}
-"45
-[v _stopBit `(v ~T0 @X0 1 ef ]
-"46
-{
-[; ;pan.c: 45: void stopBit(void)
-[; ;pan.c: 46: {
-[e :U _stopBit ]
-[f ]
-[; ;pan.c: 47: LATEbits.LATE1 = 1;
-"47
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;pan.c: 48: _delay((unsigned long)((102)*(16000000/4000000.0)));
-"48
-[e ( __delay (1 -> * -> -> 102 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
-[; ;pan.c: 49: }
-"49
-[e :UE 1129 ]
-}
-"51
-[v _putcv `(v ~T0 @X0 1 ef1`i ]
-"52
-{
-[; ;pan.c: 51: void putcv(int data)
-[; ;pan.c: 52: {
-[e :U _putcv ]
-"51
-[v _data `i ~T0 @X0 1 r1 ]
-"52
-[f ]
-"53
-[v _i `i ~T0 @X0 1 a ]
-[v _x `i ~T0 @X0 1 a ]
-[; ;pan.c: 53: int i,x;
-[; ;pan.c: 54: startBit();
-"54
-[e ( _startBit ..  ]
-"55
-[v _data2 `i ~T0 @X0 1 a ]
-[; ;pan.c: 55: int data2 = data;
-[e = _data2 _data ]
-[; ;pan.c: 56: for(i=0;i<8;i++)
-"56
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 1131  ]
-[e $U 1132  ]
+[; ;pan.c: 57: LATEbits.LATE1 = 0;
 "57
-[e :U 1131 ]
-[; ;pan.c: 57: {
-{
-[; ;pan.c: 58: LATEbits.LATE1 = data2;
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[; ;pan.c: 58: _delay((unsigned long)((102)*(16000000/4000000.0)));
 "58
-[e = . . _LATEbits 0 1 -> _data2 `uc ]
-[; ;pan.c: 59: data2 = data2>>1;
-"59
-[e = _data2 >> _data2 -> 1 `i ]
-[; ;pan.c: 60: _delay((unsigned long)((102)*(16000000/4000000.0)));
-"60
 [e ( __delay (1 -> * -> -> 102 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
-"61
-}
-"56
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 1131  ]
-[e :U 1132 ]
-"61
-}
-[; ;pan.c: 61: }
-[; ;pan.c: 62: stopBit();
-"62
-[e ( _stopBit ..  ]
-[; ;pan.c: 63: }
-"63
+[; ;pan.c: 59: }
+"59
 [e :UE 1130 ]
 }
-"65
-[v _Power_off `(v ~T0 @X0 1 ef ]
-"66
+"61
+[v _stopBit `(v ~T0 @X0 1 ef ]
+"62
 {
-[; ;pan.c: 65: void Power_off()
-[; ;pan.c: 66: {
+[; ;pan.c: 61: void stopBit(void)
+[; ;pan.c: 62: {
+[e :U _stopBit ]
+[f ]
+[; ;pan.c: 63: LATEbits.LATE1 = 1;
+"63
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;pan.c: 64: _delay((unsigned long)((102)*(16000000/4000000.0)));
+"64
+[e ( __delay (1 -> * -> -> 102 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;pan.c: 65: }
+"65
+[e :UE 1131 ]
+}
+"67
+[v _putcv `(v ~T0 @X0 1 ef1`i ]
+"68
+{
+[; ;pan.c: 67: void putcv(int data)
+[; ;pan.c: 68: {
+[e :U _putcv ]
+"67
+[v _data `i ~T0 @X0 1 r1 ]
+"68
+[f ]
+"69
+[v _i `i ~T0 @X0 1 a ]
+[v _x `i ~T0 @X0 1 a ]
+[; ;pan.c: 69: int i,x;
+[; ;pan.c: 70: startBit();
+"70
+[e ( _startBit ..  ]
+"71
+[v _data2 `i ~T0 @X0 1 a ]
+[; ;pan.c: 71: int data2 = data;
+[e = _data2 _data ]
+[; ;pan.c: 72: for(i=0;i<8;i++)
+"72
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 8 `i 1133  ]
+[e $U 1134  ]
+"73
+[e :U 1133 ]
+[; ;pan.c: 73: {
+{
+[; ;pan.c: 74: LATEbits.LATE1 = data2;
+"74
+[e = . . _LATEbits 0 1 -> _data2 `uc ]
+[; ;pan.c: 75: data2 = data2>>1;
+"75
+[e = _data2 >> _data2 -> 1 `i ]
+[; ;pan.c: 76: _delay((unsigned long)((102)*(16000000/4000000.0)));
+"76
+[e ( __delay (1 -> * -> -> 102 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"77
+}
+"72
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 8 `i 1133  ]
+[e :U 1134 ]
+"77
+}
+[; ;pan.c: 77: }
+[; ;pan.c: 78: stopBit();
+"78
+[e ( _stopBit ..  ]
+[; ;pan.c: 79: }
+"79
+[e :UE 1132 ]
+}
+"81
+[v _Power_off `(v ~T0 @X0 1 ef ]
+"82
+{
+[; ;pan.c: 81: void Power_off()
+[; ;pan.c: 82: {
 [e :U _Power_off ]
 [f ]
-[; ;pan.c: 67: LATEbits.LATE1 = 1;
-"67
+[; ;pan.c: 83: LATEbits.LATE1 = 1;
+"83
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;pan.c: 68: putcv(0x02);putcv(0x01);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x03);
-"68
+[; ;pan.c: 84: putcv(0x02);putcv(0x01);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x03);
+"84
 [e ( _putcv (1 -> 2 `i ]
 [e ( _putcv (1 -> 1 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 3 `i ]
-[; ;pan.c: 69: LATEbits.LATE1 = 1;
-"69
+[; ;pan.c: 85: LATEbits.LATE1 = 1;
+"85
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;pan.c: 70: }
-"70
-[e :UE 1134 ]
+[; ;pan.c: 86: }
+"86
+[e :UE 1136 ]
 }
-"72
+"88
 [v _Power_on `(v ~T0 @X0 1 ef ]
-"73
+"89
 {
-[; ;pan.c: 72: void Power_on()
-[; ;pan.c: 73: {
+[; ;pan.c: 88: void Power_on()
+[; ;pan.c: 89: {
 [e :U _Power_on ]
 [f ]
-[; ;pan.c: 74: LATEbits.LATE1 = 1;
-"74
+[; ;pan.c: 90: LATEbits.LATE1 = 1;
+"90
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;pan.c: 75: putcv(0x02);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x02);
-"75
+[; ;pan.c: 91: putcv(0x02);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x02);
+"91
 [e ( _putcv (1 -> 2 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 2 `i ]
-[; ;pan.c: 76: LATEbits.LATE1 = 1;
-"76
+[; ;pan.c: 92: LATEbits.LATE1 = 1;
+"92
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;pan.c: 77: }
-"77
-[e :UE 1135 ]
+[; ;pan.c: 93: }
+"93
+[e :UE 1137 ]
 }

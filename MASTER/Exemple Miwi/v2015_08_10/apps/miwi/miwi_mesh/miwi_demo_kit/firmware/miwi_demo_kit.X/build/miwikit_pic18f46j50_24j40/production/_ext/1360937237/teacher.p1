@@ -8,6 +8,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1083 `ul 1 `S1084 1 `uc -> 4 `i `S1085 1 ]
 [n S1083 _MIWI_TICK Val byte v word ]
+"47 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCD_Erase `(v ~T0 @X0 0 ef ]
+"50
+[v _LCD_Display `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
+"207 ../../../../../../framework\miwi/miwi_mesh.h
+[v _TxData `uc ~T0 @X0 0 e ]
+"206
+[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
+"591 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_UnicastConnection `(uc ~T0 @X0 0 ef2`uc`uc ]
+"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[u S1087 `uc -> 2 `i `ui 1 ]
+[n S1087 . v Val ]
+"209 ../../../../../../framework\miwi/miwi_mesh.h
+[v _myShortAddress `S1087 ~T0 @X0 0 e ]
+"552 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
+"194 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCDText `uc ~T0 @X0 -> 0 `x e ]
+"46
+[v _LCD_Update `(v ~T0 @X0 0 ef ]
+"35 ../src/system_config/miwikit_pic18f46j50_24j40\button.h
+[v _BUTTON_Pressed `(uc ~T0 @X0 0 ef ]
+"7488 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
+[s S507 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S507 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
+"7498
+[s S508 :1 `uc 1 ]
+[n S508 . LA0 ]
+"7501
+[s S509 :1 `uc 1 :1 `uc 1 ]
+[n S509 . . LA1 ]
+"7505
+[s S510 :2 `uc 1 :1 `uc 1 ]
+[n S510 . . LA2 ]
+"7509
+[s S511 :3 `uc 1 :1 `uc 1 ]
+[n S511 . . LA3 ]
+"7513
+[s S512 :4 `uc 1 :1 `uc 1 ]
+[n S512 . . LA4 ]
+"7517
+[s S513 :5 `uc 1 :1 `uc 1 ]
+[n S513 . . LA5 ]
+"7521
+[s S514 :6 `uc 1 :1 `uc 1 ]
+[n S514 . . LA6 ]
+"7525
+[s S515 :7 `uc 1 :1 `uc 1 ]
+[n S515 . . LA7 ]
+"7487
+[u S506 `S507 1 `S508 1 `S509 1 `S510 1 `S511 1 `S512 1 `S513 1 `S514 1 `S515 1 ]
+[n S506 . . . . . . . . . . ]
+"7530
+[v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
 [; ;teacher.h: 27: void Teacher(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -7837,20 +7894,671 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;teacher.c: 10: {
 [e :U _Teacher ]
 [f ]
-[; ;teacher.c: 11: while(1)
 "11
-[e :U 1122 ]
-[; ;teacher.c: 12: {
+[v _switch_val `uc ~T0 @X0 1 a ]
+[; ;teacher.c: 11: uint8_t switch_val = 0;
+[e = _switch_val -> -> 0 `i `uc ]
 "12
-{
+[v _ConnectionEntry `uc ~T0 @X0 0 e ]
 "13
+[v _Tx_Packet `uc ~T0 @X0 1 a ]
+[; ;teacher.c: 12: extern uint8_t ConnectionEntry;
+[; ;teacher.c: 13: bool Tx_Packet = 1;
+[e = _Tx_Packet -> -> 1 `i `uc ]
+"14
+[v _rssi `uc ~T0 @X0 1 a ]
+[; ;teacher.c: 14: uint8_t rssi = 0;
+[e = _rssi -> -> 0 `i `uc ]
+"15
+[v _memoire `uc ~T0 @X0 1 a ]
+[; ;teacher.c: 15: uint8_t memoire = 0;
+[e = _memoire -> -> 0 `i `uc ]
+"16
+[v _Pkt_Loss_Cnt `uc ~T0 @X0 1 a ]
+[; ;teacher.c: 16: uint8_t Pkt_Loss_Cnt = 0;
+[e = _Pkt_Loss_Cnt -> -> 0 `i `uc ]
+[; ;teacher.c: 17: LCD_Erase();
+"17
+[e ( _LCD_Erase ..  ]
+[; ;teacher.c: 18: LCD_Display((char *)" TEACHER DEVICE ", 0, 1);
+"18
+[e ( _LCD_Display (3 , , -> :s 1C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;teacher.c: 20: while(1)
+"20
+[e :U 1122 ]
+[; ;teacher.c: 21: {
+"21
+{
+[; ;teacher.c: 22: if(Tx_Packet)
+"22
+[e $ ! != -> _Tx_Packet `i -> -> -> 0 `i `uc `i 1124  ]
+[; ;teacher.c: 23: {
+"23
+{
+[; ;teacher.c: 24: {TxData = 11;};
+"24
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;teacher.c: 26: TxBuffer[TxData++] = 0x44;
+"26
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 68 `i `uc ]
+[; ;teacher.c: 27: TxBuffer[TxData++] = 0x4D;
+"27
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 77 `i `uc ]
+[; ;teacher.c: 28: TxBuffer[TxData++] = 0x69;
+"28
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 105 `i `uc ]
+[; ;teacher.c: 29: TxBuffer[TxData++] = 0x57;
+"29
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 87 `i `uc ]
+[; ;teacher.c: 30: TxBuffer[TxData++] = 0x69;
+"30
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 105 `i `uc ]
+[; ;teacher.c: 31: TxBuffer[TxData++] = 0x20;
+"31
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 32 `i `uc ]
+[; ;teacher.c: 32: TxBuffer[TxData++] = 0x52;
+"32
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 82 `i `uc ]
+[; ;teacher.c: 33: TxBuffer[TxData++] = 0x6F;
+"33
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 111 `i `uc ]
+[; ;teacher.c: 34: TxBuffer[TxData++] = 0x63;
+"34
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 99 `i `uc ]
+[; ;teacher.c: 35: TxBuffer[TxData++] = 0x6B;
+"35
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 107 `i `uc ]
+[; ;teacher.c: 36: TxBuffer[TxData++] = 0x73;
+"36
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 115 `i `uc ]
+[; ;teacher.c: 37: TxBuffer[TxData++] = 0x21;
+"37
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 33 `i `uc ]
+[; ;teacher.c: 39: if(MiApp_UnicastConnection(ConnectionEntry, 0) == 0)
+"39
+[e $ ! == -> ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc `i -> 0 `i 1125  ]
+[; ;teacher.c: 40: Pkt_Loss_Cnt++;
+"40
+[e ++ _Pkt_Loss_Cnt -> -> 1 `i `uc ]
+[e $U 1126  ]
+"41
+[e :U 1125 ]
+[; ;teacher.c: 41: else
+[; ;teacher.c: 42: Pkt_Loss_Cnt = 0;
+"42
+[e = _Pkt_Loss_Cnt -> -> 0 `i `uc ]
+[e :U 1126 ]
+[; ;teacher.c: 44: if(Pkt_Loss_Cnt < 1)
+"44
+[e $ ! < -> _Pkt_Loss_Cnt `i -> 1 `i 1127  ]
+[; ;teacher.c: 45: {
+"45
+{
+[; ;teacher.c: 46: if(rssi < 50)
+"46
+[e $ ! < -> _rssi `i -> 50 `i 1128  ]
+[; ;teacher.c: 47: {
+"47
+{
+[; ;teacher.c: 48: {TxData = 11;};
+"48
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;teacher.c: 49: TxBuffer[TxData++] = 0x55;
+"49
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 85 `i `uc ]
+[; ;teacher.c: 50: TxBuffer[TxData++] = myShortAddress.v[0];
+"50
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 51: TxBuffer[TxData++] = myShortAddress.v[1];
+"51
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 52: {TxData = 11;};
+"52
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;teacher.c: 53: TxBuffer[TxData++] = 0x33;
+"53
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 51 `i `uc ]
+[; ;teacher.c: 54: TxBuffer[TxData++] = myShortAddress.v[0];
+"54
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 55: TxBuffer[TxData++] = myShortAddress.v[1];
+"55
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 56: memoire=1;
+"56
+[e = _memoire -> -> 1 `i `uc ]
+[; ;teacher.c: 57: MiApp_BroadcastPacket(0);
+"57
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;teacher.c: 58: Tx_Packet = 0;
+"58
+[e = _Tx_Packet -> -> 0 `i `uc ]
+"59
+}
+[; ;teacher.c: 59: }
+[e $U 1129  ]
+"60
+[e :U 1128 ]
+[; ;teacher.c: 60: else if(rssi > 201)
+[e $ ! > -> _rssi `i -> 201 `i 1130  ]
+[; ;teacher.c: 61: {
+"61
+{
+[; ;teacher.c: 62: {TxData = 11;};
+"62
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;teacher.c: 63: TxBuffer[TxData++] = 0x66;
+"63
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 102 `i `uc ]
+[; ;teacher.c: 64: TxBuffer[TxData++] = myShortAddress.v[0];
+"64
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 65: TxBuffer[TxData++] = myShortAddress.v[1];
+"65
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 66: {TxData = 11;};
+"66
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;teacher.c: 67: TxBuffer[TxData++] = 0x22;
+"67
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 34 `i `uc ]
+[; ;teacher.c: 68: TxBuffer[TxData++] = myShortAddress.v[0];
+"68
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 69: TxBuffer[TxData++] = myShortAddress.v[1];
+"69
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 70: memoire=0;
+"70
+[e = _memoire -> -> 0 `i `uc ]
+[; ;teacher.c: 71: MiApp_BroadcastPacket(0);
+"71
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;teacher.c: 72: Tx_Packet = 0;
+"72
+[e = _Tx_Packet -> -> 0 `i `uc ]
+"73
+}
+[e :U 1130 ]
+"74
+[e :U 1129 ]
+}
+[e :U 1127 ]
+"75
+}
+[e :U 1124 ]
+[; ;teacher.c: 73: }
+[; ;teacher.c: 74: }
+[; ;teacher.c: 75: }
+[; ;teacher.c: 77: sprintf((char *)&LCDText, (char*)"SW1: PROJECTOR  SW2: Suivant  ");
+"77
+[e ( _sprintf (1 , &U _LCDText -> -> :s 2C `*uc `*Cuc ]
+[; ;teacher.c: 78: LCD_Update();
+"78
+[e ( _LCD_Update ..  ]
+[; ;teacher.c: 80: while(switch_val == 0)
+"80
+[e $U 1131  ]
+[e :U 1132 ]
+[; ;teacher.c: 81: {
+"81
+{
+[; ;teacher.c: 82: switch_val = BUTTON_Pressed();
+"82
+[e = _switch_val ( _BUTTON_Pressed ..  ]
+"83
+}
+[e :U 1131 ]
+"80
+[e $ == -> _switch_val `i -> 0 `i 1132  ]
+[e :U 1133 ]
+[; ;teacher.c: 83: }
+[; ;teacher.c: 85: if(switch_val == 1)
+"85
+[e $ ! == -> _switch_val `i -> 1 `i 1134  ]
+[; ;teacher.c: 86: {
+"86
+{
+[; ;teacher.c: 87: switch_val = 0;
+"87
+[e = _switch_val -> -> 0 `i `uc ]
+[; ;teacher.c: 88: sprintf((char *)&LCDText, (char*)"SW1: ON         SW2: OFF        ");
+"88
+[e ( _sprintf (1 , &U _LCDText -> -> :s 3C `*uc `*Cuc ]
+[; ;teacher.c: 89: LCD_Update();
+"89
+[e ( _LCD_Update ..  ]
+[; ;teacher.c: 91: while(switch_val == 0)
+"91
+[e $U 1135  ]
+[e :U 1136 ]
+[; ;teacher.c: 92: {
+"92
+{
+[; ;teacher.c: 93: switch_val = BUTTON_Pressed();
+"93
+[e = _switch_val ( _BUTTON_Pressed ..  ]
+"94
+}
+[e :U 1135 ]
+"91
+[e $ == -> _switch_val `i -> 0 `i 1136  ]
+[e :U 1137 ]
+[; ;teacher.c: 94: }
+[; ;teacher.c: 96: if(switch_val == 1)
+"96
+[e $ ! == -> _switch_val `i -> 1 `i 1138  ]
+[; ;teacher.c: 97: {
+"97
+{
+[; ;teacher.c: 98: switch_val = 0;
+"98
+[e = _switch_val -> -> 0 `i `uc ]
+[; ;teacher.c: 99: LATAbits.LATA6 = 1;
+"99
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;teacher.c: 100: {TxData = 11;};
+"100
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;teacher.c: 101: TxBuffer[TxData++] = 0x55;
+"101
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 85 `i `uc ]
+[; ;teacher.c: 102: TxBuffer[TxData++] = myShortAddress.v[0];
+"102
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 103: TxBuffer[TxData++] = myShortAddress.v[1];
+"103
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 104: MiApp_BroadcastPacket(0);
+"104
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;teacher.c: 105: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"105
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1139  ]
+[e :U 1140 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1142  ]
+[e :U 1143 ]
+[e :U 1142 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1143  ]
+[e :U 1144 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1139 ]
+[e $ != __ms -> -> 0 `i `ul 1140  ]
+[e :U 1141 ]
+}
+[; ;teacher.c: 106: LATAbits.LATA6 = 0;
+"106
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"107
+}
+[e :U 1138 ]
+[; ;teacher.c: 107: }
+[; ;teacher.c: 109: if(switch_val == 2)
+"109
+[e $ ! == -> _switch_val `i -> 2 `i 1145  ]
+[; ;teacher.c: 110: {
+"110
+{
+[; ;teacher.c: 111: switch_val = 0;
+"111
+[e = _switch_val -> -> 0 `i `uc ]
+[; ;teacher.c: 112: LATAbits.LATA6 = 1;
+"112
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;teacher.c: 113: {TxData = 11;};
+"113
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;teacher.c: 114: TxBuffer[TxData++] = 0x66;
+"114
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 102 `i `uc ]
+[; ;teacher.c: 115: TxBuffer[TxData++] = myShortAddress.v[0];
+"115
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 116: TxBuffer[TxData++] = myShortAddress.v[1];
+"116
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 117: MiApp_BroadcastPacket(0);
+"117
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;teacher.c: 118: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"118
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1146  ]
+[e :U 1147 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1149  ]
+[e :U 1150 ]
+[e :U 1149 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1150  ]
+[e :U 1151 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1146 ]
+[e $ != __ms -> -> 0 `i `ul 1147  ]
+[e :U 1148 ]
+}
+[; ;teacher.c: 119: LATAbits.LATA6 = 0;
+"119
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"120
+}
+[e :U 1145 ]
+"121
+}
+[e :U 1134 ]
+[; ;teacher.c: 120: }
+[; ;teacher.c: 121: }
+[; ;teacher.c: 123: if(switch_val == 2)
+"123
+[e $ ! == -> _switch_val `i -> 2 `i 1152  ]
+[; ;teacher.c: 124: {
+"124
+{
+[; ;teacher.c: 125: switch_val = 0;
+"125
+[e = _switch_val -> -> 0 `i `uc ]
+[; ;teacher.c: 126: sprintf((char *)&LCDText, (char*)"SW1: Unlock DoorSW2: Suivant  ");
+"126
+[e ( _sprintf (1 , &U _LCDText -> -> :s 4C `*uc `*Cuc ]
+[; ;teacher.c: 127: LCD_Update();
+"127
+[e ( _LCD_Update ..  ]
+[; ;teacher.c: 129: while(switch_val == 0)
+"129
+[e $U 1153  ]
+[e :U 1154 ]
+[; ;teacher.c: 130: {
+"130
+{
+[; ;teacher.c: 131: switch_val = BUTTON_Pressed();
+"131
+[e = _switch_val ( _BUTTON_Pressed ..  ]
+"132
+}
+[e :U 1153 ]
+"129
+[e $ == -> _switch_val `i -> 0 `i 1154  ]
+[e :U 1155 ]
+[; ;teacher.c: 132: }
+[; ;teacher.c: 134: if(switch_val == 1)
+"134
+[e $ ! == -> _switch_val `i -> 1 `i 1156  ]
+[; ;teacher.c: 135: {
+"135
+{
+[; ;teacher.c: 136: switch_val = 0;
+"136
+[e = _switch_val -> -> 0 `i `uc ]
+[; ;teacher.c: 137: LATAbits.LATA6 = 1;
+"137
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;teacher.c: 138: {TxData = 11;};
+"138
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;teacher.c: 139: TxBuffer[TxData++] = 0x01;
+"139
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
+[; ;teacher.c: 140: TxBuffer[TxData++] = myShortAddress.v[0];
+"140
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 141: TxBuffer[TxData++] = myShortAddress.v[1];
+"141
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 142: MiApp_BroadcastPacket(0);
+"142
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;teacher.c: 143: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"143
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1157  ]
+[e :U 1158 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1160  ]
+[e :U 1161 ]
+[e :U 1160 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1161  ]
+[e :U 1162 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1157 ]
+[e $ != __ms -> -> 0 `i `ul 1158  ]
+[e :U 1159 ]
+}
+[; ;teacher.c: 144: LATAbits.LATA6 = 0;
+"144
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"146
+}
+[e :U 1156 ]
+[; ;teacher.c: 146: }
+[; ;teacher.c: 148: if(switch_val == 2)
+"148
+[e $ ! == -> _switch_val `i -> 2 `i 1163  ]
+[; ;teacher.c: 149: {
+"149
+{
+[; ;teacher.c: 150: switch_val = 0;
+"150
+[e = _switch_val -> -> 0 `i `uc ]
+[; ;teacher.c: 151: sprintf((char *)&LCDText, (char*)"SW1: PROJ MOTOR SW2: Suivant    ");
+"151
+[e ( _sprintf (1 , &U _LCDText -> -> :s 5C `*uc `*Cuc ]
+[; ;teacher.c: 152: LCD_Update();
+"152
+[e ( _LCD_Update ..  ]
+[; ;teacher.c: 154: while(switch_val == 0)
+"154
+[e $U 1164  ]
+[e :U 1165 ]
+[; ;teacher.c: 155: {
+"155
+{
+[; ;teacher.c: 156: switch_val = BUTTON_Pressed();
+"156
+[e = _switch_val ( _BUTTON_Pressed ..  ]
+"157
+}
+[e :U 1164 ]
+"154
+[e $ == -> _switch_val `i -> 0 `i 1165  ]
+[e :U 1166 ]
+[; ;teacher.c: 157: }
+[; ;teacher.c: 158: if(switch_val == 1)
+"158
+[e $ ! == -> _switch_val `i -> 1 `i 1167  ]
+[; ;teacher.c: 159: {
+"159
+{
+[; ;teacher.c: 160: if(memoire==1)
+"160
+[e $ ! == -> _memoire `i -> 1 `i 1168  ]
+[; ;teacher.c: 161: {
+"161
+{
+[; ;teacher.c: 162: memoire=0;
+"162
+[e = _memoire -> -> 0 `i `uc ]
+[; ;teacher.c: 163: switch_val = 0;
+"163
+[e = _switch_val -> -> 0 `i `uc ]
+[; ;teacher.c: 164: LATAbits.LATA6 = 1;
+"164
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;teacher.c: 165: {TxData = 11;};
+"165
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;teacher.c: 166: TxBuffer[TxData++] = 0x33;
+"166
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 51 `i `uc ]
+[; ;teacher.c: 167: TxBuffer[TxData++] = myShortAddress.v[0];
+"167
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 168: TxBuffer[TxData++] = myShortAddress.v[1];
+"168
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 169: MiApp_BroadcastPacket(0);
+"169
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;teacher.c: 170: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"170
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1169  ]
+[e :U 1170 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1172  ]
+[e :U 1173 ]
+[e :U 1172 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1173  ]
+[e :U 1174 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1169 ]
+[e $ != __ms -> -> 0 `i `ul 1170  ]
+[e :U 1171 ]
+}
+[; ;teacher.c: 171: LATAbits.LATA6 = 0;
+"171
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"172
+}
+[; ;teacher.c: 172: }
+[e $U 1175  ]
+"173
+[e :U 1168 ]
+[; ;teacher.c: 173: else
+[; ;teacher.c: 174: {
+"174
+{
+[; ;teacher.c: 175: memoire=1;
+"175
+[e = _memoire -> -> 1 `i `uc ]
+[; ;teacher.c: 176: switch_val = 0;
+"176
+[e = _switch_val -> -> 0 `i `uc ]
+[; ;teacher.c: 177: LATAbits.LATA6 = 1;
+"177
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;teacher.c: 178: {TxData = 11;};
+"178
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;teacher.c: 179: TxBuffer[TxData++] = 0x22;
+"179
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 34 `i `uc ]
+[; ;teacher.c: 180: TxBuffer[TxData++] = myShortAddress.v[0];
+"180
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 181: TxBuffer[TxData++] = myShortAddress.v[1];
+"181
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;teacher.c: 182: MiApp_BroadcastPacket(0);
+"182
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;teacher.c: 183: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"183
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1176  ]
+[e :U 1177 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1179  ]
+[e :U 1180 ]
+[e :U 1179 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1180  ]
+[e :U 1181 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1176 ]
+[e $ != __ms -> -> 0 `i `ul 1177  ]
+[e :U 1178 ]
+}
+[; ;teacher.c: 184: LATAbits.LATA6 = 0;
+"184
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"185
+}
+[e :U 1175 ]
+"186
+}
+[e :U 1167 ]
+[; ;teacher.c: 185: }
+[; ;teacher.c: 186: }
+[; ;teacher.c: 187: if(switch_val == 2)
+"187
+[e $ ! == -> _switch_val `i -> 2 `i 1182  ]
+[; ;teacher.c: 188: {
+"188
+{
+[; ;teacher.c: 189: switch_val = 0;
+"189
+[e = _switch_val -> -> 0 `i `uc ]
+"190
+}
+[e :U 1182 ]
+"191
+}
+[e :U 1163 ]
+"192
+}
+[e :U 1152 ]
+"193
 }
 [e :U 1121 ]
-"11
+"20
 [e $U 1122  ]
 [e :U 1123 ]
-[; ;teacher.c: 13: }
-[; ;teacher.c: 14: }
-"14
+[; ;teacher.c: 190: }
+[; ;teacher.c: 191: }
+[; ;teacher.c: 192: }
+[; ;teacher.c: 193: }
+[; ;teacher.c: 194: }
+"194
 [e :UE 1120 ]
 }
+[p f _sprintf 9437696 ]
+[a 1C 32 84 69 65 67 72 69 82 32 68 69 86 73 67 69 32 0 ]
+[a 4C 83 87 49 58 32 85 110 108 111 99 107 32 68 111 111 114 83 87 50 58 32 83 117 105 118 97 110 116 32 32 0 ]
+[a 2C 83 87 49 58 32 80 82 79 74 69 67 84 79 82 32 32 83 87 50 58 32 83 117 105 118 97 110 116 32 32 0 ]
+[a 5C 83 87 49 58 32 80 82 79 74 32 77 79 84 79 82 32 83 87 50 58 32 83 117 105 118 97 110 116 32 32 32 32 0 ]
+[a 3C 83 87 49 58 32 79 78 32 32 32 32 32 32 32 32 32 83 87 50 58 32 79 70 70 32 32 32 32 32 32 32 32 0 ]

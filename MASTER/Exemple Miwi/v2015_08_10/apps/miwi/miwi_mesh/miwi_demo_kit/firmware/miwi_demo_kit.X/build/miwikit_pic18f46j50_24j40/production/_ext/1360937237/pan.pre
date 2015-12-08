@@ -10248,6 +10248,7 @@ extern RECEIVED_MESSAGE rxMessage;
 # 9 "../src/pan.c"
 void Pan(void)
 {
+uint8_t rssi = 0;
 
 RCONbits.IPEN = 1;
 T4CON = 0b00111111;
@@ -10262,6 +10263,19 @@ while(1)
 {
 if(MiApp_MessageAvailable())
 {
+
+if(rxMessage.Payload[0] == 0x44)
+{
+
+rssi = rxMessage.PacketRSSI;
+
+# 35
+MiApp_DiscardMessage();
+}
+else
+MiApp_DiscardMessage();
+
+
 if(rxMessage.Payload[0] == 0x55)
 {
 Power_on();
