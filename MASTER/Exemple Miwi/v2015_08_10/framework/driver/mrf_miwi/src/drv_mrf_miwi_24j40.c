@@ -1876,7 +1876,27 @@ void _ISRFAST _INT1Interrupt(void)
         PIR3bits.TMR4IF = 0;
     }
     
-    
+    if(TMR3IF){
+        uint16_t pwm_value_high_time = 800;
+        static bool u;
+        if(u){
+            //800 ---- 400 millieux  -----800 full front-- 0 full back
+            u = 0;
+            uint16_t temp = 65536 - (pwm_value_high_time + 2600);
+            LED2 = 0;
+            TMR3 = temp;
+            TMR3IF = 0;
+        }else{
+            u = 1;
+            uint16_t temp = 25536 + (pwm_value_high_time + 2600);
+            LED2 = 1;
+            TMR3 = temp;
+            TMR3IF = 0;
+            
+            
+        }
+
+    }
     
 
     if (RFIE && RFIF)
