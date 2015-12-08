@@ -8,29 +8,88 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1083 `ul 1 `S1084 1 `uc -> 4 `i `S1085 1 ]
 [n S1083 _MIWI_TICK Val byte v word ]
-"710 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
-"649
-[s S1119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1119 . broadcast ackReq secEn repeat command srcPrsnt altSrcAddr ]
-"646
-[u S1118 `uc 1 `S1119 1 ]
-[n S1118 . Val bits ]
-"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
-[u S1087 `uc -> 2 `i `ui 1 ]
-[n S1087 . v Val ]
-"644 ../../../../../../framework\miwi/miwi_api.h
-[s S1117 `S1118 1 `S1087 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1117 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
-"950
-[v _rxMessage `S1117 ~T0 @X0 0 e ]
-"29 ../src/pan.h
-[v _Power_on `(v ~T0 @X0 0 ef ]
-"28
-[v _Power_off `(v ~T0 @X0 0 ef ]
-"752 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
-"8006 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
+"14942 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
+[s S952 :1 `uc 1 ]
+[n S952 . NOT_BOR ]
+"14945
+[s S953 :1 `uc 1 :1 `uc 1 ]
+[n S953 . . NOT_POR ]
+"14949
+[s S954 :2 `uc 1 :1 `uc 1 ]
+[n S954 . . NOT_PD ]
+"14953
+[s S955 :3 `uc 1 :1 `uc 1 ]
+[n S955 . . NOT_TO ]
+"14957
+[s S956 :4 `uc 1 :1 `uc 1 ]
+[n S956 . . NOT_RI ]
+"14961
+[s S957 :5 `uc 1 :1 `uc 1 ]
+[n S957 . . NOT_CM ]
+"14965
+[s S958 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S958 . nBOR nPOR nPD nTO nRI nCM . IPEN ]
+"14975
+[s S959 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S959 . BOR POR PD TO RI CM ]
+"14941
+[u S951 `S952 1 `S953 1 `S954 1 `S955 1 `S956 1 `S957 1 `S958 1 `S959 1 ]
+[n S951 . . . . . . . . . ]
+"14984
+[v _RCONbits `VS951 ~T0 @X0 0 e@4048 ]
+"4976
+[v _T4CON `Vuc ~T0 @X0 0 e@3958 ]
+"5046
+[v _PR4 `Vuc ~T0 @X0 0 e@3959 ]
+"9749
+[s S644 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S644 . RTCCIP TMR3GIP CTMUIP TMR4IP TX2IP RC2IP BCL2IP SSP2IP ]
+"9759
+[s S645 :1 `uc 1 :1 `uc 1 ]
+[n S645 . . RXBNIP ]
+"9763
+[s S646 :4 `uc 1 :1 `uc 1 ]
+[n S646 . . TXBNIP ]
+"9748
+[u S643 `S644 1 `S645 1 `S646 1 ]
+[n S643 . . . . ]
+"9768
+[v _IPR3bits `VS643 ~T0 @X0 0 e@4005 ]
+"16535
+[s S1056 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1056 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"16545
+[s S1057 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1057 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"16555
+[s S1058 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1058 . . GIEL GIEH ]
+"16560
+[s S1059 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1059 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"16570
+[s S1060 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1060 . . GIEL GIEH ]
+"16534
+[u S1055 `S1056 1 `S1057 1 `S1058 1 `S1059 1 `S1060 1 ]
+[n S1055 . . . . . . ]
+"16576
+[v _INTCONbits `VS1055 ~T0 @X0 0 e@4082 ]
+"9670
+[s S640 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S640 . RTCCIF TMR3GIF CTMUIF TMR4IF TX2IF RC2IF BCL2IF SSP2IF ]
+"9680
+[s S641 :1 `uc 1 :1 `uc 1 ]
+[n S641 . . RXBNIF ]
+"9684
+[s S642 :4 `uc 1 :1 `uc 1 ]
+[n S642 . . TXBNIF ]
+"9669
+[u S639 `S640 1 `S641 1 `S642 1 ]
+[n S639 . . . . ]
+"9689
+[v _PIR3bits `VS639 ~T0 @X0 0 e@4004 ]
+"8006
 [s S547 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S547 . LATE0 LATE1 LATE2 ]
 "8011
@@ -62,6 +121,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S546 . . . . . . . . . . ]
 "8043
 [v _LATEbits `VS546 ~T0 @X0 0 e@3981 ]
+"710 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
+"649
+[s S1119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1119 . broadcast ackReq secEn repeat command srcPrsnt altSrcAddr ]
+"646
+[u S1118 `uc 1 `S1119 1 ]
+[n S1118 . Val bits ]
+"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[u S1087 `uc -> 2 `i `ui 1 ]
+[n S1087 . v Val ]
+"644 ../../../../../../framework\miwi/miwi_api.h
+[s S1117 `S1118 1 `S1087 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1117 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
+"950
+[v _rxMessage `S1117 ~T0 @X0 0 e ]
+"29 ../src/pan.h
+[v _Power_on `(v ~T0 @X0 0 ef ]
+"28
+[v _Power_off `(v ~T0 @X0 0 ef ]
+"752 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
 [v F7940 `(v ~T0 @X0 1 tf1`ul ]
 "152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF7940 ~T0 @X0 0 e ]
@@ -71,7 +152,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pan.h: 27: void putcv(int data);
 [; ;pan.h: 28: void Power_off();
 [; ;pan.h: 29: void Power_on();
-[; ;pan.h: 31: void Pan(void);
+[; ;pan.h: 32: void Pan(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7900,206 +7981,227 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pan.c: 10: {
 [e :U _Pan ]
 [f ]
-[; ;pan.c: 11: while(1)
-"11
-[e :U 1122 ]
-[; ;pan.c: 12: {
+[; ;pan.c: 12: RCONbits.IPEN = 1;
 "12
-{
-[; ;pan.c: 13: if(MiApp_MessageAvailable())
+[e = . . _RCONbits 6 7 -> -> 1 `i `uc ]
+[; ;pan.c: 13: T4CON = 0b00111111;
 "13
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1124  ]
-[; ;pan.c: 14: {
+[e = _T4CON -> -> 63 `i `uc ]
+[; ;pan.c: 14: PR4 = 156;
 "14
-{
-[; ;pan.c: 15: if(rxMessage.Payload[0] == 0x55)
+[e = _PR4 -> -> 156 `i `uc ]
+[; ;pan.c: 15: IPR3bits.TMR4IP = 1;
 "15
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 85 `i 1125  ]
-[; ;pan.c: 16: {
+[e = . . _IPR3bits 0 3 -> -> 1 `i `uc ]
+[; ;pan.c: 16: INTCONbits.GIEH = 1;
 "16
-{
-[; ;pan.c: 17: Power_on();
+[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+[; ;pan.c: 17: PIR3bits.TMR4IF = 0;
 "17
-[e ( _Power_on ..  ]
-"18
-}
-[; ;pan.c: 18: }
-[e $U 1126  ]
+[e = . . _PIR3bits 0 3 -> -> 0 `i `uc ]
+[; ;pan.c: 20: LATEbits.LATE1 = 1;
 "20
-[e :U 1125 ]
-[; ;pan.c: 20: else if(rxMessage.Payload[0] == 0x66)
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 102 `i 1127  ]
-[; ;pan.c: 21: {
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;pan.c: 21: while(1)
 "21
-{
-[; ;pan.c: 22: Power_off();
+[e :U 1122 ]
+[; ;pan.c: 22: {
 "22
-[e ( _Power_off ..  ]
+{
+[; ;pan.c: 23: if(MiApp_MessageAvailable())
 "23
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1124  ]
+[; ;pan.c: 24: {
+"24
+{
+[; ;pan.c: 25: if(rxMessage.Payload[0] == 0x55)
+"25
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 85 `i 1125  ]
+[; ;pan.c: 26: {
+"26
+{
+[; ;pan.c: 27: Power_on();
+"27
+[e ( _Power_on ..  ]
+"28
+}
+[; ;pan.c: 28: }
+[e $U 1126  ]
+"30
+[e :U 1125 ]
+[; ;pan.c: 30: else if(rxMessage.Payload[0] == 0x66)
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 102 `i 1127  ]
+[; ;pan.c: 31: {
+"31
+{
+[; ;pan.c: 32: Power_off();
+"32
+[e ( _Power_off ..  ]
+"33
 }
 [e :U 1127 ]
-"24
+"34
 [e :U 1126 ]
 }
 [e :U 1124 ]
-[; ;pan.c: 23: }
-[; ;pan.c: 24: }
-[; ;pan.c: 25: MiApp_DiscardMessage();
-"25
+[; ;pan.c: 33: }
+[; ;pan.c: 34: }
+[; ;pan.c: 35: MiApp_DiscardMessage();
+"35
 [e ( _MiApp_DiscardMessage ..  ]
-"26
+"36
 }
 [e :U 1121 ]
-"11
+"21
 [e $U 1122  ]
 [e :U 1123 ]
-[; ;pan.c: 26: }
-[; ;pan.c: 27: }
-"27
+[; ;pan.c: 36: }
+[; ;pan.c: 37: }
+"37
 [e :UE 1120 ]
 }
-"29
+"39
 [v _startBit `(v ~T0 @X0 1 ef ]
-"30
+"40
 {
-[; ;pan.c: 29: void startBit(void)
-[; ;pan.c: 30: {
+[; ;pan.c: 39: void startBit(void)
+[; ;pan.c: 40: {
 [e :U _startBit ]
 [f ]
-[; ;pan.c: 31: LATEbits.LATE1 = 1;
-"31
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;pan.c: 32: _delay((unsigned long)((104)*(16000000/4000000.0)));
-"32
-[e ( __delay (1 -> * -> -> 104 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
-[; ;pan.c: 33: }
-"33
+[; ;pan.c: 41: LATEbits.LATE1 = 0;
+"41
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[; ;pan.c: 42: _delay((unsigned long)((102)*(16000000/4000000.0)));
+"42
+[e ( __delay (1 -> * -> -> 102 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;pan.c: 43: }
+"43
 [e :UE 1128 ]
 }
-"35
+"45
 [v _stopBit `(v ~T0 @X0 1 ef ]
-"36
+"46
 {
-[; ;pan.c: 35: void stopBit(void)
-[; ;pan.c: 36: {
+[; ;pan.c: 45: void stopBit(void)
+[; ;pan.c: 46: {
 [e :U _stopBit ]
 [f ]
-[; ;pan.c: 37: LATEbits.LATE1 = 0;
-"37
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;pan.c: 38: _delay((unsigned long)((104)*(16000000/4000000.0)));
-"38
-[e ( __delay (1 -> * -> -> 104 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
-[; ;pan.c: 39: }
-"39
+[; ;pan.c: 47: LATEbits.LATE1 = 1;
+"47
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;pan.c: 48: _delay((unsigned long)((102)*(16000000/4000000.0)));
+"48
+[e ( __delay (1 -> * -> -> 102 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;pan.c: 49: }
+"49
 [e :UE 1129 ]
 }
-"41
+"51
 [v _putcv `(v ~T0 @X0 1 ef1`i ]
-"42
+"52
 {
-[; ;pan.c: 41: void putcv(int data)
-[; ;pan.c: 42: {
+[; ;pan.c: 51: void putcv(int data)
+[; ;pan.c: 52: {
 [e :U _putcv ]
-"41
+"51
 [v _data `i ~T0 @X0 1 r1 ]
-"42
+"52
 [f ]
-"43
+"53
 [v _i `i ~T0 @X0 1 a ]
 [v _x `i ~T0 @X0 1 a ]
-[; ;pan.c: 43: int i,x;
-[; ;pan.c: 44: startBit();
-"44
+[; ;pan.c: 53: int i,x;
+[; ;pan.c: 54: startBit();
+"54
 [e ( _startBit ..  ]
-"45
+"55
 [v _data2 `i ~T0 @X0 1 a ]
-[; ;pan.c: 45: int data2 = ~data;
-[e = _data2 ~ _data ]
-[; ;pan.c: 46: for(i=0;i<8;i++)
-"46
+[; ;pan.c: 55: int data2 = data;
+[e = _data2 _data ]
+[; ;pan.c: 56: for(i=0;i<8;i++)
+"56
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 8 `i 1131  ]
 [e $U 1132  ]
-"47
+"57
 [e :U 1131 ]
-[; ;pan.c: 47: {
+[; ;pan.c: 57: {
 {
-[; ;pan.c: 48: LATEbits.LATE1 = data2;
-"48
+[; ;pan.c: 58: LATEbits.LATE1 = data2;
+"58
 [e = . . _LATEbits 0 1 -> _data2 `uc ]
-[; ;pan.c: 49: data2 = data2>>1;
-"49
+[; ;pan.c: 59: data2 = data2>>1;
+"59
 [e = _data2 >> _data2 -> 1 `i ]
-[; ;pan.c: 50: _delay((unsigned long)((104)*(16000000/4000000.0)));
-"50
-[e ( __delay (1 -> * -> -> 104 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
-"51
+[; ;pan.c: 60: _delay((unsigned long)((102)*(16000000/4000000.0)));
+"60
+[e ( __delay (1 -> * -> -> 102 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"61
 }
-"46
+"56
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 1131  ]
 [e :U 1132 ]
-"51
+"61
 }
-[; ;pan.c: 51: }
-[; ;pan.c: 52: stopBit();
-"52
+[; ;pan.c: 61: }
+[; ;pan.c: 62: stopBit();
+"62
 [e ( _stopBit ..  ]
-[; ;pan.c: 53: }
-"53
+[; ;pan.c: 63: }
+"63
 [e :UE 1130 ]
 }
-"55
+"65
 [v _Power_off `(v ~T0 @X0 1 ef ]
-"56
+"66
 {
-[; ;pan.c: 55: void Power_off()
-[; ;pan.c: 56: {
+[; ;pan.c: 65: void Power_off()
+[; ;pan.c: 66: {
 [e :U _Power_off ]
 [f ]
-[; ;pan.c: 57: LATEbits.LATE1 = 0;
-"57
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;pan.c: 58: putcv(0x02);putcv(0x01);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x03);
-"58
+[; ;pan.c: 67: LATEbits.LATE1 = 1;
+"67
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;pan.c: 68: putcv(0x02);putcv(0x01);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x03);
+"68
 [e ( _putcv (1 -> 2 `i ]
 [e ( _putcv (1 -> 1 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 3 `i ]
-[; ;pan.c: 59: LATEbits.LATE1 = 0;
-"59
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;pan.c: 60: }
-"60
+[; ;pan.c: 69: LATEbits.LATE1 = 1;
+"69
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;pan.c: 70: }
+"70
 [e :UE 1134 ]
 }
-"62
+"72
 [v _Power_on `(v ~T0 @X0 1 ef ]
-"63
+"73
 {
-[; ;pan.c: 62: void Power_on()
-[; ;pan.c: 63: {
+[; ;pan.c: 72: void Power_on()
+[; ;pan.c: 73: {
 [e :U _Power_on ]
 [f ]
-[; ;pan.c: 64: LATEbits.LATE1 = 0;
-"64
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;pan.c: 65: putcv(0x02);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x02);
-"65
+[; ;pan.c: 74: LATEbits.LATE1 = 1;
+"74
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;pan.c: 75: putcv(0x02);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x02);
+"75
 [e ( _putcv (1 -> 2 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 0 `i ]
 [e ( _putcv (1 -> 2 `i ]
-[; ;pan.c: 66: LATEbits.LATE1 = 0;
-"66
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;pan.c: 67: }
-"67
+[; ;pan.c: 76: LATEbits.LATE1 = 1;
+"76
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;pan.c: 77: }
+"77
 [e :UE 1135 ]
 }

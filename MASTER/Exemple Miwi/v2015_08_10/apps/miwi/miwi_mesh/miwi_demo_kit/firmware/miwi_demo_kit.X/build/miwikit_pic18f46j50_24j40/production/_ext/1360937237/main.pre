@@ -10245,6 +10245,7 @@ void putcv(int data);
 void Power_off();
 void Power_on();
 
+
 void Pan(void);
 
 # 27 "../src/student.h"
@@ -10265,6 +10266,9 @@ void main(void)
 Network(4);
 
 LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
+
+
+
 if(4 == 0)
 {
 Pan();

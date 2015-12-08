@@ -75,7 +75,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S506 . . . . . . . . . . ]
 "7530
 [v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
-"31 ../src/pan.h
+"32 ../src/pan.h
 [v _Pan `(v ~T0 @X0 0 ef ]
 "27 ../src/door_unlock.h
 [v _DoorUnlock `(v ~T0 @X0 0 ef ]
@@ -7911,7 +7911,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pan.h: 27: void putcv(int data);
 [; ;pan.h: 28: void Power_off();
 [; ;pan.h: 29: void Power_on();
-[; ;pan.h: 31: void Pan(void);
+[; ;pan.h: 32: void Pan(void);
 [; ;student.h: 27: void Student(void);
 [; ;teacher.h: 27: void Teacher(void);
 [; ;door_unlock.h: 27: void DoorUnlock(void);
@@ -7930,72 +7930,72 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 31: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
 "31
 [e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 32: if(4 == 0)
-"32
-[e $ ! == -> 4 `i -> 0 `i 1121  ]
-[; ;main.c: 33: {
-"33
-{
-[; ;main.c: 34: Pan();
-"34
-[e ( _Pan ..  ]
+[; ;main.c: 35: if(4 == 0)
 "35
+[e $ ! == -> 4 `i -> 0 `i 1121  ]
+[; ;main.c: 36: {
+"36
+{
+[; ;main.c: 37: Pan();
+"37
+[e ( _Pan ..  ]
+"38
 }
 [e :U 1121 ]
-[; ;main.c: 35: }
-[; ;main.c: 38: if(4 == 1)
-"38
-[e $ ! == -> 4 `i -> 1 `i 1122  ]
-[; ;main.c: 39: {
-"39
-{
-[; ;main.c: 40: DoorUnlock();
-"40
-[e ( _DoorUnlock ..  ]
+[; ;main.c: 38: }
+[; ;main.c: 41: if(4 == 1)
 "41
+[e $ ! == -> 4 `i -> 1 `i 1122  ]
+[; ;main.c: 42: {
+"42
+{
+[; ;main.c: 43: DoorUnlock();
+"43
+[e ( _DoorUnlock ..  ]
+"44
 }
 [e :U 1122 ]
-[; ;main.c: 41: }
-[; ;main.c: 44: if(4 == 2)
-"44
-[e $ ! == -> 4 `i -> 2 `i 1123  ]
-[; ;main.c: 45: {
-"45
-{
-[; ;main.c: 46: ProjectorScreen();
-"46
-[e ( _ProjectorScreen ..  ]
+[; ;main.c: 44: }
+[; ;main.c: 47: if(4 == 2)
 "47
+[e $ ! == -> 4 `i -> 2 `i 1123  ]
+[; ;main.c: 48: {
+"48
+{
+[; ;main.c: 49: ProjectorScreen();
+"49
+[e ( _ProjectorScreen ..  ]
+"50
 }
 [e :U 1123 ]
-[; ;main.c: 47: }
-[; ;main.c: 50: if(4 == 3)
-"50
-[e $ ! == -> 4 `i -> 3 `i 1124  ]
-[; ;main.c: 51: {
-"51
-{
-[; ;main.c: 52: Teacher();
-"52
-[e ( _Teacher ..  ]
+[; ;main.c: 50: }
+[; ;main.c: 53: if(4 == 3)
 "53
+[e $ ! == -> 4 `i -> 3 `i 1124  ]
+[; ;main.c: 54: {
+"54
+{
+[; ;main.c: 55: Teacher();
+"55
+[e ( _Teacher ..  ]
+"56
 }
 [e :U 1124 ]
-[; ;main.c: 53: }
-[; ;main.c: 56: if(4 == 4)
-"56
-[e $ ! == -> 4 `i -> 4 `i 1125  ]
-[; ;main.c: 57: {
-"57
-{
-[; ;main.c: 58: Student();
-"58
-[e ( _Student ..  ]
+[; ;main.c: 56: }
+[; ;main.c: 59: if(4 == 4)
 "59
+[e $ ! == -> 4 `i -> 4 `i 1125  ]
+[; ;main.c: 60: {
+"60
+{
+[; ;main.c: 61: Student();
+"61
+[e ( _Student ..  ]
+"62
 }
 [e :U 1125 ]
-[; ;main.c: 59: }
-[; ;main.c: 60: }
-"60
+[; ;main.c: 62: }
+[; ;main.c: 63: }
+"63
 [e :UE 1120 ]
 }

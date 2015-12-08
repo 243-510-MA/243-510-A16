@@ -8,30 +8,35 @@
 
 void Student(void)
 {
-    uint8_t switch_val;
+    uint8_t switch_val = 0;
     LCD_Erase();
     LCD_Display((char *)" STUDENT DEVICE ", 0, true);
     //sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
-    LCD_Update();
-    
+   
     while(true)
     {
-        LCD_Display((char *)"SW1: PROJECTOR  SW2: Suivant  " 0, false);
-        while(switch_val == SWITCH_NOT_PRESSED)
+        sprintf((char *)&LCDText, (char*)"SW1: PROJECTOR  SW2: Suivant  ");
+        LCD_Update();
+        
+        while(switch_val == 0)
         {
             switch_val = BUTTON_Pressed();
         }
         
         if(switch_val == SW1)
         {
-            LCD_Display((char *)"SW1: ON         SW2: OFF        " 0, false);
-            while(switch_val == SWITCH_NOT_PRESSED)
+            switch_val = 0;
+            sprintf((char *)&LCDText, (char*)"SW1: ON         SW2: OFF        ");
+            LCD_Update();
+            
+            while(switch_val == 0)
             {
                 switch_val = BUTTON_Pressed();
             }
             
             if(switch_val == SW1)
             {
+                switch_val = 0;
                 LED1 = 1;
                 MiApp_FlushTx();
                 MiApp_WriteData(PROJECTOR_ON);
@@ -40,10 +45,11 @@ void Student(void)
                 MiApp_BroadcastPacket(false);
                 delay_ms(500);
                 LED1 = 0;
-                switch_val = SWITCH_NOT_PRESSED;
             }
+            
             if(switch_val == SW2)
             {
+                switch_val = 0;
                 LED1 = 1;
                 MiApp_FlushTx();
                 MiApp_WriteData(PROJECTOR_OFF);
@@ -52,32 +58,37 @@ void Student(void)
                 MiApp_BroadcastPacket(false);
                 delay_ms(500);
                 LED1 = 0;
-                switch_val = SWITCH_NOT_PRESSED;
             }
         }
         
         if(switch_val == SW2)
         {
-            LCD_Display((char *)"SW1: Unlock DoorSW2: Suivant  " 0, false);
-            while(switch_val == SWITCH_NOT_PRESSED)
+            switch_val = 0;
+            sprintf((char *)&LCDText, (char*)"SW1: Unlock DoorSW2: Suivant  ");
+            LCD_Update();
+            
+            while(switch_val == 0)
             {
                 switch_val = BUTTON_Pressed();
             }
+            
             if(switch_val == SW1)
             {
+                switch_val = 0;
                 LED1 = 1;
                 MiApp_FlushTx();
-                MiApp_WriteData(UNLOCK_DOOR);
+                MiApp_WriteData(UNLOCK_PKT);
                 MiApp_WriteData(myShortAddress.v[0]);
                 MiApp_WriteData(myShortAddress.v[1]);
                 MiApp_BroadcastPacket(false);
                 delay_ms(500);
                 LED1 = 0;
-                switch_val = SWITCH_NOT_PRESSED;
+                
             }
+            
             if(switch_val == SW2)
             {
-                switch_val = SWITCH_NOT_PRESSED;
+                switch_val = 0;
             }    
         }        
     }

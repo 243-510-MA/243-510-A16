@@ -8,6 +8,7 @@ void putcv(int data);
 void Power_off();
 void Power_on();
 
+
 void Pan(void);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
@@ -10247,6 +10248,16 @@ extern RECEIVED_MESSAGE rxMessage;
 # 9 "../src/pan.c"
 void Pan(void)
 {
+
+RCONbits.IPEN = 1;
+T4CON = 0b00111111;
+PR4 = 156;
+IPR3bits.TMR4IP = 1;
+INTCONbits.GIEH = 1;
+PIR3bits.TMR4IF = 0;
+
+
+LATEbits.LATE1 = 1;
 while(1)
 {
 if(MiApp_MessageAvailable())
@@ -10267,40 +10278,41 @@ MiApp_DiscardMessage();
 
 void startBit(void)
 {
-LATEbits.LATE1 = 1;
-_delay((unsigned long)((104)*(16000000/4000000.0)));
+LATEbits.LATE1 = 0;
+_delay((unsigned long)((102)*(16000000/4000000.0)));
 }
 
 void stopBit(void)
 {
-LATEbits.LATE1 = 0;
-_delay((unsigned long)((104)*(16000000/4000000.0)));
+LATEbits.LATE1 = 1;
+_delay((unsigned long)((102)*(16000000/4000000.0)));
 }
 
 void putcv(int data)
 {
 int i,x;
 startBit();
-int data2 = ~data;
+int data2 = data;
 for(i=0;i<8;i++)
 {
 LATEbits.LATE1 = data2;
 data2 = data2>>1;
-_delay((unsigned long)((104)*(16000000/4000000.0)));
+_delay((unsigned long)((102)*(16000000/4000000.0)));
 }
 stopBit();
 }
 
 void Power_off()
 {
-LATEbits.LATE1 = 0;
+LATEbits.LATE1 = 1;
 putcv(0x02);putcv(0x01);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x03);
-LATEbits.LATE1 = 0;
+LATEbits.LATE1 = 1;
 }
 
 void Power_on()
 {
-LATEbits.LATE1 = 0;
+LATEbits.LATE1 = 1;
 putcv(0x02);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x02);
-LATEbits.LATE1 = 0;
+LATEbits.LATE1 = 1;
 }
+

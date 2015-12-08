@@ -10104,6 +10104,10 @@ uint8_t Payload[(40+11+8+8+12)];
 
 uint8_t BankIndex = 0xFF;
 
+
+uint8_t BuzzerStatus = 0;
+
+
 uint8_t IEEESeqNum;
 volatile uint16_t failureCounter = 0;
 uint8_t MACCurrentChannel;
@@ -10116,7 +10120,7 @@ volatile MRF24J40_STATUS MRF24J40Status;
 bool DataEncrypt(uint8_t *Payload, uint8_t *PayloadLen, API_UINT32_UNION FrameCounter, uint8_t FrameControl);
 bool DataDecrypt(uint8_t *Payload, uint8_t *PayloadLen, uint8_t *SourceIEEEAddress, API_UINT32_UNION FrameCounter, uint8_t FrameControl);
 
-# 90
+# 94
 void PHYSetLongRAMAddr( uint16_t address,  uint8_t value)
 {
 volatile uint8_t tmpRFIE = INTCONbits.INT0IE;
@@ -10130,7 +10134,7 @@ LATAbits.LATA5 = 1;
 INTCONbits.INT0IE = tmpRFIE;
 }
 
-# 124
+# 128
 void PHYSetShortRAMAddr( uint8_t address,  uint8_t value)
 {
 volatile uint8_t tmpRFIE = INTCONbits.INT0IE;
@@ -10143,7 +10147,7 @@ LATAbits.LATA5 = 1;
 INTCONbits.INT0IE = tmpRFIE;
 }
 
-# 154
+# 158
 uint8_t PHYGetShortRAMAddr( uint8_t address)
 {
 uint8_t toReturn;
@@ -10159,7 +10163,7 @@ INTCONbits.INT0IE = tmpRFIE;
 return toReturn;
 }
 
-# 185
+# 189
 uint8_t PHYGetLongRAMAddr( uint16_t address)
 {
 uint8_t toReturn;
@@ -10217,7 +10221,7 @@ PHYSetShortRAMAddr((0x0B) + i * 2, MACInitParams.PAddress[i]);
 
 PHYSetLongRAMAddr((0x202), 0x80);
 
-# 263
+# 267
 PHYSetLongRAMAddr((0x203), 0x00);
 
 
@@ -10237,7 +10241,7 @@ PHYSetShortRAMAddr((0x7D), 0x40);
 
 PHYSetShortRAMAddr((0x7F), 0x60);
 
-# 291
+# 295
 PHYSetShortRAMAddr((0x31), 0x98);
 PHYSetShortRAMAddr((0x5D), 0x95);
 
@@ -10260,10 +10264,10 @@ PHYSetLongRAMAddr((0x201), 0x02);
 
 MiMAC_SetChannel(MACCurrentChannel, 0);
 
-# 327
+# 331
 }
 
-# 366
+# 370
 bool MiMAC_ReceivedPacket(void)
 {
 uint8_t i;
@@ -10469,14 +10473,14 @@ MiMAC_DiscardPacket();
 return 0;
 }
 
-# 622
+# 626
 if (RxBuffer[BankIndex].Payload[0] & 0x08)
 {
 MiMAC_DiscardPacket();
 return 0;
 }
 
-# 632
+# 636
 switch (RxBuffer[BankIndex].Payload[0] & 0x07)
 {
 case 0x01:
@@ -10503,7 +10507,7 @@ return 1;
 return 0;
 }
 
-# 693
+# 697
 void MiMAC_DiscardPacket(void)
 {
 
@@ -10514,7 +10518,7 @@ RxBuffer[BankIndex].PayloadLen = 0;
 }
 }
 
-# 736
+# 740
 bool MiMAC_SendPacket( MAC_TRANS_PARAM transParam,
  uint8_t *MACPayload,
  uint8_t MACPayloadLen)
@@ -10538,7 +10542,7 @@ if (transParam.flags.bits.secEn)
 transParam.altSrcAddr = 0;
 }
 
-# 783
+# 787
 if (transParam.flags.bits.packetType == 0x01)
 {
 frameControl = 0x03;
@@ -10600,10 +10604,10 @@ transParam.altSrcAddr = 1;
 transParam.flags.bits.ackReq = 0;
 }
 
-# 853
+# 857
 PHYSetLongRAMAddr(loc++, headerLength);
 
-# 861
+# 865
 {
 PHYSetLongRAMAddr(loc++, headerLength + MACPayloadLen);
 }
@@ -10683,7 +10687,7 @@ PHYSetLongRAMAddr(loc++, MACInitParams.PAddress[i]);
 }
 }
 
-# 964
+# 968
 for (i = 0; i < MACPayloadLen; i++)
 {
 PHYSetLongRAMAddr(loc++, MACPayload[i]);
@@ -10741,12 +10745,12 @@ return 1;
 
 }
 
-# 1057
+# 1061
 uint8_t MiMAC_ChannelAssessment( uint8_t AssessmentMode)
 {
 uint8_t RSSIcheck;
 
-# 1073
+# 1077
 PHYSetShortRAMAddr((0x7D), 0x80);
 
 
@@ -10763,11 +10767,11 @@ RSSIcheck = PHYGetLongRAMAddr(0x210);
 
 PHYSetShortRAMAddr((0x7D), 0x40);
 
-# 1100
+# 1104
 return RSSIcheck;
 }
 
-# 1302
+# 1306
 bool MiMAC_SetChannel( uint8_t channel,  uint8_t offsetFreq)
 {
 if (channel < 11 || channel > 26)
@@ -10775,7 +10779,7 @@ if (channel < 11 || channel > 26)
 return 0;
 }
 
-# 1316
+# 1320
 MACCurrentChannel = channel;
 PHYSetLongRAMAddr((0x200), ((channel - 11) << 4) | 0x03);
 PHYSetShortRAMAddr((0x6D), 0x04);
@@ -10783,7 +10787,7 @@ PHYSetShortRAMAddr((0x6D), 0x00);
 return 1;
 }
 
-# 1355
+# 1359
 bool MiMAC_SetPower( uint8_t outputPower)
 {
 uint8_t reg;
@@ -10814,7 +10818,7 @@ PHYSetLongRAMAddr((0x203), reg);
 return 1;
 }
 
-# 1421
+# 1425
 bool MiMAC_SetAltAddress( uint8_t *Address,  uint8_t *PANID)
 {
 myNetworkAddress.v[0] = Address[0];
@@ -10829,7 +10833,7 @@ PHYSetShortRAMAddr((0x05), MAC_PANID.v[1]);
 return 1;
 }
 
-# 1465
+# 1469
 bool MiMAC_Init( MACINIT_PARAM initValue)
 {
 uint8_t i;
@@ -10849,15 +10853,26 @@ for (i = 0; i < 2; i++)
 RxBuffer[i].PayloadLen = 0;
 }
 
-# 1501
+# 1505
 return 1;
 }
 
-# 1852
+# 1856
 void interrupt high_isr (void)
 
-# 1865
+# 1869
 {
+
+
+
+if (PIR3bits.TMR4IF) {
+LATBbits.LATB2=BuzzerStatus;
+BuzzerStatus = !BuzzerStatus;
+PIR3bits.TMR4IF = 0;
+}
+
+
+
 
 if (INTCONbits.INT0IE && INTCONbits.INT0IF)
 {
@@ -10929,7 +10944,7 @@ break;
 if (RxBank < 2)
 {
 
-# 1941
+# 1956
 PHYSetShortRAMAddr((0x73), 0x04);
 
 
@@ -10961,7 +10976,7 @@ PHYSetShortRAMAddr((0x73), 0x00);
 
 PHYSetShortRAMAddr((0x1B), 0x01);
 
-# 1977
+# 1992
 }
 
 }
