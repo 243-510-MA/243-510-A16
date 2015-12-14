@@ -9807,7 +9807,7 @@ uint8_t SPIGet(void);
 void SPIPut2(uint8_t v);
 uint8_t SPIGet2(void);
 
-# 51 "../src/system_config/miwikit_pic18f46j50_24j40\system.h"
+# 54 "../src/system_config/miwikit_pic18f46j50_24j40\system.h"
 typedef union
 {
 
@@ -9825,7 +9825,7 @@ uint16_t Val;
 
 }API_UINT16_UNION;
 
-# 119
+# 122
 void SYSTEM_Initialize(void);
 
 # 31 "../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h"
@@ -10235,418 +10235,66 @@ bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 # 950
 extern RECEIVED_MESSAGE rxMessage;
 
-# 27 "../src/self_test.h"
-void SelfTest(uint8_t);
+# 27 "../src/network.h"
+void Network(int DEVICEMODE);
+
+# 25 "../src/pan.h"
+void startBit(void);
+void stopBit(void);
+void putcv(int data);
+void Power_off();
+void Power_on();
+
+
+void Pan(void);
+
+# 27 "../src/student.h"
+void Student(void);
+
+# 27 "../src/teacher.h"
+void Teacher(void);
 
 # 27 "../src/door_unlock.h"
 void DoorUnlock(void);
 
-# 28 "../src/temp_demo.h"
-void TempDemo(void);
-uint16_t Read_VBGVoltage(void);
-uint8_t ReadTempSensor(uint16_t VBGResult);
-void PrintTempLCD(void);
+# 25 "../src/projector_screen.h"
+void ProjectorScreen(void);
 
-<<<<<<< HEAD
-# 35 "../src/main.c"
-uint8_t myChannel = 20;
-
-# 47
-=======
-# 43 "../src/main.c"
-uint8_t myChannel = 20;
-
-# 55
->>>>>>> origin/master
-uint8_t ConnectionEntry = 0;
-
-extern uint8_t myLongAddress[];
-
-<<<<<<< HEAD
-# 63
-uint8_t AdditionalNodeID[1] = {0x00};
-
-
-
-=======
-# 70
-uint8_t AdditionalNodeID[1] = {0x00};
-
-# 103
->>>>>>> origin/master
+# 27 "../src/main.c"
 void main(void)
 {
-uint8_t i, j;
-bool result = 1;
-uint8_t switch_val;
-
-<<<<<<< HEAD
-# 77
-=======
-
-
-
->>>>>>> origin/master
-SYSTEM_Initialize();
-
-LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
-
-<<<<<<< HEAD
-if(0 == 1)
-{
-LCD_Display((char *)"Welcome, Mathieu", 0, 1);
-}
-
-Read_MAC_Address();
-=======
-Read_MAC_Address();
-
-MiApp_ProtocolInit(0);
-
-
->>>>>>> origin/master
-
-MiApp_ProtocolInit(0);
-
-# 94
-CreateorJoin:
-
-<<<<<<< HEAD
-# 100
-if( MiApp_SetChannel(myChannel) == 0 )
-return;
-
-# 112
-MiApp_ConnectionMode(0x00);
-
-if(0 == 0)
-{
-while(result == 1)
-{
-
-# 123
-=======
-# 130
-if( MiApp_SetChannel(myChannel) == 0 )
-return;
-
-# 142
-MiApp_ConnectionMode(0x00);
-
-while(result == 1)
-{
-
-# 151
->>>>>>> origin/master
-MiApp_ProtocolInit(0);
-MiApp_StartConnection(0x00, 0, 0);
-
-LCD_Erase();
-sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
-sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
-LCD_Update();
-
-
-
-
-while(!ConnectionTable[0].status.bits.isValid)
-{
-if(MiApp_MessageAvailable())
-MiApp_DiscardMessage();
-}
-result = 0;
-
-}
-}
-
-<<<<<<< HEAD
-
-if(0 != 0)
-{
-
-
-
-
-while(result == 1)
-{
-volatile uint8_t scanresult;
-
-MiApp_ProtocolInit(0);
-
-# 161
-scanresult = MiApp_SearchConnection(10, (0x00010000 << (myChannel-16)));
-
-# 167
-if(scanresult > 0)
-{
-uint8_t k;
-
-for(j = 0; j < scanresult; j++)
-{
-uint8_t skip_print = 0;
-if(j > 0)
-{
-
-skip_print = 0;
-for(k = 0; k < j; k++)
-{
-if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
-(ActiveScanResults[j].PANID.v[0] == ActiveScanResults[k].PANID.v[0]))
-{
-skip_print = 1;
-break;
-}
-
-}
-if(skip_print == 1)
-{
-if(j == (scanresult-1)) j = -1;
-continue;
-}
-}
-
-while(1)
-{
-
-# 202
-uint8_t Status;
-uint8_t CoordCount = 0;
-{TxData = 11;};
-
-for(k = 0 ; k < scanresult ; k++)
-{
-if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
-(ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]))
-{
-CoordCount++;
-}
-}
-if(CoordCount > 1)
-{
-uint8_t nodeIndex = 0;
-uint8_t count = 0;
-{TxData = 11;};
-TxBuffer[TxData++] = 4;
-TxBuffer[TxData++] = ActiveScanResults[j].PANID.v[1];
-TxBuffer[TxData++] = ActiveScanResults[j].PANID.v[0];
-MiApp_BroadcastPacket(0);
-for(k = 0 ; k < scanresult ; k++)
-{
-if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
-(ActiveScanResults[j].PANID.v[0] == ActiveScanResults[k].PANID.v[0]))
-{
-count++;
-nodeIndex = k;
-}
-}
-}
-
-# 238
-Status = MiApp_EstablishConnection(j, 0x00);
-if(Status == 0xFF)
-{
-
-goto CreateorJoin;
-}
-else
-{
-
-result = 0;
-}
-{TxData = 11;};
-TxBuffer[TxData++] = 5;
-TxBuffer[TxData++] = myPANID.v[1];
-TxBuffer[TxData++] = myPANID.v[0];
-MiApp_BroadcastPacket(0);
-break;
-
-}
-
-# 262
-if(result == 0)
-break;
-}
-
-result = 0;
-}
-else
-{
-LCD_Display((char *)"Waiting for PAN Rescanning......", 0, 0);
-}
-}
-}
-
-# 287
-=======
->>>>>>> origin/master
-while(1)
-{
-uint8_t pktCMD = 0;
-uint8_t switch_val, menu_choice = 0;
-result = 0;
-
+Network(3);
 
 LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
 
-# 300
-LCD_Display((char *)"SW1: Door Unlock SW2: Other Apps  ", 0, 0);
 
-# 306
-while(result == 0)
+
+if(3 == 0)
 {
-
-switch_val = BUTTON_Pressed();
-
-
-if(MiApp_MessageAvailable())
-{
-pktCMD = rxMessage.Payload[0];
-if(pktCMD == 4)
-{
-if((rxMessage.Payload[1] != myPANID.v[1]) || (rxMessage.Payload[2] != myPANID.v[0]))
-pktCMD = 0;
-
+Pan();
 }
-if(pktCMD == 2)
-{
-for(i = 0 ; i< 10 ; i++)
-{
-if(ConnectionTable[i].status.bits.isValid)
-{
-if((ConnectionTable[i].AltAddress.v[1] == rxMessage.SourceAddress[1]) && (ConnectionTable[i].AltAddress.v[0] == rxMessage.SourceAddress[0]))
-{
-ConnectionEntry = i;
 
-break;
-}
-}
-}
-}
-MiApp_DiscardMessage();
-}
-if(pktCMD == 2)
-{
-{TxData = 11;};
-TxBuffer[TxData++] = 2;
-MiApp_UnicastConnection(ConnectionEntry, 0);
 
+if(3 == 1)
+{
 DoorUnlock();
-result = 1;
 }
 
-if((switch_val == 1) && (menu_choice == 0))
+
+if(3 == 2)
 {
-uint8_t NumberOfConnections = 0;
+ProjectorScreen();
+}
 
 
-ConnectionEntry = 0;
-
-for(i = 0; i < 10; i++)
+if(3 == 3)
 {
-if((ConnectionTable[i].status.bits.isValid) && (ConnectionTable[i].status.bits.isFamily))
-NumberOfConnections++;
+Teacher();
 }
-if(NumberOfConnections > 1)
+
+
+if(3 == 4)
 {
-bool result = 0;
-uint8_t ConnectionsCount = 0;
-
-
-LCD_Display((char *)"Select Peer Node for Unlock Door", 0, 0);
-
-for(i = 0; i < 10; i++)
-{
-if(ConnectionTable[i].status.bits.isValid)
-{
-
-LCD_Erase();
-sprintf((char *)LCDText, (char*)"SW1:<Addr:%02x%02x>",ConnectionTable[i].AltAddress.v[1], ConnectionTable[i].AltAddress.v[0]);
-sprintf((char *)&(LCDText[16]), (char*)"SW2: Additional");
-LCD_Update();
-ConnectionsCount++;
-while(1)
-{
-switch_val = BUTTON_Pressed();
-if(switch_val == 1)
-{
-ConnectionEntry = i;
-result = 1;
-break;
-}
-else if(switch_val == 2)
-{
-if(ConnectionsCount == NumberOfConnections)
-{
-i = -1;
-ConnectionsCount = 0;
-}
-break;
+Student();
 }
 }
-}
-if(result == 1) break;
-}
-}
-{TxData = 11;};
-TxBuffer[TxData++] = 2;
-MiApp_UnicastConnection(ConnectionEntry, 0);
-
-
-DoorUnlock();
-result = 1;
-}
-if((switch_val == 2))
-{
-menu_choice++;
-if(menu_choice == 3) menu_choice = 0;
-if(menu_choice == 0)
-{
-LCD_Display((char *)"SW1: Door Unlock SW2: Other Apps  ", 0, 0);
-}
-else if(menu_choice == 1)
-{
-LCD_Display((char *)"SW1: Temp Demo  SW2: Other Apps  ", 0, 0);
-}
-else if(menu_choice == 2)
-{
-LCD_Display((char *)"SW1: Node Info  SW2: Other Apps  ", 0, 0);
-}
-
-}
-if((pktCMD == 3) || ((switch_val == 1) && (menu_choice == 1)))
-{
-{TxData = 11;};
-TxBuffer[TxData++] = 3;
-MiApp_BroadcastPacket(0);
-
-
-TempDemo();
-result = 1;
-}
-if((pktCMD == 4) || ((switch_val == 1) && (menu_choice == 2)))
-{
-
-LCD_Erase();
-sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
-
-sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
-
-<<<<<<< HEAD
-# 447
-=======
-# 329
->>>>>>> origin/master
-LCD_Update();
-pktCMD = 0;
-}
-
-if(pktCMD == 5)
-{
-
-result = 1;
-
-}
-}
-}
-}
-

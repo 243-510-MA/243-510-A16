@@ -20,7 +20,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "50 ../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
 [s S1111 `uc 1 `uc + + + + -> 40 `i -> 11 `i -> 8 `i -> 8 `i -> 12 `i ]
 [n S1111 . PayloadLen Payload ]
-"61 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
 [u S1087 `uc -> 2 `i `ui 1 ]
 [n S1087 . v Val ]
 "48 ../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h
@@ -176,6 +176,52 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _MiMAC_SetAltAddress `(uc ~T0 @X0 0 ef2`*uc`*uc ]
 "15807 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"9670
+[s S640 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S640 . RTCCIF TMR3GIF CTMUIF TMR4IF TX2IF RC2IF BCL2IF SSP2IF ]
+"9680
+[s S641 :1 `uc 1 :1 `uc 1 ]
+[n S641 . . RXBNIF ]
+"9684
+[s S642 :4 `uc 1 :1 `uc 1 ]
+[n S642 . . TXBNIF ]
+"9669
+[u S639 `S640 1 `S641 1 `S642 1 ]
+[n S639 . . . . ]
+"9689
+[v _PIR3bits `VS639 ~T0 @X0 0 e@4004 ]
+"7615
+[s S517 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S517 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"7625
+[s S518 :1 `uc 1 ]
+[n S518 . LB0 ]
+"7628
+[s S519 :1 `uc 1 :1 `uc 1 ]
+[n S519 . . LB1 ]
+"7632
+[s S520 :2 `uc 1 :1 `uc 1 ]
+[n S520 . . LB2 ]
+"7636
+[s S521 :3 `uc 1 :1 `uc 1 ]
+[n S521 . . LB3 ]
+"7640
+[s S522 :4 `uc 1 :1 `uc 1 ]
+[n S522 . . LB4 ]
+"7644
+[s S523 :5 `uc 1 :1 `uc 1 ]
+[n S523 . . LB5 ]
+"7648
+[s S524 :6 `uc 1 :1 `uc 1 ]
+[n S524 . . LB6 ]
+"7652
+[s S525 :7 `uc 1 :1 `uc 1 ]
+[n S525 . . LB7 ]
+"7614
+[u S516 `S517 1 `S518 1 `S519 1 `S520 1 `S521 1 `S522 1 `S523 1 `S524 1 `S525 1 ]
+[n S516 . . . . . . . . . . ]
+"7657
+[v _LATBbits `VS516 ~T0 @X0 0 e@3978 ]
 "35 ../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h
 [s S1108 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
 [n S1108 . RF_TXIF . RF_RXIF SECIF . ]
@@ -7752,18 +7798,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwikit_pic18f46j50_24j40\spi.h: 30: uint8_t SPIGet(void);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 32: void SPIPut2(uint8_t v);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 33: uint8_t SPIGet2(void);
-[; ;miwikit_pic18f46j50_24j40\system.h: 51: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 52: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 54: uint8_t v[4];
-[; ;miwikit_pic18f46j50_24j40\system.h: 55: uint16_t w[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 56: uint32_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 58: }API_UINT32_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 60: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 61: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 63: uint8_t v[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 64: uint16_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 66: }API_UINT16_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 119: void SYSTEM_Initialize(void);
+[; ;miwikit_pic18f46j50_24j40\system.h: 54: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 55: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 57: uint8_t v[4];
+[; ;miwikit_pic18f46j50_24j40\system.h: 58: uint16_t w[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 59: uint32_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 61: }API_UINT32_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 63: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 64: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
 [; ;miwi_mesh.h: 44: void MiWiTasks(void);
 [; ;miwi_mesh.h: 45: uint8_t findNextNetworkEntry(void);
 [; ;miwi_mesh.h: 46: void ClearNetworkTable(void);
@@ -7968,218 +8014,224 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 255 `i `uc
 ]
 [; ;drv_mrf_miwi_24j40.c: 57: uint8_t BankIndex = 0xFF;
-"59
-[v _IEEESeqNum `uc ~T0 @X0 1 e ]
-[; ;drv_mrf_miwi_24j40.c: 59: uint8_t IEEESeqNum;
 "60
+[v _BuzzerStatus `uc ~T0 @X0 1 e ]
+[i _BuzzerStatus
+-> -> 0 `i `uc
+]
+[; ;drv_mrf_miwi_24j40.c: 60: uint8_t BuzzerStatus = 0;
+"63
+[v _IEEESeqNum `uc ~T0 @X0 1 e ]
+[; ;drv_mrf_miwi_24j40.c: 63: uint8_t IEEESeqNum;
+"64
 [v _failureCounter `Vui ~T0 @X0 1 e ]
 [i _failureCounter
 -> -> 0 `i `ui
 ]
-[; ;drv_mrf_miwi_24j40.c: 60: volatile uint16_t failureCounter = 0;
-"61
+[; ;drv_mrf_miwi_24j40.c: 64: volatile uint16_t failureCounter = 0;
+"65
 [v _MACCurrentChannel `uc ~T0 @X0 1 e ]
-[; ;drv_mrf_miwi_24j40.c: 61: uint8_t MACCurrentChannel;
-"63
+[; ;drv_mrf_miwi_24j40.c: 65: uint8_t MACCurrentChannel;
+"67
 [v _MAC_PANID `S1087 ~T0 @X0 1 e ]
-[; ;drv_mrf_miwi_24j40.c: 63: API_UINT16_UNION MAC_PANID;
-"64
+[; ;drv_mrf_miwi_24j40.c: 67: API_UINT16_UNION MAC_PANID;
+"68
 [v _myNetworkAddress `S1087 ~T0 @X0 1 e ]
-[; ;drv_mrf_miwi_24j40.c: 64: API_UINT16_UNION myNetworkAddress;
-"66
+[; ;drv_mrf_miwi_24j40.c: 68: API_UINT16_UNION myNetworkAddress;
+"70
 [v _MRF24J40Status `VS1109 ~T0 @X0 1 e ]
-[; ;drv_mrf_miwi_24j40.c: 66: volatile MRF24J40_STATUS MRF24J40Status;
-[; ;drv_mrf_miwi_24j40.c: 68: bool DataEncrypt(uint8_t *Payload, uint8_t *PayloadLen, API_UINT32_UNION FrameCounter, uint8_t FrameControl);
-[; ;drv_mrf_miwi_24j40.c: 69: bool DataDecrypt(uint8_t *Payload, uint8_t *PayloadLen, uint8_t *SourceIEEEAddress, API_UINT32_UNION FrameCounter, uint8_t FrameControl);
-"90
+[; ;drv_mrf_miwi_24j40.c: 70: volatile MRF24J40_STATUS MRF24J40Status;
+[; ;drv_mrf_miwi_24j40.c: 72: bool DataEncrypt(uint8_t *Payload, uint8_t *PayloadLen, API_UINT32_UNION FrameCounter, uint8_t FrameControl);
+[; ;drv_mrf_miwi_24j40.c: 73: bool DataDecrypt(uint8_t *Payload, uint8_t *PayloadLen, uint8_t *SourceIEEEAddress, API_UINT32_UNION FrameCounter, uint8_t FrameControl);
+"94
 [v _PHYSetLongRAMAddr `(v ~T0 @X0 1 ef2`ui`uc ]
-"91
+"95
 {
-[; ;drv_mrf_miwi_24j40.c: 90: void PHYSetLongRAMAddr( uint16_t address,  uint8_t value)
-[; ;drv_mrf_miwi_24j40.c: 91: {
+[; ;drv_mrf_miwi_24j40.c: 94: void PHYSetLongRAMAddr( uint16_t address,  uint8_t value)
+[; ;drv_mrf_miwi_24j40.c: 95: {
 [e :U _PHYSetLongRAMAddr ]
-"90
+"94
 [v _address `ui ~T0 @X0 1 r1 ]
 [v _value `uc ~T0 @X0 1 r2 ]
-"91
-[f ]
-"92
-[v _tmpRFIE `Vuc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 92: volatile uint8_t tmpRFIE = INTCONbits.INT0IE;
-[e = _tmpRFIE . . _INTCONbits 0 4 ]
-[; ;drv_mrf_miwi_24j40.c: 94: INTCONbits.INT0IE = 0;
-"94
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 95: LATAbits.LATA5 = 0;
 "95
-[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 96: SPIPut((((uint8_t) (address >> 3))&0x7F) | 0x80);
+[f ]
 "96
-[e ( _SPIPut (1 -> | & -> -> >> _address -> 3 `i `uc `i -> 127 `i -> 128 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 97: SPIPut((((uint8_t) (address << 5))&0xE0) | 0x10);
-"97
-[e ( _SPIPut (1 -> | & -> -> << _address -> 5 `i `uc `i -> 224 `i -> 16 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 98: SPIPut(value);
+[v _tmpRFIE `Vuc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 96: volatile uint8_t tmpRFIE = INTCONbits.INT0IE;
+[e = _tmpRFIE . . _INTCONbits 0 4 ]
+[; ;drv_mrf_miwi_24j40.c: 98: INTCONbits.INT0IE = 0;
 "98
-[e ( _SPIPut (1 _value ]
-[; ;drv_mrf_miwi_24j40.c: 99: LATAbits.LATA5 = 1;
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 99: LATAbits.LATA5 = 0;
 "99
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 100: INTCONbits.INT0IE = tmpRFIE;
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 100: SPIPut((((uint8_t) (address >> 3))&0x7F) | 0x80);
 "100
-[e = . . _INTCONbits 0 4 _tmpRFIE ]
-[; ;drv_mrf_miwi_24j40.c: 101: }
+[e ( _SPIPut (1 -> | & -> -> >> _address -> 3 `i `uc `i -> 127 `i -> 128 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 101: SPIPut((((uint8_t) (address << 5))&0xE0) | 0x10);
 "101
+[e ( _SPIPut (1 -> | & -> -> << _address -> 5 `i `uc `i -> 224 `i -> 16 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 102: SPIPut(value);
+"102
+[e ( _SPIPut (1 _value ]
+[; ;drv_mrf_miwi_24j40.c: 103: LATAbits.LATA5 = 1;
+"103
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 104: INTCONbits.INT0IE = tmpRFIE;
+"104
+[e = . . _INTCONbits 0 4 _tmpRFIE ]
+[; ;drv_mrf_miwi_24j40.c: 105: }
+"105
 [e :UE 1112 ]
 }
-"124
+"128
 [v _PHYSetShortRAMAddr `(v ~T0 @X0 1 ef2`uc`uc ]
-"125
+"129
 {
-[; ;drv_mrf_miwi_24j40.c: 124: void PHYSetShortRAMAddr( uint8_t address,  uint8_t value)
-[; ;drv_mrf_miwi_24j40.c: 125: {
+[; ;drv_mrf_miwi_24j40.c: 128: void PHYSetShortRAMAddr( uint8_t address,  uint8_t value)
+[; ;drv_mrf_miwi_24j40.c: 129: {
 [e :U _PHYSetShortRAMAddr ]
-"124
+"128
 [v _address `uc ~T0 @X0 1 r1 ]
 [v _value `uc ~T0 @X0 1 r2 ]
-"125
-[f ]
-"126
-[v _tmpRFIE `Vuc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 126: volatile uint8_t tmpRFIE = INTCONbits.INT0IE;
-[e = _tmpRFIE . . _INTCONbits 0 4 ]
-[; ;drv_mrf_miwi_24j40.c: 128: INTCONbits.INT0IE = 0;
-"128
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 129: LATAbits.LATA5 = 0;
 "129
-[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 130: SPIPut(address);
+[f ]
 "130
-[e ( _SPIPut (1 _address ]
-[; ;drv_mrf_miwi_24j40.c: 131: SPIPut(value);
-"131
-[e ( _SPIPut (1 _value ]
-[; ;drv_mrf_miwi_24j40.c: 132: LATAbits.LATA5 = 1;
+[v _tmpRFIE `Vuc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 130: volatile uint8_t tmpRFIE = INTCONbits.INT0IE;
+[e = _tmpRFIE . . _INTCONbits 0 4 ]
+[; ;drv_mrf_miwi_24j40.c: 132: INTCONbits.INT0IE = 0;
 "132
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 133: INTCONbits.INT0IE = tmpRFIE;
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 133: LATAbits.LATA5 = 0;
 "133
-[e = . . _INTCONbits 0 4 _tmpRFIE ]
-[; ;drv_mrf_miwi_24j40.c: 134: }
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 134: SPIPut(address);
 "134
+[e ( _SPIPut (1 _address ]
+[; ;drv_mrf_miwi_24j40.c: 135: SPIPut(value);
+"135
+[e ( _SPIPut (1 _value ]
+[; ;drv_mrf_miwi_24j40.c: 136: LATAbits.LATA5 = 1;
+"136
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 137: INTCONbits.INT0IE = tmpRFIE;
+"137
+[e = . . _INTCONbits 0 4 _tmpRFIE ]
+[; ;drv_mrf_miwi_24j40.c: 138: }
+"138
 [e :UE 1113 ]
 }
-"154
+"158
 [v _PHYGetShortRAMAddr `(uc ~T0 @X0 1 ef1`uc ]
-"155
-{
-[; ;drv_mrf_miwi_24j40.c: 154: uint8_t PHYGetShortRAMAddr( uint8_t address)
-[; ;drv_mrf_miwi_24j40.c: 155: {
-[e :U _PHYGetShortRAMAddr ]
-"154
-[v _address `uc ~T0 @X0 1 r1 ]
-"155
-[f ]
-"156
-[v _toReturn `uc ~T0 @X0 1 a ]
-"157
-[v _tmpRFIE `Vuc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 156: uint8_t toReturn;
-[; ;drv_mrf_miwi_24j40.c: 157: volatile uint8_t tmpRFIE = INTCONbits.INT0IE;
-[e = _tmpRFIE . . _INTCONbits 0 4 ]
-[; ;drv_mrf_miwi_24j40.c: 159: INTCONbits.INT0IE = 0;
 "159
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 160: LATAbits.LATA5 = 0;
+{
+[; ;drv_mrf_miwi_24j40.c: 158: uint8_t PHYGetShortRAMAddr( uint8_t address)
+[; ;drv_mrf_miwi_24j40.c: 159: {
+[e :U _PHYGetShortRAMAddr ]
+"158
+[v _address `uc ~T0 @X0 1 r1 ]
+"159
+[f ]
 "160
-[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 161: SPIPut(address);
+[v _toReturn `uc ~T0 @X0 1 a ]
 "161
-[e ( _SPIPut (1 _address ]
-[; ;drv_mrf_miwi_24j40.c: 162: toReturn = SPIGet();
-"162
-[e = _toReturn ( _SPIGet ..  ]
-[; ;drv_mrf_miwi_24j40.c: 163: LATAbits.LATA5 = 1;
+[v _tmpRFIE `Vuc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 160: uint8_t toReturn;
+[; ;drv_mrf_miwi_24j40.c: 161: volatile uint8_t tmpRFIE = INTCONbits.INT0IE;
+[e = _tmpRFIE . . _INTCONbits 0 4 ]
+[; ;drv_mrf_miwi_24j40.c: 163: INTCONbits.INT0IE = 0;
 "163
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 164: INTCONbits.INT0IE = tmpRFIE;
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 164: LATAbits.LATA5 = 0;
 "164
-[e = . . _INTCONbits 0 4 _tmpRFIE ]
-[; ;drv_mrf_miwi_24j40.c: 166: return toReturn;
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 165: SPIPut(address);
+"165
+[e ( _SPIPut (1 _address ]
+[; ;drv_mrf_miwi_24j40.c: 166: toReturn = SPIGet();
 "166
+[e = _toReturn ( _SPIGet ..  ]
+[; ;drv_mrf_miwi_24j40.c: 167: LATAbits.LATA5 = 1;
+"167
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 168: INTCONbits.INT0IE = tmpRFIE;
+"168
+[e = . . _INTCONbits 0 4 _tmpRFIE ]
+[; ;drv_mrf_miwi_24j40.c: 170: return toReturn;
+"170
 [e ) _toReturn ]
 [e $UE 1114  ]
-[; ;drv_mrf_miwi_24j40.c: 167: }
-"167
+[; ;drv_mrf_miwi_24j40.c: 171: }
+"171
 [e :UE 1114 ]
 }
-"185
+"189
 [v _PHYGetLongRAMAddr `(uc ~T0 @X0 1 ef1`ui ]
-"186
-{
-[; ;drv_mrf_miwi_24j40.c: 185: uint8_t PHYGetLongRAMAddr( uint16_t address)
-[; ;drv_mrf_miwi_24j40.c: 186: {
-[e :U _PHYGetLongRAMAddr ]
-"185
-[v _address `ui ~T0 @X0 1 r1 ]
-"186
-[f ]
-"187
-[v _toReturn `uc ~T0 @X0 1 a ]
-"188
-[v _tmpRFIE `Vuc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 187: uint8_t toReturn;
-[; ;drv_mrf_miwi_24j40.c: 188: volatile uint8_t tmpRFIE = INTCONbits.INT0IE;
-[e = _tmpRFIE . . _INTCONbits 0 4 ]
-[; ;drv_mrf_miwi_24j40.c: 190: INTCONbits.INT0IE = 0;
 "190
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 191: LATAbits.LATA5 = 0;
+{
+[; ;drv_mrf_miwi_24j40.c: 189: uint8_t PHYGetLongRAMAddr( uint16_t address)
+[; ;drv_mrf_miwi_24j40.c: 190: {
+[e :U _PHYGetLongRAMAddr ]
+"189
+[v _address `ui ~T0 @X0 1 r1 ]
+"190
+[f ]
 "191
-[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 192: SPIPut(((address >> 3)&0x7F) | 0x80);
+[v _toReturn `uc ~T0 @X0 1 a ]
 "192
-[e ( _SPIPut (1 -> | & >> _address -> 3 `i -> -> 127 `i `ui -> -> 128 `i `ui `uc ]
-[; ;drv_mrf_miwi_24j40.c: 193: SPIPut(((address << 5)&0xE0));
-"193
-[e ( _SPIPut (1 -> & << _address -> 5 `i -> -> 224 `i `ui `uc ]
-[; ;drv_mrf_miwi_24j40.c: 194: toReturn = SPIGet();
+[v _tmpRFIE `Vuc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 191: uint8_t toReturn;
+[; ;drv_mrf_miwi_24j40.c: 192: volatile uint8_t tmpRFIE = INTCONbits.INT0IE;
+[e = _tmpRFIE . . _INTCONbits 0 4 ]
+[; ;drv_mrf_miwi_24j40.c: 194: INTCONbits.INT0IE = 0;
 "194
-[e = _toReturn ( _SPIGet ..  ]
-[; ;drv_mrf_miwi_24j40.c: 195: LATAbits.LATA5 = 1;
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 195: LATAbits.LATA5 = 0;
 "195
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 196: INTCONbits.INT0IE = tmpRFIE;
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 196: SPIPut(((address >> 3)&0x7F) | 0x80);
 "196
-[e = . . _INTCONbits 0 4 _tmpRFIE ]
-[; ;drv_mrf_miwi_24j40.c: 198: return toReturn;
+[e ( _SPIPut (1 -> | & >> _address -> 3 `i -> -> 127 `i `ui -> -> 128 `i `ui `uc ]
+[; ;drv_mrf_miwi_24j40.c: 197: SPIPut(((address << 5)&0xE0));
+"197
+[e ( _SPIPut (1 -> & << _address -> 5 `i -> -> 224 `i `ui `uc ]
+[; ;drv_mrf_miwi_24j40.c: 198: toReturn = SPIGet();
 "198
+[e = _toReturn ( _SPIGet ..  ]
+[; ;drv_mrf_miwi_24j40.c: 199: LATAbits.LATA5 = 1;
+"199
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 200: INTCONbits.INT0IE = tmpRFIE;
+"200
+[e = . . _INTCONbits 0 4 _tmpRFIE ]
+[; ;drv_mrf_miwi_24j40.c: 202: return toReturn;
+"202
 [e ) _toReturn ]
 [e $UE 1115  ]
-[; ;drv_mrf_miwi_24j40.c: 199: }
-"199
+[; ;drv_mrf_miwi_24j40.c: 203: }
+"203
 [e :UE 1115 ]
 }
-"201
+"205
 [v _InitMRF24J40 `(v ~T0 @X0 1 ef ]
-"202
+"206
 {
-[; ;drv_mrf_miwi_24j40.c: 201: void InitMRF24J40(void)
-[; ;drv_mrf_miwi_24j40.c: 202: {
+[; ;drv_mrf_miwi_24j40.c: 205: void InitMRF24J40(void)
+[; ;drv_mrf_miwi_24j40.c: 206: {
 [e :U _InitMRF24J40 ]
 [f ]
-"203
-[v _i `uc ~T0 @X0 1 a ]
-"204
-[v _j `ui ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 203: uint8_t i;
-[; ;drv_mrf_miwi_24j40.c: 204: uint16_t j;
-[; ;drv_mrf_miwi_24j40.c: 207: LATDbits.LATD0 = 0;
 "207
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 208: { unsigned long _dcnt; unsigned long _ms; _ms = 3; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+[v _i `uc ~T0 @X0 1 a ]
 "208
+[v _j `ui ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 207: uint8_t i;
+[; ;drv_mrf_miwi_24j40.c: 208: uint16_t j;
+[; ;drv_mrf_miwi_24j40.c: 211: LATDbits.LATD0 = 0;
+"211
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 212: { unsigned long _dcnt; unsigned long _ms; _ms = 3; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"212
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
@@ -8199,11 +8251,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != __ms -> -> 0 `i `ul 1118  ]
 [e :U 1119 ]
 }
-[; ;drv_mrf_miwi_24j40.c: 210: LATDbits.LATD0 = 1;
-"210
+[; ;drv_mrf_miwi_24j40.c: 214: LATDbits.LATD0 = 1;
+"214
 [e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 211: { unsigned long _dcnt; unsigned long _ms; _ms = 10; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
-"211
+[; ;drv_mrf_miwi_24j40.c: 215: { unsigned long _dcnt; unsigned long _ms; _ms = 10; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"215
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
@@ -8223,647 +8275,647 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != __ms -> -> 0 `i `ul 1124  ]
 [e :U 1125 ]
 }
-[; ;drv_mrf_miwi_24j40.c: 214: PHYSetShortRAMAddr((0x55), 0x07);
-"214
-[e ( _PHYSetShortRAMAddr (2 , -> -> 85 `i `uc -> -> 7 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 215: do
-"215
-[e :U 1131 ]
-[; ;drv_mrf_miwi_24j40.c: 216: {
-"216
-{
-[; ;drv_mrf_miwi_24j40.c: 217: i = PHYGetShortRAMAddr((0x54));
-"217
-[e = _i ( _PHYGetShortRAMAddr (1 -> -> 84 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 218: PHYSetShortRAMAddr((0x55), 0x07);
 "218
+[e ( _PHYSetShortRAMAddr (2 , -> -> 85 `i `uc -> -> 7 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 219: do
+"219
+[e :U 1131 ]
+[; ;drv_mrf_miwi_24j40.c: 220: {
+"220
+{
+[; ;drv_mrf_miwi_24j40.c: 221: i = PHYGetShortRAMAddr((0x54));
+"221
+[e = _i ( _PHYGetShortRAMAddr (1 -> -> 84 `i `uc ]
+"222
 }
-[; ;drv_mrf_miwi_24j40.c: 218: } while ((i & 0x07) != (uint8_t) 0x00);
+[; ;drv_mrf_miwi_24j40.c: 222: } while ((i & 0x07) != (uint8_t) 0x00);
 [e $ != & -> _i `i -> 7 `i -> -> -> 0 `i `uc `i 1131  ]
 [e :U 1130 ]
-[; ;drv_mrf_miwi_24j40.c: 220: for (j = 0; j < (uint16_t) 1000; j++)
-"220
+[; ;drv_mrf_miwi_24j40.c: 224: for (j = 0; j < (uint16_t) 1000; j++)
+"224
 {
 [e = _j -> -> 0 `i `ui ]
 [e $ < _j -> -> 1000 `i `ui 1132  ]
 [e $U 1133  ]
-"221
+"225
 [e :U 1132 ]
-[; ;drv_mrf_miwi_24j40.c: 221: {
+[; ;drv_mrf_miwi_24j40.c: 225: {
 {
-"222
+"226
 }
-"220
+"224
 [e ++ _j -> -> 1 `i `ui ]
 [e $ < _j -> -> 1000 `i `ui 1132  ]
 [e :U 1133 ]
-"222
+"226
 }
-[; ;drv_mrf_miwi_24j40.c: 222: }
-[; ;drv_mrf_miwi_24j40.c: 225: PHYSetShortRAMAddr((0x1B), 0x01);
-"225
-[e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 228: PHYSetShortRAMAddr((0x07), 0xFF);
-"228
-[e ( _PHYSetShortRAMAddr (2 , -> -> 7 `i `uc -> -> 255 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 229: PHYSetShortRAMAddr((0x09), 0xFF);
+[; ;drv_mrf_miwi_24j40.c: 226: }
+[; ;drv_mrf_miwi_24j40.c: 229: PHYSetShortRAMAddr((0x1B), 0x01);
 "229
+[e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 232: PHYSetShortRAMAddr((0x07), 0xFF);
+"232
+[e ( _PHYSetShortRAMAddr (2 , -> -> 7 `i `uc -> -> 255 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 233: PHYSetShortRAMAddr((0x09), 0xFF);
+"233
 [e ( _PHYSetShortRAMAddr (2 , -> -> 9 `i `uc -> -> 255 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 230: PHYSetShortRAMAddr((0x03), 0xFF);
-"230
-[e ( _PHYSetShortRAMAddr (2 , -> -> 3 `i `uc -> -> 255 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 231: PHYSetShortRAMAddr((0x05), 0xFF);
-"231
-[e ( _PHYSetShortRAMAddr (2 , -> -> 5 `i `uc -> -> 255 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 234: for (i = 0; i < (uint8_t) 8; i++)
+[; ;drv_mrf_miwi_24j40.c: 234: PHYSetShortRAMAddr((0x03), 0xFF);
 "234
+[e ( _PHYSetShortRAMAddr (2 , -> -> 3 `i `uc -> -> 255 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 235: PHYSetShortRAMAddr((0x05), 0xFF);
+"235
+[e ( _PHYSetShortRAMAddr (2 , -> -> 5 `i `uc -> -> 255 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 238: for (i = 0; i < (uint8_t) 8; i++)
+"238
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> -> -> 8 `i `uc `i 1135  ]
 [e $U 1136  ]
-"235
+"239
 [e :U 1135 ]
-[; ;drv_mrf_miwi_24j40.c: 235: {
+[; ;drv_mrf_miwi_24j40.c: 239: {
 {
-[; ;drv_mrf_miwi_24j40.c: 236: PHYSetShortRAMAddr((0x0B) + i * 2, MACInitParams.PAddress[i]);
-"236
+[; ;drv_mrf_miwi_24j40.c: 240: PHYSetShortRAMAddr((0x0B) + i * 2, MACInitParams.PAddress[i]);
+"240
 [e ( _PHYSetShortRAMAddr (2 , -> + -> 11 `i * -> _i `i -> 2 `i `uc *U + . _MACInitParams 1 * -> _i `ux -> -> # *U . _MACInitParams 1 `ui `ux ]
-"237
+"241
 }
-"234
+"238
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> -> -> 8 `i `uc `i 1135  ]
 [e :U 1136 ]
-"237
+"241
 }
-[; ;drv_mrf_miwi_24j40.c: 237: }
-[; ;drv_mrf_miwi_24j40.c: 240: PHYSetLongRAMAddr((0x202), 0x80);
-"240
+[; ;drv_mrf_miwi_24j40.c: 241: }
+[; ;drv_mrf_miwi_24j40.c: 244: PHYSetLongRAMAddr((0x202), 0x80);
+"244
 [e ( _PHYSetLongRAMAddr (2 , -> -> 514 `i `ui -> -> 128 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 263: PHYSetLongRAMAddr((0x203), 0x00);
-"263
-[e ( _PHYSetLongRAMAddr (2 , -> -> 515 `i `ui -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 267: PHYSetLongRAMAddr((0x206), 0x90);
+[; ;drv_mrf_miwi_24j40.c: 267: PHYSetLongRAMAddr((0x203), 0x00);
 "267
-[e ( _PHYSetLongRAMAddr (2 , -> -> 518 `i `ui -> -> 144 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 269: PHYSetLongRAMAddr((0x207), 0x80);
-"269
-[e ( _PHYSetLongRAMAddr (2 , -> -> 519 `i `ui -> -> 128 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 271: PHYSetLongRAMAddr((0x208), 0x10);
+[e ( _PHYSetLongRAMAddr (2 , -> -> 515 `i `ui -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 271: PHYSetLongRAMAddr((0x206), 0x90);
 "271
-[e ( _PHYSetLongRAMAddr (2 , -> -> 520 `i `ui -> -> 16 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 273: PHYSetLongRAMAddr((0x220), 0x21);
+[e ( _PHYSetLongRAMAddr (2 , -> -> 518 `i `ui -> -> 144 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 273: PHYSetLongRAMAddr((0x207), 0x80);
 "273
+[e ( _PHYSetLongRAMAddr (2 , -> -> 519 `i `ui -> -> 128 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 275: PHYSetLongRAMAddr((0x208), 0x10);
+"275
+[e ( _PHYSetLongRAMAddr (2 , -> -> 520 `i `ui -> -> 16 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 277: PHYSetLongRAMAddr((0x220), 0x21);
+"277
 [e ( _PHYSetLongRAMAddr (2 , -> -> 544 `i `ui -> -> 33 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 276: PHYSetShortRAMAddr((0x75), 0x80);
-"276
-[e ( _PHYSetShortRAMAddr (2 , -> -> 117 `i `uc -> -> 128 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 278: PHYSetShortRAMAddr((0x7D), 0x40);
-"278
-[e ( _PHYSetShortRAMAddr (2 , -> -> 125 `i `uc -> -> 64 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 280: PHYSetShortRAMAddr((0x7F), 0x60);
+[; ;drv_mrf_miwi_24j40.c: 280: PHYSetShortRAMAddr((0x75), 0x80);
 "280
+[e ( _PHYSetShortRAMAddr (2 , -> -> 117 `i `uc -> -> 128 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 282: PHYSetShortRAMAddr((0x7D), 0x40);
+"282
+[e ( _PHYSetShortRAMAddr (2 , -> -> 125 `i `uc -> -> 64 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 284: PHYSetShortRAMAddr((0x7F), 0x60);
+"284
 [e ( _PHYSetShortRAMAddr (2 , -> -> 127 `i `uc -> -> 96 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 291: PHYSetShortRAMAddr((0x31), 0x98);
-"291
-[e ( _PHYSetShortRAMAddr (2 , -> -> 49 `i `uc -> -> 152 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 292: PHYSetShortRAMAddr((0x5D), 0x95);
-"292
-[e ( _PHYSetShortRAMAddr (2 , -> -> 93 `i `uc -> -> 149 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 295: do
+[; ;drv_mrf_miwi_24j40.c: 295: PHYSetShortRAMAddr((0x31), 0x98);
 "295
-[e :U 1140 ]
-[; ;drv_mrf_miwi_24j40.c: 296: {
+[e ( _PHYSetShortRAMAddr (2 , -> -> 49 `i `uc -> -> 152 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 296: PHYSetShortRAMAddr((0x5D), 0x95);
 "296
-{
-[; ;drv_mrf_miwi_24j40.c: 297: i = PHYGetLongRAMAddr((0x20f));
-"297
-[e = _i ( _PHYGetLongRAMAddr (1 -> -> 527 `i `ui ]
-"298
-}
-[; ;drv_mrf_miwi_24j40.c: 298: }
-[; ;drv_mrf_miwi_24j40.c: 299: while ((i&0xA0) != 0xA0);
+[e ( _PHYSetShortRAMAddr (2 , -> -> 93 `i `uc -> -> 149 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 299: do
 "299
+[e :U 1140 ]
+[; ;drv_mrf_miwi_24j40.c: 300: {
+"300
+{
+[; ;drv_mrf_miwi_24j40.c: 301: i = PHYGetLongRAMAddr((0x20f));
+"301
+[e = _i ( _PHYGetLongRAMAddr (1 -> -> 527 `i `ui ]
+"302
+}
+[; ;drv_mrf_miwi_24j40.c: 302: }
+[; ;drv_mrf_miwi_24j40.c: 303: while ((i&0xA0) != 0xA0);
+"303
 [e $ != & -> _i `i -> 160 `i -> 160 `i 1140  ]
 [e :U 1139 ]
-[; ;drv_mrf_miwi_24j40.c: 301: PHYSetShortRAMAddr((0x65), 0xE6);
-"301
+[; ;drv_mrf_miwi_24j40.c: 305: PHYSetShortRAMAddr((0x65), 0xE6);
+"305
 [e ( _PHYSetShortRAMAddr (2 , -> -> 101 `i `uc -> -> 230 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 304: PHYSetShortRAMAddr((0x25), 0xB9);
-"304
-[e ( _PHYSetShortRAMAddr (2 , -> -> 37 `i `uc -> -> 185 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 308: PHYSetLongRAMAddr((0x200), 0x03);
+[; ;drv_mrf_miwi_24j40.c: 308: PHYSetShortRAMAddr((0x25), 0xB9);
 "308
+[e ( _PHYSetShortRAMAddr (2 , -> -> 37 `i `uc -> -> 185 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 312: PHYSetLongRAMAddr((0x200), 0x03);
+"312
 [e ( _PHYSetLongRAMAddr (2 , -> -> 512 `i `ui -> -> 3 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 309: PHYSetLongRAMAddr((0x201), 0x02);
-"309
+[; ;drv_mrf_miwi_24j40.c: 313: PHYSetLongRAMAddr((0x201), 0x02);
+"313
 [e ( _PHYSetLongRAMAddr (2 , -> -> 513 `i `ui -> -> 2 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 311: MiMAC_SetChannel(MACCurrentChannel, 0);
-"311
+[; ;drv_mrf_miwi_24j40.c: 315: MiMAC_SetChannel(MACCurrentChannel, 0);
+"315
 [e ( _MiMAC_SetChannel (2 , _MACCurrentChannel -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 327: }
-"327
+[; ;drv_mrf_miwi_24j40.c: 331: }
+"331
 [e :UE 1116 ]
 }
-"366
+"370
 [v _MiMAC_ReceivedPacket `(uc ~T0 @X0 1 ef ]
-"367
+"371
 {
-[; ;drv_mrf_miwi_24j40.c: 366: bool MiMAC_ReceivedPacket(void)
-[; ;drv_mrf_miwi_24j40.c: 367: {
+[; ;drv_mrf_miwi_24j40.c: 370: bool MiMAC_ReceivedPacket(void)
+[; ;drv_mrf_miwi_24j40.c: 371: {
 [e :U _MiMAC_ReceivedPacket ]
 [f ]
-"368
-[v _i `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 368: uint8_t i;
-[; ;drv_mrf_miwi_24j40.c: 371: if (PORTBbits.RB0 == 0)
-"371
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 1142  ]
-[; ;drv_mrf_miwi_24j40.c: 372: {
 "372
+[v _i `uc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 372: uint8_t i;
+[; ;drv_mrf_miwi_24j40.c: 375: if (PORTBbits.RB0 == 0)
+"375
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 1142  ]
+[; ;drv_mrf_miwi_24j40.c: 376: {
+"376
 {
-[; ;drv_mrf_miwi_24j40.c: 373: INTCONbits.INT0IF = 1;
-"373
+[; ;drv_mrf_miwi_24j40.c: 377: INTCONbits.INT0IF = 1;
+"377
 [e = . . _INTCONbits 0 1 -> -> 1 `i `uc ]
-"374
+"378
 }
 [e :U 1142 ]
-[; ;drv_mrf_miwi_24j40.c: 374: }
-[; ;drv_mrf_miwi_24j40.c: 379: if (MRF24J40Status.bits.TX_BUSY)
-"379
-[e $ ! != -> . . _MRF24J40Status 1 0 `i -> -> -> 0 `i `Vuc `i 1143  ]
-[; ;drv_mrf_miwi_24j40.c: 380: {
-"380
-{
-[; ;drv_mrf_miwi_24j40.c: 381: if (failureCounter >= ((uint16_t)0x20 * (((16000000)/4)/1000000)))
-"381
-[e $ ! >= -> _failureCounter `l * -> -> -> 32 `i `ui `l / / -> 16000000 `l -> -> 4 `i `l -> 1000000 `l 1144  ]
-[; ;drv_mrf_miwi_24j40.c: 382: {
-"382
-{
-[; ;drv_mrf_miwi_24j40.c: 383: failureCounter = 0;
+[; ;drv_mrf_miwi_24j40.c: 378: }
+[; ;drv_mrf_miwi_24j40.c: 383: if (MRF24J40Status.bits.TX_BUSY)
 "383
-[e = _failureCounter -> -> 0 `i `ui ]
-[; ;drv_mrf_miwi_24j40.c: 384: MRF24J40Status.bits.TX_BUSY = 0;
+[e $ ! != -> . . _MRF24J40Status 1 0 `i -> -> -> 0 `i `Vuc `i 1143  ]
+[; ;drv_mrf_miwi_24j40.c: 384: {
 "384
-[e = . . _MRF24J40Status 1 0 -> -> 0 `i `uc ]
+{
+[; ;drv_mrf_miwi_24j40.c: 385: if (failureCounter >= ((uint16_t)0x20 * (((16000000)/4)/1000000)))
 "385
-}
-[; ;drv_mrf_miwi_24j40.c: 385: } else
-[e $U 1145  ]
-[e :U 1144 ]
+[e $ ! >= -> _failureCounter `l * -> -> -> 32 `i `ui `l / / -> 16000000 `l -> -> 4 `i `l -> 1000000 `l 1144  ]
 [; ;drv_mrf_miwi_24j40.c: 386: {
 "386
 {
-[; ;drv_mrf_miwi_24j40.c: 387: failureCounter++;
+[; ;drv_mrf_miwi_24j40.c: 387: failureCounter = 0;
 "387
-[e ++ _failureCounter -> -> 1 `i `ui ]
+[e = _failureCounter -> -> 0 `i `ui ]
+[; ;drv_mrf_miwi_24j40.c: 388: MRF24J40Status.bits.TX_BUSY = 0;
 "388
-}
-[e :U 1145 ]
+[e = . . _MRF24J40Status 1 0 -> -> 0 `i `uc ]
 "389
 }
-[e :U 1143 ]
-[; ;drv_mrf_miwi_24j40.c: 388: }
-[; ;drv_mrf_miwi_24j40.c: 389: }
-[; ;drv_mrf_miwi_24j40.c: 391: BankIndex = 0xFF;
+[; ;drv_mrf_miwi_24j40.c: 389: } else
+[e $U 1145  ]
+[e :U 1144 ]
+[; ;drv_mrf_miwi_24j40.c: 390: {
+"390
+{
+[; ;drv_mrf_miwi_24j40.c: 391: failureCounter++;
 "391
-[e = _BankIndex -> -> 255 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 392: for (i = 0; i < 2; i++)
+[e ++ _failureCounter -> -> 1 `i `ui ]
 "392
+}
+[e :U 1145 ]
+"393
+}
+[e :U 1143 ]
+[; ;drv_mrf_miwi_24j40.c: 392: }
+[; ;drv_mrf_miwi_24j40.c: 393: }
+[; ;drv_mrf_miwi_24j40.c: 395: BankIndex = 0xFF;
+"395
+[e = _BankIndex -> -> 255 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 396: for (i = 0; i < 2; i++)
+"396
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 2 `i 1146  ]
 [e $U 1147  ]
-"393
-[e :U 1146 ]
-[; ;drv_mrf_miwi_24j40.c: 393: {
-{
-[; ;drv_mrf_miwi_24j40.c: 394: if (RxBuffer[i].PayloadLen > 0)
-"394
-[e $ ! > -> . *U + &U _RxBuffer * -> _i `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 0 `i 1149  ]
-[; ;drv_mrf_miwi_24j40.c: 395: {
-"395
-{
-[; ;drv_mrf_miwi_24j40.c: 396: BankIndex = i;
-"396
-[e = _BankIndex _i ]
-[; ;drv_mrf_miwi_24j40.c: 397: break;
 "397
-[e $U 1147  ]
+[e :U 1146 ]
+[; ;drv_mrf_miwi_24j40.c: 397: {
+{
+[; ;drv_mrf_miwi_24j40.c: 398: if (RxBuffer[i].PayloadLen > 0)
 "398
+[e $ ! > -> . *U + &U _RxBuffer * -> _i `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 0 `i 1149  ]
+[; ;drv_mrf_miwi_24j40.c: 399: {
+"399
+{
+[; ;drv_mrf_miwi_24j40.c: 400: BankIndex = i;
+"400
+[e = _BankIndex _i ]
+[; ;drv_mrf_miwi_24j40.c: 401: break;
+"401
+[e $U 1147  ]
+"402
 }
 [e :U 1149 ]
-"399
+"403
 }
-"392
+"396
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 2 `i 1146  ]
 [e :U 1147 ]
-"399
-}
-[; ;drv_mrf_miwi_24j40.c: 398: }
-[; ;drv_mrf_miwi_24j40.c: 399: }
-[; ;drv_mrf_miwi_24j40.c: 402: if (BankIndex < 2)
-"402
-[e $ ! < -> _BankIndex `i -> 2 `i 1150  ]
-[; ;drv_mrf_miwi_24j40.c: 403: {
 "403
-{
-"404
-[v _addrMode `uc ~T0 @X0 1 a ]
+}
+[; ;drv_mrf_miwi_24j40.c: 402: }
+[; ;drv_mrf_miwi_24j40.c: 403: }
+[; ;drv_mrf_miwi_24j40.c: 406: if (BankIndex < 2)
 "406
-[v _bIntraPAN `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 404: uint8_t addrMode;
-[; ;drv_mrf_miwi_24j40.c: 406: bool bIntraPAN = 1;
-[e = _bIntraPAN -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 408: if ((RxBuffer[BankIndex].Payload[0] & 0x40) == 0)
-"408
-[e $ ! == & -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 64 `i -> 0 `i 1151  ]
-[; ;drv_mrf_miwi_24j40.c: 409: {
-"409
+[e $ ! < -> _BankIndex `i -> 2 `i 1150  ]
+[; ;drv_mrf_miwi_24j40.c: 407: {
+"407
 {
-[; ;drv_mrf_miwi_24j40.c: 410: bIntraPAN = 0;
+"408
+[v _addrMode `uc ~T0 @X0 1 a ]
 "410
+[v _bIntraPAN `uc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 408: uint8_t addrMode;
+[; ;drv_mrf_miwi_24j40.c: 410: bool bIntraPAN = 1;
+[e = _bIntraPAN -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 412: if ((RxBuffer[BankIndex].Payload[0] & 0x40) == 0)
+"412
+[e $ ! == & -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 64 `i -> 0 `i 1151  ]
+[; ;drv_mrf_miwi_24j40.c: 413: {
+"413
+{
+[; ;drv_mrf_miwi_24j40.c: 414: bIntraPAN = 0;
+"414
 [e = _bIntraPAN -> -> 0 `i `uc ]
-"411
+"415
 }
 [e :U 1151 ]
-[; ;drv_mrf_miwi_24j40.c: 411: }
-[; ;drv_mrf_miwi_24j40.c: 413: MACRxPacket.flags.Val = 0;
-"413
-[e = . . _MACRxPacket 0 0 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 414: MACRxPacket.altSourceAddress = 0;
-"414
-[e = . _MACRxPacket 6 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 417: addrMode = RxBuffer[BankIndex].Payload[1] & 0xCC;
+[; ;drv_mrf_miwi_24j40.c: 415: }
+[; ;drv_mrf_miwi_24j40.c: 417: MACRxPacket.flags.Val = 0;
 "417
-[e = _addrMode -> & -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 204 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 418: switch (addrMode)
+[e = . . _MACRxPacket 0 0 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 418: MACRxPacket.altSourceAddress = 0;
 "418
-[e $U 1153  ]
-[; ;drv_mrf_miwi_24j40.c: 419: {
-"419
-{
-[; ;drv_mrf_miwi_24j40.c: 420: case 0xC8:
-"420
-[e :U 1154 ]
-[; ;drv_mrf_miwi_24j40.c: 422: if (RxBuffer[BankIndex].Payload[5] == 0xFF && RxBuffer[BankIndex].Payload[6] == 0xFF)
+[e = . _MACRxPacket 6 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 421: addrMode = RxBuffer[BankIndex].Payload[1] & 0xCC;
+"421
+[e = _addrMode -> & -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 204 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 422: switch (addrMode)
 "422
-[e $ ! && == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 6 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i 1155  ]
+[e $U 1153  ]
 [; ;drv_mrf_miwi_24j40.c: 423: {
 "423
 {
-[; ;drv_mrf_miwi_24j40.c: 424: MACRxPacket.flags.bits.broadcast = 1;
+[; ;drv_mrf_miwi_24j40.c: 424: case 0xC8:
 "424
+[e :U 1154 ]
+[; ;drv_mrf_miwi_24j40.c: 426: if (RxBuffer[BankIndex].Payload[5] == 0xFF && RxBuffer[BankIndex].Payload[6] == 0xFF)
+"426
+[e $ ! && == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 6 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i 1155  ]
+[; ;drv_mrf_miwi_24j40.c: 427: {
+"427
+{
+[; ;drv_mrf_miwi_24j40.c: 428: MACRxPacket.flags.bits.broadcast = 1;
+"428
 [e = . . . _MACRxPacket 0 1 1 -> -> 1 `i `uc ]
-"425
+"429
 }
 [e :U 1155 ]
-[; ;drv_mrf_miwi_24j40.c: 425: }
-[; ;drv_mrf_miwi_24j40.c: 426: MACRxPacket.flags.bits.sourcePrsnt = 1;
-"426
+[; ;drv_mrf_miwi_24j40.c: 429: }
+[; ;drv_mrf_miwi_24j40.c: 430: MACRxPacket.flags.bits.sourcePrsnt = 1;
+"430
 [e = . . . _MACRxPacket 0 1 6 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 429: if (bIntraPAN)
-"429
-[e $ ! != -> _bIntraPAN `i -> -> -> 0 `i `uc `i 1156  ]
-[; ;drv_mrf_miwi_24j40.c: 431: {
-"431
-{
-[; ;drv_mrf_miwi_24j40.c: 433: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[3];
+[; ;drv_mrf_miwi_24j40.c: 433: if (bIntraPAN)
 "433
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 434: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[4];
-"434
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 436: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[7]);
-"436
-[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 438: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 19;
-"438
-[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 19 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 439: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[15]);
-"439
-[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 15 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-"440
-}
-[; ;drv_mrf_miwi_24j40.c: 440: }
-[e $U 1157  ]
-"442
-[e :U 1156 ]
-[; ;drv_mrf_miwi_24j40.c: 442: else
-[; ;drv_mrf_miwi_24j40.c: 443: {
-"443
+[e $ ! != -> _bIntraPAN `i -> -> -> 0 `i `uc `i 1156  ]
+[; ;drv_mrf_miwi_24j40.c: 435: {
+"435
 {
-[; ;drv_mrf_miwi_24j40.c: 444: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[7];
+[; ;drv_mrf_miwi_24j40.c: 437: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[3];
+"437
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 438: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[4];
+"438
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 440: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[7]);
+"440
+[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 442: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 19;
+"442
+[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 19 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 443: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[15]);
+"443
+[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 15 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
 "444
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 445: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[8];
-"445
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 8 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 446: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[9]);
+}
+[; ;drv_mrf_miwi_24j40.c: 444: }
+[e $U 1157  ]
 "446
-[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 9 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 447: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 21;
+[e :U 1156 ]
+[; ;drv_mrf_miwi_24j40.c: 446: else
+[; ;drv_mrf_miwi_24j40.c: 447: {
 "447
-[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 21 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 448: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[17]);
+{
+[; ;drv_mrf_miwi_24j40.c: 448: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[7];
 "448
-[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 17 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 449: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[8];
 "449
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 8 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 450: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[9]);
+"450
+[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 9 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 451: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 21;
+"451
+[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 21 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 452: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[17]);
+"452
+[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 17 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+"453
 }
 [e :U 1157 ]
-[; ;drv_mrf_miwi_24j40.c: 449: }
-[; ;drv_mrf_miwi_24j40.c: 452: break;
-"452
+[; ;drv_mrf_miwi_24j40.c: 453: }
+[; ;drv_mrf_miwi_24j40.c: 456: break;
+"456
 [e $U 1152  ]
-[; ;drv_mrf_miwi_24j40.c: 454: case 0xCC:
-"454
+[; ;drv_mrf_miwi_24j40.c: 458: case 0xCC:
+"458
 [e :U 1158 ]
-[; ;drv_mrf_miwi_24j40.c: 455: MACRxPacket.flags.bits.sourcePrsnt = 1;
-"455
-[e = . . . _MACRxPacket 0 1 6 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 457: if (bIntraPAN)
-"457
-[e $ ! != -> _bIntraPAN `i -> -> -> 0 `i `uc `i 1159  ]
-[; ;drv_mrf_miwi_24j40.c: 459: {
+[; ;drv_mrf_miwi_24j40.c: 459: MACRxPacket.flags.bits.sourcePrsnt = 1;
 "459
-{
-[; ;drv_mrf_miwi_24j40.c: 462: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[3];
-"462
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 463: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[4];
+[e = . . . _MACRxPacket 0 1 6 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 461: if (bIntraPAN)
+"461
+[e $ ! != -> _bIntraPAN `i -> -> -> 0 `i `uc `i 1159  ]
+[; ;drv_mrf_miwi_24j40.c: 463: {
 "463
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 465: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[13]);
-"465
-[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 13 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 466: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 25;
-"466
-[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 25 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 467: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[21]);
-"467
-[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 21 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-"468
-}
-[; ;drv_mrf_miwi_24j40.c: 468: }
-[e $U 1160  ]
-"470
-[e :U 1159 ]
-[; ;drv_mrf_miwi_24j40.c: 470: else
-[; ;drv_mrf_miwi_24j40.c: 471: {
-"471
 {
-[; ;drv_mrf_miwi_24j40.c: 472: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[13];
+[; ;drv_mrf_miwi_24j40.c: 466: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[3];
+"466
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 467: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[4];
+"467
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 469: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[13]);
+"469
+[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 13 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 470: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 25;
+"470
+[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 25 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 471: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[21]);
+"471
+[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 21 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
 "472
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 13 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 473: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[14];
-"473
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 14 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 474: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[15]);
+}
+[; ;drv_mrf_miwi_24j40.c: 472: }
+[e $U 1160  ]
 "474
-[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 15 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 475: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 27;
+[e :U 1159 ]
+[; ;drv_mrf_miwi_24j40.c: 474: else
+[; ;drv_mrf_miwi_24j40.c: 475: {
 "475
-[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 27 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 476: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[23]);
+{
+[; ;drv_mrf_miwi_24j40.c: 476: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[13];
 "476
-[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 23 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 13 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 477: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[14];
 "477
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 14 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 478: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[15]);
+"478
+[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 15 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 479: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 27;
+"479
+[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 27 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 480: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[23]);
+"480
+[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 23 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+"481
 }
 [e :U 1160 ]
-[; ;drv_mrf_miwi_24j40.c: 477: }
-[; ;drv_mrf_miwi_24j40.c: 479: break;
-"479
-[e $U 1152  ]
-[; ;drv_mrf_miwi_24j40.c: 481: case 0x80:
-"481
-[e :U 1161 ]
-[; ;drv_mrf_miwi_24j40.c: 482: {
-"482
-{
-[; ;drv_mrf_miwi_24j40.c: 483: MACRxPacket.flags.bits.broadcast = 1;
+[; ;drv_mrf_miwi_24j40.c: 481: }
+[; ;drv_mrf_miwi_24j40.c: 483: break;
 "483
-[e = . . . _MACRxPacket 0 1 1 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 484: MACRxPacket.flags.bits.sourcePrsnt = 1;
-"484
-[e = . . . _MACRxPacket 0 1 6 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 485: MACRxPacket.altSourceAddress = 1;
-"485
-[e = . _MACRxPacket 6 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 486: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[3];
-"486
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 487: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[4];
-"487
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 488: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[5]);
-"488
-[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 489: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 11;
-"489
-[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 11 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 490: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[7]);
-"490
-[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-"491
-}
-[; ;drv_mrf_miwi_24j40.c: 491: }
-[; ;drv_mrf_miwi_24j40.c: 492: break;
-"492
 [e $U 1152  ]
-[; ;drv_mrf_miwi_24j40.c: 494: case 0x88:
-"494
-[e :U 1162 ]
-[; ;drv_mrf_miwi_24j40.c: 495: {
-"495
+[; ;drv_mrf_miwi_24j40.c: 485: case 0x80:
+"485
+[e :U 1161 ]
+[; ;drv_mrf_miwi_24j40.c: 486: {
+"486
 {
-[; ;drv_mrf_miwi_24j40.c: 496: if (RxBuffer[BankIndex].Payload[5] == 0xFF && RxBuffer[BankIndex].Payload[6] == 0xFF)
-"496
-[e $ ! && == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 6 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i 1163  ]
-[; ;drv_mrf_miwi_24j40.c: 497: {
-"497
-{
-[; ;drv_mrf_miwi_24j40.c: 498: MACRxPacket.flags.bits.broadcast = 1;
-"498
+[; ;drv_mrf_miwi_24j40.c: 487: MACRxPacket.flags.bits.broadcast = 1;
+"487
 [e = . . . _MACRxPacket 0 1 1 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 488: MACRxPacket.flags.bits.sourcePrsnt = 1;
+"488
+[e = . . . _MACRxPacket 0 1 6 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 489: MACRxPacket.altSourceAddress = 1;
+"489
+[e = . _MACRxPacket 6 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 490: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[3];
+"490
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 491: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[4];
+"491
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 492: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[5]);
+"492
+[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 493: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 11;
+"493
+[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 11 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 494: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[7]);
+"494
+[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+"495
+}
+[; ;drv_mrf_miwi_24j40.c: 495: }
+[; ;drv_mrf_miwi_24j40.c: 496: break;
+"496
+[e $U 1152  ]
+[; ;drv_mrf_miwi_24j40.c: 498: case 0x88:
+"498
+[e :U 1162 ]
+[; ;drv_mrf_miwi_24j40.c: 499: {
 "499
+{
+[; ;drv_mrf_miwi_24j40.c: 500: if (RxBuffer[BankIndex].Payload[5] == 0xFF && RxBuffer[BankIndex].Payload[6] == 0xFF)
+"500
+[e $ ! && == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 6 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i 1163  ]
+[; ;drv_mrf_miwi_24j40.c: 501: {
+"501
+{
+[; ;drv_mrf_miwi_24j40.c: 502: MACRxPacket.flags.bits.broadcast = 1;
+"502
+[e = . . . _MACRxPacket 0 1 1 -> -> 1 `i `uc ]
+"503
 }
 [e :U 1163 ]
-[; ;drv_mrf_miwi_24j40.c: 499: }
-[; ;drv_mrf_miwi_24j40.c: 500: MACRxPacket.flags.bits.sourcePrsnt = 1;
-"500
-[e = . . . _MACRxPacket 0 1 6 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 501: MACRxPacket.altSourceAddress = 1;
-"501
-[e = . _MACRxPacket 6 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 503: if (bIntraPAN == 0)
-"503
-[e $ ! == -> _bIntraPAN `i -> 0 `i 1164  ]
-[; ;drv_mrf_miwi_24j40.c: 504: {
+[; ;drv_mrf_miwi_24j40.c: 503: }
+[; ;drv_mrf_miwi_24j40.c: 504: MACRxPacket.flags.bits.sourcePrsnt = 1;
 "504
-{
-[; ;drv_mrf_miwi_24j40.c: 505: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[7];
+[e = . . . _MACRxPacket 0 1 6 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 505: MACRxPacket.altSourceAddress = 1;
 "505
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 506: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[8];
-"506
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 8 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 507: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[9]);
+[e = . _MACRxPacket 6 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 507: if (bIntraPAN == 0)
 "507
-[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 9 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 508: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 15;
+[e $ ! == -> _bIntraPAN `i -> 0 `i 1164  ]
+[; ;drv_mrf_miwi_24j40.c: 508: {
 "508
-[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 15 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 509: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[11]);
+{
+[; ;drv_mrf_miwi_24j40.c: 509: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[7];
 "509
-[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 11 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 510: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[8];
 "510
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 8 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 511: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[9]);
+"511
+[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 9 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 512: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 15;
+"512
+[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 15 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 513: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[11]);
+"513
+[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 11 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+"514
 }
-[; ;drv_mrf_miwi_24j40.c: 510: } else
+[; ;drv_mrf_miwi_24j40.c: 514: } else
 [e $U 1165  ]
 [e :U 1164 ]
-[; ;drv_mrf_miwi_24j40.c: 512: {
-"512
-{
-[; ;drv_mrf_miwi_24j40.c: 513: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[3];
-"513
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 514: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[4];
-"514
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 515: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[7]);
-"515
-[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 516: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 13;
+[; ;drv_mrf_miwi_24j40.c: 516: {
 "516
-[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 13 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 517: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[9]);
+{
+[; ;drv_mrf_miwi_24j40.c: 517: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[3];
 "517
-[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 9 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 518: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[4];
 "518
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 519: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[7]);
+"519
+[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 520: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 13;
+"520
+[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 13 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 521: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[9]);
+"521
+[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 9 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+"522
 }
 [e :U 1165 ]
-"519
-}
-[; ;drv_mrf_miwi_24j40.c: 518: }
-[; ;drv_mrf_miwi_24j40.c: 519: }
-[; ;drv_mrf_miwi_24j40.c: 520: break;
-"520
-[e $U 1152  ]
-[; ;drv_mrf_miwi_24j40.c: 522: case 0x8C:
-"522
-[e :U 1166 ]
-[; ;drv_mrf_miwi_24j40.c: 523: {
 "523
-{
-[; ;drv_mrf_miwi_24j40.c: 524: MACRxPacket.flags.bits.sourcePrsnt = 1;
-"524
-[e = . . . _MACRxPacket 0 1 6 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 525: MACRxPacket.altSourceAddress = 1;
-"525
-[e = . _MACRxPacket 6 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 527: if (bIntraPAN)
-"527
-[e $ ! != -> _bIntraPAN `i -> -> -> 0 `i `uc `i 1167  ]
-[; ;drv_mrf_miwi_24j40.c: 529: {
-"529
-{
-[; ;drv_mrf_miwi_24j40.c: 531: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[3];
-"531
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 532: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[4];
-"532
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 534: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[12]);
-"534
-[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 12 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 536: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 19;
-"536
-[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 19 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 537: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[15]);
-"537
-[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 15 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-"538
 }
-[; ;drv_mrf_miwi_24j40.c: 538: }
-[e $U 1168  ]
-"540
-[e :U 1167 ]
-[; ;drv_mrf_miwi_24j40.c: 540: else
-[; ;drv_mrf_miwi_24j40.c: 541: {
-"541
+[; ;drv_mrf_miwi_24j40.c: 522: }
+[; ;drv_mrf_miwi_24j40.c: 523: }
+[; ;drv_mrf_miwi_24j40.c: 524: break;
+"524
+[e $U 1152  ]
+[; ;drv_mrf_miwi_24j40.c: 526: case 0x8C:
+"526
+[e :U 1166 ]
+[; ;drv_mrf_miwi_24j40.c: 527: {
+"527
 {
-[; ;drv_mrf_miwi_24j40.c: 542: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[12];
+[; ;drv_mrf_miwi_24j40.c: 528: MACRxPacket.flags.bits.sourcePrsnt = 1;
+"528
+[e = . . . _MACRxPacket 0 1 6 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 529: MACRxPacket.altSourceAddress = 1;
+"529
+[e = . _MACRxPacket 6 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 531: if (bIntraPAN)
+"531
+[e $ ! != -> _bIntraPAN `i -> -> -> 0 `i `uc `i 1167  ]
+[; ;drv_mrf_miwi_24j40.c: 533: {
+"533
+{
+[; ;drv_mrf_miwi_24j40.c: 535: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[3];
+"535
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 536: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[4];
+"536
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 538: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[12]);
+"538
+[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 12 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 540: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 19;
+"540
+[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 19 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 541: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[15]);
+"541
+[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 15 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
 "542
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 12 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 543: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[13];
-"543
-[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 13 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 544: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[14]);
+}
+[; ;drv_mrf_miwi_24j40.c: 542: }
+[e $U 1168  ]
 "544
-[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 14 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 545: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 21;
+[e :U 1167 ]
+[; ;drv_mrf_miwi_24j40.c: 544: else
+[; ;drv_mrf_miwi_24j40.c: 545: {
 "545
-[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 21 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 546: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[17]);
+{
+[; ;drv_mrf_miwi_24j40.c: 546: MACRxPacket.SourcePANID.v[0] = RxBuffer[BankIndex].Payload[12];
 "546
-[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 17 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 12 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 547: MACRxPacket.SourcePANID.v[1] = RxBuffer[BankIndex].Payload[13];
 "547
+[e = *U + &U . . _MACRxPacket 7 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _MACRxPacket 7 0 `ui `ux *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 13 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 548: MACRxPacket.SourceAddress = &(RxBuffer[BankIndex].Payload[14]);
+"548
+[e = . _MACRxPacket 1 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 14 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 549: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 21;
+"549
+[e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 21 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 550: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[17]);
+"550
+[e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 17 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+"551
 }
 [e :U 1168 ]
-"549
-}
-[; ;drv_mrf_miwi_24j40.c: 547: }
-[; ;drv_mrf_miwi_24j40.c: 549: }
-[; ;drv_mrf_miwi_24j40.c: 550: break;
-"550
-[e $U 1152  ]
-[; ;drv_mrf_miwi_24j40.c: 553: case 0x08:
 "553
-[e :U 1169 ]
-[; ;drv_mrf_miwi_24j40.c: 554: {
+}
+[; ;drv_mrf_miwi_24j40.c: 551: }
+[; ;drv_mrf_miwi_24j40.c: 553: }
+[; ;drv_mrf_miwi_24j40.c: 554: break;
 "554
-{
-[; ;drv_mrf_miwi_24j40.c: 555: if (RxBuffer[BankIndex].Payload[5] == 0xFF && RxBuffer[BankIndex].Payload[6] == 0xFF)
-"555
-[e $ ! && == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 6 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i 1170  ]
-[; ;drv_mrf_miwi_24j40.c: 556: {
-"556
-{
-[; ;drv_mrf_miwi_24j40.c: 557: MACRxPacket.flags.bits.broadcast = 1;
+[e $U 1152  ]
+[; ;drv_mrf_miwi_24j40.c: 557: case 0x08:
 "557
-[e = . . . _MACRxPacket 0 1 1 -> -> 1 `i `uc ]
+[e :U 1169 ]
+[; ;drv_mrf_miwi_24j40.c: 558: {
 "558
+{
+[; ;drv_mrf_miwi_24j40.c: 559: if (RxBuffer[BankIndex].Payload[5] == 0xFF && RxBuffer[BankIndex].Payload[6] == 0xFF)
+"559
+[e $ ! && == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i == -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 6 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 255 `i 1170  ]
+[; ;drv_mrf_miwi_24j40.c: 560: {
+"560
+{
+[; ;drv_mrf_miwi_24j40.c: 561: MACRxPacket.flags.bits.broadcast = 1;
+"561
+[e = . . . _MACRxPacket 0 1 1 -> -> 1 `i `uc ]
+"562
 }
 [e :U 1170 ]
-[; ;drv_mrf_miwi_24j40.c: 558: }
-[; ;drv_mrf_miwi_24j40.c: 559: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 10;
-"559
+[; ;drv_mrf_miwi_24j40.c: 562: }
+[; ;drv_mrf_miwi_24j40.c: 563: MACRxPacket.PayloadLen = RxBuffer[BankIndex].PayloadLen - 10;
+"563
 [e = . _MACRxPacket 3 -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 10 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 560: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[7]);
-"560
+[; ;drv_mrf_miwi_24j40.c: 564: MACRxPacket.Payload = &(RxBuffer[BankIndex].Payload[7]);
+"564
 [e = . _MACRxPacket 2 &U *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 7 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-"561
-}
-[; ;drv_mrf_miwi_24j40.c: 561: }
-[; ;drv_mrf_miwi_24j40.c: 562: break;
-"562
-[e $U 1152  ]
-[; ;drv_mrf_miwi_24j40.c: 565: default:
 "565
+}
+[; ;drv_mrf_miwi_24j40.c: 565: }
+[; ;drv_mrf_miwi_24j40.c: 566: break;
+"566
+[e $U 1152  ]
+[; ;drv_mrf_miwi_24j40.c: 569: default:
+"569
 [e :U 1171 ]
-[; ;drv_mrf_miwi_24j40.c: 567: MiMAC_DiscardPacket();
-"567
+[; ;drv_mrf_miwi_24j40.c: 571: MiMAC_DiscardPacket();
+"571
 [e ( _MiMAC_DiscardPacket ..  ]
-[; ;drv_mrf_miwi_24j40.c: 568: return 0;
-"568
+[; ;drv_mrf_miwi_24j40.c: 572: return 0;
+"572
 [e ) -> -> 0 `i `uc ]
 [e $UE 1141  ]
-"569
+"573
 }
-[; ;drv_mrf_miwi_24j40.c: 569: }
+[; ;drv_mrf_miwi_24j40.c: 573: }
 [e $U 1152  ]
-"418
+"422
 [e :U 1153 ]
 [e [\ _addrMode , $ -> -> 200 `i `uc 1154
  , $ -> -> 204 `i `uc 1158
@@ -8872,1314 +8924,1331 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 140 `i `uc 1166
  , $ -> -> 8 `i `uc 1169
  1171 ]
-"569
+"573
 [e :U 1152 ]
-[; ;drv_mrf_miwi_24j40.c: 622: if (RxBuffer[BankIndex].Payload[0] & 0x08)
-"622
+[; ;drv_mrf_miwi_24j40.c: 626: if (RxBuffer[BankIndex].Payload[0] & 0x08)
+"626
 [e $ ! != & -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 8 `i -> 0 `i 1172  ]
-[; ;drv_mrf_miwi_24j40.c: 623: {
-"623
+[; ;drv_mrf_miwi_24j40.c: 627: {
+"627
 {
-[; ;drv_mrf_miwi_24j40.c: 624: MiMAC_DiscardPacket();
-"624
+[; ;drv_mrf_miwi_24j40.c: 628: MiMAC_DiscardPacket();
+"628
 [e ( _MiMAC_DiscardPacket ..  ]
-[; ;drv_mrf_miwi_24j40.c: 625: return 0;
-"625
+[; ;drv_mrf_miwi_24j40.c: 629: return 0;
+"629
 [e ) -> -> 0 `i `uc ]
 [e $UE 1141  ]
-"626
+"630
 }
 [e :U 1172 ]
-[; ;drv_mrf_miwi_24j40.c: 626: }
-[; ;drv_mrf_miwi_24j40.c: 632: switch (RxBuffer[BankIndex].Payload[0] & 0x07)
-"632
-[e $U 1174  ]
-[; ;drv_mrf_miwi_24j40.c: 633: {
-"633
-{
-[; ;drv_mrf_miwi_24j40.c: 634: case 0x01:
-"634
-[e :U 1175 ]
-[; ;drv_mrf_miwi_24j40.c: 635: MACRxPacket.flags.bits.packetType = 0x00;
-"635
-[e = . . . _MACRxPacket 0 1 0 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 636: break;
+[; ;drv_mrf_miwi_24j40.c: 630: }
+[; ;drv_mrf_miwi_24j40.c: 636: switch (RxBuffer[BankIndex].Payload[0] & 0x07)
 "636
-[e $U 1173  ]
-[; ;drv_mrf_miwi_24j40.c: 637: case 0x03:
+[e $U 1174  ]
+[; ;drv_mrf_miwi_24j40.c: 637: {
 "637
-[e :U 1176 ]
-[; ;drv_mrf_miwi_24j40.c: 638: MACRxPacket.flags.bits.packetType = 0x01;
+{
+[; ;drv_mrf_miwi_24j40.c: 638: case 0x01:
 "638
-[e = . . . _MACRxPacket 0 1 0 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 639: break;
+[e :U 1175 ]
+[; ;drv_mrf_miwi_24j40.c: 639: MACRxPacket.flags.bits.packetType = 0x00;
 "639
-[e $U 1173  ]
-[; ;drv_mrf_miwi_24j40.c: 640: case 0x00:
+[e = . . . _MACRxPacket 0 1 0 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 640: break;
 "640
-[e :U 1177 ]
-[; ;drv_mrf_miwi_24j40.c: 642: MACRxPacket.flags.bits.packetType = 0x03;
+[e $U 1173  ]
+[; ;drv_mrf_miwi_24j40.c: 641: case 0x03:
+"641
+[e :U 1176 ]
+[; ;drv_mrf_miwi_24j40.c: 642: MACRxPacket.flags.bits.packetType = 0x01;
 "642
-[e = . . . _MACRxPacket 0 1 0 -> -> 3 `i `uc ]
+[e = . . . _MACRxPacket 0 1 0 -> -> 1 `i `uc ]
 [; ;drv_mrf_miwi_24j40.c: 643: break;
 "643
 [e $U 1173  ]
-[; ;drv_mrf_miwi_24j40.c: 644: default:
+[; ;drv_mrf_miwi_24j40.c: 644: case 0x00:
 "644
-[e :U 1178 ]
-[; ;drv_mrf_miwi_24j40.c: 645: MiMAC_DiscardPacket();
-"645
-[e ( _MiMAC_DiscardPacket ..  ]
-[; ;drv_mrf_miwi_24j40.c: 646: return 0;
+[e :U 1177 ]
+[; ;drv_mrf_miwi_24j40.c: 646: MACRxPacket.flags.bits.packetType = 0x03;
 "646
+[e = . . . _MACRxPacket 0 1 0 -> -> 3 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 647: break;
+"647
+[e $U 1173  ]
+[; ;drv_mrf_miwi_24j40.c: 648: default:
+"648
+[e :U 1178 ]
+[; ;drv_mrf_miwi_24j40.c: 649: MiMAC_DiscardPacket();
+"649
+[e ( _MiMAC_DiscardPacket ..  ]
+[; ;drv_mrf_miwi_24j40.c: 650: return 0;
+"650
 [e ) -> -> 0 `i `uc ]
 [e $UE 1141  ]
-"647
+"651
 }
-[; ;drv_mrf_miwi_24j40.c: 647: }
+[; ;drv_mrf_miwi_24j40.c: 651: }
 [e $U 1173  ]
-"632
+"636
 [e :U 1174 ]
 [e [\ & -> *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux `i -> 7 `i , $ -> 1 `i 1175
  , $ -> 3 `i 1176
  , $ -> 0 `i 1177
  1178 ]
-"647
+"651
 [e :U 1173 ]
-[; ;drv_mrf_miwi_24j40.c: 649: MACRxPacket.LQIValue = RxBuffer[BankIndex].Payload[RxBuffer[BankIndex].PayloadLen - 2];
-"649
-[e = . _MACRxPacket 5 *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 2 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 650: MACRxPacket.RSSIValue = RxBuffer[BankIndex].Payload[RxBuffer[BankIndex].PayloadLen - 1];
-"650
-[e = . _MACRxPacket 4 *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 1 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 653: return 1;
+[; ;drv_mrf_miwi_24j40.c: 653: MACRxPacket.LQIValue = RxBuffer[BankIndex].Payload[RxBuffer[BankIndex].PayloadLen - 2];
 "653
+[e = . _MACRxPacket 5 *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 2 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 654: MACRxPacket.RSSIValue = RxBuffer[BankIndex].Payload[RxBuffer[BankIndex].PayloadLen - 1];
+"654
+[e = . _MACRxPacket 4 *U + &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> - -> . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 1 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 657: return 1;
+"657
 [e ) -> -> 1 `i `uc ]
 [e $UE 1141  ]
-"654
+"658
 }
 [e :U 1150 ]
-[; ;drv_mrf_miwi_24j40.c: 654: }
-[; ;drv_mrf_miwi_24j40.c: 655: return 0;
-"655
+[; ;drv_mrf_miwi_24j40.c: 658: }
+[; ;drv_mrf_miwi_24j40.c: 659: return 0;
+"659
 [e ) -> -> 0 `i `uc ]
 [e $UE 1141  ]
-[; ;drv_mrf_miwi_24j40.c: 656: }
-"656
+[; ;drv_mrf_miwi_24j40.c: 660: }
+"660
 [e :UE 1141 ]
 }
-"693
-[v _MiMAC_DiscardPacket `(v ~T0 @X0 1 ef ]
-"694
-{
-[; ;drv_mrf_miwi_24j40.c: 693: void MiMAC_DiscardPacket(void)
-[; ;drv_mrf_miwi_24j40.c: 694: {
-[e :U _MiMAC_DiscardPacket ]
-[f ]
-[; ;drv_mrf_miwi_24j40.c: 697: if (BankIndex < 2)
 "697
-[e $ ! < -> _BankIndex `i -> 2 `i 1180  ]
-[; ;drv_mrf_miwi_24j40.c: 698: {
+[v _MiMAC_DiscardPacket `(v ~T0 @X0 1 ef ]
 "698
 {
-[; ;drv_mrf_miwi_24j40.c: 699: RxBuffer[BankIndex].PayloadLen = 0;
-"699
+[; ;drv_mrf_miwi_24j40.c: 697: void MiMAC_DiscardPacket(void)
+[; ;drv_mrf_miwi_24j40.c: 698: {
+[e :U _MiMAC_DiscardPacket ]
+[f ]
+[; ;drv_mrf_miwi_24j40.c: 701: if (BankIndex < 2)
+"701
+[e $ ! < -> _BankIndex `i -> 2 `i 1180  ]
+[; ;drv_mrf_miwi_24j40.c: 702: {
+"702
+{
+[; ;drv_mrf_miwi_24j40.c: 703: RxBuffer[BankIndex].PayloadLen = 0;
+"703
 [e = . *U + &U _RxBuffer * -> _BankIndex `ux -> -> # *U &U _RxBuffer `ui `ux 0 -> -> 0 `i `uc ]
-"700
+"704
 }
 [e :U 1180 ]
-[; ;drv_mrf_miwi_24j40.c: 700: }
-[; ;drv_mrf_miwi_24j40.c: 701: }
-"701
+[; ;drv_mrf_miwi_24j40.c: 704: }
+[; ;drv_mrf_miwi_24j40.c: 705: }
+"705
 [e :UE 1179 ]
 }
-"736
-[v _MiMAC_SendPacket `(uc ~T0 @X0 1 ef3`S1098`*uc`uc ]
-"739
-{
-[; ;drv_mrf_miwi_24j40.c: 736: bool MiMAC_SendPacket( MAC_TRANS_PARAM transParam,
-[; ;drv_mrf_miwi_24j40.c: 737: uint8_t *MACPayload,
-[; ;drv_mrf_miwi_24j40.c: 738: uint8_t MACPayloadLen)
-[; ;drv_mrf_miwi_24j40.c: 739: {
-[e :U _MiMAC_SendPacket ]
-"736
-[v _transParam `S1098 ~T0 @X0 1 r1 ]
-"737
-[v _MACPayload `*uc ~T0 @X0 1 r2 ]
-"738
-[v _MACPayloadLen `uc ~T0 @X0 1 r3 ]
-"739
-[f ]
 "740
-[v _headerLength `uc ~T0 @X0 1 a ]
+[v _MiMAC_SendPacket `(uc ~T0 @X0 1 ef3`S1098`*uc`uc ]
+"743
+{
+[; ;drv_mrf_miwi_24j40.c: 740: bool MiMAC_SendPacket( MAC_TRANS_PARAM transParam,
+[; ;drv_mrf_miwi_24j40.c: 741: uint8_t *MACPayload,
+[; ;drv_mrf_miwi_24j40.c: 742: uint8_t MACPayloadLen)
+[; ;drv_mrf_miwi_24j40.c: 743: {
+[e :U _MiMAC_SendPacket ]
+"740
+[v _transParam `S1098 ~T0 @X0 1 r1 ]
 "741
-[v _loc `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 740: uint8_t headerLength;
-[; ;drv_mrf_miwi_24j40.c: 741: uint8_t loc = 0;
-[e = _loc -> -> 0 `i `uc ]
+[v _MACPayload `*uc ~T0 @X0 1 r2 ]
 "742
-[v _i `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 742: uint8_t i = 0;
-[e = _i -> -> 0 `i `uc ]
+[v _MACPayloadLen `uc ~T0 @X0 1 r3 ]
+"743
+[f ]
 "744
-[v _IntraPAN `uc ~T0 @X0 1 a ]
+[v _headerLength `uc ~T0 @X0 1 a ]
+"745
+[v _loc `uc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 744: uint8_t headerLength;
+[; ;drv_mrf_miwi_24j40.c: 745: uint8_t loc = 0;
+[e = _loc -> -> 0 `i `uc ]
 "746
+[v _i `uc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 746: uint8_t i = 0;
+[e = _i -> -> 0 `i `uc ]
+"748
+[v _IntraPAN `uc ~T0 @X0 1 a ]
+"750
 [v _t1 `S1083 ~T0 @X0 1 a ]
 [v _t2 `S1083 ~T0 @X0 1 a ]
-"747
-[v _frameControl `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 744: bool IntraPAN;
-[; ;drv_mrf_miwi_24j40.c: 746: MIWI_TICK t1, t2;
-[; ;drv_mrf_miwi_24j40.c: 747: uint8_t frameControl;
-[; ;drv_mrf_miwi_24j40.c: 749: if (transParam.flags.bits.broadcast)
-"749
-[e $ ! != -> . . . _transParam 0 1 1 `i -> -> -> 0 `i `uc `i 1182  ]
-[; ;drv_mrf_miwi_24j40.c: 750: {
-"750
-{
-[; ;drv_mrf_miwi_24j40.c: 751: transParam.altDestAddr = 1;
 "751
+[v _frameControl `uc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 748: bool IntraPAN;
+[; ;drv_mrf_miwi_24j40.c: 750: MIWI_TICK t1, t2;
+[; ;drv_mrf_miwi_24j40.c: 751: uint8_t frameControl;
+[; ;drv_mrf_miwi_24j40.c: 753: if (transParam.flags.bits.broadcast)
+"753
+[e $ ! != -> . . . _transParam 0 1 1 `i -> -> -> 0 `i `uc `i 1182  ]
+[; ;drv_mrf_miwi_24j40.c: 754: {
+"754
+{
+[; ;drv_mrf_miwi_24j40.c: 755: transParam.altDestAddr = 1;
+"755
 [e = . _transParam 2 -> -> 1 `i `uc ]
-"752
+"756
 }
 [e :U 1182 ]
-[; ;drv_mrf_miwi_24j40.c: 752: }
-[; ;drv_mrf_miwi_24j40.c: 754: if (transParam.flags.bits.secEn)
-"754
+[; ;drv_mrf_miwi_24j40.c: 756: }
+[; ;drv_mrf_miwi_24j40.c: 758: if (transParam.flags.bits.secEn)
+"758
 [e $ ! != -> . . . _transParam 0 1 2 `i -> -> -> 0 `i `uc `i 1183  ]
-[; ;drv_mrf_miwi_24j40.c: 755: {
-"755
+[; ;drv_mrf_miwi_24j40.c: 759: {
+"759
 {
-[; ;drv_mrf_miwi_24j40.c: 756: transParam.altSrcAddr = 0;
-"756
+[; ;drv_mrf_miwi_24j40.c: 760: transParam.altSrcAddr = 0;
+"760
 [e = . _transParam 3 -> -> 0 `i `uc ]
-"757
+"761
 }
 [e :U 1183 ]
-[; ;drv_mrf_miwi_24j40.c: 757: }
-[; ;drv_mrf_miwi_24j40.c: 783: if (transParam.flags.bits.packetType == 0x01)
-"783
+[; ;drv_mrf_miwi_24j40.c: 761: }
+[; ;drv_mrf_miwi_24j40.c: 787: if (transParam.flags.bits.packetType == 0x01)
+"787
 [e $ ! == -> . . . _transParam 0 1 0 `i -> 1 `i 1184  ]
-[; ;drv_mrf_miwi_24j40.c: 784: {
-"784
+[; ;drv_mrf_miwi_24j40.c: 788: {
+"788
 {
-[; ;drv_mrf_miwi_24j40.c: 785: frameControl = 0x03;
-"785
+[; ;drv_mrf_miwi_24j40.c: 789: frameControl = 0x03;
+"789
 [e = _frameControl -> -> 3 `i `uc ]
-"786
+"790
 }
-[; ;drv_mrf_miwi_24j40.c: 786: } else if (transParam.flags.bits.packetType == 0x00)
+[; ;drv_mrf_miwi_24j40.c: 790: } else if (transParam.flags.bits.packetType == 0x00)
 [e $U 1185  ]
 [e :U 1184 ]
 [e $ ! == -> . . . _transParam 0 1 0 `i -> 0 `i 1186  ]
-[; ;drv_mrf_miwi_24j40.c: 787: {
-"787
+[; ;drv_mrf_miwi_24j40.c: 791: {
+"791
 {
-[; ;drv_mrf_miwi_24j40.c: 788: frameControl = 0x01;
-"788
+[; ;drv_mrf_miwi_24j40.c: 792: frameControl = 0x01;
+"792
 [e = _frameControl -> -> 1 `i `uc ]
-"789
+"793
 }
 [e :U 1186 ]
-"794
-[e :U 1185 ]
-[; ;drv_mrf_miwi_24j40.c: 789: }
-[; ;drv_mrf_miwi_24j40.c: 794: if ((transParam.DestPANID.Val == MAC_PANID.Val) && (MAC_PANID.Val != 0xFFFF))
-[e $ ! && == . . _transParam 4 1 . _MAC_PANID 1 != . _MAC_PANID 1 -> 65535 `ui 1187  ]
-[; ;drv_mrf_miwi_24j40.c: 796: {
-"796
-{
-[; ;drv_mrf_miwi_24j40.c: 797: headerLength = 5;
-"797
-[e = _headerLength -> -> 5 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 798: frameControl |= 0x40;
 "798
-[e =| _frameControl -> -> 64 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 800: IntraPAN = 1;
+[e :U 1185 ]
+[; ;drv_mrf_miwi_24j40.c: 793: }
+[; ;drv_mrf_miwi_24j40.c: 798: if ((transParam.DestPANID.Val == MAC_PANID.Val) && (MAC_PANID.Val != 0xFFFF))
+[e $ ! && == . . _transParam 4 1 . _MAC_PANID 1 != . _MAC_PANID 1 -> 65535 `ui 1187  ]
+[; ;drv_mrf_miwi_24j40.c: 800: {
 "800
-[e = _IntraPAN -> -> 1 `i `uc ]
-"802
-}
-[; ;drv_mrf_miwi_24j40.c: 802: }
-[e $U 1188  ]
-"804
-[e :U 1187 ]
-[; ;drv_mrf_miwi_24j40.c: 804: else
-[; ;drv_mrf_miwi_24j40.c: 805: {
-"805
 {
-[; ;drv_mrf_miwi_24j40.c: 806: headerLength = 7;
+[; ;drv_mrf_miwi_24j40.c: 801: headerLength = 5;
+"801
+[e = _headerLength -> -> 5 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 802: frameControl |= 0x40;
+"802
+[e =| _frameControl -> -> 64 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 804: IntraPAN = 1;
+"804
+[e = _IntraPAN -> -> 1 `i `uc ]
 "806
-[e = _headerLength -> -> 7 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 807: IntraPAN = 0;
-"807
-[e = _IntraPAN -> -> 0 `i `uc ]
+}
+[; ;drv_mrf_miwi_24j40.c: 806: }
+[e $U 1188  ]
 "808
+[e :U 1187 ]
+[; ;drv_mrf_miwi_24j40.c: 808: else
+[; ;drv_mrf_miwi_24j40.c: 809: {
+"809
+{
+[; ;drv_mrf_miwi_24j40.c: 810: headerLength = 7;
+"810
+[e = _headerLength -> -> 7 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 811: IntraPAN = 0;
+"811
+[e = _IntraPAN -> -> 0 `i `uc ]
+"812
 }
 [e :U 1188 ]
-[; ;drv_mrf_miwi_24j40.c: 808: }
-[; ;drv_mrf_miwi_24j40.c: 811: if (transParam.altDestAddr)
-"811
+[; ;drv_mrf_miwi_24j40.c: 812: }
+[; ;drv_mrf_miwi_24j40.c: 815: if (transParam.altDestAddr)
+"815
 [e $ ! != -> . _transParam 2 `i -> -> -> 0 `i `uc `i 1189  ]
-[; ;drv_mrf_miwi_24j40.c: 812: {
-"812
+[; ;drv_mrf_miwi_24j40.c: 816: {
+"816
 {
-[; ;drv_mrf_miwi_24j40.c: 813: headerLength += 2;
-"813
+[; ;drv_mrf_miwi_24j40.c: 817: headerLength += 2;
+"817
 [e =+ _headerLength -> -> 2 `i `uc ]
-"814
+"818
 }
-[; ;drv_mrf_miwi_24j40.c: 814: } else
+[; ;drv_mrf_miwi_24j40.c: 818: } else
 [e $U 1190  ]
 [e :U 1189 ]
-[; ;drv_mrf_miwi_24j40.c: 815: {
-"815
+[; ;drv_mrf_miwi_24j40.c: 819: {
+"819
 {
-[; ;drv_mrf_miwi_24j40.c: 816: headerLength += 8;
-"816
+[; ;drv_mrf_miwi_24j40.c: 820: headerLength += 8;
+"820
 [e =+ _headerLength -> -> 8 `i `uc ]
-"817
+"821
 }
 [e :U 1190 ]
-[; ;drv_mrf_miwi_24j40.c: 817: }
-[; ;drv_mrf_miwi_24j40.c: 819: if (transParam.altSrcAddr)
-"819
+[; ;drv_mrf_miwi_24j40.c: 821: }
+[; ;drv_mrf_miwi_24j40.c: 823: if (transParam.altSrcAddr)
+"823
 [e $ ! != -> . _transParam 3 `i -> -> -> 0 `i `uc `i 1191  ]
-[; ;drv_mrf_miwi_24j40.c: 820: {
-"820
+[; ;drv_mrf_miwi_24j40.c: 824: {
+"824
 {
-[; ;drv_mrf_miwi_24j40.c: 821: headerLength += 2;
-"821
+[; ;drv_mrf_miwi_24j40.c: 825: headerLength += 2;
+"825
 [e =+ _headerLength -> -> 2 `i `uc ]
-"822
+"826
 }
-[; ;drv_mrf_miwi_24j40.c: 822: } else
+[; ;drv_mrf_miwi_24j40.c: 826: } else
 [e $U 1192  ]
 [e :U 1191 ]
-[; ;drv_mrf_miwi_24j40.c: 823: {
-"823
+[; ;drv_mrf_miwi_24j40.c: 827: {
+"827
 {
-[; ;drv_mrf_miwi_24j40.c: 824: headerLength += 8;
-"824
+[; ;drv_mrf_miwi_24j40.c: 828: headerLength += 8;
+"828
 [e =+ _headerLength -> -> 8 `i `uc ]
-"825
+"829
 }
 [e :U 1192 ]
-[; ;drv_mrf_miwi_24j40.c: 825: }
-[; ;drv_mrf_miwi_24j40.c: 827: if (transParam.flags.bits.ackReq && transParam.flags.bits.broadcast == 0)
-"827
+[; ;drv_mrf_miwi_24j40.c: 829: }
+[; ;drv_mrf_miwi_24j40.c: 831: if (transParam.flags.bits.ackReq && transParam.flags.bits.broadcast == 0)
+"831
 [e $ ! && != -> . . . _transParam 0 1 4 `i -> -> -> 0 `i `uc `i == -> . . . _transParam 0 1 1 `i -> 0 `i 1193  ]
-[; ;drv_mrf_miwi_24j40.c: 828: {
-"828
+[; ;drv_mrf_miwi_24j40.c: 832: {
+"832
 {
-[; ;drv_mrf_miwi_24j40.c: 829: frameControl |= 0x20;
-"829
+[; ;drv_mrf_miwi_24j40.c: 833: frameControl |= 0x20;
+"833
 [e =| _frameControl -> -> 32 `i `uc ]
-"830
+"834
 }
 [e :U 1193 ]
-[; ;drv_mrf_miwi_24j40.c: 830: }
-[; ;drv_mrf_miwi_24j40.c: 833: if (transParam.flags.bits.packetType == 0x03)
-"833
+[; ;drv_mrf_miwi_24j40.c: 834: }
+[; ;drv_mrf_miwi_24j40.c: 837: if (transParam.flags.bits.packetType == 0x03)
+"837
 [e $ ! == -> . . . _transParam 0 1 0 `i -> 3 `i 1194  ]
-[; ;drv_mrf_miwi_24j40.c: 834: {
-"834
-{
-[; ;drv_mrf_miwi_24j40.c: 835: frameControl = 0x00;
-"835
-[e = _frameControl -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 836: headerLength = 7;
-"836
-[e = _headerLength -> -> 7 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 838: IntraPAN = 0;
+[; ;drv_mrf_miwi_24j40.c: 838: {
 "838
-[e = _IntraPAN -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 840: transParam.altSrcAddr = 1;
+{
+[; ;drv_mrf_miwi_24j40.c: 839: frameControl = 0x00;
+"839
+[e = _frameControl -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 840: headerLength = 7;
 "840
-[e = . _transParam 3 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 841: transParam.flags.bits.ackReq = 0;
-"841
-[e = . . . _transParam 0 1 4 -> -> 0 `i `uc ]
+[e = _headerLength -> -> 7 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 842: IntraPAN = 0;
 "842
+[e = _IntraPAN -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 844: transParam.altSrcAddr = 1;
+"844
+[e = . _transParam 3 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 845: transParam.flags.bits.ackReq = 0;
+"845
+[e = . . . _transParam 0 1 4 -> -> 0 `i `uc ]
+"846
 }
 [e :U 1194 ]
-[; ;drv_mrf_miwi_24j40.c: 842: }
-[; ;drv_mrf_miwi_24j40.c: 853: PHYSetLongRAMAddr(loc++, headerLength);
-"853
+[; ;drv_mrf_miwi_24j40.c: 846: }
+[; ;drv_mrf_miwi_24j40.c: 857: PHYSetLongRAMAddr(loc++, headerLength);
+"857
 [e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui _headerLength ]
-[; ;drv_mrf_miwi_24j40.c: 861: {
-"861
+[; ;drv_mrf_miwi_24j40.c: 865: {
+"865
 {
-[; ;drv_mrf_miwi_24j40.c: 862: PHYSetLongRAMAddr(loc++, headerLength + MACPayloadLen);
-"862
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> + -> _headerLength `i -> _MACPayloadLen `i `uc ]
-"863
-}
-[; ;drv_mrf_miwi_24j40.c: 863: }
-[; ;drv_mrf_miwi_24j40.c: 866: PHYSetLongRAMAddr(loc++, frameControl);
+[; ;drv_mrf_miwi_24j40.c: 866: PHYSetLongRAMAddr(loc++, headerLength + MACPayloadLen);
 "866
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui _frameControl ]
-[; ;drv_mrf_miwi_24j40.c: 869: if (transParam.flags.bits.packetType == 0x03)
-"869
-[e $ ! == -> . . . _transParam 0 1 0 `i -> 3 `i 1195  ]
-[; ;drv_mrf_miwi_24j40.c: 870: {
-"870
-{
-[; ;drv_mrf_miwi_24j40.c: 871: PHYSetLongRAMAddr(loc++, 0x80);
-"871
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 128 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 873: PHYSetLongRAMAddr(loc++, IEEESeqNum++);
-"873
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui ++ _IEEESeqNum -> -> 1 `i `uc ]
-"874
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> + -> _headerLength `i -> _MACPayloadLen `i `uc ]
+"867
 }
-[; ;drv_mrf_miwi_24j40.c: 874: } else
+[; ;drv_mrf_miwi_24j40.c: 867: }
+[; ;drv_mrf_miwi_24j40.c: 870: PHYSetLongRAMAddr(loc++, frameControl);
+"870
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui _frameControl ]
+[; ;drv_mrf_miwi_24j40.c: 873: if (transParam.flags.bits.packetType == 0x03)
+"873
+[e $ ! == -> . . . _transParam 0 1 0 `i -> 3 `i 1195  ]
+[; ;drv_mrf_miwi_24j40.c: 874: {
+"874
+{
+[; ;drv_mrf_miwi_24j40.c: 875: PHYSetLongRAMAddr(loc++, 0x80);
+"875
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 128 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 877: PHYSetLongRAMAddr(loc++, IEEESeqNum++);
+"877
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui ++ _IEEESeqNum -> -> 1 `i `uc ]
+"878
+}
+[; ;drv_mrf_miwi_24j40.c: 878: } else
 [e $U 1196  ]
 [e :U 1195 ]
-[; ;drv_mrf_miwi_24j40.c: 875: {
-"875
-{
-[; ;drv_mrf_miwi_24j40.c: 876: if (transParam.altDestAddr && transParam.altSrcAddr)
-"876
-[e $ ! && != -> . _transParam 2 `i -> -> -> 0 `i `uc `i != -> . _transParam 3 `i -> -> -> 0 `i `uc `i 1197  ]
-[; ;drv_mrf_miwi_24j40.c: 877: {
-"877
-{
-[; ;drv_mrf_miwi_24j40.c: 878: PHYSetLongRAMAddr(loc++, 0x88);
-"878
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 136 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 879: {
 "879
+{
+[; ;drv_mrf_miwi_24j40.c: 880: if (transParam.altDestAddr && transParam.altSrcAddr)
+"880
+[e $ ! && != -> . _transParam 2 `i -> -> -> 0 `i `uc `i != -> . _transParam 3 `i -> -> -> 0 `i `uc `i 1197  ]
+[; ;drv_mrf_miwi_24j40.c: 881: {
+"881
+{
+[; ;drv_mrf_miwi_24j40.c: 882: PHYSetLongRAMAddr(loc++, 0x88);
+"882
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 136 `i `uc ]
+"883
 }
-[; ;drv_mrf_miwi_24j40.c: 879: } else if (transParam.altDestAddr && transParam.altSrcAddr == 0)
+[; ;drv_mrf_miwi_24j40.c: 883: } else if (transParam.altDestAddr && transParam.altSrcAddr == 0)
 [e $U 1198  ]
 [e :U 1197 ]
 [e $ ! && != -> . _transParam 2 `i -> -> -> 0 `i `uc `i == -> . _transParam 3 `i -> 0 `i 1199  ]
-[; ;drv_mrf_miwi_24j40.c: 880: {
-"880
+[; ;drv_mrf_miwi_24j40.c: 884: {
+"884
 {
-[; ;drv_mrf_miwi_24j40.c: 881: PHYSetLongRAMAddr(loc++, 0xC8);
-"881
+[; ;drv_mrf_miwi_24j40.c: 885: PHYSetLongRAMAddr(loc++, 0xC8);
+"885
 [e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 200 `i `uc ]
-"882
+"886
 }
-[; ;drv_mrf_miwi_24j40.c: 882: } else if (transParam.altDestAddr == 0 && transParam.altSrcAddr == 1)
+[; ;drv_mrf_miwi_24j40.c: 886: } else if (transParam.altDestAddr == 0 && transParam.altSrcAddr == 1)
 [e $U 1200  ]
 [e :U 1199 ]
 [e $ ! && == -> . _transParam 2 `i -> 0 `i == -> . _transParam 3 `i -> 1 `i 1201  ]
-[; ;drv_mrf_miwi_24j40.c: 883: {
-"883
+[; ;drv_mrf_miwi_24j40.c: 887: {
+"887
 {
-[; ;drv_mrf_miwi_24j40.c: 884: PHYSetLongRAMAddr(loc++, 0x8C);
-"884
+[; ;drv_mrf_miwi_24j40.c: 888: PHYSetLongRAMAddr(loc++, 0x8C);
+"888
 [e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 140 `i `uc ]
-"885
+"889
 }
-[; ;drv_mrf_miwi_24j40.c: 885: } else
+[; ;drv_mrf_miwi_24j40.c: 889: } else
 [e $U 1202  ]
 [e :U 1201 ]
-[; ;drv_mrf_miwi_24j40.c: 886: {
-"886
+[; ;drv_mrf_miwi_24j40.c: 890: {
+"890
 {
-[; ;drv_mrf_miwi_24j40.c: 887: PHYSetLongRAMAddr(loc++, 0xCC);
-"887
+[; ;drv_mrf_miwi_24j40.c: 891: PHYSetLongRAMAddr(loc++, 0xCC);
+"891
 [e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 204 `i `uc ]
-"888
+"892
 }
 [e :U 1202 ]
 [e :U 1200 ]
 [e :U 1198 ]
-[; ;drv_mrf_miwi_24j40.c: 888: }
-[; ;drv_mrf_miwi_24j40.c: 891: PHYSetLongRAMAddr(loc++, IEEESeqNum++);
-"891
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui ++ _IEEESeqNum -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 894: PHYSetLongRAMAddr(loc++, transParam.DestPANID.v[0]);
-"894
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . . _transParam 4 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _transParam 4 0 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 895: PHYSetLongRAMAddr(loc++, transParam.DestPANID.v[1]);
+[; ;drv_mrf_miwi_24j40.c: 892: }
+[; ;drv_mrf_miwi_24j40.c: 895: PHYSetLongRAMAddr(loc++, IEEESeqNum++);
 "895
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . . _transParam 4 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _transParam 4 0 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 898: if (transParam.flags.bits.broadcast)
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui ++ _IEEESeqNum -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 898: PHYSetLongRAMAddr(loc++, transParam.DestPANID.v[0]);
 "898
-[e $ ! != -> . . . _transParam 0 1 1 `i -> -> -> 0 `i `uc `i 1203  ]
-[; ;drv_mrf_miwi_24j40.c: 899: {
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . . _transParam 4 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _transParam 4 0 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 899: PHYSetLongRAMAddr(loc++, transParam.DestPANID.v[1]);
 "899
-{
-[; ;drv_mrf_miwi_24j40.c: 900: PHYSetLongRAMAddr(loc++, 0xFF);
-"900
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 255 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 901: PHYSetLongRAMAddr(loc++, 0xFF);
-"901
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 255 `i `uc ]
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . . _transParam 4 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _transParam 4 0 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 902: if (transParam.flags.bits.broadcast)
 "902
-}
-[; ;drv_mrf_miwi_24j40.c: 902: } else
-[e $U 1204  ]
-[e :U 1203 ]
+[e $ ! != -> . . . _transParam 0 1 1 `i -> -> -> 0 `i `uc `i 1203  ]
 [; ;drv_mrf_miwi_24j40.c: 903: {
 "903
 {
-[; ;drv_mrf_miwi_24j40.c: 904: if (transParam.altDestAddr)
+[; ;drv_mrf_miwi_24j40.c: 904: PHYSetLongRAMAddr(loc++, 0xFF);
 "904
-[e $ ! != -> . _transParam 2 `i -> -> -> 0 `i `uc `i 1205  ]
-[; ;drv_mrf_miwi_24j40.c: 905: {
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 255 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 905: PHYSetLongRAMAddr(loc++, 0xFF);
 "905
-{
-[; ;drv_mrf_miwi_24j40.c: 906: PHYSetLongRAMAddr(loc++, transParam.DestAddress[0]);
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui -> -> 255 `i `uc ]
 "906
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + . _transParam 1 * -> -> 0 `i `x -> -> # *U . _transParam 1 `i `x ]
-[; ;drv_mrf_miwi_24j40.c: 907: PHYSetLongRAMAddr(loc++, transParam.DestAddress[1]);
-"907
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + . _transParam 1 * -> -> 1 `i `x -> -> # *U . _transParam 1 `i `x ]
-"908
 }
-[; ;drv_mrf_miwi_24j40.c: 908: } else
-[e $U 1206  ]
-[e :U 1205 ]
+[; ;drv_mrf_miwi_24j40.c: 906: } else
+[e $U 1204  ]
+[e :U 1203 ]
+[; ;drv_mrf_miwi_24j40.c: 907: {
+"907
+{
+[; ;drv_mrf_miwi_24j40.c: 908: if (transParam.altDestAddr)
+"908
+[e $ ! != -> . _transParam 2 `i -> -> -> 0 `i `uc `i 1205  ]
 [; ;drv_mrf_miwi_24j40.c: 909: {
 "909
 {
-[; ;drv_mrf_miwi_24j40.c: 910: for (i = 0; i < 8; i++)
+[; ;drv_mrf_miwi_24j40.c: 910: PHYSetLongRAMAddr(loc++, transParam.DestAddress[0]);
 "910
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + . _transParam 1 * -> -> 0 `i `x -> -> # *U . _transParam 1 `i `x ]
+[; ;drv_mrf_miwi_24j40.c: 911: PHYSetLongRAMAddr(loc++, transParam.DestAddress[1]);
+"911
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + . _transParam 1 * -> -> 1 `i `x -> -> # *U . _transParam 1 `i `x ]
+"912
+}
+[; ;drv_mrf_miwi_24j40.c: 912: } else
+[e $U 1206  ]
+[e :U 1205 ]
+[; ;drv_mrf_miwi_24j40.c: 913: {
+"913
+{
+[; ;drv_mrf_miwi_24j40.c: 914: for (i = 0; i < 8; i++)
+"914
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 1207  ]
 [e $U 1208  ]
-"911
+"915
 [e :U 1207 ]
-[; ;drv_mrf_miwi_24j40.c: 911: {
+[; ;drv_mrf_miwi_24j40.c: 915: {
 {
-[; ;drv_mrf_miwi_24j40.c: 912: PHYSetLongRAMAddr(loc++, transParam.DestAddress[i]);
-"912
+[; ;drv_mrf_miwi_24j40.c: 916: PHYSetLongRAMAddr(loc++, transParam.DestAddress[i]);
+"916
 [e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + . _transParam 1 * -> _i `ux -> -> # *U . _transParam 1 `ui `ux ]
-"913
+"917
 }
-"910
+"914
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 1207  ]
 [e :U 1208 ]
-"913
+"917
 }
-"914
+"918
 }
 [e :U 1206 ]
-"915
+"919
 }
 [e :U 1204 ]
-"916
+"920
 }
 [e :U 1196 ]
-[; ;drv_mrf_miwi_24j40.c: 913: }
-[; ;drv_mrf_miwi_24j40.c: 914: }
-[; ;drv_mrf_miwi_24j40.c: 915: }
-[; ;drv_mrf_miwi_24j40.c: 916: }
-[; ;drv_mrf_miwi_24j40.c: 920: if (IntraPAN == 0)
-"920
-[e $ ! == -> _IntraPAN `i -> 0 `i 1210  ]
-[; ;drv_mrf_miwi_24j40.c: 921: {
-"921
-{
-[; ;drv_mrf_miwi_24j40.c: 922: PHYSetLongRAMAddr(loc++, MAC_PANID.v[0]);
-"922
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . _MAC_PANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 923: PHYSetLongRAMAddr(loc++, MAC_PANID.v[1]);
-"923
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . _MAC_PANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 917: }
+[; ;drv_mrf_miwi_24j40.c: 918: }
+[; ;drv_mrf_miwi_24j40.c: 919: }
+[; ;drv_mrf_miwi_24j40.c: 920: }
+[; ;drv_mrf_miwi_24j40.c: 924: if (IntraPAN == 0)
 "924
+[e $ ! == -> _IntraPAN `i -> 0 `i 1210  ]
+[; ;drv_mrf_miwi_24j40.c: 925: {
+"925
+{
+[; ;drv_mrf_miwi_24j40.c: 926: PHYSetLongRAMAddr(loc++, MAC_PANID.v[0]);
+"926
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . _MAC_PANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 927: PHYSetLongRAMAddr(loc++, MAC_PANID.v[1]);
+"927
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . _MAC_PANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux ]
+"928
 }
 [e :U 1210 ]
-[; ;drv_mrf_miwi_24j40.c: 924: }
-[; ;drv_mrf_miwi_24j40.c: 928: if (transParam.altSrcAddr)
-"928
-[e $ ! != -> . _transParam 3 `i -> -> -> 0 `i `uc `i 1211  ]
-[; ;drv_mrf_miwi_24j40.c: 929: {
-"929
-{
-[; ;drv_mrf_miwi_24j40.c: 930: PHYSetLongRAMAddr(loc++, myNetworkAddress.v[0]);
-"930
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . _myNetworkAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 931: PHYSetLongRAMAddr(loc++, myNetworkAddress.v[1]);
-"931
-[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . _myNetworkAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 928: }
+[; ;drv_mrf_miwi_24j40.c: 932: if (transParam.altSrcAddr)
 "932
-}
-[; ;drv_mrf_miwi_24j40.c: 932: } else
-[e $U 1212  ]
-[e :U 1211 ]
+[e $ ! != -> . _transParam 3 `i -> -> -> 0 `i `uc `i 1211  ]
 [; ;drv_mrf_miwi_24j40.c: 933: {
 "933
 {
-[; ;drv_mrf_miwi_24j40.c: 934: for (i = 0; i < 8; i++)
+[; ;drv_mrf_miwi_24j40.c: 934: PHYSetLongRAMAddr(loc++, myNetworkAddress.v[0]);
 "934
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . _myNetworkAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 935: PHYSetLongRAMAddr(loc++, myNetworkAddress.v[1]);
+"935
+[e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + &U . _myNetworkAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux ]
+"936
+}
+[; ;drv_mrf_miwi_24j40.c: 936: } else
+[e $U 1212  ]
+[e :U 1211 ]
+[; ;drv_mrf_miwi_24j40.c: 937: {
+"937
+{
+[; ;drv_mrf_miwi_24j40.c: 938: for (i = 0; i < 8; i++)
+"938
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 1213  ]
 [e $U 1214  ]
-"935
+"939
 [e :U 1213 ]
-[; ;drv_mrf_miwi_24j40.c: 935: {
+[; ;drv_mrf_miwi_24j40.c: 939: {
 {
-[; ;drv_mrf_miwi_24j40.c: 936: PHYSetLongRAMAddr(loc++, MACInitParams.PAddress[i]);
-"936
+[; ;drv_mrf_miwi_24j40.c: 940: PHYSetLongRAMAddr(loc++, MACInitParams.PAddress[i]);
+"940
 [e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + . _MACInitParams 1 * -> _i `ux -> -> # *U . _MACInitParams 1 `ui `ux ]
-"937
+"941
 }
-"934
+"938
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 1213  ]
 [e :U 1214 ]
-"937
+"941
 }
-"938
+"942
 }
 [e :U 1212 ]
-[; ;drv_mrf_miwi_24j40.c: 937: }
-[; ;drv_mrf_miwi_24j40.c: 938: }
-[; ;drv_mrf_miwi_24j40.c: 964: for (i = 0; i < MACPayloadLen; i++)
-"964
+[; ;drv_mrf_miwi_24j40.c: 941: }
+[; ;drv_mrf_miwi_24j40.c: 942: }
+[; ;drv_mrf_miwi_24j40.c: 968: for (i = 0; i < MACPayloadLen; i++)
+"968
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 1219  ]
-"965
+"969
 [e :U 1216 ]
-[; ;drv_mrf_miwi_24j40.c: 965: {
+[; ;drv_mrf_miwi_24j40.c: 969: {
 {
-[; ;drv_mrf_miwi_24j40.c: 966: PHYSetLongRAMAddr(loc++, MACPayload[i]);
-"966
+[; ;drv_mrf_miwi_24j40.c: 970: PHYSetLongRAMAddr(loc++, MACPayload[i]);
+"970
 [e ( _PHYSetLongRAMAddr (2 , -> ++ _loc -> -> 1 `i `uc `ui *U + _MACPayload * -> _i `ux -> -> # *U _MACPayload `ui `ux ]
-"967
+"971
 }
-"964
+"968
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 1219 ]
 [e $ < -> _i `i -> _MACPayloadLen `i 1216  ]
 [e :U 1217 ]
-"967
+"971
 }
-[; ;drv_mrf_miwi_24j40.c: 967: }
-[; ;drv_mrf_miwi_24j40.c: 969: MRF24J40Status.bits.TX_BUSY = 1;
-"969
-[e = . . _MRF24J40Status 1 0 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 972: if (transParam.flags.bits.ackReq && transParam.flags.bits.broadcast == 0)
-"972
-[e $ ! && != -> . . . _transParam 0 1 4 `i -> -> -> 0 `i `uc `i == -> . . . _transParam 0 1 1 `i -> 0 `i 1220  ]
-[; ;drv_mrf_miwi_24j40.c: 973: {
+[; ;drv_mrf_miwi_24j40.c: 971: }
+[; ;drv_mrf_miwi_24j40.c: 973: MRF24J40Status.bits.TX_BUSY = 1;
 "973
-{
-[; ;drv_mrf_miwi_24j40.c: 974: i = 0x05;
-"974
-[e = _i -> -> 5 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 976: MRF24J40Status.bits.TX_PENDING_ACK = 1;
+[e = . . _MRF24J40Status 1 0 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 976: if (transParam.flags.bits.ackReq && transParam.flags.bits.broadcast == 0)
 "976
-[e = . . _MRF24J40Status 1 1 -> -> 1 `i `uc ]
+[e $ ! && != -> . . . _transParam 0 1 4 `i -> -> -> 0 `i `uc `i == -> . . . _transParam 0 1 1 `i -> 0 `i 1220  ]
+[; ;drv_mrf_miwi_24j40.c: 977: {
+"977
+{
+[; ;drv_mrf_miwi_24j40.c: 978: i = 0x05;
 "978
+[e = _i -> -> 5 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 980: MRF24J40Status.bits.TX_PENDING_ACK = 1;
+"980
+[e = . . _MRF24J40Status 1 1 -> -> 1 `i `uc ]
+"982
 }
-[; ;drv_mrf_miwi_24j40.c: 978: } else
+[; ;drv_mrf_miwi_24j40.c: 982: } else
 [e $U 1221  ]
 [e :U 1220 ]
-[; ;drv_mrf_miwi_24j40.c: 979: {
-"979
+[; ;drv_mrf_miwi_24j40.c: 983: {
+"983
 {
-[; ;drv_mrf_miwi_24j40.c: 980: i = 0x01;
-"980
-[e = _i -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 982: MRF24J40Status.bits.TX_PENDING_ACK = 0;
-"982
-[e = . . _MRF24J40Status 1 1 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 984: i = 0x01;
 "984
+[e = _i -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 986: MRF24J40Status.bits.TX_PENDING_ACK = 0;
+"986
+[e = . . _MRF24J40Status 1 1 -> -> 0 `i `uc ]
+"988
 }
 [e :U 1221 ]
-[; ;drv_mrf_miwi_24j40.c: 984: }
-[; ;drv_mrf_miwi_24j40.c: 988: PHYSetShortRAMAddr((0x37), i);
-"988
-[e ( _PHYSetShortRAMAddr (2 , -> -> 55 `i `uc _i ]
-[; ;drv_mrf_miwi_24j40.c: 991: t1 = MiWi_TickGet();
-"991
-[e = _t1 ( _MiWi_TickGet ..  ]
-[; ;drv_mrf_miwi_24j40.c: 992: while (1)
+[; ;drv_mrf_miwi_24j40.c: 988: }
+[; ;drv_mrf_miwi_24j40.c: 992: PHYSetShortRAMAddr((0x37), i);
 "992
-[e :U 1223 ]
-[; ;drv_mrf_miwi_24j40.c: 993: {
-"993
-{
-[; ;drv_mrf_miwi_24j40.c: 994: if (PORTBbits.RB0 == 0)
-"994
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 1225  ]
-[; ;drv_mrf_miwi_24j40.c: 995: {
+[e ( _PHYSetShortRAMAddr (2 , -> -> 55 `i `uc _i ]
+[; ;drv_mrf_miwi_24j40.c: 995: t1 = MiWi_TickGet();
 "995
-{
-[; ;drv_mrf_miwi_24j40.c: 996: INTCONbits.INT0IF = 1;
+[e = _t1 ( _MiWi_TickGet ..  ]
+[; ;drv_mrf_miwi_24j40.c: 996: while (1)
 "996
-[e = . . _INTCONbits 0 1 -> -> 1 `i `uc ]
+[e :U 1223 ]
+[; ;drv_mrf_miwi_24j40.c: 997: {
 "997
-}
-[e :U 1225 ]
-[; ;drv_mrf_miwi_24j40.c: 997: }
-[; ;drv_mrf_miwi_24j40.c: 998: if (MRF24J40Status.bits.TX_BUSY == 0)
+{
+[; ;drv_mrf_miwi_24j40.c: 998: if (PORTBbits.RB0 == 0)
 "998
-[e $ ! == -> . . _MRF24J40Status 1 0 `i -> 0 `i 1226  ]
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 1225  ]
 [; ;drv_mrf_miwi_24j40.c: 999: {
 "999
 {
-[; ;drv_mrf_miwi_24j40.c: 1000: if (MRF24J40Status.bits.TX_FAIL)
+[; ;drv_mrf_miwi_24j40.c: 1000: INTCONbits.INT0IF = 1;
 "1000
-[e $ ! != -> . . _MRF24J40Status 1 2 `i -> -> -> 0 `i `Vuc `i 1227  ]
-[; ;drv_mrf_miwi_24j40.c: 1001: {
+[e = . . _INTCONbits 0 1 -> -> 1 `i `uc ]
 "1001
-{
-[; ;drv_mrf_miwi_24j40.c: 1002: MRF24J40Status.bits.TX_FAIL = 0;
+}
+[e :U 1225 ]
+[; ;drv_mrf_miwi_24j40.c: 1001: }
+[; ;drv_mrf_miwi_24j40.c: 1002: if (MRF24J40Status.bits.TX_BUSY == 0)
 "1002
-[e = . . _MRF24J40Status 1 2 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1003: return 0;
+[e $ ! == -> . . _MRF24J40Status 1 0 `i -> 0 `i 1226  ]
+[; ;drv_mrf_miwi_24j40.c: 1003: {
 "1003
+{
+[; ;drv_mrf_miwi_24j40.c: 1004: if (MRF24J40Status.bits.TX_FAIL)
+"1004
+[e $ ! != -> . . _MRF24J40Status 1 2 `i -> -> -> 0 `i `Vuc `i 1227  ]
+[; ;drv_mrf_miwi_24j40.c: 1005: {
+"1005
+{
+[; ;drv_mrf_miwi_24j40.c: 1006: MRF24J40Status.bits.TX_FAIL = 0;
+"1006
+[e = . . _MRF24J40Status 1 2 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1007: return 0;
+"1007
 [e ) -> -> 0 `i `uc ]
 [e $UE 1181  ]
-"1004
+"1008
 }
 [e :U 1227 ]
-[; ;drv_mrf_miwi_24j40.c: 1004: }
-[; ;drv_mrf_miwi_24j40.c: 1005: break;
-"1005
+[; ;drv_mrf_miwi_24j40.c: 1008: }
+[; ;drv_mrf_miwi_24j40.c: 1009: break;
+"1009
 [e $U 1224  ]
-"1006
+"1010
 }
 [e :U 1226 ]
-[; ;drv_mrf_miwi_24j40.c: 1006: }
-[; ;drv_mrf_miwi_24j40.c: 1007: t2 = MiWi_TickGet();
-"1007
-[e = _t2 ( _MiWi_TickGet ..  ]
-[; ;drv_mrf_miwi_24j40.c: 1008: if ((t2.Val - t1.Val) > (((uint32_t)(16000000)/32)/25))
-"1008
-[e $ ! > - . _t2 0 . _t1 0 / / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 25 `i `l `ul 1228  ]
-[; ;drv_mrf_miwi_24j40.c: 1009: {
-"1009
-{
-[; ;drv_mrf_miwi_24j40.c: 1010: InitMRF24J40();
-"1010
-[e ( _InitMRF24J40 ..  ]
-[; ;drv_mrf_miwi_24j40.c: 1011: MiMAC_SetAltAddress(myNetworkAddress.v, MAC_PANID.v);
+[; ;drv_mrf_miwi_24j40.c: 1010: }
+[; ;drv_mrf_miwi_24j40.c: 1011: t2 = MiWi_TickGet();
 "1011
-[e ( _MiMAC_SetAltAddress (2 , &U . _myNetworkAddress 0 &U . _MAC_PANID 0 ]
-[; ;drv_mrf_miwi_24j40.c: 1012: MRF24J40Status.bits.TX_BUSY = 0;
+[e = _t2 ( _MiWi_TickGet ..  ]
+[; ;drv_mrf_miwi_24j40.c: 1012: if ((t2.Val - t1.Val) > (((uint32_t)(16000000)/32)/25))
 "1012
-[e = . . _MRF24J40Status 1 0 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1013: return 0;
+[e $ ! > - . _t2 0 . _t1 0 / / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 25 `i `l `ul 1228  ]
+[; ;drv_mrf_miwi_24j40.c: 1013: {
 "1013
+{
+[; ;drv_mrf_miwi_24j40.c: 1014: InitMRF24J40();
+"1014
+[e ( _InitMRF24J40 ..  ]
+[; ;drv_mrf_miwi_24j40.c: 1015: MiMAC_SetAltAddress(myNetworkAddress.v, MAC_PANID.v);
+"1015
+[e ( _MiMAC_SetAltAddress (2 , &U . _myNetworkAddress 0 &U . _MAC_PANID 0 ]
+[; ;drv_mrf_miwi_24j40.c: 1016: MRF24J40Status.bits.TX_BUSY = 0;
+"1016
+[e = . . _MRF24J40Status 1 0 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1017: return 0;
+"1017
 [e ) -> -> 0 `i `uc ]
 [e $UE 1181  ]
-"1014
+"1018
 }
 [e :U 1228 ]
-"1015
+"1019
 }
 [e :U 1222 ]
-"992
+"996
 [e $U 1223  ]
 [e :U 1224 ]
-[; ;drv_mrf_miwi_24j40.c: 1014: }
-[; ;drv_mrf_miwi_24j40.c: 1015: }
-[; ;drv_mrf_miwi_24j40.c: 1017: return 1;
-"1017
+[; ;drv_mrf_miwi_24j40.c: 1018: }
+[; ;drv_mrf_miwi_24j40.c: 1019: }
+[; ;drv_mrf_miwi_24j40.c: 1021: return 1;
+"1021
 [e ) -> -> 1 `i `uc ]
 [e $UE 1181  ]
-[; ;drv_mrf_miwi_24j40.c: 1019: }
-"1019
+[; ;drv_mrf_miwi_24j40.c: 1023: }
+"1023
 [e :UE 1181 ]
 }
-"1057
+"1061
 [v _MiMAC_ChannelAssessment `(uc ~T0 @X0 1 ef1`uc ]
-"1058
+"1062
 {
-[; ;drv_mrf_miwi_24j40.c: 1057: uint8_t MiMAC_ChannelAssessment( uint8_t AssessmentMode)
-[; ;drv_mrf_miwi_24j40.c: 1058: {
+[; ;drv_mrf_miwi_24j40.c: 1061: uint8_t MiMAC_ChannelAssessment( uint8_t AssessmentMode)
+[; ;drv_mrf_miwi_24j40.c: 1062: {
 [e :U _MiMAC_ChannelAssessment ]
-"1057
+"1061
 [v _AssessmentMode `uc ~T0 @X0 1 r1 ]
-"1058
+"1062
 [f ]
-"1059
+"1063
 [v _RSSIcheck `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1059: uint8_t RSSIcheck;
-[; ;drv_mrf_miwi_24j40.c: 1073: PHYSetShortRAMAddr((0x7D), 0x80);
-"1073
-[e ( _PHYSetShortRAMAddr (2 , -> -> 125 `i `uc -> -> 128 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1076: RSSIcheck = PHYGetShortRAMAddr((0x7C));
-"1076
-[e = _RSSIcheck ( _PHYGetShortRAMAddr (1 -> -> 124 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1077: while ((RSSIcheck & 0x01) != 0x01)
+[; ;drv_mrf_miwi_24j40.c: 1063: uint8_t RSSIcheck;
+[; ;drv_mrf_miwi_24j40.c: 1077: PHYSetShortRAMAddr((0x7D), 0x80);
 "1077
+[e ( _PHYSetShortRAMAddr (2 , -> -> 125 `i `uc -> -> 128 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1080: RSSIcheck = PHYGetShortRAMAddr((0x7C));
+"1080
+[e = _RSSIcheck ( _PHYGetShortRAMAddr (1 -> -> 124 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1081: while ((RSSIcheck & 0x01) != 0x01)
+"1081
 [e $U 1230  ]
 [e :U 1231 ]
-[; ;drv_mrf_miwi_24j40.c: 1078: {
-"1078
+[; ;drv_mrf_miwi_24j40.c: 1082: {
+"1082
 {
-[; ;drv_mrf_miwi_24j40.c: 1079: RSSIcheck = PHYGetShortRAMAddr((0x7C));
-"1079
+[; ;drv_mrf_miwi_24j40.c: 1083: RSSIcheck = PHYGetShortRAMAddr((0x7C));
+"1083
 [e = _RSSIcheck ( _PHYGetShortRAMAddr (1 -> -> 124 `i `uc ]
-"1080
+"1084
 }
 [e :U 1230 ]
-"1077
+"1081
 [e $ != & -> _RSSIcheck `i -> 1 `i -> 1 `i 1231  ]
 [e :U 1232 ]
-[; ;drv_mrf_miwi_24j40.c: 1080: }
-[; ;drv_mrf_miwi_24j40.c: 1083: RSSIcheck = PHYGetLongRAMAddr(0x210);
-"1083
-[e = _RSSIcheck ( _PHYGetLongRAMAddr (1 -> -> 528 `i `ui ]
-[; ;drv_mrf_miwi_24j40.c: 1087: PHYSetShortRAMAddr((0x7D), 0x40);
+[; ;drv_mrf_miwi_24j40.c: 1084: }
+[; ;drv_mrf_miwi_24j40.c: 1087: RSSIcheck = PHYGetLongRAMAddr(0x210);
 "1087
+[e = _RSSIcheck ( _PHYGetLongRAMAddr (1 -> -> 528 `i `ui ]
+[; ;drv_mrf_miwi_24j40.c: 1091: PHYSetShortRAMAddr((0x7D), 0x40);
+"1091
 [e ( _PHYSetShortRAMAddr (2 , -> -> 125 `i `uc -> -> 64 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1100: return RSSIcheck;
-"1100
+[; ;drv_mrf_miwi_24j40.c: 1104: return RSSIcheck;
+"1104
 [e ) _RSSIcheck ]
 [e $UE 1229  ]
-[; ;drv_mrf_miwi_24j40.c: 1101: }
-"1101
+[; ;drv_mrf_miwi_24j40.c: 1105: }
+"1105
 [e :UE 1229 ]
 }
-"1302
+"1306
 [v _MiMAC_SetChannel `(uc ~T0 @X0 1 ef2`uc`uc ]
-"1303
+"1307
 {
-[; ;drv_mrf_miwi_24j40.c: 1302: bool MiMAC_SetChannel( uint8_t channel,  uint8_t offsetFreq)
-[; ;drv_mrf_miwi_24j40.c: 1303: {
+[; ;drv_mrf_miwi_24j40.c: 1306: bool MiMAC_SetChannel( uint8_t channel,  uint8_t offsetFreq)
+[; ;drv_mrf_miwi_24j40.c: 1307: {
 [e :U _MiMAC_SetChannel ]
-"1302
+"1306
 [v _channel `uc ~T0 @X0 1 r1 ]
 [v _offsetFreq `uc ~T0 @X0 1 r2 ]
-"1303
+"1307
 [f ]
-[; ;drv_mrf_miwi_24j40.c: 1304: if (channel < 11 || channel > 26)
-"1304
+[; ;drv_mrf_miwi_24j40.c: 1308: if (channel < 11 || channel > 26)
+"1308
 [e $ ! || < -> _channel `i -> 11 `i > -> _channel `i -> 26 `i 1234  ]
-[; ;drv_mrf_miwi_24j40.c: 1305: {
-"1305
+[; ;drv_mrf_miwi_24j40.c: 1309: {
+"1309
 {
-[; ;drv_mrf_miwi_24j40.c: 1306: return 0;
-"1306
+[; ;drv_mrf_miwi_24j40.c: 1310: return 0;
+"1310
 [e ) -> -> 0 `i `uc ]
 [e $UE 1233  ]
-"1307
+"1311
 }
 [e :U 1234 ]
-[; ;drv_mrf_miwi_24j40.c: 1307: }
-[; ;drv_mrf_miwi_24j40.c: 1316: MACCurrentChannel = channel;
-"1316
-[e = _MACCurrentChannel _channel ]
-[; ;drv_mrf_miwi_24j40.c: 1317: PHYSetLongRAMAddr((0x200), ((channel - 11) << 4) | 0x03);
-"1317
-[e ( _PHYSetLongRAMAddr (2 , -> -> 512 `i `ui -> | << - -> _channel `i -> 11 `i -> 4 `i -> 3 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1318: PHYSetShortRAMAddr((0x6D), 0x04);
-"1318
-[e ( _PHYSetShortRAMAddr (2 , -> -> 109 `i `uc -> -> 4 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1319: PHYSetShortRAMAddr((0x6D), 0x00);
-"1319
-[e ( _PHYSetShortRAMAddr (2 , -> -> 109 `i `uc -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1320: return 1;
+[; ;drv_mrf_miwi_24j40.c: 1311: }
+[; ;drv_mrf_miwi_24j40.c: 1320: MACCurrentChannel = channel;
 "1320
+[e = _MACCurrentChannel _channel ]
+[; ;drv_mrf_miwi_24j40.c: 1321: PHYSetLongRAMAddr((0x200), ((channel - 11) << 4) | 0x03);
+"1321
+[e ( _PHYSetLongRAMAddr (2 , -> -> 512 `i `ui -> | << - -> _channel `i -> 11 `i -> 4 `i -> 3 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1322: PHYSetShortRAMAddr((0x6D), 0x04);
+"1322
+[e ( _PHYSetShortRAMAddr (2 , -> -> 109 `i `uc -> -> 4 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1323: PHYSetShortRAMAddr((0x6D), 0x00);
+"1323
+[e ( _PHYSetShortRAMAddr (2 , -> -> 109 `i `uc -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1324: return 1;
+"1324
 [e ) -> -> 1 `i `uc ]
 [e $UE 1233  ]
-[; ;drv_mrf_miwi_24j40.c: 1321: }
-"1321
+[; ;drv_mrf_miwi_24j40.c: 1325: }
+"1325
 [e :UE 1233 ]
 }
-"1355
+"1359
 [v _MiMAC_SetPower `(uc ~T0 @X0 1 ef1`uc ]
-"1356
-{
-[; ;drv_mrf_miwi_24j40.c: 1355: bool MiMAC_SetPower( uint8_t outputPower)
-[; ;drv_mrf_miwi_24j40.c: 1356: {
-[e :U _MiMAC_SetPower ]
-"1355
-[v _outputPower `uc ~T0 @X0 1 r1 ]
-"1356
-[f ]
-"1357
-[v _reg `uc ~T0 @X0 1 a ]
-"1358
-[v _tmp `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1357: uint8_t reg;
-[; ;drv_mrf_miwi_24j40.c: 1358: uint8_t tmp = outputPower % 10;
-[e = _tmp -> % -> _outputPower `i -> 10 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1360: reg = (outputPower / 10) << 6;
 "1360
-[e = _reg -> << / -> _outputPower `i -> 10 `i -> 6 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1361: if (tmp > 5)
-"1361
-[e $ ! > -> _tmp `i -> 5 `i 1236  ]
-[; ;drv_mrf_miwi_24j40.c: 1362: {
-"1362
 {
-[; ;drv_mrf_miwi_24j40.c: 1363: reg += 0x38;
-"1363
-[e =+ _reg -> -> 56 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1359: bool MiMAC_SetPower( uint8_t outputPower)
+[; ;drv_mrf_miwi_24j40.c: 1360: {
+[e :U _MiMAC_SetPower ]
+"1359
+[v _outputPower `uc ~T0 @X0 1 r1 ]
+"1360
+[f ]
+"1361
+[v _reg `uc ~T0 @X0 1 a ]
+"1362
+[v _tmp `uc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1361: uint8_t reg;
+[; ;drv_mrf_miwi_24j40.c: 1362: uint8_t tmp = outputPower % 10;
+[e = _tmp -> % -> _outputPower `i -> 10 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1364: reg = (outputPower / 10) << 6;
 "1364
+[e = _reg -> << / -> _outputPower `i -> 10 `i -> 6 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1365: if (tmp > 5)
+"1365
+[e $ ! > -> _tmp `i -> 5 `i 1236  ]
+[; ;drv_mrf_miwi_24j40.c: 1366: {
+"1366
+{
+[; ;drv_mrf_miwi_24j40.c: 1367: reg += 0x38;
+"1367
+[e =+ _reg -> -> 56 `i `uc ]
+"1368
 }
-[; ;drv_mrf_miwi_24j40.c: 1364: } else if (tmp > 4)
+[; ;drv_mrf_miwi_24j40.c: 1368: } else if (tmp > 4)
 [e $U 1237  ]
 [e :U 1236 ]
 [e $ ! > -> _tmp `i -> 4 `i 1238  ]
-[; ;drv_mrf_miwi_24j40.c: 1365: {
-"1365
+[; ;drv_mrf_miwi_24j40.c: 1369: {
+"1369
 {
-[; ;drv_mrf_miwi_24j40.c: 1366: reg += 0x30;
-"1366
+[; ;drv_mrf_miwi_24j40.c: 1370: reg += 0x30;
+"1370
 [e =+ _reg -> -> 48 `i `uc ]
-"1367
+"1371
 }
-[; ;drv_mrf_miwi_24j40.c: 1367: } else if (tmp > 3)
+[; ;drv_mrf_miwi_24j40.c: 1371: } else if (tmp > 3)
 [e $U 1239  ]
 [e :U 1238 ]
 [e $ ! > -> _tmp `i -> 3 `i 1240  ]
-[; ;drv_mrf_miwi_24j40.c: 1368: {
-"1368
+[; ;drv_mrf_miwi_24j40.c: 1372: {
+"1372
 {
-[; ;drv_mrf_miwi_24j40.c: 1369: reg += 0x28;
-"1369
+[; ;drv_mrf_miwi_24j40.c: 1373: reg += 0x28;
+"1373
 [e =+ _reg -> -> 40 `i `uc ]
-"1370
+"1374
 }
-[; ;drv_mrf_miwi_24j40.c: 1370: } else if (tmp > 2)
+[; ;drv_mrf_miwi_24j40.c: 1374: } else if (tmp > 2)
 [e $U 1241  ]
 [e :U 1240 ]
 [e $ ! > -> _tmp `i -> 2 `i 1242  ]
-[; ;drv_mrf_miwi_24j40.c: 1371: {
-"1371
+[; ;drv_mrf_miwi_24j40.c: 1375: {
+"1375
 {
-[; ;drv_mrf_miwi_24j40.c: 1372: reg += 0x20;
-"1372
+[; ;drv_mrf_miwi_24j40.c: 1376: reg += 0x20;
+"1376
 [e =+ _reg -> -> 32 `i `uc ]
-"1373
+"1377
 }
-[; ;drv_mrf_miwi_24j40.c: 1373: } else if (tmp > 1)
+[; ;drv_mrf_miwi_24j40.c: 1377: } else if (tmp > 1)
 [e $U 1243  ]
 [e :U 1242 ]
 [e $ ! > -> _tmp `i -> 1 `i 1244  ]
-[; ;drv_mrf_miwi_24j40.c: 1374: {
-"1374
+[; ;drv_mrf_miwi_24j40.c: 1378: {
+"1378
 {
-[; ;drv_mrf_miwi_24j40.c: 1375: reg += 0x18;
-"1375
+[; ;drv_mrf_miwi_24j40.c: 1379: reg += 0x18;
+"1379
 [e =+ _reg -> -> 24 `i `uc ]
-"1376
+"1380
 }
-[; ;drv_mrf_miwi_24j40.c: 1376: } else if (tmp > 0)
+[; ;drv_mrf_miwi_24j40.c: 1380: } else if (tmp > 0)
 [e $U 1245  ]
 [e :U 1244 ]
 [e $ ! > -> _tmp `i -> 0 `i 1246  ]
-[; ;drv_mrf_miwi_24j40.c: 1377: {
-"1377
+[; ;drv_mrf_miwi_24j40.c: 1381: {
+"1381
 {
-[; ;drv_mrf_miwi_24j40.c: 1378: reg += 0x10;
-"1378
+[; ;drv_mrf_miwi_24j40.c: 1382: reg += 0x10;
+"1382
 [e =+ _reg -> -> 16 `i `uc ]
-"1379
+"1383
 }
 [e :U 1246 ]
-"1381
+"1385
 [e :U 1245 ]
 [e :U 1243 ]
 [e :U 1241 ]
 [e :U 1239 ]
 [e :U 1237 ]
-[; ;drv_mrf_miwi_24j40.c: 1379: }
-[; ;drv_mrf_miwi_24j40.c: 1381: PHYSetLongRAMAddr((0x203), reg);
+[; ;drv_mrf_miwi_24j40.c: 1383: }
+[; ;drv_mrf_miwi_24j40.c: 1385: PHYSetLongRAMAddr((0x203), reg);
 [e ( _PHYSetLongRAMAddr (2 , -> -> 515 `i `ui _reg ]
-[; ;drv_mrf_miwi_24j40.c: 1382: return 1;
-"1382
+[; ;drv_mrf_miwi_24j40.c: 1386: return 1;
+"1386
 [e ) -> -> 1 `i `uc ]
 [e $UE 1235  ]
-[; ;drv_mrf_miwi_24j40.c: 1383: }
-"1383
+[; ;drv_mrf_miwi_24j40.c: 1387: }
+"1387
 [e :UE 1235 ]
 }
-"1421
+"1425
 [v _MiMAC_SetAltAddress `(uc ~T0 @X0 1 ef2`*uc`*uc ]
-"1422
+"1426
 {
-[; ;drv_mrf_miwi_24j40.c: 1421: bool MiMAC_SetAltAddress( uint8_t *Address,  uint8_t *PANID)
-[; ;drv_mrf_miwi_24j40.c: 1422: {
+[; ;drv_mrf_miwi_24j40.c: 1425: bool MiMAC_SetAltAddress( uint8_t *Address,  uint8_t *PANID)
+[; ;drv_mrf_miwi_24j40.c: 1426: {
 [e :U _MiMAC_SetAltAddress ]
-"1421
+"1425
 [v _Address `*uc ~T0 @X0 1 r1 ]
 [v _PANID `*uc ~T0 @X0 1 r2 ]
-"1422
-[f ]
-[; ;drv_mrf_miwi_24j40.c: 1423: myNetworkAddress.v[0] = Address[0];
-"1423
-[e = *U + &U . _myNetworkAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux *U + _Address * -> -> 0 `i `x -> -> # *U _Address `i `x ]
-[; ;drv_mrf_miwi_24j40.c: 1424: myNetworkAddress.v[1] = Address[1];
-"1424
-[e = *U + &U . _myNetworkAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux *U + _Address * -> -> 1 `i `x -> -> # *U _Address `i `x ]
-[; ;drv_mrf_miwi_24j40.c: 1425: MAC_PANID.v[0] = PANID[0];
-"1425
-[e = *U + &U . _MAC_PANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux *U + _PANID * -> -> 0 `i `x -> -> # *U _PANID `i `x ]
-[; ;drv_mrf_miwi_24j40.c: 1426: MAC_PANID.v[1] = PANID[1];
 "1426
-[e = *U + &U . _MAC_PANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux *U + _PANID * -> -> 1 `i `x -> -> # *U _PANID `i `x ]
-[; ;drv_mrf_miwi_24j40.c: 1428: PHYSetShortRAMAddr((0x07), myNetworkAddress.v[0]);
+[f ]
+[; ;drv_mrf_miwi_24j40.c: 1427: myNetworkAddress.v[0] = Address[0];
+"1427
+[e = *U + &U . _myNetworkAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux *U + _Address * -> -> 0 `i `x -> -> # *U _Address `i `x ]
+[; ;drv_mrf_miwi_24j40.c: 1428: myNetworkAddress.v[1] = Address[1];
 "1428
-[e ( _PHYSetShortRAMAddr (2 , -> -> 7 `i `uc *U + &U . _myNetworkAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 1429: PHYSetShortRAMAddr((0x09), myNetworkAddress.v[1]);
+[e = *U + &U . _myNetworkAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux *U + _Address * -> -> 1 `i `x -> -> # *U _Address `i `x ]
+[; ;drv_mrf_miwi_24j40.c: 1429: MAC_PANID.v[0] = PANID[0];
 "1429
-[e ( _PHYSetShortRAMAddr (2 , -> -> 9 `i `uc *U + &U . _myNetworkAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 1430: PHYSetShortRAMAddr((0x03), MAC_PANID.v[0]);
+[e = *U + &U . _MAC_PANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux *U + _PANID * -> -> 0 `i `x -> -> # *U _PANID `i `x ]
+[; ;drv_mrf_miwi_24j40.c: 1430: MAC_PANID.v[1] = PANID[1];
 "1430
-[e ( _PHYSetShortRAMAddr (2 , -> -> 3 `i `uc *U + &U . _MAC_PANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 1431: PHYSetShortRAMAddr((0x05), MAC_PANID.v[1]);
-"1431
-[e ( _PHYSetShortRAMAddr (2 , -> -> 5 `i `uc *U + &U . _MAC_PANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux ]
-[; ;drv_mrf_miwi_24j40.c: 1432: return 1;
+[e = *U + &U . _MAC_PANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux *U + _PANID * -> -> 1 `i `x -> -> # *U _PANID `i `x ]
+[; ;drv_mrf_miwi_24j40.c: 1432: PHYSetShortRAMAddr((0x07), myNetworkAddress.v[0]);
 "1432
+[e ( _PHYSetShortRAMAddr (2 , -> -> 7 `i `uc *U + &U . _myNetworkAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 1433: PHYSetShortRAMAddr((0x09), myNetworkAddress.v[1]);
+"1433
+[e ( _PHYSetShortRAMAddr (2 , -> -> 9 `i `uc *U + &U . _myNetworkAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myNetworkAddress 0 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 1434: PHYSetShortRAMAddr((0x03), MAC_PANID.v[0]);
+"1434
+[e ( _PHYSetShortRAMAddr (2 , -> -> 3 `i `uc *U + &U . _MAC_PANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 1435: PHYSetShortRAMAddr((0x05), MAC_PANID.v[1]);
+"1435
+[e ( _PHYSetShortRAMAddr (2 , -> -> 5 `i `uc *U + &U . _MAC_PANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _MAC_PANID 0 `ui `ux ]
+[; ;drv_mrf_miwi_24j40.c: 1436: return 1;
+"1436
 [e ) -> -> 1 `i `uc ]
 [e $UE 1247  ]
-[; ;drv_mrf_miwi_24j40.c: 1433: }
-"1433
+[; ;drv_mrf_miwi_24j40.c: 1437: }
+"1437
 [e :UE 1247 ]
 }
-"1465
-[v _MiMAC_Init `(uc ~T0 @X0 1 ef1`S1104 ]
-"1466
-{
-[; ;drv_mrf_miwi_24j40.c: 1465: bool MiMAC_Init( MACINIT_PARAM initValue)
-[; ;drv_mrf_miwi_24j40.c: 1466: {
-[e :U _MiMAC_Init ]
-"1465
-[v _initValue `S1104 ~T0 @X0 1 r1 ]
-"1466
-[f ]
-"1467
-[v _i `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1467: uint8_t i;
-[; ;drv_mrf_miwi_24j40.c: 1469: MACInitParams = initValue;
 "1469
-[e = _MACInitParams _initValue ]
-[; ;drv_mrf_miwi_24j40.c: 1471: IEEESeqNum = TMR0L;
+[v _MiMAC_Init `(uc ~T0 @X0 1 ef1`S1104 ]
+"1470
+{
+[; ;drv_mrf_miwi_24j40.c: 1469: bool MiMAC_Init( MACINIT_PARAM initValue)
+[; ;drv_mrf_miwi_24j40.c: 1470: {
+[e :U _MiMAC_Init ]
+"1469
+[v _initValue `S1104 ~T0 @X0 1 r1 ]
+"1470
+[f ]
 "1471
-[e = _IEEESeqNum _TMR0L ]
-[; ;drv_mrf_miwi_24j40.c: 1473: MACCurrentChannel = 11;
+[v _i `uc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1471: uint8_t i;
+[; ;drv_mrf_miwi_24j40.c: 1473: MACInitParams = initValue;
 "1473
-[e = _MACCurrentChannel -> -> 11 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1475: InitMRF24J40();
+[e = _MACInitParams _initValue ]
+[; ;drv_mrf_miwi_24j40.c: 1475: IEEESeqNum = TMR0L;
 "1475
-[e ( _InitMRF24J40 ..  ]
-[; ;drv_mrf_miwi_24j40.c: 1477: MRF24J40Status.Val = 0;
+[e = _IEEESeqNum _TMR0L ]
+[; ;drv_mrf_miwi_24j40.c: 1477: MACCurrentChannel = 11;
 "1477
-[e = . _MRF24J40Status 0 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1479: for (i = 0; i < 2; i++)
+[e = _MACCurrentChannel -> -> 11 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1479: InitMRF24J40();
 "1479
+[e ( _InitMRF24J40 ..  ]
+[; ;drv_mrf_miwi_24j40.c: 1481: MRF24J40Status.Val = 0;
+"1481
+[e = . _MRF24J40Status 0 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1483: for (i = 0; i < 2; i++)
+"1483
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 2 `i 1249  ]
 [e $U 1250  ]
-"1480
+"1484
 [e :U 1249 ]
-[; ;drv_mrf_miwi_24j40.c: 1480: {
+[; ;drv_mrf_miwi_24j40.c: 1484: {
 {
-[; ;drv_mrf_miwi_24j40.c: 1481: RxBuffer[i].PayloadLen = 0;
-"1481
+[; ;drv_mrf_miwi_24j40.c: 1485: RxBuffer[i].PayloadLen = 0;
+"1485
 [e = . *U + &U _RxBuffer * -> _i `ux -> -> # *U &U _RxBuffer `ui `ux 0 -> -> 0 `i `uc ]
-"1482
+"1486
 }
-"1479
+"1483
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 2 `i 1249  ]
 [e :U 1250 ]
-"1482
+"1486
 }
-[; ;drv_mrf_miwi_24j40.c: 1482: }
-[; ;drv_mrf_miwi_24j40.c: 1501: return 1;
-"1501
+[; ;drv_mrf_miwi_24j40.c: 1486: }
+[; ;drv_mrf_miwi_24j40.c: 1505: return 1;
+"1505
 [e ) -> -> 1 `i `uc ]
 [e $UE 1248  ]
-[; ;drv_mrf_miwi_24j40.c: 1502: }
-"1502
+[; ;drv_mrf_miwi_24j40.c: 1506: }
+"1506
 [e :UE 1248 ]
 }
-[v F8389 `(v ~T0 @X0 1 tf ]
-"1852
-[v _high_isr `IF8389 ~T0 @X0 1 e ]
-"1865
+[v F8390 `(v ~T0 @X0 1 tf ]
+"1856
+[v _high_isr `IF8390 ~T0 @X0 1 e ]
+"1869
 {
-[; ;drv_mrf_miwi_24j40.c: 1852: void interrupt high_isr (void)
-[; ;drv_mrf_miwi_24j40.c: 1865: {
+[; ;drv_mrf_miwi_24j40.c: 1856: void interrupt high_isr (void)
+[; ;drv_mrf_miwi_24j40.c: 1869: {
 [e :U _high_isr ]
 [f ]
-[; ;drv_mrf_miwi_24j40.c: 1867: if (INTCONbits.INT0IE && INTCONbits.INT0IF)
-"1867
-[e $ ! && != -> . . _INTCONbits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 1253  ]
-[; ;drv_mrf_miwi_24j40.c: 1868: {
-"1868
-{
-"1869
-[v _i `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1869: uint8_t i;
-[; ;drv_mrf_miwi_24j40.c: 1873: INTCONbits.INT0IF = 0;
+[; ;drv_mrf_miwi_24j40.c: 1873: if (PIR3bits.TMR4IF) {
 "1873
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1877: {
+[e $ ! != -> . . _PIR3bits 0 3 `i -> -> -> 0 `i `Vuc `i 1253  ]
+{
+[; ;drv_mrf_miwi_24j40.c: 1874: LATBbits.LATB2=BuzzerStatus;
+"1874
+[e = . . _LATBbits 0 2 _BuzzerStatus ]
+[; ;drv_mrf_miwi_24j40.c: 1875: BuzzerStatus = !BuzzerStatus;
+"1875
+[e = _BuzzerStatus -> -> ! != -> _BuzzerStatus `i -> -> -> 0 `i `uc `i `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1876: PIR3bits.TMR4IF = 0;
+"1876
+[e = . . _PIR3bits 0 3 -> -> 0 `i `uc ]
 "1877
-{
-"1878
-[v _flags `S1107 ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1878: MRF24J40_IFREG flags;
-[; ;drv_mrf_miwi_24j40.c: 1881: flags.Val = PHYGetShortRAMAddr((0x62));
-"1881
-[e = . _flags 0 ( _PHYGetShortRAMAddr (1 -> -> 98 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1883: if (flags.bits.RF_TXIF)
-"1883
-[e $ ! != -> . . _flags 1 0 `i -> -> -> 0 `i `uc `i 1254  ]
-[; ;drv_mrf_miwi_24j40.c: 1884: {
-"1884
-{
-[; ;drv_mrf_miwi_24j40.c: 1887: MRF24J40Status.bits.TX_BUSY = 0;
-"1887
-[e = . . _MRF24J40Status 1 0 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1889: if (MRF24J40Status.bits.SEC_IF)
-"1889
-[e $ ! != -> . . _MRF24J40Status 1 6 `i -> -> -> 0 `i `Vuc `i 1255  ]
-[; ;drv_mrf_miwi_24j40.c: 1890: {
-"1890
-{
-[; ;drv_mrf_miwi_24j40.c: 1891: MRF24J40Status.bits.SEC_IF = 0;
-"1891
-[e = . . _MRF24J40Status 1 6 -> -> 0 `i `uc ]
-"1892
 }
-[e :U 1255 ]
-[; ;drv_mrf_miwi_24j40.c: 1892: }
-[; ;drv_mrf_miwi_24j40.c: 1894: failureCounter = 0;
-"1894
-[e = _failureCounter -> -> 0 `i `ui ]
-[; ;drv_mrf_miwi_24j40.c: 1898: if (MRF24J40Status.bits.TX_PENDING_ACK)
+[e :U 1253 ]
+[; ;drv_mrf_miwi_24j40.c: 1877: }
+[; ;drv_mrf_miwi_24j40.c: 1882: if (INTCONbits.INT0IE && INTCONbits.INT0IF)
+"1882
+[e $ ! && != -> . . _INTCONbits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 1254  ]
+[; ;drv_mrf_miwi_24j40.c: 1883: {
+"1883
+{
+"1884
+[v _i `uc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1884: uint8_t i;
+[; ;drv_mrf_miwi_24j40.c: 1888: INTCONbits.INT0IF = 0;
+"1888
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1892: {
+"1892
+{
+"1893
+[v _flags `S1107 ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1893: MRF24J40_IFREG flags;
+[; ;drv_mrf_miwi_24j40.c: 1896: flags.Val = PHYGetShortRAMAddr((0x62));
+"1896
+[e = . _flags 0 ( _PHYGetShortRAMAddr (1 -> -> 98 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1898: if (flags.bits.RF_TXIF)
 "1898
-[e $ ! != -> . . _MRF24J40Status 1 1 `i -> -> -> 0 `i `Vuc `i 1256  ]
+[e $ ! != -> . . _flags 1 0 `i -> -> -> 0 `i `uc `i 1255  ]
 [; ;drv_mrf_miwi_24j40.c: 1899: {
 "1899
 {
-"1900
-[v _results `S1096 ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1900: DRIVER_UINT8_UNION results;
-[; ;drv_mrf_miwi_24j40.c: 1903: results.Val = PHYGetShortRAMAddr((0x48));
-"1903
-[e = . _results 0 ( _PHYGetShortRAMAddr (1 -> -> 72 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1905: if (results.bits.b0 == 1)
+[; ;drv_mrf_miwi_24j40.c: 1902: MRF24J40Status.bits.TX_BUSY = 0;
+"1902
+[e = . . _MRF24J40Status 1 0 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1904: if (MRF24J40Status.bits.SEC_IF)
+"1904
+[e $ ! != -> . . _MRF24J40Status 1 6 `i -> -> -> 0 `i `Vuc `i 1256  ]
+[; ;drv_mrf_miwi_24j40.c: 1905: {
 "1905
-[e $ ! == -> . . _results 1 0 `i -> 1 `i 1257  ]
-[; ;drv_mrf_miwi_24j40.c: 1906: {
-"1906
 {
-[; ;drv_mrf_miwi_24j40.c: 1909: MRF24J40Status.bits.TX_FAIL = 1;
-"1909
-[e = . . _MRF24J40Status 1 2 -> -> 1 `i `uc ]
-"1910
-}
-[e :U 1257 ]
-[; ;drv_mrf_miwi_24j40.c: 1910: }
-[; ;drv_mrf_miwi_24j40.c: 1914: MRF24J40Status.bits.TX_PENDING_ACK = 0;
-"1914
-[e = . . _MRF24J40Status 1 1 -> -> 0 `i `uc ]
-"1916
+[; ;drv_mrf_miwi_24j40.c: 1906: MRF24J40Status.bits.SEC_IF = 0;
+"1906
+[e = . . _MRF24J40Status 1 6 -> -> 0 `i `uc ]
+"1907
 }
 [e :U 1256 ]
+[; ;drv_mrf_miwi_24j40.c: 1907: }
+[; ;drv_mrf_miwi_24j40.c: 1909: failureCounter = 0;
+"1909
+[e = _failureCounter -> -> 0 `i `ui ]
+[; ;drv_mrf_miwi_24j40.c: 1913: if (MRF24J40Status.bits.TX_PENDING_ACK)
+"1913
+[e $ ! != -> . . _MRF24J40Status 1 1 `i -> -> -> 0 `i `Vuc `i 1257  ]
+[; ;drv_mrf_miwi_24j40.c: 1914: {
+"1914
+{
+"1915
+[v _results `S1096 ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1915: DRIVER_UINT8_UNION results;
+[; ;drv_mrf_miwi_24j40.c: 1918: results.Val = PHYGetShortRAMAddr((0x48));
 "1918
-}
-[e :U 1254 ]
-[; ;drv_mrf_miwi_24j40.c: 1916: }
-[; ;drv_mrf_miwi_24j40.c: 1918: }
-[; ;drv_mrf_miwi_24j40.c: 1920: if (flags.bits.RF_RXIF)
+[e = . _results 0 ( _PHYGetShortRAMAddr (1 -> -> 72 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1920: if (results.bits.b0 == 1)
 "1920
-[e $ ! != -> . . _flags 1 2 `i -> -> -> 0 `i `uc `i 1258  ]
+[e $ ! == -> . . _results 1 0 `i -> 1 `i 1258  ]
 [; ;drv_mrf_miwi_24j40.c: 1921: {
 "1921
 {
-"1922
-[v _RxBank `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1922: uint8_t RxBank = 0xFF;
-[e = _RxBank -> -> 255 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1924: for (i = 0; i < 2; i++)
+[; ;drv_mrf_miwi_24j40.c: 1924: MRF24J40Status.bits.TX_FAIL = 1;
 "1924
+[e = . . _MRF24J40Status 1 2 -> -> 1 `i `uc ]
+"1925
+}
+[e :U 1258 ]
+[; ;drv_mrf_miwi_24j40.c: 1925: }
+[; ;drv_mrf_miwi_24j40.c: 1929: MRF24J40Status.bits.TX_PENDING_ACK = 0;
+"1929
+[e = . . _MRF24J40Status 1 1 -> -> 0 `i `uc ]
+"1931
+}
+[e :U 1257 ]
+"1933
+}
+[e :U 1255 ]
+[; ;drv_mrf_miwi_24j40.c: 1931: }
+[; ;drv_mrf_miwi_24j40.c: 1933: }
+[; ;drv_mrf_miwi_24j40.c: 1935: if (flags.bits.RF_RXIF)
+"1935
+[e $ ! != -> . . _flags 1 2 `i -> -> -> 0 `i `uc `i 1259  ]
+[; ;drv_mrf_miwi_24j40.c: 1936: {
+"1936
+{
+"1937
+[v _RxBank `uc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1937: uint8_t RxBank = 0xFF;
+[e = _RxBank -> -> 255 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1939: for (i = 0; i < 2; i++)
+"1939
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 2 `i 1259  ]
-[e $U 1260  ]
-"1925
-[e :U 1259 ]
-[; ;drv_mrf_miwi_24j40.c: 1925: {
-{
-[; ;drv_mrf_miwi_24j40.c: 1926: if (RxBuffer[i].PayloadLen == 0)
-"1926
-[e $ ! == -> . *U + &U _RxBuffer * -> _i `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 0 `i 1262  ]
-[; ;drv_mrf_miwi_24j40.c: 1927: {
-"1927
-{
-[; ;drv_mrf_miwi_24j40.c: 1928: RxBank = i;
-"1928
-[e = _RxBank _i ]
-[; ;drv_mrf_miwi_24j40.c: 1929: break;
-"1929
-[e $U 1260  ]
-"1930
-}
-[e :U 1262 ]
-"1931
-}
-"1924
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 2 `i 1259  ]
+[e $ < -> _i `i -> 2 `i 1260  ]
+[e $U 1261  ]
+"1940
 [e :U 1260 ]
-"1931
-}
-[; ;drv_mrf_miwi_24j40.c: 1930: }
-[; ;drv_mrf_miwi_24j40.c: 1931: }
-[; ;drv_mrf_miwi_24j40.c: 1934: if (RxBank < 2)
-"1934
-[e $ ! < -> _RxBank `i -> 2 `i 1263  ]
-[; ;drv_mrf_miwi_24j40.c: 1935: {
-"1935
+[; ;drv_mrf_miwi_24j40.c: 1940: {
 {
-[; ;drv_mrf_miwi_24j40.c: 1941: PHYSetShortRAMAddr((0x73), 0x04);
+[; ;drv_mrf_miwi_24j40.c: 1941: if (RxBuffer[i].PayloadLen == 0)
 "1941
-[e ( _PHYSetShortRAMAddr (2 , -> -> 115 `i `uc -> -> 4 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1945: RxBuffer[RxBank].PayloadLen = PHYGetLongRAMAddr(0x300) + 2;
+[e $ ! == -> . *U + &U _RxBuffer * -> _i `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 0 `i 1263  ]
+[; ;drv_mrf_miwi_24j40.c: 1942: {
+"1942
+{
+[; ;drv_mrf_miwi_24j40.c: 1943: RxBank = i;
+"1943
+[e = _RxBank _i ]
+[; ;drv_mrf_miwi_24j40.c: 1944: break;
+"1944
+[e $U 1261  ]
 "1945
-[e = . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 -> + -> ( _PHYGetLongRAMAddr (1 -> -> 768 `i `ui `i -> 2 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1946: if (RxBuffer[RxBank].PayloadLen < (40+11+8+8+12))
-"1946
-[e $ ! < -> . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i + + + + -> 40 `i -> 11 `i -> 8 `i -> 8 `i -> 12 `i 1264  ]
-[; ;drv_mrf_miwi_24j40.c: 1947: {
-"1947
-{
-[; ;drv_mrf_miwi_24j40.c: 1949: MRF24J40Status.bits.RX_BUFFERED = 1;
-"1949
-[e = . . _MRF24J40Status 1 5 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1952: for (i = 1; i <= RxBuffer[RxBank].PayloadLen + 2; i++)
-"1952
-{
-[e = _i -> -> 1 `i `uc ]
-[e $U 1268  ]
-"1953
-[e :U 1265 ]
-[; ;drv_mrf_miwi_24j40.c: 1953: {
-{
-[; ;drv_mrf_miwi_24j40.c: 1954: RxBuffer[RxBank].Payload[i - 1] = PHYGetLongRAMAddr(0x300 + i);
-"1954
-[e = *U + &U . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> - -> _i `i -> 1 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ( _PHYGetLongRAMAddr (1 -> + -> 768 `i -> _i `i `ui ]
-"1955
 }
-"1952
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1268 ]
-[e $ <= -> _i `i + -> . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 2 `i 1265  ]
-[e :U 1266 ]
-"1955
-}
-[; ;drv_mrf_miwi_24j40.c: 1955: }
-[; ;drv_mrf_miwi_24j40.c: 1956: PHYSetShortRAMAddr((0x1B), 0x01);
-"1956
-[e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
-"1957
-}
-[; ;drv_mrf_miwi_24j40.c: 1957: } else
-[e $U 1269  ]
-[e :U 1264 ]
-[; ;drv_mrf_miwi_24j40.c: 1958: {
-"1958
-{
-[; ;drv_mrf_miwi_24j40.c: 1961: PHYSetShortRAMAddr((0x1B), 0x01);
-"1961
-[e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
-"1962
-}
-[e :U 1269 ]
-[; ;drv_mrf_miwi_24j40.c: 1962: }
-[; ;drv_mrf_miwi_24j40.c: 1965: PHYSetShortRAMAddr((0x73), 0x00);
-"1965
-[e ( _PHYSetShortRAMAddr (2 , -> -> 115 `i `uc -> -> 0 `i `uc ]
-"1966
-}
-[; ;drv_mrf_miwi_24j40.c: 1966: } else
-[e $U 1270  ]
 [e :U 1263 ]
-[; ;drv_mrf_miwi_24j40.c: 1967: {
+"1946
+}
+"1939
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 2 `i 1260  ]
+[e :U 1261 ]
+"1946
+}
+[; ;drv_mrf_miwi_24j40.c: 1945: }
+[; ;drv_mrf_miwi_24j40.c: 1946: }
+[; ;drv_mrf_miwi_24j40.c: 1949: if (RxBank < 2)
+"1949
+[e $ ! < -> _RxBank `i -> 2 `i 1264  ]
+[; ;drv_mrf_miwi_24j40.c: 1950: {
+"1950
+{
+[; ;drv_mrf_miwi_24j40.c: 1956: PHYSetShortRAMAddr((0x73), 0x04);
+"1956
+[e ( _PHYSetShortRAMAddr (2 , -> -> 115 `i `uc -> -> 4 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1960: RxBuffer[RxBank].PayloadLen = PHYGetLongRAMAddr(0x300) + 2;
+"1960
+[e = . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 -> + -> ( _PHYGetLongRAMAddr (1 -> -> 768 `i `ui `i -> 2 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1961: if (RxBuffer[RxBank].PayloadLen < (40+11+8+8+12))
+"1961
+[e $ ! < -> . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i + + + + -> 40 `i -> 11 `i -> 8 `i -> 8 `i -> 12 `i 1265  ]
+[; ;drv_mrf_miwi_24j40.c: 1962: {
+"1962
+{
+[; ;drv_mrf_miwi_24j40.c: 1964: MRF24J40Status.bits.RX_BUFFERED = 1;
+"1964
+[e = . . _MRF24J40Status 1 5 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1967: for (i = 1; i <= RxBuffer[RxBank].PayloadLen + 2; i++)
 "1967
 {
-[; ;drv_mrf_miwi_24j40.c: 1970: PHYSetShortRAMAddr((0x1B), 0x01);
+[e = _i -> -> 1 `i `uc ]
+[e $U 1269  ]
+"1968
+[e :U 1266 ]
+[; ;drv_mrf_miwi_24j40.c: 1968: {
+{
+[; ;drv_mrf_miwi_24j40.c: 1969: RxBuffer[RxBank].Payload[i - 1] = PHYGetLongRAMAddr(0x300 + i);
+"1969
+[e = *U + &U . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> - -> _i `i -> 1 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ( _PHYGetLongRAMAddr (1 -> + -> 768 `i -> _i `i `ui ]
 "1970
+}
+"1967
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1269 ]
+[e $ <= -> _i `i + -> . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 2 `i 1266  ]
+[e :U 1267 ]
+"1970
+}
+[; ;drv_mrf_miwi_24j40.c: 1970: }
+[; ;drv_mrf_miwi_24j40.c: 1971: PHYSetShortRAMAddr((0x1B), 0x01);
+"1971
+[e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
+"1972
+}
+[; ;drv_mrf_miwi_24j40.c: 1972: } else
+[e $U 1270  ]
+[e :U 1265 ]
+[; ;drv_mrf_miwi_24j40.c: 1973: {
+"1973
+{
+[; ;drv_mrf_miwi_24j40.c: 1976: PHYSetShortRAMAddr((0x1B), 0x01);
+"1976
 [e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
 "1977
 }
 [e :U 1270 ]
-"1979
-}
-[e :U 1258 ]
 [; ;drv_mrf_miwi_24j40.c: 1977: }
-[; ;drv_mrf_miwi_24j40.c: 1979: }
-[; ;drv_mrf_miwi_24j40.c: 1982: if (flags.bits.SECIF)
+[; ;drv_mrf_miwi_24j40.c: 1980: PHYSetShortRAMAddr((0x73), 0x00);
+"1980
+[e ( _PHYSetShortRAMAddr (2 , -> -> 115 `i `uc -> -> 0 `i `uc ]
+"1981
+}
+[; ;drv_mrf_miwi_24j40.c: 1981: } else
+[e $U 1271  ]
+[e :U 1264 ]
+[; ;drv_mrf_miwi_24j40.c: 1982: {
 "1982
-[e $ ! != -> . . _flags 1 3 `i -> -> -> 0 `i `uc `i 1271  ]
-[; ;drv_mrf_miwi_24j40.c: 1983: {
-"1983
 {
-[; ;drv_mrf_miwi_24j40.c: 1984: PHYSetShortRAMAddr((0x59), 0x80);
-"1984
-[e ( _PHYSetShortRAMAddr (2 , -> -> 89 `i `uc -> -> 128 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1985: PHYSetShortRAMAddr((0x1B), 0x01);
 "1985
+[e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
+"1992
 }
 [e :U 1271 ]
-"1986
-}
-"1987
-}
-[e :U 1253 ]
-[; ;drv_mrf_miwi_24j40.c: 1985: }
-[; ;drv_mrf_miwi_24j40.c: 1986: }
-[; ;drv_mrf_miwi_24j40.c: 1987: }
-[; ;drv_mrf_miwi_24j40.c: 1992: if (PIR1bits.TMR1IF)
-"1992
-[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 1272  ]
-[; ;drv_mrf_miwi_24j40.c: 1993: {
-"1993
-{
-[; ;drv_mrf_miwi_24j40.c: 1994: if (PIE1bits.TMR1IE)
 "1994
-[e $ ! != -> . . _PIE1bits 0 0 `i -> -> -> 0 `i `Vuc `i 1273  ]
-[; ;drv_mrf_miwi_24j40.c: 1995: {
-"1995
-{
-[; ;drv_mrf_miwi_24j40.c: 1997: PIR1bits.TMR1IF = 0;
+}
+[e :U 1259 ]
+[; ;drv_mrf_miwi_24j40.c: 1992: }
+[; ;drv_mrf_miwi_24j40.c: 1994: }
+[; ;drv_mrf_miwi_24j40.c: 1997: if (flags.bits.SECIF)
 "1997
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1998: timerExtension1++;
+[e $ ! != -> . . _flags 1 3 `i -> -> -> 0 `i `uc `i 1272  ]
+[; ;drv_mrf_miwi_24j40.c: 1998: {
 "1998
-[e ++ _timerExtension1 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1999: if (timerExtension1 == 0)
-"1999
-[e $ ! == -> _timerExtension1 `i -> 0 `i 1274  ]
-[; ;drv_mrf_miwi_24j40.c: 2000: {
-"2000
 {
-[; ;drv_mrf_miwi_24j40.c: 2001: timerExtension2++;
-"2001
-[e ++ _timerExtension2 -> -> 1 `i `uc ]
-"2002
-}
-[e :U 1274 ]
-"2003
-}
-[e :U 1273 ]
-"2004
+[; ;drv_mrf_miwi_24j40.c: 1999: PHYSetShortRAMAddr((0x59), 0x80);
+"1999
+[e ( _PHYSetShortRAMAddr (2 , -> -> 89 `i `uc -> -> 128 `i `uc ]
+"2000
 }
 [e :U 1272 ]
+"2001
+}
+"2002
+}
+[e :U 1254 ]
+[; ;drv_mrf_miwi_24j40.c: 2000: }
+[; ;drv_mrf_miwi_24j40.c: 2001: }
 [; ;drv_mrf_miwi_24j40.c: 2002: }
-[; ;drv_mrf_miwi_24j40.c: 2003: }
-[; ;drv_mrf_miwi_24j40.c: 2004: }
-[; ;drv_mrf_miwi_24j40.c: 2006: UserInterruptHandler();
-"2006
-[e ( _UserInterruptHandler ..  ]
-[; ;drv_mrf_miwi_24j40.c: 2009: return;
+[; ;drv_mrf_miwi_24j40.c: 2007: if (PIR1bits.TMR1IF)
+"2007
+[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 1273  ]
+[; ;drv_mrf_miwi_24j40.c: 2008: {
+"2008
+{
+[; ;drv_mrf_miwi_24j40.c: 2009: if (PIE1bits.TMR1IE)
 "2009
+[e $ ! != -> . . _PIE1bits 0 0 `i -> -> -> 0 `i `Vuc `i 1274  ]
+[; ;drv_mrf_miwi_24j40.c: 2010: {
+"2010
+{
+[; ;drv_mrf_miwi_24j40.c: 2012: PIR1bits.TMR1IF = 0;
+"2012
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 2013: timerExtension1++;
+"2013
+[e ++ _timerExtension1 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 2014: if (timerExtension1 == 0)
+"2014
+[e $ ! == -> _timerExtension1 `i -> 0 `i 1275  ]
+[; ;drv_mrf_miwi_24j40.c: 2015: {
+"2015
+{
+[; ;drv_mrf_miwi_24j40.c: 2016: timerExtension2++;
+"2016
+[e ++ _timerExtension2 -> -> 1 `i `uc ]
+"2017
+}
+[e :U 1275 ]
+"2018
+}
+[e :U 1274 ]
+"2019
+}
+[e :U 1273 ]
+[; ;drv_mrf_miwi_24j40.c: 2017: }
+[; ;drv_mrf_miwi_24j40.c: 2018: }
+[; ;drv_mrf_miwi_24j40.c: 2019: }
+[; ;drv_mrf_miwi_24j40.c: 2021: UserInterruptHandler();
+"2021
+[e ( _UserInterruptHandler ..  ]
+[; ;drv_mrf_miwi_24j40.c: 2024: return;
+"2024
 [e $UE 1252  ]
-[; ;drv_mrf_miwi_24j40.c: 2011: }
-"2011
+[; ;drv_mrf_miwi_24j40.c: 2026: }
+"2026
 [e :UE 1252 ]
 }

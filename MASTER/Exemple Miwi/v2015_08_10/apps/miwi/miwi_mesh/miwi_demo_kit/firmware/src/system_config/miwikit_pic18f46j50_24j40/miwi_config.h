@@ -13,7 +13,7 @@
  * You should refer to the license agreement accompanying this Software for 
  * additional information regarding your rights and obligations.
  *
- * SOFTWARE AND DOCUMENTATION ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY 
+ * SOFTWARE AND DOCUMENTATION ARE PROVIDED ?AS IS? WITHOUT WARRANTY OF ANY 
  * KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY 
  * WARRANTY OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT AND FITNESS FOR A 
  * PARTICULAR PURPOSE. IN NO EVENT SHALL MICROCHIP OR ITS LICENSORS BE 
@@ -112,12 +112,17 @@
         // coordinator. This definition cannot be defined with 
         // NWK_ROLE_END_DEVICE.
         /*********************************************************************/
+        //#define NWK_ROLE_END_DEVICE
+        #define NWK_ROLE_COORDINATOR
+        
+
+        /*
         #if(DEVICEMODE <= 2)
             #define NWK_ROLE_COORDINATOR
         #else
             #define NWK_ROLE_END_DEVICE
         #endif
-
+        */
 
 
 //------------------------------------------------------------------------

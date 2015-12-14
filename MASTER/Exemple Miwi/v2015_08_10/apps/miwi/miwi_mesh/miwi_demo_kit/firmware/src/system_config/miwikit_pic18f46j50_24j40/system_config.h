@@ -90,12 +90,37 @@
 #define SW2_PORT            PORTBbits.RB2
 #define SW2_TRIS            TRISBbits.TRISB2
 
+//pin assignables
+//B2 Buzzer
+//B3 GYRO
+//A0
+//A1
+//A2
+//E0
+//E1
+
+#define DOOR                LATDbits.LATD7
+#define DOOR_TRIS           TRISDbits.TRISD7         
+
+#define PROJECTOR           LATAbits.LATA3
+#define PROJECTOR_TRIS      TRISAbits.TRISA3
+
 #define LED0                LATCbits.LATC2
 #define LED0_TRIS           TRISCbits.TRISC2
 #define LED1                LATAbits.LATA6
 #define LED1_TRIS           TRISAbits.TRISA6
 #define LED2                LATAbits.LATA7
 #define LED2_TRIS           TRISAbits.TRISA7
+
+//Buzzer
+#define Buzzer                LATBbits.LATB2
+#define Buzzer_TRIS           TRISBbits.TRISB2
+//Buzzer
+
+//GYRO
+#define GYRO                LATBbits.LATB3
+#define GYRO_TRIS           TRISBbits.TRISB3
+//GYRO
 
 // External EEPROM Pin Definitions
 //#define EE_nCS_TRIS         TRISDbits.TRISD5
@@ -115,5 +140,4 @@
 #define LCD_RESET           LATEbits.LATE0
 #define LCD_BKLT_TRIS       TRISEbits.TRISE1
 #define LCD_BKLT            LATEbits.LATE1
-	
 #endif

@@ -8,55 +8,65 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1083 `ul 1 `S1084 1 `uc -> 4 `i `S1085 1 ]
 [n S1083 _MIWI_TICK Val byte v word ]
-"50 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Display `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
-"90 ../src/system_config/miwikit_pic18f46j50_24j40\symbol.h
-[v _MiWi_TickGet `(S1083 ~T0 @X0 0 ef ]
-"207 ../../../../../../framework\miwi/miwi_mesh.h
-[v _TxData `uc ~T0 @X0 0 e ]
-"206
-[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
-"591 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_UnicastConnection `(uc ~T0 @X0 0 ef2`uc`uc ]
-"71 ../src/door_unlock.c
-[v _ConnectionEntry `uc ~T0 @X0 0 e ]
+"7874 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
+[s S537 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S537 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"7884
+[s S538 :1 `uc 1 ]
+[n S538 . LD0 ]
+"7887
+[s S539 :1 `uc 1 :1 `uc 1 ]
+[n S539 . . LD1 ]
+"7891
+[s S540 :2 `uc 1 :1 `uc 1 ]
+[n S540 . . LD2 ]
+"7895
+[s S541 :3 `uc 1 :1 `uc 1 ]
+[n S541 . . LD3 ]
+"7899
+[s S542 :4 `uc 1 :1 `uc 1 ]
+[n S542 . . LD4 ]
+"7903
+[s S543 :5 `uc 1 :1 `uc 1 ]
+[n S543 . . LD5 ]
+"7907
+[s S544 :6 `uc 1 :1 `uc 1 ]
+[n S544 . . LD6 ]
+"7911
+[s S545 :7 `uc 1 :1 `uc 1 ]
+[n S545 . . LD7 ]
+"7873
+[u S536 `S537 1 `S538 1 `S539 1 `S540 1 `S541 1 `S542 1 `S543 1 `S544 1 `S545 1 ]
+[n S536 . . . . . . . . . . ]
+"7916
+[v _LATDbits `VS536 ~T0 @X0 0 e@3980 ]
+"47 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCD_Erase `(v ~T0 @X0 0 ef ]
 "194 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
 [v _LCDText `uc ~T0 @X0 -> 0 `x e ]
-"7747 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
-[s S527 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S527 . LATC0 LATC1 LATC2 . LATC4 LATC5 LATC6 LATC7 ]
-"7757
-[s S528 :1 `uc 1 ]
-[n S528 . LC0 ]
-"7760
-[s S529 :1 `uc 1 :1 `uc 1 ]
-[n S529 . . LC1 ]
-"7764
-[s S530 :2 `uc 1 :1 `uc 1 ]
-[n S530 . . LC2 ]
-"7768
-[s S531 :3 `uc 1 :1 `uc 1 ]
-[n S531 . . LC3 ]
-"7772
-[s S532 :4 `uc 1 :1 `uc 1 ]
-[n S532 . . LC4 ]
-"7776
-[s S533 :5 `uc 1 :1 `uc 1 ]
-[n S533 . . LC5 ]
-"7780
-[s S534 :6 `uc 1 :1 `uc 1 ]
-[n S534 . . LC6 ]
-"7784
-[s S535 :7 `uc 1 :1 `uc 1 ]
-[n S535 . . LC7 ]
-"7746
-[u S526 `S527 1 `S528 1 `S529 1 `S530 1 `S531 1 `S532 1 `S533 1 `S534 1 `S535 1 ]
-[n S526 . . . . . . . . . . ]
-"7789
-[v _LATCbits `VS526 ~T0 @X0 0 e@3979 ]
-"7488
+"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[u S1087 `uc -> 2 `i `ui 1 ]
+[n S1087 . v Val ]
+"209 ../../../../../../framework\miwi/miwi_mesh.h
+[v _myShortAddress `S1087 ~T0 @X0 0 e ]
+"46 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCD_Update `(v ~T0 @X0 0 ef ]
+"710 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
+"649
+[s S1119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1119 . broadcast ackReq secEn repeat command srcPrsnt altSrcAddr ]
+"646
+[u S1118 `uc 1 `S1119 1 ]
+[n S1118 . Val bits ]
+"644
+[s S1117 `S1118 1 `S1087 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1117 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
+"950
+[v _rxMessage `S1117 ~T0 @X0 0 e ]
+"7488 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
 [s S507 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S507 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
 "7498
@@ -88,32 +98,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S506 . . . . . . . . . . ]
 "7530
 [v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
-"35 ../src/system_config/miwikit_pic18f46j50_24j40\button.h
-[v _BUTTON_Pressed `(uc ~T0 @X0 0 ef ]
-"48 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_BacklightON `(v ~T0 @X0 0 ef ]
-"49
-[v _LCD_BacklightOFF `(v ~T0 @X0 0 ef ]
-"710 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
-"649
-[s S1119 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1119 . broadcast ackReq secEn repeat command srcPrsnt altSrcAddr ]
-"646
-[u S1118 `uc 1 `S1119 1 ]
-[n S1118 . Val bits ]
-"61 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
-[u S1087 `uc -> 2 `i `ui 1 ]
-[n S1087 . v Val ]
-"644 ../../../../../../framework\miwi/miwi_api.h
-[s S1117 `S1118 1 `S1087 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1117 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
-"950
-[v _rxMessage `S1117 ~T0 @X0 0 e ]
-"752
+"752 ../../../../../../framework\miwi/miwi_api.h
 [v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
-"46 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Update `(v ~T0 @X0 0 ef ]
 [; ;door_unlock.h: 27: void DoorUnlock(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -7646,18 +7632,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwikit_pic18f46j50_24j40\spi.h: 30: uint8_t SPIGet(void);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 32: void SPIPut2(uint8_t v);
 [; ;miwikit_pic18f46j50_24j40\spi.h: 33: uint8_t SPIGet2(void);
-[; ;miwikit_pic18f46j50_24j40\system.h: 51: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 52: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 54: uint8_t v[4];
-[; ;miwikit_pic18f46j50_24j40\system.h: 55: uint16_t w[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 56: uint32_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 58: }API_UINT32_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 60: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 61: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 63: uint8_t v[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 64: uint16_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 66: }API_UINT16_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 119: void SYSTEM_Initialize(void);
+[; ;miwikit_pic18f46j50_24j40\system.h: 54: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 55: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 57: uint8_t v[4];
+[; ;miwikit_pic18f46j50_24j40\system.h: 58: uint16_t w[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 59: uint32_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 61: }API_UINT32_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 63: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 64: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
 [; ;drv_mrf_miwi_24j40.h: 31: typedef union
 [; ;drv_mrf_miwi_24j40.h: 32: {
 [; ;drv_mrf_miwi_24j40.h: 33: uint8_t Val;
@@ -7935,504 +7921,107 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_api.h: 899: bool MiApp_InitChannelHopping( uint32_t ChannelMap);
 [; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 [; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
-[; ;door_unlock.c: 71: extern uint8_t ConnectionEntry;
-"88 ../src/door_unlock.c
+[; ;door_unlock.c: 9: extern uint8_t ConnectionEntry;
+"11 ../src/door_unlock.c
 [v _DoorUnlock `(v ~T0 @X0 1 ef ]
-"89
+"12
 {
-[; ;door_unlock.c: 88: void DoorUnlock(void)
-[; ;door_unlock.c: 89: {
+[; ;door_unlock.c: 11: void DoorUnlock(void)
+[; ;door_unlock.c: 12: {
 [e :U _DoorUnlock ]
 [f ]
-"90
-[v _Run_Demo `uc ~T0 @X0 1 a ]
-[; ;door_unlock.c: 90: bool Run_Demo = 1;
-[e = _Run_Demo -> -> 1 `i `uc ]
-"91
-[v _Tx_Packet `uc ~T0 @X0 1 a ]
-[; ;door_unlock.c: 91: bool Tx_Packet = 1;
-[e = _Tx_Packet -> -> 1 `i `uc ]
-"92
-[v _rssi `uc ~T0 @X0 1 a ]
-[; ;door_unlock.c: 92: uint8_t rssi = 0;
-[e = _rssi -> -> 0 `i `uc ]
-"93
-[v _Pkt_Loss_Cnt `uc ~T0 @X0 1 a ]
-[; ;door_unlock.c: 93: uint8_t Pkt_Loss_Cnt = 0;
-[e = _Pkt_Loss_Cnt -> -> 0 `i `uc ]
-"94
-[v _tick1 `S1083 ~T0 @X0 1 a ]
-[v _tick2 `S1083 ~T0 @X0 1 a ]
-"95
-[v _switch_val `uc ~T0 @X0 1 a ]
-"96
-[v _pktCmd `uc ~T0 @X0 1 a ]
-[; ;door_unlock.c: 94: MIWI_TICK tick1, tick2;
-[; ;door_unlock.c: 95: uint8_t switch_val;
-[; ;door_unlock.c: 96: uint8_t pktCmd = 0;
-[e = _pktCmd -> -> 0 `i `uc ]
-[; ;door_unlock.c: 101: LCD_Display((char *)"   Microchip       Door Unlock  ", 0, 1);
-"101
-[e ( _LCD_Display (3 , , -> :s 1C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;door_unlock.c: 106: tick1 = MiWi_TickGet();
-"106
-[e = _tick1 ( _MiWi_TickGet ..  ]
-[; ;door_unlock.c: 108: while(Run_Demo)
-"108
-[e $U 1121  ]
+[; ;door_unlock.c: 13: LATDbits.LATD7 = 0;
+"13
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 14: LCD_Erase();
+"14
+[e ( _LCD_Erase ..  ]
+[; ;door_unlock.c: 15: sprintf((char *)&(LCDText), (char*)"   DOORUNLOCK   ");
+"15
+[e ( _sprintf (1 , &U _LCDText -> -> :s 1C `*uc `*Cuc ]
+[; ;door_unlock.c: 16: while(1)
+"16
 [e :U 1122 ]
-[; ;door_unlock.c: 109: {
-"109
+[; ;door_unlock.c: 17: {
+"17
 {
-[; ;door_unlock.c: 113: tick2 = MiWi_TickGet();
-"113
-[e = _tick2 ( _MiWi_TickGet ..  ]
-[; ;door_unlock.c: 117: if(((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32000) * 1000)))
-"117
-[e $ ! > - . _tick2 0 . _tick1 0 * / -> -> 16000000 `l `ul -> -> -> 32000 `i `l `ul -> -> -> 1000 `i `l `ul 1124  ]
-[; ;door_unlock.c: 118: {
-"118
-{
-[; ;door_unlock.c: 121: if(Tx_Packet)
-"121
-[e $ ! != -> _Tx_Packet `i -> -> -> 0 `i `uc `i 1125  ]
-[; ;door_unlock.c: 122: {
-"122
-{
-[; ;door_unlock.c: 125: {TxData = 11;};
-"125
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;door_unlock.c: 127: TxBuffer[TxData++] = 2;
-"127
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
-[; ;door_unlock.c: 128: TxBuffer[TxData++] = 0x4D;
-"128
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 77 `i `uc ]
-[; ;door_unlock.c: 129: TxBuffer[TxData++] = 0x69;
-"129
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 105 `i `uc ]
-[; ;door_unlock.c: 130: TxBuffer[TxData++] = 0x57;
-"130
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 87 `i `uc ]
-[; ;door_unlock.c: 131: TxBuffer[TxData++] = 0x69;
-"131
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 105 `i `uc ]
-[; ;door_unlock.c: 132: TxBuffer[TxData++] = 0x20;
-"132
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 32 `i `uc ]
-[; ;door_unlock.c: 133: TxBuffer[TxData++] = 0x52;
-"133
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 82 `i `uc ]
-[; ;door_unlock.c: 134: TxBuffer[TxData++] = 0x6F;
-"134
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 111 `i `uc ]
-[; ;door_unlock.c: 135: TxBuffer[TxData++] = 0x63;
-"135
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 99 `i `uc ]
-[; ;door_unlock.c: 136: TxBuffer[TxData++] = 0x6B;
-"136
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 107 `i `uc ]
-[; ;door_unlock.c: 137: TxBuffer[TxData++] = 0x73;
-"137
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 115 `i `uc ]
-[; ;door_unlock.c: 138: TxBuffer[TxData++] = 0x21;
-"138
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 33 `i `uc ]
-[; ;door_unlock.c: 140: if( MiApp_UnicastConnection(ConnectionEntry, 0) == 0 )
-"140
-[e $ ! == -> ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc `i -> 0 `i 1126  ]
-[; ;door_unlock.c: 141: Pkt_Loss_Cnt++;
-"141
-[e ++ _Pkt_Loss_Cnt -> -> 1 `i `uc ]
-[e $U 1127  ]
-"142
-[e :U 1126 ]
-[; ;door_unlock.c: 142: else
-[; ;door_unlock.c: 143: Pkt_Loss_Cnt = 0;
-"143
-[e = _Pkt_Loss_Cnt -> -> 0 `i `uc ]
-[e :U 1127 ]
-[; ;door_unlock.c: 145: Tx_Packet = 0;
-"145
-[e = _Tx_Packet -> -> 0 `i `uc ]
-"146
-}
-[; ;door_unlock.c: 146: }
-[e $U 1128  ]
-"147
-[e :U 1125 ]
-[; ;door_unlock.c: 147: else
-[; ;door_unlock.c: 148: {
-"148
-{
-[; ;door_unlock.c: 149: if(Pkt_Loss_Cnt < 1)
-"149
-[e $ ! < -> _Pkt_Loss_Cnt `i -> 1 `i 1129  ]
-[; ;door_unlock.c: 150: {
-"150
-{
-[; ;door_unlock.c: 151: if(rssi > 200)
-"151
-[e $ ! > -> _rssi `i -> 200 `i 1130  ]
-[; ;door_unlock.c: 152: {
-"152
-{
-[; ;door_unlock.c: 153: sprintf((char *)&LCDText, (char*)" Unlock Door ?  SW1:YES   SW2:NO");
-"153
-[e ( _sprintf (1 , &U _LCDText -> -> :s 2C `*uc `*Cuc ]
-[; ;door_unlock.c: 154: LATCbits.LATC2 = 1;
-"154
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-[; ;door_unlock.c: 155: LATAbits.LATA6 = 0;
-"155
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;door_unlock.c: 156: LATAbits.LATA7 = 0;
-"156
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;door_unlock.c: 157: switch_val = BUTTON_Pressed();
-"157
-[e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;door_unlock.c: 158: if(switch_val == 1)
-"158
-[e $ ! == -> _switch_val `i -> 1 `i 1131  ]
-[; ;door_unlock.c: 159: {
-"159
-{
-[; ;door_unlock.c: 160: LATCbits.LATC2 = 1;
-"160
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-[; ;door_unlock.c: 161: LATAbits.LATA6 = 1;
-"161
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;door_unlock.c: 162: LATAbits.LATA7 = 1;
-"162
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-"163
-}
-[; ;door_unlock.c: 163: }
-[e $U 1132  ]
-"165
-[e :U 1131 ]
-[; ;door_unlock.c: 165: else if(switch_val == 2)
-[e $ ! == -> _switch_val `i -> 2 `i 1133  ]
-[; ;door_unlock.c: 166: {
-"166
-{
-[; ;door_unlock.c: 170: {TxData = 11;};
-"170
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;door_unlock.c: 171: TxBuffer[TxData++] = 1;
-"171
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
-[; ;door_unlock.c: 172: MiApp_UnicastConnection(ConnectionEntry, 0);
-"172
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;door_unlock.c: 174: LCD_BacklightON();
-"174
-[e ( _LCD_BacklightON ..  ]
-[; ;door_unlock.c: 175: LCD_Display((char *)"   Exiting....     Door Unlock  ", 0, 1);
-"175
-[e ( _LCD_Display (3 , , -> :s 3C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;door_unlock.c: 176: LCD_BacklightOFF();
-"176
-[e ( _LCD_BacklightOFF ..  ]
-[; ;door_unlock.c: 178: tick1 = MiWi_TickGet();
-"178
-[e = _tick1 ( _MiWi_TickGet ..  ]
-[; ;door_unlock.c: 180: while(Run_Demo)
-"180
-[e $U 1134  ]
-[e :U 1135 ]
-[; ;door_unlock.c: 181: {
-"181
-{
-[; ;door_unlock.c: 182: if(MiApp_MessageAvailable())
-"182
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1137  ]
-[; ;door_unlock.c: 183: {
-"183
-{
-[; ;door_unlock.c: 184: if(rxMessage.Payload[0] == 4)
-"184
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 4 `i 1138  ]
-[; ;door_unlock.c: 185: Run_Demo = 0;
-"185
-[e = _Run_Demo -> -> 0 `i `uc ]
-[e :U 1138 ]
-[; ;door_unlock.c: 187: MiApp_DiscardMessage();
-"187
-[e ( _MiApp_DiscardMessage ..  ]
-"188
-}
-[e :U 1137 ]
-[; ;door_unlock.c: 188: }
-[; ;door_unlock.c: 189: if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
-"189
-[e $ ! > - . _tick2 0 . _tick1 0 * / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 6 `i `l `ul 1139  ]
-[; ;door_unlock.c: 190: Run_Demo = 0;
-"190
-[e = _Run_Demo -> -> 0 `i `uc ]
-[e :U 1139 ]
-[; ;door_unlock.c: 192: tick2 = MiWi_TickGet();
-"192
-[e = _tick2 ( _MiWi_TickGet ..  ]
-"193
-}
-[e :U 1134 ]
-"180
-[e $ != -> _Run_Demo `i -> -> -> 0 `i `uc `i 1135  ]
-[e :U 1136 ]
-"194
-}
-[e :U 1133 ]
-"195
-[e :U 1132 ]
-}
-[; ;door_unlock.c: 193: }
-[; ;door_unlock.c: 194: }
-[; ;door_unlock.c: 195: }
-[e $U 1140  ]
-"196
-[e :U 1130 ]
-[; ;door_unlock.c: 196: else if(rssi < 201)
-[e $ ! < -> _rssi `i -> 201 `i 1141  ]
-[; ;door_unlock.c: 197: {
-"197
-{
-[; ;door_unlock.c: 198: sprintf((char *)&LCDText, (char*)" Get Closer to      the Door    ");
-"198
-[e ( _sprintf (1 , &U _LCDText -> -> :s 4C `*uc `*Cuc ]
-[; ;door_unlock.c: 199: LATCbits.LATC2 = 0;
-"199
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-[; ;door_unlock.c: 200: LATAbits.LATA6 = 1;
-"200
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;door_unlock.c: 201: LATAbits.LATA7 = 0;
-"201
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;door_unlock.c: 202: switch_val = BUTTON_Pressed();
-"202
-[e = _switch_val ( _BUTTON_Pressed ..  ]
-[; ;door_unlock.c: 203: if((switch_val == 1) || (switch_val == 2))
-"203
-[e $ ! || == -> _switch_val `i -> 1 `i == -> _switch_val `i -> 2 `i 1142  ]
-[; ;door_unlock.c: 204: {
-"204
-{
-[; ;door_unlock.c: 208: {TxData = 11;};
-"208
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;door_unlock.c: 209: TxBuffer[TxData++] = 1;
-"209
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
-[; ;door_unlock.c: 210: MiApp_UnicastConnection(ConnectionEntry, 0);
-"210
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;door_unlock.c: 212: LCD_BacklightON();
-"212
-[e ( _LCD_BacklightON ..  ]
-[; ;door_unlock.c: 213: LCD_Display((char *)"   Exiting....     Door Unlock  ", 0, 1);
-"213
-[e ( _LCD_Display (3 , , -> :s 5C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;door_unlock.c: 214: LCD_BacklightOFF();
-"214
-[e ( _LCD_BacklightOFF ..  ]
-[; ;door_unlock.c: 216: tick1 = MiWi_TickGet();
-"216
-[e = _tick1 ( _MiWi_TickGet ..  ]
-[; ;door_unlock.c: 218: while(Run_Demo)
-"218
-[e $U 1143  ]
-[e :U 1144 ]
-[; ;door_unlock.c: 219: {
-"219
-{
-[; ;door_unlock.c: 220: if(MiApp_MessageAvailable())
-"220
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1146  ]
-[; ;door_unlock.c: 221: {
-"221
-{
-[; ;door_unlock.c: 222: if(rxMessage.Payload[0] == 4)
-"222
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 4 `i 1147  ]
-[; ;door_unlock.c: 223: Run_Demo = 0;
-"223
-[e = _Run_Demo -> -> 0 `i `uc ]
-[e :U 1147 ]
-[; ;door_unlock.c: 225: MiApp_DiscardMessage();
-"225
-[e ( _MiApp_DiscardMessage ..  ]
-"226
-}
-[e :U 1146 ]
-[; ;door_unlock.c: 226: }
-[; ;door_unlock.c: 227: if (((tick2.Val - tick1.Val) > (((uint32_t)(16000000)/32) * 6)))
-"227
-[e $ ! > - . _tick2 0 . _tick1 0 * / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 6 `i `l `ul 1148  ]
-[; ;door_unlock.c: 228: Run_Demo = 0;
-"228
-[e = _Run_Demo -> -> 0 `i `uc ]
-[e :U 1148 ]
-[; ;door_unlock.c: 230: tick2 = MiWi_TickGet();
-"230
-[e = _tick2 ( _MiWi_TickGet ..  ]
-"231
-}
-[e :U 1143 ]
-"218
-[e $ != -> _Run_Demo `i -> -> -> 0 `i `uc `i 1144  ]
-[e :U 1145 ]
-"232
-}
-[e :U 1142 ]
-"233
-}
-[e :U 1141 ]
-"238
-[e :U 1140 ]
-}
-[; ;door_unlock.c: 231: }
-[; ;door_unlock.c: 232: }
-[; ;door_unlock.c: 233: }
-[; ;door_unlock.c: 238: }
-[e $U 1149  ]
-"240
-[e :U 1129 ]
-[; ;door_unlock.c: 240: else
-[; ;door_unlock.c: 241: {
-"241
-{
-[; ;door_unlock.c: 242: LCD_Display((char *)"No Device Found or Out of Range ", 0, 1);
-"242
-[e ( _LCD_Display (3 , , -> :s 6C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;door_unlock.c: 243: LATCbits.LATC2 = 0;
-"243
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-[; ;door_unlock.c: 244: LATAbits.LATA6 = 0;
-"244
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;door_unlock.c: 245: LATAbits.LATA7 = 1;
-"245
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-"246
-}
-[e :U 1149 ]
-[; ;door_unlock.c: 246: }
-[; ;door_unlock.c: 248: LCD_Update();
-"248
+[; ;door_unlock.c: 18: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+"18
+[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 2C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
+[; ;door_unlock.c: 19: LCD_Update();
+"19
 [e ( _LCD_Update ..  ]
-[; ;door_unlock.c: 249: Tx_Packet = 1;
-"249
-[e = _Tx_Packet -> -> 1 `i `uc ]
-"251
+[; ;door_unlock.c: 20: if(MiApp_MessageAvailable())
+"20
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1124  ]
+[; ;door_unlock.c: 21: {
+"21
+{
+[; ;door_unlock.c: 22: if(rxMessage.Payload[0] == 0x01)
+"22
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 1 `i 1125  ]
+[; ;door_unlock.c: 23: {
+"23
+{
+[; ;door_unlock.c: 24: sprintf((char *)&(LCDText), (char*)"RECU");
+"24
+[e ( _sprintf (1 , &U _LCDText -> -> :s 3C `*uc `*Cuc ]
+[; ;door_unlock.c: 26: LATDbits.LATD7 = 1;
+"26
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 27: LATAbits.LATA6 = 1;
+"27
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 28: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"28
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1126  ]
+[e :U 1127 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1129  ]
+[e :U 1130 ]
+[e :U 1129 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1130  ]
+[e :U 1131 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
 }
+[e :U 1126 ]
+[e $ != __ms -> -> 0 `i `ul 1127  ]
 [e :U 1128 ]
-[; ;door_unlock.c: 251: }
-[; ;door_unlock.c: 255: tick1 = MiWi_TickGet();
-"255
-[e = _tick1 ( _MiWi_TickGet ..  ]
-"257
+}
+[; ;door_unlock.c: 29: LATAbits.LATA6 = 0;
+"29
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 30: LATDbits.LATD7 = 0;
+"30
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+"31
+}
+[e :U 1125 ]
+[; ;door_unlock.c: 31: }
+[; ;door_unlock.c: 32: MiApp_DiscardMessage();
+"32
+[e ( _MiApp_DiscardMessage ..  ]
+"33
 }
 [e :U 1124 ]
-[; ;door_unlock.c: 257: }
-[; ;door_unlock.c: 260: if(MiApp_MessageAvailable())
-"260
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1150  ]
-[; ;door_unlock.c: 261: {
-"261
-{
-[; ;door_unlock.c: 262: pktCmd = rxMessage.Payload[0];
-"262
-[e = _pktCmd *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;door_unlock.c: 263: if(pktCmd == 1)
-"263
-[e $ ! == -> _pktCmd `i -> 1 `i 1151  ]
-[; ;door_unlock.c: 264: {
-"264
-{
-[; ;door_unlock.c: 265: MiApp_DiscardMessage();
-"265
-[e ( _MiApp_DiscardMessage ..  ]
-[; ;door_unlock.c: 266: {TxData = 11;};
-"266
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;door_unlock.c: 267: TxBuffer[TxData++] = 4;
-"267
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 4 `i `uc ]
-[; ;door_unlock.c: 268: MiApp_UnicastConnection(ConnectionEntry, 0);
-"268
-[e ( _MiApp_UnicastConnection (2 , _ConnectionEntry -> -> 0 `i `uc ]
-[; ;door_unlock.c: 269: Run_Demo = 0;
-"269
-[e = _Run_Demo -> -> 0 `i `uc ]
-[; ;door_unlock.c: 270: LCD_BacklightON();
-"270
-[e ( _LCD_BacklightON ..  ]
-[; ;door_unlock.c: 271: LCD_Display((char *)"   Exiting....     Door Unlock  ", 0, 1);
-"271
-[e ( _LCD_Display (3 , , -> :s 7C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;door_unlock.c: 272: LCD_BacklightOFF();
-"272
-[e ( _LCD_BacklightOFF ..  ]
-"275
-}
-[; ;door_unlock.c: 275: }
-[e $U 1152  ]
-"276
-[e :U 1151 ]
-[; ;door_unlock.c: 276: else if(rxMessage.Payload[0] == 2)
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 2 `i 1153  ]
-[; ;door_unlock.c: 277: {
-"277
-{
-[; ;door_unlock.c: 279: rssi = rxMessage.PacketRSSI;
-"279
-[e = _rssi . _rxMessage 5 ]
-[; ;door_unlock.c: 284: MiApp_DiscardMessage();
-"284
-[e ( _MiApp_DiscardMessage ..  ]
-"285
-}
-[; ;door_unlock.c: 285: }
-[e $U 1154  ]
-"286
-[e :U 1153 ]
-[; ;door_unlock.c: 286: else
-[; ;door_unlock.c: 287: MiApp_DiscardMessage();
-"287
-[e ( _MiApp_DiscardMessage ..  ]
-[e :U 1154 ]
-[e :U 1152 ]
-"288
-}
-[e :U 1150 ]
-"324
+"34
 }
 [e :U 1121 ]
-"108
-[e $ != -> _Run_Demo `i -> -> -> 0 `i `uc `i 1122  ]
+"16
+[e $U 1122  ]
 [e :U 1123 ]
-[; ;door_unlock.c: 288: }
-[; ;door_unlock.c: 324: }
-[; ;door_unlock.c: 325: }
-"325
+[; ;door_unlock.c: 33: }
+[; ;door_unlock.c: 34: }
+[; ;door_unlock.c: 35: }
+"35
 [e :UE 1120 ]
 }
-[p f _sprintf 9437696 ]
-[a 2C 32 85 110 108 111 99 107 32 68 111 111 114 32 63 32 32 83 87 49 58 89 69 83 32 32 32 83 87 50 58 78 79 0 ]
-[a 6C 78 111 32 68 101 118 105 99 101 32 70 111 117 110 100 32 111 114 32 79 117 116 32 111 102 32 82 97 110 103 101 32 0 ]
-[a 3C 32 32 32 69 120 105 116 105 110 103 46 46 46 46 32 32 32 32 32 68 111 111 114 32 85 110 108 111 99 107 32 32 0 ]
-[a 5C 32 32 32 69 120 105 116 105 110 103 46 46 46 46 32 32 32 32 32 68 111 111 114 32 85 110 108 111 99 107 32 32 0 ]
-[a 7C 32 32 32 69 120 105 116 105 110 103 46 46 46 46 32 32 32 32 32 68 111 111 114 32 85 110 108 111 99 107 32 32 0 ]
-[a 1C 32 32 32 77 105 99 114 111 99 104 105 112 32 32 32 32 32 32 32 68 111 111 114 32 85 110 108 111 99 107 32 32 0 ]
-[a 4C 32 71 101 116 32 67 108 111 115 101 114 32 116 111 32 32 32 32 32 32 116 104 101 32 68 111 111 114 32 32 32 32 0 ]
+[p f _sprintf 16484269 ]
+[a 2C 65 100 100 114 101 115 115 58 32 37 48 50 120 37 48 50 120 0 ]
+[a 3C 82 69 67 85 0 ]
+[a 1C 32 32 32 68 79 79 82 85 78 76 79 67 75 32 32 32 0 ]
