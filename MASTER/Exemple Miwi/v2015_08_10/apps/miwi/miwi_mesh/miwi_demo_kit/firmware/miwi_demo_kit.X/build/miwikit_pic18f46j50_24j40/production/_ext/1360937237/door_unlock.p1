@@ -40,19 +40,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S536 . . . . . . . . . . ]
 "7916
 [v _LATDbits `VS536 ~T0 @X0 0 e@3980 ]
-"47 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Erase `(v ~T0 @X0 0 ef ]
-"194 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCDText `uc ~T0 @X0 -> 0 `x e ]
-"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
-[u S1087 `uc -> 2 `i `ui 1 ]
-[n S1087 . v Val ]
-"209 ../../../../../../framework\miwi/miwi_mesh.h
-[v _myShortAddress `S1087 ~T0 @X0 0 e ]
-"46 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Update `(v ~T0 @X0 0 ef ]
 "710 ../../../../../../framework\miwi/miwi_api.h
 [v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
 "649
@@ -61,7 +48,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "646
 [u S1118 `uc 1 `S1119 1 ]
 [n S1118 . Val bits ]
-"644
+"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[u S1087 `uc -> 2 `i `ui 1 ]
+[n S1087 . v Val ]
+"644 ../../../../../../framework\miwi/miwi_api.h
 [s S1117 `S1118 1 `S1087 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1117 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
 "950
@@ -7930,54 +7920,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;door_unlock.c: 12: {
 [e :U _DoorUnlock ]
 [f ]
-[; ;door_unlock.c: 13: LATDbits.LATD7 = 0;
+[; ;door_unlock.c: 13: LATDbits.LATD7 = 1;
 "13
-[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
-[; ;door_unlock.c: 14: LCD_Erase();
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 14: while(1)
 "14
-[e ( _LCD_Erase ..  ]
-[; ;door_unlock.c: 15: sprintf((char *)&(LCDText), (char*)"   DOORUNLOCK   ");
-"15
-[e ( _sprintf (1 , &U _LCDText -> -> :s 1C `*uc `*Cuc ]
-[; ;door_unlock.c: 16: while(1)
-"16
 [e :U 1122 ]
+[; ;door_unlock.c: 15: {
+"15
+{
+[; ;door_unlock.c: 16: if(MiApp_MessageAvailable())
+"16
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1124  ]
 [; ;door_unlock.c: 17: {
 "17
 {
-[; ;door_unlock.c: 18: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+[; ;door_unlock.c: 18: if(rxMessage.Payload[0] == 0x01)
 "18
-[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 2C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
-[; ;door_unlock.c: 19: LCD_Update();
-"19
-[e ( _LCD_Update ..  ]
-[; ;door_unlock.c: 20: if(MiApp_MessageAvailable())
-"20
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1124  ]
-[; ;door_unlock.c: 21: {
-"21
-{
-[; ;door_unlock.c: 22: if(rxMessage.Payload[0] == 0x01)
-"22
 [e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 1 `i 1125  ]
-[; ;door_unlock.c: 23: {
-"23
+[; ;door_unlock.c: 19: {
+"19
 {
-[; ;door_unlock.c: 24: sprintf((char *)&(LCDText), (char*)"RECU");
-"24
-[e ( _sprintf (1 , &U _LCDText -> -> :s 3C `*uc `*Cuc ]
-[; ;door_unlock.c: 26: LATDbits.LATD7 = 1;
-"26
-[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
-[; ;door_unlock.c: 27: LATAbits.LATA6 = 1;
-"27
+[; ;door_unlock.c: 20: LATDbits.LATD7 = 0;
+"20
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 21: LATAbits.LATA6 = 1;
+"21
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;door_unlock.c: 28: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
-"28
+[; ;door_unlock.c: 22: { unsigned long _dcnt; unsigned long _ms; _ms = 1000; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"22
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
-[e = __ms -> -> -> 500 `i `l `ul ]
+[e = __ms -> -> -> 1000 `i `l `ul ]
 [e $U 1126  ]
 [e :U 1127 ]
 {
@@ -7993,35 +7968,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != __ms -> -> 0 `i `ul 1127  ]
 [e :U 1128 ]
 }
-[; ;door_unlock.c: 29: LATAbits.LATA6 = 0;
-"29
+[; ;door_unlock.c: 23: LATAbits.LATA6 = 0;
+"23
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;door_unlock.c: 30: LATDbits.LATD7 = 0;
-"30
-[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
-"31
+[; ;door_unlock.c: 24: LATDbits.LATD7 = 1;
+"24
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+"25
 }
 [e :U 1125 ]
-[; ;door_unlock.c: 31: }
-[; ;door_unlock.c: 32: MiApp_DiscardMessage();
-"32
+[; ;door_unlock.c: 25: }
+[; ;door_unlock.c: 26: MiApp_DiscardMessage();
+"26
 [e ( _MiApp_DiscardMessage ..  ]
-"33
+"27
 }
 [e :U 1124 ]
-"34
+"28
 }
 [e :U 1121 ]
-"16
+"14
 [e $U 1122  ]
 [e :U 1123 ]
-[; ;door_unlock.c: 33: }
-[; ;door_unlock.c: 34: }
-[; ;door_unlock.c: 35: }
-"35
+[; ;door_unlock.c: 27: }
+[; ;door_unlock.c: 28: }
+[; ;door_unlock.c: 29: }
+"29
 [e :UE 1120 ]
 }
-[p f _sprintf 16484269 ]
-[a 2C 65 100 100 114 101 115 115 58 32 37 48 50 120 37 48 50 120 0 ]
-[a 3C 82 69 67 85 0 ]
-[a 1C 32 32 32 68 79 79 82 85 78 76 79 67 75 32 32 32 0 ]

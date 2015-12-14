@@ -8,6 +8,99 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1083 `ul 1 `S1084 1 `uc -> 4 `i `S1085 1 ]
 [n S1083 _MIWI_TICK Val byte v word ]
+"14942 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f46j50.h
+[s S952 :1 `uc 1 ]
+[n S952 . NOT_BOR ]
+"14945
+[s S953 :1 `uc 1 :1 `uc 1 ]
+[n S953 . . NOT_POR ]
+"14949
+[s S954 :2 `uc 1 :1 `uc 1 ]
+[n S954 . . NOT_PD ]
+"14953
+[s S955 :3 `uc 1 :1 `uc 1 ]
+[n S955 . . NOT_TO ]
+"14957
+[s S956 :4 `uc 1 :1 `uc 1 ]
+[n S956 . . NOT_RI ]
+"14961
+[s S957 :5 `uc 1 :1 `uc 1 ]
+[n S957 . . NOT_CM ]
+"14965
+[s S958 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S958 . nBOR nPOR nPD nTO nRI nCM . IPEN ]
+"14975
+[s S959 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S959 . BOR POR PD TO RI CM ]
+"14941
+[u S951 `S952 1 `S953 1 `S954 1 `S955 1 `S956 1 `S957 1 `S958 1 `S959 1 ]
+[n S951 . . . . . . . . . ]
+"14984
+[v _RCONbits `VS951 ~T0 @X0 0 e@4048 ]
+"5084
+[v _T3CON `Vuc ~T0 @X0 0 e@3961 ]
+"19195
+[v _T1RUN `Vb ~T0 @X0 0 e@31380 ]
+"5187
+[v _TMR3 `Vus ~T0 @X0 0 e@3962 ]
+"19309
+[v _TMR3IP `Vb ~T0 @X0 0 e@32017 ]
+"16535
+[s S1056 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1056 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"16545
+[s S1057 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1057 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"16555
+[s S1058 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1058 . . GIEL GIEH ]
+"16560
+[s S1059 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1059 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"16570
+[s S1060 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1060 . . GIEL GIEH ]
+"16534
+[u S1055 `S1056 1 `S1057 1 `S1058 1 `S1059 1 `S1060 1 ]
+[n S1055 . . . . . . ]
+"16576
+[v _INTCONbits `VS1055 ~T0 @X0 0 e@4082 ]
+"19305
+[v _TMR3IE `Vb ~T0 @X0 0 e@32001 ]
+"19307
+[v _TMR3IF `Vb ~T0 @X0 0 e@32009 ]
+"8006
+[s S547 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S547 . LATE0 LATE1 LATE2 ]
+"8011
+[s S548 :1 `uc 1 ]
+[n S548 . LE0 ]
+"8014
+[s S549 :1 `uc 1 :1 `uc 1 ]
+[n S549 . . LE1 ]
+"8018
+[s S550 :2 `uc 1 :1 `uc 1 ]
+[n S550 . . LE2 ]
+"8022
+[s S551 :3 `uc 1 :1 `uc 1 ]
+[n S551 . . LE3 ]
+"8026
+[s S552 :4 `uc 1 :1 `uc 1 ]
+[n S552 . . LE4 ]
+"8030
+[s S553 :5 `uc 1 :1 `uc 1 ]
+[n S553 . . LE5 ]
+"8034
+[s S554 :6 `uc 1 :1 `uc 1 ]
+[n S554 . . LE6 ]
+"8038
+[s S555 :7 `uc 1 :1 `uc 1 ]
+[n S555 . . LE7 ]
+"8005
+[u S546 `S547 1 `S548 1 `S549 1 `S550 1 `S551 1 `S552 1 `S553 1 `S554 1 `S555 1 ]
+[n S546 . . . . . . . . . . ]
+"8043
+[v _LATEbits `VS546 ~T0 @X0 0 e@3981 ]
 [; ;projector_screen.h: 25: void ProjectorScreen(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -7837,20 +7930,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;projector_screen.c: 10: {
 [e :U _ProjectorScreen ]
 [f ]
-[; ;projector_screen.c: 11: while(1)
-"11
-[e :U 1122 ]
-[; ;projector_screen.c: 12: {
+[; ;projector_screen.c: 12: RCONbits.IPEN = 1;
 "12
-{
+[e = . . _RCONbits 6 7 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 13: T3CON = 0b00011111;
+"13
+[e = _T3CON -> -> 31 `i `uc ]
+[; ;projector_screen.c: 14: T1RUN = 1;
 "14
+[e = _T1RUN -> -> 1 `i `b ]
+[; ;projector_screen.c: 15: TMR3 = 0xE000;
+"15
+[e = _TMR3 -> -> 57344 `ui `us ]
+[; ;projector_screen.c: 16: TMR3IP = 1;
+"16
+[e = _TMR3IP -> -> 1 `i `b ]
+[; ;projector_screen.c: 17: INTCONbits.GIEH = 1;
+"17
+[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 18: TMR3IE =1;
+"18
+[e = _TMR3IE -> -> 1 `i `b ]
+[; ;projector_screen.c: 19: TMR3IF = 0;
+"19
+[e = _TMR3IF -> -> 0 `i `b ]
+[; ;projector_screen.c: 20: LATEbits.LATE1 = 1;
+"20
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 21: while(1)
+"21
+[e :U 1122 ]
+[; ;projector_screen.c: 22: {
+"22
+{
+"24
 }
 [e :U 1121 ]
-"11
+"21
 [e $U 1122  ]
 [e :U 1123 ]
-[; ;projector_screen.c: 14: }
-[; ;projector_screen.c: 15: }
-"15
+[; ;projector_screen.c: 24: }
+[; ;projector_screen.c: 25: }
+"25
 [e :UE 1120 ]
 }

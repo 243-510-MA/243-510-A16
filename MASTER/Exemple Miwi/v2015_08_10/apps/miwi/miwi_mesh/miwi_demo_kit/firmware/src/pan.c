@@ -8,36 +8,27 @@
 
 void Pan(void)
 {
+    TRISB = 0x0;
+    int status = 0;
     uint8_t rssi = 0;
+    GYRO = 0;
+    Buzzer = 0;
     
+ /*  
     RCONbits.IPEN = 1;
     T4CON = 0b00111111;
     PR4 = 156;
-    IPR3bits.TMR4IP = 1;
-    INTCONbits.GIEH = 1;
+    IPR3bits.TMR4IP = 0;
+    INTCONbits.GIEH = 0;
     PIR3bits.TMR4IF = 0;
     
+*/
     
     LCD_BKLT = 1;
     while(true)
     {
         if(MiApp_MessageAvailable())
         {
-            // Check if Message Available
-            if(rxMessage.Payload[0] == RANGE_PKT)
-            {
-                // Get RSSI value from Recieved Packet
-                rssi = rxMessage.PacketRSSI;
-                #if defined(MRF89XA)
-                    rssi = rssi<<1;
-                #endif
-                // Disguard the Packet so can recieve next
-                MiApp_DiscardMessage();
-            }
-            else
-                MiApp_DiscardMessage(); 
-            
-            
             if(rxMessage.Payload[0] == PROJECTOR_ON)
             {
                 Power_on();
@@ -46,6 +37,16 @@ void Pan(void)
             else if(rxMessage.Payload[0] == PROJECTOR_OFF)
             {
                 Power_off();
+            }
+            
+            else if(rxMessage.Payload[0] == ALARM_OFF)
+            {
+                alarm(0);
+            }
+            
+            else if(rxMessage.Payload[0] == ALARM_ON)
+            {
+                alarm(1);
             }
         }
         MiApp_DiscardMessage();
@@ -80,21 +81,34 @@ void putcv(int data)	//UART VIRTUEL
 
 void Power_off() //POWER OFF PROJECTEUR
 {
+    LCD_BKLT = 1;
+	putcv(0x00);putcv(0xBF);putcv(0x00);putcv(0x00);putcv(0x01);putcv(0x00);putcv(0xC0);
 	LCD_BKLT = 1;
+    delay_ms(19);
+	putcv(0x00);putcv(0xBF);putcv(0x00);putcv(0x00);putcv(0x01);putcv(0x02);putcv(0xC2);
+	LCD_BKLT = 1;
+    delay_ms(19);
 	putcv(0x02);putcv(0x01);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x03);
 	LCD_BKLT = 1;
+    delay_ms(19);
 }
 
 void Power_on() //POWER ON PROJECTEUR
-{
+{	
 	LCD_BKLT = 1;
+	putcv(0x00);putcv(0xBF);putcv(0x00);putcv(0x00);putcv(0x01);putcv(0x00);putcv(0xC0);
+	LCD_BKLT = 1;
+    delay_ms(35);
+    putcv(0x00);putcv(0xBF);putcv(0x00);putcv(0x00);putcv(0x01);putcv(0x02);putcv(0xC2);
+	LCD_BKLT = 1;
+    delay_ms(19);
 	putcv(0x02);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x02);
-	LCD_BKLT = 1;
+    LCD_BKLT = 1;
+    delay_ms(19);
 }
-/*
-void alarm(status) //Alarm is activated/desactivated     status=1=on    status=0=off
+
+void alarm(int status) //Alarm is activated/desactivated     status=1=on    status=0=off
 {
-    GYRO = status;//Activate/desactive le Gyrophare
-    PIE3bits.TMR4IE = status;//Activate/desactive le Buzzer(Interrupt in drv_mrf_miwi_24j40.c)
+    GYRO = status; //status;  //Activate/desactive le Gyrophare
+    Buzzer = status; //status;
 }
-*/

@@ -10871,7 +10871,27 @@ BuzzerStatus = !BuzzerStatus;
 PIR3bits.TMR4IF = 0;
 }
 
+if(TMR3IF){
+uint16_t pwm_value_high_time = 800;
+static bool u;
+if(u){
 
+u = 0;
+uint16_t temp = 65536 - (pwm_value_high_time + 2600);
+LATAbits.LATA7 = 0;
+TMR3 = temp;
+TMR3IF = 0;
+}else{
+u = 1;
+uint16_t temp = 25536 + (pwm_value_high_time + 2600);
+LATAbits.LATA7 = 1;
+TMR3 = temp;
+TMR3IF = 0;
+
+
+}
+
+}
 
 
 if (INTCONbits.INT0IE && INTCONbits.INT0IF)
@@ -10944,7 +10964,7 @@ break;
 if (RxBank < 2)
 {
 
-# 1956
+# 1976
 PHYSetShortRAMAddr((0x73), 0x04);
 
 
@@ -10976,7 +10996,7 @@ PHYSetShortRAMAddr((0x73), 0x00);
 
 PHYSetShortRAMAddr((0x1B), 0x01);
 
-# 1992
+# 2012
 }
 
 }

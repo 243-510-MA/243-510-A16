@@ -10244,7 +10244,7 @@ void stopBit(void);
 void putcv(int data);
 void Power_off();
 void Power_on();
-
+void alarm(int status);
 
 void Pan(void);
 
@@ -10263,37 +10263,37 @@ void ProjectorScreen(void);
 # 27 "../src/main.c"
 void main(void)
 {
-Network(3);
+Network(0);
 
 LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
 
 
 
-if(3 == 0)
+if(0 == 0)
 {
 Pan();
 }
 
 
-if(3 == 1)
+if(0 == 1)
 {
 DoorUnlock();
 }
 
 
-if(3 == 2)
+if(0 == 2)
 {
 ProjectorScreen();
 }
 
 
-if(3 == 3)
+if(0 == 3)
 {
 Teacher();
 }
 
 
-if(3 == 4)
+if(0 == 4)
 {
 Student();
 }

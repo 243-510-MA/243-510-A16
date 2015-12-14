@@ -10241,6 +10241,16 @@ extern RECEIVED_MESSAGE rxMessage;
 # 9 "../src/projector_screen.c"
 void ProjectorScreen(void)
 {
+
+RCONbits.IPEN = 1;
+T3CON = 0b00011111;
+T1RUN = 1;
+TMR3 = 0xE000;
+TMR3IP = 1;
+INTCONbits.GIEH = 1;
+TMR3IE =1;
+TMR3IF = 0;
+LATEbits.LATE1 = 1;
 while(1)
 {
 

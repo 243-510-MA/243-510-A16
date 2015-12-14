@@ -7,7 +7,7 @@ void stopBit(void);
 void putcv(int data);
 void Power_off();
 void Power_on();
-
+void alarm(int status);
 
 void Pan(void);
 
@@ -10248,34 +10248,18 @@ extern RECEIVED_MESSAGE rxMessage;
 # 9 "../src/pan.c"
 void Pan(void)
 {
+TRISB = 0x0;
+int status = 0;
 uint8_t rssi = 0;
+LATBbits.LATB3 = 0;
+LATBbits.LATB2 = 0;
 
-RCONbits.IPEN = 1;
-T4CON = 0b00111111;
-PR4 = 156;
-IPR3bits.TMR4IP = 1;
-INTCONbits.GIEH = 1;
-PIR3bits.TMR4IF = 0;
-
-
+# 27
 LATEbits.LATE1 = 1;
 while(1)
 {
 if(MiApp_MessageAvailable())
 {
-
-if(rxMessage.Payload[0] == 0x44)
-{
-
-rssi = rxMessage.PacketRSSI;
-
-# 35
-MiApp_DiscardMessage();
-}
-else
-MiApp_DiscardMessage();
-
-
 if(rxMessage.Payload[0] == 0x55)
 {
 Power_on();
@@ -10284,6 +10268,16 @@ Power_on();
 else if(rxMessage.Payload[0] == 0x66)
 {
 Power_off();
+}
+
+else if(rxMessage.Payload[0] == 0x05)
+{
+alarm(0);
+}
+
+else if(rxMessage.Payload[0] == 0x06)
+{
+alarm(1);
 }
 }
 MiApp_DiscardMessage();
@@ -10319,14 +10313,33 @@ stopBit();
 void Power_off()
 {
 LATEbits.LATE1 = 1;
+putcv(0x00);putcv(0xBF);putcv(0x00);putcv(0x00);putcv(0x01);putcv(0x00);putcv(0xC0);
+LATEbits.LATE1 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 19; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+putcv(0x00);putcv(0xBF);putcv(0x00);putcv(0x00);putcv(0x01);putcv(0x02);putcv(0xC2);
+LATEbits.LATE1 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 19; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
 putcv(0x02);putcv(0x01);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x03);
 LATEbits.LATE1 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 19; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
 }
 
 void Power_on()
 {
 LATEbits.LATE1 = 1;
+putcv(0x00);putcv(0xBF);putcv(0x00);putcv(0x00);putcv(0x01);putcv(0x00);putcv(0xC0);
+LATEbits.LATE1 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 35; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+putcv(0x00);putcv(0xBF);putcv(0x00);putcv(0x00);putcv(0x01);putcv(0x02);putcv(0xC2);
+LATEbits.LATE1 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 19; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
 putcv(0x02);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x00);putcv(0x02);
 LATEbits.LATE1 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 19; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
 }
 
+void alarm(int status)
+{
+LATBbits.LATB3 = status;
+LATBbits.LATB2 = status;
+}
