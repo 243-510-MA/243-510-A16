@@ -17,7 +17,8 @@ permet de contrôler un projecteur et une toile.
   Étienne Vaillancourt, 
   Renaud Varin, 
   Dominic Fournier, 
-  Dominik Boudreau-Perron
+  Dominik Boudreau-Perron, 
+  Gabriel Ahr
 
 
 Professeur contributeur : 
