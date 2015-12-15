@@ -9,14 +9,14 @@ permet de contrôler un projecteur et une toile.
 
 
 Étudiants contributeur :
-  François D'Amours-Lavoie
-  Mathieu Labelle
-  Laurent Brochu
-  Jonathan Chouinard
-  Alexandru Marin
-  Étienne Vaillancourt
-  Renaud Varin
-  Dominic Fournier
+  François D'Amours-Lavoie, 
+  Mathieu Labelle, 
+  Laurent Brochu, 
+  Jonathan Chouinard, 
+  Alexandru Marin, 
+  Étienne Vaillancourt, 
+  Renaud Varin, 
+  Dominic Fournier, 
   Dominik Boudreau-Perron
 
 
