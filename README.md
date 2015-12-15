@@ -8,7 +8,7 @@ système d'alarme, avec un gyrophare et un buzzer, un contrôleur magnétique po
 permet de contrôler un projecteur et une toile.
 
 
-Étudiants contributeur :
+Étudiants contributeurs :
   François D'Amours-Lavoie, 
   Mathieu Labelle, 
   Laurent Brochu, 
