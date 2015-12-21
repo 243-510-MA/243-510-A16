@@ -1,0 +1,1 @@
+Les schémas sont fonctionnels. Il peut y avoir des différences entre les footprints de la database, du schéma Multisims et du schéma Ultiboard. L'impression des plaquettes peut être fait directement sans aucune modification.
