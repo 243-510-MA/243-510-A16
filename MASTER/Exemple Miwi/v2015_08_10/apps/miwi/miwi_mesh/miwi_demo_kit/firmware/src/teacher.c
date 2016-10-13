@@ -15,7 +15,7 @@ void Teacher(void)
     uint8_t memoire = 0;
     uint8_t Pkt_Loss_Cnt = 0;
     LCD_Erase();
-    LCD_Display((char *)" TEACHER DEVICE ", 0, true);
+    LCD_Display((char *)" O'shit wuddup", 0, true);
    
     while(true)
     {
