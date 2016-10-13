@@ -9,7 +9,7 @@
 void ProjectorScreen(void)
 {
     
-        RCONbits.IPEN = 1;
+    RCONbits.IPEN = 1;
     T3CON = 0b00011111;
     T1RUN = 1;
     TMR3 = 0xE000;

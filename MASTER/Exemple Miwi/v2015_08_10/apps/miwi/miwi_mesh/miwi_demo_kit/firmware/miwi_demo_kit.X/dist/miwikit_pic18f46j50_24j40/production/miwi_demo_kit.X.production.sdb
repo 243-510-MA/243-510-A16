@@ -96,16 +96,18 @@
 [v _Network Network `(v  1 e 1 0 ]
 "9 C:\Users\e1430397\Documents\GitHub\243-510-A16\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/pan.c
 [v _Pan Pan `(v  1 e 1 0 ]
-"55
-[v _startBit startBit `(v  1 e 1 0 ]
-"61
-[v _stopBit stopBit `(v  1 e 1 0 ]
 "67
+[v _startBit startBit `(v  1 e 1 0 ]
+"73
+[v _stopBit stopBit `(v  1 e 1 0 ]
+"79
 [v _putcv putcv `(v  1 e 1 0 ]
-"81
+"93
 [v _Power_off Power_off `(v  1 e 1 0 ]
-"88
+"100
 [v _Power_on Power_on `(v  1 e 1 0 ]
+"107
+[v _alarm alarm `(v  1 e 1 0 ]
 "9 C:\Users\e1430397\Documents\GitHub\243-510-A16\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/projector_screen.c
 [v _ProjectorScreen ProjectorScreen `(v  1 e 1 0 ]
 "9 C:\Users\e1430397\Documents\GitHub\243-510-A16\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/student.c
@@ -379,8 +381,6 @@
 [v _BroadcastRecords BroadcastRecords `[4]S1125  1 e 32 0 ]
 "16 C:\Users\e1430397\Documents\GitHub\243-510-A16\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/network.c
 [v _myChannel myChannel `uc  1 e 1 0 ]
-"25
-[v _ConnectionEntry ConnectionEntry `uc  1 e 1 0 ]
 "41
 [v _AdditionalNodeID AdditionalNodeID `[1]uc  1 e 1 0 ]
 "28 C:\Users\e1430397\Documents\GitHub\243-510-A16\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/system_config/miwikit_pic18f46j50_24j40/lcd.c
@@ -776,6 +776,38 @@
 ]
 [u S611 . 1 `S594 1 . 1 0 `S603 1 . 1 0 `S608 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES611  1 e 1 @3998 ]
+[s S3795 . 1 `uc 1 RTCCIE 1 0 :1:0 
+`uc 1 TMR3GIE 1 0 :1:1 
+`uc 1 CTMUIE 1 0 :1:2 
+`uc 1 TMR4IE 1 0 :1:3 
+`uc 1 TX2IE 1 0 :1:4 
+`uc 1 RC2IE 1 0 :1:5 
+`uc 1 BCL2IE 1 0 :1:6 
+`uc 1 SSP2IE 1 0 :1:7 
+]
+"9553
+[s S3804 . 1 `uc 1 RXB0IE 1 0 :1:0 
+]
+[s S3806 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RXB1IE 1 0 :1:1 
+]
+[s S3809 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RXBNIE 1 0 :1:1 
+]
+[s S3812 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TXB0IE 1 0 :1:2 
+]
+[s S3815 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 TXB1IE 1 0 :1:3 
+]
+[s S3818 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TXB2IE 1 0 :1:4 
+]
+[s S3821 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TXBNIE 1 0 :1:4 
+]
+[u S3824 . 1 `S3795 1 . 1 0 `S3804 1 . 1 0 `S3806 1 . 1 0 `S3809 1 . 1 0 `S3812 1 . 1 0 `S3815 1 . 1 0 `S3818 1 . 1 0 `S3821 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES3824  1 e 1 @4003 ]
 [s S461 . 1 `uc 1 RTCCIF 1 0 :1:0 
 `uc 1 TMR3GIF 1 0 :1:1 
 `uc 1 CTMUIF 1 0 :1:2 
@@ -991,62 +1023,48 @@
 "9 C:\Users\e1430397\Documents\GitHub\243-510-A16\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/teacher.c
 [v _Teacher Teacher `(v  1 e 1 0 ]
 {
-"183
-[v Teacher@_ms_3911 _ms `ul  1 a 4 36 ]
-[v Teacher@_dcnt_3910 _dcnt `ul  1 a 4 16 ]
-"170
-[v Teacher@_ms_3909 _ms `ul  1 a 4 32 ]
-[v Teacher@_dcnt_3908 _dcnt `ul  1 a 4 12 ]
-"143
-[v Teacher@_ms_3906 _ms `ul  1 a 4 28 ]
-[v Teacher@_dcnt_3905 _dcnt `ul  1 a 4 8 ]
-"118
-[v Teacher@_ms_3903 _ms `ul  1 a 4 24 ]
-[v Teacher@_dcnt_3902 _dcnt `ul  1 a 4 4 ]
-"105
-[v Teacher@_ms _ms `ul  1 a 4 20 ]
-[v Teacher@_dcnt _dcnt `ul  1 a 4 0 ]
+"193
+[v Teacher@_ms_4081 _ms `ul  1 a 4 117 ]
+[v Teacher@_dcnt_4080 _dcnt `ul  1 a 4 89 ]
+"181
+[v Teacher@_ms_4079 _ms `ul  1 a 4 113 ]
+[v Teacher@_dcnt_4078 _dcnt `ul  1 a 4 85 ]
+"146
+[v Teacher@_ms_4075 _ms `ul  1 a 4 109 ]
+[v Teacher@_dcnt_4074 _dcnt `ul  1 a 4 81 ]
+"133
+[v Teacher@_ms_4073 _ms `ul  1 a 4 105 ]
+[v Teacher@_dcnt_4072 _dcnt `ul  1 a 4 77 ]
+"106
+[v Teacher@_ms_4070 _ms `ul  1 a 4 101 ]
+[v Teacher@_dcnt_4069 _dcnt `ul  1 a 4 73 ]
+"81
+[v Teacher@_ms_4067 _ms `ul  1 a 4 97 ]
+[v Teacher@_dcnt_4066 _dcnt `ul  1 a 4 69 ]
+"68
+[v Teacher@_ms _ms `ul  1 a 4 93 ]
+[v Teacher@_dcnt _dcnt `ul  1 a 4 65 ]
 "11
-[v Teacher@switch_val switch_val `uc  1 a 1 44 ]
+[v Teacher@switch_val switch_val `uc  1 a 1 123 ]
 "15
-[v Teacher@memoire memoire `uc  1 a 1 43 ]
-"14
-[v Teacher@rssi rssi `uc  1 a 1 42 ]
-"16
-[v Teacher@Pkt_Loss_Cnt Pkt_Loss_Cnt `uc  1 a 1 41 ]
+[v Teacher@memoire memoire `uc  1 a 1 122 ]
 "13
-[v Teacher@Tx_Packet Tx_Packet `uc  1 a 1 40 ]
-"194
-} 0
-"4342 C:\Users\e1430397\Documents\GitHub\243-510-A16\MASTER\Exemple Miwi\v2015_08_10/framework/miwi/src/miwi_mesh.c
-[v _MiApp_UnicastConnection MiApp_UnicastConnection `(uc  1 e 1 0 ]
-{
-[v MiApp_UnicastConnection@ConnectionIndex ConnectionIndex `uc  1 a 1 wreg ]
-[s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
-"4385
-[s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
-[u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
-[v MiApp_UnicastConnection@t2 t2 `S29  1 a 4 135 ]
-[v MiApp_UnicastConnection@t1 t1 `S29  1 a 4 131 ]
-"4345
-[v MiApp_UnicastConnection@MiWiFrameControl MiWiFrameControl `uc  1 a 1 139 ]
-"4342
-[v MiApp_UnicastConnection@ConnectionIndex ConnectionIndex `uc  1 a 1 wreg ]
-"4343
-[v MiApp_UnicastConnection@SecEn SecEn `uc  1 p 1 122 ]
-"4347
-[v MiApp_UnicastConnection@ConnectionIndex ConnectionIndex `uc  1 a 1 140 ]
-"4466
+[v Teacher@Tx_Packet Tx_Packet `uc  1 a 1 121 ]
+"16
+[v Teacher@Pkt_Loss_Cnt Pkt_Loss_Cnt `uc  1 a 1 64 ]
+"14
+[v Teacher@rssi rssi `uc  1 a 1 63 ]
+"211
 } 0
 "9 C:\Users\e1430397\Documents\GitHub\243-510-A16\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/student.c
 [v _Student Student `(v  1 e 1 0 ]
 {
 "83
-[v Student@_ms_3821 _ms `ul  1 a 4 83 ]
-[v Student@_dcnt_3820 _dcnt `ul  1 a 4 71 ]
+[v Student@_ms_3986 _ms `ul  1 a 4 83 ]
+[v Student@_dcnt_3985 _dcnt `ul  1 a 4 71 ]
 "58
-[v Student@_ms_3818 _ms `ul  1 a 4 79 ]
-[v Student@_dcnt_3817 _dcnt `ul  1 a 4 67 ]
+[v Student@_ms_3983 _ms `ul  1 a 4 79 ]
+[v Student@_dcnt_3982 _dcnt `ul  1 a 4 67 ]
 "45
 [v Student@_ms _ms `ul  1 a 4 75 ]
 [v Student@_dcnt _dcnt `ul  1 a 4 63 ]
@@ -1077,38 +1095,44 @@
 {
 "11
 [v Pan@rssi rssi `uc  1 a 1 123 ]
-"53
-} 0
-"88
-[v _Power_on Power_on `(v  1 e 1 0 ]
-{
-"93
-} 0
-"81
-[v _Power_off Power_off `(v  1 e 1 0 ]
-{
-"86
-} 0
-"67
-[v _putcv putcv `(v  1 e 1 0 ]
-{
-"71
-[v putcv@data2 data2 `i  1 a 2 6 ]
-"69
-[v putcv@i i `i  1 a 2 4 ]
-"67
-[v putcv@data data `i  1 p 2 0 ]
-"79
-} 0
-"61
-[v _stopBit stopBit `(v  1 e 1 0 ]
-{
 "65
 } 0
-"55
+"107
+[v _alarm alarm `(v  1 e 1 0 ]
+{
+[v alarm@status status `i  1 p 2 0 ]
+"111
+} 0
+"100
+[v _Power_on Power_on `(v  1 e 1 0 ]
+{
+"105
+} 0
+"93
+[v _Power_off Power_off `(v  1 e 1 0 ]
+{
+"98
+} 0
+"79
+[v _putcv putcv `(v  1 e 1 0 ]
+{
+"83
+[v putcv@data2 data2 `i  1 a 2 6 ]
+"81
+[v putcv@i i `i  1 a 2 4 ]
+"79
+[v putcv@data data `i  1 p 2 0 ]
+"91
+} 0
+"73
+[v _stopBit stopBit `(v  1 e 1 0 ]
+{
+"77
+} 0
+"67
 [v _startBit startBit `(v  1 e 1 0 ]
 {
-"59
+"71
 } 0
 "45 C:\Users\e1430397\Documents\GitHub\243-510-A16\MASTER\Exemple Miwi\v2015_08_10\apps\miwi\miwi_mesh\miwi_demo_kit\firmware/src/network.c
 [v _Network Network `(v  1 e 1 0 ]

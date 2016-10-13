@@ -10231,43 +10231,6 @@ TxBuffer[TxData++] = 0x63;
 TxBuffer[TxData++] = 0x6B;
 TxBuffer[TxData++] = 0x73;
 TxBuffer[TxData++] = 0x21;
-
-if(MiApp_UnicastConnection(ConnectionEntry, 0) == 0)
-Pkt_Loss_Cnt++;
-else
-Pkt_Loss_Cnt = 0;
-
-if(Pkt_Loss_Cnt < 1)
-{
-if(rssi < 50)
-{
-{TxData = 11;};
-TxBuffer[TxData++] = 0x55;
-TxBuffer[TxData++] = myShortAddress.v[0];
-TxBuffer[TxData++] = myShortAddress.v[1];
-{TxData = 11;};
-TxBuffer[TxData++] = 0x33;
-TxBuffer[TxData++] = myShortAddress.v[0];
-TxBuffer[TxData++] = myShortAddress.v[1];
-memoire=1;
-MiApp_BroadcastPacket(0);
-Tx_Packet = 0;
-}
-else if(rssi > 201)
-{
-{TxData = 11;};
-TxBuffer[TxData++] = 0x66;
-TxBuffer[TxData++] = myShortAddress.v[0];
-TxBuffer[TxData++] = myShortAddress.v[1];
-{TxData = 11;};
-TxBuffer[TxData++] = 0x22;
-TxBuffer[TxData++] = myShortAddress.v[0];
-TxBuffer[TxData++] = myShortAddress.v[1];
-memoire=0;
-MiApp_BroadcastPacket(0);
-Tx_Packet = 0;
-}
-}
 }
 
 sprintf((char *)&LCDText, (char*)"SW1: PROJECTOR  SW2: Suivant  ");
@@ -10383,6 +10346,60 @@ LATAbits.LATA6 = 0;
 if(switch_val == 2)
 {
 switch_val = 0;
+sprintf((char *)&LCDText, (char*)"SW1: Alarme     SW2: Suivant  ");
+LCD_Update();
+
+while(switch_val == 0)
+{
+switch_val = BUTTON_Pressed();
+}
+if(switch_val == 1)
+{
+switch_val = 0;
+sprintf((char *)&LCDText, (char*)"SW1: ON         SW2: OFF        ");
+LCD_Update();
+
+while(switch_val == 0)
+{
+switch_val = BUTTON_Pressed();
+}
+
+
+if(switch_val == 1)
+{
+switch_val = 0;
+LATAbits.LATA6 = 1;
+{TxData = 11;};
+TxBuffer[TxData++] = 0x77;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+{ unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+}
+if (switch_val == 2)
+{
+switch_val = 0;
+LATAbits.LATA6 = 1;
+{TxData = 11;};
+TxBuffer[TxData++] = 0x88;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+{ unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+}
+
+}
+
+if(switch_val == 2)
+{
+switch_val = 0;
+sprintf((char *)&LCDText, (char*)"SW1: PROJECTOR  SW2: Suivant  ");
+LCD_Update();
+}
+
+
 }
 }
 }

@@ -35,44 +35,7 @@ void Teacher(void)
             MiApp_WriteData(0x6B);
             MiApp_WriteData(0x73);
             MiApp_WriteData(0x21);
-
-            if(MiApp_UnicastConnection(ConnectionEntry, false) == false)
-                Pkt_Loss_Cnt++;
-            else
-                Pkt_Loss_Cnt = 0;
-      	
-            if(Pkt_Loss_Cnt < 1)
-            {           		
-                if(rssi < 50)
-                {
-                    MiApp_FlushTx();
-                    MiApp_WriteData(PROJECTOR_ON);
-                    MiApp_WriteData(myShortAddress.v[0]);
-                    MiApp_WriteData(myShortAddress.v[1]);
-                    MiApp_FlushTx();
-                    MiApp_WriteData(PROJECTOR_MOTOR_DOWN);
-                    MiApp_WriteData(myShortAddress.v[0]);
-                    MiApp_WriteData(myShortAddress.v[1]);
-                    memoire=1;
-                    MiApp_BroadcastPacket(false);
-                    Tx_Packet = false;
-                }
-                else if(rssi > 201)
-                {
-                    MiApp_FlushTx();
-                    MiApp_WriteData(PROJECTOR_OFF);
-                    MiApp_WriteData(myShortAddress.v[0]);
-                    MiApp_WriteData(myShortAddress.v[1]);
-                    MiApp_FlushTx();
-                    MiApp_WriteData(PROJECTOR_MOTOR_UP);
-                    MiApp_WriteData(myShortAddress.v[0]);
-                    MiApp_WriteData(myShortAddress.v[1]);
-                    memoire=0;
-                    MiApp_BroadcastPacket(false);
-                    Tx_Packet = false;
-                }    
-            }
-        } 	  
+        }
         
         sprintf((char *)&LCDText, (char*)"SW1: PROJECTOR  SW2: Suivant  ");
         LCD_Update();
@@ -187,6 +150,60 @@ void Teacher(void)
                 if(switch_val == SW2)
                 {
                     switch_val = 0;
+                    sprintf((char *)&LCDText, (char*)"SW1: Alarme     SW2: Suivant  ");
+                    LCD_Update();
+                    
+                    while(switch_val == 0)
+                {
+                    switch_val = BUTTON_Pressed();
+                }
+                if(switch_val == SW1)
+                {
+                switch_val = 0;
+                sprintf((char *)&LCDText, (char*)"SW1: ON         SW2: OFF        ");
+                LCD_Update();
+            
+                while(switch_val == 0)
+                {
+                    switch_val = BUTTON_Pressed();
+                }
+                
+                
+                if(switch_val == SW1)
+                {
+                    switch_val = 0;
+                        LED1 = 1;
+                        MiApp_FlushTx();
+                        MiApp_WriteData(ALARM_ON);
+                        MiApp_WriteData(myShortAddress.v[0]);
+                        MiApp_WriteData(myShortAddress.v[1]);
+                        MiApp_BroadcastPacket(false);
+                        delay_ms(500);
+                        LED1 = 0;
+                }
+                if (switch_val == SW2)
+                {
+                    switch_val = 0;
+                        LED1 = 1;
+                        MiApp_FlushTx();
+                        MiApp_WriteData(ALARM_OFF);
+                        MiApp_WriteData(myShortAddress.v[0]);
+                        MiApp_WriteData(myShortAddress.v[1]);
+                        MiApp_BroadcastPacket(false);
+                        delay_ms(500);
+                        LED1 = 0;
+                }              
+                    
+                }
+                    
+                    if(switch_val == SW2)
+                    {
+                        switch_val = 0;
+                        sprintf((char *)&LCDText, (char*)"SW1: PROJECTOR  SW2: Suivant  ");
+                        LCD_Update();
+                    }
+                    
+                    
                 }
             }    
         }        
@@ -321,5 +338,58 @@ void Teacher(void)
     	  
 */
     
+/*if(Tx_Packet)
+        {
+            MiApp_FlushTx();
 
-    	    
+            MiApp_WriteData(RANGE_PKT);
+            MiApp_WriteData(0x4D);
+            MiApp_WriteData(0x69);
+            MiApp_WriteData(0x57);
+            MiApp_WriteData(0x69);
+            MiApp_WriteData(0x20);
+            MiApp_WriteData(0x52);
+            MiApp_WriteData(0x6F);
+            MiApp_WriteData(0x63);
+            MiApp_WriteData(0x6B);
+            MiApp_WriteData(0x73);
+            MiApp_WriteData(0x21);
+
+            if(MiApp_UnicastConnection(ConnectionEntry, false) == false)
+                Pkt_Loss_Cnt++;
+            else
+                Pkt_Loss_Cnt = 0;
+      	
+            if(Pkt_Loss_Cnt < 1)
+            {           		
+                if(rssi < 50)
+                {
+                    MiApp_FlushTx();
+                    MiApp_WriteData(PROJECTOR_ON);
+                    MiApp_WriteData(myShortAddress.v[0]);
+                    MiApp_WriteData(myShortAddress.v[1]);
+                    MiApp_FlushTx();
+                    MiApp_WriteData(PROJECTOR_MOTOR_DOWN);
+                    MiApp_WriteData(myShortAddress.v[0]);
+                    MiApp_WriteData(myShortAddress.v[1]);
+                    memoire=1;
+                    MiApp_BroadcastPacket(false);
+                    Tx_Packet = false;
+                }
+                else if(rssi > 201)
+                {
+                    MiApp_FlushTx();
+                    MiApp_WriteData(PROJECTOR_OFF);
+                    MiApp_WriteData(myShortAddress.v[0]);
+                    MiApp_WriteData(myShortAddress.v[1]);
+                    MiApp_FlushTx();
+                    MiApp_WriteData(PROJECTOR_MOTOR_UP);
+                    MiApp_WriteData(myShortAddress.v[0]);
+                    MiApp_WriteData(myShortAddress.v[1]);
+                    memoire=0;
+                    MiApp_BroadcastPacket(false);
+                    Tx_Packet = false;
+                }    
+            }
+        } 	  
+    	*/    

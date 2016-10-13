@@ -27,7 +27,7 @@ void stopBit(void);
 void putcv(int data);
 void Power_off();
 void Power_on();
-//void alarm(boolean status);
+void alarm(int status);
 
 void Pan(void);
 
