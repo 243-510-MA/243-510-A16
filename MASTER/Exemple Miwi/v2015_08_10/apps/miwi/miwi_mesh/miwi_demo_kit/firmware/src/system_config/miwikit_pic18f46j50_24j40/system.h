@@ -68,7 +68,7 @@ typedef union
 
 }API_UINT16_UNION;
 
-
+uint16_t pwm_value_high_time = 400 ;  
 
 
 

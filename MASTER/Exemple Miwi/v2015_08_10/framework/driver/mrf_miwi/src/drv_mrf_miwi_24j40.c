@@ -1876,24 +1876,33 @@ void _ISRFAST _INT1Interrupt(void)
         PIR3bits.TMR4IF = 0;
     }
     
-    if(TMR3IF){
-        uint16_t pwm_value_high_time = 800;
+    if(PIR2bits.TMR3IF){
+        static uint8_t compte ;     
         static bool u;
+        
         if(u){
             //800 ---- 400 millieux  -----800 full front-- 0 full back
             u = 0;
             uint16_t temp = 65536 - (pwm_value_high_time + 2600);
-            LED2 = 0;
+            PROJECTOR = 1;
             TMR3 = temp;
-            TMR3IF = 0;
+            PIR2bits.TMR3IF = 0;
         }else{
             u = 1;
             uint16_t temp = 25536 + (pwm_value_high_time + 2600);
-            LED2 = 1;
+            PROJECTOR = 0;
             TMR3 = temp;
-            TMR3IF = 0;
-            
-            
+            PIR2bits.TMR3IF = 0;
+               
+        }
+        
+        compte ++;
+        if ( compte == 250)
+        {
+            PIR2bits.TMR3IF = 0;
+            PIE2bits.TMR3IE  = 0;
+            pwm_value_high_time = 400;
+            compte = 0;
         }
 
     }
