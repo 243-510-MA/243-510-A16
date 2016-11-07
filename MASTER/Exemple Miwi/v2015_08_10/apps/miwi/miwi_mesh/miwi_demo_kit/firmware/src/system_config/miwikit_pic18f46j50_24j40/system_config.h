@@ -93,9 +93,7 @@
 //pin assignables
 //B2 Buzzer
 //B3 GYRO
-//A0
-//A1
-//A2
+//A0 detecteur mouvement
 //E0
 //E1
 
@@ -116,9 +114,18 @@
 //UART virtuel pc caca fesse fesse
 #define UART_TX_V           LATAbits.LATA2
 #define UART_TX_TRIS        TRISAbits.TRISA2
+#define TX_ANALOG_DIGITAL   ANCON0bits.PCFG2
 
 #define UART_RX_TRIS        TRISAbits.TRISA1
 #define UART_RX_V           PORTAbits.RA1
+#define RX_ANALOG_DIGITAL   ANCON0bits.PCFG1
+
+//movement_detector
+
+#define DETECT_TRIS         TRISAbits.TRISA0
+#define DETECT              PORTAbits.RA0
+#define DIGITAL_ANALOG_DETECT   ANCON0bits.PCFG0
+
 
 
 //Buzzer
