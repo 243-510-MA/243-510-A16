@@ -1,0 +1,11 @@
+Le détecteur de mouvement est DG75 de Paradox Security Systems
+
+Les fils rouge et noir sont l'alimentation 12V (+9 V à +16 V)
+Le fil jaune est branché au COM d'un interupteur.
+Le fil brun en branché au N.C.  (Normally Close) d'un interupteur
+
+Fonctionnement:
+Mettre un signal logique sur le fil jaune (COM)
+Lorsqu'aucun mouvement n'est détecté, le fil brun (N.C.) recoit le signal logique
+Lorsqu'un mouvement est détecté, le fil brun ne recoit plus le signal logique
+*Il serait justicieux de mettre un pull-down sur la broche N.C. afin que le signal soit 0 V et non flottant lorsqu'un mouvement est détecté.
