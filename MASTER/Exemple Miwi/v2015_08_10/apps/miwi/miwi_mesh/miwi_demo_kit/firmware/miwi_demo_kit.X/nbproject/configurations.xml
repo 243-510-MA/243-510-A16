@@ -125,6 +125,10 @@
       <itemPath>../src/network.c</itemPath>
       <itemPath>../src/network.h</itemPath>
       <itemPath>../src/codes library.h</itemPath>
+      <itemPath>../src/computer_control.c</itemPath>
+      <itemPath>../src/computer_control.h</itemPath>
+      <itemPath>../../../../../../../../../XC8 exemples de code/soft_uart.c</itemPath>
+      <itemPath>../src/soft_uart.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -136,6 +140,7 @@
     <Elem>../src</Elem>
     <Elem>../../../../../../framework/miwi</Elem>
     <Elem>../../../../../../framework/driver/mrf_miwi</Elem>
+    <Elem>../../../../../../../../../XC8 exemples de code</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -147,7 +152,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>1.35</languageToolchainVersion>
+        <languageToolchainVersion>1.37</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
@@ -619,7 +624,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>1.35</languageToolchainVersion>
+        <languageToolchainVersion>1.37</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>

@@ -99,6 +99,7 @@
 //E0
 //E1
 
+
 #define DOOR                LATDbits.LATD7
 #define DOOR_TRIS           TRISDbits.TRISD7         
 
@@ -111,6 +112,14 @@
 #define LED1_TRIS           TRISAbits.TRISA6
 #define LED2                LATAbits.LATA7
 #define LED2_TRIS           TRISAbits.TRISA7
+
+//UART virtuel pc caca fesse fesse
+#define UART_TX_V           LATAbits.LATA2
+#define UART_TX_TRIS        TRISAbits.TRISA2
+
+#define UART_RX_TRIS        TRISAbits.TRISA1
+#define UART_RX_V           PORTAbits.RA1
+
 
 //Buzzer
 #define Buzzer                LATBbits.LATB2

@@ -5,68 +5,24 @@
  * Created on 3 octobre 2016, 15:32
  */
 
-#define _XTAL_FREQ 20000000
+/**/
+/* Les prototypes de ces fonctions ont été déplacés dans soft_uart.h*/
+/* Code pour UART Matériel et Logiciel par Claude Barbaud */
+/* Modifications pour le cours 243-510 , Automne 2016, pour projet MiWi */
 
-#include <xc.h>
+/* LISTE DES MODIFICATIONS
+ * 2016-11-03 : modification par S.Proulx pour changer la broche du UART Logiciel
+ *              des broches B6 B7 aux broches A2 et A1. Fonctionnement de base
+ * 
+ * 
+ *
+ * 
+ *  */
 
-// BEGIN CONFIG
-#pragma config OSC = HS // Oscillator Selection bits (HS oscillator)
-#pragma config WDT = ON // Watchdog Timer Enable bit (WDT enabled)
-#pragma config PWRT = OFF // Power-up Timer Enable bit (PWRT disabled)
-#pragma config LVP = OFF // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3 is digital I/O, HV on MCLR must be used for programming)
-#pragma config CPD = OFF // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
-//END CONFIG
+#include "system_config.h"
+#include "soft_uart.h"
 
-//----------------------------------------------------------------------
-// prototypes des fonctions
-//----------------------------------------------------------------------
-// ------------------UART Matériel-------------------------------------
-char UART_Init(const long int baudrate);
-void UART_Write(char data);
-char UART_Data_Ready();
-char UART_Read();
-void UART_Write_Text(char *text);
-// ------------------UART Logiciel-------------------------------------
-void UART_Init_B6_B7(void);
-void UART_Write_B6_B7(char data);
-char UART_Read_B6_B7(void);
-short UART_kbhit_B6_B7(void);
-void UART_Write_Text_B6_B7(char *text);
-//-------------------LCD------------------------------------------------
-void LCD_Init(void);
-void LCD_Set_Cursor(int pos);
 
-//-----------------------------------------------------------------------
-// main()
-//------------------------------------------------------------------------
-void main(void)
-{
-  char i, lecture;
-  char texte[] = "Test UART logiciel";
-
-  UART_Init_B6_B7();
-  LCD_Init();
-  UART_Write_Text_B6_B7(texte);
-  LCD_Set_Cursor(0x40);
-  //for(;;) UART_Write_B6_B7('U');                            // Pour mesurer les bps
-  //for (i = 'A'; i <= 'Z'; i++) UART_Write_B6_B7(i);
-  while(1)
-  {
-      if (UART_kbhit_B6_B7())
-      {
-        lecture = UART_Read_B6_B7();
-        if (lecture != 0) 
-        {
-          UART_Write_B6_B7(lecture);
-        }
-      }
-  }
-  }
-
-//----------------------------------------------------------------------------
-// char UART_Init(const long int baudrate)
-// Initialie UART reception = PIN_C7, transmission = PIN_C6
-//----------------------------------------------------------------------------
 char UART_Init(const long int baudrate)
 {
   unsigned int x;
@@ -135,88 +91,88 @@ void UART_Write_Text(char *text)
 
 //---------------------------------------------------------------------------
 // void UART_Init_B6_B7(void)
-//  PIN_B6 = TXD
-//  PIN_B7 = RXD
+//  PIN_A2 = TXD
+//  PIN_A1 = RXD
 //---------------------------------------------------------------------------
-void UART_Init_B6_B7(void)
+void UART_Init_A2_A1(void)
 {
-    TRISB6 = 0; // Sortie
-    TRISB7 = 1; // Entrée
-    RB6 = 1;     // Niveau haut
-    RB7 = 1;
+    UART_TX_TRIS = 0; // Sortie
+    UART_RX_TRIS = 1; // Entrée
+    UART_TX_V = 1;     // Niveau haut
+    UART_RX_V = 1;
 }
 //---------------------------------------------------------------------------
-//  void UART_Write_B6_B7(char data)
+//  void UART_Write_A2_A1(char data)
 //  Écrit le caractère sur le port série software
-//  PIN_B6 = TXD
-//  PIN_B7 = RXD
+//  PIN_A2 = TXD
+//  PIN_A1 = RXD
 //  durée d'un bit à 9600 bps
 //  t = 1/9600 = 104 us
 //  4 us environ pour instructions
 //---------------------------------------------------------------------------
 
-void UART_Write_B6_B7(char data)
+void UART_Write_A2_A1(char data)
 {
     int i;
-    RB6 = 0;        // start bit
+    UART_TX_V = 0;        // start bit
     __delay_us(100);
     for(i=0; i<8; i++)
     {
-        RB6 = (short) data;
+        UART_TX_V = (short) data;
         data = data >> 1;
         __delay_us(100);
     }
-    RB6 = 1;    // stop bit
+    UART_TX_V = 1;    // stop bit
     __delay_us(100);
 }
 
 //---------------------------------------------------------------------------
-//  char UART_Read_B6_B7(void)
+//  char UART_Read_A2_A1(void)
 //  Reçoit le caractère sur le port série software
-//  PIN_B6 = TXD
-//  PIN_B7 = RXD
+//  PIN_A2 = TXD
+//  PIN_A1 = RXD
 //  durée d'un bit à 9600 bps
 //  t = 1/9600 = 104 us
 //  4 us environ pour instructions
 //---------------------------------------------------------------------------
 
-char UART_Read_B6_B7(void)
+char UART_Read_A2_A1(void)
 {
     int i;
     char data, lecture;
     data = 0b00000000;
-    if (RB7 == 0)           // Détecte le start bit
+    if (UART_RX_V == 0)           // Détecte le start bit
     {
         __delay_us(50);         // demi-bit
         for(i=0; i<8; i++)
         {
             __delay_us(100);    // Échantillone au milieu des bits
-            data = (data >> 1) + (RB7 << 7);
+            data = (data >> 1) + (UART_RX_V << 7);
         }
-        RB7 = 1;                // stop bit (en attente)
+        UART_RX_V = 1;                // stop bit (en attente)
     }
     return data;
  }
 
 //---------------------------------------------------------------------------
-//  short UART_kbhit_B6_B7(void)
+//  short UART_kbhit_A2_A1(void)
 //  Teste la réception d'un caractère su PIN_B7
 //---------------------------------------------------------------------------
-short UART_kbhit_B6_B7(void)
-{
-    return (RB7 == 0);
+short UART_kbhit_A2_A1(void)
+{   
+    return (UART_RX_V == 0);
 }
 
 //---------------------------------------------------------------------------
-// void UART_Write_Text_B6_B7(char *text)
+// void UART_Write_Text_A2_A1(char *text)
 // Écriture d'un texte
-// sur PIN_B6
+// sur PIN_A2
 //---------------------------------------------------------------------------
-void UART_Write_Text_B6_B7(char *text)
+void UART_Write_Text_A2_A1(char *text)
 {
   int i;
   for(i=0;text[i]!='\0';i++)
-    UART_Write_B6_B7(text[i]);
+    UART_Write_A2_A1(text[i]);
 }
 //---------------------------------------------------------------------------
 //  void LCD_Init(void)
@@ -225,10 +181,10 @@ void UART_Write_Text_B6_B7(char *text)
 
 void LCD_Init(void)
 {
-    UART_Write_B6_B7(0xFE);
-    UART_Write_B6_B7(0x51);     // clear screen
-    UART_Write_B6_B7(0xFE);
-    UART_Write_B6_B7(0x41);     // display on
+    UART_Write_A2_A1(0xFE);
+    UART_Write_A2_A1(0x51);     // clear screen
+    UART_Write_A2_A1(0xFE);
+    UART_Write_A2_A1(0x41);     // display on
     
 }
 
@@ -238,8 +194,49 @@ void LCD_Init(void)
 //---------------------------------------------------------------------------
 void LCD_Set_Cursor(int pos)
 {
-    UART_Write_B6_B7(0xFE);
-    UART_Write_B6_B7(0x45);     // clear screen
-    UART_Write_B6_B7(pos);
+    UART_Write_A2_A1(0xFE);
+    UART_Write_A2_A1(0x45);     // clear screen
+    UART_Write_A2_A1(pos);
         
 }
+
+// BEGIN CONFIG
+/*#pragma config OSC = HS // Oscillator Selection bits (HS oscillator)
+#pragma config WDT = ON // Watchdog Timer Enable bit (WDT enabled)
+#pragma config PWRT = OFF // Power-up Timer Enable bit (PWRT disabled)
+#pragma config LVP = OFF // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3 is digital I/O, HV on MCLR must be used for programming)
+#pragma config CPD = OFF // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)*/
+//END CONFIG
+
+
+//-----------------------------------------------------------------------
+// main()
+//------------------------------------------------------------------------
+/*void main(void)
+{
+  char i, lecture;
+  char texte[] = "Test UART logiciel";
+
+  UART_Init_B6_B7();
+  LCD_Init();
+  UART_Write_Text_B6_B7(texte);
+  LCD_Set_Cursor(0x40);
+  //for(;;) UART_Write_A2_A1('U');                            // Pour mesurer les bps
+  //for (i = 'A'; i <= 'Z'; i++) UART_Write_A2_A1(i);
+  while(1)
+  {
+      if (UART_kbhit_B6_B7())
+      {
+        lecture = UART_Read_B6_B7();
+        if (lecture != 0) 
+        {
+          UART_Write_A2_A1(lecture);
+        }
+      }
+  }
+  }*/
+
+//----------------------------------------------------------------------------
+// char UART_Init(const long int baudrate)
+// Initialie UART reception = PIN_C7, transmission = PIN_C6
+//----------------------------------------------------------------------------

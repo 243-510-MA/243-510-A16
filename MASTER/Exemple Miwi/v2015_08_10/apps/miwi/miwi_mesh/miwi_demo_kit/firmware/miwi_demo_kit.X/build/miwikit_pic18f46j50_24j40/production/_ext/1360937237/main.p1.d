@@ -9,6 +9,7 @@
 ../src/teacher.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/delay.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/config_24j40.h  \
+../src/computer_control.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/system.h  \
 ../../../../../../framework/driver/mrf_miwi/drv_mrf_miwi.h  \
 ../src/door_unlock.h  \

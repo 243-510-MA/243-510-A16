@@ -1,11 +1,11 @@
-Microchip MPLAB XC8 Compiler V1.35 ()
+Microchip MPLAB XC8 Compiler V1.37 ()
 
 Linker command line:
 
---edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
+--edf=C:\Program Files (x86)\Microchip\xc8\v1.37\dat\en_msgs.txt -cs \
   -h+dist/miwikit_pic18f46j50_24j40/production\miwi_demo_kit.X.production.sym \
   --cmf=dist/miwikit_pic18f46j50_24j40/production\miwi_demo_kit.X.production.cmf \
-  -z -Q18F46J50 -oC:\Users\e1028711\AppData\Local\Temp\s6gs.2 \
+  -z -Q18F46J50 -oC:\Users\e1434245\AppData\Local\Temp\s5p4.2 \
   -Mdist/miwikit_pic18f46j50_24j40/production/miwi_demo_kit.X.production.map \
   -E1 -ver=XC8 -ASTACK=0486h-0ebfh -pstack=STACK -ACODE=00h-0FFF7h \
   -ACONST=00h-0FFF7h -ASMALLCONST=0F00h-0FFFhx240,0FF00h-0FFF7h \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\e1028711\AppData\Local\Temp\s6gs.obj \
+  C:\Users\e1434245\AppData\Local\Temp\s5p4.obj \
   dist/miwikit_pic18f46j50_24j40/production\miwi_demo_kit.X.production.obj 
 
 Object code version is 3.11
@@ -38,7 +38,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\e1028711\AppData\Local\Temp\s6gs.obj
+C:\Users\e1434245\AppData\Local\Temp\s5p4.obj
                 end_init                            282      282        4        4       0
                 reset_vec                             0        0        4        0       0
                 config                             FFF8     FFF8        8     FFF8       0
@@ -46,102 +46,108 @@ dist/miwikit_pic18f46j50_24j40/production\miwi_demo_kit.X.production.obj
                 intcode                               8        8      27A        4       0
                 temp                                 4D       4D        1        1       1
                 mediumconst                        FD5C     FD5C      29C     7EAE       0
-                text83                             8E4C     8E4C        2        4       0
-                text82                             8D9E     8D9E       1A        4       0
-                text81                             8E38     8E38        A        4       0
-                text80                             897E     897E       52        4       0
-                text79                             8C80     8C80       2A        4       0
-                text78                             8CAA     8CAA       28        4       0
-                text76                             8D68     8D68       1C        4       0
-                text75                             8E42     8E42        8        4       0
-                text74                             7CFC     7CFC       CC        4       0
-                text73                             83A0     83A0       88        4       0
-                text72                             8AA6     8AA6       40        4       0
-                text71                             78F4     78F4      10A        4       0
-                text70                             861A     861A       70        4       0
-                text69                             8A62     8A62       44        4       0
-                text68                             7E86     7E86       BA        4       0
-                text67                             8D4C     8D4C       1C        4       0
-                text66                             8820     8820       62        4       0
-                text65                             8BF8     8BF8       32        4       0
-                text64                             88D8     88D8       54        4       0
-                text63                             8CD2     8CD2       24        4       0
-                text62                             3B0A     3B0A      6D2        4       0
-                text61                             8E2E     8E2E        A        4       0
-                text60                             86F8     86F8       64        4       0
-                text59                             8B8E     8B8E       36        4       0
-                text58                             669A     669A      2C0        4       0
-                text57                             868A     868A       6E        4       0
-                text56                             5184     5184      4C2        4       0
-                text55                             8098     8098       AA        4       0
-                text54                             892C     892C       52        4       0
-                text53                             33BA     33BA      750        4       0
-                text52                             695A     695A      2AE        4       0
-                text51                             79FE     79FE      106        4       0
-                text50                             4CB4     4CB4      4D0        4       0
-                text49                             8312     8312       8E        4       0
-                text48                              286      286     1B78        4       0
-                text47                             8DF6     8DF6       10        4       0
-                text46                             827E     827E       94        4       0
-                text45                             85A4     85A4       76        4       0
-                text44                             7FEE     7FEE       AA        4       0
-                text43                             8D30     8D30       1C        4       0
-                text42                             8DE2     8DE2       14        4       0
-                text41                             8BC4     8BC4       34        4       0
-                text40                             8AE6     8AE6       3A        4       0
-                text39                             8DCE     8DCE       14        4       0
-                text38                             8142     8142       A8        4       0
-                text37                             852C     852C       78        4       0
-                text36                             87BE     87BE       62        4       0
-                text35                             8B58     8B58       36        4       0
-                text34                             8C56     8C56       2A        4       0
-                text33                             297C     297C      A3E        4       0
-                text32                             8882     8882       56        4       0
-                text31                             7C00     7C00       FC        4       0
-                text30                             8C2A     8C2A       2C        4       0
+                text87                             8FF8     8FF8        2     47D8       0
+                text86                             8F1E     8F1E       1A        4       0
+                text85                             8FE2     8FE2        A     47D8       0
+                text84                             8B1C     8B1C       52        4       0
+                text83                             8E1E     8E1E       2A        4       0
+                text82                             8E48     8E48       28        4       0
+                text80                             8EE8     8EE8       1C        4       0
+                text79                             89BE     89BE       62        4       0
+                text78                             8D96     8D96       32        4       0
+                text77                             8A76     8A76       54        4       0
+                text76                             8FD8     8FD8        A     47D8       0
+                text75                             8896     8896       64        4       0
+                text74                             8D2C     8D2C       36        4       0
+                text73                             669A     669A      2C0        4       0
+                text72                             8828     8828       6E        4       0
+                text71                             87B8     87B8       70        4       0
+                text70                             5184     5184      4C2        4       0
+                text69                             695A     695A      2AE        4       0
+                text68                             7D0A     7D0A       FC        4       0
+                text67                             8FCE     8FCE        A     47D8       0
+                text66                             8744     8744       74        4       0
+                text65                             8F76     8F76       12        4       0
+                text64                             79FE     79FE      10A        4       0
+                text63                             8ECC     8ECC       1C        4       0
+                text62                             8FEC     8FEC        8     47D8       0
+                text61                             7E06     7E06       CC        4       0
+                text60                             854C     854C       88        4       0
+                text59                             8C44     8C44       40        4       0
+                text58                             78F4     78F4      10A        4       0
+                text57                             8C00     8C00       44        4       0
+                text56                             7F90     7F90       BA        4       0
+                text55                             8E70     8E70       24        4       0
+                text54                             3B0A     3B0A      6D2        4       0
+                text53                             81A2     81A2       AA        4       0
+                text52                             8ACA     8ACA       52        4       0
+                text51                             33BA     33BA      750        4       0
+                text50                             7B08     7B08      106        4       0
+                text49                             4CB4     4CB4      4D0        4       0
+                text48                             84BE     84BE       8E        4       0
+                text47                              286      286     1B78        4       0
+                text46                             8F88     8F88       10        4       0
+                text45                             842A     842A       94        4       0
+                text44                             86CE     86CE       76        4       0
+                text43                             80F8     80F8       AA        4       0
+                text42                             8EB0     8EB0       1C        4       0
+                text41                             8F62     8F62       14        4       0
+                text40                             8D62     8D62       34        4       0
+                text39                             8C84     8C84       3A        4       0
+                text38                             8F4E     8F4E       14        4       0
+                text37                             824C     824C       A8        4       0
+                text36                             8656     8656       78        4       0
+                text35                             895C     895C       62        4       0
+                text34                             8CF6     8CF6       36        4       0
+                text33                             8DF4     8DF4       2A        4       0
+                text32                             297C     297C      A3E        4       0
+                text31                             8A20     8A20       56        4       0
+                text30                             8DC8     8DC8       2C        4       0
                 text29                             70D4     70D4      22A        4       0
                 text28                             5AEA     5AEA      442        4       0
                 text27                             5F2C     5F2C      3B8        4       0
                 text26                             5646     5646      4A4        4       0
-                text25                             8DB8     8DB8       16        4       0
-                text24                             89D0     89D0       4A        4       0
+                text25                             8F38     8F38       16        4       0
+                text24                             8B6E     8B6E       4A        4       0
                 text23                             750E     750E      180        4       0
-                text22                             8A1A     8A1A       48        4       0
-                text21                             7DC8     7DC8       BE        4       0
+                text22                             8BB8     8BB8       48        4       0
+                text21                             7ED2     7ED2       BE        4       0
                 text20                             72FE     72FE      210        4       0
-                text19                             7B04     7B04       FC        4       0
-                text18                             8E24     8E24        A        4       0
-                text17                             8B20     8B20       38        4       0
+                text19                             7C0E     7C0E       FC        4       0
+                text18                             8FC4     8FC4        A     47D8       0
+                text17                             8CBE     8CBE       38        4       0
                 text16                             77E6     77E6      10E        4       0
-                text15                             84AA     84AA       82        4       0
-                text14                             7F40     7F40       AE        4       0
+                text15                             85D4     85D4       82        4       0
+                text14                             804A     804A       AE        4       0
                 text13                             47E2     47E2      4D2        4       0
-                text12                             8E1A     8E1A        A        4       0
-                text11                             8E10     8E10        A        4       0
-                text10                             875C     875C       62        4       0
+                text12                             8FBA     8FBA        A     47D8       0
+                text11                             8FB0     8FB0        A     47D8       0
+                text10                             88FA     88FA       62        4       0
                 text9                              6E6E     6E6E      266        4       0
                 text8                              6C08     6C08      266        4       0
-                text7                              8D84     8D84       1A        4       0
-                text6                              81EA     81EA       94        4       0
-                text5                              8CF6     8CF6       1E        4       0
+                text7                              8F04     8F04       1A        4       0
+                text6                              8396     8396       94        4       0
+                text5                              8FF6     8FF6        2     47D8       0
                 text4                              768E     768E      158        4       0
                 text3                              41DC     41DC      606        4       0
                 text2                              62E4     62E4      3B6        4       0
                 text1                              1DFE     1DFE      B7E        4       0
-                text0                              8D14     8D14       1C        4       0
+                text0                              8E94     8E94       1C        4       0
                 cstackCOMRAM                          1        1       26        1       1
                 cstackBANK0                          60       60       9F       60       1
                 cstackBANK1                         191      191       62      100       1
                 bssBANK4                            400      400       86      400       1
                 bssBANK3                            300      300       DC      300       1
+                dataBANK2                           2CD      2CD        D      200       1
                 bssBANK2                            200      200       CD      200       1
                 dataBANK1                           1F3      1F3        A      100       1
                 bssBANK1                            100      100       91      100       1
                 dataCOMRAM                           4B       4B        2        1       1
                 bssCOMRAM                            27       27       24        1       1
-                cinit                              8428     8428       82        4       0
-                idataBANK1                         8E06     8E06        A        4       0
-                idataCOMRAM                        8E4A     8E4A        2        4       0
+                cinit                              82F4     82F4       A2        4       0
+                idataBANK2                         8F98     8F98        D        4       0
+                idataBANK1                         8FA5     8FA5        A        4       0
+                idataCOMRAM                        8FF4     8FF4        2     47D8       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -150,92 +156,97 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                            282      282        4         0
                 intcode                               8        8      27A         0
                 reset_vec                             0        0        4         0
-                text83                             8E4C     8E4C        2         0
-                text82                             8D9E     8D9E       1A         0
-                text81                             8E38     8E38        A         0
-                text80                             897E     897E       52         0
-                text79                             8C80     8C80       2A         0
-                text78                             8CAA     8CAA       28         0
-                text76                             8D68     8D68       1C         0
-                text75                             8E42     8E42        8         0
-                text74                             7CFC     7CFC       CC         0
-                text73                             83A0     83A0       88         0
-                text72                             8AA6     8AA6       40         0
-                text71                             78F4     78F4      10A         0
-                text70                             861A     861A       70         0
-                text69                             8A62     8A62       44         0
-                text68                             7E86     7E86       BA         0
-                text67                             8D4C     8D4C       1C         0
-                text66                             8820     8820       62         0
-                text65                             8BF8     8BF8       32         0
-                text64                             88D8     88D8       54         0
-                text63                             8CD2     8CD2       24         0
-                text62                             3B0A     3B0A      6D2         0
-                text61                             8E2E     8E2E        A         0
-                text60                             86F8     86F8       64         0
-                text59                             8B8E     8B8E       36         0
-                text58                             669A     669A      2C0         0
-                text57                             868A     868A       6E         0
-                text56                             5184     5184      4C2         0
-                text55                             8098     8098       AA         0
-                text54                             892C     892C       52         0
-                text53                             33BA     33BA      750         0
-                text52                             695A     695A      2AE         0
-                text51                             79FE     79FE      106         0
-                text50                             4CB4     4CB4      4D0         0
-                text49                             8312     8312       8E         0
-                text48                              286      286     1B78         0
-                text47                             8DF6     8DF6       10         0
-                text46                             827E     827E       94         0
-                text45                             85A4     85A4       76         0
-                text44                             7FEE     7FEE       AA         0
-                text43                             8D30     8D30       1C         0
-                text42                             8DE2     8DE2       14         0
-                text41                             8BC4     8BC4       34         0
-                text40                             8AE6     8AE6       3A         0
-                text39                             8DCE     8DCE       14         0
-                text38                             8142     8142       A8         0
-                text37                             852C     852C       78         0
-                text36                             87BE     87BE       62         0
-                text35                             8B58     8B58       36         0
-                text34                             8C56     8C56       2A         0
-                text33                             297C     297C      A3E         0
-                text32                             8882     8882       56         0
-                text31                             7C00     7C00       FC         0
-                text30                             8C2A     8C2A       2C         0
+                text87                             8FF8     8FF8        2         0
+                text86                             8F1E     8F1E       1A         0
+                text85                             8FE2     8FE2        A         0
+                text84                             8B1C     8B1C       52         0
+                text83                             8E1E     8E1E       2A         0
+                text82                             8E48     8E48       28         0
+                text80                             8EE8     8EE8       1C         0
+                text79                             89BE     89BE       62         0
+                text78                             8D96     8D96       32         0
+                text77                             8A76     8A76       54         0
+                text76                             8FD8     8FD8        A         0
+                text75                             8896     8896       64         0
+                text74                             8D2C     8D2C       36         0
+                text73                             669A     669A      2C0         0
+                text72                             8828     8828       6E         0
+                text71                             87B8     87B8       70         0
+                text70                             5184     5184      4C2         0
+                text69                             695A     695A      2AE         0
+                text68                             7D0A     7D0A       FC         0
+                text67                             8FCE     8FCE        A         0
+                text66                             8744     8744       74         0
+                text65                             8F76     8F76       12         0
+                text64                             79FE     79FE      10A         0
+                text63                             8ECC     8ECC       1C         0
+                text62                             8FEC     8FEC        8         0
+                text61                             7E06     7E06       CC         0
+                text60                             854C     854C       88         0
+                text59                             8C44     8C44       40         0
+                text58                             78F4     78F4      10A         0
+                text57                             8C00     8C00       44         0
+                text56                             7F90     7F90       BA         0
+                text55                             8E70     8E70       24         0
+                text54                             3B0A     3B0A      6D2         0
+                text53                             81A2     81A2       AA         0
+                text52                             8ACA     8ACA       52         0
+                text51                             33BA     33BA      750         0
+                text50                             7B08     7B08      106         0
+                text49                             4CB4     4CB4      4D0         0
+                text48                             84BE     84BE       8E         0
+                text47                              286      286     1B78         0
+                text46                             8F88     8F88       10         0
+                text45                             842A     842A       94         0
+                text44                             86CE     86CE       76         0
+                text43                             80F8     80F8       AA         0
+                text42                             8EB0     8EB0       1C         0
+                text41                             8F62     8F62       14         0
+                text40                             8D62     8D62       34         0
+                text39                             8C84     8C84       3A         0
+                text38                             8F4E     8F4E       14         0
+                text37                             824C     824C       A8         0
+                text36                             8656     8656       78         0
+                text35                             895C     895C       62         0
+                text34                             8CF6     8CF6       36         0
+                text33                             8DF4     8DF4       2A         0
+                text32                             297C     297C      A3E         0
+                text31                             8A20     8A20       56         0
+                text30                             8DC8     8DC8       2C         0
                 text29                             70D4     70D4      22A         0
                 text28                             5AEA     5AEA      442         0
                 text27                             5F2C     5F2C      3B8         0
                 text26                             5646     5646      4A4         0
-                text25                             8DB8     8DB8       16         0
-                text24                             89D0     89D0       4A         0
+                text25                             8F38     8F38       16         0
+                text24                             8B6E     8B6E       4A         0
                 text23                             750E     750E      180         0
-                text22                             8A1A     8A1A       48         0
-                text21                             7DC8     7DC8       BE         0
+                text22                             8BB8     8BB8       48         0
+                text21                             7ED2     7ED2       BE         0
                 text20                             72FE     72FE      210         0
-                text19                             7B04     7B04       FC         0
-                text18                             8E24     8E24        A         0
-                text17                             8B20     8B20       38         0
+                text19                             7C0E     7C0E       FC         0
+                text18                             8FC4     8FC4        A         0
+                text17                             8CBE     8CBE       38         0
                 text16                             77E6     77E6      10E         0
-                text15                             84AA     84AA       82         0
-                text14                             7F40     7F40       AE         0
+                text15                             85D4     85D4       82         0
+                text14                             804A     804A       AE         0
                 text13                             47E2     47E2      4D2         0
-                text12                             8E1A     8E1A        A         0
-                text11                             8E10     8E10        A         0
-                text10                             875C     875C       62         0
+                text12                             8FBA     8FBA        A         0
+                text11                             8FB0     8FB0        A         0
+                text10                             88FA     88FA       62         0
                 text9                              6E6E     6E6E      266         0
                 text8                              6C08     6C08      266         0
-                text7                              8D84     8D84       1A         0
-                text6                              81EA     81EA       94         0
-                text5                              8CF6     8CF6       1E         0
+                text7                              8F04     8F04       1A         0
+                text6                              8396     8396       94         0
+                text5                              8FF6     8FF6        2         0
                 text4                              768E     768E      158         0
                 text3                              41DC     41DC      606         0
                 text2                              62E4     62E4      3B6         0
                 text1                              1DFE     1DFE      B7E         0
-                text0                              8D14     8D14       1C         0
-                cinit                              8428     8428       82         0
-                idataBANK1                         8E06     8E06        A         0
-                idataCOMRAM                        8E4A     8E4A        2         0
+                text0                              8E94     8E94       1C         0
+                cinit                              82F4     82F4       A2         0
+                idataBANK2                         8F98     8F98        D         0
+                idataBANK1                         8FA5     8FA5        A         0
+                idataCOMRAM                        8FF4     8FF4        2         0
 
         CLASS   CONST          
 
@@ -265,6 +276,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bssBANK1                            100      100       91         1
 
         CLASS   BANK2          
+                dataBANK2                           2CD      2CD        D         1
                 bssBANK2                            200      200       CD         1
 
         CLASS   BANK3          
@@ -308,12 +320,13 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  00004D  00004E         1       1  COMRAM  
-                intcode                        000008  008E46  008E4E         4       0  CODE    
+                intcode                        000008  008FA7  008FAF         4       0  CODE    
                 cstackBANK0                    000060  00009F  0000FF        60       1  BANK0   
                 bssBANK1                       000100  0000FD  0001FD       100       1  BANK1   
-                bssBANK2                       000200  0000CD  0002CD       200       1  BANK2   
+                bssBANK2                       000200  0000DA  0002DA       200       1  BANK2   
                 bssBANK3                       000300  0000DC  0003DC       300       1  BANK3   
                 bssBANK4                       000400  000086  000486       400       1  BANK4   
+                text11                         008FB0  00004A  008FFA      47D8       0  CODE    
                 mediumconst                    00FD5C  00029C  00FFF8      7EAE       0  MEDIUMCO
                 config                         00FFF8  000008  010000      FFF8       0  CONFIG  
 
@@ -328,7 +341,7 @@ UNUSED ADDRESS RANGES
         BANK12           00C00-00CFF             100
         BANK13           00D00-00DFF             100
         BANK14           00E00-00EBF              C0
-        BANK2            002CD-002FF              33
+        BANK2            002DA-002FF              26
         BANK3            003DC-003FF              24
         BANK4            00486-004FF              7A
         BANK5            00500-005FF             100
@@ -339,27 +352,32 @@ UNUSED ADDRESS RANGES
         BIGRAM           0004E-0005F              12
                          000FF-000FF               1
                          001FD-001FF               3
-                         002CD-002FF              33
+                         002DA-002FF              26
                          003DC-003FF              24
                          00486-00EBF             A3A
         CODE             00004-00007               4
-                         08E4E-0FD5B            6F0E
+                         08FAF-08FAF               1
+                         08FFA-0FD5B            6D62
         COMRAM           0004E-0005F              12
         CONST            00004-00007               4
-                         08E4E-0FD5B            6F0E
-        MEDIUMCONST      08E4E-0FD5B            6F0E
+                         08FAF-08FAF               1
+                         08FFA-0FD5B            6D62
+        MEDIUMCONST      08FAF-08FAF               1
+                         08FFA-0FD5B            6D62
         RAM              000FF-000FF               1
                          001FD-001FF               3
-                         002CD-002FF              33
+                         002DA-002FF              26
                          003DC-003FF              24
                          00486-00EBF             100
         SFR              00EC0-00FFF              60
-        SMALLCONST       08E4E-0FD5B             100
+        SMALLCONST       08FAF-08FAF               1
+                         08FFA-0FD5B             100
         STACK            00486-00EBF             A3A
 
                                   Symbol Table
 
 ?_MiWi_TickGet                            cstackBANK0   00060
+?_UART_kbhit_A2_A1                        cstackBANK0   00060
 ?___awdiv                                 cstackBANK0   00060
 ?___lmul                                  cstackBANK0   00060
 ?___lwdiv                                 cstackBANK0   00060
@@ -375,6 +393,11 @@ BroadcastJitter@jitter                    cstackBANK0   0007B
 BroadcastJitter@range                     cstackBANK0   0007A
 BroadcastJitter@t1                        cstackBANK0   00072
 BroadcastJitter@t2                        cstackBANK0   00076
+ComputerControl@CMD                       cstackBANK0   000B4
+ComputerControl@F8393                     dataBANK2     002CD
+ComputerControl@Title                     cstackBANK0   0009F
+ComputerControl@_dcnt                     cstackBANK0   000AC
+ComputerControl@_ms                       cstackBANK0   000B0
 DELAY_ms@cyclesRequiredForEntireDelay     cstackBANK0   0006E
 DELAY_ms@ms                               cstackBANK0   0006C
 DoorUnlock@_dcnt                          cstackBANK0   000DB
@@ -383,9 +406,9 @@ EEPROMRead@addr                           cstackBANK0   00064
 EEPROMRead@count                          cstackBANK0   00065
 EEPROMRead@dest                           cstackBANK0   00062
 InitMRF24J40@_dcnt                        cstackBANK0   0006B
-InitMRF24J40@_dcnt_811                    cstackBANK0   0006F
+InitMRF24J40@_dcnt_776                    cstackBANK0   0006F
 InitMRF24J40@_ms                          cstackBANK0   00073
-InitMRF24J40@_ms_812                      cstackBANK0   00077
+InitMRF24J40@_ms_777                      cstackBANK0   00077
 InitMRF24J40@i                            cstackBANK0   0007D
 InitMRF24J40@j                            cstackBANK0   0007B
 LCD_Display@delay                         cstackBANK0   00094
@@ -441,9 +464,9 @@ MiApp_UnicastAddress@SecEn                cstackBANK0   000DD
 MiApp_UnicastAddress@handle               cstackBANK0   000F8
 MiApp_UnicastAddress@i                    cstackBANK0   000F7
 MiApp_UnicastAddress@t1                   cstackBANK0   000E6
-MiApp_UnicastAddress@t1_1884              cstackBANK0   000EE
+MiApp_UnicastAddress@t1_1834              cstackBANK0   000EE
 MiApp_UnicastAddress@t2                   cstackBANK0   000EA
-MiApp_UnicastAddress@t2_1895              cstackBANK0   000F2
+MiApp_UnicastAddress@t2_1845              cstackBANK0   000F2
 MiMAC_ChannelAssessment@RSSIcheck         cstackBANK0   00068
 MiMAC_Init@i                              cstackBANK0   00081
 MiMAC_Init@initValue                      cstackBANK0   0007E
@@ -475,10 +498,10 @@ MiWiTasks@entry                           cstackBANK0   000C0
 MiWiTasks@handle                          cstackBANK0   000D5
 MiWiTasks@i                               cstackBANK0   000D9
 MiWiTasks@j                               cstackBANK0   000D8
-MiWiTasks@j_1600                          cstackBANK0   000D4
-MiWiTasks@j_1644                          cstackBANK0   000CE
-MiWiTasks@j_1655                          cstackBANK0   000C3
-MiWiTasks@j_1686                          cstackBANK0   000CF
+MiWiTasks@j_1550                          cstackBANK0   000D4
+MiWiTasks@j_1594                          cstackBANK0   000CE
+MiWiTasks@j_1605                          cstackBANK0   000C3
+MiWiTasks@j_1636                          cstackBANK0   000CF
 MiWiTasks@mask                            cstackBANK0   000BF
 MiWiTasks@rxIndex                         cstackBANK0   000CB
 MiWiTasks@sourcePANID                     cstackBANK0   000D2
@@ -513,17 +536,17 @@ PHYSetShortRAMAddr@value                  cstackBANK0   00062
 Pan@rssi                                  cstackBANK0   000DD
 Pan@status                                cstackBANK0   000DB
 Power_off@_dcnt                           cstackBANK0   00068
-Power_off@_dcnt_3797                      cstackBANK0   0006C
-Power_off@_dcnt_3799                      cstackBANK0   00070
+Power_off@_dcnt_3611                      cstackBANK0   0006C
+Power_off@_dcnt_3613                      cstackBANK0   00070
 Power_off@_ms                             cstackBANK0   00074
-Power_off@_ms_3798                        cstackBANK0   00078
-Power_off@_ms_3800                        cstackBANK0   0007C
+Power_off@_ms_3612                        cstackBANK0   00078
+Power_off@_ms_3614                        cstackBANK0   0007C
 Power_on@_dcnt                            cstackBANK0   00068
-Power_on@_dcnt_3804                       cstackBANK0   0006C
-Power_on@_dcnt_3806                       cstackBANK0   00070
+Power_on@_dcnt_3618                       cstackBANK0   0006C
+Power_on@_dcnt_3620                       cstackBANK0   00070
 Power_on@_ms                              cstackBANK0   00074
-Power_on@_ms_3805                         cstackBANK0   00078
-Power_on@_ms_3807                         cstackBANK0   0007C
+Power_on@_ms_3619                         cstackBANK0   00078
+Power_on@_ms_3621                         cstackBANK0   0007C
 Read_MAC_Address@i                        cstackBANK0   00068
 RouteMessage@PANID                        cstackBANK0   000A5
 RouteMessage@SecEn                        cstackBANK0   000A9
@@ -557,35 +580,35 @@ SendMACPacket@ModeMask                    cstackBANK0   000A2
 SendMACPacket@PANID                       cstackBANK0   0009D
 SendMACPacket@PacketType                  cstackBANK0   000A1
 Student@_dcnt                             cstackBANK0   000DB
-Student@_dcnt_3920                        cstackBANK0   000DF
-Student@_dcnt_3924                        cstackBANK0   000E3
+Student@_dcnt_3730                        cstackBANK0   000DF
+Student@_dcnt_3734                        cstackBANK0   000E3
 Student@_ms                               cstackBANK0   000E7
-Student@_ms_3921                          cstackBANK0   000EB
-Student@_ms_3925                          cstackBANK0   000EF
+Student@_ms_3731                          cstackBANK0   000EB
+Student@_ms_3735                          cstackBANK0   000EF
 Teacher@Pkt_Loss_Cnt                      cstackBANK1   00194
 Teacher@Tx_Packet                         cstackBANK1   00191
 Teacher@_dcnt                             cstackBANK1   00195
-Teacher@_dcnt_4056                        cstackBANK1   00199
-Teacher@_dcnt_4059                        cstackBANK1   0019D
-Teacher@_dcnt_4063                        cstackBANK1   001A1
-Teacher@_dcnt_4065                        cstackBANK1   001A5
-Teacher@_dcnt_4069                        cstackBANK1   001A9
-Teacher@_dcnt_4071                        cstackBANK1   001AD
-Teacher@_dcnt_4075                        cstackBANK1   001B1
-Teacher@_dcnt_4077                        cstackBANK1   001B5
-Teacher@_dcnt_4080                        cstackBANK1   001B9
-Teacher@_dcnt_4083                        cstackBANK1   001BD
+Teacher@_dcnt_3862                        cstackBANK1   00199
+Teacher@_dcnt_3865                        cstackBANK1   0019D
+Teacher@_dcnt_3869                        cstackBANK1   001A1
+Teacher@_dcnt_3871                        cstackBANK1   001A5
+Teacher@_dcnt_3875                        cstackBANK1   001A9
+Teacher@_dcnt_3877                        cstackBANK1   001AD
+Teacher@_dcnt_3881                        cstackBANK1   001B1
+Teacher@_dcnt_3883                        cstackBANK1   001B5
+Teacher@_dcnt_3886                        cstackBANK1   001B9
+Teacher@_dcnt_3889                        cstackBANK1   001BD
 Teacher@_ms                               cstackBANK1   001C1
-Teacher@_ms_4057                          cstackBANK1   001C5
-Teacher@_ms_4060                          cstackBANK1   001C9
-Teacher@_ms_4064                          cstackBANK1   001CD
-Teacher@_ms_4066                          cstackBANK1   001D1
-Teacher@_ms_4070                          cstackBANK1   001D5
-Teacher@_ms_4072                          cstackBANK1   001D9
-Teacher@_ms_4076                          cstackBANK1   001DD
-Teacher@_ms_4078                          cstackBANK1   001E1
-Teacher@_ms_4081                          cstackBANK1   001E5
-Teacher@_ms_4084                          cstackBANK1   001E9
+Teacher@_ms_3863                          cstackBANK1   001C5
+Teacher@_ms_3866                          cstackBANK1   001C9
+Teacher@_ms_3870                          cstackBANK1   001CD
+Teacher@_ms_3872                          cstackBANK1   001D1
+Teacher@_ms_3876                          cstackBANK1   001D5
+Teacher@_ms_3878                          cstackBANK1   001D9
+Teacher@_ms_3882                          cstackBANK1   001DD
+Teacher@_ms_3884                          cstackBANK1   001E1
+Teacher@_ms_3887                          cstackBANK1   001E5
+Teacher@_ms_3890                          cstackBANK1   001E9
 Teacher@memoire                           cstackBANK1   00193
 Teacher@questionnaire                     cstackBANK1   001ED
 Teacher@reponsea                          cstackBANK1   001EE
@@ -594,105 +617,114 @@ Teacher@reponsec                          cstackBANK1   001F0
 Teacher@reponsed                          cstackBANK1   001F1
 Teacher@rssi                              cstackBANK1   00192
 Teacher@switch_val                        cstackBANK1   001F2
+UART_Read_A2_A1@data                      cstackBANK0   00063
+UART_Read_A2_A1@i                         cstackBANK0   00061
 UnicastShortAddress@DestAddress           cstackBANK0   000AF
 _ANCON0                                   (abs)         00F48
+_ANCON0bits                               (abs)         00F48
 _ANCON1                                   (abs)         00F49
 _AcknowledgementAddr                      bssBANK1      0012D
 _AcknowledgementSeq                       dataBANK1     001F3
 _ActiveScanResultIndex                    bssCOMRAM     0003B
 _ActiveScanResults                        bssBANK3      00300
-_AddNodeToNetworkTable                    text71        078F4
+_AddNodeToNetworkTable                    text58        078F4
 _AdditionalNodeID                         bssCOMRAM     0003C
 _BUTTON_Pressed                           text4         0768E
 _BankIndex                                dataCOMRAM    0004B
-_BroadcastJitter                          text68        07E86
+_BroadcastJitter                          text56        07F90
 _BroadcastRecords                         bssBANK2      00200
 _BuzzerStatus                             bssBANK1      00131
+_CREN                                     (abs)         07D64
+_ComputerControl                          text64        079FE
 _ConnMode                                 bssCOMRAM     0003D
 _ConnectionEntry                          bssBANK1      00132
 _ConnectionTable                          bssBANK2      00220
-_DELAY_ms                                 text44        07FEE
-_DoorUnlock                               text46        0827E
+_DELAY_ms                                 text43        080F8
+_DoorUnlock                               text45        0842A
 _EECON2                                   (abs)         00FA7
-_EEPROMRead                               text17        08B20
+_EEPROMRead                               text17        08CBE
 _IEEESeqNum                               bssBANK1      00133
 _INTCON2bits                              (abs)         00FF1
 _INTCONbits                               (abs)         00FF2
-_InitMRF24J40                             text58        0669A
-_InitSymbolTimer                          text25        08DB8
+_InitMRF24J40                             text73        0669A
+_InitSymbolTimer                          text25        08F38
 _LATAbits                                 (abs)         00F89
 _LATBbits                                 (abs)         00F8A
 _LATCbits                                 (abs)         00F8B
 _LATDbits                                 (abs)         00F8C
 _LATEbits                                 (abs)         00F8D
 _LCDText                                  bssBANK2      002AC
-_LCD_Display                              text32        08882
-_LCD_Erase                                text40        08AE6
-_LCD_Initialize                           text15        084AA
-_LCD_Update                               text38        08142
-_LCD_WriteCmd                             text42        08DE2
-_LCD_WriteData                            text39        08DCE
+_LCD_Display                              text31        08A20
+_LCD_Erase                                text39        08C84
+_LCD_Initialize                           text15        085D4
+_LCD_Update                               text37        0824C
+_LCD_WriteCmd                             text41        08F62
+_LCD_WriteData                            text38        08F4E
 _MACCurrentChannel                        bssBANK1      00134
 _MACInitParams                            bssBANK1      0012A
 _MACRxPacket                              bssCOMRAM     00027
 _MAC_PANID                                bssBANK1      0018B
 _MRF24J40Status                           bssCOMRAM     0003E
 _MTP                                      bssCOMRAM     00032
-_MiApp_BroadcastPacket                    text31        07C00
-_MiApp_ConnectionMode                     text30        08C2A
-_MiApp_DiscardMessage                     text75        08E42
+_MiApp_BroadcastPacket                    text68        07D0A
+_MiApp_ConnectionMode                     text30        08DC8
+_MiApp_DiscardMessage                     text62        08FEC
 _MiApp_EstablishConnection                text26        05646
-_MiApp_MessageAvailable                   text47        08DF6
+_MiApp_MessageAvailable                   text46        08F88
 _MiApp_NoiseDetection                     text20        072FE
 _MiApp_ProtocolInit                       text23        0750E
 _MiApp_SearchConnection                   text29        070D4
-_MiApp_SetChannel                         text63        08CD2
-_MiApp_StartConnection                    text19        07B04
+_MiApp_SetChannel                         text55        08E70
+_MiApp_StartConnection                    text19        07C0E
 _MiApp_UnicastAddress                     text28        05AEA
-_MiMAC_ChannelAssessment                  text22        08A1A
-_MiMAC_DiscardPacket                      text76        08D68
-_MiMAC_Init                               text24        089D0
-_MiMAC_ReceivedPacket                     text62        03B0A
-_MiMAC_SendPacket                         text56        05184
-_MiMAC_SetAltAddress                      text57        0868A
-_MiMAC_SetChannel                         text64        088D8
+_MiMAC_ChannelAssessment                  text22        08BB8
+_MiMAC_DiscardPacket                      text63        08ECC
+_MiMAC_Init                               text24        08B6E
+_MiMAC_ReceivedPacket                     text54        03B0A
+_MiMAC_SendPacket                         text70        05184
+_MiMAC_SetAltAddress                      text72        08828
+_MiMAC_SetChannel                         text77        08A76
 _MiWiAckRequired                          bssBANK1      00135
 _MiWiCapacityInfo                         bssBANK1      00136
 _MiWiSeqNum                               bssCOMRAM     0003F
 _MiWiStateMachine                         bssCOMRAM     00039
-_MiWiTasks                                text48        00286
-_MiWi_TickGet                             text70        0861A
+_MiWiTasks                                text47        00286
+_MiWi_TickGet                             text71        087B8
 _Network                                  text13        047E2
 _OSCCON                                   (abs)         00FD3
 _OSCTUNEbits                              (abs)         00F9B
 _OpenSocket                               text27        05F2C
-_PHYGetLongRAMAddr                        text60        086F8
-_PHYGetShortRAMAddr                       text59        08B8E
-_PHYSetLongRAMAddr                        text66        08820
-_PHYSetShortRAMAddr                       text65        08BF8
+_PHYGetLongRAMAddr                        text75        08896
+_PHYGetShortRAMAddr                       text74        08D2C
+_PHYSetLongRAMAddr                        text79        089BE
+_PHYSetShortRAMAddr                       text78        08D96
 _PIE1bits                                 (abs)         00F9D
 _PIR1bits                                 (abs)         00F9E
 _PIR3bits                                 (abs)         00FA4
+_PORTAbits                                (abs)         00F80
 _PORTBbits                                (abs)         00F81
 _PPSCONbits                               (abs)         00EFF
-_Pan                                      text6         081EA
+_Pan                                      text6         08396
 _Power_off                                text9         06E6E
 _Power_on                                 text8         06C08
-_ProjectorScreen                          text5         08CF6
-_RCONbits                                 (abs)         00FD0
+_ProjectorScreen                          text5         08FF6
+_RCIF                                     (abs)         07CF5
+_RCREG                                    (abs)         00FAF
 _RPINR1                                   (abs)         00EE7
 _RPINR21                                  (abs)         00EFB
 _RPOR19                                   (abs)         00ED9
 _RPOR21                                   (abs)         00EDB
 _Read_MAC_Address                         text16        077E6
-_RouteMessage                             text50        04CB4
+_RouteMessage                             text49        04CB4
 _RouterFailures                           bssBANK1      0010A
 _RoutingTable                             bssBANK1      00112
 _RxBuffer                                 bssBANK3      0033C
-_SPIGet                                   text61        08E2E
-_SPIGet2                                  text18        08E24
-_SPIPut                                   text67        08D4C
-_SPIPut2                                  text43        08D30
+_SPBRG                                    (abs)         00FB0
+_SPEN                                     (abs)         07D67
+_SPIGet                                   text76        08FD8
+_SPIGet2                                  text18        08FC4
+_SPIPut                                   text80        08EE8
+_SPIPut2                                  text42        08EB0
 _SSP1BUF                                  (abs)         00FC9
 _SSP1CON1                                 (abs)         00FC6
 _SSP1CON1bits                             (abs)         00FC6
@@ -701,37 +733,42 @@ _SSP2BUF                                  (abs)         00F75
 _SSP2CON1                                 (abs)         00F72
 _SSP2CON1bits                             (abs)         00F72
 _SSP2STAT                                 (abs)         00F73
-_SYSTEM_Initialize                        text14        07F40
-_SaveIndirectMessage                      text52        0695A
+_SYNC                                     (abs)         07D6C
+_SYSTEM_Initialize                        text14        0804A
+_SaveIndirectMessage                      text69        0695A
 _ScanTime                                 mediumconst   0FD5D
-_SearchForLongAddress                     text74        07CFC
-_SearchForShortAddress                    text73        083A0
-_SendBeacon                               text51        079FE
-_SendIndirectPacket                       text53        033BA
-_SendMACPacket                            text55        08098
+_SearchForLongAddress                     text61        07E06
+_SearchForShortAddress                    text60        0854C
+_SendBeacon                               text50        07B08
+_SendIndirectPacket                       text51        033BA
+_SendMACPacket                            text53        081A2
 _Student                                  text2         062E4
 _T1CON                                    (abs)         00FCD
 _T1CONbits                                (abs)         00FCD
-_T1RUN                                    (abs)         07A94
-_T3CON                                    (abs)         00F79
 _TMR0L                                    (abs)         00FD6
 _TMR1H                                    (abs)         00FCF
 _TMR1L                                    (abs)         00FCE
 _TMR3                                     (abs)         00F7A
-_TMR3IE                                   (abs)         07D01
 _TMR3IF                                   (abs)         07D09
-_TMR3IP                                   (abs)         07D11
 _TRISAbits                                (abs)         00F92
 _TRISB                                    (abs)         00F93
 _TRISBbits                                (abs)         00F93
+_TRISC6                                   (abs)         07CA6
+_TRISC7                                   (abs)         07CA7
 _TRISCbits                                (abs)         00F94
 _TRISDbits                                (abs)         00F95
 _TRISEbits                                (abs)         00F96
+_TRMT                                     (abs)         07D69
+_TXEN                                     (abs)         07D6D
+_TXREG                                    (abs)         00FAE
 _Teacher                                  text1         01DFE
 _TxBuffer                                 bssBANK1      0013D
 _TxData                                   bssCOMRAM     00040
-_UnicastShortAddress                      text49        08312
-_UserInterruptHandler                     text83        08E4C
+_UART_Init_A2_A1                          text67        08FCE
+_UART_Read_A2_A1                          text66        08744
+_UART_kbhit_A2_A1                         text65        08F76
+_UnicastShortAddress                      text48        084BE
+_UserInterruptHandler                     text87        08FF8
 _WDTCONbits                               (abs)         00FC0
 __CFG_CPUDIV$OSC3_PLL3                    (abs)         00000
 __CFG_OSC$INTOSCPLL                       (abs)         00000
@@ -775,6 +812,7 @@ __HcstackBANK1                            cstackBANK1   00000
 __HcstackCOMRAM                           cstackCOMRAM  00000
 __Hdata                                   data          00000
 __HdataBANK1                              dataBANK1     00000
+__HdataBANK2                              dataBANK2     00000
 __HdataCOMRAM                             dataCOMRAM    00000
 __Hend_init                               end_init      00286
 __Hfarbss                                 farbss        00000
@@ -782,6 +820,7 @@ __Hfardata                                fardata       00000
 __Hibigdata                               ibigdata      00000
 __Hidata                                  idata         00000
 __HidataBANK1                             idataBANK1    00000
+__HidataBANK2                             idataBANK2    00000
 __HidataCOMRAM                            idataCOMRAM   00000
 __Hidloc                                  idloc         00000
 __Hifardata                               ifardata      00000
@@ -891,13 +930,17 @@ __Htext73                                 text73        00000
 __Htext74                                 text74        00000
 __Htext75                                 text75        00000
 __Htext76                                 text76        00000
+__Htext77                                 text77        00000
 __Htext78                                 text78        00000
 __Htext79                                 text79        00000
 __Htext8                                  text8         00000
 __Htext80                                 text80        00000
-__Htext81                                 text81        00000
 __Htext82                                 text82        00000
 __Htext83                                 text83        00000
+__Htext84                                 text84        00000
+__Htext85                                 text85        00000
+__Htext86                                 text86        00000
+__Htext87                                 text87        00000
 __Htext9                                  text9         00000
 __LRAM                                    (abs)         00001
 __Labs1                                   abs1          00000
@@ -935,6 +978,7 @@ __LcstackBANK1                            cstackBANK1   00000
 __LcstackCOMRAM                           cstackCOMRAM  00000
 __Ldata                                   data          00000
 __LdataBANK1                              dataBANK1     00000
+__LdataBANK2                              dataBANK2     00000
 __LdataCOMRAM                             dataCOMRAM    00000
 __Lend_init                               end_init      00282
 __Lfarbss                                 farbss        00000
@@ -942,6 +986,7 @@ __Lfardata                                fardata       00000
 __Libigdata                               ibigdata      00000
 __Lidata                                  idata         00000
 __LidataBANK1                             idataBANK1    00000
+__LidataBANK2                             idataBANK2    00000
 __LidataCOMRAM                            idataCOMRAM   00000
 __Lidloc                                  idloc         00000
 __Lifardata                               ifardata      00000
@@ -1051,18 +1096,22 @@ __Ltext73                                 text73        00000
 __Ltext74                                 text74        00000
 __Ltext75                                 text75        00000
 __Ltext76                                 text76        00000
+__Ltext77                                 text77        00000
 __Ltext78                                 text78        00000
 __Ltext79                                 text79        00000
 __Ltext8                                  text8         00000
 __Ltext80                                 text80        00000
-__Ltext81                                 text81        00000
 __Ltext82                                 text82        00000
 __Ltext83                                 text83        00000
+__Ltext84                                 text84        00000
+__Ltext85                                 text85        00000
+__Ltext86                                 text86        00000
+__Ltext87                                 text87        00000
 __Ltext9                                  text9         00000
 __S0                                      (abs)         10000
 __S1                                      (abs)         00486
 __S2                                      (abs)         00000
-___awdiv                                  text21        07DC8
+___awdiv                                  text21        07ED2
 ___awdiv@counter                          cstackBANK0   00064
 ___awdiv@dividend                         cstackBANK0   00060
 ___awdiv@divisor                          cstackBANK0   00062
@@ -1070,226 +1119,237 @@ ___awdiv@quotient                         cstackBANK0   00066
 ___awdiv@sign                             cstackBANK0   00065
 ___inthi_sp                               stack         00000
 ___intlo_sp                               stack         00000
-___lbmod                                  text69        08A62
+___lbmod                                  text57        08C00
 ___lbmod@counter                          cstackBANK0   00062
 ___lbmod@dividend                         cstackBANK0   00061
 ___lbmod@divisor                          cstackBANK0   00060
 ___lbmod@rem                              cstackBANK0   00063
-___lmul                                   text45        085A4
+___lmul                                   text44        086CE
 ___lmul@multiplicand                      cstackBANK0   00064
 ___lmul@multiplier                        cstackBANK0   00060
 ___lmul@product                           cstackBANK0   00068
-___lwdiv                                  text37        0852C
+___lwdiv                                  text36        08656
 ___lwdiv@counter                          cstackBANK0   00064
 ___lwdiv@dividend                         cstackBANK0   00060
 ___lwdiv@divisor                          cstackBANK0   00062
 ___lwdiv@quotient                         cstackBANK0   00065
-___lwmod                                  text36        087BE
+___lwmod                                  text35        0895C
 ___lwmod@counter                          cstackBANK0   0006B
 ___lwmod@dividend                         cstackBANK0   00067
 ___lwmod@divisor                          cstackBANK0   00069
 ___param_bank                             (abs)         00010
 ___rparam_used                            (abs)         00001
 ___sp                                     stack         00000
-___wmul                                   text35        08B58
+___wmul                                   text34        08CF6
 ___wmul@multiplicand                      cstackBANK0   00062
 ___wmul@multiplier                        cstackBANK0   00060
 ___wmul@product                           cstackBANK0   00064
 __accesstop                               (abs)         00060
 __activetblptr                            (abs)         00002
-__end_of_AddNodeToNetworkTable            text71        079FE
+__end_of_AddNodeToNetworkTable            text58        079FE
 __end_of_BUTTON_Pressed                   text4         077E6
-__end_of_BroadcastJitter                  text68        07F40
-__end_of_DELAY_ms                         text44        08098
-__end_of_DoorUnlock                       text46        08312
-__end_of_EEPROMRead                       text17        08B58
-__end_of_InitMRF24J40                     text58        0695A
-__end_of_InitSymbolTimer                  text25        08DCE
-__end_of_LCD_Display                      text32        088D8
-__end_of_LCD_Erase                        text40        08B20
-__end_of_LCD_Initialize                   text15        0852C
-__end_of_LCD_Update                       text38        081EA
-__end_of_LCD_WriteCmd                     text42        08DF6
-__end_of_LCD_WriteData                    text39        08DE2
-__end_of_MiApp_BroadcastPacket            text31        07CFC
-__end_of_MiApp_ConnectionMode             text30        08C56
-__end_of_MiApp_DiscardMessage             text75        08E4A
+__end_of_BroadcastJitter                  text56        0804A
+__end_of_ComputerControl                  text64        07B08
+__end_of_DELAY_ms                         text43        081A2
+__end_of_DoorUnlock                       text45        084BE
+__end_of_EEPROMRead                       text17        08CF6
+__end_of_InitMRF24J40                     text73        0695A
+__end_of_InitSymbolTimer                  text25        08F4E
+__end_of_LCD_Display                      text31        08A76
+__end_of_LCD_Erase                        text39        08CBE
+__end_of_LCD_Initialize                   text15        08656
+__end_of_LCD_Update                       text37        082F4
+__end_of_LCD_WriteCmd                     text41        08F76
+__end_of_LCD_WriteData                    text38        08F62
+__end_of_MiApp_BroadcastPacket            text68        07E06
+__end_of_MiApp_ConnectionMode             text30        08DF4
+__end_of_MiApp_DiscardMessage             text62        08FF4
 __end_of_MiApp_EstablishConnection        text26        05AEA
-__end_of_MiApp_MessageAvailable           text47        08E06
+__end_of_MiApp_MessageAvailable           text46        08F98
 __end_of_MiApp_NoiseDetection             text20        0750E
 __end_of_MiApp_ProtocolInit               text23        0768E
 __end_of_MiApp_SearchConnection           text29        072FE
-__end_of_MiApp_SetChannel                 text63        08CF6
-__end_of_MiApp_StartConnection            text19        07C00
+__end_of_MiApp_SetChannel                 text55        08E94
+__end_of_MiApp_StartConnection            text19        07D0A
 __end_of_MiApp_UnicastAddress             text28        05F2C
-__end_of_MiMAC_ChannelAssessment          text22        08A62
-__end_of_MiMAC_DiscardPacket              text76        08D84
-__end_of_MiMAC_Init                       text24        08A1A
-__end_of_MiMAC_ReceivedPacket             text62        041DC
-__end_of_MiMAC_SendPacket                 text56        05646
-__end_of_MiMAC_SetAltAddress              text57        086F8
-__end_of_MiMAC_SetChannel                 text64        0892C
-__end_of_MiWiTasks                        text48        01DFE
-__end_of_MiWi_TickGet                     text70        0868A
+__end_of_MiMAC_ChannelAssessment          text22        08C00
+__end_of_MiMAC_DiscardPacket              text63        08EE8
+__end_of_MiMAC_Init                       text24        08BB8
+__end_of_MiMAC_ReceivedPacket             text54        041DC
+__end_of_MiMAC_SendPacket                 text70        05646
+__end_of_MiMAC_SetAltAddress              text72        08896
+__end_of_MiMAC_SetChannel                 text77        08ACA
+__end_of_MiWiTasks                        text47        01DFE
+__end_of_MiWi_TickGet                     text71        08828
 __end_of_Network                          text13        04CB4
 __end_of_OpenSocket                       text27        062E4
-__end_of_PHYGetLongRAMAddr                text60        0875C
-__end_of_PHYGetShortRAMAddr               text59        08BC4
-__end_of_PHYSetLongRAMAddr                text66        08882
-__end_of_PHYSetShortRAMAddr               text65        08C2A
-__end_of_Pan                              text6         0827E
+__end_of_PHYGetLongRAMAddr                text75        088FA
+__end_of_PHYGetShortRAMAddr               text74        08D62
+__end_of_PHYSetLongRAMAddr                text79        08A20
+__end_of_PHYSetShortRAMAddr               text78        08DC8
+__end_of_Pan                              text6         0842A
 __end_of_Power_off                        text9         070D4
 __end_of_Power_on                         text8         06E6E
-__end_of_ProjectorScreen                  text5         08D14
+__end_of_ProjectorScreen                  text5         08FF8
 __end_of_Read_MAC_Address                 text16        078F4
-__end_of_RouteMessage                     text50        05184
-__end_of_SPIGet                           text61        08E38
-__end_of_SPIGet2                          text18        08E2E
-__end_of_SPIPut                           text67        08D68
-__end_of_SPIPut2                          text43        08D4C
-__end_of_SYSTEM_Initialize                text14        07FEE
-__end_of_SaveIndirectMessage              text52        06C08
+__end_of_RouteMessage                     text49        05184
+__end_of_SPIGet                           text76        08FE2
+__end_of_SPIGet2                          text18        08FCE
+__end_of_SPIPut                           text80        08F04
+__end_of_SPIPut2                          text42        08ECC
+__end_of_SYSTEM_Initialize                text14        080F8
+__end_of_SaveIndirectMessage              text69        06C08
 __end_of_ScanTime                         mediumconst   0FD99
-__end_of_SearchForLongAddress             text74        07DC8
-__end_of_SearchForShortAddress            text73        08428
-__end_of_SendBeacon                       text51        07B04
-__end_of_SendIndirectPacket               text53        03B0A
-__end_of_SendMACPacket                    text55        08142
+__end_of_SearchForLongAddress             text61        07ED2
+__end_of_SearchForShortAddress            text60        085D4
+__end_of_SendBeacon                       text50        07C0E
+__end_of_SendIndirectPacket               text51        03B0A
+__end_of_SendMACPacket                    text53        0824C
 __end_of_Student                          text2         0669A
 __end_of_Teacher                          text1         0297C
-__end_of_UnicastShortAddress              text49        083A0
-__end_of_UserInterruptHandler             text83        08E4E
-__end_of___awdiv                          text21        07E86
-__end_of___lbmod                          text69        08AA6
-__end_of___lmul                           text45        0861A
-__end_of___lwdiv                          text37        085A4
-__end_of___lwmod                          text36        08820
-__end_of___wmul                           text35        08B8E
-__end_of__initialization                  cinit         0849C
-__end_of_alarm                            text7         08D9E
+__end_of_UART_Init_A2_A1                  text67        08FD8
+__end_of_UART_Read_A2_A1                  text66        087B8
+__end_of_UART_kbhit_A2_A1                 text65        08F88
+__end_of_UnicastShortAddress              text48        0854C
+__end_of_UserInterruptHandler             text87        08FFA
+__end_of___awdiv                          text21        07F90
+__end_of___lbmod                          text57        08C44
+__end_of___lmul                           text44        08744
+__end_of___lwdiv                          text36        086CE
+__end_of___lwmod                          text35        089BE
+__end_of___wmul                           text34        08D2C
+__end_of__initialization                  cinit         08388
+__end_of_alarm                            text7         08F1E
 __end_of_dpowers                          mediumconst   0FDAF
-__end_of_findNextNetworkEntry             text72        08AE6
+__end_of_findNextNetworkEntry             text59        08C84
 __end_of_hexpowers                        mediumconst   0FDB7
 __end_of_high_isr                         intcode       00282
-__end_of_isSameAddress                    text54        0897E
-__end_of_isdigit                          text34        08C80
-__end_of_main                             text0         08D30
-__end_of_memset                           text41        08BF8
+__end_of_isSameAddress                    text52        08B1C
+__end_of_isdigit                          text33        08E1E
+__end_of_main                             text0         08EB0
+__end_of_memset                           text40        08D96
 __end_of_octpowers                        mediumconst   0FDA5
-__end_of_putcv                            text10        087BE
+__end_of_putcv                            text10        0895C
 __end_of_questionnaire_function           text3         047E2
-__end_of_sprintf                          text33        033BA
-__end_of_startBit                         text12        08E24
-__end_of_stopBit                          text11        08E1A
-__end_ofi2_PHYGetLongRAMAddr              text80        089D0
-__end_ofi2_PHYGetShortRAMAddr             text79        08CAA
-__end_ofi2_PHYSetShortRAMAddr             text78        08CD2
-__end_ofi2_SPIGet                         text81        08E42
-__end_ofi2_SPIPut                         text82        08DB8
-__initialization                          cinit         08428
+__end_of_sprintf                          text32        033BA
+__end_of_startBit                         text12        08FC4
+__end_of_stopBit                          text11        08FBA
+__end_ofi2_PHYGetLongRAMAddr              text84        08B6E
+__end_ofi2_PHYGetShortRAMAddr             text83        08E48
+__end_ofi2_PHYSetShortRAMAddr             text82        08E70
+__end_ofi2_SPIGet                         text85        08FEC
+__end_ofi2_SPIPut                         text86        08F38
+__initialization                          cinit         082F4
 __mediumconst                             mediumconst   0FD5C
 __pbssBANK1                               bssBANK1      00100
 __pbssBANK2                               bssBANK2      00200
 __pbssBANK3                               bssBANK3      00300
 __pbssBANK4                               bssBANK4      00400
 __pbssCOMRAM                              bssCOMRAM     00027
-__pcinit                                  cinit         08428
+__pcinit                                  cinit         082F4
 __pcstackBANK0                            cstackBANK0   00060
 __pcstackBANK1                            cstackBANK1   00191
 __pcstackCOMRAM                           cstackCOMRAM  00001
 __pdataBANK1                              dataBANK1     001F3
+__pdataBANK2                              dataBANK2     002CD
 __pdataCOMRAM                             dataCOMRAM    0004B
-__pidataBANK1                             idataBANK1    08E06
-__pidataCOMRAM                            idataCOMRAM   08E4A
+__pidataBANK1                             idataBANK1    08FA5
+__pidataBANK2                             idataBANK2    08F98
+__pidataCOMRAM                            idataCOMRAM   08FF4
 __pintcode                                intcode       00008
 __pmediumconst                            mediumconst   0FD5C
-__ptext0                                  text0         08D14
+__ptext0                                  text0         08E94
 __ptext1                                  text1         01DFE
-__ptext10                                 text10        0875C
-__ptext11                                 text11        08E10
-__ptext12                                 text12        08E1A
+__ptext10                                 text10        088FA
+__ptext11                                 text11        08FB0
+__ptext12                                 text12        08FBA
 __ptext13                                 text13        047E2
-__ptext14                                 text14        07F40
-__ptext15                                 text15        084AA
+__ptext14                                 text14        0804A
+__ptext15                                 text15        085D4
 __ptext16                                 text16        077E6
-__ptext17                                 text17        08B20
-__ptext18                                 text18        08E24
-__ptext19                                 text19        07B04
+__ptext17                                 text17        08CBE
+__ptext18                                 text18        08FC4
+__ptext19                                 text19        07C0E
 __ptext2                                  text2         062E4
 __ptext20                                 text20        072FE
-__ptext21                                 text21        07DC8
-__ptext22                                 text22        08A1A
+__ptext21                                 text21        07ED2
+__ptext22                                 text22        08BB8
 __ptext23                                 text23        0750E
-__ptext24                                 text24        089D0
-__ptext25                                 text25        08DB8
+__ptext24                                 text24        08B6E
+__ptext25                                 text25        08F38
 __ptext26                                 text26        05646
 __ptext27                                 text27        05F2C
 __ptext28                                 text28        05AEA
 __ptext29                                 text29        070D4
 __ptext3                                  text3         041DC
-__ptext30                                 text30        08C2A
-__ptext31                                 text31        07C00
-__ptext32                                 text32        08882
-__ptext33                                 text33        0297C
-__ptext34                                 text34        08C56
-__ptext35                                 text35        08B58
-__ptext36                                 text36        087BE
-__ptext37                                 text37        0852C
-__ptext38                                 text38        08142
-__ptext39                                 text39        08DCE
+__ptext30                                 text30        08DC8
+__ptext31                                 text31        08A20
+__ptext32                                 text32        0297C
+__ptext33                                 text33        08DF4
+__ptext34                                 text34        08CF6
+__ptext35                                 text35        0895C
+__ptext36                                 text36        08656
+__ptext37                                 text37        0824C
+__ptext38                                 text38        08F4E
+__ptext39                                 text39        08C84
 __ptext4                                  text4         0768E
-__ptext40                                 text40        08AE6
-__ptext41                                 text41        08BC4
-__ptext42                                 text42        08DE2
-__ptext43                                 text43        08D30
-__ptext44                                 text44        07FEE
-__ptext45                                 text45        085A4
-__ptext46                                 text46        0827E
-__ptext47                                 text47        08DF6
-__ptext48                                 text48        00286
-__ptext49                                 text49        08312
-__ptext5                                  text5         08CF6
-__ptext50                                 text50        04CB4
-__ptext51                                 text51        079FE
-__ptext52                                 text52        0695A
-__ptext53                                 text53        033BA
-__ptext54                                 text54        0892C
-__ptext55                                 text55        08098
-__ptext56                                 text56        05184
-__ptext57                                 text57        0868A
-__ptext58                                 text58        0669A
-__ptext59                                 text59        08B8E
-__ptext6                                  text6         081EA
-__ptext60                                 text60        086F8
-__ptext61                                 text61        08E2E
-__ptext62                                 text62        03B0A
-__ptext63                                 text63        08CD2
-__ptext64                                 text64        088D8
-__ptext65                                 text65        08BF8
-__ptext66                                 text66        08820
-__ptext67                                 text67        08D4C
-__ptext68                                 text68        07E86
-__ptext69                                 text69        08A62
-__ptext7                                  text7         08D84
-__ptext70                                 text70        0861A
-__ptext71                                 text71        078F4
-__ptext72                                 text72        08AA6
-__ptext73                                 text73        083A0
-__ptext74                                 text74        07CFC
-__ptext75                                 text75        08E42
-__ptext76                                 text76        08D68
-__ptext78                                 text78        08CAA
-__ptext79                                 text79        08C80
+__ptext40                                 text40        08D62
+__ptext41                                 text41        08F62
+__ptext42                                 text42        08EB0
+__ptext43                                 text43        080F8
+__ptext44                                 text44        086CE
+__ptext45                                 text45        0842A
+__ptext46                                 text46        08F88
+__ptext47                                 text47        00286
+__ptext48                                 text48        084BE
+__ptext49                                 text49        04CB4
+__ptext5                                  text5         08FF6
+__ptext50                                 text50        07B08
+__ptext51                                 text51        033BA
+__ptext52                                 text52        08ACA
+__ptext53                                 text53        081A2
+__ptext54                                 text54        03B0A
+__ptext55                                 text55        08E70
+__ptext56                                 text56        07F90
+__ptext57                                 text57        08C00
+__ptext58                                 text58        078F4
+__ptext59                                 text59        08C44
+__ptext6                                  text6         08396
+__ptext60                                 text60        0854C
+__ptext61                                 text61        07E06
+__ptext62                                 text62        08FEC
+__ptext63                                 text63        08ECC
+__ptext64                                 text64        079FE
+__ptext65                                 text65        08F76
+__ptext66                                 text66        08744
+__ptext67                                 text67        08FCE
+__ptext68                                 text68        07D0A
+__ptext69                                 text69        0695A
+__ptext7                                  text7         08F04
+__ptext70                                 text70        05184
+__ptext71                                 text71        087B8
+__ptext72                                 text72        08828
+__ptext73                                 text73        0669A
+__ptext74                                 text74        08D2C
+__ptext75                                 text75        08896
+__ptext76                                 text76        08FD8
+__ptext77                                 text77        08A76
+__ptext78                                 text78        08D96
+__ptext79                                 text79        089BE
 __ptext8                                  text8         06C08
-__ptext80                                 text80        0897E
-__ptext81                                 text81        08E38
-__ptext82                                 text82        08D9E
-__ptext83                                 text83        08E4C
+__ptext80                                 text80        08EE8
+__ptext82                                 text82        08E48
+__ptext83                                 text83        08E1E
+__ptext84                                 text84        08B1C
+__ptext85                                 text85        08FE2
+__ptext86                                 text86        08F1E
+__ptext87                                 text87        08FF8
 __ptext9                                  text9         06E6E
 __ramtop                                  ramtop        00F00
 __size_of_AddNodeToNetworkTable           (abs)         00000
 __size_of_BUTTON_Pressed                  (abs)         00000
 __size_of_BroadcastJitter                 (abs)         00000
+__size_of_ComputerControl                 (abs)         00000
 __size_of_DELAY_ms                        (abs)         00000
 __size_of_DoorUnlock                      (abs)         00000
 __size_of_EEPROMRead                      (abs)         00000
@@ -1346,6 +1406,9 @@ __size_of_SendIndirectPacket              (abs)         00000
 __size_of_SendMACPacket                   (abs)         00000
 __size_of_Student                         (abs)         00000
 __size_of_Teacher                         (abs)         00000
+__size_of_UART_Init_A2_A1                 (abs)         00000
+__size_of_UART_Read_A2_A1                 (abs)         00000
+__size_of_UART_kbhit_A2_A1                (abs)         00000
 __size_of_UnicastShortAddress             (abs)         00000
 __size_of_UserInterruptHandler            (abs)         00000
 __size_of___awdiv                         (abs)         00000
@@ -1372,21 +1435,21 @@ __size_ofi2_PHYSetShortRAMAddr            (abs)         00000
 __size_ofi2_SPIGet                        (abs)         00000
 __size_ofi2_SPIPut                        (abs)         00000
 __smallconst                              smallconst    00000
-_alarm                                    text7         08D84
+_alarm                                    text7         08F04
 _currentChannel                           bssCOMRAM     0004A
 _defaultHops                              dataCOMRAM    0004C
 _dpowers                                  mediumconst   0FDA5
 _failureCounter                           bssBANK1      0012F
-_findNextNetworkEntry                     text72        08AA6
+_findNextNetworkEntry                     text59        08C44
 _hexpowers                                mediumconst   0FDAF
 _high_isr                                 intcode       00008
 _indirectMessages                         bssBANK4      00400
-_isSameAddress                            text54        0892C
-_isdigit                                  text34        08C56
-_isdigit$4713                             cstackBANK0   00061
+_isSameAddress                            text52        08ACA
+_isdigit                                  text33        08DF4
+_isdigit$4729                             cstackBANK0   00061
 _knownCoordinators                        bssBANK1      00137
-_main                                     text0         08D14
-_memset                                   text41        08BC4
+_main                                     text0         08E94
+_memset                                   text40        08D62
 _myChannel                                dataBANK1     001FC
 _myLongAddress                            dataBANK1     001F4
 _myNetworkAddress                         bssBANK1      0018D
@@ -1395,17 +1458,17 @@ _myParent                                 bssCOMRAM     00041
 _myShortAddress                           bssCOMRAM     00046
 _octpowers                                mediumconst   0FD99
 _openSocketInfo                           bssBANK1      00170
-_putcv                                    text10        0875C
+_putcv                                    text10        088FA
 _questionnaire                            bssBANK1      00138
 _questionnaire_function                   text3         041DC
 _role                                     bssCOMRAM     00042
 _rxMessage                                bssBANK1      00100
-_sprintf                                  text33        0297C
-_sprintf$4492                             cstackBANK0   0007F
-_sprintf$4493                             cstackBANK0   00081
-_sprintf$4499                             cstackBANK0   00083
-_startBit                                 text12        08E1A
-_stopBit                                  text11        08E10
+_sprintf                                  text32        0297C
+_sprintf$4508                             cstackBANK0   0007F
+_sprintf$4509                             cstackBANK0   00081
+_sprintf$4515                             cstackBANK0   00083
+_startBit                                 text12        08FBA
+_stopBit                                  text11        08FB0
 _switch0PressTime                         bssBANK1      00122
 _switch1PressTime                         bssBANK1      00126
 _switch_val                               bssBANK1      00139
@@ -1417,7 +1480,7 @@ _timerExtension1                          bssCOMRAM     00043
 _timerExtension2                          bssBANK1      0013B
 alarm@status                              cstackBANK0   00060
 btemp                                     temp          0004D
-end_of_initialization                     cinit         0849C
+end_of_initialization                     cinit         08388
 findNextNetworkEntry@i                    cstackBANK0   00060
 high_isr@RxBank                           cstackCOMRAM  00025
 high_isr@flags                            cstackCOMRAM  00023
@@ -1425,7 +1488,7 @@ high_isr@i                                cstackCOMRAM  00026
 high_isr@pwm_value_high_time              cstackCOMRAM  00021
 high_isr@results                          cstackCOMRAM  00020
 high_isr@temp                             cstackCOMRAM  0001C
-high_isr@temp_946                         cstackCOMRAM  0001E
+high_isr@temp_911                         cstackCOMRAM  0001E
 high_isr@u                                bssBANK1      0013C
 i2PHYGetLongRAMAddr@address               cstackCOMRAM  00003
 i2PHYGetLongRAMAddr@tmpRFIE               cstackCOMRAM  00008
@@ -1438,11 +1501,11 @@ i2PHYSetShortRAMAddr@tmpRFIE              cstackCOMRAM  00005
 i2PHYSetShortRAMAddr@value                cstackCOMRAM  00003
 i2SPIPut@i                                cstackCOMRAM  00001
 i2SPIPut@v                                cstackCOMRAM  00002
-i2_PHYGetLongRAMAddr                      text80        0897E
-i2_PHYGetShortRAMAddr                     text79        08C80
-i2_PHYSetShortRAMAddr                     text78        08CAA
-i2_SPIGet                                 text81        08E38
-i2_SPIPut                                 text82        08D9E
+i2_PHYGetLongRAMAddr                      text84        08B1C
+i2_PHYGetShortRAMAddr                     text83        08E1E
+i2_PHYSetShortRAMAddr                     text82        08E48
+i2_SPIGet                                 text85        08FE2
+i2_SPIPut                                 text86        08F1E
 int$flags                                 temp          0004D
 intlevel0                                 text          00000
 intlevel1                                 text          00000
@@ -1460,19 +1523,19 @@ putcv@data                                cstackBANK0   00060
 putcv@data2                               cstackBANK0   00066
 putcv@i                                   cstackBANK0   00064
 questionnaire_function@_dcnt              cstackBANK1   00191
-questionnaire_function@_dcnt_3929         cstackBANK1   00195
-questionnaire_function@_dcnt_3932         cstackBANK1   00199
-questionnaire_function@_dcnt_3935         cstackBANK1   0019D
-questionnaire_function@_dcnt_3938         cstackBANK1   001A1
-questionnaire_function@_dcnt_3941         cstackBANK1   001A5
-questionnaire_function@_dcnt_3944         cstackBANK1   001A9
+questionnaire_function@_dcnt_3739         cstackBANK1   00195
+questionnaire_function@_dcnt_3742         cstackBANK1   00199
+questionnaire_function@_dcnt_3745         cstackBANK1   0019D
+questionnaire_function@_dcnt_3748         cstackBANK1   001A1
+questionnaire_function@_dcnt_3751         cstackBANK1   001A5
+questionnaire_function@_dcnt_3754         cstackBANK1   001A9
 questionnaire_function@_ms                cstackBANK1   001AD
-questionnaire_function@_ms_3930           cstackBANK1   001B1
-questionnaire_function@_ms_3933           cstackBANK1   001B5
-questionnaire_function@_ms_3936           cstackBANK1   001B9
-questionnaire_function@_ms_3939           cstackBANK1   001BD
-questionnaire_function@_ms_3942           cstackBANK1   001C1
-questionnaire_function@_ms_3945           cstackBANK1   001C5
+questionnaire_function@_ms_3740           cstackBANK1   001B1
+questionnaire_function@_ms_3743           cstackBANK1   001B5
+questionnaire_function@_ms_3746           cstackBANK1   001B9
+questionnaire_function@_ms_3749           cstackBANK1   001BD
+questionnaire_function@_ms_3752           cstackBANK1   001C1
+questionnaire_function@_ms_3755           cstackBANK1   001C5
 sprintf@ap                                cstackBANK0   00087
 sprintf@c                                 cstackBANK0   0008E
 sprintf@cp                                cstackBANK0   0007D
@@ -1487,20 +1550,20 @@ sprintf@width                             cstackBANK0   0008C
 stackhi                                   (abs)         00EBF
 stacklo                                   (abs)         00486
 start                                     init          00282
-start_initialization                      cinit         08428
+start_initialization                      cinit         082F4
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 27 in file "../src/main.c"
+		line 30 in file "../src/main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -1515,6 +1578,7 @@ FUNCTION INFORMATION:
 Total ram usage:        0 bytes
  Hardware stack levels required when called:   19
  This function calls:
+		_ComputerControl
 		_DoorUnlock
 		_Network
 		_Pan
@@ -1565,7 +1629,7 @@ Total ram usage:        0 bytes
   rssi            1    1[BANK1 ] unsigned char 
   Tx_Packet       1    0[BANK1 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -1607,7 +1671,7 @@ Total ram usage:       99 bytes
   _ms             4  135[BANK0 ] unsigned long 
   _dcnt           4  123[BANK0 ] unsigned long 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -1656,7 +1720,7 @@ Total ram usage:       24 bytes
   _ms             4   28[BANK1 ] unsigned long 
   _dcnt           4    0[BANK1 ] unsigned long 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -1725,9 +1789,9 @@ Total ram usage:       13 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
-		wreg, status,2
+		None
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1756,7 +1820,7 @@ Total ram usage:        0 bytes
   status          2  123[BANK0 ] int 
   rssi            1  125[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -1790,7 +1854,7 @@ Total ram usage:        4 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		None
  Tracked objects:
@@ -1825,7 +1889,7 @@ Total ram usage:        2 bytes
   _ms             4   20[BANK0 ] unsigned long 
   _dcnt           4    8[BANK0 ] unsigned long 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -1860,7 +1924,7 @@ Total ram usage:       24 bytes
   _ms             4   20[BANK0 ] unsigned long 
   _dcnt           4    8[BANK0 ] unsigned long 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -1892,7 +1956,7 @@ Total ram usage:       24 bytes
   i               2    4[BANK0 ] int 
   x               2    0        int 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -1924,7 +1988,7 @@ Total ram usage:        8 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg
  Tracked objects:
@@ -1954,7 +2018,7 @@ Total ram usage:        0 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg
  Tracked objects:
@@ -1994,7 +2058,7 @@ Total ram usage:        0 bytes
   switch_val      1    0        unsigned char 
   i               1    0        unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -2038,7 +2102,7 @@ Total ram usage:       17 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -2068,7 +2132,7 @@ Total ram usage:        0 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -2099,7 +2163,7 @@ Total ram usage:        0 bytes
  Auto vars:     Size  Location     Type
   i               1    8[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -2132,7 +2196,7 @@ Total ram usage:        3 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, cstack
  Tracked objects:
@@ -2272,7 +2336,7 @@ Total ram usage:       40 bytes
 
  *************** function ___awdiv *****************
  Defined at:
-		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c"
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\awdiv.c"
  Parameters:    Size  Location     Type
   dividend        2    0[BANK0 ] int 
   divisor         2    2[BANK0 ] int 
@@ -2410,7 +2474,7 @@ Total ram usage:        4 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2
  Tracked objects:
@@ -2484,7 +2548,7 @@ Total ram usage:       20 bytes
  Auto vars:     Size  Location     Type
   i               1  155[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -2602,7 +2666,7 @@ Total ram usage:       32 bytes
  Auto vars:     Size  Location     Type
   Mode            1    1[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -2625,41 +2689,6 @@ Total ram usage:        2 bytes
  This function uses a non-reentrant model
 
 
- *************** function _MiApp_BroadcastPacket *****************
- Defined at:
-		line 4243 in file "../../../../../../framework/miwi/src/miwi_mesh.c"
- Parameters:    Size  Location     Type
-  SecEn           1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  SecEn           1   61[BANK0 ] unsigned char 
-  i               1   62[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    9
- This function calls:
-		_MiMAC_SendPacket
-		_SaveIndirectMessage
- This function is called by:
-		_Student
-		_questionnaire_function
-		_Teacher
-		_Network
- This function uses a non-reentrant model
-
-
  *************** function _LCD_Display *****************
  Defined at:
 		line 168 in file "../src/system_config/miwikit_pic18f46j50_24j40/lcd.c"
@@ -2671,7 +2700,7 @@ Total ram usage:        2 bytes
  Auto vars:     Size  Location     Type
   i               1   53[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -2700,7 +2729,7 @@ Total ram usage:        5 bytes
 
  *************** function _sprintf *****************
  Defined at:
-		line 492 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c"
+		line 492 in file "C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\doprnt.c"
  Parameters:    Size  Location     Type
   sp              2   12[BANK0 ] PTR unsigned char 
 		 -> LCDText(33), 
@@ -2757,7 +2786,7 @@ Total ram usage:       37 bytes
 
  *************** function _isdigit *****************
  Defined at:
-		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\isdigit.c"
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\isdigit.c"
  Parameters:    Size  Location     Type
   c               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2787,7 +2816,7 @@ Total ram usage:        3 bytes
 
  *************** function ___wmul *****************
  Defined at:
-		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c"
+		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\Umul16.c"
  Parameters:    Size  Location     Type
   multiplier      2    0[BANK0 ] unsigned int 
   multiplicand    2    2[BANK0 ] unsigned int 
@@ -2818,7 +2847,7 @@ Total ram usage:        6 bytes
 
  *************** function ___lwmod *****************
  Defined at:
-		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c"
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lwmod.c"
  Parameters:    Size  Location     Type
   dividend        2    7[BANK0 ] unsigned int 
   divisor         2    9[BANK0 ] unsigned int 
@@ -2849,7 +2878,7 @@ Total ram usage:        5 bytes
 
  *************** function ___lwdiv *****************
  Defined at:
-		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c"
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lwdiv.c"
  Parameters:    Size  Location     Type
   dividend        2    0[BANK0 ] unsigned int 
   divisor         2    2[BANK0 ] unsigned int 
@@ -2887,7 +2916,7 @@ Total ram usage:        7 bytes
  Auto vars:     Size  Location     Type
   i               1    3[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -2922,7 +2951,7 @@ Total ram usage:        1 bytes
  Auto vars:     Size  Location     Type
   data            1    2[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, cstack
  Tracked objects:
@@ -2952,7 +2981,7 @@ Total ram usage:        1 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, cstack
  Tracked objects:
@@ -2981,7 +3010,7 @@ Total ram usage:        0 bytes
 
  *************** function _memset *****************
  Defined at:
-		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\memset.c"
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\memset.c"
  Parameters:    Size  Location     Type
   p1              2    0[BANK0 ] PTR void 
 		 -> LCDText(33), 
@@ -3021,7 +3050,7 @@ Total ram usage:        8 bytes
  Auto vars:     Size  Location     Type
   data            1    2[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, cstack
  Tracked objects:
@@ -3054,7 +3083,7 @@ Total ram usage:        1 bytes
   v               1    1[BANK0 ] unsigned char 
   i               1    0[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg
  Tracked objects:
@@ -3090,7 +3119,7 @@ Total ram usage:        2 bytes
  Auto vars:     Size  Location     Type
   cyclesRequir    4   14[BANK0 ] long 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -3116,7 +3145,7 @@ Total ram usage:        6 bytes
 
  *************** function ___lmul *****************
  Defined at:
-		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul32.c"
+		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\Umul32.c"
  Parameters:    Size  Location     Type
   multiplier      4    0[BANK0 ] unsigned long 
   multiplicand    4    4[BANK0 ] unsigned long 
@@ -3155,7 +3184,7 @@ Total ram usage:       12 bytes
   _ms             4  127[BANK0 ] unsigned long 
   _dcnt           4  123[BANK0 ] unsigned long 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -3245,7 +3274,7 @@ Total ram usage:        0 bytes
   t2              4   89[BANK0 ] struct _MIWI_TICK
   i               1  121[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -3360,7 +3389,7 @@ Total ram usage:       10 bytes
  Auto vars:     Size  Location     Type
   i               1   68[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -3383,45 +3412,6 @@ Total ram usage:        1 bytes
  This function uses a non-reentrant model
 
 
- *************** function _SaveIndirectMessage *****************
- Defined at:
-		line 3092 in file "../../../../../../framework/miwi/src/miwi_mesh.c"
- Parameters:    Size  Location     Type
-  Broadcast       1    wreg     unsigned char 
-  DestinationP    2   10[BANK0 ] struct .
-  DestinationA    2   12[BANK0 ] PTR unsigned char 
-		 -> RouteMessage@ShortAddress(2), NULL(0), 
-  isAltAddress    1   14[BANK0 ] unsigned char 
-  SecurityEnab    1   15[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  Broadcast       1   18[BANK0 ] unsigned char 
-  i               1   20[BANK0 ] unsigned char 
-  j               1   19[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      11       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       11 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_MiWi_TickGet
- This function is called by:
-		_MiWiTasks
-		_RouteMessage
-		_MiApp_BroadcastPacket
- This function uses a non-reentrant model
-
-
  *************** function _SendIndirectPacket *****************
  Defined at:
 		line 2275 in file "../../../../../../framework/miwi/src/miwi_mesh.c"
@@ -3437,7 +3427,7 @@ Total ram usage:       11 bytes
   j               1   76[BANK0 ] unsigned char 
   packetType      1   75[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -3537,232 +3527,6 @@ Total ram usage:        7 bytes
  This function uses a non-reentrant model
 
 
- *************** function _MiMAC_SendPacket *****************
- Defined at:
-		line 740 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
- Parameters:    Size  Location     Type
-  transParam      7   30[BANK0 ] struct .
-  MACPayload      2   37[BANK0 ] PTR unsigned char 
-		 -> TxBuffer(51), 
-  MACPayloadLe    1   39[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  t2              4   52[BANK0 ] struct _MIWI_TICK
-  t1              4   48[BANK0 ] struct _MIWI_TICK
-  loc             1   60[BANK0 ] unsigned char 
-  i               1   59[BANK0 ] unsigned char 
-  headerLength    1   58[BANK0 ] unsigned char 
-  frameControl    1   57[BANK0 ] unsigned char 
-  IntraPAN        1   56[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0      13       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       8       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      31       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       31 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    8
- This function calls:
-		_InitMRF24J40
-		_MiMAC_SetAltAddress
-		_MiWi_TickGet
-		_PHYSetLongRAMAddr
-		_PHYSetShortRAMAddr
- This function is called by:
-		_MiWiTasks
-		_RouteMessage
-		_SendMACPacket
-		_SendIndirectPacket
-		_MiApp_BroadcastPacket
-		_MiApp_UnicastAddress
-		_StartChannelHopping
-		_MiApp_RemoveConnection
- This function uses a non-reentrant model
-
-
- *************** function _MiMAC_SetAltAddress *****************
- Defined at:
-		line 1425 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
- Parameters:    Size  Location     Type
-  Address         2    5[BANK0 ] PTR unsigned char 
-		 -> tempShortAddress(2), myShortAddress(2), myNetworkAddress(2), 
-  PANID           2    7[BANK0 ] PTR unsigned char 
-		 -> myPANID(2), MAC_PANID(2), 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        4 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_PHYSetShortRAMAddr
- This function is called by:
-		_MiMAC_SendPacket
-		_MiWiTasks
-		_MiApp_ProtocolInit
-		_MiApp_EstablishConnection
-		_MiApp_StartConnection
-		_MiApp_RemoveConnection
- This function uses a non-reentrant model
-
-
- *************** function _InitMRF24J40 *****************
- Defined at:
-		line 205 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  _ms             4   23[BANK0 ] unsigned long 
-  _dcnt           4   15[BANK0 ] unsigned long 
-  _ms             4   19[BANK0 ] unsigned long 
-  _dcnt           4   11[BANK0 ] unsigned long 
-  j               2   27[BANK0 ] unsigned int 
-  i               1   29[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0      19       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      20       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       20 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    7
- This function calls:
-		_MiMAC_SetChannel
-		_PHYGetLongRAMAddr
-		_PHYGetShortRAMAddr
-		_PHYSetLongRAMAddr
-		_PHYSetShortRAMAddr
- This function is called by:
-		_MiMAC_SendPacket
-		_MiMAC_Init
- This function uses a non-reentrant model
-
-
- *************** function _PHYGetShortRAMAddr *****************
- Defined at:
-		line 158 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
- Parameters:    Size  Location     Type
-  address         1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  address         1    2[BANK0 ] unsigned char 
-  tmpRFIE         1    4[BANK0 ] volatile unsigned char 
-  toReturn        1    3[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        3 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_SPIGet
-		_SPIPut
- This function is called by:
-		_InitMRF24J40
-		_MiMAC_ChannelAssessment
- This function uses a non-reentrant model
-
-
- *************** function _PHYGetLongRAMAddr *****************
- Defined at:
-		line 189 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
- Parameters:    Size  Location     Type
-  address         2    2[BANK0 ] unsigned int 
- Auto vars:     Size  Location     Type
-  tmpRFIE         1    7[BANK0 ] volatile unsigned char 
-  toReturn        1    6[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_SPIGet
-		_SPIPut
- This function is called by:
-		_InitMRF24J40
-		_MiMAC_ChannelAssessment
- This function uses a non-reentrant model
-
-
- *************** function _SPIGet *****************
- Defined at:
-		line 102 in file "../src/system_config/miwikit_pic18f46j50_24j40/spi.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_SPIPut
- This function is called by:
-		_PHYGetShortRAMAddr
-		_PHYGetLongRAMAddr
- This function uses a non-reentrant model
-
-
  *************** function _MiMAC_ReceivedPacket *****************
  Defined at:
 		line 370 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
@@ -3834,145 +3598,6 @@ Total ram usage:        1 bytes
  This function uses a non-reentrant model
 
 
- *************** function _MiMAC_SetChannel *****************
- Defined at:
-		line 1306 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
- Parameters:    Size  Location     Type
-  channel         1    wreg     unsigned char 
-  offsetFreq      1    8[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  channel         1    9[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_PHYSetLongRAMAddr
-		_PHYSetShortRAMAddr
- This function is called by:
-		_InitMRF24J40
-		_MiApp_SetChannel
- This function uses a non-reentrant model
-
-
- *************** function _PHYSetShortRAMAddr *****************
- Defined at:
-		line 128 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
- Parameters:    Size  Location     Type
-  address         1    wreg     unsigned char 
-  value           1    2[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  address         1    3[BANK0 ] unsigned char 
-  tmpRFIE         1    4[BANK0 ] volatile unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        3 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_SPIPut
- This function is called by:
-		_InitMRF24J40
-		_MiMAC_SendPacket
-		_MiMAC_ChannelAssessment
-		_MiMAC_SetChannel
-		_MiMAC_SetAltAddress
- This function uses a non-reentrant model
-
-
- *************** function _PHYSetLongRAMAddr *****************
- Defined at:
-		line 94 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
- Parameters:    Size  Location     Type
-  address         2    2[BANK0 ] unsigned int 
-  value           1    4[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  tmpRFIE         1    7[BANK0 ] volatile unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_SPIPut
- This function is called by:
-		_InitMRF24J40
-		_MiMAC_SendPacket
-		_MiMAC_SetChannel
-		_MiMAC_SetPower
- This function uses a non-reentrant model
-
-
- *************** function _SPIPut *****************
- Defined at:
-		line 45 in file "../src/system_config/miwikit_pic18f46j50_24j40/spi.c"
- Parameters:    Size  Location     Type
-  v               1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  v               1    1[BANK0 ] unsigned char 
-  i               1    0[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_PHYSetLongRAMAddr
-		_PHYSetShortRAMAddr
-		_PHYGetShortRAMAddr
-		_PHYGetLongRAMAddr
-		_SPIGet
-		_SSTWrite
- This function uses a non-reentrant model
-
-
  *************** function _BroadcastJitter *****************
  Defined at:
 		line 238 in file "../../../../../../framework/miwi/src/miwi_mesh.c"
@@ -3984,7 +3609,7 @@ Total ram usage:        2 bytes
   t1              4   18[BANK0 ] struct _MIWI_TICK
   jitter          1   27[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -4009,7 +3634,7 @@ Total ram usage:       18 bytes
 
  *************** function ___lbmod *****************
  Defined at:
-		line 4 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lbmod.c"
+		line 4 in file "C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lbmod.c"
  Parameters:    Size  Location     Type
   dividend        1    wreg     unsigned char 
   divisor         1    0[BANK0 ] unsigned char 
@@ -4037,49 +3662,6 @@ Total ram usage:        4 bytes
 		Nothing
  This function is called by:
 		_BroadcastJitter
- This function uses a non-reentrant model
-
-
- *************** function _MiWi_TickGet *****************
- Defined at:
-		line 104 in file "../src/system_config/miwikit_pic18f46j50_24j40/symbol.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  currentTime     4    6[BANK0 ] struct _MIWI_TICK
-  failureCount    1    5[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  4    0[BANK0 ] struct _MIWI_TICK
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       10 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_MiMAC_SendPacket
-		_BroadcastJitter
-		_MiWiTasks
-		_OpenSocket
-		_SaveIndirectMessage
-		_MiApp_SearchConnection
-		_MiApp_EstablishConnection
-		_MiApp_UnicastAddress
-		_MiApp_NoiseDetection
-		_BUTTON_Pressed
-		_MiApp_UnicastConnection
-		_MiApp_ResyncConnection
-		_StartChannelHopping
  This function uses a non-reentrant model
 
 
@@ -4224,7 +3806,7 @@ Total ram usage:        6 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -4263,7 +3845,7 @@ Total ram usage:        0 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh
  Tracked objects:
@@ -4287,6 +3869,617 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _ComputerControl *****************
+ Defined at:
+		line 28 in file "../src/computer_control.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  _ms             4   80[BANK0 ] unsigned long 
+  _dcnt           4   76[BANK0 ] unsigned long 
+  Title          13   63[BANK0 ] unsigned char [13]
+  CMD             1   84[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0      22       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      22       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       22 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   10
+ This function calls:
+		_MiApp_BroadcastPacket
+		_UART_Init_A2_A1
+		_UART_Read_A2_A1
+		_UART_kbhit_A2_A1
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _UART_kbhit_A2_A1 *****************
+ Defined at:
+		line 161 in file "../../../../../../../../../XC8 exemples de code/soft_uart.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  2    0[BANK0 ] short 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		Nothing
+ This function is called by:
+		_ComputerControl
+ This function uses a non-reentrant model
+
+
+ *************** function _UART_Read_A2_A1 *****************
+ Defined at:
+		line 139 in file "../../../../../../../../../XC8 exemples de code/soft_uart.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  i               2    1[BANK0 ] int 
+  data            1    3[BANK0 ] unsigned char 
+  lecture         1    0        unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		Nothing
+ This function is called by:
+		_ComputerControl
+ This function uses a non-reentrant model
+
+
+ *************** function _UART_Init_A2_A1 *****************
+ Defined at:
+		line 97 in file "../../../../../../../../../XC8 exemples de code/soft_uart.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		Nothing
+ This function is called by:
+		_ComputerControl
+ This function uses a non-reentrant model
+
+
+ *************** function _MiApp_BroadcastPacket *****************
+ Defined at:
+		line 4243 in file "../../../../../../framework/miwi/src/miwi_mesh.c"
+ Parameters:    Size  Location     Type
+  SecEn           1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  SecEn           1   61[BANK0 ] unsigned char 
+  i               1   62[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    9
+ This function calls:
+		_MiMAC_SendPacket
+		_SaveIndirectMessage
+ This function is called by:
+		_Student
+		_questionnaire_function
+		_Teacher
+		_Network
+		_ComputerControl
+ This function uses a non-reentrant model
+
+
+ *************** function _SaveIndirectMessage *****************
+ Defined at:
+		line 3092 in file "../../../../../../framework/miwi/src/miwi_mesh.c"
+ Parameters:    Size  Location     Type
+  Broadcast       1    wreg     unsigned char 
+  DestinationP    2   10[BANK0 ] struct .
+  DestinationA    2   12[BANK0 ] PTR unsigned char 
+		 -> RouteMessage@ShortAddress(2), NULL(0), 
+  isAltAddress    1   14[BANK0 ] unsigned char 
+  SecurityEnab    1   15[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  Broadcast       1   18[BANK0 ] unsigned char 
+  i               1   20[BANK0 ] unsigned char 
+  j               1   19[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      11       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       11 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_MiWi_TickGet
+ This function is called by:
+		_MiWiTasks
+		_RouteMessage
+		_MiApp_BroadcastPacket
+ This function uses a non-reentrant model
+
+
+ *************** function _MiMAC_SendPacket *****************
+ Defined at:
+		line 740 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
+ Parameters:    Size  Location     Type
+  transParam      7   30[BANK0 ] struct .
+  MACPayload      2   37[BANK0 ] PTR unsigned char 
+		 -> TxBuffer(51), 
+  MACPayloadLe    1   39[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  t2              4   52[BANK0 ] struct _MIWI_TICK
+  t1              4   48[BANK0 ] struct _MIWI_TICK
+  loc             1   60[BANK0 ] unsigned char 
+  i               1   59[BANK0 ] unsigned char 
+  headerLength    1   58[BANK0 ] unsigned char 
+  frameControl    1   57[BANK0 ] unsigned char 
+  IntraPAN        1   56[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0      13       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       8       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      31       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       31 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		_InitMRF24J40
+		_MiMAC_SetAltAddress
+		_MiWi_TickGet
+		_PHYSetLongRAMAddr
+		_PHYSetShortRAMAddr
+ This function is called by:
+		_MiWiTasks
+		_RouteMessage
+		_SendMACPacket
+		_SendIndirectPacket
+		_MiApp_BroadcastPacket
+		_MiApp_UnicastAddress
+		_StartChannelHopping
+		_MiApp_RemoveConnection
+ This function uses a non-reentrant model
+
+
+ *************** function _MiWi_TickGet *****************
+ Defined at:
+		line 104 in file "../src/system_config/miwikit_pic18f46j50_24j40/symbol.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  currentTime     4    6[BANK0 ] struct _MIWI_TICK
+  failureCount    1    5[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  4    0[BANK0 ] struct _MIWI_TICK
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       10 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		Nothing
+ This function is called by:
+		_MiMAC_SendPacket
+		_BroadcastJitter
+		_MiWiTasks
+		_OpenSocket
+		_SaveIndirectMessage
+		_MiApp_SearchConnection
+		_MiApp_EstablishConnection
+		_MiApp_UnicastAddress
+		_MiApp_NoiseDetection
+		_BUTTON_Pressed
+		_MiApp_UnicastConnection
+		_MiApp_ResyncConnection
+		_StartChannelHopping
+ This function uses a non-reentrant model
+
+
+ *************** function _MiMAC_SetAltAddress *****************
+ Defined at:
+		line 1425 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
+ Parameters:    Size  Location     Type
+  Address         2    5[BANK0 ] PTR unsigned char 
+		 -> tempShortAddress(2), myShortAddress(2), myNetworkAddress(2), 
+  PANID           2    7[BANK0 ] PTR unsigned char 
+		 -> myPANID(2), MAC_PANID(2), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_PHYSetShortRAMAddr
+ This function is called by:
+		_MiMAC_SendPacket
+		_MiWiTasks
+		_MiApp_ProtocolInit
+		_MiApp_EstablishConnection
+		_MiApp_StartConnection
+		_MiApp_RemoveConnection
+ This function uses a non-reentrant model
+
+
+ *************** function _InitMRF24J40 *****************
+ Defined at:
+		line 205 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  _ms             4   23[BANK0 ] unsigned long 
+  _dcnt           4   15[BANK0 ] unsigned long 
+  _ms             4   19[BANK0 ] unsigned long 
+  _dcnt           4   11[BANK0 ] unsigned long 
+  j               2   27[BANK0 ] unsigned int 
+  i               1   29[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0      19       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      20       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       20 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    7
+ This function calls:
+		_MiMAC_SetChannel
+		_PHYGetLongRAMAddr
+		_PHYGetShortRAMAddr
+		_PHYSetLongRAMAddr
+		_PHYSetShortRAMAddr
+ This function is called by:
+		_MiMAC_SendPacket
+		_MiMAC_Init
+ This function uses a non-reentrant model
+
+
+ *************** function _PHYGetShortRAMAddr *****************
+ Defined at:
+		line 158 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
+ Parameters:    Size  Location     Type
+  address         1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  address         1    2[BANK0 ] unsigned char 
+  tmpRFIE         1    4[BANK0 ] volatile unsigned char 
+  toReturn        1    3[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_SPIGet
+		_SPIPut
+ This function is called by:
+		_InitMRF24J40
+		_MiMAC_ChannelAssessment
+ This function uses a non-reentrant model
+
+
+ *************** function _PHYGetLongRAMAddr *****************
+ Defined at:
+		line 189 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
+ Parameters:    Size  Location     Type
+  address         2    2[BANK0 ] unsigned int 
+ Auto vars:     Size  Location     Type
+  tmpRFIE         1    7[BANK0 ] volatile unsigned char 
+  toReturn        1    6[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_SPIGet
+		_SPIPut
+ This function is called by:
+		_InitMRF24J40
+		_MiMAC_ChannelAssessment
+ This function uses a non-reentrant model
+
+
+ *************** function _SPIGet *****************
+ Defined at:
+		line 102 in file "../src/system_config/miwikit_pic18f46j50_24j40/spi.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_SPIPut
+ This function is called by:
+		_PHYGetShortRAMAddr
+		_PHYGetLongRAMAddr
+ This function uses a non-reentrant model
+
+
+ *************** function _MiMAC_SetChannel *****************
+ Defined at:
+		line 1306 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
+ Parameters:    Size  Location     Type
+  channel         1    wreg     unsigned char 
+  offsetFreq      1    8[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  channel         1    9[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_PHYSetLongRAMAddr
+		_PHYSetShortRAMAddr
+ This function is called by:
+		_InitMRF24J40
+		_MiApp_SetChannel
+ This function uses a non-reentrant model
+
+
+ *************** function _PHYSetShortRAMAddr *****************
+ Defined at:
+		line 128 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
+ Parameters:    Size  Location     Type
+  address         1    wreg     unsigned char 
+  value           1    2[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  address         1    3[BANK0 ] unsigned char 
+  tmpRFIE         1    4[BANK0 ] volatile unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_SPIPut
+ This function is called by:
+		_InitMRF24J40
+		_MiMAC_SendPacket
+		_MiMAC_ChannelAssessment
+		_MiMAC_SetChannel
+		_MiMAC_SetAltAddress
+ This function uses a non-reentrant model
+
+
+ *************** function _PHYSetLongRAMAddr *****************
+ Defined at:
+		line 94 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
+ Parameters:    Size  Location     Type
+  address         2    2[BANK0 ] unsigned int 
+  value           1    4[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  tmpRFIE         1    7[BANK0 ] volatile unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_SPIPut
+ This function is called by:
+		_InitMRF24J40
+		_MiMAC_SendPacket
+		_MiMAC_SetChannel
+		_MiMAC_SetPower
+ This function uses a non-reentrant model
+
+
+ *************** function _SPIPut *****************
+ Defined at:
+		line 45 in file "../src/system_config/miwikit_pic18f46j50_24j40/spi.c"
+ Parameters:    Size  Location     Type
+  v               1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  v               1    1[BANK0 ] unsigned char 
+  i               1    0[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		Nothing
+ This function is called by:
+		_PHYSetLongRAMAddr
+		_PHYSetShortRAMAddr
+		_PHYGetShortRAMAddr
+		_PHYGetLongRAMAddr
+		_SPIGet
+		_SSTWrite
+ This function uses a non-reentrant model
+
+
  *************** function _high_isr *****************
  Defined at:
 		line 1856 in file "../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c"
@@ -4301,7 +4494,7 @@ Total ram usage:        0 bytes
   i               1   37[COMRAM] unsigned char 
   pwm_value_hi    2   32[COMRAM] unsigned int 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -4336,7 +4529,7 @@ Total ram usage:       30 bytes
   address         1    3[COMRAM] unsigned char 
   PHYSetShortR    1    4[COMRAM] volatile unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, cstack
  Tracked objects:
@@ -4463,7 +4656,7 @@ Total ram usage:        0 bytes
   v               1    1[COMRAM] unsigned char 
   SPIPut          1    0[COMRAM] unsigned char 
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		wreg
  Tracked objects:
@@ -4495,7 +4688,7 @@ Total ram usage:        2 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-		None               void
+                  1    wreg      void 
  Registers used:
 		None
  Tracked objects:
@@ -4520,58 +4713,58 @@ Total ram usage:        0 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\memset.c
+		_memset        		CODE           	8D62	0000	53
+
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\memset.c estimated size: 53
+
 ../src/system_config/miwikit_pic18f46j50_24j40/lcd.c
-		_LCD_Erase     		CODE           	8AE6	0000	59
-		_LCD_Initialize		CODE           	84AA	0000	131
-		_LCD_Update    		CODE           	8142	0000	169
-		_LCD_Display   		CODE           	8882	0000	87
-		_UserInterruptHandler		CODE           	8E4C	0000	3
-		_LCD_WriteCmd  		CODE           	8DE2	0000	21
-		_LCD_WriteData 		CODE           	8DCE	0000	21
+		_LCD_Erase     		CODE           	8C84	0000	59
+		_LCD_Initialize		CODE           	85D4	0000	131
+		_LCD_Update    		CODE           	824C	0000	169
+		_LCD_Display   		CODE           	8A20	0000	87
+		_UserInterruptHandler		CODE           	8FF8	0000	3
+		_LCD_WriteCmd  		CODE           	8F62	0000	21
+		_LCD_WriteData 		CODE           	8F4E	0000	21
 
 ../src/system_config/miwikit_pic18f46j50_24j40/lcd.c estimated size: 491
 
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-		___awdiv       		CODE           	7DC8	0000	191
-
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c estimated size: 191
-
 ../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
-		_PHYGetLongRAMAddr		CODE           	86F8	0000	101
-		_PHYSetLongRAMAddr		CODE           	8820	0000	99
-		_PHYGetShortRAMAddr		CODE           	8B8E	0000	55
-		_PHYSetShortRAMAddr		CODE           	8BF8	0000	51
+		_PHYGetLongRAMAddr		CODE           	8896	0000	101
+		_PHYSetLongRAMAddr		CODE           	89BE	0000	99
+		_PHYGetShortRAMAddr		CODE           	8D2C	0000	55
+		_PHYSetShortRAMAddr		CODE           	8D96	0000	51
 		_InitMRF24J40  		CODE           	669A	0000	705
 		_MiMAC_ReceivedPacket		CODE           	3B0A	0000	1747
-		_MiMAC_DiscardPacket		CODE           	8D68	0000	29
+		_MiMAC_DiscardPacket		CODE           	8ECC	0000	29
 		_high_isr      		CODE           	0008	0000	635
-		_MiMAC_ChannelAssessment		CODE           	8A1A	0000	73
-		_MiMAC_SetChannel		CODE           	88D8	0000	85
-		_MiMAC_Init    		CODE           	89D0	0000	75
+		_MiMAC_ChannelAssessment		CODE           	8BB8	0000	73
+		_MiMAC_SetChannel		CODE           	8A76	0000	85
+		_MiMAC_Init    		CODE           	8B6E	0000	75
 		_MiMAC_SendPacket		CODE           	5184	0000	1219
-		_MiMAC_SetAltAddress		CODE           	868A	0000	111
+		_MiMAC_SetAltAddress		CODE           	8828	0000	111
 
 ../../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c estimated size: 4985
 
 ../src/system_config/miwikit_pic18f46j50_24j40/system.c
-		_SYSTEM_Initialize		CODE           	7F40	0000	175
+		_SYSTEM_Initialize		CODE           	804A	0000	175
 
 ../src/system_config/miwikit_pic18f46j50_24j40/system.c estimated size: 175
 
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul32.c
-		___lmul        		CODE           	85A4	0000	119
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\doprnt.c
+		_sprintf       		CODE           	297C	0000	2623
 
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul32.c estimated size: 119
-
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\isdigit.c
-		_isdigit       		CODE           	8C56	0000	43
-
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\isdigit.c estimated size: 43
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\doprnt.c estimated size: 2623
 
 ../src/network.c
 		_Network       		CODE           	47E2	0000	1235
 
 ../src/network.c estimated size: 1235
+
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\Umul16.c
+		___wmul        		CODE           	8CF6	0000	55
+
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\Umul16.c estimated size: 55
 
 ../src/system_config/miwikit_pic18f46j50_24j40/button.c
 		_BUTTON_Pressed		CODE           	768E	0000	345
@@ -4584,78 +4777,100 @@ C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\isdigit.c estimated si
 
 ../src/student.c estimated size: 2494
 
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lwdiv.c
+		___lwdiv       		CODE           	8656	0000	121
+
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lwdiv.c estimated size: 121
+
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\awdiv.c
+		___awdiv       		CODE           	7ED2	0000	191
+
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\awdiv.c estimated size: 191
+
 ../src/pan.c
-		_alarm         		CODE           	8D84	0000	27
-		_stopBit       		CODE           	8E10	0000	11
-		_putcv         		CODE           	875C	0000	99
-		_startBit      		CODE           	8E1A	0000	11
-		_Pan           		CODE           	81EA	0000	149
+		_alarm         		CODE           	8F04	0000	27
+		_stopBit       		CODE           	8FB0	0000	11
+		_putcv         		CODE           	88FA	0000	99
+		_startBit      		CODE           	8FBA	0000	11
+		_Pan           		CODE           	8396	0000	149
 		_Power_on      		CODE           	6C08	0000	615
 		_Power_off     		CODE           	6E6E	0000	615
 
 ../src/pan.c estimated size: 1527
 
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\memset.c
-		_memset        		CODE           	8BC4	0000	53
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\isdigit.c
+		_isdigit       		CODE           	8DF4	0000	43
 
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\memset.c estimated size: 53
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\isdigit.c estimated size: 43
+
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lbmod.c
+		___lbmod       		CODE           	8C00	0000	69
+
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lbmod.c estimated size: 69
 
 ../src/projector_screen.c
-		_ProjectorScreen		CODE           	8CF6	0000	31
+		_ProjectorScreen		CODE           	8FF6	0000	3
 
-../src/projector_screen.c estimated size: 31
+../src/projector_screen.c estimated size: 3
 
 ../src/door_unlock.c
-		_DoorUnlock    		CODE           	827E	0000	149
+		_DoorUnlock    		CODE           	842A	0000	149
 
 ../src/door_unlock.c estimated size: 149
 
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-		___lwmod       		CODE           	87BE	0000	99
-
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c estimated size: 99
-
 ../src/system_config/miwikit_pic18f46j50_24j40/delay.c
-		_DELAY_ms      		CODE           	7FEE	0000	171
+		_DELAY_ms      		CODE           	80F8	0000	171
 
 ../src/system_config/miwikit_pic18f46j50_24j40/delay.c estimated size: 171
 
+../../../../../../../../../XC8 exemples de code/soft_uart.c
+		_UART_kbhit_A2_A1		CODE           	8F76	0000	19
+		_UART_Read_A2_A1		CODE           	8744	0000	117
+		_UART_Init_A2_A1		CODE           	8FCE	0000	11
+
+../../../../../../../../../XC8 exemples de code/soft_uart.c estimated size: 147
+
 ../../../../../../framework/miwi/src/miwi_mesh.c
 		_MiApp_NoiseDetection		CODE           	72FE	0000	529
-		_UnicastShortAddress		CODE           	8312	0000	143
+		_UnicastShortAddress		CODE           	84BE	0000	143
 		_MiApp_EstablishConnection		CODE           	5646	0000	1189
 		_MiApp_ProtocolInit		CODE           	750E	0000	385
 		_MiApp_UnicastAddress		CODE           	5AEA	0000	1091
-		_MiApp_StartConnection		CODE           	7B04	0000	253
-		_SendMACPacket 		CODE           	8098	0000	171
-		_SendBeacon    		CODE           	79FE	0000	263
+		_MiApp_StartConnection		CODE           	7C0E	0000	253
+		_SendMACPacket 		CODE           	81A2	0000	171
+		_SendBeacon    		CODE           	7B08	0000	263
 		_SendIndirectPacket		CODE           	33BA	0000	1873
-		_SearchForLongAddress		CODE           	7CFC	0000	205
-		_MiApp_BroadcastPacket		CODE           	7C00	0000	253
-		_findNextNetworkEntry		CODE           	8AA6	0000	65
-		_SearchForShortAddress		CODE           	83A0	0000	137
+		_SearchForLongAddress		CODE           	7E06	0000	205
+		_MiApp_BroadcastPacket		CODE           	7D0A	0000	253
+		_findNextNetworkEntry		CODE           	8C44	0000	65
+		_SearchForShortAddress		CODE           	854C	0000	137
 		_OpenSocket    		CODE           	5F2C	0000	953
 		_RouteMessage  		CODE           	4CB4	0000	1233
-		_MiApp_SetChannel		CODE           	8CD2	0000	37
+		_MiApp_SetChannel		CODE           	8E70	0000	37
 		_SaveIndirectMessage		CODE           	695A	0000	687
 		_MiWiTasks     		CODE           	0286	0000	7033
-		_MiApp_DiscardMessage		CODE           	8E42	0000	9
-		_BroadcastJitter		CODE           	7E86	0000	187
-		_MiApp_MessageAvailable		CODE           	8DF6	0000	17
+		_MiApp_DiscardMessage		CODE           	8FEC	0000	9
+		_BroadcastJitter		CODE           	7F90	0000	187
+		_MiApp_MessageAvailable		CODE           	8F88	0000	17
 		_MiApp_SearchConnection		CODE           	70D4	0000	555
-		_isSameAddress 		CODE           	892C	0000	83
+		_isSameAddress 		CODE           	8ACA	0000	83
 		_AddNodeToNetworkTable		CODE           	78F4	0000	267
-		_MiApp_ConnectionMode		CODE           	8C2A	0000	45
+		_MiApp_ConnectionMode		CODE           	8DC8	0000	45
 
 ../../../../../../framework/miwi/src/miwi_mesh.c estimated size: 17663
 
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
-		_sprintf       		CODE           	297C	0000	2623
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\Umul32.c
+		___lmul        		CODE           	86CE	0000	119
 
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c estimated size: 2623
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\Umul32.c estimated size: 119
+
+../src/computer_control.c
+		_ComputerControl		CODE           	79FE	0000	267
+
+../src/computer_control.c estimated size: 267
 
 ../src/system_config/miwikit_pic18f46j50_24j40/eeprom.c
-		_EEPROMRead    		CODE           	8B20	0000	57
+		_EEPROMRead    		CODE           	8CBE	0000	57
 		_Read_MAC_Address		CODE           	77E6	0000	271
 
 ../src/system_config/miwikit_pic18f46j50_24j40/eeprom.c estimated size: 328
@@ -4663,53 +4878,43 @@ C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c estimated siz
 shared
 		_dpowers       		MEDIUMCONST    	FDA5	0000	11
 		_ScanTime      		MEDIUMCONST    	FD5D	0000	61
-		i2_PHYGetShortRAMAddr		CODE           	8C80	0000	43
-		i2_PHYGetLongRAMAddr		CODE           	897E	0000	83
-		i2_PHYSetShortRAMAddr		CODE           	8CAA	0000	41
-		__initialization		CODE           	8428	0000	117
+		i2_PHYGetShortRAMAddr		CODE           	8E1E	0000	43
+		i2_PHYGetLongRAMAddr		CODE           	8B1C	0000	83
+		i2_PHYSetShortRAMAddr		CODE           	8E48	0000	41
+		__initialization		CODE           	82F4	0000	149
 		_octpowers     		MEDIUMCONST    	FD99	0000	13
-		i2_SPIGet      		CODE           	8E38	0000	11
+		i2_SPIGet      		CODE           	8FE2	0000	11
 		_hexpowers     		MEDIUMCONST    	FDAF	0000	9
-		i2_SPIPut      		CODE           	8D9E	0000	27
+		i2_SPIPut      		CODE           	8F1E	0000	27
 
-shared estimated size: 416
+shared estimated size: 448
 
 ../src/system_config/miwikit_pic18f46j50_24j40/symbol.c
-		_InitSymbolTimer		CODE           	8DB8	0000	23
-		_MiWi_TickGet  		CODE           	861A	0000	113
+		_InitSymbolTimer		CODE           	8F38	0000	23
+		_MiWi_TickGet  		CODE           	87B8	0000	113
 
 ../src/system_config/miwikit_pic18f46j50_24j40/symbol.c estimated size: 136
 
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-		___lwdiv       		CODE           	852C	0000	121
-
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c estimated size: 121
-
 ../src/system_config/miwikit_pic18f46j50_24j40/spi.c
-		_SPIPut2       		CODE           	8D30	0000	29
-		_SPIGet        		CODE           	8E2E	0000	11
-		_SPIGet2       		CODE           	8E24	0000	11
-		_SPIPut        		CODE           	8D4C	0000	29
+		_SPIPut2       		CODE           	8EB0	0000	29
+		_SPIGet        		CODE           	8FD8	0000	11
+		_SPIGet2       		CODE           	8FC4	0000	11
+		_SPIPut        		CODE           	8EE8	0000	29
 
 ../src/system_config/miwikit_pic18f46j50_24j40/spi.c estimated size: 80
 
 ../src/main.c
-		_main          		CODE           	8D14	0000	29
+		_main          		CODE           	8E94	0000	29
 
 ../src/main.c estimated size: 29
-
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
-		___wmul        		CODE           	8B58	0000	55
-
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c estimated size: 55
-
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lbmod.c
-		___lbmod       		CODE           	8A62	0000	69
-
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lbmod.c estimated size: 69
 
 ../src/teacher.c
 		_Teacher       		CODE           	1DFE	0000	2943
 
 ../src/teacher.c estimated size: 2943
+
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lwmod.c
+		___lwmod       		CODE           	895C	0000	99
+
+C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lwmod.c estimated size: 99
 

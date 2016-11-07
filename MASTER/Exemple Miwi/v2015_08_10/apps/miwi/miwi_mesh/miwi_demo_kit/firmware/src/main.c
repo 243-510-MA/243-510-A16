@@ -10,6 +10,8 @@
 #include "teacher.h"
 #include "door_unlock.h"
 #include "projector_screen.h"
+#include "computer_control.h"
+
 
 
 #define PAN 0                       //Controls the projector, red light, buzzer and motion sensor (such many thing, wow)
@@ -17,10 +19,11 @@
 #define PROJECTOR_SCREEN 2          //DROP DA PROJECTOR
 #define TEACHER 3                   //Mista ze teacha
 #define STUDENT 4                   //You little shit
+#define COMPUTER_CONTROL 5          //Boop Beep Boop
 
 //*************************************************************************
 
-#define DEVICEMODE PAN // Choisir ici
+#define DEVICEMODE COMPUTER_CONTROL // Choisir ici
 
 //*************************************************************************
 
@@ -59,5 +62,10 @@ void main(void)
     if(DEVICEMODE == STUDENT)
     {
         Student();
+    }
+    
+    if(DEVICEMODE == COMPUTER_CONTROL)
+    {
+        ComputerControl();
     }
 }
