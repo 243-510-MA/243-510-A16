@@ -11,6 +11,7 @@
 #include "door_unlock.h"
 #include "projector_screen.h"
 #include "computer_control.h"
+#include "demo_pan.h"
 
 
 
@@ -20,6 +21,7 @@
 #define TEACHER 3                   //Mista ze teacha
 #define STUDENT 4                   //You little shit
 #define COMPUTER_CONTROL 5          //Boop Beep Boop
+#define DEMO_PAN 7
 
 //*************************************************************************
 
@@ -67,5 +69,10 @@ void main(void)
     if(DEVICEMODE == COMPUTER_CONTROL)
     {
         ComputerControl();
+    }
+    
+    if(DEVICEMODE == DEMO_PAN)
+    {
+       Demo_Pan();      
     }
 }

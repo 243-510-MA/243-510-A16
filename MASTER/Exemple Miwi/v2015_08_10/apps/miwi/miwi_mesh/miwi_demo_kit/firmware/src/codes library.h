@@ -6,6 +6,8 @@
 #define PROJECTOR_MOTOR_UP   0x22
 #define ALARM_OFF            0x05
 #define ALARM_ON             0x06
+#define DEMO_ALARM_ON        0x16
+#define DEMO_ALARM_OFF       0x15
 
 #define QUEST_ON             0x77
 #define QUEST_OFF            0x88
