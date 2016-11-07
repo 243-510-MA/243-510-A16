@@ -28,8 +28,8 @@ void output_control(int on_off)
 void ComputerControl(void)
 {
     
-    ANCON0bits.PCFG1 = 1 ;
-    ANCON0bits.PCFG2 = 1 ; 
+    RX_ANALOG_DIGITAL = 1 ;
+    TX_ANALOG_DIGITAL = 1 ; 
     LCD_BKLT = 1;
     char Title[]= "Hello World!";
     uint8_t CMD = 1 ;
