@@ -20,10 +20,11 @@
 #define TEACHER 3                   //Mista ze teacha
 #define STUDENT 4                   //You little shit
 #define COMPUTER_CONTROL 5          //Boop Beep Boop
+#define MOUVEMENT 6                 //Beep Boop Boop
 
 //*************************************************************************
 
-#define DEVICEMODE COMPUTER_CONTROL // Choisir ici
+#define DEVICEMODE MOUVEMENT // Choisir ici
 
 //*************************************************************************
 
@@ -67,5 +68,10 @@ void main(void)
     if(DEVICEMODE == COMPUTER_CONTROL)
     {
         ComputerControl();
+    }
+    
+    if(DEVICEMODE == MOUVEMENT)
+    {
+        MovementDetector();
     }
 }
