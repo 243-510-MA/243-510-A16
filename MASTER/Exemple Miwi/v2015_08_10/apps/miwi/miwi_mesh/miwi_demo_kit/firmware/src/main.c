@@ -12,6 +12,7 @@
 #include "projector_screen.h"
 #include "computer_control.h"
 #include "demo_pan.h"
+#include "demo_mouvement.h"
 
 
 
@@ -21,6 +22,7 @@
 #define TEACHER 3                   //Mista ze teacha
 #define STUDENT 4                   //You little shit
 #define COMPUTER_CONTROL 5          //Boop Beep Boop
+#define MOVEMENT 6                  //Beep Boop Boop
 #define DEMO_PAN 7
 
 //*************************************************************************
@@ -69,6 +71,11 @@ void main(void)
     if(DEVICEMODE == COMPUTER_CONTROL)
     {
         ComputerControl();
+    }
+    
+    if(DEVICEMODE == MOVEMENT)
+    {
+        MovementDetector();
     }
     
     if(DEVICEMODE == DEMO_PAN)

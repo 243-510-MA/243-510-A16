@@ -108,8 +108,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _myShortAddress `S1082 ~T0 @X0 0 e ]
 "552 ../../../../../../framework\miwi/miwi_api.h
 [v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
-[; ;computer_control.h: 35: void output_control(int on_off);
-[; ;computer_control.h: 36: void ComputerControl(void);
+[; ;computer_control.h: 35: void ComputerControl(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7629,6 +7628,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
 [; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
 [; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
+"71 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[v _pwm_value_high_time `ui ~T0 @X0 1 e ]
+[i _pwm_value_high_time
+-> -> 400 `i `ui
+]
+[; ;miwikit_pic18f46j50_24j40\system.h: 71: uint16_t pwm_value_high_time = 400 ;
 [; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
 [; ;drv_mrf_miwi_24j40.h: 31: typedef union
 [; ;drv_mrf_miwi_24j40.h: 32: {

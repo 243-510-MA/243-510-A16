@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"74 ../src/system_config/miwikit_pic18f46j50_24j40/symbol.h
+"74 ../src/system_config/miwikit_pic18f46j50_24j40\symbol.h
 [s S1079 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1079 _MIWI_TICK_bytes b0 b1 b2 b3 ]
 "82
@@ -8,53 +8,78 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1078 `ul 1 `S1079 1 `uc -> 4 `i `S1080 1 ]
 [n S1078 _MIWI_TICK Val byte v word ]
-"15761 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18f46j50.h
-[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
-"8799
-[s S590 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S590 . TUN PLLEN INTSRC ]
-"8804
-[s S591 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S591 . TUN0 TUN1 TUN2 TUN3 TUN4 TUN5 ]
-"8798
-[u S589 `S590 1 `S591 1 ]
-[n S589 . . . ]
-"8813
-[v _OSCTUNEbits `VS589 ~T0 @X0 0 e@3995 ]
-"12235
-[s S771 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S771 . SWDTEN ULPSINK ULPEN DS . ULPLVL LVDSTAT REGSLP ]
-"12245
-[s S772 :1 `uc 1 ]
-[n S772 . SWDTE ]
-"12234
-[u S770 `S771 1 `S772 1 ]
-[n S770 . . . ]
-"12249
-[v _WDTCONbits `VS770 ~T0 @X0 0 e@4032 ]
-"9834
-[v _EECON2 `Vuc ~T0 @X0 0 e@4007 ]
-"277
-[s S2 :1 `uc 1 ]
-[n S2 . IOLOCK ]
-"276
-[u S1 `S2 1 ]
-[n S1 . . ]
-"281
-[v _PPSCONbits `VS1 ~T0 @X0 0 e@3839 ]
-"181
-[v _RPINR1 `Vuc ~T0 @X0 0 e@3815 ]
-"247
-[v _RPINR21 `Vuc ~T0 @X0 0 e@3835 ]
-"157
-[v _RPOR21 `Vuc ~T0 @X0 0 e@3803 ]
-"145
-[v _RPOR19 `Vuc ~T0 @X0 0 e@3801 ]
-"2570
-[v _ANCON0 `Vuc ~T0 @X0 0 e@3912 ]
-"2631
-[v _ANCON1 `Vuc ~T0 @X0 0 e@3913 ]
-"7778
+"8317 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18f46j50.h
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"7646
+[s S516 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S516 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"7656
+[s S517 :1 `uc 1 ]
+[n S517 . LB0 ]
+"7659
+[s S518 :1 `uc 1 :1 `uc 1 ]
+[n S518 . . LB1 ]
+"7663
+[s S519 :2 `uc 1 :1 `uc 1 ]
+[n S519 . . LB2 ]
+"7667
+[s S520 :3 `uc 1 :1 `uc 1 ]
+[n S520 . . LB3 ]
+"7671
+[s S521 :4 `uc 1 :1 `uc 1 ]
+[n S521 . . LB4 ]
+"7675
+[s S522 :5 `uc 1 :1 `uc 1 ]
+[n S522 . . LB5 ]
+"7679
+[s S523 :6 `uc 1 :1 `uc 1 ]
+[n S523 . . LB6 ]
+"7683
+[s S524 :7 `uc 1 :1 `uc 1 ]
+[n S524 . . LB7 ]
+"7645
+[u S515 `S516 1 `S517 1 `S518 1 `S519 1 `S520 1 `S521 1 `S522 1 `S523 1 `S524 1 ]
+[n S515 . . . . . . . . . . ]
+"7688
+[v _LATBbits `VS515 ~T0 @X0 0 e@3978 ]
+"8028
+[s S545 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S545 . LATE0 LATE1 LATE2 ]
+"8033
+[s S546 :1 `uc 1 ]
+[n S546 . LE0 ]
+"8036
+[s S547 :1 `uc 1 :1 `uc 1 ]
+[n S547 . . LE1 ]
+"8040
+[s S548 :2 `uc 1 :1 `uc 1 ]
+[n S548 . . LE2 ]
+"8027
+[u S544 `S545 1 `S546 1 `S547 1 `S548 1 ]
+[n S544 . . . . . ]
+"8045
+[v _LATEbits `VS544 ~T0 @X0 0 e@3981 ]
+"710 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
+"649
+[s S1114 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1114 . broadcast ackReq secEn repeat command srcPrsnt altSrcAddr ]
+"646
+[u S1113 `uc 1 `S1114 1 ]
+[n S1113 . Val bits ]
+"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[u S1082 `uc -> 2 `i `ui 1 ]
+[n S1082 . v Val ]
+"644 ../../../../../../framework\miwi/miwi_api.h
+[s S1112 `S1113 1 `S1082 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1112 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
+"950
+[v _rxMessage `S1112 ~T0 @X0 0 e ]
+"6 ../src/demo_pan.h
+[v _demo_gyro `(v ~T0 @X0 0 ef1`i ]
+"752 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
+"7778 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18f46j50.h
 [s S526 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S526 . LATC0 LATC1 LATC2 . LATC4 LATC5 LATC6 LATC7 ]
 "7788
@@ -83,176 +108,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S525 . . . . . . . . . ]
 "7816
 [v _LATCbits `VS525 ~T0 @X0 0 e@3979 ]
-"7528
-[s S507 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S507 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
-"7538
-[s S508 :1 `uc 1 ]
-[n S508 . LA0 ]
-"7541
-[s S509 :1 `uc 1 :1 `uc 1 ]
-[n S509 . . LA1 ]
-"7545
-[s S510 :2 `uc 1 :1 `uc 1 ]
-[n S510 . . LA2 ]
-"7549
-[s S511 :3 `uc 1 :1 `uc 1 ]
-[n S511 . . LA3 ]
-"7553
-[s S512 :5 `uc 1 :1 `uc 1 ]
-[n S512 . . LA5 ]
-"7557
-[s S513 :6 `uc 1 :1 `uc 1 ]
-[n S513 . . LA6 ]
-"7561
-[s S514 :7 `uc 1 :1 `uc 1 ]
-[n S514 . . LA7 ]
-"7527
-[u S506 `S507 1 `S508 1 `S509 1 `S510 1 `S511 1 `S512 1 `S513 1 `S514 1 ]
-[n S506 . . . . . . . . . ]
-"7566
-[v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
-"8384
-[s S564 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S564 . TRISC0 TRISC1 TRISC2 . TRISC4 TRISC5 TRISC6 TRISC7 ]
-"8383
-[u S563 `S564 1 ]
-[n S563 . . ]
-"8395
-[v _TRISCbits `VS563 ~T0 @X0 0 e@3988 ]
-"8267
-[s S560 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S560 . TRISA0 TRISA1 TRISA2 TRISA3 . TRISA5 TRISA6 TRISA7 ]
-"8266
-[u S559 `S560 1 ]
-[n S559 . . ]
-"8278
-[v _TRISAbits `VS559 ~T0 @X0 0 e@3986 ]
-"8323
-[s S562 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S562 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
-"8322
-[u S561 `S562 1 ]
-[n S561 . . ]
-"8334
-[v _TRISBbits `VS561 ~T0 @X0 0 e@3987 ]
-"16543
-[s S1049 :7 `uc 1 :1 `uc 1 ]
-[n S1049 . . NOT_RBPU ]
-"16547
-[s S1050 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1050 . RBIP INT3IP TMR0IP INTEDG3 INTEDG2 INTEDG1 INTEDG0 nRBPU ]
-"16557
-[s S1051 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
-[n S1051 . . INT3P T0IP . RBPU ]
-"16542
-[u S1048 `S1049 1 `S1050 1 `S1051 1 ]
-[n S1048 . . . . ]
-"16565
-[v _INTCON2bits `VS1048 ~T0 @X0 0 e@4081 ]
-"7896
-[s S535 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S535 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"7906
-[s S536 :1 `uc 1 ]
-[n S536 . LD0 ]
-"7909
-[s S537 :1 `uc 1 :1 `uc 1 ]
-[n S537 . . LD1 ]
-"7913
-[s S538 :2 `uc 1 :1 `uc 1 ]
-[n S538 . . LD2 ]
-"7917
-[s S539 :3 `uc 1 :1 `uc 1 ]
-[n S539 . . LD3 ]
-"7921
-[s S540 :4 `uc 1 :1 `uc 1 ]
-[n S540 . . LD4 ]
-"7925
-[s S541 :5 `uc 1 :1 `uc 1 ]
-[n S541 . . LD5 ]
-"7929
-[s S542 :6 `uc 1 :1 `uc 1 ]
-[n S542 . . LD6 ]
-"7933
-[s S543 :7 `uc 1 :1 `uc 1 ]
-[n S543 . . LD7 ]
-"7895
-[u S534 `S535 1 `S536 1 `S537 1 `S538 1 `S539 1 `S540 1 `S541 1 `S542 1 `S543 1 ]
-[n S534 . . . . . . . . . . ]
-"7938
-[v _LATDbits `VS534 ~T0 @X0 0 e@3980 ]
-"8440
-[s S566 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S566 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
-"8439
-[u S565 `S566 1 ]
-[n S565 . . ]
-"8451
-[v _TRISDbits `VS565 ~T0 @X0 0 e@3989 ]
-"16635
-[s S1053 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1053 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"16645
-[s S1054 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1054 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"16655
-[s S1055 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1055 . . GIEL GIEH ]
-"16634
-[u S1052 `S1053 1 `S1054 1 `S1055 1 ]
-[n S1052 . . . . ]
-"16661
-[v _INTCONbits `VS1052 ~T0 @X0 0 e@4082 ]
-"13240
-[v _SSP1STAT `Vuc ~T0 @X0 0 e@4039 ]
-"13003
-[v _SSP1CON1 `Vuc ~T0 @X0 0 e@4038 ]
-"8028
-[s S545 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S545 . LATE0 LATE1 LATE2 ]
-"8033
-[s S546 :1 `uc 1 ]
-[n S546 . LE0 ]
-"8036
-[s S547 :1 `uc 1 :1 `uc 1 ]
-[n S547 . . LE1 ]
-"8040
-[s S548 :2 `uc 1 :1 `uc 1 ]
-[n S548 . . LE2 ]
-"8027
-[u S544 `S545 1 `S546 1 `S547 1 `S548 1 ]
-[n S544 . . . . . ]
-"8045
-[v _LATEbits `VS544 ~T0 @X0 0 e@3981 ]
-"8501
-[s S568 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S568 . TRISE0 TRISE1 TRISE2 ]
-"8500
-[u S567 `S568 1 ]
-[n S567 . . ]
-"8507
-[v _TRISEbits `VS567 ~T0 @X0 0 e@3990 ]
-"4523
-[v _SSP2STAT `Vuc ~T0 @X0 0 e@3955 ]
-"4383
-[v _SSP2CON1 `Vuc ~T0 @X0 0 e@3954 ]
-"9638
-[s S632 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S632 . RTCCIF TMR3GIF CTMUIF TMR4IF TX2IF RC2IF BCL2IF SSP2IF ]
-"9648
-[s S633 :1 `uc 1 :1 `uc 1 ]
-[n S633 . . RXBNIF ]
-"9652
-[s S634 :4 `uc 1 :1 `uc 1 ]
-[n S634 . . TXBNIF ]
-"9637
-[u S631 `S632 1 `S633 1 `S634 1 ]
-[n S631 . . . . ]
-"9657
-[v _PIR3bits `VS631 ~T0 @X0 0 e@4004 ]
-"45 ../src/system_config/miwikit_pic18f46j50_24j40/lcd.h
-[v _LCD_Initialize `(v ~T0 @X0 0 ef ]
+[; ;demo_pan.h: 5: void Demo_Pan(void);
+[; ;demo_pan.h: 6: void demo_gyro(int status);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7714,267 +7571,448 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;lcd.h: 43: extern uint8_t LCDText[16*2+1];
-[; ;lcd.h: 45: void LCD_Initialize(void);
-[; ;lcd.h: 46: void LCD_Update(void);
-[; ;lcd.h: 47: void LCD_Erase(void);
-[; ;lcd.h: 48: void LCD_BacklightON(void);
-[; ;lcd.h: 49: void LCD_BacklightOFF(void);
-[; ;lcd.h: 50: void LCD_Display(char *, uint8_t, bool);
-[; ;lcd.h: 51: void LCDWriteLine(uint16_t number, char *line);
-[; ;lcd.h: 52: void UserInterruptHandler(void);
-[; ;eeprom.h: 27: void EEPROMRead(uint8_t *Dest, uint8_t Addr , uint8_t count);
-[; ;eeprom.h: 28: void Read_MAC_Address(void);
-[; ;serial_flash.h: 27: void SSTRead(uint8_t *Dest, uint8_t *Addr , uint8_t count);
-[; ;serial_flash.h: 28: void SSTWrite(uint8_t *Src, uint8_t *Addr, uint8_t count);
-[; ;serial_flash.h: 29: void SSTGetID(uint8_t *Dest);
-[; ;symbol.h: 71: typedef union _MIWI_TICK
-[; ;symbol.h: 72: {
-[; ;symbol.h: 73: uint32_t Val;
-[; ;symbol.h: 74: struct _MIWI_TICK_bytes
-[; ;symbol.h: 75: {
-[; ;symbol.h: 76: uint8_t b0;
-[; ;symbol.h: 77: uint8_t b1;
-[; ;symbol.h: 78: uint8_t b2;
-[; ;symbol.h: 79: uint8_t b3;
-[; ;symbol.h: 80: } byte;
-[; ;symbol.h: 81: uint8_t v[4];
-[; ;symbol.h: 82: struct _MIWI_TICK_words
-[; ;symbol.h: 83: {
-[; ;symbol.h: 84: uint16_t w0;
-[; ;symbol.h: 85: uint16_t w1;
-[; ;symbol.h: 86: } word;
-[; ;symbol.h: 87: } MIWI_TICK;
-[; ;symbol.h: 89: void InitSymbolTimer(void);
-[; ;symbol.h: 90: MIWI_TICK MiWi_TickGet(void);
-[; ;symbol.h: 94: extern volatile uint8_t timerExtension1,timerExtension2;
-[; ;delay.h: 47: void DELAY_10us( uint32_t tenMicroSecondCounter );
-[; ;delay.h: 68: void DELAY_ms( uint16_t ms );
-"32 ../src/system_config/miwikit_pic18f46j50_24j40/button.h
+[; ;miwikit_pic18f46j50_24j40\lcd.h: 43: extern uint8_t LCDText[16*2+1];
+[; ;miwikit_pic18f46j50_24j40\lcd.h: 45: void LCD_Initialize(void);
+[; ;miwikit_pic18f46j50_24j40\lcd.h: 46: void LCD_Update(void);
+[; ;miwikit_pic18f46j50_24j40\lcd.h: 47: void LCD_Erase(void);
+[; ;miwikit_pic18f46j50_24j40\lcd.h: 48: void LCD_BacklightON(void);
+[; ;miwikit_pic18f46j50_24j40\lcd.h: 49: void LCD_BacklightOFF(void);
+[; ;miwikit_pic18f46j50_24j40\lcd.h: 50: void LCD_Display(char *, uint8_t, bool);
+[; ;miwikit_pic18f46j50_24j40\lcd.h: 51: void LCDWriteLine(uint16_t number, char *line);
+[; ;miwikit_pic18f46j50_24j40\lcd.h: 52: void UserInterruptHandler(void);
+[; ;miwikit_pic18f46j50_24j40\eeprom.h: 27: void EEPROMRead(uint8_t *Dest, uint8_t Addr , uint8_t count);
+[; ;miwikit_pic18f46j50_24j40\eeprom.h: 28: void Read_MAC_Address(void);
+[; ;miwikit_pic18f46j50_24j40\serial_flash.h: 27: void SSTRead(uint8_t *Dest, uint8_t *Addr , uint8_t count);
+[; ;miwikit_pic18f46j50_24j40\serial_flash.h: 28: void SSTWrite(uint8_t *Src, uint8_t *Addr, uint8_t count);
+[; ;miwikit_pic18f46j50_24j40\serial_flash.h: 29: void SSTGetID(uint8_t *Dest);
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 71: typedef union _MIWI_TICK
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 72: {
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 73: uint32_t Val;
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 74: struct _MIWI_TICK_bytes
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 75: {
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 76: uint8_t b0;
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 77: uint8_t b1;
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 78: uint8_t b2;
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 79: uint8_t b3;
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 80: } byte;
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 81: uint8_t v[4];
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 82: struct _MIWI_TICK_words
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 83: {
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 84: uint16_t w0;
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 85: uint16_t w1;
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 86: } word;
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 87: } MIWI_TICK;
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 89: void InitSymbolTimer(void);
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 90: MIWI_TICK MiWi_TickGet(void);
+[; ;miwikit_pic18f46j50_24j40\symbol.h: 94: extern volatile uint8_t timerExtension1,timerExtension2;
+[; ;miwikit_pic18f46j50_24j40\delay.h: 47: void DELAY_10us( uint32_t tenMicroSecondCounter );
+[; ;miwikit_pic18f46j50_24j40\delay.h: 68: void DELAY_ms( uint16_t ms );
+"32 ../src/system_config/miwikit_pic18f46j50_24j40\button.h
 [v _switch0PressTime `S1078 ~T0 @X0 1 e ]
-[; ;button.h: 32: MIWI_TICK switch0PressTime;
+[; ;miwikit_pic18f46j50_24j40\button.h: 32: MIWI_TICK switch0PressTime;
 "33
 [v _switch1PressTime `S1078 ~T0 @X0 1 e ]
-[; ;button.h: 33: MIWI_TICK switch1PressTime;
-[; ;button.h: 35: uint8_t BUTTON_Pressed(void);
-[; ;spi.h: 29: void SPIPut(uint8_t v);
-[; ;spi.h: 30: uint8_t SPIGet(void);
-[; ;spi.h: 32: void SPIPut2(uint8_t v);
-[; ;spi.h: 33: uint8_t SPIGet2(void);
-[; ;system.h: 54: typedef union
-[; ;system.h: 55: {
-[; ;system.h: 57: uint8_t v[4];
-[; ;system.h: 58: uint16_t w[2];
-[; ;system.h: 59: uint32_t Val;
-[; ;system.h: 61: }API_UINT32_UNION;
-[; ;system.h: 63: typedef union
-[; ;system.h: 64: {
-[; ;system.h: 66: uint8_t v[2];
-[; ;system.h: 67: uint16_t Val;
-[; ;system.h: 69: }API_UINT16_UNION;
-[; ;system.h: 122: void SYSTEM_Initialize(void);
-"26 ../src/system_config/miwikit_pic18f46j50_24j40/system.c
-[p x OSC=INTOSCPLL ]
-[p x WDTEN=OFF ]
-[p x XINST=OFF ]
-[p x WDTPS=2048 ]
-[p x PLLDIV=2 ]
-[p x CPUDIV=OSC3_PLL3 ]
-"47
-[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
-"48
+[; ;miwikit_pic18f46j50_24j40\button.h: 33: MIWI_TICK switch1PressTime;
+[; ;miwikit_pic18f46j50_24j40\button.h: 35: uint8_t BUTTON_Pressed(void);
+[; ;miwikit_pic18f46j50_24j40\spi.h: 29: void SPIPut(uint8_t v);
+[; ;miwikit_pic18f46j50_24j40\spi.h: 30: uint8_t SPIGet(void);
+[; ;miwikit_pic18f46j50_24j40\spi.h: 32: void SPIPut2(uint8_t v);
+[; ;miwikit_pic18f46j50_24j40\spi.h: 33: uint8_t SPIGet2(void);
+[; ;miwikit_pic18f46j50_24j40\system.h: 54: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 55: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 57: uint8_t v[4];
+[; ;miwikit_pic18f46j50_24j40\system.h: 58: uint16_t w[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 59: uint32_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 61: }API_UINT32_UNION;
+[; ;miwikit_pic18f46j50_24j40\system.h: 63: typedef union
+[; ;miwikit_pic18f46j50_24j40\system.h: 64: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
+[; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
+[; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
+"71 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[v _pwm_value_high_time `ui ~T0 @X0 1 e ]
+[i _pwm_value_high_time
+-> -> 400 `i `ui
+]
+[; ;miwikit_pic18f46j50_24j40\system.h: 71: uint16_t pwm_value_high_time = 400 ;
+[; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
+[; ;drv_mrf_miwi_24j40.h: 31: typedef union
+[; ;drv_mrf_miwi_24j40.h: 32: {
+[; ;drv_mrf_miwi_24j40.h: 33: uint8_t Val;
+[; ;drv_mrf_miwi_24j40.h: 34: struct
+[; ;drv_mrf_miwi_24j40.h: 35: {
+[; ;drv_mrf_miwi_24j40.h: 36: uint8_t RF_TXIF :1;
+[; ;drv_mrf_miwi_24j40.h: 37: uint8_t :2;
+[; ;drv_mrf_miwi_24j40.h: 38: uint8_t RF_RXIF :1;
+[; ;drv_mrf_miwi_24j40.h: 39: uint8_t SECIF :1;
+[; ;drv_mrf_miwi_24j40.h: 40: uint8_t :4;
+[; ;drv_mrf_miwi_24j40.h: 41: }bits;
+[; ;drv_mrf_miwi_24j40.h: 42: } MRF24J40_IFREG;
+[; ;drv_mrf_miwi_24j40.h: 44: typedef union
+[; ;drv_mrf_miwi_24j40.h: 45: {
+[; ;drv_mrf_miwi_24j40.h: 46: uint8_t Val;
+[; ;drv_mrf_miwi_24j40.h: 47: struct
+[; ;drv_mrf_miwi_24j40.h: 48: {
+[; ;drv_mrf_miwi_24j40.h: 49: uint8_t TX_BUSY : 1;
+[; ;drv_mrf_miwi_24j40.h: 50: uint8_t TX_PENDING_ACK : 1;
+[; ;drv_mrf_miwi_24j40.h: 51: uint8_t TX_FAIL : 1;
+[; ;drv_mrf_miwi_24j40.h: 52: uint8_t RX_SECURITY : 1;
+[; ;drv_mrf_miwi_24j40.h: 53: uint8_t RX_IGNORE_SECURITY : 1;
+[; ;drv_mrf_miwi_24j40.h: 54: uint8_t RX_BUFFERED : 1;
+[; ;drv_mrf_miwi_24j40.h: 55: uint8_t SEC_IF : 1;
+[; ;drv_mrf_miwi_24j40.h: 56: } bits;
+[; ;drv_mrf_miwi_24j40.h: 57: } MRF24J40_STATUS;
+[; ;drv_mrf_miwi.h: 84: typedef union _DRIVER_UINT8_UNION_
+[; ;drv_mrf_miwi.h: 85: {
+[; ;drv_mrf_miwi.h: 86: uint8_t Val;
+[; ;drv_mrf_miwi.h: 87: struct
+[; ;drv_mrf_miwi.h: 88: {
+[; ;drv_mrf_miwi.h: 89: uint8_t b0:1;
+[; ;drv_mrf_miwi.h: 90: uint8_t b1:1;
+[; ;drv_mrf_miwi.h: 91: uint8_t b2:1;
+[; ;drv_mrf_miwi.h: 92: uint8_t b3:1;
+[; ;drv_mrf_miwi.h: 93: uint8_t b4:1;
+[; ;drv_mrf_miwi.h: 94: uint8_t b5:1;
+[; ;drv_mrf_miwi.h: 95: uint8_t b6:1;
+[; ;drv_mrf_miwi.h: 96: uint8_t b7:1;
+[; ;drv_mrf_miwi.h: 97: } bits;
+[; ;drv_mrf_miwi.h: 99: } DRIVER_UINT8_UNION;
+[; ;drv_mrf_miwi.h: 106: typedef struct
+[; ;drv_mrf_miwi.h: 107: {
+[; ;drv_mrf_miwi.h: 108: union
+[; ;drv_mrf_miwi.h: 109: {
+[; ;drv_mrf_miwi.h: 110: uint8_t Val;
+[; ;drv_mrf_miwi.h: 111: struct
+[; ;drv_mrf_miwi.h: 112: {
+[; ;drv_mrf_miwi.h: 113: uint8_t packetType : 2;
+[; ;drv_mrf_miwi.h: 118: uint8_t broadcast : 1;
+[; ;drv_mrf_miwi.h: 119: uint8_t secEn : 1;
+[; ;drv_mrf_miwi.h: 120: uint8_t repeat : 1;
+[; ;drv_mrf_miwi.h: 121: uint8_t ackReq : 1;
+[; ;drv_mrf_miwi.h: 122: uint8_t destPrsnt : 1;
+[; ;drv_mrf_miwi.h: 123: uint8_t sourcePrsnt : 1;
+[; ;drv_mrf_miwi.h: 124: } bits;
+[; ;drv_mrf_miwi.h: 125: } flags;
+[; ;drv_mrf_miwi.h: 127: uint8_t *DestAddress;
+[; ;drv_mrf_miwi.h: 129: bool altDestAddr;
+[; ;drv_mrf_miwi.h: 130: bool altSrcAddr;
+[; ;drv_mrf_miwi.h: 131: API_UINT16_UNION DestPANID;
+[; ;drv_mrf_miwi.h: 134: } MAC_TRANS_PARAM;
+[; ;drv_mrf_miwi.h: 142: typedef struct
+[; ;drv_mrf_miwi.h: 143: {
+[; ;drv_mrf_miwi.h: 144: union
+[; ;drv_mrf_miwi.h: 145: {
+[; ;drv_mrf_miwi.h: 146: uint8_t Val;
+[; ;drv_mrf_miwi.h: 147: struct
+[; ;drv_mrf_miwi.h: 148: {
+[; ;drv_mrf_miwi.h: 149: uint8_t packetType :2;
+[; ;drv_mrf_miwi.h: 154: uint8_t broadcast :1;
+[; ;drv_mrf_miwi.h: 155: uint8_t secEn :1;
+[; ;drv_mrf_miwi.h: 156: uint8_t repeat :1;
+[; ;drv_mrf_miwi.h: 157: uint8_t ackReq :1;
+[; ;drv_mrf_miwi.h: 158: uint8_t destPrsnt :1;
+[; ;drv_mrf_miwi.h: 159: uint8_t sourcePrsnt :1;
+[; ;drv_mrf_miwi.h: 160: } bits;
+[; ;drv_mrf_miwi.h: 161: } flags;
+[; ;drv_mrf_miwi.h: 163: uint8_t * SourceAddress;
+[; ;drv_mrf_miwi.h: 164: uint8_t * Payload;
+[; ;drv_mrf_miwi.h: 165: uint8_t PayloadLen;
+[; ;drv_mrf_miwi.h: 166: uint8_t RSSIValue;
+[; ;drv_mrf_miwi.h: 167: uint8_t LQIValue;
+[; ;drv_mrf_miwi.h: 169: bool altSourceAddress;
+[; ;drv_mrf_miwi.h: 170: API_UINT16_UNION SourcePANID;
+[; ;drv_mrf_miwi.h: 172: } MAC_RECEIVED_PACKET;
+[; ;drv_mrf_miwi.h: 179: typedef struct
+[; ;drv_mrf_miwi.h: 180: {
+[; ;drv_mrf_miwi.h: 181: union
+[; ;drv_mrf_miwi.h: 182: {
+[; ;drv_mrf_miwi.h: 183: uint8_t Val;
+[; ;drv_mrf_miwi.h: 184: struct
+[; ;drv_mrf_miwi.h: 185: {
+[; ;drv_mrf_miwi.h: 186: uint8_t RepeaterMode :1;
+[; ;drv_mrf_miwi.h: 187: uint8_t CCAEnable :1;
+[; ;drv_mrf_miwi.h: 188: uint8_t NetworkFreezer :1;
+[; ;drv_mrf_miwi.h: 189: uint8_t PAddrLength :4;
+[; ;drv_mrf_miwi.h: 190: } bits;
+[; ;drv_mrf_miwi.h: 191: } actionFlags;
+[; ;drv_mrf_miwi.h: 193: uint8_t *PAddress;
+[; ;drv_mrf_miwi.h: 195: } MACINIT_PARAM;
+[; ;drv_mrf_miwi.h: 197: extern MAC_RECEIVED_PACKET MACRxPacket;
+[; ;drv_mrf_miwi.h: 239: bool MiMAC_SetChannel(uint8_t channel, uint8_t offsetFreq);
+[; ;drv_mrf_miwi.h: 274: bool MiMAC_SetPower(uint8_t outputPower);
+[; ;drv_mrf_miwi.h: 313: bool MiMAC_SetAltAddress(uint8_t *Address, uint8_t *PANID);
+[; ;drv_mrf_miwi.h: 345: bool MiMAC_Init(MACINIT_PARAM initValue);
+[; ;drv_mrf_miwi.h: 380: uint8_t MiMAC_ChannelAssessment(uint8_t AssessmentMode);
+[; ;drv_mrf_miwi.h: 418: void MiMAC_DiscardPacket(void);
+[; ;drv_mrf_miwi.h: 458: bool MiMAC_ReceivedPacket(void);
+[; ;drv_mrf_miwi.h: 494: bool MiMAC_SendPacket(MAC_TRANS_PARAM transParam, uint8_t *MACPayload, uint8_t MACPayloadLen);
+[; ;drv_mrf_miwi.h: 538: bool MiMAC_PowerState(uint8_t PowerState);
+[; ;drv_mrf_miwi.h: 549: void UserInterruptHandler(void);
+[; ;miwi_mesh.h: 44: void MiWiTasks(void);
+[; ;miwi_mesh.h: 45: uint8_t findNextNetworkEntry(void);
+[; ;miwi_mesh.h: 46: void ClearNetworkTable(void);
+[; ;miwi_mesh.h: 47: uint8_t SearchForLongAddress(void);
+[; ;miwi_mesh.h: 48: uint8_t SearchForShortAddress(void);
+[; ;miwi_mesh.h: 49: void SendIndirectPacket(uint8_t *Address, uint8_t *AltAddress, bool isAltAddress);
+[; ;miwi_mesh.h: 50: uint8_t AddNodeToNetworkTable(void);
+[; ;miwi_mesh.h: 51: void DiscoverNodeByEUI(void);
+[; ;miwi_mesh.h: 52: void OpenSocket(void);
+[; ;miwi_mesh.h: 53: bool isSameAddress( uint8_t *Address1,  uint8_t *Address2);
+[; ;miwi_mesh.h: 54: void DumpConnection(uint8_t index);
+[; ;miwi_mesh.h: 55: bool UnicastShortAddress(uint8_t *DestAddress);
+[; ;miwi_mesh.h: 125: typedef union _MIWI_STATE_MACHINE
+[; ;miwi_mesh.h: 126: {
+[; ;miwi_mesh.h: 127: uint16_t Val;
+[; ;miwi_mesh.h: 128: struct {
+[; ;miwi_mesh.h: 129: uint8_t searchingForNetwork :1;
+[; ;miwi_mesh.h: 130: uint8_t memberOfNetwork :1;
+[; ;miwi_mesh.h: 131: uint8_t RxHasUserData :1;
+[; ;miwi_mesh.h: 132: uint8_t MiWiAckInProgress :1;
+[; ;miwi_mesh.h: 133: uint8_t saveConnection :1;
+[; ;miwi_mesh.h: 134: uint8_t EUISearching :1;
+[; ;miwi_mesh.h: 135: uint8_t DataRequesting :1;
+[; ;miwi_mesh.h: 136: uint8_t Resynning :1;
+[; ;miwi_mesh.h: 137: uint8_t Sleeping :1;
+[; ;miwi_mesh.h: 138: } bits;
+[; ;miwi_mesh.h: 139: } MIWI_STATE_MACHINE;
+[; ;miwi_mesh.h: 142: typedef struct _OPEN_SOCKET
+[; ;miwi_mesh.h: 143: {
+[; ;miwi_mesh.h: 144: union _OPEN_SOCKET_STATUS
+[; ;miwi_mesh.h: 145: {
+[; ;miwi_mesh.h: 146: struct _OPEN_SOCKET_STATUS_bits
+[; ;miwi_mesh.h: 147: {
+[; ;miwi_mesh.h: 148: uint8_t matchFound :1;
+[; ;miwi_mesh.h: 149: uint8_t requestIsOpen :1;
+[; ;miwi_mesh.h: 150: uint8_t itIsMe :1;
+[; ;miwi_mesh.h: 151: } bits;
+[; ;miwi_mesh.h: 152: uint8_t Val;
+[; ;miwi_mesh.h: 153: } status;
+[; ;miwi_mesh.h: 154: uint8_t socketHandle;
+[; ;miwi_mesh.h: 155: API_UINT16_UNION ShortAddress1;
+[; ;miwi_mesh.h: 157: uint8_t LongAddress1[8];
+[; ;miwi_mesh.h: 159: uint8_t AdditionalNodeID1[1];
+[; ;miwi_mesh.h: 162: API_UINT16_UNION ShortAddress2;
+[; ;miwi_mesh.h: 163: uint8_t LongAddress2[8];
+[; ;miwi_mesh.h: 165: MIWI_TICK socketStart;
+[; ;miwi_mesh.h: 166: } OPEN_SOCKET;
+[; ;miwi_mesh.h: 174: typedef struct
+[; ;miwi_mesh.h: 175: {
+[; ;miwi_mesh.h: 176: MIWI_TICK TickStart;
+[; ;miwi_mesh.h: 179: API_UINT16_UNION DestPANID;
+[; ;miwi_mesh.h: 181: uint8_t DestAddress[8];
+[; ;miwi_mesh.h: 182: union
+[; ;miwi_mesh.h: 183: {
+[; ;miwi_mesh.h: 184: uint8_t Val;
+[; ;miwi_mesh.h: 185: struct
+[; ;miwi_mesh.h: 186: {
+[; ;miwi_mesh.h: 187: uint8_t isValid : 1;
+[; ;miwi_mesh.h: 188: uint8_t isBroadcast : 1;
+[; ;miwi_mesh.h: 189: uint8_t isCommand : 1;
+[; ;miwi_mesh.h: 190: uint8_t isSecured : 1;
+[; ;miwi_mesh.h: 191: uint8_t isAltAddr : 1;
+[; ;miwi_mesh.h: 192: } bits;
+[; ;miwi_mesh.h: 193: } flags;
+[; ;miwi_mesh.h: 194: uint8_t PayLoadSize;
+[; ;miwi_mesh.h: 198: uint8_t PayLoad[40+11];
+[; ;miwi_mesh.h: 200: } INDIRECT_MESSAGE;
+[; ;miwi_mesh.h: 205: extern MIWI_STATE_MACHINE MiWiStateMachine;
+[; ;miwi_mesh.h: 206: extern uint8_t TxBuffer[];
+[; ;miwi_mesh.h: 207: extern uint8_t TxData;
+[; ;miwi_mesh.h: 208: extern API_UINT16_UNION myPANID;
+[; ;miwi_mesh.h: 209: extern API_UINT16_UNION myShortAddress;
+[; ;miwi_mesh.h: 210: extern uint8_t myParent;
+[; ;miwi_mesh.h: 211: extern uint8_t tempLongAddress[8];
+[; ;miwi_mesh.h: 212: extern API_UINT16_UNION tempShortAddress;
+[; ;miwi_mesh.h: 213: extern OPEN_SOCKET openSocketInfo;
+[; ;miwi_api.h: 51: typedef union __CONNECTION_STATUS
+[; ;miwi_api.h: 52: {
+[; ;miwi_api.h: 53: uint8_t Val;
+[; ;miwi_api.h: 54: struct _CONNECTION_STAUTS_bits
+[; ;miwi_api.h: 55: {
+[; ;miwi_api.h: 56: uint8_t RXOnWhenIdle :1;
+[; ;miwi_api.h: 57: uint8_t directConnection :1;
+[; ;miwi_api.h: 58: uint8_t longAddressValid :1;
+[; ;miwi_api.h: 59: uint8_t shortAddressValid :1;
+[; ;miwi_api.h: 60: uint8_t FinishJoin :1;
+[; ;miwi_api.h: 61: uint8_t isFamily :1;
+[; ;miwi_api.h: 62: uint8_t filler :1;
+[; ;miwi_api.h: 63: uint8_t isValid :1;
+[; ;miwi_api.h: 64: } bits;
+[; ;miwi_api.h: 65: } CONNECTION_STATUS;
+[; ;miwi_api.h: 78: typedef struct __CONNECTION_ENTRY
+[; ;miwi_api.h: 79: {
+[; ;miwi_api.h: 81: API_UINT16_UNION PANID;
+[; ;miwi_api.h: 82: API_UINT16_UNION AltAddress;
+[; ;miwi_api.h: 84: uint8_t Address[8];
+[; ;miwi_api.h: 86: CONNECTION_STATUS status;
+[; ;miwi_api.h: 89: uint8_t PeerInfo[1];
+[; ;miwi_api.h: 91: } CONNECTION_ENTRY;
+[; ;miwi_api.h: 93: extern CONNECTION_ENTRY ConnectionTable[10];
+[; ;miwi_api.h: 95: extern uint8_t currentChannel;
+[; ;miwi_api.h: 136: bool MiApp_ProtocolInit(bool bNetworkFreezer);
+[; ;miwi_api.h: 178: bool MiApp_SetChannel(uint8_t Channel);
+[; ;miwi_api.h: 236: bool MiApp_StartConnection( uint8_t Mode, uint8_t ScanDuration, uint32_t ChannelMap);
+[; ;miwi_api.h: 246: typedef struct
+[; ;miwi_api.h: 247: {
+[; ;miwi_api.h: 248: uint8_t Channel;
+[; ;miwi_api.h: 249: uint8_t Address[8];
+[; ;miwi_api.h: 250: API_UINT16_UNION PANID;
+[; ;miwi_api.h: 251: uint8_t RSSIValue;
+[; ;miwi_api.h: 252: uint8_t LQIValue;
+[; ;miwi_api.h: 253: union
+[; ;miwi_api.h: 254: {
+[; ;miwi_api.h: 255: uint8_t Val;
+[; ;miwi_api.h: 256: struct
+[; ;miwi_api.h: 257: {
+[; ;miwi_api.h: 258: uint8_t Role: 2;
+[; ;miwi_api.h: 259: uint8_t Sleep: 1;
+[; ;miwi_api.h: 260: uint8_t SecurityEn: 1;
+[; ;miwi_api.h: 261: uint8_t RepeatEn: 1;
+[; ;miwi_api.h: 262: uint8_t AllowJoin: 1;
+[; ;miwi_api.h: 263: uint8_t Direct: 1;
+[; ;miwi_api.h: 264: uint8_t altSrcAddr: 1;
+[; ;miwi_api.h: 265: } bits;
+[; ;miwi_api.h: 266: } Capability;
+[; ;miwi_api.h: 268: uint8_t PeerInfo[1];
+[; ;miwi_api.h: 270: } ACTIVE_SCAN_RESULT;
+[; ;miwi_api.h: 273: extern ACTIVE_SCAN_RESULT ActiveScanResults[4];
+[; ;miwi_api.h: 320: uint8_t MiApp_SearchConnection(uint8_t ScanDuration, uint32_t ChannelMap);
+[; ;miwi_api.h: 374: uint8_t MiApp_EstablishConnection(uint8_t ActiveScanIndex, uint8_t Mode);
+[; ;miwi_api.h: 411: void MiApp_RemoveConnection(uint8_t ConnectionIndex);
+[; ;miwi_api.h: 457: void MiApp_ConnectionMode(uint8_t Mode);
+[; ;miwi_api.h: 552: bool MiApp_BroadcastPacket(bool SecEn );
+[; ;miwi_api.h: 591: bool MiApp_UnicastConnection(uint8_t ConnectionIndex, bool SecEn);
+[; ;miwi_api.h: 631: bool MiApp_UnicastAddress(uint8_t *DestinationAddress, bool PermanentAddr, bool SecEn);
+[; ;miwi_api.h: 643: typedef struct
+[; ;miwi_api.h: 644: {
+[; ;miwi_api.h: 645: union
+[; ;miwi_api.h: 646: {
+[; ;miwi_api.h: 647: uint8_t Val;
+[; ;miwi_api.h: 648: struct
+[; ;miwi_api.h: 649: {
+[; ;miwi_api.h: 650: uint8_t broadcast: 2;
+[; ;miwi_api.h: 651: uint8_t ackReq: 1;
+[; ;miwi_api.h: 652: uint8_t secEn: 1;
+[; ;miwi_api.h: 653: uint8_t repeat: 1;
+[; ;miwi_api.h: 654: uint8_t command: 1;
+[; ;miwi_api.h: 655: uint8_t srcPrsnt: 1;
+[; ;miwi_api.h: 656: uint8_t altSrcAddr: 1;
+[; ;miwi_api.h: 657: } bits;
+[; ;miwi_api.h: 658: } flags;
+[; ;miwi_api.h: 660: API_UINT16_UNION SourcePANID;
+[; ;miwi_api.h: 661: uint8_t *SourceAddress;
+[; ;miwi_api.h: 662: uint8_t *Payload;
+[; ;miwi_api.h: 663: uint8_t PayloadSize;
+[; ;miwi_api.h: 664: uint8_t PacketRSSI;
+[; ;miwi_api.h: 665: uint8_t PacketLQI;
+[; ;miwi_api.h: 667: } RECEIVED_MESSAGE;
+[; ;miwi_api.h: 710: bool MiApp_MessageAvailable(void);
+[; ;miwi_api.h: 752: void MiApp_DiscardMessage(void);
+[; ;miwi_api.h: 800: uint8_t MiApp_NoiseDetection(uint32_t ChannelMap, uint8_t ScanDuration, uint8_t DetectionMode,  uint8_t *NoiseLevel);
+[; ;miwi_api.h: 858: uint8_t MiApp_TransceiverPowerState(uint8_t Mode);
+[; ;miwi_api.h: 899: bool MiApp_InitChannelHopping( uint32_t ChannelMap);
+[; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
+[; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
+"14 ../src/demo_pan.c
+[v _Demo_Pan `(v ~T0 @X0 1 ef ]
+"15
 {
-[; ;system.c: 47: void SYSTEM_Initialize(void)
-[; ;system.c: 48: {
-[e :U _SYSTEM_Initialize ]
+[; ;demo_pan.c: 14: void Demo_Pan(void)
+[; ;demo_pan.c: 15: {
+[e :U _Demo_Pan ]
 [f ]
-[; ;system.c: 52: OSCCON = 0x78;
+[; ;demo_pan.c: 16: TRISB = 0x0;
+"16
+[e = _TRISB -> -> 0 `i `uc ]
+"17
+[v _status `i ~T0 @X0 1 a ]
+[; ;demo_pan.c: 17: int status = 0;
+[e = _status -> 0 `i ]
+[; ;demo_pan.c: 18: LATBbits.LATB3 = 0;
+"18
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+[; ;demo_pan.c: 19: LATBbits.LATB2 = 0;
+"19
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
+[; ;demo_pan.c: 22: LATEbits.LATE1 = 1;
+"22
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;demo_pan.c: 23: while(1)
+"23
+[e :U 1117 ]
+[; ;demo_pan.c: 24: {
+"24
+{
+[; ;demo_pan.c: 25: if(MiApp_MessageAvailable())
+"25
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1119  ]
+[; ;demo_pan.c: 26: {
+"26
+{
+[; ;demo_pan.c: 27: if(rxMessage.Payload[0] == 0x16 )
+"27
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 22 `i 1120  ]
+[; ;demo_pan.c: 28: {
+"28
+{
+[; ;demo_pan.c: 29: demo_gyro(1);
+"29
+[e ( _demo_gyro (1 -> 1 `i ]
+"30
+}
+[; ;demo_pan.c: 30: }
+[e $U 1121  ]
+"32
+[e :U 1120 ]
+[; ;demo_pan.c: 32: else if(rxMessage.Payload[0] == 0x15 )
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 21 `i 1122  ]
+[; ;demo_pan.c: 33: {
+"33
+{
+[; ;demo_pan.c: 35: demo_gyro(0);
+"35
+[e ( _demo_gyro (1 -> 0 `i ]
+"36
+}
+[e :U 1122 ]
+"38
+[e :U 1121 ]
+}
+[e :U 1119 ]
+[; ;demo_pan.c: 36: }
+[; ;demo_pan.c: 38: }
+[; ;demo_pan.c: 39: MiApp_DiscardMessage();
+"39
+[e ( _MiApp_DiscardMessage ..  ]
+"40
+}
+[e :U 1116 ]
+"23
+[e $U 1117  ]
+[e :U 1118 ]
+[; ;demo_pan.c: 40: }
+[; ;demo_pan.c: 44: }
+"44
+[e :UE 1115 ]
+}
+"46
+[v _demo_gyro `(v ~T0 @X0 1 ef1`i ]
+"47
+{
+[; ;demo_pan.c: 46: void demo_gyro(int status)
+[; ;demo_pan.c: 47: {
+[e :U _demo_gyro ]
+"46
+[v _status `i ~T0 @X0 1 r1 ]
+"47
+[f ]
+[; ;demo_pan.c: 48: LATCbits.LATC2 = status;
+"48
+[e = . . _LATCbits 0 2 -> _status `uc ]
+[; ;demo_pan.c: 49: LATBbits.LATB3 = status;
+"49
+[e = . . _LATBbits 0 3 -> _status `uc ]
+[; ;demo_pan.c: 52: }
 "52
-[e = _OSCCON -> -> 120 `i `uc ]
-[; ;system.c: 53: OSCTUNEbits.PLLEN = 1;
-"53
-[e = . . _OSCTUNEbits 0 1 -> -> 1 `i `uc ]
-[; ;system.c: 54: WDTCONbits.SWDTEN = 0;
-"54
-[e = . . _WDTCONbits 0 0 -> -> 0 `i `uc ]
-[; ;system.c: 60: EECON2 = 0x55;
-"60
-[e = _EECON2 -> -> 85 `i `uc ]
-[; ;system.c: 61: EECON2 = 0xAA;
-"61
-[e = _EECON2 -> -> 170 `i `uc ]
-[; ;system.c: 62: PPSCONbits.IOLOCK = 0;
-"62
-[e = . . _PPSCONbits 0 0 -> -> 0 `i `uc ]
-[; ;system.c: 64: RPINR1 = 17;
-"64
-[e = _RPINR1 -> -> 17 `i `uc ]
-[; ;system.c: 65: RPINR21 = 23;
-"65
-[e = _RPINR21 -> -> 23 `i `uc ]
-[; ;system.c: 66: RPOR21 = 10;
-"66
-[e = _RPOR21 -> -> 10 `i `uc ]
-[; ;system.c: 67: RPOR19 = 9;
-"67
-[e = _RPOR19 -> -> 9 `i `uc ]
-[; ;system.c: 70: EECON2 = 0x55;
-"70
-[e = _EECON2 -> -> 85 `i `uc ]
-[; ;system.c: 71: EECON2 = 0xAA;
-"71
-[e = _EECON2 -> -> 170 `i `uc ]
-[; ;system.c: 72: PPSCONbits.IOLOCK = 1;
-"72
-[e = . . _PPSCONbits 0 0 -> -> 1 `i `uc ]
-[; ;system.c: 77: ANCON0 = 0xFC;
-"77
-[e = _ANCON0 -> -> 252 `i `uc ]
-[; ;system.c: 78: ANCON1 = 0x1F;
-"78
-[e = _ANCON1 -> -> 31 `i `uc ]
-[; ;system.c: 83: LATCbits.LATC2 = 0;
-"83
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-[; ;system.c: 84: LATAbits.LATA6 = 0;
-"84
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;system.c: 85: LATAbits.LATA7 = 0;
-"85
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;system.c: 86: TRISCbits.TRISC2 = 0;
-"86
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-[; ;system.c: 87: TRISAbits.TRISA6 = 0;
-"87
-[e = . . _TRISAbits 0 6 -> -> 0 `i `uc ]
-[; ;system.c: 88: TRISAbits.TRISA7 = 0;
-"88
-[e = . . _TRISAbits 0 7 -> -> 0 `i `uc ]
-[; ;system.c: 90: TRISBbits.TRISB1 = 1;
-"90
-[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
-[; ;system.c: 91: TRISBbits.TRISB2 = 1;
-"91
-[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
-[; ;system.c: 93: INTCON2bits.RBPU = 0;
-"93
-[e = . . _INTCON2bits 2 4 -> -> 0 `i `uc ]
-[; ;system.c: 98: TRISAbits.TRISA1 = 1;
-"98
-[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
-[; ;system.c: 99: TRISAbits.TRISA0 = 1;
-"99
-[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-[; ;system.c: 107: LATAbits.LATA5 = 1;
-"107
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
-[; ;system.c: 108: LATDbits.LATD0 = 1;
-"108
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-[; ;system.c: 109: LATDbits.LATD1 = 1;
-"109
-[e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
-[; ;system.c: 111: TRISAbits.TRISA5 = 0;
-"111
-[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
-[; ;system.c: 112: TRISDbits.TRISD0 = 0;
-"112
-[e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
-[; ;system.c: 113: TRISDbits.TRISD1 = 0;
-"113
-[e = . . _TRISDbits 0 1 -> -> 0 `i `uc ]
-[; ;system.c: 114: TRISBbits.TRISB0 = 1;
-"114
-[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-[; ;system.c: 117: INTCON2bits.INTEDG0 = 0;
-"117
-[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
-[; ;system.c: 119: INTCONbits.INT0IF = 0;
-"119
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;system.c: 120: INTCONbits.INT0IE = 1;
-"120
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-[; ;system.c: 125: TRISBbits.TRISB5 = 1;
-"125
-[e = . . _TRISBbits 0 5 -> -> 1 `i `uc ]
-[; ;system.c: 126: TRISCbits.TRISC7 = 0;
-"126
-[e = . . _TRISCbits 0 7 -> -> 0 `i `uc ]
-[; ;system.c: 127: TRISBbits.TRISB4 = 0;
-"127
-[e = . . _TRISBbits 0 4 -> -> 0 `i `uc ]
-[; ;system.c: 129: SSP1STAT = 0xC0;
-"129
-[e = _SSP1STAT -> -> 192 `i `uc ]
-[; ;system.c: 130: SSP1CON1 = 0x20;
-"130
-[e = _SSP1CON1 -> -> 32 `i `uc ]
-[; ;system.c: 137: LATDbits.LATD5 = 1;
-"137
-[e = . . _LATDbits 0 5 -> -> 1 `i `uc ]
-[; ;system.c: 138: TRISDbits.TRISD5 = 0;
-"138
-[e = . . _TRISDbits 0 5 -> -> 0 `i `uc ]
-[; ;system.c: 139: LATEbits.LATE2 = 1;
-"139
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;system.c: 140: TRISEbits.TRISE2 = 0;
-"140
-[e = . . _TRISEbits 0 2 -> -> 0 `i `uc ]
-[; ;system.c: 146: LATEbits.LATE1 = 0;
-"146
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;system.c: 147: LATDbits.LATD7 = 1;
-"147
-[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
-[; ;system.c: 148: LATDbits.LATD3 = 0;
-"148
-[e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
-[; ;system.c: 149: LATEbits.LATE0 = 0;
-"149
-[e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
-[; ;system.c: 150: TRISEbits.TRISE1 = 0;
-"150
-[e = . . _TRISEbits 0 1 -> -> 0 `i `uc ]
-[; ;system.c: 151: TRISDbits.TRISD7 = 0;
-"151
-[e = . . _TRISDbits 0 7 -> -> 0 `i `uc ]
-[; ;system.c: 152: TRISDbits.TRISD3 = 0;
-"152
-[e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
-[; ;system.c: 153: TRISEbits.TRISE0 = 0;
-"153
-[e = . . _TRISEbits 0 0 -> -> 0 `i `uc ]
-[; ;system.c: 159: TRISDbits.TRISD6 = 1;
-"159
-[e = . . _TRISDbits 0 6 -> -> 1 `i `uc ]
-[; ;system.c: 160: TRISDbits.TRISD2 = 0;
-"160
-[e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
-[; ;system.c: 161: TRISDbits.TRISD4 = 0;
-"161
-[e = . . _TRISDbits 0 4 -> -> 0 `i `uc ]
-[; ;system.c: 163: SSP2STAT = 0x00;
-"163
-[e = _SSP2STAT -> -> 0 `i `uc ]
-[; ;system.c: 164: SSP2CON1 = 0x31;
-"164
-[e = _SSP2CON1 -> -> 49 `i `uc ]
-[; ;system.c: 166: PIR3bits.SSP2IF = 0;
-"166
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-[; ;system.c: 168: LCD_Initialize();
-"168
-[e ( _LCD_Initialize ..  ]
-[; ;system.c: 173: INTCONbits.GIEH = 1;
-"173
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
-[; ;system.c: 174: INTCONbits.GIEL = 1;
-"174
-[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
-[; ;system.c: 177: }
-"177
-[e :UE 1083 ]
+[e :UE 1123 ]
 }

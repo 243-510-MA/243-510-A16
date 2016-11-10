@@ -213,10 +213,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S515 . . . . . . . . . . ]
 "7688
 [v _LATBbits `VS515 ~T0 @X0 0 e@3978 ]
-"19356
-[v _TMR3IF `Vb ~T0 @X0 0 e@32009 ]
+"9357
+[s S615 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S615 . CCP2IF TMR3IF LVDIF BCL1IF USBIF CM1IF CM2IF OSCFIF ]
+"9367
+[s S616 :3 `uc 1 :1 `uc 1 ]
+[n S616 . . BCLIF ]
+"9371
+[s S617 :6 `uc 1 :1 `uc 1 ]
+[n S617 . . CMIF ]
+"9356
+[u S614 `S615 1 `S616 1 `S617 1 ]
+[n S614 . . . . ]
+"9376
+[v _PIR2bits `VS614 ~T0 @X0 0 e@4001 ]
 "5326
 [v _TMR3 `Vus ~T0 @X0 0 e@3962 ]
+"9278
+[s S611 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S611 . CCP2IE TMR3IE LVDIE BCL1IE USBIE CM1IE CM2IE OSCFIE ]
+"9288
+[s S612 :3 `uc 1 :1 `uc 1 ]
+[n S612 . . BCLIE ]
+"9292
+[s S613 :6 `uc 1 :1 `uc 1 ]
+[n S613 . . CMIE ]
+"9277
+[u S610 `S611 1 `S612 1 `S613 1 ]
+[n S610 . . . . ]
+"9297
+[v _PIE2bits `VS610 ~T0 @X0 0 e@4000 ]
 "35 ../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h
 [s S1103 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
 [n S1103 . RF_TXIF . RF_RXIF SECIF . ]
@@ -7781,6 +7807,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
 [; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
 [; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
+"71 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[v _pwm_value_high_time `ui ~T0 @X0 1 e ]
+[i _pwm_value_high_time
+-> -> 400 `i `ui
+]
+[; ;miwikit_pic18f46j50_24j40\system.h: 71: uint16_t pwm_value_high_time = 400 ;
 [; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
 [; ;miwi_mesh.h: 44: void MiWiTasks(void);
 [; ;miwi_mesh.h: 45: uint8_t findNextNetworkEntry(void);
@@ -9919,9 +9951,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1506
 [e :UE 1243 ]
 }
-[v F8342 `(v ~T0 @X0 1 tf ]
+[v F8343 `(v ~T0 @X0 1 tf ]
 "1856
-[v _high_isr `IF8342 ~T0 @X0 1 e ]
+[v _high_isr `IF8343 ~T0 @X0 1 e ]
 "1869
 {
 [; ;drv_mrf_miwi_24j40.c: 1856: void interrupt high_isr (void)
@@ -9945,343 +9977,367 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 1248 ]
 [; ;drv_mrf_miwi_24j40.c: 1877: }
-[; ;drv_mrf_miwi_24j40.c: 1879: if(TMR3IF){
+[; ;drv_mrf_miwi_24j40.c: 1879: if(PIR2bits.TMR3IF){
 "1879
-[e $ ! _TMR3IF 1249  ]
+[e $ ! != -> . . _PIR2bits 0 1 `i -> -> -> 0 `i `Vuc `i 1249  ]
 {
 "1880
-[v _pwm_value_high_time `ui ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1880: uint16_t pwm_value_high_time = 800;
-[e = _pwm_value_high_time -> -> 800 `i `ui ]
+[v F8344 `uc ~T0 @X0 1 s compte ]
 "1881
-[v F8344 `uc ~T0 @X0 1 s u ]
+[v F8345 `uc ~T0 @X0 1 s u ]
+[; ;drv_mrf_miwi_24j40.c: 1880: static uint8_t compte ;
 [; ;drv_mrf_miwi_24j40.c: 1881: static bool u;
-[; ;drv_mrf_miwi_24j40.c: 1882: if(u){
-"1882
-[e $ ! != -> F8344 `i -> -> -> 0 `i `uc `i 1250  ]
+[; ;drv_mrf_miwi_24j40.c: 1883: if(u){
+"1883
+[e $ ! != -> F8345 `i -> -> -> 0 `i `uc `i 1250  ]
 {
-[; ;drv_mrf_miwi_24j40.c: 1884: u = 0;
-"1884
-[e = F8344 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1885: u = 0;
 "1885
-[v _temp `ui ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1885: uint16_t temp = 65536 - (pwm_value_high_time + 2600);
-[e = _temp -> - -> 65536 `l -> + _pwm_value_high_time -> -> 2600 `i `ui `l `ui ]
-[; ;drv_mrf_miwi_24j40.c: 1886: LATAbits.LATA7 = 0;
+[e = F8345 -> -> 0 `i `uc ]
 "1886
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1887: TMR3 = temp;
+[v _temp `ui ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1886: uint16_t temp = 65536 - (pwm_value_high_time + 2600);
+[e = _temp -> - -> 65536 `l -> + _pwm_value_high_time -> -> 2600 `i `ui `l `ui ]
+[; ;drv_mrf_miwi_24j40.c: 1887: LATAbits.LATA3 = 1;
 "1887
-[e = _TMR3 -> _temp `us ]
-[; ;drv_mrf_miwi_24j40.c: 1888: TMR3IF = 0;
+[e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1888: TMR3 = temp;
 "1888
-[e = _TMR3IF -> -> 0 `i `b ]
+[e = _TMR3 -> _temp `us ]
+[; ;drv_mrf_miwi_24j40.c: 1889: PIR2bits.TMR3IF = 0;
 "1889
+[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
+"1890
 }
-[; ;drv_mrf_miwi_24j40.c: 1889: }else{
+[; ;drv_mrf_miwi_24j40.c: 1890: }else{
 [e $U 1251  ]
 [e :U 1250 ]
 {
-[; ;drv_mrf_miwi_24j40.c: 1890: u = 1;
-"1890
-[e = F8344 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1891: u = 1;
 "1891
-[v _temp `ui ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1891: uint16_t temp = 25536 + (pwm_value_high_time + 2600);
-[e = _temp + -> -> 25536 `i `ui + _pwm_value_high_time -> -> 2600 `i `ui ]
-[; ;drv_mrf_miwi_24j40.c: 1892: LATAbits.LATA7 = 1;
+[e = F8345 -> -> 1 `i `uc ]
 "1892
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1893: TMR3 = temp;
+[v _temp `ui ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1892: uint16_t temp = 25536 + (pwm_value_high_time + 2600);
+[e = _temp + -> -> 25536 `i `ui + _pwm_value_high_time -> -> 2600 `i `ui ]
+[; ;drv_mrf_miwi_24j40.c: 1893: LATAbits.LATA3 = 0;
 "1893
-[e = _TMR3 -> _temp `us ]
-[; ;drv_mrf_miwi_24j40.c: 1894: TMR3IF = 0;
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1894: TMR3 = temp;
 "1894
-[e = _TMR3IF -> -> 0 `i `b ]
+[e = _TMR3 -> _temp `us ]
+[; ;drv_mrf_miwi_24j40.c: 1895: PIR2bits.TMR3IF = 0;
+"1895
+[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
 "1897
 }
 [e :U 1251 ]
+[; ;drv_mrf_miwi_24j40.c: 1897: }
+[; ;drv_mrf_miwi_24j40.c: 1899: compte ++;
 "1899
+[e ++ F8344 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1900: if ( compte == 250)
+"1900
+[e $ ! == -> F8344 `i -> 250 `i 1252  ]
+[; ;drv_mrf_miwi_24j40.c: 1901: {
+"1901
+{
+[; ;drv_mrf_miwi_24j40.c: 1902: PIR2bits.TMR3IF = 0;
+"1902
+[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1903: PIE2bits.TMR3IE = 0;
+"1903
+[e = . . _PIE2bits 0 1 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1904: pwm_value_high_time = 400;
+"1904
+[e = _pwm_value_high_time -> -> 400 `i `ui ]
+[; ;drv_mrf_miwi_24j40.c: 1905: compte = 0;
+"1905
+[e = F8344 -> -> 0 `i `uc ]
+"1906
+}
+[e :U 1252 ]
+"1908
 }
 [e :U 1249 ]
-[; ;drv_mrf_miwi_24j40.c: 1897: }
-[; ;drv_mrf_miwi_24j40.c: 1899: }
-[; ;drv_mrf_miwi_24j40.c: 1902: if (INTCONbits.INT0IE && INTCONbits.INT0IF)
-"1902
-[e $ ! && != -> . . _INTCONbits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 1252  ]
-[; ;drv_mrf_miwi_24j40.c: 1903: {
-"1903
-{
-"1904
-[v _i `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1904: uint8_t i;
-[; ;drv_mrf_miwi_24j40.c: 1908: INTCONbits.INT0IF = 0;
-"1908
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1906: }
+[; ;drv_mrf_miwi_24j40.c: 1908: }
+[; ;drv_mrf_miwi_24j40.c: 1911: if (INTCONbits.INT0IE && INTCONbits.INT0IF)
+"1911
+[e $ ! && != -> . . _INTCONbits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 1253  ]
 [; ;drv_mrf_miwi_24j40.c: 1912: {
 "1912
 {
 "1913
-[v _flags `S1102 ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1913: MRF24J40_IFREG flags;
-[; ;drv_mrf_miwi_24j40.c: 1916: flags.Val = PHYGetShortRAMAddr((0x62));
-"1916
-[e = . _flags 0 ( _PHYGetShortRAMAddr (1 -> -> 98 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1918: if (flags.bits.RF_TXIF)
-"1918
-[e $ ! != -> . . _flags 1 0 `i -> -> -> 0 `i `uc `i 1253  ]
-[; ;drv_mrf_miwi_24j40.c: 1919: {
-"1919
+[v _i `uc ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1913: uint8_t i;
+[; ;drv_mrf_miwi_24j40.c: 1917: INTCONbits.INT0IF = 0;
+"1917
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1921: {
+"1921
 {
-[; ;drv_mrf_miwi_24j40.c: 1922: MRF24J40Status.bits.TX_BUSY = 0;
 "1922
-[e = . . _MRF24J40Status 1 0 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1924: if (MRF24J40Status.bits.SEC_IF)
-"1924
-[e $ ! != -> . . _MRF24J40Status 1 6 `i -> -> -> 0 `i `Vuc `i 1254  ]
-[; ;drv_mrf_miwi_24j40.c: 1925: {
+[v _flags `S1102 ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1922: MRF24J40_IFREG flags;
+[; ;drv_mrf_miwi_24j40.c: 1925: flags.Val = PHYGetShortRAMAddr((0x62));
 "1925
-{
-[; ;drv_mrf_miwi_24j40.c: 1926: MRF24J40Status.bits.SEC_IF = 0;
-"1926
-[e = . . _MRF24J40Status 1 6 -> -> 0 `i `uc ]
+[e = . _flags 0 ( _PHYGetShortRAMAddr (1 -> -> 98 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1927: if (flags.bits.RF_TXIF)
 "1927
-}
-[e :U 1254 ]
-[; ;drv_mrf_miwi_24j40.c: 1927: }
-[; ;drv_mrf_miwi_24j40.c: 1929: failureCounter = 0;
-"1929
-[e = _failureCounter -> -> 0 `i `ui ]
-[; ;drv_mrf_miwi_24j40.c: 1933: if (MRF24J40Status.bits.TX_PENDING_ACK)
+[e $ ! != -> . . _flags 1 0 `i -> -> -> 0 `i `uc `i 1254  ]
+[; ;drv_mrf_miwi_24j40.c: 1928: {
+"1928
+{
+[; ;drv_mrf_miwi_24j40.c: 1931: MRF24J40Status.bits.TX_BUSY = 0;
+"1931
+[e = . . _MRF24J40Status 1 0 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1933: if (MRF24J40Status.bits.SEC_IF)
 "1933
-[e $ ! != -> . . _MRF24J40Status 1 1 `i -> -> -> 0 `i `Vuc `i 1255  ]
+[e $ ! != -> . . _MRF24J40Status 1 6 `i -> -> -> 0 `i `Vuc `i 1255  ]
 [; ;drv_mrf_miwi_24j40.c: 1934: {
 "1934
 {
+[; ;drv_mrf_miwi_24j40.c: 1935: MRF24J40Status.bits.SEC_IF = 0;
 "1935
-[v _results `S1091 ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1935: DRIVER_UINT8_UNION results;
-[; ;drv_mrf_miwi_24j40.c: 1938: results.Val = PHYGetShortRAMAddr((0x48));
-"1938
-[e = . _results 0 ( _PHYGetShortRAMAddr (1 -> -> 72 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1940: if (results.bits.b0 == 1)
-"1940
-[e $ ! == -> . . _results 1 0 `i -> 1 `i 1256  ]
-[; ;drv_mrf_miwi_24j40.c: 1941: {
-"1941
-{
-[; ;drv_mrf_miwi_24j40.c: 1944: MRF24J40Status.bits.TX_FAIL = 1;
-"1944
-[e = . . _MRF24J40Status 1 2 -> -> 1 `i `uc ]
-"1945
-}
-[e :U 1256 ]
-[; ;drv_mrf_miwi_24j40.c: 1945: }
-[; ;drv_mrf_miwi_24j40.c: 1949: MRF24J40Status.bits.TX_PENDING_ACK = 0;
-"1949
-[e = . . _MRF24J40Status 1 1 -> -> 0 `i `uc ]
-"1951
+[e = . . _MRF24J40Status 1 6 -> -> 0 `i `uc ]
+"1936
 }
 [e :U 1255 ]
-"1953
-}
-[e :U 1253 ]
-[; ;drv_mrf_miwi_24j40.c: 1951: }
-[; ;drv_mrf_miwi_24j40.c: 1953: }
-[; ;drv_mrf_miwi_24j40.c: 1955: if (flags.bits.RF_RXIF)
-"1955
-[e $ ! != -> . . _flags 1 2 `i -> -> -> 0 `i `uc `i 1257  ]
-[; ;drv_mrf_miwi_24j40.c: 1956: {
-"1956
+[; ;drv_mrf_miwi_24j40.c: 1936: }
+[; ;drv_mrf_miwi_24j40.c: 1938: failureCounter = 0;
+"1938
+[e = _failureCounter -> -> 0 `i `ui ]
+[; ;drv_mrf_miwi_24j40.c: 1942: if (MRF24J40Status.bits.TX_PENDING_ACK)
+"1942
+[e $ ! != -> . . _MRF24J40Status 1 1 `i -> -> -> 0 `i `Vuc `i 1256  ]
+[; ;drv_mrf_miwi_24j40.c: 1943: {
+"1943
 {
-"1957
+"1944
+[v _results `S1091 ~T0 @X0 1 a ]
+[; ;drv_mrf_miwi_24j40.c: 1944: DRIVER_UINT8_UNION results;
+[; ;drv_mrf_miwi_24j40.c: 1947: results.Val = PHYGetShortRAMAddr((0x48));
+"1947
+[e = . _results 0 ( _PHYGetShortRAMAddr (1 -> -> 72 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 1949: if (results.bits.b0 == 1)
+"1949
+[e $ ! == -> . . _results 1 0 `i -> 1 `i 1257  ]
+[; ;drv_mrf_miwi_24j40.c: 1950: {
+"1950
+{
+[; ;drv_mrf_miwi_24j40.c: 1953: MRF24J40Status.bits.TX_FAIL = 1;
+"1953
+[e = . . _MRF24J40Status 1 2 -> -> 1 `i `uc ]
+"1954
+}
+[e :U 1257 ]
+[; ;drv_mrf_miwi_24j40.c: 1954: }
+[; ;drv_mrf_miwi_24j40.c: 1958: MRF24J40Status.bits.TX_PENDING_ACK = 0;
+"1958
+[e = . . _MRF24J40Status 1 1 -> -> 0 `i `uc ]
+"1960
+}
+[e :U 1256 ]
+"1962
+}
+[e :U 1254 ]
+[; ;drv_mrf_miwi_24j40.c: 1960: }
+[; ;drv_mrf_miwi_24j40.c: 1962: }
+[; ;drv_mrf_miwi_24j40.c: 1964: if (flags.bits.RF_RXIF)
+"1964
+[e $ ! != -> . . _flags 1 2 `i -> -> -> 0 `i `uc `i 1258  ]
+[; ;drv_mrf_miwi_24j40.c: 1965: {
+"1965
+{
+"1966
 [v _RxBank `uc ~T0 @X0 1 a ]
-[; ;drv_mrf_miwi_24j40.c: 1957: uint8_t RxBank = 0xFF;
+[; ;drv_mrf_miwi_24j40.c: 1966: uint8_t RxBank = 0xFF;
 [e = _RxBank -> -> 255 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1959: for (i = 0; i < 2; i++)
-"1959
+[; ;drv_mrf_miwi_24j40.c: 1968: for (i = 0; i < 2; i++)
+"1968
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 2 `i 1258  ]
-[e $U 1259  ]
-"1960
-[e :U 1258 ]
-[; ;drv_mrf_miwi_24j40.c: 1960: {
-{
-[; ;drv_mrf_miwi_24j40.c: 1961: if (RxBuffer[i].PayloadLen == 0)
-"1961
-[e $ ! == -> . *U + &U _RxBuffer * -> _i `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 0 `i 1261  ]
-[; ;drv_mrf_miwi_24j40.c: 1962: {
-"1962
-{
-[; ;drv_mrf_miwi_24j40.c: 1963: RxBank = i;
-"1963
-[e = _RxBank _i ]
-[; ;drv_mrf_miwi_24j40.c: 1964: break;
-"1964
-[e $U 1259  ]
-"1965
-}
-[e :U 1261 ]
-"1966
-}
-"1959
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 2 `i 1258  ]
-[e :U 1259 ]
-"1966
-}
-[; ;drv_mrf_miwi_24j40.c: 1965: }
-[; ;drv_mrf_miwi_24j40.c: 1966: }
-[; ;drv_mrf_miwi_24j40.c: 1969: if (RxBank < 2)
+[e $ < -> _i `i -> 2 `i 1259  ]
+[e $U 1260  ]
 "1969
-[e $ ! < -> _RxBank `i -> 2 `i 1262  ]
-[; ;drv_mrf_miwi_24j40.c: 1970: {
+[e :U 1259 ]
+[; ;drv_mrf_miwi_24j40.c: 1969: {
+{
+[; ;drv_mrf_miwi_24j40.c: 1970: if (RxBuffer[i].PayloadLen == 0)
 "1970
+[e $ ! == -> . *U + &U _RxBuffer * -> _i `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 0 `i 1262  ]
+[; ;drv_mrf_miwi_24j40.c: 1971: {
+"1971
 {
-[; ;drv_mrf_miwi_24j40.c: 1976: PHYSetShortRAMAddr((0x73), 0x04);
-"1976
+[; ;drv_mrf_miwi_24j40.c: 1972: RxBank = i;
+"1972
+[e = _RxBank _i ]
+[; ;drv_mrf_miwi_24j40.c: 1973: break;
+"1973
+[e $U 1260  ]
+"1974
+}
+[e :U 1262 ]
+"1975
+}
+"1968
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 2 `i 1259  ]
+[e :U 1260 ]
+"1975
+}
+[; ;drv_mrf_miwi_24j40.c: 1974: }
+[; ;drv_mrf_miwi_24j40.c: 1975: }
+[; ;drv_mrf_miwi_24j40.c: 1978: if (RxBank < 2)
+"1978
+[e $ ! < -> _RxBank `i -> 2 `i 1263  ]
+[; ;drv_mrf_miwi_24j40.c: 1979: {
+"1979
+{
+[; ;drv_mrf_miwi_24j40.c: 1985: PHYSetShortRAMAddr((0x73), 0x04);
+"1985
 [e ( _PHYSetShortRAMAddr (2 , -> -> 115 `i `uc -> -> 4 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1980: RxBuffer[RxBank].PayloadLen = PHYGetLongRAMAddr(0x300) + 2;
-"1980
+[; ;drv_mrf_miwi_24j40.c: 1989: RxBuffer[RxBank].PayloadLen = PHYGetLongRAMAddr(0x300) + 2;
+"1989
 [e = . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 -> + -> ( _PHYGetLongRAMAddr (1 -> -> 768 `i `ui `i -> 2 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1981: if (RxBuffer[RxBank].PayloadLen < (40+11+8+8+12))
-"1981
-[e $ ! < -> . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i + + + + -> 40 `i -> 11 `i -> 8 `i -> 8 `i -> 12 `i 1263  ]
-[; ;drv_mrf_miwi_24j40.c: 1982: {
-"1982
+[; ;drv_mrf_miwi_24j40.c: 1990: if (RxBuffer[RxBank].PayloadLen < (40+11+8+8+12))
+"1990
+[e $ ! < -> . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i + + + + -> 40 `i -> 11 `i -> 8 `i -> 8 `i -> 12 `i 1264  ]
+[; ;drv_mrf_miwi_24j40.c: 1991: {
+"1991
 {
-[; ;drv_mrf_miwi_24j40.c: 1984: MRF24J40Status.bits.RX_BUFFERED = 1;
-"1984
+[; ;drv_mrf_miwi_24j40.c: 1993: MRF24J40Status.bits.RX_BUFFERED = 1;
+"1993
 [e = . . _MRF24J40Status 1 5 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 1987: for (i = 1; i <= RxBuffer[RxBank].PayloadLen + 2; i++)
-"1987
+[; ;drv_mrf_miwi_24j40.c: 1996: for (i = 1; i <= RxBuffer[RxBank].PayloadLen + 2; i++)
+"1996
 {
 [e = _i -> -> 1 `i `uc ]
-[e $U 1267  ]
-"1988
-[e :U 1264 ]
-[; ;drv_mrf_miwi_24j40.c: 1988: {
-{
-[; ;drv_mrf_miwi_24j40.c: 1989: RxBuffer[RxBank].Payload[i - 1] = PHYGetLongRAMAddr(0x300 + i);
-"1989
-[e = *U + &U . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> - -> _i `i -> 1 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ( _PHYGetLongRAMAddr (1 -> + -> 768 `i -> _i `i `ui ]
-"1990
-}
-"1987
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1267 ]
-[e $ <= -> _i `i + -> . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 2 `i 1264  ]
-[e :U 1265 ]
-"1990
-}
-[; ;drv_mrf_miwi_24j40.c: 1990: }
-[; ;drv_mrf_miwi_24j40.c: 1991: PHYSetShortRAMAddr((0x1B), 0x01);
-"1991
-[e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
-"1992
-}
-[; ;drv_mrf_miwi_24j40.c: 1992: } else
 [e $U 1268  ]
-[e :U 1263 ]
-[; ;drv_mrf_miwi_24j40.c: 1993: {
-"1993
-{
-[; ;drv_mrf_miwi_24j40.c: 1996: PHYSetShortRAMAddr((0x1B), 0x01);
-"1996
-[e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
 "1997
+[e :U 1265 ]
+[; ;drv_mrf_miwi_24j40.c: 1997: {
+{
+[; ;drv_mrf_miwi_24j40.c: 1998: RxBuffer[RxBank].Payload[i - 1] = PHYGetLongRAMAddr(0x300 + i);
+"1998
+[e = *U + &U . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 1 * -> -> - -> _i `i -> 1 `i `ui `ux -> -> # *U &U . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 1 `ui `ux ( _PHYGetLongRAMAddr (1 -> + -> 768 `i -> _i `i `ui ]
+"1999
 }
+"1996
+[e ++ _i -> -> 1 `i `uc ]
 [e :U 1268 ]
-[; ;drv_mrf_miwi_24j40.c: 1997: }
-[; ;drv_mrf_miwi_24j40.c: 2000: PHYSetShortRAMAddr((0x73), 0x00);
+[e $ <= -> _i `i + -> . *U + &U _RxBuffer * -> _RxBank `ux -> -> # *U &U _RxBuffer `ui `ux 0 `i -> 2 `i 1265  ]
+[e :U 1266 ]
+"1999
+}
+[; ;drv_mrf_miwi_24j40.c: 1999: }
+[; ;drv_mrf_miwi_24j40.c: 2000: PHYSetShortRAMAddr((0x1B), 0x01);
 "2000
-[e ( _PHYSetShortRAMAddr (2 , -> -> 115 `i `uc -> -> 0 `i `uc ]
+[e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
 "2001
 }
 [; ;drv_mrf_miwi_24j40.c: 2001: } else
 [e $U 1269  ]
-[e :U 1262 ]
+[e :U 1264 ]
 [; ;drv_mrf_miwi_24j40.c: 2002: {
 "2002
 {
 [; ;drv_mrf_miwi_24j40.c: 2005: PHYSetShortRAMAddr((0x1B), 0x01);
 "2005
 [e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
-"2012
+"2006
 }
 [e :U 1269 ]
-"2014
+[; ;drv_mrf_miwi_24j40.c: 2006: }
+[; ;drv_mrf_miwi_24j40.c: 2009: PHYSetShortRAMAddr((0x73), 0x00);
+"2009
+[e ( _PHYSetShortRAMAddr (2 , -> -> 115 `i `uc -> -> 0 `i `uc ]
+"2010
 }
-[e :U 1257 ]
-[; ;drv_mrf_miwi_24j40.c: 2012: }
-[; ;drv_mrf_miwi_24j40.c: 2014: }
-[; ;drv_mrf_miwi_24j40.c: 2017: if (flags.bits.SECIF)
-"2017
-[e $ ! != -> . . _flags 1 3 `i -> -> -> 0 `i `uc `i 1270  ]
-[; ;drv_mrf_miwi_24j40.c: 2018: {
-"2018
+[; ;drv_mrf_miwi_24j40.c: 2010: } else
+[e $U 1270  ]
+[e :U 1263 ]
+[; ;drv_mrf_miwi_24j40.c: 2011: {
+"2011
 {
-[; ;drv_mrf_miwi_24j40.c: 2019: PHYSetShortRAMAddr((0x59), 0x80);
-"2019
-[e ( _PHYSetShortRAMAddr (2 , -> -> 89 `i `uc -> -> 128 `i `uc ]
-"2020
-}
-[e :U 1270 ]
+[; ;drv_mrf_miwi_24j40.c: 2014: PHYSetShortRAMAddr((0x1B), 0x01);
+"2014
+[e ( _PHYSetShortRAMAddr (2 , -> -> 27 `i `uc -> -> 1 `i `uc ]
 "2021
 }
-"2022
+[e :U 1270 ]
+"2023
 }
-[e :U 1252 ]
-[; ;drv_mrf_miwi_24j40.c: 2020: }
+[e :U 1258 ]
 [; ;drv_mrf_miwi_24j40.c: 2021: }
-[; ;drv_mrf_miwi_24j40.c: 2022: }
-[; ;drv_mrf_miwi_24j40.c: 2027: if (PIR1bits.TMR1IF)
+[; ;drv_mrf_miwi_24j40.c: 2023: }
+[; ;drv_mrf_miwi_24j40.c: 2026: if (flags.bits.SECIF)
+"2026
+[e $ ! != -> . . _flags 1 3 `i -> -> -> 0 `i `uc `i 1271  ]
+[; ;drv_mrf_miwi_24j40.c: 2027: {
 "2027
-[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 1271  ]
-[; ;drv_mrf_miwi_24j40.c: 2028: {
+{
+[; ;drv_mrf_miwi_24j40.c: 2028: PHYSetShortRAMAddr((0x59), 0x80);
 "2028
-{
-[; ;drv_mrf_miwi_24j40.c: 2029: if (PIE1bits.TMR1IE)
+[e ( _PHYSetShortRAMAddr (2 , -> -> 89 `i `uc -> -> 128 `i `uc ]
 "2029
-[e $ ! != -> . . _PIE1bits 0 0 `i -> -> -> 0 `i `Vuc `i 1272  ]
-[; ;drv_mrf_miwi_24j40.c: 2030: {
-"2030
-{
-[; ;drv_mrf_miwi_24j40.c: 2032: PIR1bits.TMR1IF = 0;
-"2032
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 2033: timerExtension1++;
-"2033
-[e ++ _timerExtension1 -> -> 1 `i `uc ]
-[; ;drv_mrf_miwi_24j40.c: 2034: if (timerExtension1 == 0)
-"2034
-[e $ ! == -> _timerExtension1 `i -> 0 `i 1273  ]
-[; ;drv_mrf_miwi_24j40.c: 2035: {
-"2035
-{
-[; ;drv_mrf_miwi_24j40.c: 2036: timerExtension2++;
-"2036
-[e ++ _timerExtension2 -> -> 1 `i `uc ]
-"2037
-}
-[e :U 1273 ]
-"2038
-}
-[e :U 1272 ]
-"2039
 }
 [e :U 1271 ]
-[; ;drv_mrf_miwi_24j40.c: 2037: }
-[; ;drv_mrf_miwi_24j40.c: 2038: }
-[; ;drv_mrf_miwi_24j40.c: 2039: }
-[; ;drv_mrf_miwi_24j40.c: 2041: UserInterruptHandler();
+"2030
+}
+"2031
+}
+[e :U 1253 ]
+[; ;drv_mrf_miwi_24j40.c: 2029: }
+[; ;drv_mrf_miwi_24j40.c: 2030: }
+[; ;drv_mrf_miwi_24j40.c: 2031: }
+[; ;drv_mrf_miwi_24j40.c: 2036: if (PIR1bits.TMR1IF)
+"2036
+[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 1272  ]
+[; ;drv_mrf_miwi_24j40.c: 2037: {
+"2037
+{
+[; ;drv_mrf_miwi_24j40.c: 2038: if (PIE1bits.TMR1IE)
+"2038
+[e $ ! != -> . . _PIE1bits 0 0 `i -> -> -> 0 `i `Vuc `i 1273  ]
+[; ;drv_mrf_miwi_24j40.c: 2039: {
+"2039
+{
+[; ;drv_mrf_miwi_24j40.c: 2041: PIR1bits.TMR1IF = 0;
 "2041
-[e ( _UserInterruptHandler ..  ]
-[; ;drv_mrf_miwi_24j40.c: 2044: return;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 2042: timerExtension1++;
+"2042
+[e ++ _timerExtension1 -> -> 1 `i `uc ]
+[; ;drv_mrf_miwi_24j40.c: 2043: if (timerExtension1 == 0)
+"2043
+[e $ ! == -> _timerExtension1 `i -> 0 `i 1274  ]
+[; ;drv_mrf_miwi_24j40.c: 2044: {
 "2044
-[e $UE 1247  ]
-[; ;drv_mrf_miwi_24j40.c: 2046: }
+{
+[; ;drv_mrf_miwi_24j40.c: 2045: timerExtension2++;
+"2045
+[e ++ _timerExtension2 -> -> 1 `i `uc ]
 "2046
+}
+[e :U 1274 ]
+"2047
+}
+[e :U 1273 ]
+"2048
+}
+[e :U 1272 ]
+[; ;drv_mrf_miwi_24j40.c: 2046: }
+[; ;drv_mrf_miwi_24j40.c: 2047: }
+[; ;drv_mrf_miwi_24j40.c: 2048: }
+[; ;drv_mrf_miwi_24j40.c: 2050: UserInterruptHandler();
+"2050
+[e ( _UserInterruptHandler ..  ]
+[; ;drv_mrf_miwi_24j40.c: 2053: return;
+"2053
+[e $UE 1247  ]
+[; ;drv_mrf_miwi_24j40.c: 2055: }
+"2055
 [e :UE 1247 ]
 }

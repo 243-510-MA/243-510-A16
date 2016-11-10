@@ -45,6 +45,8 @@ void Demo_Pan(void)
 
 void demo_gyro(int status)
 {
+    LED0 = status;
     GYRO = status;
+  
     
 }

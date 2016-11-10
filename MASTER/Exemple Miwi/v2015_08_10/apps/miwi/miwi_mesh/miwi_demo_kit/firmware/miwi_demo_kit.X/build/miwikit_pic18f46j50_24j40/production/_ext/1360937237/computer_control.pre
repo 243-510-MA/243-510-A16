@@ -2,7 +2,6 @@
 # 1 "../src/computer_control.c"
 
 # 35 "../src/computer_control.h"
-void output_control(int on_off);
 void ComputerControl(void);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\htc.h"
@@ -9791,6 +9790,8 @@ uint8_t v[2];
 uint16_t Val;
 
 }API_UINT16_UNION;
+
+uint16_t pwm_value_high_time = 400 ;
 
 # 122
 void SYSTEM_Initialize(void);

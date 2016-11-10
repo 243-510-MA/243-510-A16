@@ -9798,6 +9798,8 @@ uint16_t Val;
 
 }API_UINT16_UNION;
 
+uint16_t pwm_value_high_time = 400 ;
+
 # 122
 void SYSTEM_Initialize(void);
 

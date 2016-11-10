@@ -9788,6 +9788,8 @@ uint16_t Val;
 
 }API_UINT16_UNION;
 
+uint16_t pwm_value_high_time = 400 ;
+
 # 122
 void SYSTEM_Initialize(void);
 
@@ -10834,24 +10836,33 @@ BuzzerStatus = !BuzzerStatus;
 PIR3bits.TMR4IF = 0;
 }
 
-if(TMR3IF){
-uint16_t pwm_value_high_time = 800;
+if(PIR2bits.TMR3IF){
+static uint8_t compte ;
 static bool u;
+
 if(u){
 
 u = 0;
 uint16_t temp = 65536 - (pwm_value_high_time + 2600);
-LATAbits.LATA7 = 0;
+LATAbits.LATA3 = 1;
 TMR3 = temp;
-TMR3IF = 0;
+PIR2bits.TMR3IF = 0;
 }else{
 u = 1;
 uint16_t temp = 25536 + (pwm_value_high_time + 2600);
-LATAbits.LATA7 = 1;
+LATAbits.LATA3 = 0;
 TMR3 = temp;
-TMR3IF = 0;
+PIR2bits.TMR3IF = 0;
 
+}
 
+compte ++;
+if ( compte == 250)
+{
+PIR2bits.TMR3IF = 0;
+PIE2bits.TMR3IE = 0;
+pwm_value_high_time = 400;
+compte = 0;
 }
 
 }
@@ -10927,7 +10938,7 @@ break;
 if (RxBank < 2)
 {
 
-# 1976
+# 1985
 PHYSetShortRAMAddr((0x73), 0x04);
 
 
@@ -10959,7 +10970,7 @@ PHYSetShortRAMAddr((0x73), 0x00);
 
 PHYSetShortRAMAddr((0x1B), 0x01);
 
-# 2012
+# 2021
 }
 
 }

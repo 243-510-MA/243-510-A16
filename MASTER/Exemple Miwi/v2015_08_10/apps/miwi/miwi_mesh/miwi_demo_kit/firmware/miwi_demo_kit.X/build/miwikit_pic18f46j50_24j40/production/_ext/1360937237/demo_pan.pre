@@ -1,5 +1,9 @@
 
-# 1 "../src/system_config/miwikit_pic18f46j50_24j40/spi.c"
+# 1 "../src/demo_pan.c"
+
+# 5 "../src/demo_pan.h"
+void Demo_Pan(void);
+void demo_gyro(int status);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9704,7 +9708,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 43 "../src/system_config/miwikit_pic18f46j50_24j40/lcd.h"
+# 43 "../src/system_config/miwikit_pic18f46j50_24j40\lcd.h"
 extern uint8_t LCDText[16*2+1];
 
 void LCD_Initialize(void);
@@ -9716,16 +9720,16 @@ void LCD_Display(char *, uint8_t, bool);
 void LCDWriteLine(uint16_t number, char *line);
 void UserInterruptHandler(void);
 
-# 27 "../src/system_config/miwikit_pic18f46j50_24j40/eeprom.h"
+# 27 "../src/system_config/miwikit_pic18f46j50_24j40\eeprom.h"
 void EEPROMRead(uint8_t *Dest, uint8_t Addr , uint8_t count);
 void Read_MAC_Address(void);
 
-# 27 "../src/system_config/miwikit_pic18f46j50_24j40/serial_flash.h"
+# 27 "../src/system_config/miwikit_pic18f46j50_24j40\serial_flash.h"
 void SSTRead(uint8_t *Dest, uint8_t *Addr , uint8_t count);
 void SSTWrite(uint8_t *Src, uint8_t *Addr, uint8_t count);
 void SSTGetID(uint8_t *Dest);
 
-# 71 "../src/system_config/miwikit_pic18f46j50_24j40/symbol.h"
+# 71 "../src/system_config/miwikit_pic18f46j50_24j40\symbol.h"
 typedef union _MIWI_TICK
 {
 uint32_t Val;
@@ -9751,26 +9755,26 @@ MIWI_TICK MiWi_TickGet(void);
 
 extern volatile uint8_t timerExtension1,timerExtension2;
 
-# 47 "../src/system_config/miwikit_pic18f46j50_24j40/delay.h"
+# 47 "../src/system_config/miwikit_pic18f46j50_24j40\delay.h"
 void DELAY_10us( uint32_t tenMicroSecondCounter );
 
 # 68
 void DELAY_ms( uint16_t ms );
 
-# 32 "../src/system_config/miwikit_pic18f46j50_24j40/button.h"
+# 32 "../src/system_config/miwikit_pic18f46j50_24j40\button.h"
 MIWI_TICK switch0PressTime;
 MIWI_TICK switch1PressTime;
 
 uint8_t BUTTON_Pressed(void);
 
-# 29 "../src/system_config/miwikit_pic18f46j50_24j40/spi.h"
+# 29 "../src/system_config/miwikit_pic18f46j50_24j40\spi.h"
 void SPIPut(uint8_t v);
 uint8_t SPIGet(void);
 
 void SPIPut2(uint8_t v);
 uint8_t SPIGet2(void);
 
-# 54 "../src/system_config/miwikit_pic18f46j50_24j40/system.h"
+# 54 "../src/system_config/miwikit_pic18f46j50_24j40\system.h"
 typedef union
 {
 
@@ -9788,84 +9792,455 @@ uint16_t Val;
 
 }API_UINT16_UNION;
 
+uint16_t pwm_value_high_time = 400 ;
+
 # 122
 void SYSTEM_Initialize(void);
 
-# 45 "../src/system_config/miwikit_pic18f46j50_24j40/spi.c"
-void SPIPut(uint8_t v)
+# 31 "../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h"
+typedef union
+{
+uint8_t Val;
+struct
+{
+uint8_t RF_TXIF :1;
+uint8_t :2;
+uint8_t RF_RXIF :1;
+uint8_t SECIF :1;
+uint8_t :4;
+}bits;
+} MRF24J40_IFREG;
+
+typedef union
+{
+uint8_t Val;
+struct
+{
+uint8_t TX_BUSY : 1;
+uint8_t TX_PENDING_ACK : 1;
+uint8_t TX_FAIL : 1;
+uint8_t RX_SECURITY : 1;
+uint8_t RX_IGNORE_SECURITY : 1;
+uint8_t RX_BUFFERED : 1;
+uint8_t SEC_IF : 1;
+} bits;
+} MRF24J40_STATUS;
+
+# 84 "../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi.h"
+typedef union _DRIVER_UINT8_UNION_
+{
+uint8_t Val;
+struct
+{
+uint8_t b0:1;
+uint8_t b1:1;
+uint8_t b2:1;
+uint8_t b3:1;
+uint8_t b4:1;
+uint8_t b5:1;
+uint8_t b6:1;
+uint8_t b7:1;
+} bits;
+
+} DRIVER_UINT8_UNION;
+
+# 106
+typedef struct
+{
+union
+{
+uint8_t Val;
+struct
+{
+uint8_t packetType : 2;
+
+
+
+
+uint8_t broadcast : 1;
+uint8_t secEn : 1;
+uint8_t repeat : 1;
+uint8_t ackReq : 1;
+uint8_t destPrsnt : 1;
+uint8_t sourcePrsnt : 1;
+} bits;
+} flags;
+
+uint8_t *DestAddress;
+
+bool altDestAddr;
+bool altSrcAddr;
+API_UINT16_UNION DestPANID;
+
+
+} MAC_TRANS_PARAM;
+
+# 142
+typedef struct
+{
+union
+{
+uint8_t Val;
+struct
+{
+uint8_t packetType :2;
+
+
+
+
+uint8_t broadcast :1;
+uint8_t secEn :1;
+uint8_t repeat :1;
+uint8_t ackReq :1;
+uint8_t destPrsnt :1;
+uint8_t sourcePrsnt :1;
+} bits;
+} flags;
+
+uint8_t * SourceAddress;
+uint8_t * Payload;
+uint8_t PayloadLen;
+uint8_t RSSIValue;
+uint8_t LQIValue;
+
+bool altSourceAddress;
+API_UINT16_UNION SourcePANID;
+
+} MAC_RECEIVED_PACKET;
+
+# 179
+typedef struct
+{
+union
+{
+uint8_t Val;
+struct
+{
+uint8_t RepeaterMode :1;
+uint8_t CCAEnable :1;
+uint8_t NetworkFreezer :1;
+uint8_t PAddrLength :4;
+} bits;
+} actionFlags;
+
+uint8_t *PAddress;
+
+} MACINIT_PARAM;
+
+extern MAC_RECEIVED_PACKET MACRxPacket;
+
+# 239
+bool MiMAC_SetChannel(uint8_t channel, uint8_t offsetFreq);
+
+# 274
+bool MiMAC_SetPower(uint8_t outputPower);
+
+# 313
+bool MiMAC_SetAltAddress(uint8_t *Address, uint8_t *PANID);
+
+# 345
+bool MiMAC_Init(MACINIT_PARAM initValue);
+
+# 380
+uint8_t MiMAC_ChannelAssessment(uint8_t AssessmentMode);
+
+# 418
+void MiMAC_DiscardPacket(void);
+
+# 458
+bool MiMAC_ReceivedPacket(void);
+
+# 494
+bool MiMAC_SendPacket(MAC_TRANS_PARAM transParam, uint8_t *MACPayload, uint8_t MACPayloadLen);
+
+# 538
+bool MiMAC_PowerState(uint8_t PowerState);
+
+# 549
+void UserInterruptHandler(void);
+
+# 44 "../../../../../../framework\miwi/miwi_mesh.h"
+void MiWiTasks(void);
+uint8_t findNextNetworkEntry(void);
+void ClearNetworkTable(void);
+uint8_t SearchForLongAddress(void);
+uint8_t SearchForShortAddress(void);
+void SendIndirectPacket(uint8_t *Address, uint8_t *AltAddress, bool isAltAddress);
+uint8_t AddNodeToNetworkTable(void);
+void DiscoverNodeByEUI(void);
+void OpenSocket(void);
+bool isSameAddress( uint8_t *Address1,  uint8_t *Address2);
+void DumpConnection(uint8_t index);
+bool UnicastShortAddress(uint8_t *DestAddress);
+
+# 125
+typedef union _MIWI_STATE_MACHINE
+{
+uint16_t Val;
+struct {
+uint8_t searchingForNetwork :1;
+uint8_t memberOfNetwork :1;
+uint8_t RxHasUserData :1;
+uint8_t MiWiAckInProgress :1;
+uint8_t saveConnection :1;
+uint8_t EUISearching :1;
+uint8_t DataRequesting :1;
+uint8_t Resynning :1;
+uint8_t Sleeping :1;
+} bits;
+} MIWI_STATE_MACHINE;
+
+
+typedef struct _OPEN_SOCKET
+{
+union _OPEN_SOCKET_STATUS
+{
+struct _OPEN_SOCKET_STATUS_bits
+{
+uint8_t matchFound :1;
+uint8_t requestIsOpen :1;
+uint8_t itIsMe :1;
+} bits;
+uint8_t Val;
+} status;
+uint8_t socketHandle;
+API_UINT16_UNION ShortAddress1;
+
+uint8_t LongAddress1[8];
+
+uint8_t AdditionalNodeID1[1];
+
+
+API_UINT16_UNION ShortAddress2;
+uint8_t LongAddress2[8];
+
+MIWI_TICK socketStart;
+} OPEN_SOCKET;
+
+# 174
+typedef struct
+{
+MIWI_TICK TickStart;
+
+
+API_UINT16_UNION DestPANID;
+
+uint8_t DestAddress[8];
+union
+{
+uint8_t Val;
+struct
+{
+uint8_t isValid : 1;
+uint8_t isBroadcast : 1;
+uint8_t isCommand : 1;
+uint8_t isSecured : 1;
+uint8_t isAltAddr : 1;
+} bits;
+} flags;
+uint8_t PayLoadSize;
+
+
+
+uint8_t PayLoad[40+11];
+
+} INDIRECT_MESSAGE;
+
+
+
+
+extern MIWI_STATE_MACHINE MiWiStateMachine;
+extern uint8_t TxBuffer[];
+extern uint8_t TxData;
+extern API_UINT16_UNION myPANID;
+extern API_UINT16_UNION myShortAddress;
+extern uint8_t myParent;
+extern uint8_t tempLongAddress[8];
+extern API_UINT16_UNION tempShortAddress;
+extern OPEN_SOCKET openSocketInfo;
+
+# 51 "../../../../../../framework\miwi/miwi_api.h"
+typedef union __CONNECTION_STATUS
+{
+uint8_t Val;
+struct _CONNECTION_STAUTS_bits
+{
+uint8_t RXOnWhenIdle :1;
+uint8_t directConnection :1;
+uint8_t longAddressValid :1;
+uint8_t shortAddressValid :1;
+uint8_t FinishJoin :1;
+uint8_t isFamily :1;
+uint8_t filler :1;
+uint8_t isValid :1;
+} bits;
+} CONNECTION_STATUS;
+
+# 78
+typedef struct __CONNECTION_ENTRY
 {
 
-# 64
+API_UINT16_UNION PANID;
+API_UINT16_UNION AltAddress;
+
+uint8_t Address[8];
+
+CONNECTION_STATUS status;
+
+
+uint8_t PeerInfo[1];
+
+} CONNECTION_ENTRY;
+
+extern CONNECTION_ENTRY ConnectionTable[10];
+
+extern uint8_t currentChannel;
+
+# 136
+bool MiApp_ProtocolInit(bool bNetworkFreezer);
+
+# 178
+bool MiApp_SetChannel(uint8_t Channel);
+
+# 236
+bool MiApp_StartConnection( uint8_t Mode, uint8_t ScanDuration, uint32_t ChannelMap);
+
+# 246
+typedef struct
+{
+uint8_t Channel;
+uint8_t Address[8];
+API_UINT16_UNION PANID;
+uint8_t RSSIValue;
+uint8_t LQIValue;
+union
+{
+uint8_t Val;
+struct
+{
+uint8_t Role: 2;
+uint8_t Sleep: 1;
+uint8_t SecurityEn: 1;
+uint8_t RepeatEn: 1;
+uint8_t AllowJoin: 1;
+uint8_t Direct: 1;
+uint8_t altSrcAddr: 1;
+} bits;
+} Capability;
+
+uint8_t PeerInfo[1];
+
+} ACTIVE_SCAN_RESULT;
+
+
+extern ACTIVE_SCAN_RESULT ActiveScanResults[4];
+
+# 320
+uint8_t MiApp_SearchConnection(uint8_t ScanDuration, uint32_t ChannelMap);
+
+# 374
+uint8_t MiApp_EstablishConnection(uint8_t ActiveScanIndex, uint8_t Mode);
+
+# 411
+void MiApp_RemoveConnection(uint8_t ConnectionIndex);
+
+# 457
+void MiApp_ConnectionMode(uint8_t Mode);
+
+# 552
+bool MiApp_BroadcastPacket(bool SecEn );
+
+# 591
+bool MiApp_UnicastConnection(uint8_t ConnectionIndex, bool SecEn);
+
+# 631
+bool MiApp_UnicastAddress(uint8_t *DestinationAddress, bool PermanentAddr, bool SecEn);
+
+# 643
+typedef struct
+{
+union
+{
+uint8_t Val;
+struct
+{
+uint8_t broadcast: 2;
+uint8_t ackReq: 1;
+uint8_t secEn: 1;
+uint8_t repeat: 1;
+uint8_t command: 1;
+uint8_t srcPrsnt: 1;
+uint8_t altSrcAddr: 1;
+} bits;
+} flags;
+
+API_UINT16_UNION SourcePANID;
+uint8_t *SourceAddress;
+uint8_t *Payload;
+uint8_t PayloadSize;
+uint8_t PacketRSSI;
+uint8_t PacketLQI;
+
+} RECEIVED_MESSAGE;
+
+# 710
+bool MiApp_MessageAvailable(void);
+
+# 752
+void MiApp_DiscardMessage(void);
+
+# 800
+uint8_t MiApp_NoiseDetection(uint32_t ChannelMap, uint8_t ScanDuration, uint8_t DetectionMode,  uint8_t *NoiseLevel);
+
+# 858
+uint8_t MiApp_TransceiverPowerState(uint8_t Mode);
+
+# 899
+bool MiApp_InitChannelHopping( uint32_t ChannelMap);
+
+# 941
+bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
+
+# 950
+extern RECEIVED_MESSAGE rxMessage;
+
+# 14 "../src/demo_pan.c"
+void Demo_Pan(void)
+{
+TRISB = 0x0;
+int status = 0;
+LATBbits.LATB3 = 0;
+LATBbits.LATB2 = 0;
+
+
+LATEbits.LATE1 = 1;
+while(1)
+{
+if(MiApp_MessageAvailable())
+{
+if(rxMessage.Payload[0] == 0x16 )
+{
+demo_gyro(1);
+}
+
+else if(rxMessage.Payload[0] == 0x15 )
 {
 
-uint8_t i;
-
-PIR1bits.SSP1IF = 0;
-
-i = SSP1BUF;
-
-do
-{
-SSP1CON1bits.WCOL = 0;
-SSP1BUF = v;
-} while( SSP1CON1bits.WCOL );
-
-while( PIR1bits.SSP1IF == 0 );
-
-PIR1bits.SSP1IF = 0;
-
+demo_gyro(0);
 }
 
 }
-
-# 102
-uint8_t SPIGet(void)
-{
-
-# 123
-SPIPut(0x00);
-return SSP1BUF;
-
+MiApp_DiscardMessage();
 }
-
-# 144
-void SPIPut2(uint8_t v)
-{
-
-# 165
-uint8_t i;
-PIR3bits.SSP2IF = 0;
-
-i = SSP2BUF;
-do
-{
-
-SSP2CON1bits.WCOL = 0;
-
-SSP2BUF = v;
-
-
-} while( SSP2CON1bits.WCOL );
-
-
-
-while( PIR3bits.SSP2IF == 0 );
-
-
-
-PIR3bits.SSP2IF = 0;
 
 
 
 }
 
-# 206
-uint8_t SPIGet2(void)
+void demo_gyro(int status)
 {
+LATCbits.LATC2 = status;
+LATBbits.LATB3 = status;
 
-# 226
-SPIPut2(0x00);
-return SSP2BUF;
 
 }
-

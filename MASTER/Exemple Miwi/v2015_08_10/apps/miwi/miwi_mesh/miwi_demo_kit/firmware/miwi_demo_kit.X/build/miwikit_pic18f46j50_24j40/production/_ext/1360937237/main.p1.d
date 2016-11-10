@@ -6,6 +6,7 @@
 ../src/network.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/system_config.h  \
 ../src/codes\ library.h  \
+../src/demo_mouvement.h  \
 ../src/teacher.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/delay.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/config_24j40.h  \
@@ -26,4 +27,5 @@
 ../src/system_config/miwikit_pic18f46j50_24j40/timer.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/serial_flash.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/lcd.h  \
+../src/demo_pan.h  \
 ../../../../../../framework/driver/mrf_miwi/drv_mrf_miwi_24j40.h 

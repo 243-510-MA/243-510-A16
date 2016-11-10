@@ -9788,6 +9788,8 @@ uint16_t Val;
 
 }API_UINT16_UNION;
 
+uint16_t pwm_value_high_time = 400 ;
+
 # 122
 void SYSTEM_Initialize(void);
 
@@ -10224,10 +10226,16 @@ void DoorUnlock(void);
 void ProjectorScreen(void);
 
 # 35 "../src/computer_control.h"
-void output_control(int on_off);
 void ComputerControl(void);
 
-# 30 "../src/main.c"
+# 5 "../src/demo_pan.h"
+void Demo_Pan(void);
+void demo_gyro(int status);
+
+# 35 "../src/demo_mouvement.h"
+void MovementDetector(void);
+
+# 34 "../src/main.c"
 void main(void)
 {
 Network(5);
@@ -10268,5 +10276,15 @@ Student();
 if(5 == 5)
 {
 ComputerControl();
+}
+
+if(5 == 6)
+{
+MovementDetector();
+}
+
+if(5 == 7)
+{
+Demo_Pan();
 }
 }

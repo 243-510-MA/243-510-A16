@@ -7608,6 +7608,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;system.h: 66: uint8_t v[2];
 [; ;system.h: 67: uint16_t Val;
 [; ;system.h: 69: }API_UINT16_UNION;
+"71 ../src/system_config/miwikit_pic18f46j50_24j40/system.h
+[v _pwm_value_high_time `ui ~T0 @X0 1 e ]
+[i _pwm_value_high_time
+-> -> 400 `i `ui
+]
+[; ;system.h: 71: uint16_t pwm_value_high_time = 400 ;
 [; ;system.h: 122: void SYSTEM_Initialize(void);
 "45 ../src/system_config/miwikit_pic18f46j50_24j40/spi.c
 [v _SPIPut `(v ~T0 @X0 1 ef1`uc ]

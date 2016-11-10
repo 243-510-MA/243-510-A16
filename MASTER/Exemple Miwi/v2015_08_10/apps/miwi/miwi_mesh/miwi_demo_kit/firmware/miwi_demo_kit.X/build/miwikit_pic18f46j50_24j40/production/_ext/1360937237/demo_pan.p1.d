@@ -1,10 +1,10 @@
- build/miwikit_pic18f46j50_24j40/debug/_ext/1360937237/network.d  \
- build/miwikit_pic18f46j50_24j40/debug/_ext/1360937237/network.p1:  \
- ../src/network.c  \
+ build/miwikit_pic18f46j50_24j40/production/_ext/1360937237/demo_pan.d  \
+ build/miwikit_pic18f46j50_24j40/production/_ext/1360937237/demo_pan.p1:  \
+ ../src/demo_pan.c  \
 ../../../../../../framework/miwi/miwi_mesh.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/button.h  \
-../src/network.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/system_config.h  \
+../src/codes\ library.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/delay.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/config_24j40.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/system.h  \
@@ -19,4 +19,5 @@
 ../src/system_config/miwikit_pic18f46j50_24j40/timer.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/serial_flash.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/lcd.h  \
+../src/demo_pan.h  \
 ../../../../../../framework/driver/mrf_miwi/drv_mrf_miwi_24j40.h 
