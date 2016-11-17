@@ -29,11 +29,6 @@ void MovementDetector(void)
         if(DETECT == 0)
         {
             LED1 = 0;
-            MiApp_FlushTx();
-            MiApp_WriteData(ALARM_OFF);
-            MiApp_WriteData(myShortAddress.v[0]);
-            MiApp_WriteData(myShortAddress.v[1]);
-            MiApp_BroadcastPacket(false);
             delay_ms(150);
         }
         
@@ -41,7 +36,7 @@ void MovementDetector(void)
         {
             LED1 = 1;
             MiApp_FlushTx();
-            MiApp_WriteData(ALARM_ON);
+            MiApp_WriteData(DEMO_ALARM_ON);
             MiApp_WriteData(myShortAddress.v[0]);
             MiApp_WriteData(myShortAddress.v[1]);
             MiApp_BroadcastPacket(false);

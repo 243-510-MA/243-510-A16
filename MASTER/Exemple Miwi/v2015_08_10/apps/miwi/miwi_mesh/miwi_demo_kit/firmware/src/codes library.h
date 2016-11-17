@@ -4,6 +4,7 @@
 #define UNLOCK_PKT           0x01
 #define PROJECTOR_MOTOR_DOWN 0x33
 #define PROJECTOR_MOTOR_UP   0x22
+
 #define ALARM_OFF            0x05
 #define ALARM_ON             0x06
 #define DEMO_ALARM_ON        0x16
@@ -17,3 +18,13 @@
 #define Reponse_B            0x91
 #define Reponse_C            0x92
 #define Reponse_D            0x93
+
+#define MSG_ALLO             0xA0
+#define MSG_CA_VA            0xA1
+#define MSG_OUI              0xA2
+#define MSG_NON              0xA3
+
+#define DEVICE1              0xA4
+#define DEVICE2              0xA5
+#define DEVICE3              0xA6
+#define DEVICE4              0xA7

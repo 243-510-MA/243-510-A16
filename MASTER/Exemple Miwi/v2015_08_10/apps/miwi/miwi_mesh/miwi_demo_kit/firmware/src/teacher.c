@@ -19,10 +19,11 @@ void Teacher(void)
     uint8_t reponseb = 0;
     uint8_t reponsec = 0;
     uint8_t reponsed = 0;
+    uint8_t choix_envoi = 0;
     LCD_Erase();
-    LCD_Display((char *)" TEACHER DEVICE ", 0, true);
-   
-    while(true)
+    LCD_Display((char *) " TEACHER DEVICE ", 0, true);
+
+    while (true)
     {
         /*
         if(Tx_Packet)
@@ -83,41 +84,42 @@ void Teacher(void)
         } 	  
         
         if(MiApp_MessageAvailable())
-    	{
+        {
             if(rxMessage.Payload[0] == RANGE_PKT)
             {
-            	// Get RSSI value from Recieved Packet
-            	rssi = rxMessage.PacketRSSI;
-        	    #if defined(MRF89XA)
+                // Get RSSI value from Recieved Packet
+                rssi = rxMessage.PacketRSSI;
+                #if defined(MRF89XA)
                     rssi = rssi<<1;
                 #endif
-        	    // Disguard the Packet so can recieve next
-        	    MiApp_DiscardMessage();
-        	}
-        	else
-            	MiApp_DiscardMessage(); 
+                // Disguard the Packet so can recieve next
+                MiApp_DiscardMessage();
+            }
+            else
+                MiApp_DiscardMessage(); 
         }
-        */
-        sprintf((char *)&LCDText, (char*)"SW1: PROJECTOR  SW2: Suivant  ");
+         */
+        switch_val = 0;
+        sprintf((char *) &LCDText, (char*) "SW1: Projector  SW2: Suivant  ");
         LCD_Update();
-        
-        while(switch_val == 0)
+
+        while (switch_val == 0)
         {
             switch_val = BUTTON_Pressed();
         }
-        
-        if(switch_val == SW1)
+
+        if (switch_val == SW1) //entre dans le menu PROJECTOR
         {
             switch_val = 0;
-            sprintf((char *)&LCDText, (char*)"SW1: ON         SW2: OFF        ");
+            sprintf((char *) &LCDText, (char*) "SW1: ON         SW2: OFF        ");
             LCD_Update();
-            
-            while(switch_val == 0)
+
+            while (switch_val == 0)
             {
                 switch_val = BUTTON_Pressed();
             }
-            
-            if(switch_val == SW1)
+
+            if (switch_val == SW1) //Allume le projecteur
             {
                 switch_val = 0;
                 LED1 = 1;
@@ -129,8 +131,8 @@ void Teacher(void)
                 delay_ms(500);
                 LED1 = 0;
             }
-            
-            if(switch_val == SW2)
+
+            if (switch_val == SW2) //Eteind le projecteur
             {
                 switch_val = 0;
                 LED1 = 1;
@@ -143,203 +145,393 @@ void Teacher(void)
                 LED1 = 0;
             }
         }
-        
-        if(switch_val == SW2)
+
+        if (switch_val == SW2) //menu suivant
         {
             switch_val = 0;
-            sprintf((char *)&LCDText, (char*)"SW1: Unlock DoorSW2: Suivant  ");
+            sprintf((char *) &LCDText, (char*) "SW1: Message    SW2: Suivant    ");
             LCD_Update();
-            
-            while(switch_val == 0)
+
+            while (switch_val == 0)
             {
                 switch_val = BUTTON_Pressed();
             }
-            
-            if(switch_val == SW1)
+
+            if (switch_val == SW1) //entre dans le menu message
             {
                 switch_val = 0;
-                LED1 = 1;
-                MiApp_FlushTx();
-                MiApp_WriteData(UNLOCK_PKT);
-                MiApp_WriteData(myShortAddress.v[0]);
-                MiApp_WriteData(myShortAddress.v[1]);
-                MiApp_BroadcastPacket(false);
-                delay_ms(500);
-                LED1 = 0;
-                
-            }
-            
-            if(switch_val == SW2)
-            {
-                switch_val = 0;
-                sprintf((char *)&LCDText, (char*)"SW1: PROJ MOTOR SW2: Suivant    ");
+                sprintf((char *) &LCDText, (char*) "A qui souhaitez-vous l'envoyer? ");
                 LCD_Update();
-            
-                while(switch_val == 0)
+
+                delay_ms(1500);
+
+                sprintf((char *) &LCDText, (char*) "SW1: Device 1   SW2: Suivant    ");
+                LCD_Update();
+
+                while (switch_val == 0)
                 {
                     switch_val = BUTTON_Pressed();
                 }
-                if(switch_val == SW1)
+
+                if (switch_val == SW1)
                 {
                     switch_val = 0;
-                    sprintf((char *)&LCDText, (char*)"SW1: DOWN       SW2: UP         ");
-                    LCD_Update();
-
-                    while(switch_val == 0)
-                    {
-                        switch_val = BUTTON_Pressed();
-                    }
-
-                    if(switch_val == SW1)
-                    {
-                        switch_val = 0;
-                        LED1 = 1;
-                        MiApp_FlushTx();
-                        MiApp_WriteData(PROJECTOR_MOTOR_DOWN);
-                        MiApp_WriteData(myShortAddress.v[0]);
-                        MiApp_WriteData(myShortAddress.v[1]);
-                        MiApp_BroadcastPacket(false);
-                        delay_ms(500);
-                        LED1 = 0;
-                    }
-
-                    if(switch_val == SW2)
-                    {
-                        switch_val = 0;
-                        LED1 = 1;
-                        MiApp_FlushTx();
-                        MiApp_WriteData(PROJECTOR_MOTOR_UP);
-                        MiApp_WriteData(myShortAddress.v[0]);
-                        MiApp_WriteData(myShortAddress.v[1]);
-                        MiApp_BroadcastPacket(false);
-                        delay_ms(500);
-                        LED1 = 0;
-                    }
+                    choix_envoi = DEVICE1;
                 }
-                if(switch_val == SW2)
+
+                if (switch_val == SW2)
                 {
                     switch_val = 0;
-                    sprintf((char *)&LCDText, (char*)"SW1:   ALARM    SW2: Suivant    ");
+                    sprintf((char *) &LCDText, (char*) "SW1: Device 2   SW2: Suivant    ");
                     LCD_Update();
 
-                    while(switch_val == 0)
+                    while (switch_val == 0)
                     {
                         switch_val = BUTTON_Pressed();
                     }
-                    
-                    if(switch_val == SW1)
+
+                    if (switch_val == SW1)
                     {
                         switch_val = 0;
-                        sprintf((char *)&LCDText, (char*)"SW1: ON         SW2: OFF        ");
-                        LCD_Update();
-
-                        while(switch_val == 0)
-                        {
-                            switch_val = BUTTON_Pressed();
-                        }
-
-                        if(switch_val == SW1)
-                        {
-                            switch_val = 0;
-                            LED1 = 1;
-                            MiApp_FlushTx();
-                            MiApp_WriteData(ALARM_ON);
-                            MiApp_WriteData(myShortAddress.v[0]);
-                            MiApp_WriteData(myShortAddress.v[1]);
-                            MiApp_BroadcastPacket(false);
-                            delay_ms(500);
-                            LED1 = 0;
-                        }
-
-                        if(switch_val == SW2)
-                        {
-                            switch_val = 0;
-                            LED1 = 1;
-                            MiApp_FlushTx();
-                            MiApp_WriteData(ALARM_OFF);
-                            MiApp_WriteData(myShortAddress.v[0]);
-                            MiApp_WriteData(myShortAddress.v[1]);
-                            MiApp_BroadcastPacket(false);
-                            delay_ms(500);
-                            LED1 = 0;
-                        }
+                        choix_envoi = DEVICE2;
                     }
-                    if(switch_val == SW2)
+
+                    if (switch_val == SW2)
                     {
                         switch_val = 0;
-                        sprintf((char *)&LCDText, (char*)"SW1: QUESTIONNAIRE SW2: Suivant    ");
+                        sprintf((char *) &LCDText, (char*) "SW1: Device 3   SW2: Suivant    ");
                         LCD_Update();
 
-                        while(switch_val == 0)
+                        while (switch_val == 0)
                         {
                             switch_val = BUTTON_Pressed();
                         }
-                        if(switch_val == SW1)
+
+                        if (switch_val == SW1)
                         {
                             switch_val = 0;
-                            LED1 = 1;
-                            sprintf((char *)&LCDText, (char*)"SW1: QUESTION ENVOYE.    ");
+                            choix_envoi = DEVICE3;
+                        }
+
+                        if (switch_val == SW2)
+                        {
+                            switch_val = 0;
+                            sprintf((char *) &LCDText, (char*) "SW1: Device 4   SW2: Suivant    ");
                             LCD_Update();
-                            delay_ms(500);
-                            questionnaire=1;
-                            MiApp_FlushTx();
-                            MiApp_WriteData(QUEST_ON);
-                            MiApp_WriteData(myShortAddress.v[0]);
-                            MiApp_WriteData(myShortAddress.v[1]);
-                            MiApp_BroadcastPacket(false);
-                            LED1 = 0;
-                            delay_ms(100);
-                            while(questionnaire==1 && switch_val == 0){
+
+                            while (switch_val == 0)
+                            {
                                 switch_val = BUTTON_Pressed();
-                                sprintf((char *)&LCDText, (char*)"A: %u B: %u C: %u D: %u   ",reponsea,reponseb, reponsec, reponsed);
-                                LCD_Update();
-                                delay_ms(100);
-                                if(MiApp_MessageAvailable())
-                                {
-                                    if(rxMessage.Payload[0] == Reponse_A)
-                                    {
-                                        reponsea++;
-                                    }
-                                    if(rxMessage.Payload[0] == Reponse_B)
-                                    {
-                                        reponseb++;
-                                    }
-                                    if(rxMessage.Payload[0] == Reponse_C)
-                                    {
-                                        reponsec++;
-                                    }
-                                    if(rxMessage.Payload[0] == Reponse_D)
-                                    {
-                                        reponsed++;
-                                    }
-                                MiApp_DiscardMessage();
-                                }
-                                if(switch_val == SW1)
-                                {
-                                    switch_val = 0;
-                                    questionnaire=0;
-                                    reponsea=0;
-                                    reponseb=0;
-                                    reponsec=0;
-                                    reponsed=0;
-                                    sprintf((char *)&LCDText, (char*)"QUEST. FINI");
-                                    LCD_Update();
-                                    MiApp_FlushTx();
-                                    MiApp_WriteData(QUEST_OFF);
-                                    MiApp_WriteData(myShortAddress.v[0]);
-                                    MiApp_WriteData(myShortAddress.v[1]);
-                                    MiApp_BroadcastPacket(false);
-                                    delay_ms(500);
-                                }
+                            }
+
+                            if (switch_val == SW1)
+                            {
+                                switch_val = 0;
+                                choix_envoi = DEVICE4;
                             }
                         }
+                    }
 
+
+                }
+
+                switch_val = 0;
+                sprintf((char *) &LCDText, (char*) "SW1: Allo       SW2: Suivant    ");
+                LCD_Update();
+
+                while (switch_val == 0)
+                {
+                    switch_val = BUTTON_Pressed();
+                }
+
+                if (switch_val == SW1) //envoie message ALLO
+                {
+                    switch_val = 0;
+                    LED1 = 1;
+                    MiApp_FlushTx();
+                    MiApp_WriteData(MSG_ALLO);
+                    MiApp_WriteData(myShortAddress.v[0]);
+                    MiApp_WriteData(myShortAddress.v[1]);
+                    MiApp_BroadcastPacket(false);
+                    delay_ms(500);
+                    LED1 = 0;
+                }
+
+
+                if (switch_val == SW2) //passe au prochain message
+                {
+                    switch_val = 0;
+                    sprintf((char *) &LCDText, (char*) "SW1: Ca va?     SW2: Suivant    ");
+                    LCD_Update();
+
+                    while (switch_val == 0)
+                    {
+                        switch_val = BUTTON_Pressed();
+                    }
+
+                    if (switch_val == SW1) //envoie le message Ca va?
+                    {
+                        switch_val = 0;
+                        LED1 = 1;
+                        MiApp_FlushTx();
+                        MiApp_WriteData(MSG_CA_VA);
+                        MiApp_WriteData(myShortAddress.v[0]);
+                        MiApp_WriteData(myShortAddress.v[1]);
+                        MiApp_BroadcastPacket(false);
+                        delay_ms(500);
+                        LED1 = 0;
+                    }
+                    if (switch_val == SW2) //passe au prochain message
+                    {
+                        switch_val = 0;
+                        sprintf((char *) &LCDText, (char*) "SW1: Oui        SW2: Suivant    ");
+                        LCD_Update();
+
+                        while (switch_val == 0)
+                        {
+                            switch_val = BUTTON_Pressed();
+                        }
+
+                        if (switch_val == SW1) //envoie le message oui
+                        {
+                            switch_val = 0;
+                            LED1 = 1;
+                            MiApp_FlushTx();
+                            MiApp_WriteData(MSG_OUI);
+                            MiApp_WriteData(myShortAddress.v[0]);
+                            MiApp_WriteData(myShortAddress.v[1]);
+                            MiApp_BroadcastPacket(false);
+                            delay_ms(500);
+                            LED1 = 0;
+                        }
+
+                        if (switch_val == SW2) //passe au prochain message
+                        {
+                            switch_val = 0;
+                            sprintf((char *) &LCDText, (char*) "SW1: Non        SW2: Suivant    ");
+                            LCD_Update();
+
+                            while (switch_val == 0)
+                            {
+                                switch_val = BUTTON_Pressed();
+                            }
+
+                            if (switch_val == SW1) //envoie message non
+                            {
+                                switch_val = 0;
+                                LED1 = 1;
+                                MiApp_FlushTx();
+                                MiApp_WriteData(MSG_NON);
+                                MiApp_WriteData(myShortAddress.v[0]);
+                                MiApp_WriteData(myShortAddress.v[1]);
+                                MiApp_BroadcastPacket(false);
+                                delay_ms(500);
+                                LED1 = 0;
+                            }
+                        }
                     }
                 }
-            }    
-        }        
+            }
+
+            if (switch_val == SW2)
+            {
+                switch_val = 0;
+                sprintf((char *) &LCDText, (char*) "SW1: Unlock DoorSW2: Suivant  "); //blou blou
+                LCD_Update();
+
+                while (switch_val == 0)
+                {
+                    switch_val = BUTTON_Pressed();
+                }
+
+                if (switch_val == SW1)
+                {
+                    switch_val = 0;
+                    LED1 = 1;
+                    MiApp_FlushTx();
+                    MiApp_WriteData(UNLOCK_PKT);
+                    MiApp_WriteData(myShortAddress.v[0]);
+                    MiApp_WriteData(myShortAddress.v[1]);
+                    MiApp_BroadcastPacket(false);
+                    delay_ms(500);
+                    LED1 = 0;
+
+                }
+
+                if (switch_val == SW2)
+                {
+                    switch_val = 0;
+                    sprintf((char *) &LCDText, (char*) "SW1: Proj Motor SW2: Suivant    ");
+                    LCD_Update();
+
+                    while (switch_val == 0)
+                    {
+                        switch_val = BUTTON_Pressed();
+                    }
+                    if (switch_val == SW1)
+                    {
+                        switch_val = 0;
+                        sprintf((char *) &LCDText, (char*) "SW1: DOWN       SW2: UP         ");
+                        LCD_Update();
+
+                        while (switch_val == 0)
+                        {
+                            switch_val = BUTTON_Pressed();
+                        }
+
+                        if (switch_val == SW1)
+                        {
+                            switch_val = 0;
+                            LED1 = 1;
+                            MiApp_FlushTx();
+                            MiApp_WriteData(PROJECTOR_MOTOR_DOWN);
+                            MiApp_WriteData(myShortAddress.v[0]);
+                            MiApp_WriteData(myShortAddress.v[1]);
+                            MiApp_BroadcastPacket(false);
+                            delay_ms(500);
+                            LED1 = 0;
+                        }
+
+                        if (switch_val == SW2)
+                        {
+                            switch_val = 0;
+                            LED1 = 1;
+                            MiApp_FlushTx();
+                            MiApp_WriteData(PROJECTOR_MOTOR_UP);
+                            MiApp_WriteData(myShortAddress.v[0]);
+                            MiApp_WriteData(myShortAddress.v[1]);
+                            MiApp_BroadcastPacket(false);
+                            delay_ms(500);
+                            LED1 = 0;
+                        }
+                    }
+                    if (switch_val == SW2)
+                    {
+                        switch_val = 0;
+                        sprintf((char *) &LCDText, (char*) "SW1: Alarm      SW2: Suivant    ");
+                        LCD_Update();
+
+                        while (switch_val == 0)
+                        {
+                            switch_val = BUTTON_Pressed();
+                        }
+
+                        if (switch_val == SW1)
+                        {
+                            switch_val = 0;
+                            sprintf((char *) &LCDText, (char*) "SW1: ON         SW2: OFF        ");
+                            LCD_Update();
+
+                            while (switch_val == 0)
+                            {
+                                switch_val = BUTTON_Pressed();
+                            }
+
+                            if (switch_val == SW1)
+                            {
+                                switch_val = 0;
+                                LED1 = 1;
+                                MiApp_FlushTx();
+                                MiApp_WriteData(ALARM_ON);
+                                MiApp_WriteData(myShortAddress.v[0]);
+                                MiApp_WriteData(myShortAddress.v[1]);
+                                MiApp_BroadcastPacket(false);
+                                delay_ms(500);
+                                LED1 = 0;
+                            }
+
+                            if (switch_val == SW2)
+                            {
+                                switch_val = 0;
+                                LED1 = 1;
+                                MiApp_FlushTx();
+                                MiApp_WriteData(ALARM_OFF);
+                                MiApp_WriteData(myShortAddress.v[0]);
+                                MiApp_WriteData(myShortAddress.v[1]);
+                                MiApp_BroadcastPacket(false);
+                                delay_ms(500);
+                                LED1 = 0;
+                            }
+                        }
+                        if (switch_val == SW2)
+                        {
+                            switch_val = 0;
+                            sprintf((char *) &LCDText, (char*) "SW1: Questions  SW2: Suivant    ");
+                            LCD_Update();
+
+                            while (switch_val == 0)
+                            {
+                                switch_val = BUTTON_Pressed();
+                            }
+                            if (switch_val == SW1)
+                            {
+                                switch_val = 0;
+                                LED1 = 1;
+                                sprintf((char *) &LCDText, (char*) "SW1: Question envoye.    ");
+                                LCD_Update();
+                                delay_ms(500);
+                                questionnaire = 1;
+                                MiApp_FlushTx();
+                                MiApp_WriteData(QUEST_ON);
+                                MiApp_WriteData(myShortAddress.v[0]);
+                                MiApp_WriteData(myShortAddress.v[1]);
+                                MiApp_BroadcastPacket(false);
+                                LED1 = 0;
+                                delay_ms(100);
+                                while (questionnaire == 1 && switch_val == 0)
+                                {
+                                    switch_val = BUTTON_Pressed();
+                                    sprintf((char *) &LCDText, (char*) "A: %u B: %u C: %u D: %u      ", reponsea, reponseb, reponsec, reponsed);
+                                    LCD_Update();
+                                    delay_ms(100);
+                                    if (MiApp_MessageAvailable())
+                                    {
+                                        if (rxMessage.Payload[0] == Reponse_A)
+                                        {
+                                            reponsea++;
+                                        }
+                                        if (rxMessage.Payload[0] == Reponse_B)
+                                        {
+                                            reponseb++;
+                                        }
+                                        if (rxMessage.Payload[0] == Reponse_C)
+                                        {
+                                            reponsec++;
+                                        }
+                                        if (rxMessage.Payload[0] == Reponse_D)
+                                        {
+                                            reponsed++;
+                                        }
+                                        MiApp_DiscardMessage();
+                                    }
+                                    if (switch_val == SW1)
+                                    {
+                                        switch_val = 0;
+                                        questionnaire = 0;
+                                        reponsea = 0;
+                                        reponseb = 0;
+                                        reponsec = 0;
+                                        reponsed = 0;
+                                        sprintf((char *) &LCDText, (char*) "Quest. Fini");
+                                        LCD_Update();
+                                        MiApp_FlushTx();
+                                        MiApp_WriteData(QUEST_OFF);
+                                        MiApp_WriteData(myShortAddress.v[0]);
+                                        MiApp_WriteData(myShortAddress.v[1]);
+                                        MiApp_BroadcastPacket(false);
+                                        delay_ms(500);
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }//blooup bloup
+        }
     }
 }
+
 /*     
             
             
@@ -468,6 +660,5 @@ void Teacher(void)
 }
     	  
 */
-    
 
-    	    
+
