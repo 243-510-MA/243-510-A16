@@ -14,16 +14,21 @@
 void Demo_Pan(void)
 {
     TRISB = 0x0;
-    int status = 0;
-    GYRO = 0;
-    Buzzer = 0;
-   
+    UART_TX_TRIS = 0;
+    int alarm_status = 1;
     
-    LCD_BKLT = 1;
     while(true)
     {
         if(MiApp_MessageAvailable())
         {
+            if (rxMessage.Payload[0] == DEMO_ALARM_ARMED)
+            {alarm_status = 1;}
+            
+            if (rxMessage.Payload[0] == DEMO_ALARM_DISARMED)
+            {alarm_status = 0;}
+            
+            if (alarm_status == 1)
+            {
             if(rxMessage.Payload[0] == DEMO_ALARM_ON )
             {
                 demo_gyro(1);
@@ -33,8 +38,9 @@ void Demo_Pan(void)
             {
                 
                 demo_gyro(0);
+                
             }
-           
+            }
         }
         MiApp_DiscardMessage();
     }
@@ -46,7 +52,8 @@ void Demo_Pan(void)
 void demo_gyro(int status)
 {
     LED0 = status;
-    GYRO = status;
-  
+    LED1 = status;
+    LED2 = status;
+    UART_TX_V = status;
     
 }

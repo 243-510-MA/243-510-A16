@@ -85,7 +85,7 @@ void Network(int DEVICEMODE)
     MiApp_ConnectionMode(ENABLE_ALL_CONN);
 
     
-    if(DEVICEMODE == 0)
+    if((DEVICEMODE == 0) || (DEVICEMODE == 7))
     {
         while(result == true)
         {

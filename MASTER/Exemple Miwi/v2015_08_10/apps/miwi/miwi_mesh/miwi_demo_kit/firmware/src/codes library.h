@@ -8,7 +8,8 @@
 #define ALARM_ON             0x06
 #define DEMO_ALARM_ON        0x16
 #define DEMO_ALARM_OFF       0x15
-
+#define DEMO_ALARM_ARMED     0X17
+#define DEMO_ALARM_DISARMED  0x18
 #define QUEST_ON             0x77
 #define QUEST_OFF            0x88
 

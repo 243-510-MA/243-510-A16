@@ -13,6 +13,7 @@
 #include "computer_control.h"
 #include "demo_pan.h"
 #include "demo_mouvement.h"
+#include "demo_911.h"
 
 
 
@@ -24,10 +25,11 @@
 #define COMPUTER_CONTROL 5          //Boop Beep Boop
 #define MOVEMENT 6                  //Beep Boop Boop
 #define DEMO_PAN 7
+#define DEMO_911 8                  //Can jet fuel melt steel beams?
 
 //*************************************************************************
 
-#define DEVICEMODE COMPUTER_CONTROL // Choisir ici
+#define DEVICEMODE PAN // Choisir ici
 
 //*************************************************************************
 
@@ -81,5 +83,11 @@ void main(void)
     if(DEVICEMODE == DEMO_PAN)
     {
        Demo_Pan();      
+    }
+    
+    if(DEVICEMODE == DEMO_911)
+    {
+       Demo_911();
+        
     }
 }
