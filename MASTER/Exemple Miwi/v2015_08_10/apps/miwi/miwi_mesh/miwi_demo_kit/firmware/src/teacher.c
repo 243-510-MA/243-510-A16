@@ -8,6 +8,7 @@
 
 void Teacher(void)
 {
+    uint8_t i = 0;
     uint8_t switch_val = 0;
     extern uint8_t ConnectionEntry;
     bool Tx_Packet = true;
@@ -20,9 +21,23 @@ void Teacher(void)
     uint8_t reponsec = 0;
     uint8_t reponsed = 0;
     uint8_t choix_envoi = 0;
+    uint8_t my_adresse;
+    
+    my_adresse = ( myShortAddress.v[1] << 8 ) + (myShortAddress.v[0]);
     LCD_Erase();
-    LCD_Display((char *) " TEACHER DEVICE ", 0, true);
-
+    sprintf((char *) &LCDText, (char*)" TEACHER DEVICE  MY ID: %X",my_adresse);
+    LCD_Update();
+ 
+    for(i = 0; i<10;i++)
+    {
+        DELAY_ms(250);
+    }
+  //   unicast adresse test pour 0x0102
+     uint8_t IdAdresse[2] ={0x02,0x01};
+     uint16_t digit_adresse;
+     
+  
+    
     while (true)
     {
         /*
@@ -148,6 +163,7 @@ void Teacher(void)
 
         if (switch_val == SW2) //menu suivant
         {
+            int send = 0;
             switch_val = 0;
             sprintf((char *) &LCDText, (char*) "SW1: Message    SW2: Suivant    ");
             LCD_Update();
@@ -159,30 +175,19 @@ void Teacher(void)
 
             if (switch_val == SW1) //entre dans le menu message
             {
+                int digit[3] = {0, 0, 0};
+                int select = 0;
+
                 switch_val = 0;
                 sprintf((char *) &LCDText, (char*) "A qui souhaitez-vous l'envoyer? ");
                 LCD_Update();
 
-                delay_ms(1500);
-
-                sprintf((char *) &LCDText, (char*) "SW1: Device 1   SW2: Suivant    ");
-                LCD_Update();
-
-                while (switch_val == 0)
+                delay_ms(750);
+                while (send == 0)
                 {
-                    switch_val = BUTTON_Pressed();
-                }
 
-                if (switch_val == SW1)
-                {
-                    switch_val = 0;
-                    choix_envoi = DEVICE1;
-                }
 
-                if (switch_val == SW2)
-                {
-                    switch_val = 0;
-                    sprintf((char *) &LCDText, (char*) "SW1: Device 2   SW2: Suivant    ");
+                    sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
                     LCD_Update();
 
                     while (switch_val == 0)
@@ -192,49 +197,60 @@ void Teacher(void)
 
                     if (switch_val == SW1)
                     {
+
                         switch_val = 0;
-                        choix_envoi = DEVICE2;
+                        delay_ms(150);
+                        digit[select] = 1 + digit[select];
+                        if (digit[select] == 10)
+                        {
+                            digit[select] = 0;
+                        }
+                        sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
+                        LCD_Update();
+
                     }
 
                     if (switch_val == SW2)
                     {
                         switch_val = 0;
-                        sprintf((char *) &LCDText, (char*) "SW1: Device 3   SW2: Suivant    ");
+
+                        delay_ms(150);
+                        select = select + 1;
+                        sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
                         LCD_Update();
 
-                        while (switch_val == 0)
+                        if (select == 3)
+                        {
+
+                            sprintf((char *) &LCDText, (char*) "SW1:send        SW2:re-cycler   ");
+                            LCD_Update();
+                            delay_ms(500);
+                                                while (switch_val == 0)
                         {
                             switch_val = BUTTON_Pressed();
                         }
-
-                        if (switch_val == SW1)
-                        {
-                            switch_val = 0;
-                            choix_envoi = DEVICE3;
-                        }
-
-                        if (switch_val == SW2)
-                        {
-                            switch_val = 0;
-                            sprintf((char *) &LCDText, (char*) "SW1: Device 4   SW2: Suivant    ");
-                            LCD_Update();
-
-                            while (switch_val == 0)
-                            {
-                                switch_val = BUTTON_Pressed();
-                            }
-
                             if (switch_val == SW1)
                             {
                                 switch_val = 0;
-                                choix_envoi = DEVICE4;
+
+                                send = 1;
+                                sprintf((char *) &LCDText, (char*) "adresse choisi                      ");
+                                LCD_Update();
+                                digit_adresse = ((digit[0]<<8) + (digit[1]<<4) + (digit[2]));
+                                 
+                                IdAdresse[1] = digit_adresse >>8;
+                                IdAdresse[0] = digit_adresse;
+                                        
+                                delay_ms(750);
+                            }
+                            if (switch_val == SW2)
+                            {
+                                switch_val = 0;
+                                select = 0;
                             }
                         }
                     }
-
-
                 }
-
                 switch_val = 0;
                 sprintf((char *) &LCDText, (char*) "SW1: Allo       SW2: Suivant    ");
                 LCD_Update();
@@ -252,7 +268,7 @@ void Teacher(void)
                     MiApp_WriteData(MSG_ALLO);
                     MiApp_WriteData(myShortAddress.v[0]);
                     MiApp_WriteData(myShortAddress.v[1]);
-                    MiApp_BroadcastPacket(false);
+                    UnicastShortAddress(&IdAdresse);
                     delay_ms(500);
                     LED1 = 0;
                 }
@@ -277,7 +293,7 @@ void Teacher(void)
                         MiApp_WriteData(MSG_CA_VA);
                         MiApp_WriteData(myShortAddress.v[0]);
                         MiApp_WriteData(myShortAddress.v[1]);
-                        MiApp_BroadcastPacket(false);
+                        UnicastShortAddress(&IdAdresse);
                         delay_ms(500);
                         LED1 = 0;
                     }
