@@ -10,7 +10,10 @@
 
 void ProjectorScreen(void)
 
-{   // Commentaires de Timer 3 - 2016 par Samuel Proulx
+{   
+    int statusScreen = 0; //etat initialise a 0, l'ecran est roulé
+    
+    // Commentaires de Timer 3 - 2016 par Samuel Proulx
     // La routine d'interruption pour cette fonction se trouve dans "drv_mrf_miwi_24j40.c" à la ligne 1879
     // Nomenclature :  (REGISTERNAME . REGISTERBIT)
     PROJECTOR_TRIS = 0;
@@ -37,25 +40,49 @@ void ProjectorScreen(void)
                 LED1 = 1 ;
                 delay_ms(100);
                 LED1 = 0 ;
+                statusScreen = 0;
                pwm_value_high_time = 800;
                PIE2bits.TMR3IE  = 1;
-               
-                
-                
             }
             else if (rxMessage.Payload[0] == PROJECTOR_MOTOR_DOWN)
             {      
                  LED2 = 1 ;
                 delay_ms(100);
                 LED2 = 0 ;
-                
+                statusScreen = 1;
                 pwm_value_high_time = 0;
                 PIE2bits.TMR3IE  = 1;
                
             }
+            else if (rxMessage.Payload[0] == STATUS_SCREEN)
+            {      
+                if(statusScreen == 0)
+				{
+                
+			      LED1 = 1;
+                  MiApp_FlushTx();
+                  MiApp_WriteData(SCREEN_UP);
+                  MiApp_WriteData(myShortAddress.v[0]);
+                  MiApp_WriteData(myShortAddress.v[1]);
+                  MiApp_BroadcastPacket(false);
+                  delay_ms(500);
+                  LED1 = 0;
+                }
+	    	    else
+                { LED1 = 1;
+                  MiApp_FlushTx();
+                  MiApp_WriteData(SCREEN_DOWN);
+                  MiApp_WriteData(myShortAddress.v[0]);
+                  MiApp_WriteData(myShortAddress.v[1]);
+                  MiApp_BroadcastPacket(false);
+                  delay_ms(500);
+                  LED1 = 0;
+
+		        }
+            
             MiApp_DiscardMessage();
+            }
         }
-        
     }
 }
 

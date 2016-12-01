@@ -175,7 +175,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S506 . . . . . . . . . ]
 "7566
 [v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
-"752 ../../../../../../framework\miwi/miwi_api.h
+"207 ../../../../../../framework\miwi/miwi_mesh.h
+[v _TxData `uc ~T0 @X0 0 e ]
+"206
+[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
+"209
+[v _myShortAddress `S1082 ~T0 @X0 0 e ]
+"552 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
+"752
 [v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
 [; ;projector_screen.h: 25: void ProjectorScreen(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -7989,59 +7997,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;projector_screen.c: 13: {
 [e :U _ProjectorScreen ]
 [f ]
-[; ;projector_screen.c: 16: TRISAbits.TRISA3 = 0;
-"16
-[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
-[; ;projector_screen.c: 17: RCONbits.IPEN = 1;
-"17
-[e = . . _RCONbits 6 7 -> -> 1 `i `uc ]
-[; ;projector_screen.c: 18: T3CON = 0b00011111;
-"18
-[e = _T3CON -> -> 31 `i `uc ]
-[; ;projector_screen.c: 19: TCLKCONbits.T1RUN = 1;
+"14
+[v _statusScreen `i ~T0 @X0 1 a ]
+[; ;projector_screen.c: 14: int statusScreen = 0;
+[e = _statusScreen -> 0 `i ]
+[; ;projector_screen.c: 19: TRISAbits.TRISA3 = 0;
 "19
-[e = . . _TCLKCONbits 0 3 -> -> 1 `i `uc ]
-[; ;projector_screen.c: 20: TMR3 = 0xE000;
+[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
+[; ;projector_screen.c: 20: RCONbits.IPEN = 1;
 "20
-[e = _TMR3 -> -> 57344 `ui `us ]
-[; ;projector_screen.c: 21: IPR2bits.TMR3IP = 1;
+[e = . . _RCONbits 6 7 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 21: T3CON = 0b00011111;
 "21
-[e = . . _IPR2bits 0 1 -> -> 1 `i `uc ]
-[; ;projector_screen.c: 22: INTCONbits.GIEH = 1;
+[e = _T3CON -> -> 31 `i `uc ]
+[; ;projector_screen.c: 22: TCLKCONbits.T1RUN = 1;
 "22
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
-[; ;projector_screen.c: 23: PIE2bits.TMR3IE = 0;
+[e = . . _TCLKCONbits 0 3 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 23: TMR3 = 0xE000;
 "23
-[e = . . _PIE2bits 0 1 -> -> 0 `i `uc ]
-[; ;projector_screen.c: 24: PIR2bits.TMR3IF = 0;
+[e = _TMR3 -> -> 57344 `ui `us ]
+[; ;projector_screen.c: 24: IPR2bits.TMR3IP = 1;
 "24
-[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
-[; ;projector_screen.c: 25: LATEbits.LATE1 = 1;
+[e = . . _IPR2bits 0 1 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 25: INTCONbits.GIEH = 1;
 "25
+[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 26: PIE2bits.TMR3IE = 0;
+"26
+[e = . . _PIE2bits 0 1 -> -> 0 `i `uc ]
+[; ;projector_screen.c: 27: PIR2bits.TMR3IF = 0;
+"27
+[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
+[; ;projector_screen.c: 28: LATEbits.LATE1 = 1;
+"28
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;projector_screen.c: 30: while(1)
-"30
-[e :U 1117 ]
-[; ;projector_screen.c: 31: {
-"31
-{
-[; ;projector_screen.c: 33: if(MiApp_MessageAvailable())
+[; ;projector_screen.c: 33: while(1)
 "33
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1119  ]
+[e :U 1117 ]
 [; ;projector_screen.c: 34: {
 "34
 {
-[; ;projector_screen.c: 35: if(rxMessage.Payload[0] == 0x22)
-"35
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 34 `i 1120  ]
-[; ;projector_screen.c: 36: {
+[; ;projector_screen.c: 36: if(MiApp_MessageAvailable())
 "36
-{
-[; ;projector_screen.c: 37: LATAbits.LATA6 = 1 ;
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1119  ]
+[; ;projector_screen.c: 37: {
 "37
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;projector_screen.c: 38: { unsigned long _dcnt; unsigned long _ms; _ms = 100; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+{
+[; ;projector_screen.c: 38: if(rxMessage.Payload[0] == 0x22)
 "38
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 34 `i 1120  ]
+[; ;projector_screen.c: 39: {
+"39
+{
+[; ;projector_screen.c: 40: LATAbits.LATA6 = 1 ;
+"40
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 41: { unsigned long _dcnt; unsigned long _ms; _ms = 100; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"41
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
@@ -8061,31 +8073,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != __ms -> -> 0 `i `ul 1122  ]
 [e :U 1123 ]
 }
-[; ;projector_screen.c: 39: LATAbits.LATA6 = 0 ;
-"39
+[; ;projector_screen.c: 42: LATAbits.LATA6 = 0 ;
+"42
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;projector_screen.c: 40: pwm_value_high_time = 800;
-"40
+[; ;projector_screen.c: 43: statusScreen = 0;
+"43
+[e = _statusScreen -> 0 `i ]
+[; ;projector_screen.c: 44: pwm_value_high_time = 800;
+"44
 [e = _pwm_value_high_time -> -> 800 `i `ui ]
-[; ;projector_screen.c: 41: PIE2bits.TMR3IE = 1;
-"41
-[e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 45: PIE2bits.TMR3IE = 1;
 "45
-}
-[; ;projector_screen.c: 45: }
-[e $U 1127  ]
+[e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
 "46
-[e :U 1120 ]
-[; ;projector_screen.c: 46: else if (rxMessage.Payload[0] == 0x33)
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 51 `i 1128  ]
-[; ;projector_screen.c: 47: {
+}
+[; ;projector_screen.c: 46: }
+[e $U 1127  ]
 "47
-{
-[; ;projector_screen.c: 48: LATAbits.LATA7 = 1 ;
+[e :U 1120 ]
+[; ;projector_screen.c: 47: else if (rxMessage.Payload[0] == 0x33)
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 51 `i 1128  ]
+[; ;projector_screen.c: 48: {
 "48
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-[; ;projector_screen.c: 49: { unsigned long _dcnt; unsigned long _ms; _ms = 100; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+{
+[; ;projector_screen.c: 49: LATAbits.LATA7 = 1 ;
 "49
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 50: { unsigned long _dcnt; unsigned long _ms; _ms = 100; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"50
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
@@ -8105,35 +8120,156 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != __ms -> -> 0 `i `ul 1130  ]
 [e :U 1131 ]
 }
-[; ;projector_screen.c: 50: LATAbits.LATA7 = 0 ;
-"50
+[; ;projector_screen.c: 51: LATAbits.LATA7 = 0 ;
+"51
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;projector_screen.c: 52: pwm_value_high_time = 0;
+[; ;projector_screen.c: 52: statusScreen = 1;
 "52
-[e = _pwm_value_high_time -> -> 0 `i `ui ]
-[; ;projector_screen.c: 53: PIE2bits.TMR3IE = 1;
+[e = _statusScreen -> 1 `i ]
+[; ;projector_screen.c: 53: pwm_value_high_time = 0;
 "53
+[e = _pwm_value_high_time -> -> 0 `i `ui ]
+[; ;projector_screen.c: 54: PIE2bits.TMR3IE = 1;
+"54
 [e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
-"55
-}
-[e :U 1128 ]
 "56
-[e :U 1127 ]
-[; ;projector_screen.c: 55: }
-[; ;projector_screen.c: 56: MiApp_DiscardMessage();
-[e ( _MiApp_DiscardMessage ..  ]
+}
+[; ;projector_screen.c: 56: }
+[e $U 1135  ]
 "57
+[e :U 1128 ]
+[; ;projector_screen.c: 57: else if (rxMessage.Payload[0] == 0x07)
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 7 `i 1136  ]
+[; ;projector_screen.c: 58: {
+"58
+{
+[; ;projector_screen.c: 59: if(statusScreen == 0)
+"59
+[e $ ! == _statusScreen -> 0 `i 1137  ]
+[; ;projector_screen.c: 60: {
+"60
+{
+[; ;projector_screen.c: 62: LATAbits.LATA6 = 1;
+"62
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 63: {TxData = 11;};
+"63
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;projector_screen.c: 64: TxBuffer[TxData++] = 0x09;
+"64
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 9 `i `uc ]
+[; ;projector_screen.c: 65: TxBuffer[TxData++] = myShortAddress.v[0];
+"65
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;projector_screen.c: 66: TxBuffer[TxData++] = myShortAddress.v[1];
+"66
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;projector_screen.c: 67: MiApp_BroadcastPacket(0);
+"67
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;projector_screen.c: 68: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"68
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1138  ]
+[e :U 1139 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1141  ]
+[e :U 1142 ]
+[e :U 1141 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1142  ]
+[e :U 1143 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1138 ]
+[e $ != __ms -> -> 0 `i `ul 1139  ]
+[e :U 1140 ]
+}
+[; ;projector_screen.c: 69: LATAbits.LATA6 = 0;
+"69
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"70
+}
+[; ;projector_screen.c: 70: }
+[e $U 1144  ]
+"71
+[e :U 1137 ]
+[; ;projector_screen.c: 71: else
+[; ;projector_screen.c: 72: { LATAbits.LATA6 = 1;
+"72
+{
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;projector_screen.c: 73: {TxData = 11;};
+"73
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;projector_screen.c: 74: TxBuffer[TxData++] = 0x08;
+"74
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 8 `i `uc ]
+[; ;projector_screen.c: 75: TxBuffer[TxData++] = myShortAddress.v[0];
+"75
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;projector_screen.c: 76: TxBuffer[TxData++] = myShortAddress.v[1];
+"76
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;projector_screen.c: 77: MiApp_BroadcastPacket(0);
+"77
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;projector_screen.c: 78: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"78
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1145  ]
+[e :U 1146 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1148  ]
+[e :U 1149 ]
+[e :U 1148 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1149  ]
+[e :U 1150 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1145 ]
+[e $ != __ms -> -> 0 `i `ul 1146  ]
+[e :U 1147 ]
+}
+[; ;projector_screen.c: 79: LATAbits.LATA6 = 0;
+"79
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"81
+}
+[e :U 1144 ]
+[; ;projector_screen.c: 81: }
+[; ;projector_screen.c: 83: MiApp_DiscardMessage();
+"83
+[e ( _MiApp_DiscardMessage ..  ]
+"84
+}
+[e :U 1136 ]
+"85
+[e :U 1135 ]
+[e :U 1127 ]
 }
 [e :U 1119 ]
-"59
+"86
 }
 [e :U 1116 ]
-"30
+"33
 [e $U 1117  ]
 [e :U 1118 ]
-[; ;projector_screen.c: 57: }
-[; ;projector_screen.c: 59: }
-[; ;projector_screen.c: 60: }
-"60
+[; ;projector_screen.c: 84: }
+[; ;projector_screen.c: 85: }
+[; ;projector_screen.c: 86: }
+[; ;projector_screen.c: 87: }
+"87
 [e :UE 1115 ]
 }
