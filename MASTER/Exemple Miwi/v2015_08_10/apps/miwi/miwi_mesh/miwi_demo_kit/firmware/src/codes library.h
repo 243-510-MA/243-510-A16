@@ -4,6 +4,13 @@
 #define UNLOCK_PKT           0x01
 #define PROJECTOR_MOTOR_DOWN 0x33
 #define PROJECTOR_MOTOR_UP   0x22
+#define STATUS_PORTE  0x02
+#define DOOR_OPEN     0x03
+#define DOOR_CLOSED   0x04
+#define STATUS_SCREEN 0x07
+#define SCREEN_DOWN   0x08
+#define SCREEN_UP     0x09
+#define STATUS_PROJECTOR 0x0A
 
 #define ALARM_OFF            0x05
 #define ALARM_ON             0x06
