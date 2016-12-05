@@ -85,7 +85,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S506 . . . . . . . . . ]
 "7566
 [v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
-"752 ../../../../../../framework\miwi/miwi_api.h
+"207 ../../../../../../framework\miwi/miwi_mesh.h
+[v _TxData `uc ~T0 @X0 0 e ]
+"206
+[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
+"209
+[v _myShortAddress `S1082 ~T0 @X0 0 e ]
+"552 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
+"752
 [v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
 [; ;door_unlock.h: 27: void DoorUnlock(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -7956,23 +7964,141 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
 "25
 }
-[e :U 1120 ]
 [; ;door_unlock.c: 25: }
-[; ;door_unlock.c: 26: MiApp_DiscardMessage();
+[e $U 1127  ]
 "26
-[e ( _MiApp_DiscardMessage ..  ]
+[e :U 1120 ]
+[; ;door_unlock.c: 26: else if(rxMessage.Payload[0] == 0x02)
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 2 `i 1128  ]
+[; ;door_unlock.c: 27: {
 "27
+{
+[; ;door_unlock.c: 28: if(LATDbits.LATD7 == 0)
+"28
+[e $ ! == -> . . _LATDbits 0 7 `i -> 0 `i 1129  ]
+[; ;door_unlock.c: 29: {
+"29
+{
+[; ;door_unlock.c: 31: LATAbits.LATA6 = 1;
+"31
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 32: {TxData = 11;};
+"32
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;door_unlock.c: 33: TxBuffer[TxData++] = 0x03;
+"33
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 3 `i `uc ]
+[; ;door_unlock.c: 34: TxBuffer[TxData++] = myShortAddress.v[0];
+"34
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;door_unlock.c: 35: TxBuffer[TxData++] = myShortAddress.v[1];
+"35
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;door_unlock.c: 36: MiApp_BroadcastPacket(0);
+"36
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 37: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"37
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1130  ]
+[e :U 1131 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1133  ]
+[e :U 1134 ]
+[e :U 1133 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1134  ]
+[e :U 1135 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1130 ]
+[e $ != __ms -> -> 0 `i `ul 1131  ]
+[e :U 1132 ]
+}
+[; ;door_unlock.c: 38: LATAbits.LATA6 = 0;
+"38
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"39
+}
+[; ;door_unlock.c: 39: }
+[e $U 1136  ]
+"40
+[e :U 1129 ]
+[; ;door_unlock.c: 40: else
+[; ;door_unlock.c: 41: { LATAbits.LATA6 = 1;
+"41
+{
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;door_unlock.c: 42: {TxData = 11;};
+"42
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;door_unlock.c: 43: TxBuffer[TxData++] = 0x04;
+"43
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 4 `i `uc ]
+[; ;door_unlock.c: 44: TxBuffer[TxData++] = myShortAddress.v[0];
+"44
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;door_unlock.c: 45: TxBuffer[TxData++] = myShortAddress.v[1];
+"45
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;door_unlock.c: 46: MiApp_BroadcastPacket(0);
+"46
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;door_unlock.c: 47: { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"47
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 500 `i `l `ul ]
+[e $U 1137  ]
+[e :U 1138 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1140  ]
+[e :U 1141 ]
+[e :U 1140 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1141  ]
+[e :U 1142 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1137 ]
+[e $ != __ms -> -> 0 `i `ul 1138  ]
+[e :U 1139 ]
+}
+[; ;door_unlock.c: 48: LATAbits.LATA6 = 0;
+"48
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"50
+}
+[e :U 1136 ]
+"51
+}
+[e :U 1128 ]
+"52
+[e :U 1127 ]
+[; ;door_unlock.c: 50: }
+[; ;door_unlock.c: 51: }
+[; ;door_unlock.c: 52: MiApp_DiscardMessage();
+[e ( _MiApp_DiscardMessage ..  ]
+"53
 }
 [e :U 1119 ]
-"28
+"54
 }
 [e :U 1116 ]
 "14
 [e $U 1117  ]
 [e :U 1118 ]
-[; ;door_unlock.c: 27: }
-[; ;door_unlock.c: 28: }
-[; ;door_unlock.c: 29: }
-"29
+[; ;door_unlock.c: 53: }
+[; ;door_unlock.c: 54: }
+[; ;door_unlock.c: 55: }
+"55
 [e :UE 1115 ]
 }

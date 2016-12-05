@@ -64,39 +64,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATEbits `VS544 ~T0 @X0 0 e@3981 ]
 "41 ../src/soft_uart.h
 [v _UART_Init_A2_A1 `(v ~T0 @X0 0 ef ]
-"7778 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18f46j50.h
-[s S526 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S526 . LATC0 LATC1 LATC2 . LATC4 LATC5 LATC6 LATC7 ]
-"7788
-[s S527 :1 `uc 1 ]
-[n S527 . LC0 ]
-"7791
-[s S528 :1 `uc 1 :1 `uc 1 ]
-[n S528 . . LC1 ]
-"7795
-[s S529 :2 `uc 1 :1 `uc 1 ]
-[n S529 . . LC2 ]
-"7799
-[s S530 :4 `uc 1 :1 `uc 1 ]
-[n S530 . . LC4 ]
-"7803
-[s S531 :5 `uc 1 :1 `uc 1 ]
-[n S531 . . LC5 ]
-"7807
-[s S532 :6 `uc 1 :1 `uc 1 ]
-[n S532 . . LC6 ]
-"7811
-[s S533 :7 `uc 1 :1 `uc 1 ]
-[n S533 . . LC7 ]
-"7777
-[u S525 `S526 1 `S527 1 `S528 1 `S529 1 `S530 1 `S531 1 `S532 1 `S533 1 ]
-[n S525 . . . . . . . . . ]
-"7816
-[v _LATCbits `VS525 ~T0 @X0 0 e@3979 ]
-"44 ../src/soft_uart.h
+"44
 [v _UART_kbhit_A2_A1 `(s ~T0 @X0 0 ef ]
 "43
 [v _UART_Read_A2_A1 `(uc ~T0 @X0 0 ef ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.37\include\string.h
+[v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
 "207 ../../../../../../framework\miwi/miwi_mesh.h
 [v _TxData `uc ~T0 @X0 0 e ]
 "206
@@ -7924,68 +7897,94 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;soft_uart.h: 45: void UART_Write_Text_A2_A1(char *text);
 [; ;soft_uart.h: 47: void LCD_Init(void);
 [; ;soft_uart.h: 48: void LCD_Set_Cursor(int pos);
-"15 ../src/computer_control.c
+[; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
+[; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
+[; ;string.h: 16: extern void * memset(void *, int, size_t);
+[; ;string.h: 34: extern char * strcat(char *, const char *);
+[; ;string.h: 35: extern char * strcpy(char *, const char *);
+[; ;string.h: 36: extern char * strncat(char *, const char *, size_t);
+[; ;string.h: 37: extern char * strncpy(char *, const char *, size_t);
+[; ;string.h: 38: extern char * strdup(const char *);
+[; ;string.h: 39: extern char * strtok(char *, const char *);
+[; ;string.h: 42: extern int memcmp(const void *, const void *, size_t);
+[; ;string.h: 43: extern int strcmp(const char *, const char *);
+[; ;string.h: 44: extern int stricmp(const char *, const char *);
+[; ;string.h: 45: extern int strncmp(const char *, const char *, size_t);
+[; ;string.h: 46: extern int strnicmp(const char *, const char *, size_t);
+[; ;string.h: 47: extern void * memchr(const void *, int, size_t);
+[; ;string.h: 48: extern size_t strcspn(const char *, const char *);
+[; ;string.h: 49: extern char * strpbrk(const char *, const char *);
+[; ;string.h: 50: extern size_t strspn(const char *, const char *);
+[; ;string.h: 51: extern char * strstr(const char *, const char *);
+[; ;string.h: 52: extern char * stristr(const char *, const char *);
+[; ;string.h: 53: extern char * strerror(int);
+[; ;string.h: 54: extern size_t strlen(const char *);
+[; ;string.h: 55: extern char * strchr(const char *, int);
+[; ;string.h: 56: extern char * strichr(const char *, int);
+[; ;string.h: 57: extern char * strrchr(const char *, int);
+[; ;string.h: 58: extern char * strrichr(const char *, int);
+"16 ../src/computer_control.c
 [v _output_control `(v ~T0 @X0 1 ef1`i ]
-"16
-{
-[; ;computer_control.c: 15: void output_control(int on_off)
-[; ;computer_control.c: 16: {
-[e :U _output_control ]
-"15
-[v _on_off `i ~T0 @X0 1 r1 ]
-"16
-[f ]
-[; ;computer_control.c: 17: if(on_off == 1)
 "17
-[e $ ! == _on_off -> 1 `i 1116  ]
-[; ;computer_control.c: 18: {
+{
+[; ;computer_control.c: 16: void output_control(int on_off)
+[; ;computer_control.c: 17: {
+[e :U _output_control ]
+"16
+[v _on_off `i ~T0 @X0 1 r1 ]
+"17
+[f ]
+[; ;computer_control.c: 18: if(on_off == 1)
 "18
-{
-[; ;computer_control.c: 19: LATAbits.LATA2 = 1;
+[e $ ! == _on_off -> 1 `i 1116  ]
+[; ;computer_control.c: 19: {
 "19
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-"20
-}
-[; ;computer_control.c: 20: }
-[e $U 1117  ]
-"22
-[e :U 1116 ]
-[; ;computer_control.c: 22: else if(on_off == 0)
-[e $ ! == _on_off -> 0 `i 1118  ]
-[; ;computer_control.c: 23: {
-"23
 {
-[; ;computer_control.c: 24: LATAbits.LATA2 = 0;
+[; ;computer_control.c: 20: LATAbits.LATA2 = 1;
+"20
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"21
+}
+[; ;computer_control.c: 21: }
+[e $U 1117  ]
+"23
+[e :U 1116 ]
+[; ;computer_control.c: 23: else if(on_off == 0)
+[e $ ! == _on_off -> 0 `i 1118  ]
+[; ;computer_control.c: 24: {
 "24
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+{
+[; ;computer_control.c: 25: LATAbits.LATA2 = 0;
 "25
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+"26
 }
 [e :U 1118 ]
-"26
+"27
 [e :U 1117 ]
-[; ;computer_control.c: 25: }
 [; ;computer_control.c: 26: }
+[; ;computer_control.c: 27: }
 [e :UE 1115 ]
 }
-"28
-[v _ComputerControl `(v ~T0 @X0 1 ef ]
 "29
+[v _ComputerControl `(v ~T0 @X0 1 ef ]
+"30
 {
-[; ;computer_control.c: 28: void ComputerControl(void)
-[; ;computer_control.c: 29: {
+[; ;computer_control.c: 29: void ComputerControl(void)
+[; ;computer_control.c: 30: {
 [e :U _ComputerControl ]
 [f ]
-[; ;computer_control.c: 31: ANCON0bits.PCFG1 = 1 ;
-"31
-[e = . . _ANCON0bits 0 1 -> -> 1 `i `uc ]
-[; ;computer_control.c: 32: ANCON0bits.PCFG2 = 1 ;
+[; ;computer_control.c: 32: ANCON0bits.PCFG1 = 1 ;
 "32
-[e = . . _ANCON0bits 0 2 -> -> 1 `i `uc ]
-[; ;computer_control.c: 33: LATEbits.LATE1 = 1;
+[e = . . _ANCON0bits 0 1 -> -> 1 `i `uc ]
+[; ;computer_control.c: 33: ANCON0bits.PCFG2 = 1 ;
 "33
+[e = . . _ANCON0bits 0 2 -> -> 1 `i `uc ]
+[; ;computer_control.c: 34: LATEbits.LATE1 = 1;
+"34
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[v F8393 `uc ~T0 @X0 -> 0 `x s ]
-[i F8393
+[v F8477 `uc ~T0 @X0 -> 0 `x s ]
+[i F8477
 :U ..
 -> 72 `c
 -> 101 `c
@@ -8002,104 +8001,638 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"34
-[v _Title `uc ~T0 @X0 13  a ]
-[; ;computer_control.c: 34: char Title[]= "Hello World!";
-[e = _Title F8393 ]
 "35
-[v _CMD `uc ~T0 @X0 1 a ]
-[; ;computer_control.c: 35: uint8_t CMD = 1 ;
-[e = _CMD -> -> 1 `i `uc ]
-[; ;computer_control.c: 36: UART_Init_A2_A1();
+[v _Title `uc ~T0 @X0 13  a ]
+[; ;computer_control.c: 35: char Title[]= "Hello World!";
+[e = _Title F8477 ]
 "36
-[e ( _UART_Init_A2_A1 ..  ]
-[; ;computer_control.c: 38: while(1)
+[v _CMD `uc ~T0 @X0 1 a ]
+[; ;computer_control.c: 36: uint8_t CMD = 1 ;
+[e = _CMD -> -> 1 `i `uc ]
+"37
+[v _buffer `uc ~T0 @X0 1 a ]
 "38
-[e :U 1121 ]
-[; ;computer_control.c: 39: {
+[v _k `uc ~T0 @X0 1 a ]
+[; ;computer_control.c: 37: char buffer;
+[; ;computer_control.c: 38: uint8_t k=0;
+[e = _k -> -> 0 `i `uc ]
+[v F8482 `uc ~T0 @X0 -> 100 `i s ]
+[i F8482
+:U ..
 "39
-{
-[; ;computer_control.c: 40: LATAbits.LATA6 = 0;
+-> -> 0 `i `uc
+..
+]
+[v _uart_tableau `uc ~T0 @X0 -> 100 `i a ]
+[; ;computer_control.c: 39: unsigned char uart_tableau[100]={0};
+[e = _uart_tableau F8482 ]
+[v F8484 `uc ~T0 @X0 -> 14 `i s ]
+[i F8484
+:U ..
+-> 80 `c
+-> 82 `c
+-> 79 `c
+-> 74 `c
+-> 69 `c
+-> 67 `c
+-> 84 `c
+-> 79 `c
+-> 82 `c
+-> 32 `c
+-> 79 `c
+-> 70 `c
+-> 70 `c
+-> 0 `c
+..
+]
 "40
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;computer_control.c: 41: LATAbits.LATA7 = 0;
-"41
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;computer_control.c: 42: LATCbits.LATC2 = 0;
+[v _projector_off `uc ~T0 @X0 -> 14 `i a ]
+[; ;computer_control.c: 40: unsigned char projector_off[14] ="PROJECTOR OFF";
+[e = _projector_off F8484 ]
+[; ;computer_control.c: 42: UART_Init_A2_A1();
 "42
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-[; ;computer_control.c: 44: if(UART_kbhit_A2_A1())
+[e ( _UART_Init_A2_A1 ..  ]
+[; ;computer_control.c: 44: while(1)
 "44
-[e $ ! != -> ( _UART_kbhit_A2_A1 ..  `i -> -> -> 0 `i `s `i 1123  ]
+[e :U 1121 ]
 [; ;computer_control.c: 45: {
 "45
 {
-[; ;computer_control.c: 48: CMD = UART_Read_A2_A1();
-"48
-[e = _CMD ( _UART_Read_A2_A1 ..  ]
-[; ;computer_control.c: 50: if(CMD == 'P')
-"50
-[e $ ! == -> _CMD `ui -> 80 `ui 1124  ]
-[; ;computer_control.c: 51: {
-"51
-{
-[; ;computer_control.c: 52: {TxData = 11;};
+[; ;computer_control.c: 52: if(UART_kbhit_A2_A1())
 "52
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;computer_control.c: 53: TxBuffer[TxData++] = 0x66;
+[e $ ! != -> ( _UART_kbhit_A2_A1 ..  `i -> -> -> 0 `i `s `i 1123  ]
+[; ;computer_control.c: 53: {
 "53
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 102 `i `uc ]
-[; ;computer_control.c: 54: TxBuffer[TxData++] = myShortAddress.v[0];
-"54
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-[; ;computer_control.c: 55: TxBuffer[TxData++] = myShortAddress.v[1];
+{
+[; ;computer_control.c: 55: buffer = UART_Read_A2_A1();
 "55
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-[; ;computer_control.c: 56: MiApp_BroadcastPacket(0);
+[e = _buffer ( _UART_Read_A2_A1 ..  ]
+[; ;computer_control.c: 56: uart_tableau[k] = buffer;
 "56
-[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;computer_control.c: 57: LATAbits.LATA6 = 1;
+[e = *U + &U _uart_tableau * -> _k `ux -> -> # *U &U _uart_tableau `ui `ux _buffer ]
+[; ;computer_control.c: 57: k++;
 "57
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;computer_control.c: 58: { unsigned long _dcnt; unsigned long _ms; _ms = 200; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+[e ++ _k -> -> 1 `i `uc ]
+[; ;computer_control.c: 58: { unsigned long _dcnt; unsigned long _ms; _ms = 10; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
 "58
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
-[e = __ms -> -> -> 200 `i `l `ul ]
-[e $U 1125  ]
-[e :U 1126 ]
+[e = __ms -> -> -> 10 `i `l `ul ]
+[e $U 1124  ]
+[e :U 1125 ]
 {
 [e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
-[e $U 1128  ]
-[e :U 1129 ]
+[e $U 1127  ]
 [e :U 1128 ]
-[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1129  ]
-[e :U 1130 ]
+[e :U 1127 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1128  ]
+[e :U 1129 ]
 [e -- __ms -> -> -> 1 `i `l `ul ]
 }
-[e :U 1125 ]
-[e $ != __ms -> -> 0 `i `ul 1126  ]
-[e :U 1127 ]
-}
-"59
-}
 [e :U 1124 ]
+[e $ != __ms -> -> 0 `i `ul 1125  ]
+[e :U 1126 ]
+}
+[; ;computer_control.c: 59: if(uart_tableau[k-1] == '\r')
+"59
+[e $ ! == -> *U + &U _uart_tableau * -> -> - -> _k `i -> 1 `i `ui `ux -> -> # *U &U _uart_tableau `ui `ux `ui -> 13 `ui 1130  ]
+[; ;computer_control.c: 60: {
+"60
+{
+[; ;computer_control.c: 61: uart_tableau[k-1] = 0x00;
 "61
+[e = *U + &U _uart_tableau * -> -> - -> _k `i -> 1 `i `ui `ux -> -> # *U &U _uart_tableau `ui `ux -> -> 0 `i `uc ]
+[; ;computer_control.c: 62: k = 0;
+"62
+[e = _k -> -> 0 `i `uc ]
+[; ;computer_control.c: 66: if(!strcmp("PROJECTOR OFF",&uart_tableau))
+"66
+[e $ ! ! != ( _strcmp (2 , :s 1C -> &U _uart_tableau `*Cuc -> 0 `i 1131  ]
+[; ;computer_control.c: 67: {
+"67
+{
+[; ;computer_control.c: 68: {TxData = 11;};
+"68
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;computer_control.c: 69: TxBuffer[TxData++] = 0x66;
+"69
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 102 `i `uc ]
+[; ;computer_control.c: 70: TxBuffer[TxData++] = myShortAddress.v[0];
+"70
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 71: TxBuffer[TxData++] = myShortAddress.v[1];
+"71
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 72: MiApp_BroadcastPacket(0);
+"72
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;computer_control.c: 73: LATAbits.LATA6 = 1;
+"73
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;computer_control.c: 74: { unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"74
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 50 `i `l `ul ]
+[e $U 1132  ]
+[e :U 1133 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1135  ]
+[e :U 1136 ]
+[e :U 1135 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1136  ]
+[e :U 1137 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1132 ]
+[e $ != __ms -> -> 0 `i `ul 1133  ]
+[e :U 1134 ]
+}
+[; ;computer_control.c: 75: LATAbits.LATA6 = 0;
+"75
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"77
+}
+[; ;computer_control.c: 77: }
+[e $U 1138  ]
+"79
+[e :U 1131 ]
+[; ;computer_control.c: 79: else if(!strcmp("PROJECTOR ON",&uart_tableau))
+[e $ ! ! != ( _strcmp (2 , :s 2C -> &U _uart_tableau `*Cuc -> 0 `i 1139  ]
+[; ;computer_control.c: 80: {
+"80
+{
+[; ;computer_control.c: 81: {TxData = 11;};
+"81
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;computer_control.c: 82: TxBuffer[TxData++] = 0x55;
+"82
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 85 `i `uc ]
+[; ;computer_control.c: 83: TxBuffer[TxData++] = myShortAddress.v[0];
+"83
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 84: TxBuffer[TxData++] = myShortAddress.v[1];
+"84
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 85: MiApp_BroadcastPacket(0);
+"85
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;computer_control.c: 86: LATAbits.LATA6 = 1;
+"86
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;computer_control.c: 87: { unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"87
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 50 `i `l `ul ]
+[e $U 1140  ]
+[e :U 1141 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1143  ]
+[e :U 1144 ]
+[e :U 1143 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1144  ]
+[e :U 1145 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1140 ]
+[e $ != __ms -> -> 0 `i `ul 1141  ]
+[e :U 1142 ]
+}
+[; ;computer_control.c: 88: LATAbits.LATA6 = 0;
+"88
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"90
+}
+[; ;computer_control.c: 90: }
+[e $U 1146  ]
+"91
+[e :U 1139 ]
+[; ;computer_control.c: 91: else if(!strcmp("PROJECTOR MOTOR DOWN",&uart_tableau))
+[e $ ! ! != ( _strcmp (2 , :s 3C -> &U _uart_tableau `*Cuc -> 0 `i 1147  ]
+[; ;computer_control.c: 92: {
+"92
+{
+[; ;computer_control.c: 93: {TxData = 11;};
+"93
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;computer_control.c: 94: TxBuffer[TxData++] = 0x33;
+"94
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 51 `i `uc ]
+[; ;computer_control.c: 95: TxBuffer[TxData++] = myShortAddress.v[0];
+"95
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 96: TxBuffer[TxData++] = myShortAddress.v[1];
+"96
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 97: MiApp_BroadcastPacket(0);
+"97
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;computer_control.c: 98: LATAbits.LATA6 = 1;
+"98
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;computer_control.c: 99: { unsigned long _dcnt; unsigned long _ms; _ms = 200; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"99
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 200 `i `l `ul ]
+[e $U 1148  ]
+[e :U 1149 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1151  ]
+[e :U 1152 ]
+[e :U 1151 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1152  ]
+[e :U 1153 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1148 ]
+[e $ != __ms -> -> 0 `i `ul 1149  ]
+[e :U 1150 ]
+}
+[; ;computer_control.c: 100: LATAbits.LATA6 = 0;
+"100
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"102
+}
+[; ;computer_control.c: 102: }
+[e $U 1154  ]
+"104
+[e :U 1147 ]
+[; ;computer_control.c: 104: else if(!strcmp("PROJECTOR MOTOR UP",&uart_tableau))
+[e $ ! ! != ( _strcmp (2 , :s 4C -> &U _uart_tableau `*Cuc -> 0 `i 1155  ]
+[; ;computer_control.c: 105: {
+"105
+{
+[; ;computer_control.c: 106: {TxData = 11;};
+"106
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;computer_control.c: 107: TxBuffer[TxData++] = 0x22;
+"107
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 34 `i `uc ]
+[; ;computer_control.c: 108: TxBuffer[TxData++] = myShortAddress.v[0];
+"108
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 109: TxBuffer[TxData++] = myShortAddress.v[1];
+"109
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 110: MiApp_BroadcastPacket(0);
+"110
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;computer_control.c: 111: LATAbits.LATA6 = 1;
+"111
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;computer_control.c: 112: { unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"112
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 50 `i `l `ul ]
+[e $U 1156  ]
+[e :U 1157 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1159  ]
+[e :U 1160 ]
+[e :U 1159 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1160  ]
+[e :U 1161 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1156 ]
+[e $ != __ms -> -> 0 `i `ul 1157  ]
+[e :U 1158 ]
+}
+[; ;computer_control.c: 113: LATAbits.LATA6 = 0;
+"113
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"115
+}
+[; ;computer_control.c: 115: }
+[e $U 1162  ]
+"117
+[e :U 1155 ]
+[; ;computer_control.c: 117: else if(!strcmp("ALARM ON",&uart_tableau))
+[e $ ! ! != ( _strcmp (2 , :s 5C -> &U _uart_tableau `*Cuc -> 0 `i 1163  ]
+[; ;computer_control.c: 118: {
+"118
+{
+[; ;computer_control.c: 119: {TxData = 11;};
+"119
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;computer_control.c: 120: TxBuffer[TxData++] = 0x06;
+"120
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 6 `i `uc ]
+[; ;computer_control.c: 121: TxBuffer[TxData++] = myShortAddress.v[0];
+"121
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 122: TxBuffer[TxData++] = myShortAddress.v[1];
+"122
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 123: MiApp_BroadcastPacket(0);
+"123
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;computer_control.c: 124: LATAbits.LATA6 = 1;
+"124
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;computer_control.c: 125: { unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"125
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 50 `i `l `ul ]
+[e $U 1164  ]
+[e :U 1165 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1167  ]
+[e :U 1168 ]
+[e :U 1167 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1168  ]
+[e :U 1169 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1164 ]
+[e $ != __ms -> -> 0 `i `ul 1165  ]
+[e :U 1166 ]
+}
+[; ;computer_control.c: 126: LATAbits.LATA6 = 0;
+"126
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"128
+}
+[; ;computer_control.c: 128: }
+[e $U 1170  ]
+"130
+[e :U 1163 ]
+[; ;computer_control.c: 130: else if(!strcmp("ALARM OFF",&uart_tableau))
+[e $ ! ! != ( _strcmp (2 , :s 6C -> &U _uart_tableau `*Cuc -> 0 `i 1171  ]
+[; ;computer_control.c: 131: {
+"131
+{
+[; ;computer_control.c: 132: {TxData = 11;};
+"132
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;computer_control.c: 133: TxBuffer[TxData++] = 0x05;
+"133
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 5 `i `uc ]
+[; ;computer_control.c: 134: TxBuffer[TxData++] = myShortAddress.v[0];
+"134
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 135: TxBuffer[TxData++] = myShortAddress.v[1];
+"135
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 136: MiApp_BroadcastPacket(0);
+"136
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;computer_control.c: 137: LATAbits.LATA6 = 1;
+"137
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;computer_control.c: 138: { unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"138
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 50 `i `l `ul ]
+[e $U 1172  ]
+[e :U 1173 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1175  ]
+[e :U 1176 ]
+[e :U 1175 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1176  ]
+[e :U 1177 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1172 ]
+[e $ != __ms -> -> 0 `i `ul 1173  ]
+[e :U 1174 ]
+}
+[; ;computer_control.c: 139: LATAbits.LATA6 = 0;
+"139
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"141
+}
+[; ;computer_control.c: 141: }
+[e $U 1178  ]
+"147
+[e :U 1171 ]
+[; ;computer_control.c: 147: else if(!strcmp("GET STATUS DOOR",&uart_tableau))
+[e $ ! ! != ( _strcmp (2 , :s 7C -> &U _uart_tableau `*Cuc -> 0 `i 1179  ]
+[; ;computer_control.c: 148: {
+"148
+{
+[; ;computer_control.c: 149: {TxData = 11;};
+"149
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;computer_control.c: 150: TxBuffer[TxData++] = 0x02;
+"150
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
+[; ;computer_control.c: 151: TxBuffer[TxData++] = myShortAddress.v[0];
+"151
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 152: TxBuffer[TxData++] = myShortAddress.v[1];
+"152
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 153: MiApp_BroadcastPacket(0);
+"153
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;computer_control.c: 154: LATAbits.LATA6 = 1;
+"154
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;computer_control.c: 155: { unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"155
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 50 `i `l `ul ]
+[e $U 1180  ]
+[e :U 1181 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1183  ]
+[e :U 1184 ]
+[e :U 1183 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1184  ]
+[e :U 1185 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1180 ]
+[e $ != __ms -> -> 0 `i `ul 1181  ]
+[e :U 1182 ]
+}
+[; ;computer_control.c: 156: LATAbits.LATA6 = 0;
+"156
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"158
+}
+[; ;computer_control.c: 158: }
+[e $U 1186  ]
+"160
+[e :U 1179 ]
+[; ;computer_control.c: 160: else if(!strcmp("GET STATUS SCREEN",&uart_tableau))
+[e $ ! ! != ( _strcmp (2 , :s 8C -> &U _uart_tableau `*Cuc -> 0 `i 1187  ]
+[; ;computer_control.c: 161: {
+"161
+{
+[; ;computer_control.c: 162: {TxData = 11;};
+"162
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;computer_control.c: 163: TxBuffer[TxData++] = 0x07;
+"163
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 7 `i `uc ]
+[; ;computer_control.c: 164: TxBuffer[TxData++] = myShortAddress.v[0];
+"164
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 165: TxBuffer[TxData++] = myShortAddress.v[1];
+"165
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 166: MiApp_BroadcastPacket(0);
+"166
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;computer_control.c: 167: LATAbits.LATA6 = 1;
+"167
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;computer_control.c: 168: { unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"168
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 50 `i `l `ul ]
+[e $U 1188  ]
+[e :U 1189 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1191  ]
+[e :U 1192 ]
+[e :U 1191 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1192  ]
+[e :U 1193 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1188 ]
+[e $ != __ms -> -> 0 `i `ul 1189  ]
+[e :U 1190 ]
+}
+[; ;computer_control.c: 169: LATAbits.LATA6 = 0;
+"169
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"171
+}
+[; ;computer_control.c: 171: }
+[e $U 1194  ]
+"173
+[e :U 1187 ]
+[; ;computer_control.c: 173: else if(!strcmp("GET STATUS PROJECTOR",&uart_tableau))
+[e $ ! ! != ( _strcmp (2 , :s 9C -> &U _uart_tableau `*Cuc -> 0 `i 1195  ]
+[; ;computer_control.c: 174: {
+"174
+{
+[; ;computer_control.c: 175: {TxData = 11;};
+"175
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;computer_control.c: 176: TxBuffer[TxData++] = 0x0A;
+"176
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 10 `i `uc ]
+[; ;computer_control.c: 177: TxBuffer[TxData++] = myShortAddress.v[0];
+"177
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 178: TxBuffer[TxData++] = myShortAddress.v[1];
+"178
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;computer_control.c: 179: MiApp_BroadcastPacket(0);
+"179
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;computer_control.c: 180: LATAbits.LATA6 = 1;
+"180
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;computer_control.c: 181: { unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"181
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 50 `i `l `ul ]
+[e $U 1196  ]
+[e :U 1197 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1199  ]
+[e :U 1200 ]
+[e :U 1199 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1200  ]
+[e :U 1201 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1196 ]
+[e $ != __ms -> -> 0 `i `ul 1197  ]
+[e :U 1198 ]
+}
+[; ;computer_control.c: 182: LATAbits.LATA6 = 0;
+"182
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"184
+}
+[e :U 1195 ]
+"186
+[e :U 1194 ]
+[e :U 1186 ]
+[e :U 1178 ]
+[e :U 1170 ]
+[e :U 1162 ]
+[e :U 1154 ]
+[e :U 1146 ]
+[e :U 1138 ]
+}
+[e :U 1130 ]
+"188
 }
 [e :U 1123 ]
-"78
+"190
 }
 [e :U 1120 ]
-"38
+"44
 [e $U 1121  ]
 [e :U 1122 ]
-[; ;computer_control.c: 59: }
-[; ;computer_control.c: 61: }
-[; ;computer_control.c: 78: }
-[; ;computer_control.c: 79: }
-"79
+[; ;computer_control.c: 184: }
+[; ;computer_control.c: 186: }
+[; ;computer_control.c: 188: }
+[; ;computer_control.c: 190: }
+[; ;computer_control.c: 191: }
+"191
 [e :UE 1119 ]
 }
+[a 9C 71 69 84 32 83 84 65 84 85 83 32 80 82 79 74 69 67 84 79 82 0 ]
+[a 7C 71 69 84 32 83 84 65 84 85 83 32 68 79 79 82 0 ]
+[a 4C 80 82 79 74 69 67 84 79 82 32 77 79 84 79 82 32 85 80 0 ]
+[a 3C 80 82 79 74 69 67 84 79 82 32 77 79 84 79 82 32 68 79 87 78 0 ]
+[a 2C 80 82 79 74 69 67 84 79 82 32 79 78 0 ]
+[a 5C 65 76 65 82 77 32 79 78 0 ]
+[a 8C 71 69 84 32 83 84 65 84 85 83 32 83 67 82 69 69 78 0 ]
+[a 1C 80 82 79 74 69 67 84 79 82 32 79 70 70 0 ]
+[a 6C 65 76 65 82 77 32 79 70 70 0 ]

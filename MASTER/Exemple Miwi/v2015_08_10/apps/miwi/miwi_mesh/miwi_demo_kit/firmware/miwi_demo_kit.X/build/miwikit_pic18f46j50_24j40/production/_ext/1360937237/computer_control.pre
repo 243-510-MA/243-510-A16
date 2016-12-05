@@ -10219,7 +10219,39 @@ void UART_Write_Text_A2_A1(char *text);
 void LCD_Init(void);
 void LCD_Set_Cursor(int pos);
 
-# 15 "../src/computer_control.c"
+# 14 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 34
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 16 "../src/computer_control.c"
 void output_control(int on_off)
 {
 if(on_off == 1)
@@ -10241,21 +10273,32 @@ ANCON0bits.PCFG2 = 1 ;
 LATEbits.LATE1 = 1;
 char Title[]= "Hello World!";
 uint8_t CMD = 1 ;
+char buffer;
+uint8_t k=0;
+unsigned char uart_tableau[100]={0};
+unsigned char projector_off[14] ="PROJECTOR OFF";
+
 UART_Init_A2_A1();
 
 while(1)
 {
-LATAbits.LATA6 = 0;
-LATAbits.LATA7 = 0;
-LATCbits.LATC2 = 0;
 
+# 52
 if(UART_kbhit_A2_A1())
 {
 
+buffer = UART_Read_A2_A1();
+uart_tableau[k] = buffer;
+k++;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 10; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+if(uart_tableau[k-1] == '\r')
+{
+uart_tableau[k-1] = 0x00;
+k = 0;
 
-CMD = UART_Read_A2_A1();
 
-if(CMD == 'P')
+
+if(!strcmp("PROJECTOR OFF",&uart_tableau))
 {
 {TxData = 11;};
 TxBuffer[TxData++] = 0x66;
@@ -10263,11 +10306,119 @@ TxBuffer[TxData++] = myShortAddress.v[0];
 TxBuffer[TxData++] = myShortAddress.v[1];
 MiApp_BroadcastPacket(0);
 LATAbits.LATA6 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+
+}
+
+else if(!strcmp("PROJECTOR ON",&uart_tableau))
+{
+{TxData = 11;};
+TxBuffer[TxData++] = 0x55;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+LATAbits.LATA6 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+
+}
+else if(!strcmp("PROJECTOR MOTOR DOWN",&uart_tableau))
+{
+{TxData = 11;};
+TxBuffer[TxData++] = 0x33;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+LATAbits.LATA6 = 1;
 { unsigned long _dcnt; unsigned long _ms; _ms = 200; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+
+}
+
+else if(!strcmp("PROJECTOR MOTOR UP",&uart_tableau))
+{
+{TxData = 11;};
+TxBuffer[TxData++] = 0x22;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+LATAbits.LATA6 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+
+}
+
+else if(!strcmp("ALARM ON",&uart_tableau))
+{
+{TxData = 11;};
+TxBuffer[TxData++] = 0x06;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+LATAbits.LATA6 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+
+}
+
+else if(!strcmp("ALARM OFF",&uart_tableau))
+{
+{TxData = 11;};
+TxBuffer[TxData++] = 0x05;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+LATAbits.LATA6 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+
+}
+
+# 147
+else if(!strcmp("GET STATUS DOOR",&uart_tableau))
+{
+{TxData = 11;};
+TxBuffer[TxData++] = 0x02;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+LATAbits.LATA6 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+
+}
+
+else if(!strcmp("GET STATUS SCREEN",&uart_tableau))
+{
+{TxData = 11;};
+TxBuffer[TxData++] = 0x07;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+LATAbits.LATA6 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+
+}
+
+else if(!strcmp("GET STATUS PROJECTOR",&uart_tableau))
+{
+{TxData = 11;};
+TxBuffer[TxData++] = 0x0A;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+LATAbits.LATA6 = 1;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 50; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+
+}
+
 }
 
 }
 
-# 78
 }
 }
+

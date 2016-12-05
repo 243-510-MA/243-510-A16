@@ -1,0 +1,115 @@
+//////////////a ajouter sur: codes library.h//////////////////////////////
+
+#define STATUS_PORTE  0x02
+#define DOOR_OPEN     0x03
+#define DOOR_CLOSED   0x04
+#define STATUS_SCREEN 0x07
+#define SCREEN_DOWN   0x08
+#define SCREEN_UP     0x09
+#define STATUS_PROJECTOR 0x0A
+# 
+
+////////////////////code a ajouter sur: door_unlock.c ///////////////////////////////////
+*****************************FAIT*******************
+
+if(MiApp_MessageAvailable())
+        {
+            if(rxMessage.Payload[0] == STATUS_PORTE)
+            {
+               if(DOOR == 0)
+				{
+                
+			      LED1 = 1;
+                  MiApp_FlushTx();
+                  MiApp_WriteData(DOOR_OPEN);
+                  MiApp_WriteData(myShortAddress.v[0]);
+                  MiApp_WriteData(myShortAddress.v[1]);
+                  MiApp_BroadcastPacket(false);
+                  delay_ms(500);
+                  LED1 = 0;
+                }
+	    	else
+                { LED1 = 1;
+                  MiApp_FlushTx();
+                  MiApp_WriteData(DOOR_CLOSED);
+                  MiApp_WriteData(myShortAddress.v[0]);
+                  MiApp_WriteData(myShortAddress.v[1]);
+                  MiApp_BroadcastPacket(false);
+                  delay_ms(500);
+                  LED1 = 0;
+
+		        }
+	        }
+            
+	   MiApp_DiscardMessage();
+        }
+
+
+
+////////CODE A AJOUTER SUR COMPUTER CONTROL.C ////////////
+
+
+if(MiApp_MessageAvailable())
+        {
+            else if(rxMessage.Payload[0] == DOOR_OPEN) 
+            {								      //on doit passer a 
+                int i;                            //l'ordi l'etat
+				LED1 = 1 ;					      //du module
+                delay_ms(100);                    //door open ou door closed
+				LED1 = 0 ;				          // il faut definir un
+				                                  // un tableau char text1
+				for(i=0;text[i]!='\0';i++)        //avec "Door Open"
+                UART_Write_Text_A2_A1(char *text1)// message:Door Open
+	        }
+            else if (rxMessage.Payload[0] == DOOR_CLOSED)
+            {                                     //on doit passer a 
+                int i;                            //l'ordi l'etat
+				LED1 = 1 ;					      //du module
+                delay_ms(100);                    //door open ou door closed
+				LED1 = 0 ;				          // il faut definir un
+				                                  // un tableau char text2
+				for(i=0;text2[i]!='\0';i++)       //avec "Door Closed"
+                UART_Write_Text_A2_A1(char *text2)// message:Door Open
+            }
+            MiApp_DiscardMessage();
+        }
+		
+		
+//////////////CODE A AJOUTER SUR PROJECTOR SCREEN.C///////////
+    
+	**********************FAIT************
+
+
+	if(MiApp_MessageAvailable())
+        {
+		   else if (rxMessage.Payload[0] == STATUS_SCREEN)
+            {      
+                if(statusScreen == 0)
+				{
+                
+			      LED1 = 1;
+                  MiApp_FlushTx();
+                  MiApp_WriteData(SCREEN_UP);
+                  MiApp_WriteData(myShortAddress.v[0]);
+                  MiApp_WriteData(myShortAddress.v[1]);
+                  MiApp_BroadcastPacket(false);
+                  delay_ms(500);
+                  LED1 = 0;
+                }
+	    	    else
+                { LED1 = 1;
+                  MiApp_FlushTx();
+                  MiApp_WriteData(SCREEN_DOWN);
+                  MiApp_WriteData(myShortAddress.v[0]);
+                  MiApp_WriteData(myShortAddress.v[1]);
+                  MiApp_BroadcastPacket(false);
+                  delay_ms(500);
+                  LED1 = 0;
+
+		        }
+            }
+            MiApp_DiscardMessage();
+		
+		
+		}
+
