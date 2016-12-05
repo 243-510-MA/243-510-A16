@@ -10206,6 +10206,7 @@ extern RECEIVED_MESSAGE rxMessage;
 # 9 "../src/teacher.c"
 void Teacher(void)
 {
+uint8_t i = 0;
 uint8_t switch_val = 0;
 extern uint8_t ConnectionEntry;
 bool Tx_Packet = 1;
@@ -10217,33 +10218,59 @@ uint8_t reponsea = 0;
 uint8_t reponseb = 0;
 uint8_t reponsec = 0;
 uint8_t reponsed = 0;
+uint8_t choix_envoi = 0;
+uint8_t my_adresse;
+uint8_t IdAdresse[2] = {0x02, 0x01};
+uint16_t digit_adresse;
+
+my_adresse = (myShortAddress.v[1] << 8) + (myShortAddress.v[0]);
 LCD_Erase();
-LCD_Display((char *)" TEACHER DEVICE ", 0, 1);
-
-while(1)
-{
-
-# 101
-sprintf((char *)&LCDText, (char*)"SW1: PROJECTOR  SW2: Suivant  ");
+sprintf((char *) &LCDText, (char*) " TEACHER DEVICE  MY ID: %X", my_adresse);
 LCD_Update();
 
-while(switch_val == 0)
+for (i = 0; i < 10; i++)
 {
-switch_val = BUTTON_Pressed();
+DELAY_ms(250);
 }
 
-if(switch_val == 1)
+uint8_t IdAdresse[2] = {0x02, 0x01};
+uint16_t digit_adresse;
+
+
+void reception_unicast(void);
+
+while (1)
+{
+
+# 121
+reception_unicast();
+switch_val = 0;
+sprintf((char *) &LCDText, (char*) "SW1: Projector  SW2: Suivant  ");
+LCD_Update();
+
+while (switch_val == 0)
+{
+switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: Projector  SW2: Suivant  ");
+LCD_Update();
+}
+
+if (switch_val == 1)
 {
 switch_val = 0;
-sprintf((char *)&LCDText, (char*)"SW1: ON         SW2: OFF        ");
+sprintf((char *) &LCDText, (char*) "SW1: ON         SW2: OFF        ");
 LCD_Update();
 
-while(switch_val == 0)
+while (switch_val == 0)
 {
 switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: ON         SW2: OFF        ");
+LCD_Update();
 }
 
-if(switch_val == 1)
+if (switch_val == 1)
 {
 switch_val = 0;
 LATAbits.LATA6 = 1;
@@ -10256,7 +10283,7 @@ MiApp_BroadcastPacket(0);
 LATAbits.LATA6 = 0;
 }
 
-if(switch_val == 2)
+if (switch_val == 2)
 {
 switch_val = 0;
 LATAbits.LATA6 = 1;
@@ -10270,18 +10297,231 @@ LATAbits.LATA6 = 0;
 }
 }
 
-if(switch_val == 2)
+if (switch_val == 2)
 {
+int send = 0;
 switch_val = 0;
-sprintf((char *)&LCDText, (char*)"SW1: Unlock DoorSW2: Suivant  ");
+sprintf((char *) &LCDText, (char*) "SW1: Message    SW2: Suivant    ");
 LCD_Update();
 
-while(switch_val == 0)
+while (switch_val == 0)
 {
 switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: Message    SW2: Suivant    ");
+LCD_Update();
 }
 
-if(switch_val == 1)
+if (switch_val == 1)
+{
+int digit[3] = {0, 0, 0};
+int select = 0;
+
+switch_val = 0;
+sprintf((char *) &LCDText, (char*) "A qui souhaitez-vous l'envoyer? ");
+LCD_Update();
+
+{ unsigned long _dcnt; unsigned long _ms; _ms = 750; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+while (send == 0)
+{
+sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
+LCD_Update();
+
+while (switch_val == 0)
+{
+switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
+LCD_Update();
+}
+
+if (switch_val == 1)
+{
+
+switch_val = 0;
+{ unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+digit[select] = 1 + digit[select];
+if (digit[select] == 10)
+{
+digit[select] = 0;
+}
+sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
+LCD_Update();
+reception_unicast();
+
+}
+
+if (switch_val == 2)
+{
+switch_val = 0;
+
+{ unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+select = select + 1;
+sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
+LCD_Update();
+
+if (select == 3)
+{
+
+sprintf((char *) &LCDText, (char*) "SW1:send        SW2:re-cycler   ");
+LCD_Update();
+{ unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+while (switch_val == 0)
+{
+switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1:send        SW2:re-cycler   ");
+LCD_Update();
+}
+if (switch_val == 1)
+{
+switch_val = 0;
+
+send = 1;
+sprintf((char *) &LCDText, (char*) "adresse choisi                      ");
+LCD_Update();
+digit_adresse = ((digit[0] << 8) + (digit[1] << 4) + (digit[2]));
+
+# 268
+IdAdresse[1] = digit_adresse >> 8;
+IdAdresse[0] = digit_adresse;
+
+{ unsigned long _dcnt; unsigned long _ms; _ms = 750; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+}
+if (switch_val == 2)
+{
+switch_val = 0;
+select = 0;
+}
+}
+}
+}
+
+switch_val = 0;
+sprintf((char *) &LCDText, (char*) "SW1: Allo       SW2: Suivant    ");
+LCD_Update();
+
+while (switch_val == 0)
+{
+switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: Allo       SW2: Suivant    ");
+LCD_Update();
+}
+
+if (switch_val == 1)
+{
+switch_val = 0;
+LATAbits.LATA6 = 1;
+{TxData = 11;};
+TxBuffer[TxData++] = 0xA0;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+UnicastShortAddress(&IdAdresse);
+{ unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+}
+
+
+if (switch_val == 2)
+{
+switch_val = 0;
+sprintf((char *) &LCDText, (char*) "SW1: Ca va?     SW2: Suivant    ");
+LCD_Update();
+
+while (switch_val == 0)
+{
+switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: Ca va?     SW2: Suivant    ");
+LCD_Update();
+}
+
+if (switch_val == 1)
+{
+switch_val = 0;
+LATAbits.LATA6 = 1;
+{TxData = 11;};
+TxBuffer[TxData++] = 0xA1;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+UnicastShortAddress(&IdAdresse);
+{ unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+}
+if (switch_val == 2)
+{
+switch_val = 0;
+sprintf((char *) &LCDText, (char*) "SW1: Oui        SW2: Suivant    ");
+LCD_Update();
+
+while (switch_val == 0)
+{
+switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: Oui        SW2: Suivant    ");
+LCD_Update();
+}
+
+if (switch_val == 1)
+{
+switch_val = 0;
+LATAbits.LATA6 = 1;
+{TxData = 11;};
+TxBuffer[TxData++] = 0xA2;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+UnicastShortAddress(&IdAdresse);
+{ unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+}
+
+if (switch_val == 2)
+{
+switch_val = 0;
+sprintf((char *) &LCDText, (char*) "SW1: Non        SW2: Suivant    ");
+LCD_Update();
+
+while (switch_val == 0)
+{
+switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: Non        SW2: Suivant    ");
+LCD_Update();
+}
+
+if (switch_val == 1)
+{
+switch_val = 0;
+LATAbits.LATA6 = 1;
+{TxData = 11;};
+TxBuffer[TxData++] = 0xA3;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+UnicastShortAddress(&IdAdresse);
+{ unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+LATAbits.LATA6 = 0;
+}
+}
+}
+}
+}
+
+if (switch_val == 2)
+{
+switch_val = 0;
+sprintf((char *) &LCDText, (char*) "SW1: Unlock DoorSW2: Suivant  ");
+LCD_Update();
+
+while (switch_val == 0)
+{
+switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: Unlock DoorSW2: Suivant  ");
+LCD_Update();
+}
+
+if (switch_val == 1)
 {
 switch_val = 0;
 LATAbits.LATA6 = 1;
@@ -10295,28 +10535,34 @@ LATAbits.LATA6 = 0;
 
 }
 
-if(switch_val == 2)
+if (switch_val == 2)
 {
 switch_val = 0;
-sprintf((char *)&LCDText, (char*)"SW1: PROJ MOTOR SW2: Suivant    ");
+sprintf((char *) &LCDText, (char*) "SW1: Proj Motor SW2: Suivant    ");
 LCD_Update();
 
-while(switch_val == 0)
+while (switch_val == 0)
 {
 switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: Proj Motor SW2: Suivant    ");
+LCD_Update();
 }
-if(switch_val == 1)
+if (switch_val == 1)
 {
 switch_val = 0;
-sprintf((char *)&LCDText, (char*)"SW1: DOWN       SW2: UP         ");
+sprintf((char *) &LCDText, (char*) "SW1: DOWN       SW2: UP         ");
 LCD_Update();
 
-while(switch_val == 0)
+while (switch_val == 0)
 {
 switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: DOWN       SW2: UP         ");
+LCD_Update();
 }
 
-if(switch_val == 1)
+if (switch_val == 1)
 {
 switch_val = 0;
 LATAbits.LATA6 = 1;
@@ -10329,7 +10575,7 @@ MiApp_BroadcastPacket(0);
 LATAbits.LATA6 = 0;
 }
 
-if(switch_val == 2)
+if (switch_val == 2)
 {
 switch_val = 0;
 LATAbits.LATA6 = 1;
@@ -10342,29 +10588,35 @@ MiApp_BroadcastPacket(0);
 LATAbits.LATA6 = 0;
 }
 }
-if(switch_val == 2)
+if (switch_val == 2)
 {
 switch_val = 0;
-sprintf((char *)&LCDText, (char*)"SW1:   ALARM    SW2: Suivant    ");
+sprintf((char *) &LCDText, (char*) "SW1: Alarm      SW2: Suivant    ");
 LCD_Update();
 
-while(switch_val == 0)
+while (switch_val == 0)
 {
 switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: Alarm      SW2: Suivant    ");
+LCD_Update();
 }
 
-if(switch_val == 1)
+if (switch_val == 1)
 {
 switch_val = 0;
-sprintf((char *)&LCDText, (char*)"SW1: ON         SW2: OFF        ");
+sprintf((char *) &LCDText, (char*) "SW1: ON         SW2: OFF        ");
 LCD_Update();
 
-while(switch_val == 0)
+while (switch_val == 0)
 {
 switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: ON         SW2: OFF        ");
+LCD_Update();
 }
 
-if(switch_val == 1)
+if (switch_val == 1)
 {
 switch_val = 0;
 LATAbits.LATA6 = 1;
@@ -10377,7 +10629,7 @@ MiApp_BroadcastPacket(0);
 LATAbits.LATA6 = 0;
 }
 
-if(switch_val == 2)
+if (switch_val == 2)
 {
 switch_val = 0;
 LATAbits.LATA6 = 1;
@@ -10390,24 +10642,27 @@ MiApp_BroadcastPacket(0);
 LATAbits.LATA6 = 0;
 }
 }
-if(switch_val == 2)
+if (switch_val == 2)
 {
 switch_val = 0;
-sprintf((char *)&LCDText, (char*)"SW1: QUESTIONNAIRE SW2: Suivant    ");
+sprintf((char *) &LCDText, (char*) "SW1: Questions  SW2: Suivant    ");
 LCD_Update();
 
-while(switch_val == 0)
+while (switch_val == 0)
 {
 switch_val = BUTTON_Pressed();
+reception_unicast();
+sprintf((char *) &LCDText, (char*) "SW1: Questions  SW2: Suivant    ");
+LCD_Update();
 }
-if(switch_val == 1)
+if (switch_val == 1)
 {
 switch_val = 0;
 LATAbits.LATA6 = 1;
-sprintf((char *)&LCDText, (char*)"SW1: QUESTION ENVOYE.    ");
+sprintf((char *) &LCDText, (char*) "SW1: Question envoye.    ");
 LCD_Update();
 { unsigned long _dcnt; unsigned long _ms; _ms = 500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
-questionnaire=1;
+questionnaire = 1;
 {TxData = 11;};
 TxBuffer[TxData++] = 0x77;
 TxBuffer[TxData++] = myShortAddress.v[0];
@@ -10415,40 +10670,41 @@ TxBuffer[TxData++] = myShortAddress.v[1];
 MiApp_BroadcastPacket(0);
 LATAbits.LATA6 = 0;
 { unsigned long _dcnt; unsigned long _ms; _ms = 100; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
-while(questionnaire==1 && switch_val == 0){
+while (questionnaire == 1 && switch_val == 0)
+{
 switch_val = BUTTON_Pressed();
-sprintf((char *)&LCDText, (char*)"A: %u B: %u C: %u D: %u   ",reponsea,reponseb, reponsec, reponsed);
+sprintf((char *) &LCDText, (char*) "A: %u B: %u C: %u D: %u      ", reponsea, reponseb, reponsec, reponsed);
 LCD_Update();
 { unsigned long _dcnt; unsigned long _ms; _ms = 100; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
-if(MiApp_MessageAvailable())
+if (MiApp_MessageAvailable())
 {
-if(rxMessage.Payload[0] == 0x90)
+if (rxMessage.Payload[0] == 0x90)
 {
 reponsea++;
 }
-if(rxMessage.Payload[0] == 0x91)
+if (rxMessage.Payload[0] == 0x91)
 {
 reponseb++;
 }
-if(rxMessage.Payload[0] == 0x92)
+if (rxMessage.Payload[0] == 0x92)
 {
 reponsec++;
 }
-if(rxMessage.Payload[0] == 0x93)
+if (rxMessage.Payload[0] == 0x93)
 {
 reponsed++;
 }
 MiApp_DiscardMessage();
 }
-if(switch_val == 1)
+if (switch_val == 1)
 {
 switch_val = 0;
-questionnaire=0;
-reponsea=0;
-reponseb=0;
-reponsec=0;
-reponsed=0;
-sprintf((char *)&LCDText, (char*)"QUEST. FINI");
+questionnaire = 0;
+reponsea = 0;
+reponseb = 0;
+reponsec = 0;
+reponsed = 0;
+sprintf((char *) &LCDText, (char*) "Quest. Fini");
 LCD_Update();
 {TxData = 11;};
 TxBuffer[TxData++] = 0x88;
@@ -10464,6 +10720,42 @@ MiApp_BroadcastPacket(0);
 }
 }
 }
+}
+}
+}
+
+void reception_unicast(void)
+{
+if (MiApp_MessageAvailable())
+{
+if (rxMessage.Payload[0] == 0xA0)
+{
+sprintf((char *) &LCDText, (char*) "Allo!                           ");
+LCD_Update();
+{ unsigned long _dcnt; unsigned long _ms; _ms = 1500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+}
+MiApp_DiscardMessage();
+if (rxMessage.Payload[0] == 0xA1)
+{
+sprintf((char *) &LCDText, (char*) "Ca va?                          ");
+LCD_Update();
+{ unsigned long _dcnt; unsigned long _ms; _ms = 1500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+}
+MiApp_DiscardMessage();
+if (rxMessage.Payload[0] == 0xA2)
+{
+sprintf((char *) &LCDText, (char*) "Oui                             ", rxMessage.SourceAddress);
+LCD_Update();
+{ unsigned long _dcnt; unsigned long _ms; _ms = 1500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+}
+MiApp_DiscardMessage();
+if (rxMessage.Payload[0] == 0xA3)
+{
+sprintf((char *) &LCDText, (char*) "Non                             ");
+LCD_Update();
+{ unsigned long _dcnt; unsigned long _ms; _ms = 1500; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+}
+MiApp_DiscardMessage();
 }
 }
 

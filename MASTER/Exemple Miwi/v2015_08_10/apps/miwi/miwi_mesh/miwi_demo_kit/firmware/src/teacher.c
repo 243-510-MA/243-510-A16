@@ -22,24 +22,28 @@ void Teacher(void)
     uint8_t reponsed = 0;
     uint8_t choix_envoi = 0;
     uint8_t my_adresse;
-    
-    my_adresse = ( myShortAddress.v[1] << 8 ) + (myShortAddress.v[0]);
+    uint8_t IdAdresse[2] = {0x02, 0x01};
+    uint16_t digit_adresse;
+
+    my_adresse = (myShortAddress.v[1] << 8) + (myShortAddress.v[0]);
     LCD_Erase();
-    sprintf((char *) &LCDText, (char*)" TEACHER DEVICE  MY ID: %X",my_adresse);
+    sprintf((char *) &LCDText, (char*) " TEACHER DEVICE  MY ID: %X", my_adresse);
     LCD_Update();
- 
-    for(i = 0; i<10;i++)
+
+    for (i = 0; i < 10; i++)
     {
         DELAY_ms(250);
     }
-  //   unicast adresse test pour 0x0102
-     uint8_t IdAdresse[2] ={0x02,0x01};
-     uint16_t digit_adresse;
-     
-  
-    
+    //   unicast adresse test pour 0x0102
+    uint8_t IdAdresse[2] = {0x02, 0x01};
+    uint16_t digit_adresse;
+
+
+    void reception_unicast(void);
+
     while (true)
     {
+
         /*
         if(Tx_Packet)
         {
@@ -114,6 +118,7 @@ void Teacher(void)
                 MiApp_DiscardMessage(); 
         }
          */
+        reception_unicast();
         switch_val = 0;
         sprintf((char *) &LCDText, (char*) "SW1: Projector  SW2: Suivant  ");
         LCD_Update();
@@ -121,6 +126,9 @@ void Teacher(void)
         while (switch_val == 0)
         {
             switch_val = BUTTON_Pressed();
+            reception_unicast();
+            sprintf((char *) &LCDText, (char*) "SW1: Projector  SW2: Suivant  ");
+            LCD_Update();
         }
 
         if (switch_val == SW1) //entre dans le menu PROJECTOR
@@ -132,6 +140,9 @@ void Teacher(void)
             while (switch_val == 0)
             {
                 switch_val = BUTTON_Pressed();
+                reception_unicast();
+                sprintf((char *) &LCDText, (char*) "SW1: ON         SW2: OFF        ");
+                LCD_Update();
             }
 
             if (switch_val == SW1) //Allume le projecteur
@@ -171,6 +182,9 @@ void Teacher(void)
             while (switch_val == 0)
             {
                 switch_val = BUTTON_Pressed();
+                reception_unicast();
+                sprintf((char *) &LCDText, (char*) "SW1: Message    SW2: Suivant    ");
+                LCD_Update();
             }
 
             if (switch_val == SW1) //entre dans le menu message
@@ -185,14 +199,15 @@ void Teacher(void)
                 delay_ms(750);
                 while (send == 0)
                 {
-
-
                     sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
                     LCD_Update();
 
                     while (switch_val == 0)
                     {
                         switch_val = BUTTON_Pressed();
+                        reception_unicast();
+                        sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
+                        LCD_Update();
                     }
 
                     if (switch_val == SW1)
@@ -207,6 +222,7 @@ void Teacher(void)
                         }
                         sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
                         LCD_Update();
+                        reception_unicast();
 
                     }
 
@@ -225,10 +241,13 @@ void Teacher(void)
                             sprintf((char *) &LCDText, (char*) "SW1:send        SW2:re-cycler   ");
                             LCD_Update();
                             delay_ms(500);
-                                                while (switch_val == 0)
-                        {
-                            switch_val = BUTTON_Pressed();
-                        }
+                            while (switch_val == 0)
+                            {
+                                switch_val = BUTTON_Pressed();
+                                reception_unicast();
+                                sprintf((char *) &LCDText, (char*) "SW1:send        SW2:re-cycler   ");
+                                LCD_Update();
+                            }
                             if (switch_val == SW1)
                             {
                                 switch_val = 0;
@@ -236,11 +255,19 @@ void Teacher(void)
                                 send = 1;
                                 sprintf((char *) &LCDText, (char*) "adresse choisi                      ");
                                 LCD_Update();
-                                digit_adresse = ((digit[0]<<8) + (digit[1]<<4) + (digit[2]));
-                                 
-                                IdAdresse[1] = digit_adresse >>8;
+                                digit_adresse = ((digit[0] << 8) + (digit[1] << 4) + (digit[2]));
+
+                                /*
+                                 *  Exemple : 0x310
+                                 *  3 << 8
+                                 *  1 << 4
+                                 *  0
+                                 *  0011 0001 0000
+                                 */
+
+                                IdAdresse[1] = digit_adresse >> 8;
                                 IdAdresse[0] = digit_adresse;
-                                        
+
                                 delay_ms(750);
                             }
                             if (switch_val == SW2)
@@ -251,6 +278,7 @@ void Teacher(void)
                         }
                     }
                 }
+
                 switch_val = 0;
                 sprintf((char *) &LCDText, (char*) "SW1: Allo       SW2: Suivant    ");
                 LCD_Update();
@@ -258,6 +286,9 @@ void Teacher(void)
                 while (switch_val == 0)
                 {
                     switch_val = BUTTON_Pressed();
+                    reception_unicast();
+                    sprintf((char *) &LCDText, (char*) "SW1: Allo       SW2: Suivant    ");
+                    LCD_Update();
                 }
 
                 if (switch_val == SW1) //envoie message ALLO
@@ -283,6 +314,9 @@ void Teacher(void)
                     while (switch_val == 0)
                     {
                         switch_val = BUTTON_Pressed();
+                        reception_unicast();
+                        sprintf((char *) &LCDText, (char*) "SW1: Ca va?     SW2: Suivant    ");
+                        LCD_Update();
                     }
 
                     if (switch_val == SW1) //envoie le message Ca va?
@@ -306,6 +340,9 @@ void Teacher(void)
                         while (switch_val == 0)
                         {
                             switch_val = BUTTON_Pressed();
+                            reception_unicast();
+                            sprintf((char *) &LCDText, (char*) "SW1: Oui        SW2: Suivant    ");
+                            LCD_Update();
                         }
 
                         if (switch_val == SW1) //envoie le message oui
@@ -316,7 +353,7 @@ void Teacher(void)
                             MiApp_WriteData(MSG_OUI);
                             MiApp_WriteData(myShortAddress.v[0]);
                             MiApp_WriteData(myShortAddress.v[1]);
-                            MiApp_BroadcastPacket(false);
+                            UnicastShortAddress(&IdAdresse);
                             delay_ms(500);
                             LED1 = 0;
                         }
@@ -330,6 +367,9 @@ void Teacher(void)
                             while (switch_val == 0)
                             {
                                 switch_val = BUTTON_Pressed();
+                                reception_unicast();
+                                sprintf((char *) &LCDText, (char*) "SW1: Non        SW2: Suivant    ");
+                                LCD_Update();
                             }
 
                             if (switch_val == SW1) //envoie message non
@@ -340,7 +380,7 @@ void Teacher(void)
                                 MiApp_WriteData(MSG_NON);
                                 MiApp_WriteData(myShortAddress.v[0]);
                                 MiApp_WriteData(myShortAddress.v[1]);
-                                MiApp_BroadcastPacket(false);
+                                UnicastShortAddress(&IdAdresse);
                                 delay_ms(500);
                                 LED1 = 0;
                             }
@@ -358,6 +398,9 @@ void Teacher(void)
                 while (switch_val == 0)
                 {
                     switch_val = BUTTON_Pressed();
+                    reception_unicast();
+                    sprintf((char *) &LCDText, (char*) "SW1: Unlock DoorSW2: Suivant  "); //blou blou
+                    LCD_Update();
                 }
 
                 if (switch_val == SW1)
@@ -383,6 +426,9 @@ void Teacher(void)
                     while (switch_val == 0)
                     {
                         switch_val = BUTTON_Pressed();
+                        reception_unicast();
+                        sprintf((char *) &LCDText, (char*) "SW1: Proj Motor SW2: Suivant    ");
+                        LCD_Update();
                     }
                     if (switch_val == SW1)
                     {
@@ -393,6 +439,9 @@ void Teacher(void)
                         while (switch_val == 0)
                         {
                             switch_val = BUTTON_Pressed();
+                            reception_unicast();
+                            sprintf((char *) &LCDText, (char*) "SW1: DOWN       SW2: UP         ");
+                            LCD_Update();
                         }
 
                         if (switch_val == SW1)
@@ -430,6 +479,9 @@ void Teacher(void)
                         while (switch_val == 0)
                         {
                             switch_val = BUTTON_Pressed();
+                            reception_unicast();
+                            sprintf((char *) &LCDText, (char*) "SW1: Alarm      SW2: Suivant    ");
+                            LCD_Update();
                         }
 
                         if (switch_val == SW1)
@@ -441,6 +493,9 @@ void Teacher(void)
                             while (switch_val == 0)
                             {
                                 switch_val = BUTTON_Pressed();
+                                reception_unicast();
+                                sprintf((char *) &LCDText, (char*) "SW1: ON         SW2: OFF        ");
+                                LCD_Update();
                             }
 
                             if (switch_val == SW1)
@@ -478,6 +533,9 @@ void Teacher(void)
                             while (switch_val == 0)
                             {
                                 switch_val = BUTTON_Pressed();
+                                reception_unicast();
+                                sprintf((char *) &LCDText, (char*) "SW1: Questions  SW2: Suivant    ");
+                                LCD_Update();
                             }
                             if (switch_val == SW1)
                             {
@@ -548,6 +606,40 @@ void Teacher(void)
     }
 }
 
+void reception_unicast(void)
+{
+    if (MiApp_MessageAvailable())
+    {
+        if (rxMessage.Payload[0] == MSG_ALLO)
+        {
+            sprintf((char *) &LCDText, (char*) "Allo!                           ");
+            LCD_Update();
+            delay_ms(1500);
+        }
+        MiApp_DiscardMessage();
+        if (rxMessage.Payload[0] == MSG_CA_VA)
+        {
+            sprintf((char *) &LCDText, (char*) "Ca va?                          ");
+            LCD_Update();
+            delay_ms(1500);
+        }
+        MiApp_DiscardMessage();
+        if (rxMessage.Payload[0] == MSG_OUI)
+        {
+            sprintf((char *) &LCDText, (char*) "Oui                             ", rxMessage.SourceAddress);
+            LCD_Update();
+            delay_ms(1500);
+        }
+        MiApp_DiscardMessage();
+        if (rxMessage.Payload[0] == MSG_NON)
+        {
+            sprintf((char *) &LCDText, (char*) "Non                             ");
+            LCD_Update();
+            delay_ms(1500);
+        }
+        MiApp_DiscardMessage();
+    }
+}
 /*     
             
             

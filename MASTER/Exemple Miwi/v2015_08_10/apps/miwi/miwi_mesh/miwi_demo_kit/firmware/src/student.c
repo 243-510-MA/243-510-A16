@@ -9,11 +9,14 @@
 uint8_t questionnaire = 0;
 uint8_t switch_val = 0;
 
+
 void Student(void)
 {
     LCD_Erase();
     LCD_Display((char *) " STUDENT DEVICE ", 0, true);
 
+    uint8_t IdAdresse[2] = {0x02, 0x01};
+    uint16_t digit_adresse;
     void questionnaire_function(void);
 
     while (true)
@@ -71,37 +74,255 @@ void Student(void)
             }
         }
 
-        if (switch_val == SW2)
+        if (switch_val == SW2) //menu suivant
         {
+            int send = 0;
             switch_val = 0;
-            sprintf((char *) &LCDText, (char*) "SW1: Unlock DoorSW2: Suivant  ");
+            sprintf((char *) &LCDText, (char*) "SW1: Message    SW2: Suivant    ");
             LCD_Update();
 
             while (switch_val == 0)
             {
                 switch_val = BUTTON_Pressed();
-                questionnaire_function();
-                sprintf((char *) &LCDText, (char*) "SW1: Unlock DoorSW2: Suivant  ");
+                reception_unicast();
+                sprintf((char *) &LCDText, (char*) "SW1: Message    SW2: Suivant    ");
                 LCD_Update();
             }
 
-            if (switch_val == SW1)
+            if (switch_val == SW1) //entre dans le menu message
             {
-                switch_val = 0;
-                LED1 = 1;
-                MiApp_FlushTx();
-                MiApp_WriteData(UNLOCK_PKT);
-                MiApp_WriteData(myShortAddress.v[0]);
-                MiApp_WriteData(myShortAddress.v[1]);
-                MiApp_BroadcastPacket(false);
-                delay_ms(500);
-                LED1 = 0;
+                int digit[3] = {0, 0, 0};
+                int select = 0;
 
+                switch_val = 0;
+                sprintf((char *) &LCDText, (char*) "A qui souhaitez-vous l'envoyer? ");
+                LCD_Update();
+
+                delay_ms(750);
+                while (send == 0)
+                {
+                    sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
+                    LCD_Update();
+
+                    while (switch_val == 0)
+                    {
+                        switch_val = BUTTON_Pressed();
+                        reception_unicast();
+                        sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
+                        LCD_Update();
+                    }
+
+                    if (switch_val == SW1)
+                    {
+
+                        switch_val = 0;
+                        delay_ms(150);
+                        digit[select] = 1 + digit[select];
+                        if (digit[select] == 10)
+                        {
+                            digit[select] = 0;
+                        }
+                        sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
+                        LCD_Update();
+                        reception_unicast();
+
+                    }
+
+                    if (switch_val == SW2)
+                    {
+                        switch_val = 0;
+
+                        delay_ms(150);
+                        select = select + 1;
+                        sprintf((char *) &LCDText, (char*) "SW1:++  SW2:Suivid=%d%d%d  select=%d", digit[0], digit[1], digit[2], select);
+                        LCD_Update();
+
+                        if (select == 3)
+                        {
+
+                            sprintf((char *) &LCDText, (char*) "SW1:send        SW2:re-cycler   ");
+                            LCD_Update();
+                            delay_ms(500);
+                            while (switch_val == 0)
+                            {
+                                switch_val = BUTTON_Pressed();
+                                reception_unicast();
+                                sprintf((char *) &LCDText, (char*) "SW1:send        SW2:re-cycler   ");
+                                LCD_Update();
+                            }
+                            if (switch_val == SW1)
+                            {
+                                switch_val = 0;
+
+                                send = 1;
+                                sprintf((char *) &LCDText, (char*) "adresse choisi                      ");
+                                LCD_Update();
+                                digit_adresse = ((digit[0] << 8) + (digit[1] << 4) + (digit[2]));
+
+                                /*
+                                 *  Exemple : 0x310
+                                 *  3 << 8
+                                 *  1 << 4
+                                 *  0
+                                 *  0011 0001 0000
+                                 */
+
+                                IdAdresse[1] = digit_adresse >> 8;
+                                IdAdresse[0] = digit_adresse;
+
+                                delay_ms(750);
+                            }
+                            if (switch_val == SW2)
+                            {
+                                switch_val = 0;
+                                select = 0;
+                            }
+                        }
+                    }
+                }
+
+                switch_val = 0;
+                sprintf((char *) &LCDText, (char*) "SW1: Allo       SW2: Suivant    ");
+                LCD_Update();
+
+                while (switch_val == 0)
+                {
+                    switch_val = BUTTON_Pressed();
+                    reception_unicast();
+                    sprintf((char *) &LCDText, (char*) "SW1: Allo       SW2: Suivant    ");
+                    LCD_Update();
+                }
+
+                if (switch_val == SW1) //envoie message ALLO
+                {
+                    switch_val = 0;
+                    LED1 = 1;
+                    MiApp_FlushTx();
+                    MiApp_WriteData(MSG_ALLO);
+                    MiApp_WriteData(myShortAddress.v[0]);
+                    MiApp_WriteData(myShortAddress.v[1]);
+                    UnicastShortAddress(&IdAdresse);
+                    delay_ms(500);
+                    LED1 = 0;
+                }
+
+
+                if (switch_val == SW2) //passe au prochain message
+                {
+                    switch_val = 0;
+                    sprintf((char *) &LCDText, (char*) "SW1: Ca va?     SW2: Suivant    ");
+                    LCD_Update();
+
+                    while (switch_val == 0)
+                    {
+                        switch_val = BUTTON_Pressed();
+                        reception_unicast();
+                        sprintf((char *) &LCDText, (char*) "SW1: Ca va?     SW2: Suivant    ");
+                        LCD_Update();
+                    }
+
+                    if (switch_val == SW1) //envoie le message Ca va?
+                    {
+                        switch_val = 0;
+                        LED1 = 1;
+                        MiApp_FlushTx();
+                        MiApp_WriteData(MSG_CA_VA);
+                        MiApp_WriteData(myShortAddress.v[0]);
+                        MiApp_WriteData(myShortAddress.v[1]);
+                        UnicastShortAddress(&IdAdresse);
+                        delay_ms(500);
+                        LED1 = 0;
+                    }
+                    if (switch_val == SW2) //passe au prochain message
+                    {
+                        switch_val = 0;
+                        sprintf((char *) &LCDText, (char*) "SW1: Oui        SW2: Suivant    ");
+                        LCD_Update();
+
+                        while (switch_val == 0)
+                        {
+                            switch_val = BUTTON_Pressed();
+                            reception_unicast();
+                            sprintf((char *) &LCDText, (char*) "SW1: Oui        SW2: Suivant    ");
+                            LCD_Update();
+                        }
+
+                        if (switch_val == SW1) //envoie le message oui
+                        {
+                            switch_val = 0;
+                            LED1 = 1;
+                            MiApp_FlushTx();
+                            MiApp_WriteData(MSG_OUI);
+                            MiApp_WriteData(myShortAddress.v[0]);
+                            MiApp_WriteData(myShortAddress.v[1]);
+                            UnicastShortAddress(&IdAdresse);
+                            delay_ms(500);
+                            LED1 = 0;
+                        }
+
+                        if (switch_val == SW2) //passe au prochain message
+                        {
+                            switch_val = 0;
+                            sprintf((char *) &LCDText, (char*) "SW1: Non        SW2: Suivant    ");
+                            LCD_Update();
+
+                            while (switch_val == 0)
+                            {
+                                switch_val = BUTTON_Pressed();
+                                reception_unicast();
+                                sprintf((char *) &LCDText, (char*) "SW1: Non        SW2: Suivant    ");
+                                LCD_Update();
+                            }
+
+                            if (switch_val == SW1) //envoie message non
+                            {
+                                switch_val = 0;
+                                LED1 = 1;
+                                MiApp_FlushTx();
+                                MiApp_WriteData(MSG_NON);
+                                MiApp_WriteData(myShortAddress.v[0]);
+                                MiApp_WriteData(myShortAddress.v[1]);
+                                UnicastShortAddress(&IdAdresse);
+                                delay_ms(500);
+                                LED1 = 0;
+                            }
+                        }
+                    }
+                }
             }
 
             if (switch_val == SW2)
             {
                 switch_val = 0;
+                sprintf((char *) &LCDText, (char*) "SW1: Unlock DoorSW2: Suivant  ");
+                LCD_Update();
+
+                while (switch_val == 0)
+                {
+                    switch_val = BUTTON_Pressed();
+                    questionnaire_function();
+                    sprintf((char *) &LCDText, (char*) "SW1: Unlock DoorSW2: Suivant  ");
+                    LCD_Update();
+                }
+
+                if (switch_val == SW1)
+                {
+                    switch_val = 0;
+                    LED1 = 1;
+                    MiApp_FlushTx();
+                    MiApp_WriteData(UNLOCK_PKT);
+                    MiApp_WriteData(myShortAddress.v[0]);
+                    MiApp_WriteData(myShortAddress.v[1]);
+                    MiApp_BroadcastPacket(false);
+                    delay_ms(500);
+                    LED1 = 0;
+
+                }
+
+                if (switch_val == SW2)
+                {
+                    switch_val = 0;
+                }
             }
         }
     }
@@ -113,32 +334,32 @@ void questionnaire_function(void)
     {
         if (rxMessage.Payload[0] == MSG_ALLO)
         {
-            sprintf((char *) &LCDText, (char*) "ID : %03X         Allo!           ", rxMessage.SourceAddress);
+            sprintf((char *) &LCDText, (char*) "Allo!                           ");
             LCD_Update();
             delay_ms(1500);
         }
-        
-        if(rxMessage.Payload[0] == MSG_CA_VA)
+        MiApp_DiscardMessage();
+        if (rxMessage.Payload[0] == MSG_CA_VA)
         {
-            sprintf((char *) &LCDText, (char*) "ID : %03X         Ca va?          ", rxMessage.SourceAddress);
+            sprintf((char *) &LCDText, (char*) "Ca va?                          ");
             LCD_Update();
             delay_ms(1500);
         }
-        
-        if(rxMessage.Payload[0] == MSG_OUI)
+        MiApp_DiscardMessage();
+        if (rxMessage.Payload[0] == MSG_OUI)
         {
-            sprintf((char *) &LCDText, (char*) "ID : %03X         Oui             ", rxMessage.SourceAddress);
+            sprintf((char *) &LCDText, (char*) "Oui                             ");
             LCD_Update();
             delay_ms(1500);
         }
-        
-        if(rxMessage.Payload[0] == MSG_NON)
+        MiApp_DiscardMessage();
+        if (rxMessage.Payload[0] == MSG_NON)
         {
-            sprintf((char *) &LCDText, (char*) "ID : %03X         Non             ", rxMessage.SourceAddress);
+            sprintf((char *) &LCDText, (char*) "Non                             ");
             LCD_Update();
             delay_ms(1500);
         }
-
+        MiApp_DiscardMessage();
         if (rxMessage.Payload[0] == QUEST_ON)
         {
             //MiApp_FlushTx();
