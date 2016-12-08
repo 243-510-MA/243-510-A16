@@ -1,44 +1,36 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"74 ../src/system_config/miwikit_pic18f46j50_24j40\symbol.h
-[s S1079 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1079 _MIWI_TICK_bytes b0 b1 b2 b3 ]
-"82
-[s S1080 `ui 1 `ui 1 ]
-[n S1080 _MIWI_TICK_words w0 w1 ]
-"71
-[u S1078 `ul 1 `S1079 1 `uc -> 4 `i `S1080 1 ]
-[n S1078 _MIWI_TICK Val byte v word ]
-"122 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"7778 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18f46j50.h
-[s S526 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S526 . LATC0 LATC1 LATC2 . LATC4 LATC5 LATC6 LATC7 ]
-"7788
-[s S527 :1 `uc 1 ]
-[n S527 . LC0 ]
-"7791
-[s S528 :1 `uc 1 :1 `uc 1 ]
-[n S528 . . LC1 ]
-"7795
-[s S529 :2 `uc 1 :1 `uc 1 ]
-[n S529 . . LC2 ]
-"7799
-[s S530 :4 `uc 1 :1 `uc 1 ]
-[n S530 . . LC4 ]
-"7803
-[s S531 :5 `uc 1 :1 `uc 1 ]
-[n S531 . . LC5 ]
-"7807
-[s S532 :6 `uc 1 :1 `uc 1 ]
-[n S532 . . LC6 ]
-"7811
-[s S533 :7 `uc 1 :1 `uc 1 ]
-[n S533 . . LC7 ]
-"7777
-[u S525 `S526 1 `S527 1 `S528 1 `S529 1 `S530 1 `S531 1 `S532 1 `S533 1 ]
-[n S525 . . . . . . . . . ]
-"7816
-[v _LATCbits `VS525 ~T0 @X0 0 e@3979 ]
+"10741 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18f46j50.h
+[v _SPBRG `Vuc ~T0 @X0 0 e@4016 ]
+[t ~ __deprecated__ ]
+[t T79 __deprecated__ ]
+"19182
+[v _SYNC `Vb ~T79 @X0 0 e@32108 ]
+"19056
+[v _SPEN `Vb ~T79 @X0 0 e@32103 ]
+"19414
+[v _TRISC7 `Vb ~T0 @X0 0 e@31911 ]
+"19412
+[v _TRISC6 `Vb ~T0 @X0 0 e@31910 ]
+"17456
+[v _CREN `Vb ~T79 @X0 0 e@32100 ]
+"19512
+[v _TXEN `Vb ~T79 @X0 0 e@32109 ]
+"19438
+[v _TRMT `Vb ~T79 @X0 0 e@32105 ]
+"10667
+[v _TXREG `Vuc ~T0 @X0 0 e@4014 ]
+"18776
+[v _RCIF `Vb ~T0 @X0 0 e@31989 ]
+"10704
+[v _RCREG `Vuc ~T0 @X0 0 e@4015 ]
+"8267
+[s S560 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S560 . TRISA0 TRISA1 TRISA2 TRISA3 . TRISA5 TRISA6 TRISA7 ]
+"8266
+[u S559 `S560 1 ]
+[n S559 . . ]
+"8278
+[v _TRISAbits `VS559 ~T0 @X0 0 e@3986 ]
 "7528
 [s S507 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S507 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
@@ -68,70 +60,45 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S506 . . . . . . . . . ]
 "7566
 [v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
-"28 ../src/system_config/miwikit_pic18f46j50_24j40\eeprom.h
-[v _Read_MAC_Address `(v ~T0 @X0 0 ef ]
-"136 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_ProtocolInit `(uc ~T0 @X0 0 ef1`uc ]
-"178
-[v _MiApp_SetChannel `(uc ~T0 @X0 0 ef1`uc ]
-"457
-[v _MiApp_ConnectionMode `(v ~T0 @X0 0 ef1`uc ]
-"236
-[v _MiApp_StartConnection `(uc ~T0 @X0 0 ef3`uc`uc`ul ]
-"47 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Erase `(v ~T0 @X0 0 ef ]
-"194 C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCDText `uc ~T0 @X0 -> 0 `x e ]
-"64 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
-[u S1082 `uc -> 2 `i `ui 1 ]
-[n S1082 . v Val ]
-"208 ../../../../../../framework\miwi/miwi_mesh.h
-[v _myPANID `S1082 ~T0 @X0 0 e ]
-"209
-[v _myShortAddress `S1082 ~T0 @X0 0 e ]
-"46 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Update `(v ~T0 @X0 0 ef ]
-"710 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
-"752
-[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
-"54
-[s S1107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1107 _CONNECTION_STAUTS_bits RXOnWhenIdle directConnection longAddressValid shortAddressValid FinishJoin isFamily filler isValid ]
-"51
-[u S1106 `uc 1 `S1107 1 ]
-[n S1106 __CONNECTION_STATUS Val bits ]
-"78
-[s S1108 `S1082 1 `S1082 1 `uc -> 8 `i `S1106 1 `uc -> -> 1 `i `ux ]
-[n S1108 __CONNECTION_ENTRY PANID AltAddress Address status PeerInfo ]
-"93
-[v _ConnectionTable `S1108 ~T0 @X0 -> 0 `x e ]
-"320
-[v _MiApp_SearchConnection `(uc ~T0 @X0 0 ef2`uc`ul ]
-"257
-[s S1111 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1111 . Role Sleep SecurityEn RepeatEn AllowJoin Direct altSrcAddr ]
-"254
-[u S1110 `uc 1 `S1111 1 ]
-[n S1110 . Val bits ]
-"247
-[s S1109 `uc 1 `uc -> 8 `i `S1082 1 `uc 1 `uc 1 `S1110 1 `uc -> -> 1 `i `ux ]
-[n S1109 . Channel Address PANID RSSIValue LQIValue Capability PeerInfo ]
-"273
-[v _ActiveScanResults `S1109 ~T0 @X0 -> 0 `x e ]
-"207 ../../../../../../framework\miwi/miwi_mesh.h
-[v _TxData `uc ~T0 @X0 0 e ]
-"206
-[v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
-"552 ../../../../../../framework\miwi/miwi_api.h
-[v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
-"374
-[v _MiApp_EstablishConnection `(uc ~T0 @X0 0 ef2`uc`uc ]
-"50 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
-[v _LCD_Display `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
-[; ;network.h: 27: void Network(int DEVICEMODE);
+"6170
+[s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S446 . RA0 RA1 RA2 RA3 . RA5 RA6 RA7 ]
+"6180
+[s S447 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S447 . AN0 AN1 AN2 AN3 . AN4 OSC2 OSC1 ]
+"6190
+[s S448 :5 `uc 1 :1 `uc 1 ]
+[n S448 . . NOT_SS1 ]
+"6194
+[s S449 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S449 . C1INA C2INA VREF_MINUS VREF_PLUS . nSS1 CLKO CLKI ]
+"6204
+[s S450 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S450 . PMA6 PMA7 CVREF_MINUS C1INB . HLVDIN ]
+"6212
+[s S451 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S451 . RP0 RP1 C2INB . RCV ]
+"6219
+[s S452 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S452 . ULPWU . RP2 ]
+"6224
+[s S453 :5 `uc 1 :1 `uc 1 ]
+[n S453 . . LVDIN ]
+"6228
+[s S454 :7 `uc 1 :1 `uc 1 ]
+[n S454 . . RJPU ]
+"6232
+[s S455 :1 `uc 1 ]
+[n S455 . ULPWUIN ]
+"6169
+[u S445 `S446 1 `S447 1 `S448 1 `S449 1 `S450 1 `S451 1 `S452 1 `S453 1 `S454 1 `S455 1 ]
+[n S445 . . . . . . . . . . . ]
+"6236
+[v _PORTAbits `VS445 ~T0 @X0 0 e@3968 ]
+[v F7882 `(v ~T0 @X0 1 tf1`ul ]
+"157 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18.h
+[v __delay `JF7882 ~T0 @X0 0 e ]
+[p i __delay ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7534,884 +7501,420 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 157: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 159: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 161: extern __nonreentrant void _delay3(unsigned char);
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;miwikit_pic18f46j50_24j40\lcd.h: 43: extern uint8_t LCDText[16*2+1];
-[; ;miwikit_pic18f46j50_24j40\lcd.h: 45: void LCD_Initialize(void);
-[; ;miwikit_pic18f46j50_24j40\lcd.h: 46: void LCD_Update(void);
-[; ;miwikit_pic18f46j50_24j40\lcd.h: 47: void LCD_Erase(void);
-[; ;miwikit_pic18f46j50_24j40\lcd.h: 48: void LCD_BacklightON(void);
-[; ;miwikit_pic18f46j50_24j40\lcd.h: 49: void LCD_BacklightOFF(void);
-[; ;miwikit_pic18f46j50_24j40\lcd.h: 50: void LCD_Display(char *, uint8_t, bool);
-[; ;miwikit_pic18f46j50_24j40\lcd.h: 51: void LCDWriteLine(uint16_t number, char *line);
-[; ;miwikit_pic18f46j50_24j40\lcd.h: 52: void UserInterruptHandler(void);
-[; ;miwikit_pic18f46j50_24j40\eeprom.h: 27: void EEPROMRead(uint8_t *Dest, uint8_t Addr , uint8_t count);
-[; ;miwikit_pic18f46j50_24j40\eeprom.h: 28: void Read_MAC_Address(void);
-[; ;miwikit_pic18f46j50_24j40\serial_flash.h: 27: void SSTRead(uint8_t *Dest, uint8_t *Addr , uint8_t count);
-[; ;miwikit_pic18f46j50_24j40\serial_flash.h: 28: void SSTWrite(uint8_t *Src, uint8_t *Addr, uint8_t count);
-[; ;miwikit_pic18f46j50_24j40\serial_flash.h: 29: void SSTGetID(uint8_t *Dest);
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 71: typedef union _MIWI_TICK
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 72: {
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 73: uint32_t Val;
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 74: struct _MIWI_TICK_bytes
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 75: {
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 76: uint8_t b0;
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 77: uint8_t b1;
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 78: uint8_t b2;
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 79: uint8_t b3;
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 80: } byte;
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 81: uint8_t v[4];
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 82: struct _MIWI_TICK_words
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 83: {
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 84: uint16_t w0;
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 85: uint16_t w1;
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 86: } word;
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 87: } MIWI_TICK;
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 89: void InitSymbolTimer(void);
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 90: MIWI_TICK MiWi_TickGet(void);
-[; ;miwikit_pic18f46j50_24j40\symbol.h: 94: extern volatile uint8_t timerExtension1,timerExtension2;
-[; ;miwikit_pic18f46j50_24j40\delay.h: 47: void DELAY_10us( uint32_t tenMicroSecondCounter );
-[; ;miwikit_pic18f46j50_24j40\delay.h: 68: void DELAY_ms( uint16_t ms );
-"32 ../src/system_config/miwikit_pic18f46j50_24j40\button.h
-[v _switch0PressTime `S1078 ~T0 @X0 1 e ]
-[; ;miwikit_pic18f46j50_24j40\button.h: 32: MIWI_TICK switch0PressTime;
-"33
-[v _switch1PressTime `S1078 ~T0 @X0 1 e ]
-[; ;miwikit_pic18f46j50_24j40\button.h: 33: MIWI_TICK switch1PressTime;
-[; ;miwikit_pic18f46j50_24j40\button.h: 35: uint8_t BUTTON_Pressed(void);
-[; ;miwikit_pic18f46j50_24j40\spi.h: 29: void SPIPut(uint8_t v);
-[; ;miwikit_pic18f46j50_24j40\spi.h: 30: uint8_t SPIGet(void);
-[; ;miwikit_pic18f46j50_24j40\spi.h: 32: void SPIPut2(uint8_t v);
-[; ;miwikit_pic18f46j50_24j40\spi.h: 33: uint8_t SPIGet2(void);
-[; ;miwikit_pic18f46j50_24j40\system.h: 54: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 55: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 57: uint8_t v[4];
-[; ;miwikit_pic18f46j50_24j40\system.h: 58: uint16_t w[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 59: uint32_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 61: }API_UINT32_UNION;
-[; ;miwikit_pic18f46j50_24j40\system.h: 63: typedef union
-[; ;miwikit_pic18f46j50_24j40\system.h: 64: {
-[; ;miwikit_pic18f46j50_24j40\system.h: 66: uint8_t v[2];
-[; ;miwikit_pic18f46j50_24j40\system.h: 67: uint16_t Val;
-[; ;miwikit_pic18f46j50_24j40\system.h: 69: }API_UINT16_UNION;
-"71 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
-[v _pwm_value_high_time `ui ~T0 @X0 1 e ]
-[i _pwm_value_high_time
--> -> 400 `i `ui
-]
-[; ;miwikit_pic18f46j50_24j40\system.h: 71: uint16_t pwm_value_high_time = 400 ;
-[; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
-[; ;drv_mrf_miwi_24j40.h: 31: typedef union
-[; ;drv_mrf_miwi_24j40.h: 32: {
-[; ;drv_mrf_miwi_24j40.h: 33: uint8_t Val;
-[; ;drv_mrf_miwi_24j40.h: 34: struct
-[; ;drv_mrf_miwi_24j40.h: 35: {
-[; ;drv_mrf_miwi_24j40.h: 36: uint8_t RF_TXIF :1;
-[; ;drv_mrf_miwi_24j40.h: 37: uint8_t :2;
-[; ;drv_mrf_miwi_24j40.h: 38: uint8_t RF_RXIF :1;
-[; ;drv_mrf_miwi_24j40.h: 39: uint8_t SECIF :1;
-[; ;drv_mrf_miwi_24j40.h: 40: uint8_t :4;
-[; ;drv_mrf_miwi_24j40.h: 41: }bits;
-[; ;drv_mrf_miwi_24j40.h: 42: } MRF24J40_IFREG;
-[; ;drv_mrf_miwi_24j40.h: 44: typedef union
-[; ;drv_mrf_miwi_24j40.h: 45: {
-[; ;drv_mrf_miwi_24j40.h: 46: uint8_t Val;
-[; ;drv_mrf_miwi_24j40.h: 47: struct
-[; ;drv_mrf_miwi_24j40.h: 48: {
-[; ;drv_mrf_miwi_24j40.h: 49: uint8_t TX_BUSY : 1;
-[; ;drv_mrf_miwi_24j40.h: 50: uint8_t TX_PENDING_ACK : 1;
-[; ;drv_mrf_miwi_24j40.h: 51: uint8_t TX_FAIL : 1;
-[; ;drv_mrf_miwi_24j40.h: 52: uint8_t RX_SECURITY : 1;
-[; ;drv_mrf_miwi_24j40.h: 53: uint8_t RX_IGNORE_SECURITY : 1;
-[; ;drv_mrf_miwi_24j40.h: 54: uint8_t RX_BUFFERED : 1;
-[; ;drv_mrf_miwi_24j40.h: 55: uint8_t SEC_IF : 1;
-[; ;drv_mrf_miwi_24j40.h: 56: } bits;
-[; ;drv_mrf_miwi_24j40.h: 57: } MRF24J40_STATUS;
-[; ;drv_mrf_miwi.h: 84: typedef union _DRIVER_UINT8_UNION_
-[; ;drv_mrf_miwi.h: 85: {
-[; ;drv_mrf_miwi.h: 86: uint8_t Val;
-[; ;drv_mrf_miwi.h: 87: struct
-[; ;drv_mrf_miwi.h: 88: {
-[; ;drv_mrf_miwi.h: 89: uint8_t b0:1;
-[; ;drv_mrf_miwi.h: 90: uint8_t b1:1;
-[; ;drv_mrf_miwi.h: 91: uint8_t b2:1;
-[; ;drv_mrf_miwi.h: 92: uint8_t b3:1;
-[; ;drv_mrf_miwi.h: 93: uint8_t b4:1;
-[; ;drv_mrf_miwi.h: 94: uint8_t b5:1;
-[; ;drv_mrf_miwi.h: 95: uint8_t b6:1;
-[; ;drv_mrf_miwi.h: 96: uint8_t b7:1;
-[; ;drv_mrf_miwi.h: 97: } bits;
-[; ;drv_mrf_miwi.h: 99: } DRIVER_UINT8_UNION;
-[; ;drv_mrf_miwi.h: 106: typedef struct
-[; ;drv_mrf_miwi.h: 107: {
-[; ;drv_mrf_miwi.h: 108: union
-[; ;drv_mrf_miwi.h: 109: {
-[; ;drv_mrf_miwi.h: 110: uint8_t Val;
-[; ;drv_mrf_miwi.h: 111: struct
-[; ;drv_mrf_miwi.h: 112: {
-[; ;drv_mrf_miwi.h: 113: uint8_t packetType : 2;
-[; ;drv_mrf_miwi.h: 118: uint8_t broadcast : 1;
-[; ;drv_mrf_miwi.h: 119: uint8_t secEn : 1;
-[; ;drv_mrf_miwi.h: 120: uint8_t repeat : 1;
-[; ;drv_mrf_miwi.h: 121: uint8_t ackReq : 1;
-[; ;drv_mrf_miwi.h: 122: uint8_t destPrsnt : 1;
-[; ;drv_mrf_miwi.h: 123: uint8_t sourcePrsnt : 1;
-[; ;drv_mrf_miwi.h: 124: } bits;
-[; ;drv_mrf_miwi.h: 125: } flags;
-[; ;drv_mrf_miwi.h: 127: uint8_t *DestAddress;
-[; ;drv_mrf_miwi.h: 129: bool altDestAddr;
-[; ;drv_mrf_miwi.h: 130: bool altSrcAddr;
-[; ;drv_mrf_miwi.h: 131: API_UINT16_UNION DestPANID;
-[; ;drv_mrf_miwi.h: 134: } MAC_TRANS_PARAM;
-[; ;drv_mrf_miwi.h: 142: typedef struct
-[; ;drv_mrf_miwi.h: 143: {
-[; ;drv_mrf_miwi.h: 144: union
-[; ;drv_mrf_miwi.h: 145: {
-[; ;drv_mrf_miwi.h: 146: uint8_t Val;
-[; ;drv_mrf_miwi.h: 147: struct
-[; ;drv_mrf_miwi.h: 148: {
-[; ;drv_mrf_miwi.h: 149: uint8_t packetType :2;
-[; ;drv_mrf_miwi.h: 154: uint8_t broadcast :1;
-[; ;drv_mrf_miwi.h: 155: uint8_t secEn :1;
-[; ;drv_mrf_miwi.h: 156: uint8_t repeat :1;
-[; ;drv_mrf_miwi.h: 157: uint8_t ackReq :1;
-[; ;drv_mrf_miwi.h: 158: uint8_t destPrsnt :1;
-[; ;drv_mrf_miwi.h: 159: uint8_t sourcePrsnt :1;
-[; ;drv_mrf_miwi.h: 160: } bits;
-[; ;drv_mrf_miwi.h: 161: } flags;
-[; ;drv_mrf_miwi.h: 163: uint8_t * SourceAddress;
-[; ;drv_mrf_miwi.h: 164: uint8_t * Payload;
-[; ;drv_mrf_miwi.h: 165: uint8_t PayloadLen;
-[; ;drv_mrf_miwi.h: 166: uint8_t RSSIValue;
-[; ;drv_mrf_miwi.h: 167: uint8_t LQIValue;
-[; ;drv_mrf_miwi.h: 169: bool altSourceAddress;
-[; ;drv_mrf_miwi.h: 170: API_UINT16_UNION SourcePANID;
-[; ;drv_mrf_miwi.h: 172: } MAC_RECEIVED_PACKET;
-[; ;drv_mrf_miwi.h: 179: typedef struct
-[; ;drv_mrf_miwi.h: 180: {
-[; ;drv_mrf_miwi.h: 181: union
-[; ;drv_mrf_miwi.h: 182: {
-[; ;drv_mrf_miwi.h: 183: uint8_t Val;
-[; ;drv_mrf_miwi.h: 184: struct
-[; ;drv_mrf_miwi.h: 185: {
-[; ;drv_mrf_miwi.h: 186: uint8_t RepeaterMode :1;
-[; ;drv_mrf_miwi.h: 187: uint8_t CCAEnable :1;
-[; ;drv_mrf_miwi.h: 188: uint8_t NetworkFreezer :1;
-[; ;drv_mrf_miwi.h: 189: uint8_t PAddrLength :4;
-[; ;drv_mrf_miwi.h: 190: } bits;
-[; ;drv_mrf_miwi.h: 191: } actionFlags;
-[; ;drv_mrf_miwi.h: 193: uint8_t *PAddress;
-[; ;drv_mrf_miwi.h: 195: } MACINIT_PARAM;
-[; ;drv_mrf_miwi.h: 197: extern MAC_RECEIVED_PACKET MACRxPacket;
-[; ;drv_mrf_miwi.h: 239: bool MiMAC_SetChannel(uint8_t channel, uint8_t offsetFreq);
-[; ;drv_mrf_miwi.h: 274: bool MiMAC_SetPower(uint8_t outputPower);
-[; ;drv_mrf_miwi.h: 313: bool MiMAC_SetAltAddress(uint8_t *Address, uint8_t *PANID);
-[; ;drv_mrf_miwi.h: 345: bool MiMAC_Init(MACINIT_PARAM initValue);
-[; ;drv_mrf_miwi.h: 380: uint8_t MiMAC_ChannelAssessment(uint8_t AssessmentMode);
-[; ;drv_mrf_miwi.h: 418: void MiMAC_DiscardPacket(void);
-[; ;drv_mrf_miwi.h: 458: bool MiMAC_ReceivedPacket(void);
-[; ;drv_mrf_miwi.h: 494: bool MiMAC_SendPacket(MAC_TRANS_PARAM transParam, uint8_t *MACPayload, uint8_t MACPayloadLen);
-[; ;drv_mrf_miwi.h: 538: bool MiMAC_PowerState(uint8_t PowerState);
-[; ;drv_mrf_miwi.h: 549: void UserInterruptHandler(void);
-[; ;miwi_mesh.h: 44: void MiWiTasks(void);
-[; ;miwi_mesh.h: 45: uint8_t findNextNetworkEntry(void);
-[; ;miwi_mesh.h: 46: void ClearNetworkTable(void);
-[; ;miwi_mesh.h: 47: uint8_t SearchForLongAddress(void);
-[; ;miwi_mesh.h: 48: uint8_t SearchForShortAddress(void);
-[; ;miwi_mesh.h: 49: void SendIndirectPacket(uint8_t *Address, uint8_t *AltAddress, bool isAltAddress);
-[; ;miwi_mesh.h: 50: uint8_t AddNodeToNetworkTable(void);
-[; ;miwi_mesh.h: 51: void DiscoverNodeByEUI(void);
-[; ;miwi_mesh.h: 52: void OpenSocket(void);
-[; ;miwi_mesh.h: 53: bool isSameAddress( uint8_t *Address1,  uint8_t *Address2);
-[; ;miwi_mesh.h: 54: void DumpConnection(uint8_t index);
-[; ;miwi_mesh.h: 55: bool UnicastShortAddress(uint8_t *DestAddress);
-[; ;miwi_mesh.h: 125: typedef union _MIWI_STATE_MACHINE
-[; ;miwi_mesh.h: 126: {
-[; ;miwi_mesh.h: 127: uint16_t Val;
-[; ;miwi_mesh.h: 128: struct {
-[; ;miwi_mesh.h: 129: uint8_t searchingForNetwork :1;
-[; ;miwi_mesh.h: 130: uint8_t memberOfNetwork :1;
-[; ;miwi_mesh.h: 131: uint8_t RxHasUserData :1;
-[; ;miwi_mesh.h: 132: uint8_t MiWiAckInProgress :1;
-[; ;miwi_mesh.h: 133: uint8_t saveConnection :1;
-[; ;miwi_mesh.h: 134: uint8_t EUISearching :1;
-[; ;miwi_mesh.h: 135: uint8_t DataRequesting :1;
-[; ;miwi_mesh.h: 136: uint8_t Resynning :1;
-[; ;miwi_mesh.h: 137: uint8_t Sleeping :1;
-[; ;miwi_mesh.h: 138: } bits;
-[; ;miwi_mesh.h: 139: } MIWI_STATE_MACHINE;
-[; ;miwi_mesh.h: 142: typedef struct _OPEN_SOCKET
-[; ;miwi_mesh.h: 143: {
-[; ;miwi_mesh.h: 144: union _OPEN_SOCKET_STATUS
-[; ;miwi_mesh.h: 145: {
-[; ;miwi_mesh.h: 146: struct _OPEN_SOCKET_STATUS_bits
-[; ;miwi_mesh.h: 147: {
-[; ;miwi_mesh.h: 148: uint8_t matchFound :1;
-[; ;miwi_mesh.h: 149: uint8_t requestIsOpen :1;
-[; ;miwi_mesh.h: 150: uint8_t itIsMe :1;
-[; ;miwi_mesh.h: 151: } bits;
-[; ;miwi_mesh.h: 152: uint8_t Val;
-[; ;miwi_mesh.h: 153: } status;
-[; ;miwi_mesh.h: 154: uint8_t socketHandle;
-[; ;miwi_mesh.h: 155: API_UINT16_UNION ShortAddress1;
-[; ;miwi_mesh.h: 157: uint8_t LongAddress1[8];
-[; ;miwi_mesh.h: 159: uint8_t AdditionalNodeID1[1];
-[; ;miwi_mesh.h: 162: API_UINT16_UNION ShortAddress2;
-[; ;miwi_mesh.h: 163: uint8_t LongAddress2[8];
-[; ;miwi_mesh.h: 165: MIWI_TICK socketStart;
-[; ;miwi_mesh.h: 166: } OPEN_SOCKET;
-[; ;miwi_mesh.h: 174: typedef struct
-[; ;miwi_mesh.h: 175: {
-[; ;miwi_mesh.h: 176: MIWI_TICK TickStart;
-[; ;miwi_mesh.h: 179: API_UINT16_UNION DestPANID;
-[; ;miwi_mesh.h: 181: uint8_t DestAddress[8];
-[; ;miwi_mesh.h: 182: union
-[; ;miwi_mesh.h: 183: {
-[; ;miwi_mesh.h: 184: uint8_t Val;
-[; ;miwi_mesh.h: 185: struct
-[; ;miwi_mesh.h: 186: {
-[; ;miwi_mesh.h: 187: uint8_t isValid : 1;
-[; ;miwi_mesh.h: 188: uint8_t isBroadcast : 1;
-[; ;miwi_mesh.h: 189: uint8_t isCommand : 1;
-[; ;miwi_mesh.h: 190: uint8_t isSecured : 1;
-[; ;miwi_mesh.h: 191: uint8_t isAltAddr : 1;
-[; ;miwi_mesh.h: 192: } bits;
-[; ;miwi_mesh.h: 193: } flags;
-[; ;miwi_mesh.h: 194: uint8_t PayLoadSize;
-[; ;miwi_mesh.h: 198: uint8_t PayLoad[40+11];
-[; ;miwi_mesh.h: 200: } INDIRECT_MESSAGE;
-[; ;miwi_mesh.h: 205: extern MIWI_STATE_MACHINE MiWiStateMachine;
-[; ;miwi_mesh.h: 206: extern uint8_t TxBuffer[];
-[; ;miwi_mesh.h: 207: extern uint8_t TxData;
-[; ;miwi_mesh.h: 208: extern API_UINT16_UNION myPANID;
-[; ;miwi_mesh.h: 209: extern API_UINT16_UNION myShortAddress;
-[; ;miwi_mesh.h: 210: extern uint8_t myParent;
-[; ;miwi_mesh.h: 211: extern uint8_t tempLongAddress[8];
-[; ;miwi_mesh.h: 212: extern API_UINT16_UNION tempShortAddress;
-[; ;miwi_mesh.h: 213: extern OPEN_SOCKET openSocketInfo;
-[; ;miwi_api.h: 51: typedef union __CONNECTION_STATUS
-[; ;miwi_api.h: 52: {
-[; ;miwi_api.h: 53: uint8_t Val;
-[; ;miwi_api.h: 54: struct _CONNECTION_STAUTS_bits
-[; ;miwi_api.h: 55: {
-[; ;miwi_api.h: 56: uint8_t RXOnWhenIdle :1;
-[; ;miwi_api.h: 57: uint8_t directConnection :1;
-[; ;miwi_api.h: 58: uint8_t longAddressValid :1;
-[; ;miwi_api.h: 59: uint8_t shortAddressValid :1;
-[; ;miwi_api.h: 60: uint8_t FinishJoin :1;
-[; ;miwi_api.h: 61: uint8_t isFamily :1;
-[; ;miwi_api.h: 62: uint8_t filler :1;
-[; ;miwi_api.h: 63: uint8_t isValid :1;
-[; ;miwi_api.h: 64: } bits;
-[; ;miwi_api.h: 65: } CONNECTION_STATUS;
-[; ;miwi_api.h: 78: typedef struct __CONNECTION_ENTRY
-[; ;miwi_api.h: 79: {
-[; ;miwi_api.h: 81: API_UINT16_UNION PANID;
-[; ;miwi_api.h: 82: API_UINT16_UNION AltAddress;
-[; ;miwi_api.h: 84: uint8_t Address[8];
-[; ;miwi_api.h: 86: CONNECTION_STATUS status;
-[; ;miwi_api.h: 89: uint8_t PeerInfo[1];
-[; ;miwi_api.h: 91: } CONNECTION_ENTRY;
-[; ;miwi_api.h: 93: extern CONNECTION_ENTRY ConnectionTable[10];
-[; ;miwi_api.h: 95: extern uint8_t currentChannel;
-[; ;miwi_api.h: 136: bool MiApp_ProtocolInit(bool bNetworkFreezer);
-[; ;miwi_api.h: 178: bool MiApp_SetChannel(uint8_t Channel);
-[; ;miwi_api.h: 236: bool MiApp_StartConnection( uint8_t Mode, uint8_t ScanDuration, uint32_t ChannelMap);
-[; ;miwi_api.h: 246: typedef struct
-[; ;miwi_api.h: 247: {
-[; ;miwi_api.h: 248: uint8_t Channel;
-[; ;miwi_api.h: 249: uint8_t Address[8];
-[; ;miwi_api.h: 250: API_UINT16_UNION PANID;
-[; ;miwi_api.h: 251: uint8_t RSSIValue;
-[; ;miwi_api.h: 252: uint8_t LQIValue;
-[; ;miwi_api.h: 253: union
-[; ;miwi_api.h: 254: {
-[; ;miwi_api.h: 255: uint8_t Val;
-[; ;miwi_api.h: 256: struct
-[; ;miwi_api.h: 257: {
-[; ;miwi_api.h: 258: uint8_t Role: 2;
-[; ;miwi_api.h: 259: uint8_t Sleep: 1;
-[; ;miwi_api.h: 260: uint8_t SecurityEn: 1;
-[; ;miwi_api.h: 261: uint8_t RepeatEn: 1;
-[; ;miwi_api.h: 262: uint8_t AllowJoin: 1;
-[; ;miwi_api.h: 263: uint8_t Direct: 1;
-[; ;miwi_api.h: 264: uint8_t altSrcAddr: 1;
-[; ;miwi_api.h: 265: } bits;
-[; ;miwi_api.h: 266: } Capability;
-[; ;miwi_api.h: 268: uint8_t PeerInfo[1];
-[; ;miwi_api.h: 270: } ACTIVE_SCAN_RESULT;
-[; ;miwi_api.h: 273: extern ACTIVE_SCAN_RESULT ActiveScanResults[4];
-[; ;miwi_api.h: 320: uint8_t MiApp_SearchConnection(uint8_t ScanDuration, uint32_t ChannelMap);
-[; ;miwi_api.h: 374: uint8_t MiApp_EstablishConnection(uint8_t ActiveScanIndex, uint8_t Mode);
-[; ;miwi_api.h: 411: void MiApp_RemoveConnection(uint8_t ConnectionIndex);
-[; ;miwi_api.h: 457: void MiApp_ConnectionMode(uint8_t Mode);
-[; ;miwi_api.h: 552: bool MiApp_BroadcastPacket(bool SecEn );
-[; ;miwi_api.h: 591: bool MiApp_UnicastConnection(uint8_t ConnectionIndex, bool SecEn);
-[; ;miwi_api.h: 631: bool MiApp_UnicastAddress(uint8_t *DestinationAddress, bool PermanentAddr, bool SecEn);
-[; ;miwi_api.h: 643: typedef struct
-[; ;miwi_api.h: 644: {
-[; ;miwi_api.h: 645: union
-[; ;miwi_api.h: 646: {
-[; ;miwi_api.h: 647: uint8_t Val;
-[; ;miwi_api.h: 648: struct
-[; ;miwi_api.h: 649: {
-[; ;miwi_api.h: 650: uint8_t broadcast: 2;
-[; ;miwi_api.h: 651: uint8_t ackReq: 1;
-[; ;miwi_api.h: 652: uint8_t secEn: 1;
-[; ;miwi_api.h: 653: uint8_t repeat: 1;
-[; ;miwi_api.h: 654: uint8_t command: 1;
-[; ;miwi_api.h: 655: uint8_t srcPrsnt: 1;
-[; ;miwi_api.h: 656: uint8_t altSrcAddr: 1;
-[; ;miwi_api.h: 657: } bits;
-[; ;miwi_api.h: 658: } flags;
-[; ;miwi_api.h: 660: API_UINT16_UNION SourcePANID;
-[; ;miwi_api.h: 661: uint8_t *SourceAddress;
-[; ;miwi_api.h: 662: uint8_t *Payload;
-[; ;miwi_api.h: 663: uint8_t PayloadSize;
-[; ;miwi_api.h: 664: uint8_t PacketRSSI;
-[; ;miwi_api.h: 665: uint8_t PacketLQI;
-[; ;miwi_api.h: 667: } RECEIVED_MESSAGE;
-[; ;miwi_api.h: 710: bool MiApp_MessageAvailable(void);
-[; ;miwi_api.h: 752: void MiApp_DiscardMessage(void);
-[; ;miwi_api.h: 800: uint8_t MiApp_NoiseDetection(uint32_t ChannelMap, uint8_t ScanDuration, uint8_t DetectionMode,  uint8_t *NoiseLevel);
-[; ;miwi_api.h: 858: uint8_t MiApp_TransceiverPowerState(uint8_t Mode);
-[; ;miwi_api.h: 899: bool MiApp_InitChannelHopping( uint32_t ChannelMap);
-[; ;miwi_api.h: 941: bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
-[; ;miwi_api.h: 950: extern RECEIVED_MESSAGE rxMessage;
-"16 ../src/network.c
-[v _myChannel `uc ~T0 @X0 1 e ]
-[i _myChannel
--> -> 20 `i `uc
-]
-[; ;network.c: 16: uint8_t myChannel = 20;
-"25
-[v _ConnectionEntry `uc ~T0 @X0 1 e ]
-[i _ConnectionEntry
--> -> 0 `i `uc
-]
-[; ;network.c: 25: uint8_t ConnectionEntry = 0;
-[; ;network.c: 27: extern uint8_t myLongAddress[];
-"41
-[v _AdditionalNodeID `uc ~T0 @X0 -> -> 1 `i `ux e ]
-[i _AdditionalNodeID
-:U ..
--> -> 0 `i `uc
-..
-]
-[; ;network.c: 41: uint8_t AdditionalNodeID[1] = {0x00};
-"45
-[v _Network `(v ~T0 @X0 1 ef1`i ]
-"46
+[; ;soft_uart.h: 35: char UART_Init(const long int baudrate);
+[; ;soft_uart.h: 36: void UART_Write(char data);
+[; ;soft_uart.h: 37: char UART_Data_Ready();
+[; ;soft_uart.h: 38: char UART_Read();
+[; ;soft_uart.h: 39: void UART_Write_Text(char *text);
+[; ;soft_uart.h: 41: void UART_Init_A2_A1(void);
+[; ;soft_uart.h: 42: void UART_Write_A2_A1(char data);
+[; ;soft_uart.h: 43: char UART_Read_A2_A1(void);
+[; ;soft_uart.h: 44: short UART_kbhit_A2_A1(void);
+[; ;soft_uart.h: 45: void UART_Write_Text_A2_A1(char *text);
+[; ;soft_uart.h: 47: void LCD_Init(void);
+[; ;soft_uart.h: 48: void LCD_Set_Cursor(int pos);
+"26 ../src/soft_uart.c
+[v _UART_Init `(uc ~T0 @X0 1 ef1`Cl ]
+"27
 {
-[; ;network.c: 45: void Network(int DEVICEMODE)
-[; ;network.c: 46: {
-[e :U _Network ]
-"45
-[v _DEVICEMODE `i ~T0 @X0 1 r1 ]
-"46
+[; ;soft_uart.c: 26: char UART_Init(const long int baudrate)
+[; ;soft_uart.c: 27: {
+[e :U _UART_Init ]
+"26
+[v _baudrate `Cl ~T0 @X0 1 r1 ]
+"27
 [f ]
-"47
-[v _i `uc ~T0 @X0 1 a ]
-[v _j `uc ~T0 @X0 1 a ]
-"48
-[v _result `uc ~T0 @X0 1 a ]
-[; ;network.c: 47: uint8_t i, j;
-[; ;network.c: 48: bool result = 1;
-[e = _result -> -> 1 `i `uc ]
-"49
-[v _switch_val `uc ~T0 @X0 1 a ]
-[; ;network.c: 49: uint8_t switch_val;
-[; ;network.c: 55: SYSTEM_Initialize();
+"28
+[v _x `ui ~T0 @X0 1 a ]
+[; ;soft_uart.c: 28: unsigned int x;
+[; ;soft_uart.c: 29: x = (16000000 - baudrate*64)/(baudrate*64);
+"29
+[e = _x -> / - -> 16000000 `l * _baudrate -> -> 64 `i `l * _baudrate -> -> 64 `i `l `ui ]
+[; ;soft_uart.c: 31: if(x<256)
+"31
+[e $ ! < _x -> -> 256 `i `ui 1078  ]
+[; ;soft_uart.c: 32: {
+"32
+{
+[; ;soft_uart.c: 33: SPBRG = x;
+"33
+[e = _SPBRG -> _x `uc ]
+[; ;soft_uart.c: 34: SYNC = 0;
+"34
+[e = _SYNC -> -> 0 `i `b ]
+[; ;soft_uart.c: 35: SPEN = 1;
+"35
+[e = _SPEN -> -> 1 `i `b ]
+[; ;soft_uart.c: 36: TRISC7 = 1;
+"36
+[e = _TRISC7 -> -> 1 `i `b ]
+[; ;soft_uart.c: 37: TRISC6 = 1;
+"37
+[e = _TRISC6 -> -> 1 `i `b ]
+[; ;soft_uart.c: 38: CREN = 1;
+"38
+[e = _CREN -> -> 1 `i `b ]
+[; ;soft_uart.c: 39: TXEN = 1;
+"39
+[e = _TXEN -> -> 1 `i `b ]
+[; ;soft_uart.c: 40: return 1;
+"40
+[e ) -> -> 1 `i `uc ]
+[e $UE 1077  ]
+"41
+}
+[e :U 1078 ]
+[; ;soft_uart.c: 41: }
+[; ;soft_uart.c: 42: return 0;
+"42
+[e ) -> -> 0 `i `uc ]
+[e $UE 1077  ]
+[; ;soft_uart.c: 43: }
+"43
+[e :UE 1077 ]
+}
+"51
+[v _UART_Write `(v ~T0 @X0 1 ef1`uc ]
+"52
+{
+[; ;soft_uart.c: 51: void UART_Write(char data)
+[; ;soft_uart.c: 52: {
+[e :U _UART_Write ]
+"51
+[v _data `uc ~T0 @X0 1 r1 ]
+"52
+[f ]
+[; ;soft_uart.c: 53: while(!TRMT);
+"53
+[e $U 1080  ]
+[e :U 1081 ]
+[e :U 1080 ]
+[e $ ! _TRMT 1081  ]
+[e :U 1082 ]
+[; ;soft_uart.c: 54: TXREG = data;
+"54
+[e = _TXREG _data ]
+[; ;soft_uart.c: 55: }
 "55
-[e ( _SYSTEM_Initialize ..  ]
-[; ;network.c: 57: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
-"57
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-[; ;network.c: 59: Read_MAC_Address();
-"59
-[e ( _Read_MAC_Address ..  ]
-[; ;network.c: 61: MiApp_ProtocolInit(0);
-"61
-[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;network.c: 67: CreateorJoin:
-"67
-[e :U 1116 ]
-[; ;network.c: 73: if( MiApp_SetChannel(myChannel) == 0 )
+[e :UE 1079 ]
+}
+"63
+[v _UART_Data_Ready `(uc ~T0 @X0 1 ef ]
+"64
+{
+[; ;soft_uart.c: 63: char UART_Data_Ready()
+[; ;soft_uart.c: 64: {
+[e :U _UART_Data_Ready ]
+[f ]
+[; ;soft_uart.c: 65: return RCIF;
+"65
+[e ) -> -> _RCIF `i `uc ]
+[e $UE 1083  ]
+[; ;soft_uart.c: 66: }
+"66
+[e :UE 1083 ]
+}
 "73
-[e $ ! == -> ( _MiApp_SetChannel (1 _myChannel `i -> 0 `i 1117  ]
-[; ;network.c: 74: return;
+[v _UART_Read `(uc ~T0 @X0 1 ef ]
 "74
-[e $UE 1115  ]
-[e :U 1117 ]
-[; ;network.c: 85: MiApp_ConnectionMode(0x00);
+{
+[; ;soft_uart.c: 73: char UART_Read()
+[; ;soft_uart.c: 74: {
+[e :U _UART_Read ]
+[f ]
+[; ;soft_uart.c: 75: while(!RCIF);
+"75
+[e $U 1085  ]
+[e :U 1086 ]
+[e :U 1085 ]
+[e $ ! _RCIF 1086  ]
+[e :U 1087 ]
+[; ;soft_uart.c: 76: return RCREG;
+"76
+[e ) _RCREG ]
+[e $UE 1084  ]
+[; ;soft_uart.c: 77: }
+"77
+[e :UE 1084 ]
+}
 "85
-[e ( _MiApp_ConnectionMode (1 -> -> 0 `i `uc ]
-[; ;network.c: 88: if((DEVICEMODE == 0) || (DEVICEMODE == 7))
+[v _UART_Write_Text `(v ~T0 @X0 1 ef1`*uc ]
+"86
+{
+[; ;soft_uart.c: 85: void UART_Write_Text(char *text)
+[; ;soft_uart.c: 86: {
+[e :U _UART_Write_Text ]
+"85
+[v _text `*uc ~T0 @X0 1 r1 ]
+"86
+[f ]
+"87
+[v _i `i ~T0 @X0 1 a ]
+[; ;soft_uart.c: 87: int i;
+[; ;soft_uart.c: 88: for(i=0;text[i]!='\0';i++)
 "88
-[e $ ! || == _DEVICEMODE -> 0 `i == _DEVICEMODE -> 7 `i 1118  ]
-[; ;network.c: 89: {
+{
+[e = _i -> 0 `i ]
+[e $U 1092  ]
 "89
-{
-[; ;network.c: 90: while(result == 1)
+[e :U 1089 ]
+[; ;soft_uart.c: 89: UART_Write(text[i]);
+[e ( _UART_Write (1 *U + _text * -> _i `x -> -> # *U _text `i `x ]
+"88
+[e ++ _i -> 1 `i ]
+[e :U 1092 ]
+[e $ != -> *U + _text * -> _i `x -> -> # *U _text `i `x `ui -> 0 `ui 1089  ]
+[e :U 1090 ]
+"89
+}
+[; ;soft_uart.c: 90: }
 "90
-[e $U 1119  ]
-[e :U 1120 ]
-[; ;network.c: 91: {
-"91
-{
-[; ;network.c: 97: MiApp_ProtocolInit(0);
+[e :UE 1088 ]
+}
 "97
-[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;network.c: 98: MiApp_StartConnection(0x00, 0, 0);
+[v _UART_Init_A2_A1 `(v ~T0 @X0 1 ef ]
 "98
-[e ( _MiApp_StartConnection (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> -> 0 `i `l `ul ]
-[; ;network.c: 100: LCD_Erase();
+{
+[; ;soft_uart.c: 97: void UART_Init_A2_A1(void)
+[; ;soft_uart.c: 98: {
+[e :U _UART_Init_A2_A1 ]
+[f ]
+[; ;soft_uart.c: 99: TRISAbits.TRISA2 = 0;
+"99
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+[; ;soft_uart.c: 100: TRISAbits.TRISA1 = 1;
 "100
-[e ( _LCD_Erase ..  ]
-[; ;network.c: 101: sprintf((char *)&(LCDText), (char*)"PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],myChannel);
+[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
+[; ;soft_uart.c: 101: LATAbits.LATA2 = 1;
 "101
-[e ( _sprintf (1 , , , (. , &U _LCDText -> -> :s 1C `*uc `*Cuc -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> _myChannel `i ]
-[; ;network.c: 102: sprintf((char *)&(LCDText[16]), (char*)"Address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+[; ;soft_uart.c: 102: PORTAbits.RA1 = 1;
 "102
-[e ( _sprintf (1 , , (. , &U *U + &U _LCDText * -> -> -> 16 `i `ui `ux -> -> # *U &U _LCDText `ui `ux -> -> :s 2C `*uc `*Cuc -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
-[; ;network.c: 103: LCD_Update();
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+[; ;soft_uart.c: 103: }
 "103
-[e ( _LCD_Update ..  ]
-[; ;network.c: 108: while(!ConnectionTable[0].status.bits.isValid)
-"108
-[e $U 1122  ]
-[e :U 1123 ]
-[; ;network.c: 109: {
-"109
-{
-[; ;network.c: 110: if(MiApp_MessageAvailable())
-"110
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1125  ]
-[; ;network.c: 111: MiApp_DiscardMessage();
-"111
-[e ( _MiApp_DiscardMessage ..  ]
-[e :U 1125 ]
-"112
+[e :UE 1093 ]
 }
-[e :U 1122 ]
-"108
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> -> -> 0 `i `ui `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1123  ]
-[e :U 1124 ]
-[; ;network.c: 112: }
-[; ;network.c: 113: result = 0;
-"113
-[e = _result -> -> 0 `i `uc ]
+"114
+[v _UART_Write_A2_A1 `(v ~T0 @X0 1 ef1`uc ]
 "115
-}
-[e :U 1119 ]
-"90
-[e $ == -> _result `i -> 1 `i 1120  ]
-[e :U 1121 ]
+{
+[; ;soft_uart.c: 114: void UART_Write_A2_A1(char data)
+[; ;soft_uart.c: 115: {
+[e :U _UART_Write_A2_A1 ]
+"114
+[v _data `uc ~T0 @X0 1 r1 ]
+"115
+[f ]
 "116
-}
-[; ;network.c: 115: }
-[; ;network.c: 116: }
-[e $U 1126  ]
+[v _i `i ~T0 @X0 1 a ]
+[; ;soft_uart.c: 116: int i;
+[; ;soft_uart.c: 117: LATAbits.LATA2 = 0;
+"117
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+[; ;soft_uart.c: 118: _delay((unsigned long)((100)*(16000000/4000000.0)));
+"118
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;soft_uart.c: 119: for(i=0; i<8; i++)
+"119
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 8 `i 1095  ]
+[e $U 1096  ]
+"120
+[e :U 1095 ]
+[; ;soft_uart.c: 120: {
+{
+[; ;soft_uart.c: 121: LATAbits.LATA2 = (short) data;
 "121
-[e :U 1118 ]
-[; ;network.c: 121: else
-[; ;network.c: 122: {
+[e = . . _LATAbits 0 2 -> -> _data `s `uc ]
+[; ;soft_uart.c: 122: data = data >> 1;
 "122
-{
-[; ;network.c: 127: while(result == 1)
+[e = _data -> >> -> _data `i -> 1 `i `uc ]
+[; ;soft_uart.c: 123: _delay((unsigned long)((100)*(16000000/4000000.0)));
+"123
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"124
+}
+"119
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 8 `i 1095  ]
+[e :U 1096 ]
+"124
+}
+[; ;soft_uart.c: 124: }
+[; ;soft_uart.c: 125: LATAbits.LATA2 = 1;
+"125
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+[; ;soft_uart.c: 126: _delay((unsigned long)((100)*(16000000/4000000.0)));
+"126
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;soft_uart.c: 127: }
 "127
-[e $U 1127  ]
-[e :U 1128 ]
-[; ;network.c: 128: {
-"128
+[e :UE 1094 ]
+}
+"139
+[v _UART_Read_A2_A1 `(uc ~T0 @X0 1 ef ]
+"140
 {
-"129
-[v _scanresult `Vuc ~T0 @X0 1 a ]
-[; ;network.c: 129: volatile uint8_t scanresult;
-[; ;network.c: 131: MiApp_ProtocolInit(0);
-"131
-[e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;network.c: 137: scanresult = MiApp_SearchConnection(10, (0x00010000 << (myChannel-16)));
-"137
-[e = _scanresult ( _MiApp_SearchConnection (2 , -> -> 10 `i `uc -> << -> 65536 `l - -> _myChannel `i -> 16 `i `ul ]
-[; ;network.c: 143: if(scanresult > 0)
+[; ;soft_uart.c: 139: char UART_Read_A2_A1(void)
+[; ;soft_uart.c: 140: {
+[e :U _UART_Read_A2_A1 ]
+[f ]
+"141
+[v _i `i ~T0 @X0 1 a ]
+"142
+[v _data `uc ~T0 @X0 1 a ]
+[v _lecture `uc ~T0 @X0 1 a ]
+[; ;soft_uart.c: 141: int i;
+[; ;soft_uart.c: 142: char data, lecture;
+[; ;soft_uart.c: 143: data = 0b00000000;
 "143
-[e $ ! > -> _scanresult `i -> 0 `i 1130  ]
-[; ;network.c: 144: {
+[e = _data -> -> 0 `i `uc ]
+[; ;soft_uart.c: 144: if (PORTAbits.RA1 == 0)
 "144
-{
+[e $ ! == -> . . _PORTAbits 0 1 `i -> 0 `i 1099  ]
+[; ;soft_uart.c: 145: {
 "145
-[v _k `uc ~T0 @X0 1 a ]
-[; ;network.c: 145: uint8_t k;
-[; ;network.c: 147: for(j = 0; j < scanresult; j++)
+{
+[; ;soft_uart.c: 146: _delay((unsigned long)((50)*(16000000/4000000.0)));
+"146
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;soft_uart.c: 147: for(i=0; i<8; i++)
 "147
 {
-[e = _j -> -> 0 `i `uc ]
-[e $U 1134  ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 8 `i 1100  ]
+[e $U 1101  ]
 "148
-[e :U 1131 ]
-[; ;network.c: 148: {
+[e :U 1100 ]
+[; ;soft_uart.c: 148: {
 {
+[; ;soft_uart.c: 149: _delay((unsigned long)((100)*(16000000/4000000.0)));
 "149
-[v _skip_print `uc ~T0 @X0 1 a ]
-[; ;network.c: 149: uint8_t skip_print = 0;
-[e = _skip_print -> -> 0 `i `uc ]
-[; ;network.c: 150: if(j > 0)
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;soft_uart.c: 150: data = (data >> 1) + (PORTAbits.RA1 << 7);
 "150
-[e $ ! > -> _j `i -> 0 `i 1135  ]
-[; ;network.c: 151: {
+[e = _data -> + >> -> _data `i -> 1 `i << -> . . _PORTAbits 0 1 `i -> 7 `i `uc ]
 "151
-{
-[; ;network.c: 153: skip_print = 0;
+}
+"147
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 8 `i 1100  ]
+[e :U 1101 ]
+"151
+}
+[; ;soft_uart.c: 151: }
+[; ;soft_uart.c: 152: PORTAbits.RA1 = 1;
+"152
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
 "153
-[e = _skip_print -> -> 0 `i `uc ]
-[; ;network.c: 154: for(k = 0; k < j; k++)
+}
+[e :U 1099 ]
+[; ;soft_uart.c: 153: }
+[; ;soft_uart.c: 154: return data;
 "154
-{
-[e = _k -> -> 0 `i `uc ]
-[e $U 1139  ]
+[e ) _data ]
+[e $UE 1098  ]
+[; ;soft_uart.c: 155: }
 "155
-[e :U 1136 ]
-[; ;network.c: 155: {
-{
-[; ;network.c: 156: if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
-[; ;network.c: 157: (ActiveScanResults[j].PANID.v[0] == ActiveScanResults[k].PANID.v[0]))
-"157
-[e $ ! & == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i 1140  ]
-[; ;network.c: 158: {
-"158
-{
-[; ;network.c: 159: skip_print = 1;
-"159
-[e = _skip_print -> -> 1 `i `uc ]
-[; ;network.c: 160: break;
-"160
-[e $U 1137  ]
+[e :UE 1098 ]
+}
 "161
-}
-[e :U 1140 ]
-"163
-}
-"154
-[e ++ _k -> -> 1 `i `uc ]
-[e :U 1139 ]
-[e $ < -> _k `i -> _j `i 1136  ]
-[e :U 1137 ]
-"163
-}
-[; ;network.c: 161: }
-[; ;network.c: 163: }
-[; ;network.c: 164: if(skip_print == 1)
-"164
-[e $ ! == -> _skip_print `i -> 1 `i 1141  ]
-[; ;network.c: 165: {
-"165
+[v _UART_kbhit_A2_A1 `(s ~T0 @X0 1 ef ]
+"162
 {
-[; ;network.c: 166: if(j == (scanresult-1)) j = -1;
-"166
-[e $ ! == -> _j `i - -> _scanresult `i -> 1 `i 1142  ]
-[e = _j -> -U -> 1 `i `uc ]
-[e :U 1142 ]
-[; ;network.c: 167: continue;
-"167
-[e $U 1133  ]
-"168
+[; ;soft_uart.c: 161: short UART_kbhit_A2_A1(void)
+[; ;soft_uart.c: 162: {
+[e :U _UART_kbhit_A2_A1 ]
+[f ]
+[; ;soft_uart.c: 163: return (PORTAbits.RA1 == 0);
+"163
+[e ) -> -> == -> . . _PORTAbits 0 1 `i -> 0 `i `i `s ]
+[e $UE 1103  ]
+[; ;soft_uart.c: 164: }
+"164
+[e :UE 1103 ]
 }
-[e :U 1141 ]
-"169
-}
-[e :U 1135 ]
-[; ;network.c: 168: }
-[; ;network.c: 169: }
-[; ;network.c: 171: while(1)
 "171
-[e :U 1144 ]
-[; ;network.c: 172: {
+[v _UART_Write_Text_A2_A1 `(v ~T0 @X0 1 ef1`*uc ]
 "172
 {
-"178
-[v _Status `uc ~T0 @X0 1 a ]
-"179
-[v _CoordCount `uc ~T0 @X0 1 a ]
-[; ;network.c: 178: uint8_t Status;
-[; ;network.c: 179: uint8_t CoordCount = 0;
-[e = _CoordCount -> -> 0 `i `uc ]
-[; ;network.c: 180: {TxData = 11;};
-"180
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;network.c: 182: for(k = 0 ; k < scanresult ; k++)
-"182
-{
-[e = _k -> -> 0 `i `uc ]
-[e $U 1149  ]
-"183
-[e :U 1146 ]
-[; ;network.c: 183: {
-{
-[; ;network.c: 184: if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
-[; ;network.c: 185: (ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]))
-"185
-[e $ ! & == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i 1150  ]
-[; ;network.c: 186: {
-"186
-{
-[; ;network.c: 187: CoordCount++;
-"187
-[e ++ _CoordCount -> -> 1 `i `uc ]
-"188
-}
-[e :U 1150 ]
-"189
-}
-"182
-[e ++ _k -> -> 1 `i `uc ]
-[e :U 1149 ]
-[e $ < -> _k `i -> _scanresult `i 1146  ]
-[e :U 1147 ]
-"189
-}
-[; ;network.c: 188: }
-[; ;network.c: 189: }
-[; ;network.c: 190: if(CoordCount > 1)
-"190
-[e $ ! > -> _CoordCount `i -> 1 `i 1151  ]
-[; ;network.c: 191: {
-"191
-{
-"192
-[v _nodeIndex `uc ~T0 @X0 1 a ]
-[; ;network.c: 192: uint8_t nodeIndex = 0;
-[e = _nodeIndex -> -> 0 `i `uc ]
-"193
-[v _count `uc ~T0 @X0 1 a ]
-[; ;network.c: 193: uint8_t count = 0;
-[e = _count -> -> 0 `i `uc ]
-[; ;network.c: 194: {TxData = 11;};
-"194
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;network.c: 195: TxBuffer[TxData++] = 4;
-"195
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 4 `i `uc ]
-[; ;network.c: 196: TxBuffer[TxData++] = ActiveScanResults[j].PANID.v[1];
-"196
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux ]
-[; ;network.c: 197: TxBuffer[TxData++] = ActiveScanResults[j].PANID.v[0];
-"197
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux ]
-[; ;network.c: 198: MiApp_BroadcastPacket(0);
-"198
-[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;network.c: 199: for(k = 0 ; k < scanresult ; k++)
-"199
-{
-[e = _k -> -> 0 `i `uc ]
-[e $U 1155  ]
-"200
-[e :U 1152 ]
-[; ;network.c: 200: {
-{
-[; ;network.c: 201: if((ActiveScanResults[j].PANID.v[1] == ActiveScanResults[k].PANID.v[1]) &
-[; ;network.c: 202: (ActiveScanResults[j].PANID.v[0] == ActiveScanResults[k].PANID.v[0]))
-"202
-[e $ ! & == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i == -> *U + &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i -> *U + &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ActiveScanResults * -> _k `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 0 `ui `ux `i 1156  ]
-[; ;network.c: 203: {
-"203
-{
-[; ;network.c: 204: count++;
-"204
-[e ++ _count -> -> 1 `i `uc ]
-[; ;network.c: 205: nodeIndex = k;
-"205
-[e = _nodeIndex _k ]
-"206
-}
-[e :U 1156 ]
-"207
-}
-"199
-[e ++ _k -> -> 1 `i `uc ]
-[e :U 1155 ]
-[e $ < -> _k `i -> _scanresult `i 1152  ]
-[e :U 1153 ]
-"207
-}
-"208
-}
-[e :U 1151 ]
-[; ;network.c: 206: }
-[; ;network.c: 207: }
-[; ;network.c: 208: }
-[; ;network.c: 214: Status = MiApp_EstablishConnection(j, 0x00);
-"214
-[e = _Status ( _MiApp_EstablishConnection (2 , _j -> -> 0 `i `uc ]
-[; ;network.c: 215: if(Status == 0xFF)
-"215
-[e $ ! == -> _Status `i -> 255 `i 1157  ]
-[; ;network.c: 216: {
-"216
-{
-[; ;network.c: 218: goto CreateorJoin;
-"218
-[e $U 1116  ]
-"219
-}
-[; ;network.c: 219: }
-[e $U 1158  ]
-"220
-[e :U 1157 ]
-[; ;network.c: 220: else
-[; ;network.c: 221: {
-"221
-{
-[; ;network.c: 223: result = 0;
-"223
-[e = _result -> -> 0 `i `uc ]
-"224
-}
-[e :U 1158 ]
-[; ;network.c: 224: }
-[; ;network.c: 225: {TxData = 11;};
-"225
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;network.c: 226: TxBuffer[TxData++] = 5;
-"226
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 5 `i `uc ]
-[; ;network.c: 227: TxBuffer[TxData++] = myPANID.v[1];
-"227
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux ]
-[; ;network.c: 228: TxBuffer[TxData++] = myPANID.v[0];
-"228
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux ]
-[; ;network.c: 229: MiApp_BroadcastPacket(0);
-"229
-[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;network.c: 230: break;
-"230
-[e $U 1145  ]
-"232
-}
-[e :U 1143 ]
+[; ;soft_uart.c: 171: void UART_Write_Text_A2_A1(char *text)
+[; ;soft_uart.c: 172: {
+[e :U _UART_Write_Text_A2_A1 ]
 "171
-[e $U 1144  ]
-[e :U 1145 ]
-[; ;network.c: 232: }
-[; ;network.c: 238: if(result == 0)
-"238
-[e $ ! == -> _result `i -> 0 `i 1159  ]
-[; ;network.c: 239: break;
-"239
-[e $U 1132  ]
-[e :U 1159 ]
-"240
-}
-"147
-[e :U 1133 ]
-[e ++ _j -> -> 1 `i `uc ]
-[e :U 1134 ]
-[e $ < -> _j `i -> _scanresult `i 1131  ]
-[e :U 1132 ]
-"240
-}
-[; ;network.c: 240: }
-[; ;network.c: 242: result = 0;
-"242
-[e = _result -> -> 0 `i `uc ]
-"243
-}
-[; ;network.c: 243: }
-[e $U 1160  ]
-"244
-[e :U 1130 ]
-[; ;network.c: 244: else
-[; ;network.c: 245: {
-"245
+[v _text `*uc ~T0 @X0 1 r1 ]
+"172
+[f ]
+"173
+[v _i `i ~T0 @X0 1 a ]
+[; ;soft_uart.c: 173: int i;
+[; ;soft_uart.c: 174: for(i=0;text[i]!='\0';i++)
+"174
 {
-[; ;network.c: 246: LCD_Display((char *)"Waiting for PAN Rescanning......", 0, 0);
-"246
-[e ( _LCD_Display (3 , , -> :s 3C `*uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"247
+[e = _i -> 0 `i ]
+[e $U 1108  ]
+"175
+[e :U 1105 ]
+[; ;soft_uart.c: 175: UART_Write_A2_A1(text[i]);
+[e ( _UART_Write_A2_A1 (1 *U + _text * -> _i `x -> -> # *U _text `i `x ]
+"174
+[e ++ _i -> 1 `i ]
+[e :U 1108 ]
+[e $ != -> *U + _text * -> _i `x -> -> # *U _text `i `x `ui -> 0 `ui 1105  ]
+[e :U 1106 ]
+"175
 }
-[e :U 1160 ]
-"248
+[; ;soft_uart.c: 176: }
+"176
+[e :UE 1104 ]
 }
-[e :U 1127 ]
-"127
-[e $ == -> _result `i -> 1 `i 1128  ]
-[e :U 1129 ]
-"249
+"182
+[v _LCD_Init `(v ~T0 @X0 1 ef ]
+"183
+{
+[; ;soft_uart.c: 182: void LCD_Init(void)
+[; ;soft_uart.c: 183: {
+[e :U _LCD_Init ]
+[f ]
+[; ;soft_uart.c: 184: UART_Write_A2_A1(0xFE);
+"184
+[e ( _UART_Write_A2_A1 (1 -> -> 254 `i `uc ]
+[; ;soft_uart.c: 185: UART_Write_A2_A1(0x51);
+"185
+[e ( _UART_Write_A2_A1 (1 -> -> 81 `i `uc ]
+[; ;soft_uart.c: 186: UART_Write_A2_A1(0xFE);
+"186
+[e ( _UART_Write_A2_A1 (1 -> -> 254 `i `uc ]
+[; ;soft_uart.c: 187: UART_Write_A2_A1(0x41);
+"187
+[e ( _UART_Write_A2_A1 (1 -> -> 65 `i `uc ]
+[; ;soft_uart.c: 189: }
+"189
+[e :UE 1109 ]
 }
-[e :U 1126 ]
-[; ;network.c: 247: }
-[; ;network.c: 248: }
-[; ;network.c: 249: }
-[; ;network.c: 250: }
-"250
-[e :UE 1115 ]
+"195
+[v _LCD_Set_Cursor `(v ~T0 @X0 1 ef1`i ]
+"196
+{
+[; ;soft_uart.c: 195: void LCD_Set_Cursor(int pos)
+[; ;soft_uart.c: 196: {
+[e :U _LCD_Set_Cursor ]
+"195
+[v _pos `i ~T0 @X0 1 r1 ]
+"196
+[f ]
+[; ;soft_uart.c: 197: UART_Write_A2_A1(0xFE);
+"197
+[e ( _UART_Write_A2_A1 (1 -> -> 254 `i `uc ]
+[; ;soft_uart.c: 198: UART_Write_A2_A1(0x45);
+"198
+[e ( _UART_Write_A2_A1 (1 -> -> 69 `i `uc ]
+[; ;soft_uart.c: 199: UART_Write_A2_A1(pos);
+"199
+[e ( _UART_Write_A2_A1 (1 -> _pos `uc ]
+[; ;soft_uart.c: 201: }
+"201
+[e :UE 1110 ]
 }
-[p f _sprintf 16484269 ]
-[a 2C 65 100 100 114 101 115 115 58 32 37 48 50 120 37 48 50 120 0 ]
-[a 1C 80 65 78 73 68 58 37 48 50 120 37 48 50 120 32 67 104 58 37 48 50 100 0 ]
-[a 3C 87 97 105 116 105 110 103 32 102 111 114 32 80 65 78 32 82 101 115 99 97 110 110 105 110 103 46 46 46 46 46 46 0 ]

@@ -7953,25 +7953,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;demo_mouvement.c: 31: LATAbits.LATA6 = 0;
 "31
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;demo_mouvement.c: 32: {TxData = 11;};
+[; ;demo_mouvement.c: 32: { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
 "32
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;demo_mouvement.c: 33: TxBuffer[TxData++] = 0x05;
-"33
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 5 `i `uc ]
-[; ;demo_mouvement.c: 34: TxBuffer[TxData++] = myShortAddress.v[0];
-"34
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-[; ;demo_mouvement.c: 35: TxBuffer[TxData++] = myShortAddress.v[1];
-"35
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-[; ;demo_mouvement.c: 36: MiApp_BroadcastPacket(0);
-"36
-[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;demo_mouvement.c: 37: { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
-"37
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
@@ -7991,39 +7974,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != __ms -> -> 0 `i `ul 1121  ]
 [e :U 1122 ]
 }
-"38
+"33
 }
-[; ;demo_mouvement.c: 38: }
+[; ;demo_mouvement.c: 33: }
 [e $U 1126  ]
-"40
+"35
 [e :U 1119 ]
-[; ;demo_mouvement.c: 40: else if(PORTAbits.RA0 == 1)
+[; ;demo_mouvement.c: 35: else if(PORTAbits.RA0 == 1)
 [e $ ! == -> . . _PORTAbits 0 0 `i -> 1 `i 1127  ]
-[; ;demo_mouvement.c: 41: {
-"41
+[; ;demo_mouvement.c: 36: {
+"36
 {
-[; ;demo_mouvement.c: 42: LATAbits.LATA6 = 1;
-"42
+[; ;demo_mouvement.c: 37: LATAbits.LATA6 = 1;
+"37
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;demo_mouvement.c: 43: {TxData = 11;};
-"43
+[; ;demo_mouvement.c: 38: {TxData = 11;};
+"38
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;demo_mouvement.c: 44: TxBuffer[TxData++] = 0x06;
-"44
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 6 `i `uc ]
-[; ;demo_mouvement.c: 45: TxBuffer[TxData++] = myShortAddress.v[0];
-"45
+[; ;demo_mouvement.c: 39: TxBuffer[TxData++] = 0x16;
+"39
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 22 `i `uc ]
+[; ;demo_mouvement.c: 40: TxBuffer[TxData++] = myShortAddress.v[0];
+"40
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-[; ;demo_mouvement.c: 46: TxBuffer[TxData++] = myShortAddress.v[1];
-"46
+[; ;demo_mouvement.c: 41: TxBuffer[TxData++] = myShortAddress.v[1];
+"41
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-[; ;demo_mouvement.c: 47: MiApp_BroadcastPacket(0);
-"47
+[; ;demo_mouvement.c: 42: MiApp_BroadcastPacket(0);
+"42
 [e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;demo_mouvement.c: 48: { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
-"48
+[; ;demo_mouvement.c: 43: { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"43
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
@@ -8043,19 +8026,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != __ms -> -> 0 `i `ul 1129  ]
 [e :U 1130 ]
 }
-"49
+"44
 }
 [e :U 1127 ]
-"50
+"45
 [e :U 1126 ]
 }
 [e :U 1116 ]
 "25
 [e $U 1117  ]
 [e :U 1118 ]
-[; ;demo_mouvement.c: 49: }
-[; ;demo_mouvement.c: 50: }
-[; ;demo_mouvement.c: 51: }
-"51
+[; ;demo_mouvement.c: 44: }
+[; ;demo_mouvement.c: 45: }
+[; ;demo_mouvement.c: 46: }
+"46
 [e :UE 1115 ]
 }

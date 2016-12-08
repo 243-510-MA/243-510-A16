@@ -127,12 +127,14 @@
       <itemPath>../src/codes library.h</itemPath>
       <itemPath>../src/computer_control.c</itemPath>
       <itemPath>../src/computer_control.h</itemPath>
-      <itemPath>../../../../../../../../../XC8 exemples de code/soft_uart.c</itemPath>
       <itemPath>../src/soft_uart.h</itemPath>
       <itemPath>../src/demo_pan.c</itemPath>
       <itemPath>../src/demo_pan.h</itemPath>
       <itemPath>../src/demo_mouvement.c</itemPath>
       <itemPath>../src/demo_mouvement.h</itemPath>
+      <itemPath>../src/demo_911.c</itemPath>
+      <itemPath>../src/demo_911.h</itemPath>
+      <itemPath>../src/soft_uart.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

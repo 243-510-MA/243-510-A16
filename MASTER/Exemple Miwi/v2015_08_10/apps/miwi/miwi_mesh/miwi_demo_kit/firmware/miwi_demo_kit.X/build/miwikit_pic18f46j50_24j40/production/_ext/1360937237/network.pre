@@ -10242,7 +10242,7 @@ return;
 MiApp_ConnectionMode(0x00);
 
 
-if(DEVICEMODE == 0)
+if((DEVICEMODE == 0) || (DEVICEMODE == 7))
 {
 while(result == 1)
 {

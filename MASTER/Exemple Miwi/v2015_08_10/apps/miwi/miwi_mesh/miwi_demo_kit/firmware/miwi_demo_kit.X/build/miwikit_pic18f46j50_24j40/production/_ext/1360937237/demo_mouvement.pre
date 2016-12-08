@@ -10234,11 +10234,6 @@ while(1)
 if(PORTAbits.RA0 == 0)
 {
 LATAbits.LATA6 = 0;
-{TxData = 11;};
-TxBuffer[TxData++] = 0x05;
-TxBuffer[TxData++] = myShortAddress.v[0];
-TxBuffer[TxData++] = myShortAddress.v[1];
-MiApp_BroadcastPacket(0);
 { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
 }
 
@@ -10246,7 +10241,7 @@ else if(PORTAbits.RA0 == 1)
 {
 LATAbits.LATA6 = 1;
 {TxData = 11;};
-TxBuffer[TxData++] = 0x06;
+TxBuffer[TxData++] = 0x16;
 TxBuffer[TxData++] = myShortAddress.v[0];
 TxBuffer[TxData++] = myShortAddress.v[1];
 MiApp_BroadcastPacket(0);

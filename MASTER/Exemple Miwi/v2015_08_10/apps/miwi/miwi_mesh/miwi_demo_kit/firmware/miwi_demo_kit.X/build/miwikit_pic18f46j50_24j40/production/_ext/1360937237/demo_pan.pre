@@ -10208,15 +10208,20 @@ extern RECEIVED_MESSAGE rxMessage;
 void Demo_Pan(void)
 {
 TRISB = 0x0;
-int status = 0;
-LATBbits.LATB3 = 0;
-LATBbits.LATB2 = 0;
+TRISAbits.TRISA2 = 0;
+int alarm_status = 1;
 
-
-LATEbits.LATE1 = 1;
 while(1)
 {
 if(MiApp_MessageAvailable())
+{
+if (rxMessage.Payload[0] == 0X17)
+{alarm_status = 1;}
+
+if (rxMessage.Payload[0] == 0x18)
+{alarm_status = 0;}
+
+if (alarm_status == 1)
 {
 if(rxMessage.Payload[0] == 0x16 )
 {
@@ -10227,8 +10232,9 @@ else if(rxMessage.Payload[0] == 0x15 )
 {
 
 demo_gyro(0);
-}
 
+}
+}
 }
 MiApp_DiscardMessage();
 }
@@ -10240,7 +10246,8 @@ MiApp_DiscardMessage();
 void demo_gyro(int status)
 {
 LATCbits.LATC2 = status;
-LATBbits.LATB3 = status;
-
+LATAbits.LATA6 = status;
+LATAbits.LATA7 = status;
+LATAbits.LATA2 = status;
 
 }

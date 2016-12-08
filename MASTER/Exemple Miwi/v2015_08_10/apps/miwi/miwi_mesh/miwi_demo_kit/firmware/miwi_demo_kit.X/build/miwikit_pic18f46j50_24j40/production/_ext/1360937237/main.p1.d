@@ -2,6 +2,7 @@
  build/miwikit_pic18f46j50_24j40/production/_ext/1360937237/main.p1:  \
  ../src/main.c  \
 ../../../../../../framework/miwi/miwi_mesh.h  \
+../src/demo_911.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/button.h  \
 ../src/network.h  \
 ../src/system_config/miwikit_pic18f46j50_24j40/system_config.h  \

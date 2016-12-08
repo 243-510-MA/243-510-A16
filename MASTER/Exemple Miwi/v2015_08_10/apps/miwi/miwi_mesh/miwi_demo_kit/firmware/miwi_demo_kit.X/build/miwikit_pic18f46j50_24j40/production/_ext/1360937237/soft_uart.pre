@@ -1,5 +1,5 @@
 
-# 1 "../src/main.c"
+# 1 "../src/soft_uart.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9548,752 +9548,144 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\__size_t.h"
-typedef unsigned size_t;
+# 35 "../src/soft_uart.h"
+char UART_Init(const long int baudrate);
+void UART_Write(char data);
+char UART_Data_Ready();
+char UART_Read();
+void UART_Write_Text(char *text);
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdarg.h"
-typedef void * va_list[1];
+void UART_Init_A2_A1(void);
+void UART_Write_A2_A1(char data);
+char UART_Read_A2_A1(void);
+short UART_kbhit_A2_A1(void);
+void UART_Write_Text_A2_A1(char *text);
 
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
+void LCD_Init(void);
+void LCD_Set_Cursor(int pos);
 
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdio.h"
-struct __prbuf
+# 26 "../src/soft_uart.c"
+char UART_Init(const long int baudrate)
 {
-char * ptr;
-void (* func)(char);
-};
+unsigned int x;
+x = (16000000 - baudrate*64)/(baudrate*64);
 
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\errno.h"
-extern int errno;
+if(x<256)
+{
+SPBRG = x;
+SYNC = 0;
+SPEN = 1;
+TRISC7 = 1;
+TRISC6 = 1;
+CREN = 1;
+TXEN = 1;
+return 1;
+}
+return 0;
+}
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdbool.h"
-typedef unsigned char bool;
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
+# 51
+void UART_Write(char data)
+{
+while(!TRMT);
+TXREG = data;
+}
 
 # 63
-typedef unsigned long int uint32_t;
+char UART_Data_Ready()
+{
+return RCIF;
+}
 
-# 71
-typedef signed char int_least8_t;
+# 73
+char UART_Read()
+{
+while(!RCIF);
+return RCREG;
+}
 
-# 78
-typedef signed int int_least16_t;
+# 85
+void UART_Write_Text(char *text)
+{
+int i;
+for(i=0;text[i]!='\0';i++)
+UART_Write(text[i]);
+}
 
-# 90
-typedef signed short long int int_least24_t;
+# 97
+void UART_Init_A2_A1(void)
+{
+TRISAbits.TRISA2 = 0;
+TRISAbits.TRISA1 = 1;
+LATAbits.LATA2 = 1;
+PORTAbits.RA1 = 1;
+}
 
-# 98
-typedef signed long int int_least32_t;
+# 114
+void UART_Write_A2_A1(char data)
+{
+int i;
+LATAbits.LATA2 = 0;
+_delay((unsigned long)((100)*(16000000/4000000.0)));
+for(i=0; i<8; i++)
+{
+LATAbits.LATA2 = (short) data;
+data = data >> 1;
+_delay((unsigned long)((100)*(16000000/4000000.0)));
+}
+LATAbits.LATA2 = 1;
+_delay((unsigned long)((100)*(16000000/4000000.0)));
+}
 
-# 105
-typedef unsigned char uint_least8_t;
+# 139
+char UART_Read_A2_A1(void)
+{
+int i;
+char data, lecture;
+data = 0b00000000;
+if (PORTAbits.RA1 == 0)
+{
+_delay((unsigned long)((50)*(16000000/4000000.0)));
+for(i=0; i<8; i++)
+{
+_delay((unsigned long)((100)*(16000000/4000000.0)));
+data = (data >> 1) + (PORTAbits.RA1 << 7);
+}
+PORTAbits.RA1 = 1;
+}
+return data;
+}
 
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
+# 161
+short UART_kbhit_A2_A1(void)
+{
+return (PORTAbits.RA1 == 0);
+}
 
 # 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 43 "../src/system_config/miwikit_pic18f46j50_24j40\lcd.h"
-extern uint8_t LCDText[16*2+1];
-
-void LCD_Initialize(void);
-void LCD_Update(void);
-void LCD_Erase(void);
-void LCD_BacklightON(void);
-void LCD_BacklightOFF(void);
-void LCD_Display(char *, uint8_t, bool);
-void LCDWriteLine(uint16_t number, char *line);
-void UserInterruptHandler(void);
-
-# 27 "../src/system_config/miwikit_pic18f46j50_24j40\eeprom.h"
-void EEPROMRead(uint8_t *Dest, uint8_t Addr , uint8_t count);
-void Read_MAC_Address(void);
-
-# 27 "../src/system_config/miwikit_pic18f46j50_24j40\serial_flash.h"
-void SSTRead(uint8_t *Dest, uint8_t *Addr , uint8_t count);
-void SSTWrite(uint8_t *Src, uint8_t *Addr, uint8_t count);
-void SSTGetID(uint8_t *Dest);
-
-# 71 "../src/system_config/miwikit_pic18f46j50_24j40\symbol.h"
-typedef union _MIWI_TICK
+void UART_Write_Text_A2_A1(char *text)
 {
-uint32_t Val;
-struct _MIWI_TICK_bytes
-{
-uint8_t b0;
-uint8_t b1;
-uint8_t b2;
-uint8_t b3;
-} byte;
-uint8_t v[4];
-struct _MIWI_TICK_words
-{
-uint16_t w0;
-uint16_t w1;
-} word;
-} MIWI_TICK;
-
-void InitSymbolTimer(void);
-MIWI_TICK MiWi_TickGet(void);
-
-
-
-extern volatile uint8_t timerExtension1,timerExtension2;
-
-# 47 "../src/system_config/miwikit_pic18f46j50_24j40\delay.h"
-void DELAY_10us( uint32_t tenMicroSecondCounter );
-
-# 68
-void DELAY_ms( uint16_t ms );
-
-# 32 "../src/system_config/miwikit_pic18f46j50_24j40\button.h"
-MIWI_TICK switch0PressTime;
-MIWI_TICK switch1PressTime;
-
-uint8_t BUTTON_Pressed(void);
-
-# 29 "../src/system_config/miwikit_pic18f46j50_24j40\spi.h"
-void SPIPut(uint8_t v);
-uint8_t SPIGet(void);
-
-void SPIPut2(uint8_t v);
-uint8_t SPIGet2(void);
-
-# 54 "../src/system_config/miwikit_pic18f46j50_24j40\system.h"
-typedef union
-{
-
-uint8_t v[4];
-uint16_t w[2];
-uint32_t Val;
-
-}API_UINT32_UNION;
-
-typedef union
-{
-
-uint8_t v[2];
-uint16_t Val;
-
-}API_UINT16_UNION;
-
-uint16_t pwm_value_high_time = 400 ;
-
-# 122
-void SYSTEM_Initialize(void);
-
-# 31 "../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h"
-typedef union
-{
-uint8_t Val;
-struct
-{
-uint8_t RF_TXIF :1;
-uint8_t :2;
-uint8_t RF_RXIF :1;
-uint8_t SECIF :1;
-uint8_t :4;
-}bits;
-} MRF24J40_IFREG;
-
-typedef union
-{
-uint8_t Val;
-struct
-{
-uint8_t TX_BUSY : 1;
-uint8_t TX_PENDING_ACK : 1;
-uint8_t TX_FAIL : 1;
-uint8_t RX_SECURITY : 1;
-uint8_t RX_IGNORE_SECURITY : 1;
-uint8_t RX_BUFFERED : 1;
-uint8_t SEC_IF : 1;
-} bits;
-} MRF24J40_STATUS;
-
-# 84 "../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi.h"
-typedef union _DRIVER_UINT8_UNION_
-{
-uint8_t Val;
-struct
-{
-uint8_t b0:1;
-uint8_t b1:1;
-uint8_t b2:1;
-uint8_t b3:1;
-uint8_t b4:1;
-uint8_t b5:1;
-uint8_t b6:1;
-uint8_t b7:1;
-} bits;
-
-} DRIVER_UINT8_UNION;
-
-# 106
-typedef struct
-{
-union
-{
-uint8_t Val;
-struct
-{
-uint8_t packetType : 2;
-
-
-
-
-uint8_t broadcast : 1;
-uint8_t secEn : 1;
-uint8_t repeat : 1;
-uint8_t ackReq : 1;
-uint8_t destPrsnt : 1;
-uint8_t sourcePrsnt : 1;
-} bits;
-} flags;
-
-uint8_t *DestAddress;
-
-bool altDestAddr;
-bool altSrcAddr;
-API_UINT16_UNION DestPANID;
-
-
-} MAC_TRANS_PARAM;
-
-# 142
-typedef struct
-{
-union
-{
-uint8_t Val;
-struct
-{
-uint8_t packetType :2;
-
-
-
-
-uint8_t broadcast :1;
-uint8_t secEn :1;
-uint8_t repeat :1;
-uint8_t ackReq :1;
-uint8_t destPrsnt :1;
-uint8_t sourcePrsnt :1;
-} bits;
-} flags;
-
-uint8_t * SourceAddress;
-uint8_t * Payload;
-uint8_t PayloadLen;
-uint8_t RSSIValue;
-uint8_t LQIValue;
-
-bool altSourceAddress;
-API_UINT16_UNION SourcePANID;
-
-} MAC_RECEIVED_PACKET;
-
-# 179
-typedef struct
-{
-union
-{
-uint8_t Val;
-struct
-{
-uint8_t RepeaterMode :1;
-uint8_t CCAEnable :1;
-uint8_t NetworkFreezer :1;
-uint8_t PAddrLength :4;
-} bits;
-} actionFlags;
-
-uint8_t *PAddress;
-
-} MACINIT_PARAM;
-
-extern MAC_RECEIVED_PACKET MACRxPacket;
-
-# 239
-bool MiMAC_SetChannel(uint8_t channel, uint8_t offsetFreq);
-
-# 274
-bool MiMAC_SetPower(uint8_t outputPower);
-
-# 313
-bool MiMAC_SetAltAddress(uint8_t *Address, uint8_t *PANID);
-
-# 345
-bool MiMAC_Init(MACINIT_PARAM initValue);
-
-# 380
-uint8_t MiMAC_ChannelAssessment(uint8_t AssessmentMode);
-
-# 418
-void MiMAC_DiscardPacket(void);
-
-# 458
-bool MiMAC_ReceivedPacket(void);
-
-# 494
-bool MiMAC_SendPacket(MAC_TRANS_PARAM transParam, uint8_t *MACPayload, uint8_t MACPayloadLen);
-
-# 538
-bool MiMAC_PowerState(uint8_t PowerState);
-
-# 549
-void UserInterruptHandler(void);
-
-# 44 "../../../../../../framework\miwi/miwi_mesh.h"
-void MiWiTasks(void);
-uint8_t findNextNetworkEntry(void);
-void ClearNetworkTable(void);
-uint8_t SearchForLongAddress(void);
-uint8_t SearchForShortAddress(void);
-void SendIndirectPacket(uint8_t *Address, uint8_t *AltAddress, bool isAltAddress);
-uint8_t AddNodeToNetworkTable(void);
-void DiscoverNodeByEUI(void);
-void OpenSocket(void);
-bool isSameAddress( uint8_t *Address1,  uint8_t *Address2);
-void DumpConnection(uint8_t index);
-bool UnicastShortAddress(uint8_t *DestAddress);
-
-# 125
-typedef union _MIWI_STATE_MACHINE
-{
-uint16_t Val;
-struct {
-uint8_t searchingForNetwork :1;
-uint8_t memberOfNetwork :1;
-uint8_t RxHasUserData :1;
-uint8_t MiWiAckInProgress :1;
-uint8_t saveConnection :1;
-uint8_t EUISearching :1;
-uint8_t DataRequesting :1;
-uint8_t Resynning :1;
-uint8_t Sleeping :1;
-} bits;
-} MIWI_STATE_MACHINE;
-
-
-typedef struct _OPEN_SOCKET
-{
-union _OPEN_SOCKET_STATUS
-{
-struct _OPEN_SOCKET_STATUS_bits
-{
-uint8_t matchFound :1;
-uint8_t requestIsOpen :1;
-uint8_t itIsMe :1;
-} bits;
-uint8_t Val;
-} status;
-uint8_t socketHandle;
-API_UINT16_UNION ShortAddress1;
-
-uint8_t LongAddress1[8];
-
-uint8_t AdditionalNodeID1[1];
-
-
-API_UINT16_UNION ShortAddress2;
-uint8_t LongAddress2[8];
-
-MIWI_TICK socketStart;
-} OPEN_SOCKET;
-
-# 174
-typedef struct
-{
-MIWI_TICK TickStart;
-
-
-API_UINT16_UNION DestPANID;
-
-uint8_t DestAddress[8];
-union
-{
-uint8_t Val;
-struct
-{
-uint8_t isValid : 1;
-uint8_t isBroadcast : 1;
-uint8_t isCommand : 1;
-uint8_t isSecured : 1;
-uint8_t isAltAddr : 1;
-} bits;
-} flags;
-uint8_t PayLoadSize;
-
-
-
-uint8_t PayLoad[40+11];
-
-} INDIRECT_MESSAGE;
-
-
-
-
-extern MIWI_STATE_MACHINE MiWiStateMachine;
-extern uint8_t TxBuffer[];
-extern uint8_t TxData;
-extern API_UINT16_UNION myPANID;
-extern API_UINT16_UNION myShortAddress;
-extern uint8_t myParent;
-extern uint8_t tempLongAddress[8];
-extern API_UINT16_UNION tempShortAddress;
-extern OPEN_SOCKET openSocketInfo;
-
-# 51 "../../../../../../framework\miwi/miwi_api.h"
-typedef union __CONNECTION_STATUS
-{
-uint8_t Val;
-struct _CONNECTION_STAUTS_bits
-{
-uint8_t RXOnWhenIdle :1;
-uint8_t directConnection :1;
-uint8_t longAddressValid :1;
-uint8_t shortAddressValid :1;
-uint8_t FinishJoin :1;
-uint8_t isFamily :1;
-uint8_t filler :1;
-uint8_t isValid :1;
-} bits;
-} CONNECTION_STATUS;
-
-# 78
-typedef struct __CONNECTION_ENTRY
-{
-
-API_UINT16_UNION PANID;
-API_UINT16_UNION AltAddress;
-
-uint8_t Address[8];
-
-CONNECTION_STATUS status;
-
-
-uint8_t PeerInfo[1];
-
-} CONNECTION_ENTRY;
-
-extern CONNECTION_ENTRY ConnectionTable[10];
-
-extern uint8_t currentChannel;
-
-# 136
-bool MiApp_ProtocolInit(bool bNetworkFreezer);
-
-# 178
-bool MiApp_SetChannel(uint8_t Channel);
-
-# 236
-bool MiApp_StartConnection( uint8_t Mode, uint8_t ScanDuration, uint32_t ChannelMap);
-
-# 246
-typedef struct
-{
-uint8_t Channel;
-uint8_t Address[8];
-API_UINT16_UNION PANID;
-uint8_t RSSIValue;
-uint8_t LQIValue;
-union
-{
-uint8_t Val;
-struct
-{
-uint8_t Role: 2;
-uint8_t Sleep: 1;
-uint8_t SecurityEn: 1;
-uint8_t RepeatEn: 1;
-uint8_t AllowJoin: 1;
-uint8_t Direct: 1;
-uint8_t altSrcAddr: 1;
-} bits;
-} Capability;
-
-uint8_t PeerInfo[1];
-
-} ACTIVE_SCAN_RESULT;
-
-
-extern ACTIVE_SCAN_RESULT ActiveScanResults[4];
-
-# 320
-uint8_t MiApp_SearchConnection(uint8_t ScanDuration, uint32_t ChannelMap);
-
-# 374
-uint8_t MiApp_EstablishConnection(uint8_t ActiveScanIndex, uint8_t Mode);
-
-# 411
-void MiApp_RemoveConnection(uint8_t ConnectionIndex);
-
-# 457
-void MiApp_ConnectionMode(uint8_t Mode);
-
-# 552
-bool MiApp_BroadcastPacket(bool SecEn );
-
-# 591
-bool MiApp_UnicastConnection(uint8_t ConnectionIndex, bool SecEn);
-
-# 631
-bool MiApp_UnicastAddress(uint8_t *DestinationAddress, bool PermanentAddr, bool SecEn);
-
-# 643
-typedef struct
-{
-union
-{
-uint8_t Val;
-struct
-{
-uint8_t broadcast: 2;
-uint8_t ackReq: 1;
-uint8_t secEn: 1;
-uint8_t repeat: 1;
-uint8_t command: 1;
-uint8_t srcPrsnt: 1;
-uint8_t altSrcAddr: 1;
-} bits;
-} flags;
-
-API_UINT16_UNION SourcePANID;
-uint8_t *SourceAddress;
-uint8_t *Payload;
-uint8_t PayloadSize;
-uint8_t PacketRSSI;
-uint8_t PacketLQI;
-
-} RECEIVED_MESSAGE;
-
-# 710
-bool MiApp_MessageAvailable(void);
-
-# 752
-void MiApp_DiscardMessage(void);
-
-# 800
-uint8_t MiApp_NoiseDetection(uint32_t ChannelMap, uint8_t ScanDuration, uint8_t DetectionMode,  uint8_t *NoiseLevel);
-
-# 858
-uint8_t MiApp_TransceiverPowerState(uint8_t Mode);
-
-# 899
-bool MiApp_InitChannelHopping( uint32_t ChannelMap);
-
-# 941
-bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
-
-# 950
-extern RECEIVED_MESSAGE rxMessage;
-
-# 27 "../src/network.h"
-void Network(int DEVICEMODE);
-
-# 25 "../src/pan.h"
-void startBit(void);
-void stopBit(void);
-void putcv(int data);
-void Power_off();
-void Power_on();
-void alarm(int status);
-
-void Pan(void);
-
-# 27 "../src/student.h"
-void Student(void);
-
-# 27 "../src/teacher.h"
-void Teacher(void);
-
-# 27 "../src/door_unlock.h"
-void DoorUnlock(void);
-
-# 25 "../src/projector_screen.h"
-void ProjectorScreen(void);
-
-# 35 "../src/computer_control.h"
-void ComputerControl(void);
-
-# 5 "../src/demo_pan.h"
-void Demo_Pan(void);
-void demo_gyro(int status);
-
-# 35 "../src/demo_mouvement.h"
-void MovementDetector(void);
-
-# 6 "../src/demo_911.h"
-void Demo_911(void);
-
-# 36 "../src/main.c"
-void main(void)
-{
-Network(0);
-
-LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
-
-
-
-if(0 == 0)
-{
-Pan();
+int i;
+for(i=0;text[i]!='\0';i++)
+UART_Write_A2_A1(text[i]);
 }
 
-
-if(0 == 1)
+# 182
+void LCD_Init(void)
 {
-DoorUnlock();
+UART_Write_A2_A1(0xFE);
+UART_Write_A2_A1(0x51);
+UART_Write_A2_A1(0xFE);
+UART_Write_A2_A1(0x41);
+
 }
 
-
-if(0 == 2)
+# 195
+void LCD_Set_Cursor(int pos)
 {
-ProjectorScreen();
-}
-
-
-if(0 == 3)
-{
-Teacher();
-}
-
-
-if(0 == 4)
-{
-Student();
-}
-
-if(0 == 5)
-{
-ComputerControl();
-}
-
-if(0 == 6)
-{
-MovementDetector();
-}
-
-if(0 == 7)
-{
-Demo_Pan();
-}
-
-if(0 == 8)
-{
-Demo_911();
+UART_Write_A2_A1(0xFE);
+UART_Write_A2_A1(0x45);
+UART_Write_A2_A1(pos);
 
 }
-}
+

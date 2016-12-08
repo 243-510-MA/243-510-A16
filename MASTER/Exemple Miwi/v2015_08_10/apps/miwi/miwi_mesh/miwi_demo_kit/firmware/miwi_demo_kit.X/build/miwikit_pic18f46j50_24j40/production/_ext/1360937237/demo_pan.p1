@@ -10,55 +10,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1078 _MIWI_TICK Val byte v word ]
 "8317 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18f46j50.h
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"7646
-[s S516 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S516 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"7656
-[s S517 :1 `uc 1 ]
-[n S517 . LB0 ]
-"7659
-[s S518 :1 `uc 1 :1 `uc 1 ]
-[n S518 . . LB1 ]
-"7663
-[s S519 :2 `uc 1 :1 `uc 1 ]
-[n S519 . . LB2 ]
-"7667
-[s S520 :3 `uc 1 :1 `uc 1 ]
-[n S520 . . LB3 ]
-"7671
-[s S521 :4 `uc 1 :1 `uc 1 ]
-[n S521 . . LB4 ]
-"7675
-[s S522 :5 `uc 1 :1 `uc 1 ]
-[n S522 . . LB5 ]
-"7679
-[s S523 :6 `uc 1 :1 `uc 1 ]
-[n S523 . . LB6 ]
-"7683
-[s S524 :7 `uc 1 :1 `uc 1 ]
-[n S524 . . LB7 ]
-"7645
-[u S515 `S516 1 `S517 1 `S518 1 `S519 1 `S520 1 `S521 1 `S522 1 `S523 1 `S524 1 ]
-[n S515 . . . . . . . . . . ]
-"7688
-[v _LATBbits `VS515 ~T0 @X0 0 e@3978 ]
-"8028
-[s S545 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S545 . LATE0 LATE1 LATE2 ]
-"8033
-[s S546 :1 `uc 1 ]
-[n S546 . LE0 ]
-"8036
-[s S547 :1 `uc 1 :1 `uc 1 ]
-[n S547 . . LE1 ]
-"8040
-[s S548 :2 `uc 1 :1 `uc 1 ]
-[n S548 . . LE2 ]
-"8027
-[u S544 `S545 1 `S546 1 `S547 1 `S548 1 ]
-[n S544 . . . . . ]
-"8045
-[v _LATEbits `VS544 ~T0 @X0 0 e@3981 ]
+"8267
+[s S560 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S560 . TRISA0 TRISA1 TRISA2 TRISA3 . TRISA5 TRISA6 TRISA7 ]
+"8266
+[u S559 `S560 1 ]
+[n S559 . . ]
+"8278
+[v _TRISAbits `VS559 ~T0 @X0 0 e@3986 ]
 "710 ../../../../../../framework\miwi/miwi_api.h
 [v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
 "649
@@ -108,6 +67,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S525 . . . . . . . . . ]
 "7816
 [v _LATCbits `VS525 ~T0 @X0 0 e@3979 ]
+"7528
+[s S507 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S507 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
+"7538
+[s S508 :1 `uc 1 ]
+[n S508 . LA0 ]
+"7541
+[s S509 :1 `uc 1 :1 `uc 1 ]
+[n S509 . . LA1 ]
+"7545
+[s S510 :2 `uc 1 :1 `uc 1 ]
+[n S510 . . LA2 ]
+"7549
+[s S511 :3 `uc 1 :1 `uc 1 ]
+[n S511 . . LA3 ]
+"7553
+[s S512 :5 `uc 1 :1 `uc 1 ]
+[n S512 . . LA5 ]
+"7557
+[s S513 :6 `uc 1 :1 `uc 1 ]
+[n S513 . . LA6 ]
+"7561
+[s S514 :7 `uc 1 :1 `uc 1 ]
+[n S514 . . LA7 ]
+"7527
+[u S506 `S507 1 `S508 1 `S509 1 `S510 1 `S511 1 `S512 1 `S513 1 `S514 1 ]
+[n S506 . . . . . . . . . ]
+"7566
+[v _LATAbits `VS506 ~T0 @X0 0 e@3977 ]
 [; ;demo_pan.h: 5: void Demo_Pan(void);
 [; ;demo_pan.h: 6: void demo_gyro(int status);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -7924,95 +7912,123 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;demo_pan.c: 16: TRISB = 0x0;
 "16
 [e = _TRISB -> -> 0 `i `uc ]
+[; ;demo_pan.c: 17: TRISAbits.TRISA2 = 0;
 "17
-[v _status `i ~T0 @X0 1 a ]
-[; ;demo_pan.c: 17: int status = 0;
-[e = _status -> 0 `i ]
-[; ;demo_pan.c: 18: LATBbits.LATB3 = 0;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
 "18
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-[; ;demo_pan.c: 19: LATBbits.LATB2 = 0;
-"19
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-[; ;demo_pan.c: 22: LATEbits.LATE1 = 1;
-"22
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;demo_pan.c: 23: while(1)
-"23
+[v _alarm_status `i ~T0 @X0 1 a ]
+[; ;demo_pan.c: 18: int alarm_status = 1;
+[e = _alarm_status -> 1 `i ]
+[; ;demo_pan.c: 20: while(1)
+"20
 [e :U 1117 ]
-[; ;demo_pan.c: 24: {
-"24
+[; ;demo_pan.c: 21: {
+"21
 {
-[; ;demo_pan.c: 25: if(MiApp_MessageAvailable())
-"25
+[; ;demo_pan.c: 22: if(MiApp_MessageAvailable())
+"22
 [e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1119  ]
-[; ;demo_pan.c: 26: {
-"26
+[; ;demo_pan.c: 23: {
+"23
 {
-[; ;demo_pan.c: 27: if(rxMessage.Payload[0] == 0x16 )
+[; ;demo_pan.c: 24: if (rxMessage.Payload[0] == 0X17)
+"24
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 23 `i 1120  ]
+[; ;demo_pan.c: 25: {alarm_status = 1;}
+"25
+{
+[e = _alarm_status -> 1 `i ]
+}
+[e :U 1120 ]
+[; ;demo_pan.c: 27: if (rxMessage.Payload[0] == 0x18)
 "27
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 22 `i 1120  ]
-[; ;demo_pan.c: 28: {
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 24 `i 1121  ]
+[; ;demo_pan.c: 28: {alarm_status = 0;}
 "28
 {
-[; ;demo_pan.c: 29: demo_gyro(1);
-"29
-[e ( _demo_gyro (1 -> 1 `i ]
-"30
+[e = _alarm_status -> 0 `i ]
 }
-[; ;demo_pan.c: 30: }
-[e $U 1121  ]
+[e :U 1121 ]
+[; ;demo_pan.c: 30: if (alarm_status == 1)
+"30
+[e $ ! == _alarm_status -> 1 `i 1122  ]
+[; ;demo_pan.c: 31: {
+"31
+{
+[; ;demo_pan.c: 32: if(rxMessage.Payload[0] == 0x16 )
 "32
-[e :U 1120 ]
-[; ;demo_pan.c: 32: else if(rxMessage.Payload[0] == 0x15 )
-[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 21 `i 1122  ]
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 22 `i 1123  ]
 [; ;demo_pan.c: 33: {
 "33
 {
-[; ;demo_pan.c: 35: demo_gyro(0);
+[; ;demo_pan.c: 34: demo_gyro(1);
+"34
+[e ( _demo_gyro (1 -> 1 `i ]
 "35
+}
+[; ;demo_pan.c: 35: }
+[e $U 1124  ]
+"37
+[e :U 1123 ]
+[; ;demo_pan.c: 37: else if(rxMessage.Payload[0] == 0x15 )
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 21 `i 1125  ]
+[; ;demo_pan.c: 38: {
+"38
+{
+[; ;demo_pan.c: 40: demo_gyro(0);
+"40
 [e ( _demo_gyro (1 -> 0 `i ]
-"36
+"42
+}
+[e :U 1125 ]
+"43
+[e :U 1124 ]
 }
 [e :U 1122 ]
-"38
-[e :U 1121 ]
+"44
 }
 [e :U 1119 ]
-[; ;demo_pan.c: 36: }
-[; ;demo_pan.c: 38: }
-[; ;demo_pan.c: 39: MiApp_DiscardMessage();
-"39
+[; ;demo_pan.c: 42: }
+[; ;demo_pan.c: 43: }
+[; ;demo_pan.c: 44: }
+[; ;demo_pan.c: 45: MiApp_DiscardMessage();
+"45
 [e ( _MiApp_DiscardMessage ..  ]
-"40
+"46
 }
 [e :U 1116 ]
-"23
+"20
 [e $U 1117  ]
 [e :U 1118 ]
-[; ;demo_pan.c: 40: }
-[; ;demo_pan.c: 44: }
-"44
+[; ;demo_pan.c: 46: }
+[; ;demo_pan.c: 50: }
+"50
 [e :UE 1115 ]
 }
-"46
-[v _demo_gyro `(v ~T0 @X0 1 ef1`i ]
-"47
-{
-[; ;demo_pan.c: 46: void demo_gyro(int status)
-[; ;demo_pan.c: 47: {
-[e :U _demo_gyro ]
-"46
-[v _status `i ~T0 @X0 1 r1 ]
-"47
-[f ]
-[; ;demo_pan.c: 48: LATCbits.LATC2 = status;
-"48
-[e = . . _LATCbits 0 2 -> _status `uc ]
-[; ;demo_pan.c: 49: LATBbits.LATB3 = status;
-"49
-[e = . . _LATBbits 0 3 -> _status `uc ]
-[; ;demo_pan.c: 52: }
 "52
-[e :UE 1123 ]
+[v _demo_gyro `(v ~T0 @X0 1 ef1`i ]
+"53
+{
+[; ;demo_pan.c: 52: void demo_gyro(int status)
+[; ;demo_pan.c: 53: {
+[e :U _demo_gyro ]
+"52
+[v _status `i ~T0 @X0 1 r1 ]
+"53
+[f ]
+[; ;demo_pan.c: 54: LATCbits.LATC2 = status;
+"54
+[e = . . _LATCbits 0 2 -> _status `uc ]
+[; ;demo_pan.c: 55: LATAbits.LATA6 = status;
+"55
+[e = . . _LATAbits 0 6 -> _status `uc ]
+[; ;demo_pan.c: 56: LATAbits.LATA7 = status;
+"56
+[e = . . _LATAbits 0 7 -> _status `uc ]
+[; ;demo_pan.c: 57: LATAbits.LATA2 = status;
+"57
+[e = . . _LATAbits 0 2 -> _status `uc ]
+[; ;demo_pan.c: 59: }
+"59
+[e :UE 1126 ]
 }
