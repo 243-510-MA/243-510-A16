@@ -8,6 +8,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1078 `ul 1 `S1079 1 `uc -> 4 `i `S1080 1 ]
 [n S1078 _MIWI_TICK Val byte v word ]
+"74 ../src/system_config/miwikit_pic18f46j50_24j40\system.h
+[s S1083 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1083 . Heures Minutes Secondes Dixieme_Secondes ]
 "2576 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18f46j50.h
 [s S183 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S183 . PCFG0 PCFG1 PCFG2 PCFG3 PCFG4 PCFG5 PCFG6 PCFG7 ]
@@ -33,6 +36,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S544 . . . . . ]
 "8045
 [v _LATEbits `VS544 ~T0 @X0 0 e@3981 ]
+"9005
+[s S599 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S599 . TMR1IE TMR2IE CCP1IE SSP1IE TX1IE RC1IE ADIE PMPIE ]
+"9015
+[s S600 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S600 . . SSPIE TXIE RCIE ]
+"9021
+[s S601 :7 `uc 1 :1 `uc 1 ]
+[n S601 . . PSPIE ]
+"9004
+[u S598 `S599 1 `S600 1 `S601 1 ]
+[n S598 . . . . ]
+"9026
+[v _PIE1bits `VS598 ~T0 @X0 0 e@3997 ]
+"14853
+[v _T1CON `Vuc ~T0 @X0 0 e@4045 ]
+"9096
+[s S603 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S603 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF PMPIF ]
+"9106
+[s S604 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S604 . . SSPIF TXIF RCIF ]
+"9112
+[s S605 :7 `uc 1 :1 `uc 1 ]
+[n S605 . . PSPIF ]
+"9095
+[u S602 `S603 1 `S604 1 `S605 1 ]
+[n S602 . . . . ]
+"9117
+[v _PIR1bits `VS602 ~T0 @X0 0 e@3998 ]
+"15017
+[v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
+"14998
+[v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
+"16629
+[v _INTCON `Vuc ~T0 @X0 0 e@4082 ]
 "6170
 [s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S446 . RA0 RA1 RA2 RA3 . RA5 RA6 RA7 ]
@@ -108,6 +147,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _myShortAddress `S1082 ~T0 @X0 0 e ]
 "552 ../../../../../../framework\miwi/miwi_api.h
 [v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
+"710
+[v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
+"649
+[s S1115 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1115 . broadcast ackReq secEn repeat command srcPrsnt altSrcAddr ]
+"646
+[u S1114 `uc 1 `S1115 1 ]
+[n S1114 . Val bits ]
+"644
+[s S1113 `S1114 1 `S1082 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1113 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
+"950
+[v _rxMessage `S1113 ~T0 @X0 0 e ]
+"194 C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"43 ../src/system_config/miwikit_pic18f46j50_24j40\lcd.h
+[v _LCDText `uc ~T0 @X0 -> 0 `x e ]
+"46
+[v _LCD_Update `(v ~T0 @X0 0 ef ]
+"752 ../../../../../../framework\miwi/miwi_api.h
+[v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
 [; ;computer_control.h: 35: void ComputerControl(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -7634,7 +7694,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 400 `i `ui
 ]
 [; ;miwikit_pic18f46j50_24j40\system.h: 71: uint16_t pwm_value_high_time = 400 ;
-[; ;miwikit_pic18f46j50_24j40\system.h: 122: void SYSTEM_Initialize(void);
+[; ;miwikit_pic18f46j50_24j40\system.h: 73: typedef struct
+[; ;miwikit_pic18f46j50_24j40\system.h: 74: {
+[; ;miwikit_pic18f46j50_24j40\system.h: 75: uint8_t Heures;
+[; ;miwikit_pic18f46j50_24j40\system.h: 76: uint8_t Minutes;
+[; ;miwikit_pic18f46j50_24j40\system.h: 77: uint8_t Secondes;
+[; ;miwikit_pic18f46j50_24j40\system.h: 78: uint8_t Dixieme_Secondes;
+[; ;miwikit_pic18f46j50_24j40\system.h: 79: } Temps;
+"81
+[v _Chrono `S1083 ~T0 @X0 1 e ]
+[; ;miwikit_pic18f46j50_24j40\system.h: 81: Temps Chrono;
+[; ;miwikit_pic18f46j50_24j40\system.h: 82: void temps_avance(Temps * hms);
+[; ;miwikit_pic18f46j50_24j40\system.h: 133: void SYSTEM_Initialize(void);
 [; ;drv_mrf_miwi_24j40.h: 31: typedef union
 [; ;drv_mrf_miwi_24j40.h: 32: {
 [; ;drv_mrf_miwi_24j40.h: 33: uint8_t Val;
@@ -7924,121 +7995,273 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;soft_uart.h: 45: void UART_Write_Text_A2_A1(char *text);
 [; ;soft_uart.h: 47: void LCD_Init(void);
 [; ;soft_uart.h: 48: void LCD_Set_Cursor(int pos);
-"18 ../src/demo_mouvement.c
+"16 ../src/demo_mouvement.c
 [v _MovementDetector `(v ~T0 @X0 1 ef ]
-"19
+"17
 {
-[; ;demo_mouvement.c: 18: void MovementDetector(void)
-[; ;demo_mouvement.c: 19: {
+[; ;demo_mouvement.c: 16: void MovementDetector(void)
+[; ;demo_mouvement.c: 17: {
 [e :U _MovementDetector ]
 [f ]
-[; ;demo_mouvement.c: 21: ANCON0bits.PCFG0 = 1 ;
-"21
+[; ;demo_mouvement.c: 18: ANCON0bits.PCFG0 = 1;
+"18
 [e = . . _ANCON0bits 0 0 -> -> 1 `i `uc ]
-[; ;demo_mouvement.c: 22: LATEbits.LATE1 = 1;
-"22
+[; ;demo_mouvement.c: 19: LATEbits.LATE1 = 1;
+"19
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;demo_mouvement.c: 25: while(1)
+"20
+[v _reception `(v ~T0 @X0 0 ef ]
+[; ;demo_mouvement.c: 20: void reception(void);
+[; ;demo_mouvement.c: 22: PIE1bits.TMR1IE = 0;
+"22
+[e = . . _PIE1bits 0 0 -> -> 0 `i `uc ]
+[; ;demo_mouvement.c: 23: T1CON = 0x31;
+"23
+[e = _T1CON -> -> 49 `i `uc ]
+[; ;demo_mouvement.c: 24: PIR1bits.TMR1IF = 0;
+"24
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;demo_mouvement.c: 25: TMR1H = 0x3C;
 "25
-[e :U 1117 ]
-[; ;demo_mouvement.c: 26: {
+[e = _TMR1H -> -> 60 `i `uc ]
+[; ;demo_mouvement.c: 26: TMR1L = 0xB0;
 "26
-{
-[; ;demo_mouvement.c: 29: if(PORTAbits.RA0 == 0)
+[e = _TMR1L -> -> 176 `i `uc ]
+[; ;demo_mouvement.c: 28: INTCON = 0xC0;
+"28
+[e = _INTCON -> -> 192 `i `uc ]
 "29
-[e $ ! == -> . . _PORTAbits 0 0 `i -> 0 `i 1119  ]
-[; ;demo_mouvement.c: 30: {
-"30
-{
-[; ;demo_mouvement.c: 31: LATAbits.LATA6 = 0;
+[v _derniere_detection `uc ~T0 @X0 1 a ]
+[; ;demo_mouvement.c: 29: uint8_t derniere_detection = 0;
+[e = _derniere_detection -> -> 0 `i `uc ]
+[; ;demo_mouvement.c: 31: reception();
 "31
+[e ( _reception ..  ]
+[; ;demo_mouvement.c: 33: while (1)
+"33
+[e :U 1118 ]
+[; ;demo_mouvement.c: 34: {
+"34
+{
+[; ;demo_mouvement.c: 36: reception();
+"36
+[e ( _reception ..  ]
+[; ;demo_mouvement.c: 38: if (PORTAbits.RA0 == 0)
+"38
+[e $ ! == -> . . _PORTAbits 0 0 `i -> 0 `i 1120  ]
+[; ;demo_mouvement.c: 39: {
+"39
+{
+[; ;demo_mouvement.c: 40: reception();
+"40
+[e ( _reception ..  ]
+[; ;demo_mouvement.c: 41: if(derniere_detection == 1) derniere_detection = 2;
+"41
+[e $ ! == -> _derniere_detection `i -> 1 `i 1121  ]
+[e = _derniere_detection -> -> 2 `i `uc ]
+[e :U 1121 ]
+[; ;demo_mouvement.c: 43: LATAbits.LATA6 = 0;
+"43
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;demo_mouvement.c: 32: { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
-"32
+[; ;demo_mouvement.c: 44: { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"44
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
 [e = __ms -> -> -> 150 `i `l `ul ]
-[e $U 1120  ]
-[e :U 1121 ]
+[e $U 1122  ]
+[e :U 1123 ]
 {
 [e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
-[e $U 1123  ]
-[e :U 1124 ]
-[e :U 1123 ]
-[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1124  ]
+[e $U 1125  ]
+[e :U 1126 ]
 [e :U 1125 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1126  ]
+[e :U 1127 ]
 [e -- __ms -> -> -> 1 `i `l `ul ]
 }
-[e :U 1120 ]
-[e $ != __ms -> -> 0 `i `ul 1121  ]
 [e :U 1122 ]
+[e $ != __ms -> -> 0 `i `ul 1123  ]
+[e :U 1124 ]
 }
-"33
+"45
 }
-[; ;demo_mouvement.c: 33: }
-[e $U 1126  ]
-"35
-[e :U 1119 ]
-[; ;demo_mouvement.c: 35: else if(PORTAbits.RA0 == 1)
-[e $ ! == -> . . _PORTAbits 0 0 `i -> 1 `i 1127  ]
-[; ;demo_mouvement.c: 36: {
-"36
+[; ;demo_mouvement.c: 45: }
+[e $U 1128  ]
+"47
+[e :U 1120 ]
+[; ;demo_mouvement.c: 47: else if (PORTAbits.RA0 == 1)
+[e $ ! == -> . . _PORTAbits 0 0 `i -> 1 `i 1129  ]
+[; ;demo_mouvement.c: 48: {
+"48
 {
-[; ;demo_mouvement.c: 37: LATAbits.LATA6 = 1;
-"37
+[; ;demo_mouvement.c: 49: reception();
+"49
+[e ( _reception ..  ]
+[; ;demo_mouvement.c: 50: derniere_detection = 1;
+"50
+[e = _derniere_detection -> -> 1 `i `uc ]
+[; ;demo_mouvement.c: 51: LATAbits.LATA6 = 1;
+"51
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;demo_mouvement.c: 38: {TxData = 11;};
-"38
+[; ;demo_mouvement.c: 52: {TxData = 11;};
+"52
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;demo_mouvement.c: 39: TxBuffer[TxData++] = 0x16;
-"39
+[; ;demo_mouvement.c: 53: TxBuffer[TxData++] = 0x16;
+"53
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 22 `i `uc ]
-[; ;demo_mouvement.c: 40: TxBuffer[TxData++] = myShortAddress.v[0];
-"40
+[; ;demo_mouvement.c: 54: TxBuffer[TxData++] = myShortAddress.v[0];
+"54
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-[; ;demo_mouvement.c: 41: TxBuffer[TxData++] = myShortAddress.v[1];
-"41
+[; ;demo_mouvement.c: 55: TxBuffer[TxData++] = myShortAddress.v[1];
+"55
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-[; ;demo_mouvement.c: 42: MiApp_BroadcastPacket(0);
-"42
+[; ;demo_mouvement.c: 56: MiApp_BroadcastPacket(0);
+"56
 [e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;demo_mouvement.c: 43: { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
-"43
+[; ;demo_mouvement.c: 57: { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"57
 {
 [v __dcnt `ul ~T0 @X0 1 a ]
 [v __ms `ul ~T0 @X0 1 a ]
 [e = __ms -> -> -> 150 `i `l `ul ]
-[e $U 1128  ]
-[e :U 1129 ]
+[e $U 1130  ]
+[e :U 1131 ]
 {
 [e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
-[e $U 1131  ]
-[e :U 1132 ]
-[e :U 1131 ]
-[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1132  ]
+[e $U 1133  ]
+[e :U 1134 ]
 [e :U 1133 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1134  ]
+[e :U 1135 ]
 [e -- __ms -> -> -> 1 `i `l `ul ]
 }
-[e :U 1128 ]
-[e $ != __ms -> -> 0 `i `ul 1129  ]
 [e :U 1130 ]
+[e $ != __ms -> -> 0 `i `ul 1131  ]
+[e :U 1132 ]
 }
-"44
+"58
 }
-[e :U 1127 ]
-"45
-[e :U 1126 ]
+[e :U 1129 ]
+"60
+[e :U 1128 ]
+[; ;demo_mouvement.c: 58: }
+[; ;demo_mouvement.c: 60: if(derniere_detection == 2)
+[e $ ! == -> _derniere_detection `i -> 2 `i 1136  ]
+[; ;demo_mouvement.c: 61: {
+"61
+{
+[; ;demo_mouvement.c: 62: reception();
+"62
+[e ( _reception ..  ]
+[; ;demo_mouvement.c: 63: PIE1bits.TMR1IE = 0;
+"63
+[e = . . _PIE1bits 0 0 -> -> 0 `i `uc ]
+"64
 }
-[e :U 1116 ]
-"25
-[e $U 1117  ]
-[e :U 1118 ]
-[; ;demo_mouvement.c: 44: }
-[; ;demo_mouvement.c: 45: }
-[; ;demo_mouvement.c: 46: }
-"46
-[e :UE 1115 ]
+[e :U 1136 ]
+"65
 }
+[e :U 1117 ]
+"33
+[e $U 1118  ]
+[e :U 1119 ]
+[; ;demo_mouvement.c: 64: }
+[; ;demo_mouvement.c: 65: }
+[; ;demo_mouvement.c: 66: }
+"66
+[e :UE 1116 ]
+}
+"68
+[v _reception `(v ~T0 @X0 1 ef ]
+"69
+{
+[; ;demo_mouvement.c: 68: void reception(void)
+[; ;demo_mouvement.c: 69: {
+[e :U _reception ]
+[f ]
+[; ;demo_mouvement.c: 70: if (MiApp_MessageAvailable())
+"70
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1138  ]
+[; ;demo_mouvement.c: 71: {
+"71
+{
+[; ;demo_mouvement.c: 72: if (rxMessage.Payload[0] == 0x94)
+"72
+[e $ ! == -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 148 `i 1139  ]
+[; ;demo_mouvement.c: 73: {
+"73
+{
+[; ;demo_mouvement.c: 74: sprintf((char *) &LCDText, (char*) "Envoyer le temps" );
+"74
+[e ( _sprintf (1 , &U _LCDText -> -> :s 1C `*uc `*Cuc ]
+[; ;demo_mouvement.c: 75: LCD_Update();
+"75
+[e ( _LCD_Update ..  ]
+[; ;demo_mouvement.c: 77: {TxData = 11;};
+"77
+{
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;demo_mouvement.c: 78: TxBuffer[TxData++] = 0x95;
+"78
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 149 `i `uc ]
+[; ;demo_mouvement.c: 79: TxBuffer[TxData++] = Chrono.Heures;
+"79
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux . _Chrono 0 ]
+[; ;demo_mouvement.c: 80: TxBuffer[TxData++] = Chrono.Minutes;
+"80
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux . _Chrono 1 ]
+[; ;demo_mouvement.c: 81: TxBuffer[TxData++] = Chrono.Secondes;
+"81
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux . _Chrono 2 ]
+[; ;demo_mouvement.c: 82: TxBuffer[TxData++] = myShortAddress.v[0];
+"82
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;demo_mouvement.c: 83: TxBuffer[TxData++] = myShortAddress.v[1];
+"83
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
+[; ;demo_mouvement.c: 84: MiApp_BroadcastPacket(0);
+"84
+[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
+[; ;demo_mouvement.c: 85: { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+"85
+{
+[v __dcnt `ul ~T0 @X0 1 a ]
+[v __ms `ul ~T0 @X0 1 a ]
+[e = __ms -> -> -> 150 `i `l `ul ]
+[e $U 1140  ]
+[e :U 1141 ]
+{
+[e = __dcnt -> / / .0.001 / .1.0 -> / -> 16000000 `l -> -> 4 `i `l `d -> -> 6 `i `d `ul ]
+[e $U 1143  ]
+[e :U 1144 ]
+[e :U 1143 ]
+[e $ != -- __dcnt -> -> -> 1 `i `l `ul -> -> 0 `i `ul 1144  ]
+[e :U 1145 ]
+[e -- __ms -> -> -> 1 `i `l `ul ]
+}
+[e :U 1140 ]
+[e $ != __ms -> -> 0 `i `ul 1141  ]
+[e :U 1142 ]
+}
+"87
+}
+[e :U 1139 ]
+[; ;demo_mouvement.c: 87: }
+[; ;demo_mouvement.c: 88: MiApp_DiscardMessage();
+"88
+[e ( _MiApp_DiscardMessage ..  ]
+"89
+}
+[e :U 1138 ]
+[; ;demo_mouvement.c: 89: }
+[; ;demo_mouvement.c: 90: }
+"90
+[e :UE 1137 ]
+}
+[p f _sprintf 9437696 ]
+[a 1C 69 110 118 111 121 101 114 32 108 101 32 116 101 109 112 115 0 ]
+

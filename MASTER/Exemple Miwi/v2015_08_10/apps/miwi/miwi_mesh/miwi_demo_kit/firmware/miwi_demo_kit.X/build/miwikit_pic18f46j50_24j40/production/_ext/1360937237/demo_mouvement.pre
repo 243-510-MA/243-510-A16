@@ -9793,7 +9793,18 @@ uint16_t Val;
 
 uint16_t pwm_value_high_time = 400 ;
 
-# 122
+typedef struct
+{
+uint8_t Heures;
+uint8_t Minutes;
+uint8_t Secondes;
+uint8_t Dixieme_Secondes;
+} Temps;
+
+Temps Chrono;
+void temps_avance(Temps * hms);
+
+# 133
 void SYSTEM_Initialize(void);
 
 # 31 "../../../../../../framework\driver/mrf_miwi/drv_mrf_miwi_24j40.h"
@@ -10219,26 +10230,42 @@ void UART_Write_Text_A2_A1(char *text);
 void LCD_Init(void);
 void LCD_Set_Cursor(int pos);
 
-# 18 "../src/demo_mouvement.c"
+# 16 "../src/demo_mouvement.c"
 void MovementDetector(void)
 {
-
-ANCON0bits.PCFG0 = 1 ;
+ANCON0bits.PCFG0 = 1;
 LATEbits.LATE1 = 1;
+void reception(void);
 
+PIE1bits.TMR1IE = 0;
+T1CON = 0x31;
+PIR1bits.TMR1IF = 0;
+TMR1H = 0x3C;
+TMR1L = 0xB0;
 
-while(1)
+INTCON = 0xC0;
+uint8_t derniere_detection = 0;
+
+reception();
+
+while (1)
 {
 
+reception();
 
-if(PORTAbits.RA0 == 0)
+if (PORTAbits.RA0 == 0)
 {
+reception();
+if(derniere_detection == 1) derniere_detection = 2;
+
 LATAbits.LATA6 = 0;
 { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
 }
 
-else if(PORTAbits.RA0 == 1)
+else if (PORTAbits.RA0 == 1)
 {
+reception();
+derniere_detection = 1;
 LATAbits.LATA6 = 1;
 {TxData = 11;};
 TxBuffer[TxData++] = 0x16;
@@ -10247,5 +10274,36 @@ TxBuffer[TxData++] = myShortAddress.v[1];
 MiApp_BroadcastPacket(0);
 { unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
 }
+
+if(derniere_detection == 2)
+{
+reception();
+PIE1bits.TMR1IE = 0;
 }
 }
+}
+
+void reception(void)
+{
+if (MiApp_MessageAvailable())
+{
+if (rxMessage.Payload[0] == 0x94)
+{
+sprintf((char *) &LCDText, (char*) "Envoyer le temps" );
+LCD_Update();
+
+{TxData = 11;};
+TxBuffer[TxData++] = 0x95;
+TxBuffer[TxData++] = Chrono.Heures;
+TxBuffer[TxData++] = Chrono.Minutes;
+TxBuffer[TxData++] = Chrono.Secondes;
+TxBuffer[TxData++] = myShortAddress.v[0];
+TxBuffer[TxData++] = myShortAddress.v[1];
+MiApp_BroadcastPacket(0);
+{ unsigned long _dcnt; unsigned long _ms; _ms = 150; while(_ms) { _dcnt=((unsigned long)(0.001/(1.0/((16000000)/4))/6)); while(_dcnt--); _ms--; } };
+
+}
+MiApp_DiscardMessage();
+}
+}
+

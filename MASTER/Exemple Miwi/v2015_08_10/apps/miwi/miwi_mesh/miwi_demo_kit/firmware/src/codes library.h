@@ -20,6 +20,8 @@
 #define DEMO_ALARM_DISARMED  0x18
 #define QUEST_ON             0x77
 #define QUEST_OFF            0x88
+#define GET_LAST_MOVEMENT    0x94
+#define SEND_LAST_MOVEMENT   0x95
 
 #define Reponse_A            0x90
 #define Reponse_B            0x91

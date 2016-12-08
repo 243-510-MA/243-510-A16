@@ -70,6 +70,17 @@ typedef union
 
 uint16_t pwm_value_high_time = 400 ;  
 
+typedef struct
+{
+    uint8_t Heures;
+    uint8_t Minutes;
+    uint8_t Secondes;
+    uint8_t Dixieme_Secondes;
+} Temps; //structure pour l'heure
+
+Temps Chrono;
+void temps_avance(Temps * hms);
+
 
 
 #define MAIN_RETURN void

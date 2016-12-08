@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/miwikit_pic18f46j50_24j40/debug\miwi_demo_kit.X.debug.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>65528</length>
+      <used>52605</used>
+      <free>12923</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>3776</length>
+      <used>1307</used>
+      <free>2469</free>
+    </memory>
+  </executable>
+</project>
