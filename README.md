@@ -35,7 +35,8 @@ Parties non fonctionnelles :
 Bugs connus à résoudre pour avoir un fonctionnement parfait :
 
     [PROBLÈME TROUVÉ, MAIS NON RÉSOLU]Le projecteur ne répond pas lorsque certaines conditions sont remplies. Si la lumière verte de "STATUS" est éteinte et que le bouton "power" est orange, le projecteur ne réagit pas aux communications séries (RS-232). La solution pour résoudre le problème est d'ajouter les trames de débuts manquantes dans l'envoi d'un message RS-232. Le contrôleur doit envoyer une trame de "wake-up" au projecteur à chaque 7 secondes environ pour s'assurer qu'il est prêt à "écouter" sur le bus. La trame de "wake-up à ajouter est : 0x00 0xBF 0x00 0x00 0x01 0x00 0xC0.
-
+	[PROBLÈME TROUVÉ, MAIS NON RÉSOLU]Lors de la synchronisation de nouveaux fichiers sur GitHub, le fichier Demo911.c et le fichier Demo911.h se retrouvent supprimés du projet. Il y a un problème au niveau de la façon dont ont commit nos fichiers sur GitHub.
+	
 Étudiants contributeurs : François D'Amours-Lavoie, Mathieu Labelle, Laurent Brochu, Jonathan Chouinard, Alexandru Marin, Étienne Vaillancourt, Renaud Varin, Dominic Fournier, Dominik Boudreau-Perron, Gabriel Ahr, Alexia Brazeau, Samuel Proulx, Jean-Philippe Dagenais, Carlos Bedoya
 
 Professeur contributeur : Frédéric Daigle
