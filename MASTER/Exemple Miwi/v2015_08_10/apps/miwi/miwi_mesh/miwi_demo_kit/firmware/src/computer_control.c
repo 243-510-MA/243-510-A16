@@ -25,9 +25,8 @@ void ComputerControl(void)
     uint8_t k = 0;
     uint8_t heures, minutes, secondes = 0;
     unsigned char uart_tableau[100] = {0};
-    unsigned char projector_off[14] = "PROJECTOR OFF";
 
-
+    uint16_t i = 0;
     uint8_t Dizaine_Heures = 0;
     uint8_t Unite_Heures = 0;
     uint8_t Dizaine_Minutes = 0;
@@ -35,7 +34,7 @@ void ComputerControl(void)
     uint8_t Dizaine_Secondes = 0;
     uint8_t Unite_Secondes = 0;
     char tableau_temps[9] = {0, 0, 'h', 0, 0, 'm', 0, 0, 's'};
-
+   // uint8_t MacTemp[9];
     UART_Init_A2_A1();
     MiApp_DiscardMessage();
 
@@ -45,17 +44,29 @@ void ComputerControl(void)
          LED2 = 0;
          LED0 = 0;*/
         // Reception des messages de status MIWI //
-
-
-
-
+       /* if(MiApp_MessageAvailable())
+        {
+            if(rxMessage.Payload[0] == POLL_PRESENCE)
+            {
+                for(uint8_t i = 0; i < 8 ; i++)
+                    MacTemp[i] = rxMessage.Payload[i+1];
+                
+                MacTemp[8] = 0;            
+                UART_Write_Text_A2_A1(&MacTemp);            
+                
+            }
+            
+            
+            
+        }*/
         // Reception par le terminal et envoie des commandes MIWI //
         if (UART_kbhit_A2_A1())
         {
 
-            buffer = UART_Read_A2_A1();
+            buffer = UART_Read_A2_A1();         
             uart_tableau[k] = buffer;
             k++;
+                        
             delay_ms(5); // Delay nécessaire pour prévenir du re-entrancy dans UART_kbhit.
             if (uart_tableau[k - 1] == '\r')
             {
@@ -155,14 +166,42 @@ void ComputerControl(void)
 
                 else if (!strcmp("GET STATUS DOOR", &uart_tableau)) // Comparaison du msg dans le uart_tableau
                 {
+                    
+                    
                     MiApp_FlushTx();
                     MiApp_WriteData(STATUS_PORTE); // STATUS_PORTE
                     MiApp_WriteData(myShortAddress.v[0]);
                     MiApp_WriteData(myShortAddress.v[1]);
                     MiApp_BroadcastPacket(false);
                     LED1 = 1;
-                    delay_ms(50);
                     LED1 = 0;
+                     
+                    i = 0;
+                    while(!MiApp_MessageAvailable()){
+                        delay_ms(1);
+                        i++;
+                        if(i == 2000){
+                            UART_Write_Text_A2_A1("Erreur de communications");                          
+                            break;
+                        }
+                            
+                    };
+                    if(i == 2000) break;
+                    
+                    
+                     if (rxMessage.Payload[0] == DOOR_OPEN)
+                    {
+                        UART_Write_Text_A2_A1("Door is unlocked");
+
+                    }
+
+                    else if (rxMessage.Payload[0] == DOOR_CLOSED)
+                    {
+                        UART_Write_Text_A2_A1("Door is locked");
+
+                    }
+
+                    MiApp_DiscardMessage();
 
                 }
 
@@ -174,11 +213,9 @@ void ComputerControl(void)
                     MiApp_WriteData(myShortAddress.v[1]);
                     MiApp_BroadcastPacket(false);
                     LED1 = 1;
-                    delay_ms(500);
                     LED1 = 0;
-
-
-
+                   
+                    
 
                     if (rxMessage.Payload[0] == SCREEN_UP)
                     {
@@ -205,9 +242,10 @@ void ComputerControl(void)
                     MiApp_WriteData(myShortAddress.v[1]);
                     MiApp_BroadcastPacket(false);
                     LED1 = 1;
-                    delay_ms(50);
                     LED1 = 0;
 
+                    while(!MiApp_MessageAvailable());
+                    
                     if (rxMessage.Payload[0] == SCREEN_UP)
                     {
                         UART_Write_Text_A2_A1("Projector screen is UP !");
@@ -232,11 +270,11 @@ void ComputerControl(void)
                     MiApp_WriteData(myShortAddress.v[1]);
                     MiApp_BroadcastPacket(false);                 
                     LED1 = 1;
-                    delay_ms(50);
                     LED1 = 0;
+                    
 
-                    if (MiApp_MessageAvailable())
-                    {
+                      while(!MiApp_MessageAvailable());
+                    
                         if (rxMessage.Payload[0] == SEND_LAST_MOVEMENT)
                         {
                             heures = rxMessage.Payload[1];
@@ -263,18 +301,20 @@ void ComputerControl(void)
 
                         }
                         MiApp_DiscardMessage();
-                    }
+                  }
                     
-
+                 memset(uart_tableau,'0',100);
 
                 }
+               
+                
 
             }
 
         }
 
     }
-}
+
 /* if(CMD == 'P')
             {     
      MiApp_FlushTx();

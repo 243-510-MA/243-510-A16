@@ -41,7 +41,6 @@ extern uint8_t myLongAddress[];
     uint8_t AdditionalNodeID[ADDITIONAL_NODE_ID_SIZE] = {0x00};
 #endif
 
-    
 void Network(int DEVICEMODE)
 {       
     uint8_t i, j;
@@ -65,7 +64,7 @@ void Network(int DEVICEMODE)
     //*******************************************************************
     
     CreateorJoin:
-
+    
     //*******************************************************************
     // Set Device Communication Channel
     //*******************************************************************

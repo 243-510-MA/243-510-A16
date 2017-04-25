@@ -29,17 +29,21 @@
 
 //*************************************************************************
 
-#define DEVICEMODE MOVEMENT // Choisir ici
+#define DEVICEMODE STUDENT
+// Choisir ici
 
 //*************************************************************************
 
+//bool presence = true;
+ 
 void main(void)
 {
+
     Network(DEVICEMODE);
     
     LED0 = LED1 = LED2 = 0;
     
-
+    
     
     if(DEVICEMODE == PAN)
     {

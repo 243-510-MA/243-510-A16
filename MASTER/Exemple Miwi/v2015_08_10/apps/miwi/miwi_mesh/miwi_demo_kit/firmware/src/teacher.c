@@ -5,12 +5,14 @@
 #include "codes library.h"
 #include "system_config.h"
 #include "miwi/miwi_api.h"
+#include "string.h"
 
 void Teacher(void)
 {
     uint8_t i = 0;
     uint8_t switch_val = 0;
     extern uint8_t ConnectionEntry;
+    extern uint8_t myLongAddress[];
     bool Tx_Packet = true;
     uint8_t rssi = 0;
     uint8_t memoire = 0;
@@ -21,13 +23,20 @@ void Teacher(void)
     uint8_t reponsec = 0;
     uint8_t reponsed = 0;
     uint8_t choix_envoi = 0;
-    uint8_t my_adresse;
+    uint16_t my_adresse;
     uint8_t IdAdresse[2] = {0x02, 0x01};
     uint16_t digit_adresse;
+    uint8_t my_mac_adresse[32], *pos = my_mac_adresse;
+            
+    my_adresse = (myShortAddress.v[1] << 8) + (myShortAddress.v[0]); //Adresse courte utilisée pour la messagerie, s'affiche plus a la mise en fonction
 
-    my_adresse = (myShortAddress.v[1] << 8) + (myShortAddress.v[0]);
+    
+    /* Impression de l'adresse MAC du device */
     LCD_Erase();
-    sprintf((char *) &LCDText, (char*) " TEACHER DEVICE  MY ID: %X", my_adresse);
+    pos += sprintf((char *)pos,(char*) " Teacher Device ");
+    for(int i = 0 ; i < 8 ; i++)
+        pos += sprintf((char *)pos, (char*) "%02X",myLongAddress[i]);
+    memcpy(&LCDText,&my_mac_adresse,32);
     LCD_Update();
 
     for (i = 0; i < 10; i++)
@@ -36,7 +45,7 @@ void Teacher(void)
     }
     //   unicast adresse test pour 0x0102
     uint8_t IdAdresse[2] = {0x02, 0x01};
-    uint16_t digit_adresse;
+
 
 
     void reception_unicast(void);

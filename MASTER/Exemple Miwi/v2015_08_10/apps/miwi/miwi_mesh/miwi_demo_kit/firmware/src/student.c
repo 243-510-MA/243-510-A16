@@ -5,31 +5,52 @@
 #include "codes library.h"
 #include "system_config.h"
 #include "miwi/miwi_api.h"
+#include "string.h"
+#include "network.h"
 
 uint8_t questionnaire = 0;
 uint8_t switch_val = 0;
-
+//extern bool presence;
 
 void Student(void)
 {
-    LCD_Erase();
-    LCD_Display((char *) " STUDENT DEVICE ", 0, true);
-
+    extern uint8_t myLongAddress[];
+    uint8_t my_mac_adresse[32], *pos = my_mac_adresse;
     uint8_t IdAdresse[2] = {0x02, 0x01};
     uint16_t digit_adresse;
-    void questionnaire_function(void);
+    uint16_t my_adresse;
+    my_adresse =(myShortAddress.v[1] << 8) + (myShortAddress.v[0]); //Adresse courte utilisée pour la messagerie, s'affiche plus a la mise en fonction
+    /* Impression de l'adresse MAC du device */
+    LCD_Erase();
+    pos += sprintf((char *)pos,(char*) " Student Device ");
+    for(int i = 0 ; i < 8 ; i++)
+        pos += sprintf((char *)pos, (char*) "%02X",myLongAddress[i]);
+    memcpy(&LCDText,&my_mac_adresse,32);    
+    LCD_Update();
 
+    for (int i = 0; i < 10; i++)
+    {
+        DELAY_ms(250);
+    }
+    
+    void questionnaire_function(void);
+   /* T1CON = 0x31;
+    PIR1bits.TMR1IF = 0;
+    TMR1H = 0x3C;
+    TMR1L = 0xB0;
+    INTCON = 0xC0;
+    PIE1bits.TMR1IE = 1;*/
     while (true)
     {
         questionnaire_function();
-        sprintf((char *) &LCDText, (char*) "SW1: PROJECTOR  SW2: Suivant  ");
+        sprintf((char *) &LCDText, (char*) "SW1: PROJECTOR  SW2: Suivant   ");
         LCD_Update();
 
         while (switch_val == 0)
         {
             switch_val = BUTTON_Pressed();
             questionnaire_function();
-            sprintf((char *) &LCDText, (char*) "SW1: PROJECTOR  SW2: Suivant  ");
+            sprintf((char *) &LCDText, (char*) "SW1: PROJECTOR  SW2: Suivant   ");
             LCD_Update();
         }
 
@@ -378,6 +399,7 @@ void questionnaire_function(void)
             LED1 = 0;
         }
         MiApp_DiscardMessage();
+        
         if (questionnaire == 1)
         {
             sprintf((char *) &LCDText, (char*) "SW1: A          SW2: Suivant    ");
@@ -481,6 +503,19 @@ void questionnaire_function(void)
             }
         }
     }
+    /*else if (presence == true)
+    {
+                MiApp_FlushTx();
+                MiApp_WriteData(POLL_PRESENCE);
+                for(uint8_t i = 0 ; i < 8 ; i++)
+                MiApp_WriteData(myLongAddress[i]);
+               
+                MiApp_BroadcastPacket(false);
+                presence = false;
+        
+        
+        
+    }*/
 }
 
 /*       
