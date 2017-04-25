@@ -22,7 +22,7 @@
 #include "system.h"
 #include "system_config.h"
 
-
+//extern bool presence;
 #include "driver/mrf_miwi/drv_mrf_miwi_24j40.h"
 #if defined(ENABLE_NVM)
 #include "miwi/miwi_nvm.h"
@@ -1919,13 +1919,24 @@ void _ISRFAST _INT1Interrupt(void)
 {
 
     
-
+    // Interruption pour la presence en classe et le temps depuis dernier mouvement(?)
+    
+        // La partie du timer avec le chronomètre pour détecter le dernier mouvement devra être règlé (pas 100% fonctionnel)
     if (PIR1bits.TMR1IF)
     {
         PIR1bits.TMR1IF = 0;
         TMR1H = 0x3C;
         TMR1L = 0xB0;
        
+       /* if(Chrono.Minutes == 1)
+        {
+            Chrono.Minutes = 0;
+            Chrono.Secondes = 0;
+            Chrono.Dixieme_Secondes = 0;
+            
+            presence = true;
+        }*/
+        
         if(LED2 == 1)   LED2 = 0;
         else if(LED2 == 0)   LED2 = 1;
         temps_avance(&Chrono);
@@ -1939,39 +1950,63 @@ void _ISRFAST _INT1Interrupt(void)
         PIR3bits.TMR4IF = 0;
     }
 
+    //Interruption pour la porte
     if (PIR2bits.TMR3IF)
     {
         static uint8_t compte;
+        static uint8_t compte_porte;
         static bool u;
 
-        if (u)
+        if(door_timer == true)
         {
-            //800 ---- 400 millieux  -----800 full front-- 0 full back
-            u = 0;
-            uint16_t temp = 65536 - (pwm_value_high_time + 2600);
-            PROJECTOR = 1;
-            TMR3 = temp;
+            DOOR = 0;
+            LED1 = 1;           
+            TMR3 = 0;
+            compte_porte++;
+            
+            
+            if(compte_porte == 250)
+            {
+                PIR2bits.TMR3IF = 0;
+                PIE2bits.TMR3IE = 0;
+                compte_porte = 0;
+                DOOR = 1;
+                LED1 = 0;
+                door_timer = false;
+            }
             PIR2bits.TMR3IF = 0;
-        }
+            
+        }    
         else
         {
-            u = 1;
-            uint16_t temp = 25536 + (pwm_value_high_time + 2600);
-            PROJECTOR = 0;
-            TMR3 = temp;
-            PIR2bits.TMR3IF = 0;
+            if (u)
+            {
+                //800 ---- 400 millieux  -----800 full front-- 0 full back
+                u = 0;
+                uint16_t temp = 65536 - (pwm_value_high_time + 2600);
+                PROJECTOR = 1;
+                TMR3 = temp;
+                PIR2bits.TMR3IF = 0;
+            }
+            else
+            {
+                u = 1;
+                uint16_t temp = 25536 + (pwm_value_high_time + 2600);
+                PROJECTOR = 0;
+                TMR3 = temp;
+                PIR2bits.TMR3IF = 0;
 
+            }
+
+            compte++;
+            if (compte == 250)
+            {
+                PIR2bits.TMR3IF = 0;
+                PIE2bits.TMR3IE = 0;
+                pwm_value_high_time = 400;
+                compte = 0;
+            }
         }
-
-        compte++;
-        if (compte == 250)
-        {
-            PIR2bits.TMR3IF = 0;
-            PIE2bits.TMR3IE = 0;
-            pwm_value_high_time = 400;
-            compte = 0;
-        }
-
     }
 
 
