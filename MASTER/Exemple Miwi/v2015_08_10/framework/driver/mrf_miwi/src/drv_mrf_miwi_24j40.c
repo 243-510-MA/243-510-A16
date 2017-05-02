@@ -22,7 +22,7 @@
 #include "system.h"
 #include "system_config.h"
 
-//extern bool presence;
+extern bool presence;
 #include "driver/mrf_miwi/drv_mrf_miwi_24j40.h"
 #if defined(ENABLE_NVM)
 #include "miwi/miwi_nvm.h"
@@ -1928,14 +1928,14 @@ void _ISRFAST _INT1Interrupt(void)
         TMR1H = 0x3C;
         TMR1L = 0xB0;
        
-       /* if(Chrono.Minutes == 1)
+        if(Chrono.Minutes == 1)
         {
             Chrono.Minutes = 0;
             Chrono.Secondes = 0;
             Chrono.Dixieme_Secondes = 0;
             
             presence = true;
-        }*/
+        }
         
         if(LED2 == 1)   LED2 = 0;
         else if(LED2 == 0)   LED2 = 1;
