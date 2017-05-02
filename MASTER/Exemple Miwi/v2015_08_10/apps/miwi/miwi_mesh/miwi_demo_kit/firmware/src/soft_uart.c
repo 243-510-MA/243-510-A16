@@ -104,8 +104,8 @@ void UART_Init_A2_A1(void)
 //---------------------------------------------------------------------------
 //  void UART_Write_A2_A1(char data)
 //  Écrit le caractère sur le port série software
-//  PIN_A2 = TXD
-//  PIN_A1 = RXD
+//  PIN_A2 = TXD (ORANGE))
+//  PIN_A1 = RXD (ROUGE)
 //  durée d'un bit à 9600 bps
 //  t = 1/9600 = 104 us
 //  4 us environ pour instructions
@@ -147,7 +147,8 @@ char UART_Read_A2_A1(void)
         for(i=0; i<8; i++)
         {
             __delay_us(100);    // Échantillone au milieu des bits
-            data = (data >> 1) + (UART_RX_V << 7);
+            UART_TX_V = !UART_TX_V;
+            data = (data >> 1) + (UART_RX_V << 7);  
         }
         UART_RX_V = 1;                // stop bit (en attente)
     }

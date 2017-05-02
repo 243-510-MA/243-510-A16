@@ -16,6 +16,13 @@
 void ComputerControl(void)
 {
 
+    /*  ATTENTIION
+     * 
+     *  LIRE LE FICHIER "Problème de UART" avant de continuer
+     * 
+     * 
+     */
+
     RX_ANALOG_DIGITAL = 1;
     TX_ANALOG_DIGITAL = 1;
     LCD_BKLT = 1;
@@ -34,7 +41,7 @@ void ComputerControl(void)
     uint8_t Dizaine_Secondes = 0;
     uint8_t Unite_Secondes = 0;
     char tableau_temps[9] = {0, 0, 'h', 0, 0, 'm', 0, 0, 's'};
-   // uint8_t MacTemp[9];
+    uint8_t MacTemp[9];
     UART_Init_A2_A1();
     MiApp_DiscardMessage();
 
@@ -44,9 +51,9 @@ void ComputerControl(void)
          LED2 = 0;
          LED0 = 0;*/
         // Reception des messages de status MIWI //
-       /* if(MiApp_MessageAvailable())
+        if(MiApp_MessageAvailable())
         {
-            if(rxMessage.Payload[0] == POLL_PRESENCE)
+            if(rxMessage.Payload[0] == POLL_PRESENCE) // Reception de l'adresse MAC d'un des modules
             {
                 for(uint8_t i = 0; i < 8 ; i++)
                     MacTemp[i] = rxMessage.Payload[i+1];
@@ -58,7 +65,7 @@ void ComputerControl(void)
             
             
             
-        }*/
+        }
         // Reception par le terminal et envoie des commandes MIWI //
         if (UART_kbhit_A2_A1())
         {
@@ -67,7 +74,7 @@ void ComputerControl(void)
             uart_tableau[k] = buffer;
             k++;
                         
-            delay_ms(5); // Delay nécessaire pour prévenir du re-entrancy dans UART_kbhit.
+            delay_ms(35); // Delay nécessaire pour prévenir du re-entrancy dans UART_kbhit. 
             if (uart_tableau[k - 1] == '\r')
             {
                 uart_tableau[k - 1] = 0x00;
@@ -315,17 +322,17 @@ void ComputerControl(void)
 
     }
 
-/* if(CMD == 'P')
-            {     
-     MiApp_FlushTx();
-     MiApp_WriteData(PROJECTOR_OFF);
-     MiApp_WriteData(myShortAddress.v[0]);
-     MiApp_WriteData(myShortAddress.v[1]);
-     MiApp_BroadcastPacket(false);
-     LED1 = 1;
-  }*/
 
-
+/* Timer 3 Control Register T3CON 
+ * 
+ * bit 7-6  Clock Source Select
+ * bit 5-4  Prescale Bits. (clockdiv?) 11 = 1:8 , 10 = 1:4, 01 = 1:2, 00 = 1:1
+ * bit 3    Oscillator Source . 1 Power up the timer1 crystal driver
+ * bit 2    Timer 3 External Clock Synchronisation Control Bit. 1 = Do not synchronize external clock input
+ * bit 1    16 bit Read/Write Mode Enable Bit .  1 = 16 bit operation. 0 = 2 8 bit operations
+ * bit 0    Timer 3 On bit . 1 enables timer 3
+ * 
+ */
 
 
 

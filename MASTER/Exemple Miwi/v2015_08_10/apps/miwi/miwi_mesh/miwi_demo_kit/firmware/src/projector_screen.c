@@ -14,7 +14,7 @@ void ProjectorScreen(void)
     int statusScreen = 0; //etat initialise a 0, l'ecran est roulé
     
     // Commentaires de Timer 3 - 2016 par Samuel Proulx
-    // La routine d'interruption pour cette fonction se trouve dans "drv_mrf_miwi_24j40.c" à la ligne 1879
+    //  La routine d'interruption pour le timer se trouve dans "drv_mrf_miwi_24j40.c" à la ligne 1925 
     // Nomenclature :  (REGISTERNAME . REGISTERBIT)
     PROJECTOR_TRIS = 0;
     RCONbits.IPEN = 1; // Interrupt Priority Level Bit . 1 = Enable Priority Levels

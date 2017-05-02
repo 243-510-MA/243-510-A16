@@ -21,7 +21,8 @@ void DoorUnlock(void)
      int statusScreen = 0; //etat initialise a 0, l'ecran est roulé
     
     // Commentaires de Timer 3 - 2016 par Samuel Proulx
-    // La routine d'interruption pour cette fonction se trouve dans "drv_mrf_miwi_24j40.c" à la ligne 1879
+    // La routine d'interruption pour le timer se trouve dans "drv_mrf_miwi_24j40.c" à la ligne 1925 
+     
     // Nomenclature :  (REGISTERNAME . REGISTERBIT)
     PROJECTOR_TRIS = 0;
     RCONbits.IPEN = 1; // Interrupt Priority Level Bit . 1 = Enable Priority Levels
@@ -88,3 +89,14 @@ void DoorUnlock(void)
         }
     }    
 }
+
+/* Timer 3 Control Register T3CON 
+ * 
+ * bit 7-6  Clock Source Select
+ * bit 5-4  Prescale Bits. (clockdiv?) 11 = 1:8 , 10 = 1:4, 01 = 1:2, 00 = 1:1
+ * bit 3    Oscillator Source . 1 Power up the timer1 crystal driver
+ * bit 2    Timer 3 External Clock Synchronisation Control Bit. 1 = Do not synchronize external clock input
+ * bit 1    16 bit Read/Write Mode Enable Bit .  1 = 16 bit operation. 0 = 2 8 bit operations
+ * bit 0    Timer 3 On bit . 1 enables timer 3
+ * 
+ */

@@ -10,11 +10,12 @@
 
 uint8_t questionnaire = 0;
 uint8_t switch_val = 0;
-//extern bool presence;
+extern bool presence;
+extern uint8_t myLongAddress[];
 
 void Student(void)
 {
-    extern uint8_t myLongAddress[];
+ 
     uint8_t my_mac_adresse[32], *pos = my_mac_adresse;
     uint8_t IdAdresse[2] = {0x02, 0x01};
     uint16_t digit_adresse;
@@ -34,12 +35,16 @@ void Student(void)
     }
     
     void questionnaire_function(void);
-   /* T1CON = 0x31;
+    
+    /* Routines d'interruption de timer se trouve dans drv_mrf_miwi_24j40.c à la ligne 1925*/
+    T1CON = 0x31;
     PIR1bits.TMR1IF = 0;
     TMR1H = 0x3C;
     TMR1L = 0xB0;
     INTCON = 0xC0;
-    PIE1bits.TMR1IE = 1;*/
+    PIE1bits.TMR1IE = 1;
+    
+    
     while (true)
     {
         questionnaire_function();
@@ -399,7 +404,7 @@ void questionnaire_function(void)
             LED1 = 0;
         }
         MiApp_DiscardMessage();
-        
+              
         if (questionnaire == 1)
         {
             sprintf((char *) &LCDText, (char*) "SW1: A          SW2: Suivant    ");
@@ -502,8 +507,22 @@ void questionnaire_function(void)
                 MiApp_DiscardMessage();
             }
         }
+        
+        
     }
-    /*else if (presence == true)
+    else if (presence == true)
+        {
+                MiApp_FlushTx();
+                MiApp_WriteData(POLL_PRESENCE);
+                for(uint8_t i = 0 ; i < 8 ; i++)
+                MiApp_WriteData(myLongAddress[i]);
+               
+                MiApp_BroadcastPacket(false);
+                presence = false;   
+        }
+    
+    
+  /*  else if (presence == true)
     {
                 MiApp_FlushTx();
                 MiApp_WriteData(POLL_PRESENCE);
