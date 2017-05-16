@@ -16,10 +16,10 @@
 
 using namespace std;
 
-#define CHEMIN		"/home/debian/243-510-A16/Domotique243-600MA"
+#define CHEMIN		"/home/debian/243-510-A16/Domotique243-600MA/"
 #define NOM_FICHIER	"Donnee_BME280.json"
 
-#define CHEMIN_FICHIER_TXT "/home/debian/243-510-A16/Domotique243-600MA"
+#define CHEMIN_FICHIER_TXT "/home/debian/243-510-A16/Domotique243-600MA/"
 #define NOM_FICHIER_TXT "FICHIER_TEXT.txt"
 
 
